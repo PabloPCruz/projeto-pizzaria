@@ -1,0 +1,34 @@
+.root {
+    margin: 0;
+}
+
+.header-toolbar {
+    display: flex;
+    list-style-type: none;
+    min-width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: aqua;
+    margin: 0;
+}
+
+.header-toolbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-toolbar-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.header-toolbar-actions {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
