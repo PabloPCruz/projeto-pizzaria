@@ -9,13 +9,41 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: aqua;
+    background-color: rgb(23, 23, 6);
     margin: 0;
 }
 
 .header-toolbar-logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    overflow: visible;
+    /* Permite que a imagem ultrapasse a toolbar */
+}
+
+.header-toolbar-logo img {
+    max-height: 150px;
+    max-width: 260px;
+    width: auto;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 40px;
+    transition: all 0.5s ease-in-out;
+    margin-left: 0;
+    padding: 2px 8px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin-top: -15px;
+    margin-bottom: -20px;
+}
+
+.header-toolbar-logo img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+
 }
 
 .header-toolbar-links {
@@ -26,9 +54,55 @@
     flex: 1;
 }
 
+.header-toolbar-links span {
+    color: #f5f1f1;
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    background: rgba(40, 40, 40, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-toolbar-links span:hover {
+    color: #ffe082;
+    background: rgba(60, 60, 60, 0.45);
+    transform: scale(1.04) translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
 .header-toolbar-actions {
     color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+}
+
+.header-toolbar-actions span {
+    color: #f5f1f1;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background: rgba(227, 247, 129, 0.662);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 25px;
+}
+
+.header-toolbar-actions span:hover {
+    color: #ffffff;
+    background: rgba(255, 251, 0, 0.45);
+    transform: scale(1.04) translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
