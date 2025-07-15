@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {} from '@angular/material/core'
+import { } from '@angular/material/core'
 
 @Component({
+  standalone: false,
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })

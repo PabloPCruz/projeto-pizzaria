@@ -1,5 +1,6 @@
 .root {
     margin: 0;
+    font-size: 62.5%;
 }
 
 .header-toolbar {
@@ -64,8 +65,9 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-weight: 500;
-    letter-spacing: 1px;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-family:  "Bangers", system-ui;
     transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -94,8 +96,9 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-weight: 500;
+    font-size: 1.7rem;
     letter-spacing: 1px;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-family:  "Bangers", system-ui;
     transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     margin-right: 25px;
 }
