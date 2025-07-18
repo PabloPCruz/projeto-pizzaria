@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    standalone: false,
+  standalone: false,
   selector: 'app-flavors',
   templateUrl: './flavors.html',
   styleUrl: './flavors.css'
