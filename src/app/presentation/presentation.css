@@ -1,3 +1,16 @@
+.presentation-container {
+
+    width: 100%;
+    background-color: #fff8e7;
+    margin: 0;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+}
 h1 {
     font-family: "Bangers", system-ui;
     font-weight: 400;
@@ -23,19 +36,4 @@ p {
     width: 400px;
     /* ajuste conforme o design */
     height: auto;
-}
-
-
-.presentation-container {
-
-    width: 100%;
-    background-color: #fff8e7;
-    margin: 0;
-}
-
-.presentation {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: auto;
 }
