@@ -15,6 +15,14 @@
   font-weight: 500;
 }
 
+a,
+a:active,
+a:visited,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 .flavors-cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -60,7 +68,8 @@
   background: rgba(227, 247, 129, 0.438);
   text-align: center;
   font-size: 1.6rem;
-  font-family: "Bangers", system-ui;;
+  font-family: "Bangers", system-ui;
+  ;
   letter-spacing: 0.1rem;
   border: none;
   border-radius: 4px;

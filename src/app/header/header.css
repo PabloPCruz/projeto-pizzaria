@@ -3,6 +3,14 @@
     font-size: 62.5%;
 }
 
+a,
+a:active,
+a:visited,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header-toolbar {
     display: flex;
     list-style-type: none;

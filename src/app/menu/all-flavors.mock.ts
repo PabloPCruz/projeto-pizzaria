@@ -24,5 +24,51 @@ export const ALL_FLAVORS = [
         img: "assets/flavors/chocolate-com-morango.jpg",
         ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
     },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    {
+        sabor: "Chocolate com Morango",
+        img: "assets/flavors/chocolate-com-morango.jpg",
+        ingredientes: "molho de tomate, mussarela, frango desfiado e catupiry"
+    },
+    
 
 ]
