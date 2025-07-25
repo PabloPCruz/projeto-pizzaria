@@ -1,8 +1,13 @@
-.body {
-    background-color: #a0522d;
+/* .body {
+    background-color: #fff8e7;
+} */
+
+.cardapio-title {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-h1 {
+.cardapio-title h1 {
     font-family: "Bangers", system-ui;
     font-weight: 400;
     font-size: 2.5rem;
@@ -11,6 +16,8 @@ h1 {
     letter-spacing: 0.8px;
     color: #ebe3e3;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
+    margin: 0;
+    padding: 20px 0;
 }
 
 .flavor-name-overlay {
@@ -35,6 +42,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     padding: 16px;
+    background-color: #ae5f35;
 }
 
 .flavor-card {
@@ -44,12 +52,13 @@ h1 {
     display: inline-block;
     align-items: center;
     vertical-align: top;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .flavor-card:hover {
-    transform: scale(1.01);
-    outline: rgba(0, 0, 0, 0.441);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .flavor-card img {

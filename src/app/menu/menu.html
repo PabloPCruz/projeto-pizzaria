@@ -1,5 +1,8 @@
-<h1> CARDAPIO </h1>
+<app-header></app-header>
 <div class="flavors-cards-container">
+    <div class="cardapio-title">
+        <h1>CARDAPIO</h1>
+    </div>
     <mat-card class="flavor-card" *ngFor="let sabor of sabores">
         <img mat-card-image [src]="sabor.img" [alt]="sabor.sabor">
         <mat-card-content>
