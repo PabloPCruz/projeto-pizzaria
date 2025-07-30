@@ -12,6 +12,12 @@ a:focus {
 }
 
 .header-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
     display: flex;
     list-style-type: none;
     min-width: 400px;
