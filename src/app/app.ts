@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Header } from './header/header'
+
+// COMPONENTE APP
 @Component({
+  standalone: false,
   selector: 'app-root',
-  imports: [RouterOutlet, Header],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'] // <- corrigido
+  ,
 })
 export class App {
   protected title = 'projeto-pizzaria';

@@ -1,0 +1,39 @@
+.presentation-container {
+
+    width: 100%;
+    background-color: #fff8e7;
+    margin: 0;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+}
+h1 {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    text-align: center;
+    color: #4b2e2e;
+}
+
+p {
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding: 30px 20px 50px 20px;
+    color: #4b2e2e;
+    font-size: 1.4rem;
+}
+
+.img-divisor {
+    display: block;
+    padding: 0;
+    margin: -100px auto;
+    width: 400px;
+    /* ajuste conforme o design */
+    height: auto;
+}

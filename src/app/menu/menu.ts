@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { } from '@angular/material/core'
+import { ALL_FLAVORS } from './all-flavors.mock';
+import { transform } from 'typescript';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { from } from 'rxjs';
 
 
 @Component({
   standalone: false,
-  selector: 'app-header',
-  templateUrl: './header.html',
-  styleUrl: './header.css',
+  selector: 'app-menu',
+  templateUrl: './menu.html',
+  styleUrl: './menu.css',
   animations: [
     trigger('routeFadeAnimation', [
       transition('* <=> *', [
@@ -17,6 +19,6 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ]
 })
-export class Header {
-
+export class Menu {
+  public sabores = ALL_FLAVORS;
 }

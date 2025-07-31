@@ -1,3 +1,17 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+// components
+import { Menu } from './menu/menu';
+import { Template } from './template/template';
+
+
+export const routes: Routes = [
+    {
+        path: '',
+        component: Template, // página única com todas as seções
+    },
+    {
+        path: 'menu',
+        component: Menu
+    }
+];
