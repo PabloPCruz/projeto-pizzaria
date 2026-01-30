@@ -1,9 +1,9 @@
 import { Component, OnInit, Optional } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { OrderService } from './order.service';
-import { OrderData } from '../interfaces/order-data-content.interface';
-import { Bebida, TipoBebida } from '../interfaces/pedido.interface';
+import { OrderService } from '../services/order.service';
+import { OrderData } from '../interfaces/order-data.interface';
+import { Bebida, opcoesBebida } from '../interfaces/drinks.interface';
 
 @Component({
   selector: 'app-order',

@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 
-import { OrderService } from './order.service';
+import { OrderService } from '../services/order.service';
 import { OrderComponent } from './order';
 
 @NgModule({

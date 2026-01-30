@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ALL_FLAVORS } from '../../../mocks/mock-flavors/all-flavors.mock';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { TRADICIONAIS } from 'mocks/tradicional-flavors.mock';
+import { TRADICIONAIS } from 'mocks/mock-flavors/tradicional-flavors.mock';
 
 
 @Component({
