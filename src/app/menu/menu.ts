@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { ALL_FLAVORS } from './all-flavors.mock';
-import { transform } from 'typescript';
+import { ALL_FLAVORS } from '../../../mocks/mock-flavors/all-flavors.mock';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { from } from 'rxjs';
+import { TRADICIONAIS } from 'mocks/tradicional-flavors.mock';
 
 
 @Component({
-  standalone: false,
   selector: 'app-menu',
   templateUrl: './menu.html',
   styleUrl: './menu.css',
@@ -20,5 +18,9 @@ import { from } from 'rxjs';
   ]
 })
 export class Menu {
-  public sabores = ALL_FLAVORS;
+  public sabores = TRADICIONAIS;
+
+  constructor(){
+  }
+  
 }

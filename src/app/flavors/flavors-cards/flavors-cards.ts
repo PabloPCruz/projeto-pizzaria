@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FLAVORS } from './best-flavors.mock';
+import { FLAVORS } from '../../../../mocks/mock-flavors/best-flavors.mock';
 
 @Component({
   standalone: false,

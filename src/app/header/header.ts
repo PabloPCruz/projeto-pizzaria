@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { } from '@angular/material/core'
 import { trigger, transition, style, animate } from '@angular/animations';
+import { OrderComponent } from '../order/order';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
-  standalone: false,
   selector: 'app-header',
   templateUrl: './header.html',
   styleUrl: './header.css',
@@ -18,5 +18,11 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class Header {
+  constructor(private dialogBox: MatDialog) { }
 
+  openPedidoDialog() {
+    this.dialogBox.open(OrderComponent, {
+      width: '600px',
+    });
+  }
 }

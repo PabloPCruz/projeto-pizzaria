@@ -80,7 +80,7 @@ a:focus {
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-weight: 500;
     font-size: 1.4rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.08rem;
     font-family: "Bangers", system-ui;
     transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 3px 3px 5px rgba(77, 45, 17, 0.5);
@@ -93,35 +93,23 @@ a:focus {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
-.header-toolbar-actions {
-    color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-}
-
-.header-toolbar-actions span {
-    color: #f5f1f1;
-    background: rgba(227, 247, 129, 0.438);
-    cursor: pointer;
-    padding: 12px 18px;
-    border-radius: 8px;
+.header-toolbar-actions button {
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    font-weight: 500;
-    font-size: 1.7rem;
-    letter-spacing: 1px;
     font-family: "Bangers", system-ui;
+    padding: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(40, 40, 40, 0.25);
+    border: none;
+    transform: all 0.3s ease-in-out;
     transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-right: 25px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.581);
+    letter-spacing: 0.08rem;
 }
 
-.header-toolbar-actions span:hover {
-    color: #ffffff;
-    background: rgba(255, 251, 0, 0.45);
+.header-toolbar-actions button:hover {
+    color: #d5d55b;
+    background: rgba(60, 60, 60, 0.45);
     transform: scale(1.04) translateY(-1px);
-    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.581); */
 }
