@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 
 // components
-import { Menu } from './menu/menu';
+import { Menu } from './components/menu/menu';
 import { Template } from './template/template';
-import { Contacts } from './contacts/contacts';
+import { Contacts } from './components/contacts/contacts';
 import { Presentation } from './presentation/presentation';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
 
 
 export const routes: Routes = [
@@ -23,5 +24,9 @@ export const routes: Routes = [
     {
         path: 'history',
         component: Presentation
+    },
+    {
+        path: "view-cart",
+        component: ViewCartComponent
     }
 ];

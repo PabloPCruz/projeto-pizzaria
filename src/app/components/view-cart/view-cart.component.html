@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<main class="view-cart-container">
+  <div class="cart-header">
+    <h1>MEUS PEDIDOS</h1>
+  </div>
+
+  <div class="cart-content">
+    <!-- Seção de Itens do Carrinho -->
+    <div class="cart-items-section" *ngIf="cartItems.length > 0; else emptyCart">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <div class="item-header">
+          <div class="item-number">
+            <span>Pedido {{ cartItems.indexOf(item) + 1 }}</span>
+          </div>
+          <div class="item-details">
+            <p class="item-flavors">
+              <strong>{{ item.tamanho.charAt(0).toUpperCase() + item.tamanho.slice(1).toLowerCase() }}</strong> | {{ getSaboresFormatados(item.sabores) }}
+            </p>
+          </div>
+          <div class="item-actions">
+            <button class="btn-remove" (click)="removerItem(item.id)">REMOVER</button>
+          </div>
+        </div>
+
+        <div class="item-observations" *ngIf="item.observacoes">
+          <strong>OBSERVAÇÕES:</strong>
+          <p>{{ item.observacoes }}</p>
+        </div>
+
+        <div class="item-details-grid">
+          <div class="detail-item">
+            <strong>Borda:</strong>
+            <p>{{ getBoridasFormatadas(item.borda) }}</p>
+          </div>
+          <div class="detail-item">
+            <strong>Bebidas:</strong>
+            <p>{{ getBebidasFormatadas(item.bebida) }}</p>
+          </div>
+        </div>
+
+        <div class="item-footer">
+          <div class="quantity-control">
+            <span>QUANTIDADE</span>
+            <div class="quantity-buttons">
+              <button (click)="atualizarQuantidade(item.id, item.quantidade - 1)" [disabled]="item.quantidade <= 1">-</button>
+              <input type="number" [(ngModel)]="item.quantidade" (change)="atualizarQuantidade(item.id, item.quantidade)" readonly>
+              <button (click)="atualizarQuantidade(item.id, item.quantidade + 1)">+</button>
+            </div>
+          </div>
+          <div class="item-value">
+            <span>VALOR</span>
+            <p>R${{ (item.valor * item.quantidade).toFixed(2) }}</p>
+          </div>
+        </div>
+
+        <div class="item-address">
+          <strong>📍 Endereço de Entrega:</strong>
+          <p>{{ item.endereco.rua }}, {{ item.endereco.numero }} {{ item.endereco.complemento ? '- ' + item.endereco.complemento : '' }} - {{ item.endereco.bairro }}, {{ item.endereco.cidade }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção de Resumo do Pedido -->
+    <div class="cart-summary">
+      <h2>RESUMO DO PEDIDO</h2>
+
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span>R${{ subtotal.toFixed(2) }}</span>
+      </div>
+
+      <div class="summary-row">
+        <span>Taxa de entrega:</span>
+        <span>R${{ taxaEntrega.toFixed(2) }}</span>
+      </div>
+
+      <div class="summary-row" *ngIf="desconto > 0">
+        <span>Descontos:</span>
+        <span>- R${{ desconto.toFixed(2) }}</span>
+      </div>
+
+      <div class="summary-total">
+        <span>TOTAL: R${{ total.toFixed(2) }}</span>
+      </div>
+
+      <button class="btn-finalize" (click)="finalizarPedido()" [disabled]="cartItems.length === 0">
+        FINALIZAR PEDIDO
+      </button>
+    </div>
+  </div>
+
+  <!-- Carrinho Vazio -->
+  <ng-template #emptyCart>
+    <div class="empty-cart">
+      <img src="/assets/img-icons/icone-view-cart.png" alt="Carrinho vazio">
+      <h2>Seu carrinho está vazio! 🛒</h2>
+      <p>Que pena! Parece que você ainda não adicionou nenhum pedido.</p>
+      <p class="empty-cart-hint">Clique em <strong>"Faça seu pedido"</strong> para adicionar uma deliciosa pizza ao seu carrinho! 🍕</p>
+      <a routerLink="/" class="back-link">← Voltar para início</a>
+    </div>
+  </ng-template>
+</main>

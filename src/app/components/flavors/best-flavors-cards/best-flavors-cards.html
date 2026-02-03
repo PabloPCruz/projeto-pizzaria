@@ -1,0 +1,15 @@
+<div class="flavors-cards-container">
+    <mat-card class="flavor-card" *ngFor="let sabor of sabores">
+        <img mat-card-image [src]="sabor.img" [alt]="sabor.sabor">
+        <mat-card-content>
+            <div class="flavor-name-overlay">
+                <span>{{sabor.sabor}}</span>
+            </div>
+            <div class="flavor-ingredients">
+                Ingredientes: {{sabor.ingredientes}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<button class="menu-complete" routerLink="/menu">CARDAPIO COMPLETO</button>
