@@ -105,7 +105,7 @@
 
   <mat-dialog-actions align="end">
     <button mat-button (click)="closeDialog()">Cancelar</button>
-    <button mat-raised-button color="primary" (click)="confirmarPedido()" [disabled]="!enderecoSalvo">ADICIONAR
+    <button mat-raised-button color="primary" (click)="confirmarPedido()" [disabled]="!enderecoSalvo || nome.trim() === '' || tamanho.trim() === '' || sabores.length === 0">ADICIONAR
       PEDIDO</button>
   </mat-dialog-actions>
 </div>

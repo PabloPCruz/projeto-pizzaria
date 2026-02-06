@@ -354,6 +354,14 @@ textarea.mat-mdc-input-element {
   transition: transform 0.1s !important;
 }
 
+.mat-mdc-raised-button[color="primary"]:disabled {
+  background: #cccccc !important;
+  color: #999999 !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
 /* ===== VALIDAÇÃO ===== */
 .mat-mdc-form-field.ng-invalid.ng-touched .mat-mdc-form-field-flex {
   border-color: #f44336 !important;

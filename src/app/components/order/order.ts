@@ -142,41 +142,59 @@ export class OrderComponent implements OnInit {
     });
   }
 
+  private isFormValid(): boolean {
+    // Valida todos os campos obrigatórios
+    return (
+      this.nome.trim() !== '' &&
+      this.tamanho.trim() !== '' &&
+      this.sabores.length > 0 &&
+      this.enderecoSalvo &&
+      this.endereco !== null
+    );
+  }
+
   confirmarPedido(): void {
-    if (this.enderecoSalvo && this.endereco) {
-      const cartItem: CartItem = {
-        nome: this.nome,
-        tamanho: this.formatService.formatarTamanho(this.tamanho),
-        sabores: this.sabores,
-        borda: this.borda as any,
-        bebida: this.bebida as any,
-        observacoes: this.observacoes,
-        cep: this.endereco.cep,
-        rua: this.endereco.rua,
-        number: this.endereco.numero,
-        complemento: this.endereco.complemento,
-        bairro: this.endereco.bairro,
-        cidade: this.endereco.cidade,
-        id: '',
-        quantidade: 1,
-        valor: 29.90,
-        data: new Date(),
-        endereco: this.endereco
-      };
-
-      this.cartService.addToCart(cartItem);
+    if (!this.isFormValid()) {
+      const camposFaltando = [];
+      if (this.nome.trim() === '') camposFaltando.push('Nome');
+      if (this.tamanho.trim() === '') camposFaltando.push('Tamanho da pizza');
+      if (this.sabores.length === 0) camposFaltando.push('Sabor da pizza');
+      if (!this.enderecoSalvo) camposFaltando.push('Endereço');
       
-      if (this.dialogRef) {
-        this.dialogRef.close(cartItem);
-      }
-
-      // Redirecionar para o carrinho após 500ms
-      setTimeout(() => {
-        this.router.navigate(['/view-cart']);
-      }, 500);
-    } else {
-      alert('Por favor, cadastre um endereço antes de confirmar o pedido');
+      alert(`Por favor, preencha os campos obrigatórios: ${camposFaltando.join(', ')}`);
+      return;
     }
+
+    const cartItem: CartItem = {
+      nome: this.nome,
+      tamanho: this.formatService.formatarTamanho(this.tamanho),
+      sabores: this.sabores,
+      borda: this.borda as any,
+      bebida: this.bebida as any,
+      observacoes: this.observacoes,
+      cep: this.endereco!.cep,
+      rua: this.endereco!.rua,
+      number: this.endereco!.numero,
+      complemento: this.endereco!.complemento,
+      bairro: this.endereco!.bairro,
+      cidade: this.endereco!.cidade,
+      id: '',
+      quantidade: 1,
+      valor: 29.90,
+      data: new Date(),
+      endereco: this.endereco!
+    };
+
+    this.cartService.addToCart(cartItem);
+    
+    if (this.dialogRef) {
+      this.dialogRef.close(cartItem);
+    }
+
+    // Redirecionar para o carrinho após 500ms
+    setTimeout(() => {
+      this.router.navigate(['/view-cart']);
+    }, 500);
   }
 
   private markFormGroupTouched(formGroup: FormGroup): void {
