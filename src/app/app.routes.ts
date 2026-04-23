@@ -12,21 +12,26 @@ export const routes: Routes = [
     {
         path: '',
         component: Template, // página única com todas as seções
+        data: { animation: 'home' }
     },
     {
         path: 'menu',
-        component: Menu
+        component: Menu,
+        data: { animation: 'menu' }
     },
     {
         path: 'contacts',
-        component: Contacts
+        component: Contacts,
+        data: { animation: 'contacts' }
     },
     {
         path: 'history',
-        component: Presentation
+        component: Presentation,
+        data: { animation: 'history' }
     },
     {
         path: "view-cart",
-        component: ViewCartComponent
+        component: ViewCartComponent,
+        data: { animation: 'cart' }
     }
 ];

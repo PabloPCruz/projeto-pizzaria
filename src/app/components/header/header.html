@@ -4,8 +4,8 @@
     </li>
     <li class="header-toolbar-links">
         <span> <a routerLink="/menu">Cardápio</a></span>
-        <span> <a routerLink="/" fragment="contacts">Contato</a></span>
-        <span> <a routerLink="/" fragment="history">Nossa história</a> </span>
+        <span> <a routerLink="/" fragment="contacts" (click)="navigateToSection('contacts', $event)">Contato</a></span>
+        <span> <a routerLink="/" fragment="history" (click)="navigateToSection('history', $event)">Nossa história</a> </span>
     </li>
     <li class="header-toolbar-actions">
         <button mat-button color="accent" (click)="openPedidoDialog()">

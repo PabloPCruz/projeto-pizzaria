@@ -48,9 +48,13 @@
     </mat-form-field>
 
     <!-- Campo Sabor da Pizza -->
+    <div class="sabores-message" *ngIf="mensagemMaximoSabores">
+      Máximo de sabores atingido para o tamanho selecionado
+    </div>
+
     <mat-form-field appearance="fill">
       <mat-label>Sabor da pizza</mat-label>
-      <mat-select [(ngModel)]="sabores" (selectionChange)="onSaborChange()" name="sabores" multiple required="true"
+      <mat-select #saboresSelect [(ngModel)]="sabores" (selectionChange)="onSaborChange()" name="sabores" multiple required="true"
         [disabled]="maxSabores === 0">
         <mat-option value="Calabresa">Calabresa</mat-option>
         <mat-option value="Margherita">Margherita</mat-option>
@@ -59,11 +63,6 @@
         <mat-option value="Frango">Frango com Catupiry</mat-option>
         <mat-option value="Portuguesa">Portuguesa</mat-option>
       </mat-select>
-
-      <!-- Mensagem de máximo de sabores -->
-      <div class="sabores-message" *ngIf="mensagemMaximoSabores">
-        Máximo de sabores atingido
-      </div>
     </mat-form-field>
 
     <!-- Campo Borda (Opcional) -->
@@ -105,7 +104,11 @@
 
   <mat-dialog-actions align="end">
     <button mat-button (click)="closeDialog()">Cancelar</button>
-    <button mat-raised-button color="primary" (click)="confirmarPedido()" [disabled]="!enderecoSalvo || nome.trim() === '' || tamanho.trim() === '' || sabores.length === 0">ADICIONAR
-      PEDIDO</button>
+    <div class="confirm-order-block">
+      <p class="address-status address-status--ok" *ngIf="enderecoSalvo" aria-live="polite">Endereço preenchido com sucesso!</p>
+      <p class="address-status address-status--error" *ngIf="!enderecoSalvo" aria-live="polite">Por favor, preencha o endereço para adicionar o seu pedido</p>
+      <button mat-raised-button color="primary" (click)="confirmarPedido()" [disabled]="!enderecoSalvo || nome.trim() === '' || tamanho.trim() === '' || sabores.length === 0">ADICIONAR
+        PEDIDO</button>
+    </div>
   </mat-dialog-actions>
 </div>

@@ -10,7 +10,7 @@ import { CartItem } from './cart.service';
 })
 export class CartCalculationService {
   
-  private taxaEntrega = 10.00;
+  private taxaEntrega = 0;
   private desconto = 0;
 
   /**

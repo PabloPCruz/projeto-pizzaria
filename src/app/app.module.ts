@@ -13,7 +13,8 @@ import { OrderGeneralModule } from './components/order-general.module';
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
   scrollPositionRestoration: 'enabled',
-  scrollOffset: [0, 64],
+  scrollOffset: [0, 110],
+  onSameUrlNavigation: 'reload',
 };
 
 @NgModule({

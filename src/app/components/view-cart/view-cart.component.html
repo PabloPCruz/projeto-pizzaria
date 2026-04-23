@@ -70,7 +70,7 @@
         <span>R${{ subtotal.toFixed(2) }}</span>
       </div>
 
-      <div class="summary-row">
+      <div class="summary-row" *ngIf="taxaEntrega > 0">
         <span>Taxa de entrega:</span>
         <span>R${{ taxaEntrega.toFixed(2) }}</span>
       </div>

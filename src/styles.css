@@ -1,6 +1,19 @@
+:root {
+    --header-offset: clamp(96px, 12vw, 136px);
+    --content-max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,7 +26,14 @@ html {
     scroll-behavior: smooth;
 }
 
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 section {
-    padding-top: 80px;
-    margin-top: -80px;
+    padding-top: var(--header-offset);
+    margin-top: calc(var(--header-offset) * -1);
 }

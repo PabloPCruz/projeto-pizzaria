@@ -1,6 +1,7 @@
-import { Component, OnInit, Optional } from '@angular/core';
+import { Component, OnInit, Optional, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { MatSelect } from '@angular/material/select';
 import { OrderService } from '../../services/order.service';
 import { CartService, CartItem } from '../../services/cart.service';
 import { OrderData } from '../../interfaces/order-data.interface';
@@ -16,6 +17,8 @@ import { FormatService } from '../../services/format.service';
   styleUrls: ['./order.css']
 })
 export class OrderComponent implements OnInit {
+  @ViewChild('saboresSelect') saboresSelect?: MatSelect;
+
   orderForm!: FormGroup;
   bebidasSelecionadas: Bebida[] = [];
   
@@ -91,16 +94,33 @@ export class OrderComponent implements OnInit {
     this.sabores = [];
     this.saboresAnterior = [];
     this.mensagemMaximoSabores = false;
+    this.closeSaboresSelect();
   }
 
   onSaborChange(): void {
+    if (this.maxSabores <= 0) {
+      this.mensagemMaximoSabores = false;
+      return;
+    }
+
     if (this.sabores.length > this.maxSabores) {
       // Restaura o estado anterior se exceder o limite
       this.sabores = [...this.saboresAnterior];
       this.mensagemMaximoSabores = true;
+      this.closeSaboresSelect();
     } else {
       this.saboresAnterior = [...this.sabores];
-      this.mensagemMaximoSabores = this.sabores.length === this.maxSabores && this.maxSabores > 0;
+      this.mensagemMaximoSabores = this.sabores.length === this.maxSabores;
+
+      if (this.mensagemMaximoSabores) {
+        this.closeSaboresSelect();
+      }
+    }
+  }
+
+  private closeSaboresSelect(): void {
+    if (this.saboresSelect?.panelOpen) {
+      setTimeout(() => this.saboresSelect?.close(), 0);
     }
   }
 
@@ -129,7 +149,8 @@ export class OrderComponent implements OnInit {
 
   abrirFormularioEndereco(): void {
     const dialogRef = this.dialog.open(AddressFormComponent, {
-      width: '500px',
+      width: 'min(500px, 95vw)',
+      maxWidth: '95vw',
       data: this.endereco,
       panelClass: 'address-form-dialog'
     });
