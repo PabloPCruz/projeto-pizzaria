@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Cadastrar Endereço</h2>
+
+<mat-dialog-content>
+
+  <div class="address-form-grid">
+    <!-- Campo CEP -->
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>CEP</mat-label>
+      <input matInput [(ngModel)]="cep" name="cep" required="" (blur)="buscarCep()" [class.cep-erro]="cepErro">
+      <mat-spinner *ngIf="cepCarregando" diameter="20" matSuffix></mat-spinner>
+    </mat-form-field>
+
+    <!-- Campo Rua -->
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Rua</mat-label>
+      <input matInput [(ngModel)]="rua" name="rua" required="" [readonly]="cepCarregando">
+    </mat-form-field>
+
+    <!-- Campo Número -->
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Número</mat-label>
+      <input matInput [(ngModel)]="numero" name="numero" required="" type="text" #numeroInput>
+    </mat-form-field>
+
+    <!-- Campo Complemento -->
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Complemento</mat-label>
+      <input matInput [(ngModel)]="complemento" name="complemento" >
+    </mat-form-field>
+
+    <!-- Campo Bairro -->
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Bairro</mat-label>
+      <input matInput [(ngModel)]="bairro" name="bairro" required="" [readonly]="cepCarregando">
+    </mat-form-field>
+
+    <!-- Campo Cidade -->
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Cidade</mat-label>
+      <input matInput [(ngModel)]="cidade" name="cidade" required="" [readonly]="cepCarregando">
+    </mat-form-field>
+  </div>
+
+  <p class="cep-erro-msg" *ngIf="cepErro">CEP não encontrado</p>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="confirmarEndereco()" [disabled]="!isValid()">SALVAR ENDEREÇO</button>
+</mat-dialog-actions>

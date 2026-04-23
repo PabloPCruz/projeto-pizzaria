@@ -1,0 +1,21 @@
+<ul class="header-toolbar">
+    <li class="header-toolbar-logo">
+        <a routerLink="/"> <img src="assets/img/logo-pizzaria.png" alt="Logo Pizzaria"> </a>
+    </li>
+    <li class="header-toolbar-links">
+        <span> <a routerLink="/menu">Cardápio</a></span>
+        <span> <a routerLink="/" fragment="contacts" (click)="navigateToSection('contacts', $event)">Contato</a></span>
+        <span> <a routerLink="/" fragment="history" (click)="navigateToSection('history', $event)">Nossa história</a> </span>
+    </li>
+    <li class="header-toolbar-actions">
+        <button mat-button color="accent" (click)="openPedidoDialog()">
+            Faça seu pedido
+        </button>
+    </li>
+    <li class="cart-icon-container">
+        <a routerLink="/view-cart" class="cart-link">
+            <img src="assets/img-icons/icone-view-cart.png" alt="Carrinho" class="cart-icon">
+            <span class="cart-badge" *ngIf="(cartItemsCount$ | async) as count" [hidden]="!count || count === 0">{{ count }}</span>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap');
+
+/* ===== CONTAINER E ESTRUTURA PRINCIPAL ===== */
+.order-dialog-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.order-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  width: 100%;
+}
+
+.address-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  gap: 1rem;
+}
+
+.address-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.address-button {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border: none;
+  background: linear-gradient(135deg, #fff9c4, #fff8e1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.address-button:hover {
+  background: linear-gradient(135deg, #fff59d, #fff9c4);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(255, 87, 34, 0.2) !important;
+}
+
+.address-button.address-saved {
+  background: linear-gradient(135deg, #a5d6a7, #81c784);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3) !important;
+}
+
+.address-button.address-saved:hover {
+  background: linear-gradient(135deg, #81c784, #66bb6a);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4) !important;
+}
+
+.address-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.address-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.address-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.address-placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #999;
+  margin: 0;
+  font-style: italic;
+}
+
+.alter-button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mat-mdc-dialog-container {
+  border-radius: 16px !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2) !important;
+  overflow: visible !important;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%) !important;
+}
+
+mat-dialog-content {
+  padding: 1.5rem !important;
+  max-height: calc(90vh - 240px) !important;
+  overflow-y: auto !important;
+  background: #fff !important;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+mat-dialog-actions {
+  padding: 1.5rem !important;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%) !important;
+  border-top: 1px solid #e0e0e0 !important;
+  flex-shrink: 0;
+}
+
+.confirm-order-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+}
+
+.address-status {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.address-status--ok {
+  color: #2e7d32;
+}
+
+.address-status--error {
+  color: #c62828;
+}
+
+/* ===== TÍTULOS E CABEÇALHOS ===== */
+h2[mat-dialog-title] {
+  font-family: 'Fredoka', cursive !important;
+  font-weight: 600 !important;
+  font-size: 2rem !important;
+  color: #d32f2f !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  position: relative !important;
+}
+
+h2[mat-dialog-title]::after {
+  content: '🍕' !important;
+  position: absolute !important;
+  right: -3rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 1.5rem !important;
+  animation: bounce 2s infinite !important;
+  display: none;
+}
+
+h3 {
+  font-family: 'Fredoka', cursive !important;
+  font-weight: 500 !important;
+  color: #ff5722 !important;
+  font-size: 1.4rem !important;
+  margin: 2rem 0 1rem !important;
+  padding: 0.75rem 1rem !important;
+  background: linear-gradient(90deg, #fff3e0, #ffe0b2) !important;
+  border-left: 4px solid #ff5722 !important;
+  border-radius: 0 8px 8px 0 !important;
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.1) !important;
+}
+
+h3::before {
+  content: '📍' !important;
+  margin-right: 0.5rem !important;
+}
+
+/* ===== FORMULÁRIOS - CONFIGURAÇÃO GERAL ===== */
+.mat-mdc-form-field {
+  width: 100% !important;
+  margin-bottom: 1rem !important;
+  font-family: 'Roboto', sans-serif !important;
+  animation: fadeInUp 0.6s ease forwards !important;
+}
+
+.mat-mdc-form-field:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.mat-mdc-form-field:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.mat-mdc-form-field:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.mat-mdc-form-field:nth-child(4) {
+  animation-delay: 0.4s !important;
+}
+
+.mat-mdc-form-field:nth-child(5) {
+  animation-delay: 0.5s !important;
+}
+
+.mat-mdc-form-field-appearance-fill .mat-mdc-form-field-flex {
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.mat-mdc-form-field:hover .mat-mdc-form-field-flex {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mat-mdc-form-field-appearance-fill.mat-focused .mat-mdc-form-field-flex {
+  background: #fff !important;
+  border-color: #d32f2f !important;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.1) !important;
+}
+
+/* ===== LABELS E TEXTOS ===== */
+.mat-mdc-form-field .mat-mdc-floating-label {
+  font-weight: 500 !important;
+  color: #5d4037 !important;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #d32f2f !important;
+}
+
+/* ===== INPUTS E SELECTS ===== */
+.mat-mdc-input-element {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 1rem !important;
+  color: #333 !important;
+}
+
+.mat-mdc-select {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 1rem !important;
+  color: #333 !important;
+}
+
+textarea.mat-mdc-input-element {
+  resize: none !important;
+  min-height: 80px !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+/* ===== DROPDOWN E OPÇÕES ===== */
+.mat-mdc-select-panel {
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  max-height: 300px !important;
+}
+
+.mat-mdc-option {
+  font-family: 'Roboto', sans-serif !important;
+  padding: 12px 16px !important;
+  transition: all 0.2s ease !important;
+}
+
+.mat-mdc-option:hover {
+  color: #d32f2f !important;
+}
+
+.mat-mdc-option.mat-mdc-option-active {
+  color: #5d4037 !important;
+  font-weight: 500 !important;
+}
+
+.mat-mdc-option.mat-mdc-option-active:hover {
+  color: #b71c1c !important;
+  font-weight: 500 !important;
+}
+
+/* ===== CAMPOS ESPECÍFICOS (tamanho, sabores, borda, bebida) ===== */
+.mat-mdc-form-field:has([name="tamanho"]) .mat-mdc-form-field-flex,
+.mat-mdc-form-field:has([name="sabores"]) .mat-mdc-form-field-flex,
+.mat-mdc-form-field:has([name="borda"]) .mat-mdc-form-field-flex,
+.mat-mdc-form-field:has([name="bebida"]) .mat-mdc-form-field-flex {
+  background: linear-gradient(135deg, rgba(160, 82, 45, 0.1), rgba(160, 82, 45, 0.2)) !important;
+  border: 1px solid rgba(160, 82, 45, 0.3) !important;
+}
+
+.mat-mdc-form-field:has([name="tamanho"]) .mat-mdc-text-field-wrapper,
+.mat-mdc-form-field:has([name="sabores"]) .mat-mdc-text-field-wrapper,
+.mat-mdc-form-field:has([name="borda"]) .mat-mdc-text-field-wrapper,
+.mat-mdc-form-field:has([name="bebida"]) .mat-mdc-text-field-wrapper {
+  background: linear-gradient(135deg, rgba(160, 82, 45, 0.1), rgba(160, 82, 45, 0.2)) !important;
+}
+
+.mat-mdc-form-field:has([name="tamanho"]).mat-focused .mat-mdc-form-field-flex,
+.mat-mdc-form-field:has([name="sabores"]).mat-focused .mat-mdc-form-field-flex,
+.mat-mdc-form-field:has([name="borda"]).mat-focused .mat-mdc-form-field-flex,
+.mat-mdc-form-field:has([name="bebida"]).mat-focused .mat-mdc-form-field-flex {
+  background: linear-gradient(135deg, rgba(160, 82, 45, 0.15), rgba(160, 82, 45, 0.25)) !important;
+  border-color: #a0522d !important;
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.2) !important;
+}
+
+.mat-mdc-form-field:has([name="tamanho"]) .mat-mdc-floating-label,
+.mat-mdc-form-field:has([name="sabores"]) .mat-mdc-floating-label,
+.mat-mdc-form-field:has([name="borda"]) .mat-mdc-floating-label,
+.mat-mdc-form-field:has([name="bebida"]) .mat-mdc-floating-label {
+  color: #a0522d !important;
+  font-weight: 600 !important;
+}
+
+/* ===== BOTÕES ===== */
+.mat-mdc-button,
+.mat-mdc-raised-button {
+  font-family: 'Fredoka', cursive !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  border-radius: 25px !important;
+  padding: 0.75rem 2rem !important;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.mat-mdc-button {
+  color: #757575 !important;
+  border: 2px solid #e0e0e0 !important;
+  margin-right: 1rem !important;
+}
+
+.mat-mdc-button:hover {
+  background: #f5f5f5 !important;
+  border-color: #d32f2f !important;
+  color: #d32f2f !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mat-mdc-raised-button[color="primary"] {
+  background: linear-gradient(45deg, #d32f2f, #ff5722) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.mat-mdc-raised-button[color="primary"]:hover {
+  background: linear-gradient(45deg, #b71c1c, #d84315) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3) !important;
+}
+
+.mat-mdc-raised-button[color="primary"]::before {
+  display: none !important;
+}
+
+.mat-mdc-raised-button[color="primary"]:active {
+  transform: scale(0.98) !important;
+  transition: transform 0.1s !important;
+}
+
+.mat-mdc-raised-button[color="primary"]:disabled {
+  background: #cccccc !important;
+  color: #999999 !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+/* ===== VALIDAÇÃO ===== */
+.mat-mdc-form-field.ng-invalid.ng-touched .mat-mdc-form-field-flex {
+  border-color: #f44336 !important;
+  background: linear-gradient(135deg, #ffebee, #ffcdd2) !important;
+}
+
+.mat-mdc-form-field.ng-valid.ng-touched .mat-mdc-form-field-flex {
+  border-color: #4caf50 !important;
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9) !important;
+}
+
+/* ===== SCROLLBAR PERSONALIZADA ===== */
+mat-dialog-content::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+mat-dialog-content::-webkit-scrollbar-track {
+  background: #f5f5f5 !important;
+  border-radius: 3px !important;
+}
+
+mat-dialog-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #d32f2f, #ff5722) !important;
+  border-radius: 3px !important;
+}
+
+mat-dialog-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #b71c1c, #d84315) !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .mat-mdc-dialog-container {
+    margin: 1rem !important;
+    max-height: 90vh !important;
+  }
+
+  h2[mat-dialog-title] {
+    font-size: 1.5rem !important;
+    padding: 1rem !important;
+  }
+
+  mat-dialog-content {
+    padding: 1rem !important;
+    max-height: calc(90vh - 220px) !important;
+  }
+
+  mat-dialog-actions {
+    padding: 1rem !important;
+    flex-direction: column !important;
+  }
+
+  .mat-mdc-button,
+  .mat-mdc-raised-button {
+    width: 100% !important;
+    margin: 0.25rem 0 !important;
+  }
+
+  .confirm-order-block {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .address-status {
+    text-align: left;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .order-header {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+  }
+
+  .address-section {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+  }
+
+  h2[mat-dialog-title] {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-header {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .address-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .address-left {
+    width: 100%;
+  }
+
+  .alter-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.15rem !important;
+    margin: 1.25rem 0 0.75rem !important;
+  }
+}
+
+@media (max-width: 560px) {
+  h2[mat-dialog-title] {
+    font-size: 1.3rem !important;
+  }
+
+  mat-dialog-content {
+    max-height: calc(90vh - 190px) !important;
+    padding: 0.85rem !important;
+  }
+
+  .address-button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  .address-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .address-text,
+  .address-placeholder {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(-50%) translateZ(0);
+  }
+
+  40% {
+    transform: translateY(-50%) translateZ(0) translateY(-8px);
+  }
+
+  60% {
+    transform: translateY(-50%) translateZ(0) translateY(-4px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MENSAGEM DE MÁXIMO DE SABORES ===== */
+.sabores-message {
+  margin: 0.1rem 0 0.8rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(211, 47, 47, 0.35);
+  background: linear-gradient(135deg, #ffe5e5, #ffd5d5);
+  color: #a41818;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.14);
+  animation: fadeInUp 0.2s ease;
+  position: sticky;
+  top: 0.2rem;
+  z-index: 6;
+}
+
+@media (max-width: 560px) {
+  .sabores-message {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.7rem;
+  }
+}

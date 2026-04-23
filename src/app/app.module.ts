@@ -1,32 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatCardModule } from '@angular/material/card';
 import { RouterModule, ExtraOptions } from '@angular/router';
 
 import { App } from './app'; // seu componente raiz
-import { Header } from './header/header';
-import { FlavorsModule } from './flavors/flavors.module';
 import { Presentation } from './presentation/presentation';
-import { Contacts } from './contacts/contacts';
-import { Menu } from './menu/menu';
+import { Contacts } from './components/contacts/contacts';
 import { routes } from './app.routes';
 import { Template } from './template/template';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrderGeneralModule } from './components/order-general.module';
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
   scrollPositionRestoration: 'enabled',
+  scrollOffset: [0, 110],
+  onSameUrlNavigation: 'reload',
 };
 
 @NgModule({
-  declarations: [App, Header, Presentation, Contacts, Menu, Template],
+  declarations: [App, Presentation, Contacts, Template],
   imports: [
     BrowserModule,
-    FlavorsModule,
-    MatCardModule,
+    OrderGeneralModule,
     RouterModule.forRoot(routes, routerOptions),
-    BrowserAnimationsModule,
-    
+    BrowserAnimationsModule
   ],
   bootstrap: [App]
 })

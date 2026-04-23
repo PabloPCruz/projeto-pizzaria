@@ -7,8 +7,9 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
-  ],
+    "src/**/*.ts",
+    "api/**/*.ts"
+, "mocks/mock-flavors/best-flavors.mock.ts", "mocks/mock-flavors/all-flavors.mock.ts", "mocks/mock-flavors/doces-especiais.mock.ts", "mocks/mock-flavors/doces-tradicional.mock.ts", "mocks/mock-flavors/especial-flavors.mock.ts", "mocks/mock-flavors/tradicional-flavors.mock.ts", "test/presentation.spec.ts", "test/template.spec.ts", "test/order.spec.ts", "test/menu.spec.ts", "test/header.spec.ts", "test/flavors.spec.ts", "test/contacts.spec.ts", "test/flavors-cards.spec.ts", "test/app.spec.ts", "test/view-cart.component.spec.ts"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]
