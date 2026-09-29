@@ -1,11 +1,11 @@
 <form id="checkout-form" novalidate (ngSubmit)="submit()" aria-labelledby="checkout-title" *ngIf="draft$ | async as draft">
-  <h2 id="checkout-title" class="text-2xl font-semibold sm:text-3xl">Finalizar pedido</h2>
-  <p class="mt-1 text-sm text-cream-muted">Preencha seus dados. O pedido é enviado pelo WhatsApp para a loja confirmar.</p>
+  <h2 id="checkout-title" class="title-sub">Finalizar pedido</h2>
+  <p class="mt-1 text-sm leading-relaxed text-cream-muted">Preencha seus dados. O pedido é enviado pelo WhatsApp para a loja confirmar.</p>
 
   <!-- Resumo de erros -->
   <div role="alert" [hidden]="errorList.length === 0">
     @if (errorList.length > 0) {
-      <div class="mt-6 rounded-2xl border border-danger/60 bg-danger/10 p-5" id="checkout-errors">
+      <div class="mt-6 animate-shake rounded-2xl border border-danger/60 bg-danger/10 p-4 sm:p-5" id="checkout-errors">
         <p class="flex items-center gap-2 font-semibold text-danger">
           <lucide-icon name="circle-alert" [size]="20"></lucide-icon>
           Confira {{ errorList.length === 1 ? 'este ponto' : 'estes pontos' }} antes de enviar
@@ -24,7 +24,7 @@
 
   <!-- Seus dados -->
   <fieldset class="mt-8">
-    <legend class="mb-4 font-display text-xl font-semibold text-gold">Seus dados</legend>
+    <legend class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Seus dados</legend>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <app-text-field
         name="name"
@@ -52,22 +52,28 @@
 
   <!-- Endereço -->
   <fieldset class="mt-8">
-    <legend class="mb-4 font-display text-xl font-semibold text-gold">Endereço de entrega</legend>
+    <legend class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Endereço de entrega</legend>
 
-    <!-- Quem não sabe o CEP preenche o endereço à mão (tudo obrigatório, menos o complemento) -->
-    <label class="mb-4 flex min-h-[44px] cursor-pointer items-center gap-3 text-sm text-cream" for="field-manualAddress">
+    <!-- Quem não sabe o CEP preenche o endereço à mão (tudo obrigatório, menos o complemento).
+         Controle: cartão com interruptor animado; o <input type=checkbox role=switch> real fica dentro do <label>. -->
+    <label class="switch-card mb-4" for="field-manualAddress">
       <input
         id="field-manualAddress"
         type="checkbox"
-        class="h-5 w-5 shrink-0 cursor-pointer accent-[#d4af37]"
+        role="switch"
         aria-describedby="manual-address-hint"
         [checked]="draft.manualAddress"
         (change)="setManualAddress($any($event.target).checked)"
       />
-      <span><strong>Não sei meu CEP.</strong> Quero preencher o endereço manualmente.</span>
+      <span class="switch-card__icon" aria-hidden="true"><lucide-icon name="map-pinned" [size]="20"></lucide-icon></span>
+      <span class="block min-w-0">
+        <span class="block font-semibold leading-snug text-cream">Não sei meu CEP</span>
+        <span class="mt-0.5 block text-sm leading-snug text-cream-muted">Digitar o endereço à mão</span>
+      </span>
+      <span class="switch-track" aria-hidden="true"></span>
     </label>
-    <p id="manual-address-hint" class="mb-4 text-sm text-cream-muted" [hidden]="!draft.manualAddress">
-      Preencha rua, número, bairro, cidade e UF. Só o complemento é opcional.
+    <p id="manual-address-hint" class="hint-in -mt-1" [hidden]="!draft.manualAddress">
+      Preencha rua, número, bairro, cidade e UF. Só o complemento é opcional. Com o CEP conferimos se a sua entrega é grátis.
     </p>
 
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-6">
@@ -121,7 +127,6 @@
         [value]="draft.street"
         [error]="errors['street']"
         (valueChange)="update({ street: $event })"
-        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-2"
@@ -132,7 +137,6 @@
         [value]="draft.number"
         [error]="errors['number']"
         (valueChange)="update({ number: $event })"
-        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-4"
@@ -154,7 +158,6 @@
         [value]="draft.neighborhood"
         [error]="errors['neighborhood']"
         (valueChange)="update({ neighborhood: $event })"
-        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-3"
@@ -165,7 +168,6 @@
         [value]="draft.city"
         [error]="errors['city']"
         (valueChange)="update({ city: $event })"
-        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-1"
@@ -176,7 +178,6 @@
         [value]="draft.state"
         [error]="errors['state']"
         (valueChange)="setState($event)"
-        (blurred)="onAddressBlur()"
       ></app-text-field>
     </div>
 
@@ -188,7 +189,7 @@
 
   <!-- Pagamento -->
   <fieldset class="mt-8">
-    <legend id="payment-legend" class="mb-4 font-display text-xl font-semibold text-gold">Forma de pagamento</legend>
+    <legend id="payment-legend" class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Forma de pagamento</legend>
     <div
       role="radiogroup"
       aria-labelledby="payment-legend"
@@ -207,14 +208,11 @@
             [checked]="draft.payment === p.id"
             (change)="setPayment(p.id)"
           />
-          <span
-            class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-ink-300 transition peer-checked:border-gold peer-checked:bg-gold"
-            aria-hidden="true"
-          ><span class="h-2 w-2 rounded-full bg-ink-900"></span></span>
+          <span class="choice-radio" aria-hidden="true"></span>
           <span class="block">
             <span class="block font-semibold">{{ p.label }}</span>
             @if (p.hint) {
-              <span class="block text-xs text-cream-muted">{{ p.hint }}</span>
+              <span class="block text-sm text-cream-muted">{{ p.hint }}</span>
             }
           </span>
         </label>
@@ -228,7 +226,7 @@
     }
 
     @if (draft.payment === 'dinheiro') {
-      <div class="page-enter mt-4 max-w-sm">
+      <div class="enter mt-4 max-w-sm">
         <app-text-field
           name="changeFor"
           label="Precisa de troco para quanto?"

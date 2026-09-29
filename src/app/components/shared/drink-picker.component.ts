@@ -18,8 +18,8 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
         @for (drink of visibleDrinks(lines); track drink.id) {
           <li
             [id]="'drink-' + drink.id"
-            class="card flex items-center justify-between gap-3 p-3 pl-4 transition"
-            [ngClass]="lines.has(drink.id) ? '!border-gold/70 bg-gold/5' : ''"
+            class="card flex items-center justify-between gap-3 p-3 pl-4 transition-colors duration-base"
+            [ngClass]="lines.has(drink.id) ? '!border-gold/60 bg-gold/[.06]' : ''"
           >
             <span class="flex min-w-0 items-center gap-2.5">
               <lucide-icon [name]="drink.group === 'cerveja' ? 'wine' : 'cup-soda'" [size]="18" class="shrink-0 text-gold"></lucide-icon>
@@ -27,6 +27,7 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
             </span>
             @if (lines.get(drink.id); as line) {
               <app-quantity-stepper
+                class="animate-fade-in"
                 [value]="line.quantity"
                 [min]="0"
                 [label]="drink.label"
@@ -35,7 +36,7 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
             } @else {
               <button
                 type="button"
-                class="min-h-[44px] shrink-0 rounded-full border border-gold/60 px-4 text-sm font-semibold text-gold transition hover:bg-gold/10"
+                class="btn-ghost min-h-[44px] shrink-0 px-4 py-2"
                 (click)="add(drink)"
                 [attr.aria-label]="'Adicionar ' + drink.label + ' ao carrinho'"
               >

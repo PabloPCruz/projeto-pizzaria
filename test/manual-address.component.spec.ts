@@ -8,7 +8,6 @@ import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service
 import { CartService } from '../src/app/services/cart.service';
 
 const flush = () => new Promise<void>((resolve) => setTimeout(resolve));
-const NOMINATIM = (r: { url: string }) => r.url === 'https://nominatim.openstreetmap.org/search';
 const STORE = STORE_INFO.freeDelivery.origin;
 const hit = (km: number) => [
   {
@@ -145,46 +144,43 @@ describe('Checkout: endereço manual ("Não sei meu CEP")', () => {
     expect(checkout.validate()['cep']).toBeTruthy();
   });
 
-  it('endereço manual na área grátis mostra o cartão "Taxa de entrega grátis" ao sair do último campo', () => {
+  it('no modo manual nunca aparece a entrega grátis e nenhuma distância é consultada, mesmo com o endereço da loja', () => {
     turnOnManual();
     fillManualAddress();
-    leave('state');
-    http.expectOne(NOMINATIM).flush(hit(2));
-    fixture.detectChanges();
+    for (const name of ['street', 'number', 'neighborhood', 'city', 'state']) leave(name);
+    http.expectNone(() => true);
 
-    expect(el.querySelector('#delivery-free-inline')?.textContent).toContain('Taxa de entrega grátis para o seu endereço');
-    expect(el.querySelector('app-order-summary #delivery-fee-notice')?.textContent).toContain('Taxa de entrega grátis');
+    expect(el.querySelector('#delivery-free-inline')).toBeNull();
+    expect(el.querySelector('app-order-summary #delivery-fee-notice')?.textContent).toContain('taxa de entrega');
+    expect(el.textContent).not.toContain('Taxa de entrega grátis');
   });
 
-  it('mexer no endereço depois faz o cartão sumir na hora', () => {
+  it('a dica do modo manual explica que o CEP libera a conferência da entrega grátis', () => {
     turnOnManual();
-    fillManualAddress();
-    leave('state');
-    http.expectOne(NOMINATIM).flush(hit(2));
+    expect(el.querySelector('#manual-address-hint')!.textContent).toContain('Com o CEP conferimos se a sua entrega é grátis');
+  });
+
+  it('ligar o modo manual depois de o CEP ter liberado a entrega grátis remove o cartão na hora', () => {
+    type('cep', '82015290');
+    http.expectOne('https://viacep.com.br/ws/82015290/json/').flush({ logradouro: 'Rua Luiz Braille', bairro: 'São Braz', localidade: 'Curitiba', uf: 'PR' });
+    http.expectOne('https://cep.awesomeapi.com.br/json/82015290').flush({ lat: String(STORE.lat), lng: String(STORE.lng) });
     fixture.detectChanges();
     expect(el.querySelector('#delivery-free-inline')).toBeTruthy();
 
-    type('street', 'Rua Outra');
-    expect(el.querySelector('#delivery-free-inline')).toBeNull();
-  });
-
-  it('endereço manual fora dos 3 km ou não confirmado: fica o aviso padrão', () => {
     turnOnManual();
-    fillManualAddress();
-    leave('state');
-    http.expectOne(NOMINATIM).flush(hit(5));
-    fixture.detectChanges();
     expect(el.querySelector('#delivery-free-inline')).toBeNull();
     expect(el.querySelector('app-order-summary #delivery-fee-notice')?.textContent).toContain('taxa de entrega');
   });
 
-  it('não consulta a distância enquanto o endereço está incompleto', () => {
+  it('desligar o modo manual e informar um CEP dentro das regras mostra a entrega grátis de novo', () => {
     turnOnManual();
-    type('street', 'Rua Luiz Braille');
-    leave('street');
-    type('number', '135');
-    leave('number');
-    http.expectNone(NOMINATIM);
+    toggle().click();
+    fixture.detectChanges();
+    type('cep', '82015290');
+    http.expectOne('https://viacep.com.br/ws/82015290/json/').flush({ erro: true });
+    http.expectOne('https://cep.awesomeapi.com.br/json/82015290').flush({ lat: String(STORE.lat), lng: String(STORE.lng) });
+    fixture.detectChanges();
+    expect(el.querySelector('#delivery-free-inline')).toBeTruthy();
   });
 
   it('o modo manual sobrevive a recarregar a página', () => {

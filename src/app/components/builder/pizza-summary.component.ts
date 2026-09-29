@@ -12,7 +12,7 @@ import { BuilderView } from '../../facade/order.facade.service';
       <div class="rule-gold !my-4" aria-hidden="true"></div>
       <dl class="space-y-4 text-sm">
         <div>
-          <dt class="text-xs font-semibold uppercase tracking-widest text-gold">Tamanho</dt>
+          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold">Tamanho</dt>
           <dd class="mt-1">
             @if (size; as s) {
               {{ s.label }} · {{ s.slices }} fatias
@@ -22,7 +22,7 @@ import { BuilderView } from '../../facade/order.facade.service';
           </dd>
         </div>
         <div>
-          <dt class="text-xs font-semibold uppercase tracking-widest text-gold">
+          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold">
             Sabores ({{ view.draft.flavorIds.length }}/{{ view.maxFlavors }})
           </dt>
           <dd class="mt-1">
@@ -38,12 +38,12 @@ import { BuilderView } from '../../facade/order.facade.service';
           </dd>
         </div>
         <div>
-          <dt class="text-xs font-semibold uppercase tracking-widest text-gold">Borda</dt>
+          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold">Borda</dt>
           <dd class="mt-1">{{ crustLabel }}</dd>
         </div>
         @if (view.draft.notes.trim()) {
           <div>
-            <dt class="text-xs font-semibold uppercase tracking-widest text-gold">Observações</dt>
+            <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold">Observações</dt>
             <dd class="mt-1 whitespace-pre-line break-words text-cream-muted">{{ view.draft.notes }}</dd>
           </div>
         }

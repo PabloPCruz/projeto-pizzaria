@@ -36,12 +36,7 @@ import { OrderFacadeService } from '../../facade/order.facade.service';
       </div>
     }
     <ng-template #dot>
-      <span
-        class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-ink-300 transition peer-checked:border-gold peer-checked:bg-gold"
-        aria-hidden="true"
-      >
-        <span class="h-2 w-2 rounded-full bg-ink-900"></span>
-      </span>
+      <span class="choice-radio" aria-hidden="true"></span>
     </ng-template>
   `,
 })

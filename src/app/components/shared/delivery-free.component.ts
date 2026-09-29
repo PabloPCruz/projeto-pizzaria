@@ -6,12 +6,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div
-      class="page-enter relative flex items-center gap-4 overflow-hidden rounded-2xl border border-gold bg-gradient-to-br from-gold/30 via-gold/10 to-transparent shadow-[0_0_28px_-8px_rgba(212,175,55,0.55)]"
+      class="enter-soft relative flex items-center gap-4 overflow-hidden rounded-2xl border border-gold/70 bg-gradient-to-br from-gold/15 to-gold/[.04]"
       [ngClass]="compact ? 'p-3.5' : 'p-5'"
       role="status"
     >
       <span
-        class="flex shrink-0 items-center justify-center rounded-full bg-gold text-ink-900"
+        class="flex shrink-0 animate-check-in items-center justify-center rounded-full bg-gold text-ink-900"
         [ngClass]="compact ? 'h-10 w-10' : 'h-12 w-12'"
         aria-hidden="true"
       >
@@ -28,7 +28,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       <lucide-icon
         name="sparkles"
         [size]="compact ? 18 : 22"
-        class="absolute right-3 top-3 text-gold/60"
+        class="absolute right-3 top-3 hidden text-gold-soft sm:block"
         aria-hidden="true"
       ></lucide-icon>
     </div>

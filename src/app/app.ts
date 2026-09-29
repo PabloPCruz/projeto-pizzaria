@@ -7,10 +7,11 @@ import { filter } from 'rxjs/operators';
   selector: 'app-root',
   templateUrl: './app.html',
   animations: [
+    // Troca de página: a tela nova aparece com fade + subida leve (só opacity/transform, sem salto de layout).
     trigger('routeFadeAnimation', [
       transition('* <=> *', [
-        style({ opacity: 0, transform: 'translateY(10px)' }),
-        animate('320ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+        style({ opacity: 0, transform: 'translateY(8px)' }),
+        animate('280ms cubic-bezier(.22,.61,.36,1)', style({ opacity: 1, transform: 'translateY(0)' })),
       ]),
     ]),
   ],

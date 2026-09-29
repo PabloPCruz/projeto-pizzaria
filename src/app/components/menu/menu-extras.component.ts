@@ -5,9 +5,9 @@ import { MenuFacadeService } from '../../facade/menu.facade.service';
   selector: 'app-menu-extras',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2">
+    <div class="mt-12 grid grid-cols-1 gap-10 sm:mt-16 lg:grid-cols-2">
       <section aria-labelledby="bordas-title">
-        <h2 id="bordas-title" class="text-2xl font-semibold sm:text-3xl">Bordas recheadas</h2>
+        <h2 id="bordas-title" class="title-sub">Bordas recheadas</h2>
         <ul class="card mt-5 divide-y divide-ink-500/50">
           @for (crust of crusts; track crust.id) {
             <li class="flex items-center gap-3 px-5 py-3.5">
@@ -19,7 +19,7 @@ import { MenuFacadeService } from '../../facade/menu.facade.service';
       </section>
 
       <section aria-labelledby="bebidas-title">
-        <h2 id="bebidas-title" class="text-2xl font-semibold sm:text-3xl">Bebidas</h2>
+        <h2 id="bebidas-title" class="title-sub">Bebidas</h2>
         <ul class="card mt-5 divide-y divide-ink-500/50">
           @for (drink of drinks; track drink.id) {
             <li class="flex items-center gap-3 px-5 py-3.5">

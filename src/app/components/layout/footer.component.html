@@ -1,5 +1,5 @@
-<footer class="border-t border-gold/25 bg-ink-950">
-  <div class="container-page grid grid-cols-1 gap-10 py-12 md:grid-cols-3">
+<footer class="border-t border-gold/20 bg-ink-950">
+  <div class="container-page grid grid-cols-1 gap-8 py-10 sm:py-12 md:grid-cols-3">
     <div>
       <div class="flex items-center gap-3">
         <app-logo [height]="52" [decorative]="true"></app-logo>
@@ -17,10 +17,10 @@
     <nav aria-label="Rodapé">
       <h2 class="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-gold">Navegação</h2>
       <ul class="mt-4 space-y-1 text-sm">
-        <li><a routerLink="/" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Início</a></li>
-        <li><a routerLink="/cardapio" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Cardápio</a></li>
-        <li><a routerLink="/montar-pizza" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Monte sua pizza</a></li>
-        <li><a routerLink="/carrinho" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Carrinho</a></li>
+        <li><a routerLink="/" class="link-row inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold"><span class="link-slide">Início</span></a></li>
+        <li><a routerLink="/cardapio" class="link-row inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold"><span class="link-slide">Cardápio</span></a></li>
+        <li><a routerLink="/montar-pizza" class="link-row inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold"><span class="link-slide">Monte sua pizza</span></a></li>
+        <li><a routerLink="/carrinho" class="link-row inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold"><span class="link-slide">Carrinho</span></a></li>
       </ul>
     </nav>
 
@@ -56,7 +56,7 @@
         </li>
       </ul>
       <p class="mt-5 text-sm text-cream-muted">
-        <a [href]="phoneUrl" class="inline-flex min-h-[44px] items-center hover:text-gold">Telefone {{ store.phoneDisplay }}</a><br />
+        <a [href]="phoneUrl" class="link-row inline-flex min-h-[44px] items-center hover:text-gold"><span class="link-slide">Telefone {{ store.phoneDisplay }}</span></a><br />
         <span>WhatsApp {{ store.whatsappDisplay }}</span>
       </p>
     </div>

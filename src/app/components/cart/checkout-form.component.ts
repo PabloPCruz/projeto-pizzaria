@@ -96,11 +96,6 @@ export class CheckoutFormComponent implements OnDestroy {
     setTimeout(() => document.getElementById(manual ? 'field-street' : 'field-cep')?.focus());
   }
 
-  /** Ao sair de um campo do endereço manual, confere a distância até a loja (entrega grátis). */
-  onAddressBlur(): void {
-    this.checkout.refreshAddressZone();
-  }
-
   setChangeFor(value: string): void {
     this.checkout.setChangeFor(value);
     this.revalidate();
