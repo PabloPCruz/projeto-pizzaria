@@ -1,17 +1,17 @@
 <section aria-labelledby="itens-title">
-  <h2 id="itens-title" tabindex="-1" class="text-2xl font-semibold outline-none sm:text-3xl">Seus itens</h2>
+  <h2 id="itens-title" tabindex="-1" class="title-sub outline-none">Seus itens</h2>
   <p class="sr-only" role="status" aria-live="polite">{{ live }}</p>
 
-  <ul class="mt-5 space-y-4">
+  <ul class="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
     @for (pizza of view.pizzas; track pizza.id) {
-      <li class="card p-5" [attr.aria-label]="pizza.title">
+      <li class="card animate-fade-in p-4 sm:p-5" [attr.aria-label]="pizza.title">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
           <div class="min-w-0">
             <h3 data-line-heading tabindex="-1" class="flex items-center gap-2 text-xl font-semibold outline-none">
               <lucide-icon name="pizza" [size]="20" class="shrink-0 text-gold"></lucide-icon>
               {{ pizza.title }}
             </h3>
-            <ul class="mt-2 list-inside list-disc text-sm text-cream" aria-label="Sabores">
+            <ul class="mt-2 list-inside list-disc text-sm text-cream marker:text-gold-soft" aria-label="Sabores">
               @for (flavor of pizza.flavors; track flavor) {
                 <li>{{ flavor }}</li>
               }
@@ -32,7 +32,7 @@
           ></app-quantity-stepper>
 
           @if (isConfirming('pizza', pizza.id)) {
-            <div class="flex items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + pizza.title">
+            <div class="flex animate-fade-in flex-wrap items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + pizza.title">
               <span class="text-sm text-cream-muted">Remover esta pizza?</span>
               <button type="button" [id]="'confirm-pizza-' + pizza.id" class="btn-primary min-h-[44px] px-4 py-2" (click)="confirmRemove('pizza', pizza.id, pizza.title)">Sim, remover</button>
               <button type="button" class="btn-quiet min-h-[44px] px-3 py-2" (click)="cancelRemove()">Cancelar</button>
@@ -54,7 +54,7 @@
     }
 
     @for (drink of view.drinks; track drink.id) {
-      <li class="card p-5">
+      <li class="card animate-fade-in p-4 sm:p-5">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
           <h3 data-line-heading tabindex="-1" class="flex items-center gap-2 text-lg font-semibold outline-none">
             <lucide-icon name="cup-soda" [size]="20" class="shrink-0 text-gold"></lucide-icon>
@@ -70,7 +70,7 @@
           ></app-quantity-stepper>
 
           @if (isConfirming('drink', drink.id)) {
-            <div class="flex items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + drink.label">
+            <div class="flex animate-fade-in flex-wrap items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + drink.label">
               <span class="text-sm text-cream-muted">Remover esta bebida?</span>
               <button type="button" [id]="'confirm-drink-' + drink.id" class="btn-primary min-h-[44px] px-4 py-2" (click)="confirmRemove('drink', drink.id, drink.label)">Sim, remover</button>
               <button type="button" class="btn-quiet min-h-[44px] px-3 py-2" (click)="cancelRemove()">Cancelar</button>

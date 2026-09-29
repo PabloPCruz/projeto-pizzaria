@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import {
   ArrowLeft,
   ArrowRight,
+  CakeSlice,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -15,6 +16,7 @@ import {
   LoaderCircle,
   LucideAngularModule,
   MapPin,
+  MapPinned,
   Menu,
   Minus,
   Phone,
@@ -37,6 +39,8 @@ import {
 } from 'lucide-angular';
 import { BrandIconComponent } from './brand-icon.component';
 import { FlavorCardComponent } from './flavor-card.component';
+import { FlavorImageComponent } from './flavor-image.component';
+import { RevealDirective } from './reveal.directive';
 import { PriceComponent } from './price.component';
 import { LogoComponent } from './logo.component';
 import { MoneyPipe } from './money.pipe';
@@ -49,6 +53,7 @@ import { TextFieldComponent } from './text-field.component';
 const ICONS = LucideAngularModule.pick({
   ArrowLeft,
   ArrowRight,
+  CakeSlice,
   CalendarX,
   Check,
   ChevronLeft,
@@ -61,6 +66,7 @@ const ICONS = LucideAngularModule.pick({
   Info,
   LoaderCircle,
   MapPin,
+  MapPinned,
   Menu,
   Minus,
   Phone,
@@ -79,7 +85,7 @@ const ICONS = LucideAngularModule.pick({
   X,
 });
 
-const SHARED = [DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, PriceComponent, QuantityStepperComponent];
+const SHARED = [DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, FlavorImageComponent, RevealDirective, PriceComponent, QuantityStepperComponent];
 
 @NgModule({
   declarations: SHARED,

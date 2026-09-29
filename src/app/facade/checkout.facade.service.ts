@@ -7,12 +7,9 @@ import { CartService } from '../services/cart.service';
 import { CepLookupResult, CepService } from '../services/cep.service';
 import { CheckoutDraftService } from '../services/checkout-draft.service';
 import { CheckoutValidationService } from '../services/checkout-validation.service';
-import { DeliveryZone, DeliveryZoneService, addressKey } from '../services/delivery-zone.service';
+import { DeliveryZone, DeliveryZoneService } from '../services/delivery-zone.service';
 import { FormatService } from '../services/format.service';
 import { DELIVERY_FEE_NOTICE, WhatsappMessageService } from '../services/whatsapp-message.service';
-
-/** Campos do endereço digitado: mexer em qualquer um (no modo manual) invalida a zona de entrega. */
-const ADDRESS_FIELDS: readonly (keyof CheckoutDraft)[] = ['street', 'number', 'neighborhood', 'city', 'state'];
 
 export type CheckoutResult =
   | { ok: true; url: string }
@@ -51,17 +48,16 @@ export class CheckoutFacadeService {
         switchMap((go) => {
           if (!go) return of<DeliveryZone>({ status: 'unknown' });
           const d = this.draftStore.snapshot;
-          return d.manualAddress
-            ? this.deliveryZone.checkAddress(d)
-            : this.deliveryZone.check(d.cep, { street: d.street, number: d.number, city: d.city, state: d.state });
+          // Sem CEP (endereço manual) não há entrega grátis: só o CEP, dentro das regras, dá direito a ela.
+          if (d.manualAddress) return of<DeliveryZone>({ status: 'unknown' });
+          return this.deliveryZone.check(d.cep, { street: d.street, number: d.number, city: d.city, state: d.state });
         })
       )
       .subscribe((zone) => this.zoneState.next(zone));
 
-    // Endereço salvo de uma visita anterior (CEP completo ou endereço manual completo): recalcula a zona ao abrir.
+    // CEP completo salvo de uma visita anterior: recalcula a zona ao abrir o checkout.
     const saved = this.draftStore.snapshot;
-    const ready = saved.manualAddress ? this.hasManualAddress(saved) : this.format.onlyDigits(saved.cep).length === 8;
-    if (ready) this.zoneRequests.next(true);
+    if (!saved.manualAddress && this.format.onlyDigits(saved.cep).length === 8) this.zoneRequests.next(true);
   }
 
   get draft(): CheckoutDraft {
@@ -74,26 +70,15 @@ export class CheckoutFacadeService {
 
   update(patch: Partial<CheckoutDraft>): void {
     this.draftStore.update(patch);
-    // No modo manual a zona vale para o endereço digitado: mexer em qualquer parte dele a invalida.
-    if (this.draftStore.snapshot.manualAddress && ADDRESS_FIELDS.some((f) => f in patch)) this.zoneRequests.next(false);
-  }
-
-  /** Liga/desliga o preenchimento manual ("não sei meu CEP"). Ligar limpa o CEP; o resto do endereço é mantido. */
-  setManualAddress(manual: boolean): void {
-    this.draftStore.update(manual ? { manualAddress: true, cep: '' } : { manualAddress: false });
-    this.zoneRequests.next(false);
   }
 
   /**
-   * Endereço manual: consulta a distância até a loja (chamar ao sair de um campo do endereço).
-   * Sem endereço completo (rua, número, bairro e cidade) não consulta nada.
+   * Liga/desliga o preenchimento manual ("não sei meu CEP"). Ligar limpa o CEP e apaga na hora qualquer
+   * "entrega grátis" já mostrada (sem CEP ela não existe); o resto do endereço é mantido.
    */
-  refreshAddressZone(): void {
-    if (this.draftStore.snapshot.manualAddress) this.zoneRequests.next(true);
-  }
-
-  private hasManualAddress(d: CheckoutDraft): boolean {
-    return [d.street, d.number, d.neighborhood, d.city].every((v) => v.trim().length > 0);
+  setManualAddress(manual: boolean): void {
+    this.draftStore.update(manual ? { manualAddress: true, cep: '' } : { manualAddress: false });
+    this.zoneRequests.next(false);
   }
 
   /** Máscara do CEP. Qualquer edição invalida a zona de entrega até uma nova consulta. */
@@ -145,10 +130,9 @@ export class CheckoutFacadeService {
     const errors = this.validate();
     if (!this.validation.isValid(errors)) return { ok: false, errors };
     const draft = this.draftStore.snapshot;
-    // "Grátis" só vale se a zona foi calculada para o endereço que está no formulário agora.
+    // "Grátis" só com CEP, e só se a zona foi calculada para o CEP que está no formulário agora.
     const zone = this.zoneState.value;
-    const currentKey = draft.manualAddress ? addressKey(draft) : this.format.onlyDigits(draft.cep);
-    const freeDelivery = zone.status === 'free' && zone.key === currentKey;
+    const freeDelivery = !draft.manualAddress && zone.status === 'free' && zone.key === this.format.onlyDigits(draft.cep);
     return { ok: true, url: this.whatsapp.buildLink(this.cart.snapshot, draft, { freeDelivery }) };
   }
 

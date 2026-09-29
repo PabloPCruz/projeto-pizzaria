@@ -23,14 +23,14 @@ import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
       </dl>
 
       @if ((zone$ | async)?.status === 'free') {
-        <app-delivery-free id="delivery-fee-notice" class="mt-5" [radiusKm]="radiusKm"></app-delivery-free>
+        <app-delivery-free id="delivery-fee-notice" class="mt-5" [compact]="true" [radiusKm]="radiusKm"></app-delivery-free>
       } @else {
         <div
-          class="mt-5 flex items-start gap-3 rounded-xl border border-gold/60 bg-gold/10 p-4 text-sm leading-relaxed text-gold-light"
+          class="mt-5 flex items-start gap-3 rounded-xl border border-ink-400 bg-ink-700 p-4 text-sm leading-relaxed text-cream-muted"
           role="note"
           id="delivery-fee-notice"
         >
-          <lucide-icon name="info" [size]="20" class="mt-0.5 shrink-0"></lucide-icon>
+          <lucide-icon name="info" [size]="20" class="mt-0.5 shrink-0 text-gold"></lucide-icon>
           <p>{{ notice }}</p>
         </div>
       }

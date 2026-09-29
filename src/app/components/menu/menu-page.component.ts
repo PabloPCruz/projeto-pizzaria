@@ -17,6 +17,11 @@ export class MenuPageComponent {
     this.refresh();
   }
 
+  /** Posição da aba ativa (o indicador desliza até ela). */
+  get tabIndex(): number {
+    return Math.max(0, this.categories.findIndex((c) => c.id === this.tab));
+  }
+
   selectTab(id: FlavorCategory, focus = false): void {
     this.tab = id;
     this.refresh();

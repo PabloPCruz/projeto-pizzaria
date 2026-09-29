@@ -26,6 +26,8 @@ export class BuilderPageComponent implements OnInit {
   readonly view$ = this.order.view$;
 
   step = 0;
+  /** Sentido da última troca de passo (só para a animação de deslizar). */
+  dir: 'fwd' | 'back' = 'fwd';
   /** Pizza acabou de ir para o carrinho: mostra o painel de próximos passos. */
   added = false;
   /** `true` = o que foi salvo era a edição de uma pizza do carrinho (texto do painel muda). */
@@ -110,6 +112,7 @@ export class BuilderPageComponent implements OnInit {
   }
 
   private go(index: number): void {
+    this.dir = index < this.step ? 'back' : 'fwd';
     this.step = Math.max(0, Math.min(this.steps.length - 1, index));
     if (this.step >= 2) this.notice = '';
     this.stepError = '';

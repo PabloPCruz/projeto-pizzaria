@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tokens de movimento vêm do tailwind.config.js (theme) — um só vocabulário. */
+:root {
+  --ease-soft: theme('transitionTimingFunction.soft');
+  --ease-spring: theme('transitionTimingFunction.spring');
+  --dur-fast: theme('transitionDuration.fast');
+  --dur-base: theme('transitionDuration.base');
+  --dur-slow: theme('transitionDuration.slow');
+}
+
 /* ------------------------------------------------------------------ base */
 @layer base {
   html {
@@ -10,8 +19,8 @@
   }
 
   body {
-    @apply bg-ink-900 font-sans text-cream antialiased;
-    background-image: radial-gradient(1100px 480px at 50% -8%, rgba(212, 175, 55, 0.08), transparent 70%);
+    @apply bg-ink-900 font-sans text-base leading-[1.6] text-cream antialiased;
+    background-image: radial-gradient(900px 360px at 50% -6%, rgba(212, 175, 55, 0.05), transparent 70%);
     background-repeat: no-repeat;
     min-height: 100vh;
   }
@@ -22,6 +31,11 @@
   h4 {
     @apply font-display text-cream;
     text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
   }
 
   a {
@@ -59,44 +73,66 @@
   }
 
   .section {
-    @apply py-14 sm:py-20;
+    @apply py-12 sm:py-20;
   }
 
+  /* ---- Tipografia: Playfair só em títulos; Inter em texto e interface ---- */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold;
+    @apply text-[0.8125rem] font-semibold uppercase leading-5 tracking-[0.18em] text-gold sm:text-sm sm:tracking-[0.22em];
   }
 
+  /* h1 das páginas internas */
+  .title-page {
+    @apply mt-2 text-[2rem] font-semibold leading-[1.15] sm:text-5xl;
+  }
+
+  /* h1 da home */
+  .title-hero {
+    @apply text-[2.125rem] font-semibold leading-[1.12] sm:text-5xl lg:text-6xl;
+  }
+
+  /* h2 de seção (home, contatos) */
   .section-title {
-    @apply mt-2 text-3xl font-semibold sm:text-4xl;
+    @apply mt-2 text-[1.75rem] font-semibold leading-[1.2] sm:text-4xl;
+  }
+
+  /* h2 de bloco dentro de uma página */
+  .title-sub {
+    @apply text-2xl font-semibold leading-snug sm:text-3xl;
   }
 
   .lead {
-    @apply text-base leading-relaxed text-cream-muted sm:text-lg;
+    @apply text-base leading-[1.65] text-cream-muted sm:text-lg;
   }
 
   /* Divisor fino dourado, com losango central */
   .rule-gold {
-    @apply relative my-6 h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent;
+    @apply relative my-5 h-px w-full bg-gradient-to-r from-transparent via-gold/40 to-transparent sm:my-6;
   }
 
   .rule-gold::after {
     content: '';
-    @apply absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-gold;
+    @apply absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-gold/80;
     box-shadow: 0 0 0 4px #0f0f0f;
   }
 
-  /* Botões */
+  /* ---- Botões ---- */
   .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200 ease-out;
-    @apply disabled:pointer-events-none disabled:opacity-45;
+    @apply relative inline-flex min-h-[48px] select-none items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.9375rem] font-semibold tracking-wide;
+    transition-property: background-color, border-color, color, box-shadow, transform, opacity;
+  }
+
+  /* Desabilitado sem depender de opacidade: cor própria, contraste >= 4,5:1. */
+  .btn:disabled {
+    @apply pointer-events-none bg-ink-600 text-cream-dim shadow-none;
   }
 
   .btn:active:not(:disabled) {
-    transform: translateY(1px) scale(0.99);
+    transform: translateY(0) scale(0.98);
   }
 
   .btn-primary {
-    @apply btn bg-brand text-white shadow-[0_8px_24px_-10px_rgba(200,16,46,.8)] hover:bg-brand-light;
+    @apply btn bg-brand text-white shadow-[0_6px_16px_-10px_rgba(200,16,46,.6)] hover:bg-brand-light hover:shadow-[0_10px_22px_-10px_rgba(200,16,46,.65)];
   }
 
   .btn-gold {
@@ -104,43 +140,129 @@
   }
 
   .btn-ghost {
-    @apply btn border border-gold/60 text-gold hover:border-gold hover:bg-gold/10;
+    @apply btn border border-gold/50 text-gold hover:border-gold hover:bg-gold/10;
+  }
+
+  .btn-ghost:disabled {
+    @apply border-ink-400 bg-transparent;
   }
 
   .btn-quiet {
     @apply btn text-cream-muted hover:text-cream;
   }
 
-  .btn-icon {
-    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink-500 text-cream transition hover:border-gold hover:text-gold;
-    @apply disabled:pointer-events-none disabled:opacity-40 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 aria-disabled:hover:border-ink-500 aria-disabled:hover:text-cream;
+  .btn-quiet:disabled {
+    @apply bg-transparent;
   }
 
-  /* Cartões */
+  .btn-icon {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink-400 text-cream hover:border-gold hover:text-gold;
+    @apply aria-disabled:cursor-not-allowed aria-disabled:text-cream-dim aria-disabled:hover:border-ink-400 aria-disabled:hover:text-cream-dim;
+    @apply disabled:pointer-events-none disabled:text-cream-dim;
+    transition-property: background-color, border-color, color, transform;
+  }
+
+  .btn-icon:active:not(:disabled):not([aria-disabled='true']) {
+    transform: scale(0.94);
+  }
+
+  /* Elevação e micro-gestos de ícone só onde há hover de verdade. */
+  @media (hover: hover) {
+    .btn-primary:hover:not(:disabled),
+    .btn-gold:hover:not(:disabled),
+    .btn-ghost:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    .btn > lucide-icon[name='arrow-right'] {
+      display: inline-flex;
+      transition: transform var(--dur-base) var(--ease-soft);
+    }
+
+    .btn:hover > lucide-icon[name='arrow-right'] {
+      transform: translateX(3px);
+    }
+
+    .btn > lucide-icon[name='pizza'] {
+      display: inline-flex;
+      transition: transform var(--dur-slow) var(--ease-spring);
+    }
+
+    .btn:hover > lucide-icon[name='pizza'] {
+      transform: rotate(-14deg);
+    }
+  }
+
+  /* ---- Links: sublinhado que desliza ---- */
+  .link-slide {
+    @apply relative;
+  }
+
+  .link-slide::after,
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-px origin-left scale-x-0 bg-current;
+    transition: transform var(--dur-base) var(--ease-soft);
+  }
+
+  .link-slide:hover::after,
+  .link-slide:focus-visible::after {
+    @apply scale-x-100;
+  }
+
+  /* Link do menu principal: o sublinhado fica dentro do padding da pílula. */
+  .nav-link {
+    @apply relative rounded-full px-4 py-2 text-[0.9375rem] font-medium text-cream-muted hover:text-gold;
+  }
+
+  .nav-link::after {
+    @apply bottom-1.5 left-4 right-4 bg-gold;
+  }
+
+  .nav-link:hover::after,
+  .nav-link[aria-current='page']::after {
+    @apply scale-x-100;
+  }
+
+  /* ---- Cartões ---- */
   .card {
-    @apply rounded-2xl border border-ink-500/70 bg-ink-800 shadow-card;
+    @apply rounded-2xl border border-ink-500 bg-ink-800;
   }
 
   .card-hover {
-    @apply transition duration-300 ease-out hover:-translate-y-1 hover:border-gold/50 hover:shadow-glow;
+    transition-property: transform, border-color, box-shadow;
+    transition-duration: var(--dur-slow);
+    transition-timing-function: var(--ease-soft);
   }
 
-  /* Campos de formulário */
+  .card-hover:hover {
+    @apply -translate-y-0.5 border-gold/40 shadow-lift;
+  }
+
+  /* ---- Campos de formulário ---- */
   .field-label {
     @apply mb-1.5 block text-sm font-medium text-cream;
+    transition: color var(--dur-base) var(--ease-soft);
+  }
+
+  /* O rótulo esquenta quando o campo (ou algo dentro do mesmo bloco) recebe foco. */
+  :has(> .field-label):focus-within > .field-label {
+    @apply text-gold-light;
   }
 
   .field-hint {
-    @apply mt-1 block text-xs text-cream-dim;
+    @apply mt-1.5 block text-sm leading-snug text-cream-dim;
   }
 
   .field-input {
-    @apply block min-h-[48px] w-full rounded-xl border border-ink-300 bg-ink-800 px-4 py-2.5 text-base text-cream placeholder:text-cream-dim;
-    @apply transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/70;
+    @apply block min-h-[48px] w-full rounded-xl border border-ink-300 bg-ink-800 px-4 py-2.5 text-base text-cream placeholder:text-cream-dim hover:border-cream-dim/60;
+    @apply focus:border-gold focus:bg-ink-700 focus:outline-none focus:ring-[3px] focus:ring-gold/30;
+    transition-property: border-color, background-color, box-shadow;
   }
 
   .field-input[aria-invalid='true'] {
-    @apply border-danger;
+    @apply border-danger focus:border-danger focus:ring-danger/25;
+    animation: shake 320ms var(--ease-soft);
   }
 
   /* Área de texto de tamanho fixo (não redimensionável); texto longo rola dentro do campo. */
@@ -149,17 +271,17 @@
   }
 
   .field-error {
-    @apply mt-1.5 flex items-start gap-1.5 text-sm text-danger;
+    @apply mt-1.5 flex animate-fade-in items-start gap-1.5 text-sm leading-snug text-danger;
   }
 
-  /* Opções escolhíveis (radiogroup / checkbox como cartão) */
+  /* ---- Opções escolhíveis (radiogroup / checkbox como cartão) ---- */
   .choice {
-    @apply relative flex cursor-pointer items-start gap-3 rounded-xl border border-ink-300 bg-ink-800 p-4 transition duration-200;
-    @apply hover:border-gold/60;
+    @apply relative flex cursor-pointer items-start gap-3 rounded-xl border border-ink-400 bg-ink-800 p-4 hover:border-gold/50;
+    transition-property: border-color, background-color, color;
   }
 
   .choice:has(input:checked) {
-    @apply border-gold bg-gold/10 shadow-glow;
+    @apply border-gold bg-gold/[.07];
   }
 
   .choice:has(input:focus-visible) {
@@ -167,24 +289,260 @@
     outline-offset: 2px;
   }
 
+  /* Bloqueado (limite de sabores): tons próprios, texto continua >= 4,5:1. */
   .choice:has(input:disabled) {
-    @apply cursor-not-allowed opacity-45 hover:border-ink-300;
+    @apply cursor-not-allowed border-ink-500 bg-ink-900 hover:border-ink-500;
+  }
+
+  .choice:has(input:disabled) .choice-title,
+  .choice:has(input:disabled) .choice-desc {
+    @apply text-cream-dim;
+  }
+
+  .choice:has(input:disabled) .choice-thumb {
+    @apply opacity-60 grayscale-[.5];
   }
 
   .choice input {
     @apply sr-only;
   }
 
-  .badge {
-    @apply inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-xs font-medium text-gold-light;
+  /* Indicadores: bolinha (radio) e quadrado (checkbox), com entrada suave do miolo. */
+  .choice-radio,
+  .choice-check {
+    @apply mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border border-ink-300 text-ink-900;
+    transition-property: border-color, background-color;
   }
 
+  .choice-radio {
+    @apply rounded-full;
+  }
+
+  .choice-check {
+    @apply rounded-md;
+  }
+
+  .choice-radio::after {
+    content: '';
+    @apply h-2 w-2 scale-0 rounded-full bg-ink-900;
+    transition: transform var(--dur-base) var(--ease-spring);
+  }
+
+  .choice-check > lucide-icon {
+    @apply flex scale-50 opacity-0;
+    transition:
+      transform var(--dur-base) var(--ease-spring),
+      opacity var(--dur-fast) var(--ease-soft);
+  }
+
+  .choice input:checked ~ .choice-radio,
+  .choice input:checked ~ .choice-check {
+    @apply border-gold bg-gold;
+  }
+
+  .choice input:checked ~ .choice-radio::after {
+    @apply scale-100;
+  }
+
+  .choice input:checked ~ .choice-check > lucide-icon {
+    @apply scale-100 opacity-100;
+  }
+
+  /* ---- Interruptor em cartão ("Não sei meu CEP") ---- */
+  .switch-card {
+    @apply relative flex min-h-[64px] cursor-pointer items-center gap-3 rounded-2xl border border-ink-400 bg-ink-800 p-3.5 hover:border-gold/50 sm:p-4;
+    transition-property: border-color, background-color;
+  }
+
+  .switch-card:has(input:checked) {
+    @apply border-gold bg-gold/[.07];
+  }
+
+  .switch-card:has(input:focus-visible) {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+  }
+
+  .switch-card input {
+    @apply sr-only;
+  }
+
+  .switch-card__icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink-600 text-gold;
+    transition-property: background-color, color;
+  }
+
+  .switch-card:has(input:checked) .switch-card__icon {
+    @apply bg-gold text-ink-900;
+  }
+
+  .switch-track {
+    @apply relative ml-auto h-7 w-12 shrink-0 rounded-full border border-ink-300 bg-ink-600;
+    transition-property: background-color, border-color;
+  }
+
+  .switch-track::after {
+    content: '';
+    @apply absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-cream-dim;
+    transition:
+      transform var(--dur-base) var(--ease-spring),
+      background-color var(--dur-base) var(--ease-soft);
+  }
+
+  .switch-card input:checked ~ .switch-track {
+    @apply border-gold bg-gold;
+  }
+
+  .switch-card input:checked ~ .switch-track::after {
+    @apply bg-ink-900;
+    transform: translateX(1.375rem);
+  }
+
+  /* Dica que aparece com suavidade (o atributo [hidden] continua sendo a fonte da verdade). */
+  .hint-in {
+    @apply mb-4 border-l-2 border-gold/50 pl-3 text-sm leading-relaxed text-cream-muted;
+  }
+
+  .hint-in:not([hidden]) {
+    animation: sheet-in 260ms var(--ease-soft) backwards;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold-light;
+  }
+
+  /* ---- Entradas e movimento de tela ---- */
+  .enter {
+    @apply animate-rise;
+  }
+
+  .enter-soft {
+    @apply animate-soft-in;
+  }
+
+  /* Alias antigo (mantido para telas que ainda usam o nome). */
   .page-enter {
-    animation: rise 0.45s ease-out both;
+    @apply animate-rise;
+  }
+
+  /* Troca de passo do montador: o painel novo desliza de leve (direção pelo atributo data-dir). */
+  .step-panel > * {
+    display: block;
+    animation: step-fwd 300ms var(--ease-soft) backwards;
+  }
+
+  .step-panel[data-dir='back'] > * {
+    animation-name: step-back;
+  }
+
+  /* Barra de progresso: só transform (scaleX). */
+  .progress-track {
+    @apply relative h-1 overflow-hidden rounded-full bg-ink-500;
+  }
+
+  .progress-track > span {
+    @apply absolute inset-0 origin-left rounded-full bg-gold;
+    transition: transform var(--dur-slow) var(--ease-soft);
+  }
+
+  /* Revelação ao rolar (diretiva appReveal). */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity var(--dur-slow) var(--ease-soft),
+      transform var(--dur-slow) var(--ease-soft);
+  }
+
+  .reveal.reveal-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Imagem que aparece ao terminar de carregar. */
+  .img-fade {
+    opacity: 0;
+    transition: opacity var(--dur-slow) var(--ease-soft);
+  }
+
+  .img-fade.is-loaded {
+    opacity: 1;
+  }
+
+  /* Placeholder de sabor sem foto: degradê quente por categoria (parece intencional, não "imagem quebrada"). */
+  .flavor-ph {
+    --ph: theme('colors.warm.tradicional');
+    @apply flex h-full w-full items-center justify-center;
+    background: radial-gradient(130% 100% at 25% 15%, var(--ph), theme('colors.ink.700') 90%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .flavor-ph[data-cat='especial'] {
+    --ph: theme('colors.warm.especial');
+  }
+
+  .flavor-ph[data-cat='doce'] {
+    --ph: theme('colors.warm.doce');
+  }
+
+  .flavor-ph__icon {
+    @apply flex items-center justify-center rounded-full border border-gold/25 bg-ink-900/30 p-3 text-gold;
+  }
+
+  .flavor-ph--sm .flavor-ph__icon {
+    @apply p-2;
+  }
+
+  /* ---- Cabeçalho e menu do celular ---- */
+  /* O fundo com blur fica num pseudo-elemento: backdrop-filter no próprio <header> viraria o
+     bloco de contenção dos filhos fixed (o fundo escurecido do menu). */
+  .site-header {
+    @apply border-b border-ink-500/70;
+    transition: border-color var(--dur-base) var(--ease-soft), box-shadow var(--dur-base) var(--ease-soft);
+  }
+
+  .site-header::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 -z-10 bg-ink-900/90 backdrop-blur-md;
+    transition: background-color var(--dur-base) var(--ease-soft);
+  }
+
+  .site-header[data-scrolled] {
+    @apply border-gold/20;
+    box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.9);
+  }
+
+  .site-header[data-scrolled]::before {
+    @apply bg-ink-900/95;
+  }
+
+  .menu-scrim {
+    @apply fixed inset-x-0 bottom-0 top-16 z-0 bg-black/60 md:hidden;
+    animation: fade-in 220ms var(--ease-soft) backwards;
+  }
+
+  .menu-sheet {
+    @apply absolute inset-x-0 top-full z-10 border-b border-gold/20 bg-ink-800 md:hidden;
+    animation: sheet-in 240ms var(--ease-soft) backwards;
+  }
+
+  .menu-sheet.is-closing {
+    animation: sheet-out 180ms var(--ease-soft) forwards;
+  }
+
+  .menu-scrim.is-closing {
+    animation: fade-out 180ms var(--ease-soft) forwards;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
   }
 }
 
 /* --------------------------------------------------- movimento reduzido */
+/* Sem deslocamentos, sem zoom, sem entrada: o conteúdo só aparece (fade curtíssimo). */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -194,9 +552,24 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .card-hover:hover,
+  .btn:hover,
+  .btn:active,
+  .btn-icon:active,
+  .btn:hover > lucide-icon {
+    transform: none !important;
   }
 }
 
@@ -216,4 +589,33 @@
 
 .skip-link:focus {
   top: 1rem;
+}
+
+/* Barra inferior do celular: recolhida (transform + opacity) enquanto o CTA do hero está visível. */
+.mobile-bar {
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    opacity var(--dur-base) var(--ease-soft),
+    visibility 0s linear 0s;
+}
+
+app-mobile-bar[data-quiet] .mobile-bar {
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform var(--dur-slow) var(--ease-soft),
+    opacity var(--dur-base) var(--ease-soft),
+    visibility 0s linear var(--dur-slow);
+}
+
+/* O sublinhado deslizante de um <span class="link-slide"> reage ao hover/foco do link inteiro (.link-row). */
+.link-row:focus-visible .link-slide::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) {
+  .link-row:hover .link-slide::after {
+    transform: scaleX(1);
+  }
 }

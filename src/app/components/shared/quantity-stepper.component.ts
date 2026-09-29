@@ -15,7 +15,11 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
       >
         <lucide-icon name="minus" [size]="18"></lucide-icon>
       </button>
-      <output class="min-w-[2.25rem] text-center text-lg font-semibold tabular-nums" aria-live="polite">{{ value }}</output>
+      <output class="min-w-[2.25rem] text-center text-lg font-semibold tabular-nums" aria-live="polite">
+        @for (v of [value]; track v) {
+          <span class="inline-block animate-tick">{{ v }}</span>
+        }
+      </output>
       <button
         type="button"
         class="btn-icon"

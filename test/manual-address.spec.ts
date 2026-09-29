@@ -6,21 +6,9 @@ import { CartState, CheckoutDraft } from '../src/app/interfaces/cart.interface';
 import { CartService } from '../src/app/services/cart.service';
 import { CheckoutDraftService, EMPTY_CHECKOUT } from '../src/app/services/checkout-draft.service';
 import { CheckoutValidationService } from '../src/app/services/checkout-validation.service';
-import { DeliveryZoneService } from '../src/app/services/delivery-zone.service';
 import { WhatsappMessageService } from '../src/app/services/whatsapp-message.service';
 
-const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
 const STORE = STORE_INFO.freeDelivery.origin;
-const point = (km: number) => ({ lat: String(STORE.lat + km / 111.195), lon: String(STORE.lng) });
-const hit = (km: number, overrides: Record<string, unknown> = {}) => [
-  {
-    ...point(km),
-    place_rank: 30,
-    display_name: '135, Rua Luiz Braille, São Braz, Curitiba, Paraná, Região Sul, 82015-646, Brasil',
-    ...overrides,
-  },
-];
-
 const MANUAL = { street: 'Rua Luiz Braille', number: '135', neighborhood: 'São Braz', city: 'Curitiba', state: 'PR' };
 
 const CART: CartState = {
@@ -128,119 +116,17 @@ describe('Endereço manual: rascunho e mensagem', () => {
   });
 });
 
-describe('DeliveryZoneService.checkAddress (endereço digitado)', () => {
-  let service: DeliveryZoneService;
-  let http: HttpTestingController;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
-    service = TestBed.inject(DeliveryZoneService);
-    http = TestBed.inject(HttpTestingController);
-  });
-
-  afterEach(() => http.verify());
-
-  function run(address = MANUAL) {
-    const results: ReturnType<typeof Object>[] = [];
-    service.checkAddress(address).subscribe((z) => results.push(z));
-    return results as { status: string; distanceKm?: number; key?: string }[];
-  }
-
-  const search = () => http.expectOne((r) => r.url === NOMINATIM);
-
-  it('endereço confiável a até 3 km: entrega grátis', () => {
-    const results = run();
-    search().flush(hit(2.5));
-    expect(results[0].status).toBe('free');
-    expect(results[0].distanceKm).toBeCloseTo(2.5, 1);
-    expect(results[0].key).toContain('addr:');
-  });
-
-  it('endereço confiável a mais de 3 km: fora da área', () => {
-    const results = run();
-    search().flush(hit(4.5));
-    expect(results[0].status).toBe('outside');
-  });
-
-  it('consulta de forma estruturada (número + rua, cidade), só no Brasil; o bairro é conferido no resultado', () => {
-    run();
-    const req = search();
-    expect(req.request.params.get('street')).toBe('135 Rua Luiz Braille');
-    expect(req.request.params.get('city')).toBe('Curitiba');
-    expect(req.request.params.has('q')).toBeFalse();
-    expect(req.request.params.get('countrycodes')).toBe('br');
-    expect(req.request.params.get('addressdetails')).toBe('1');
-    expect(req.request.params.get('limit')).toBe('1');
-    req.flush([]);
-  });
-
-  it('bairro digitado diferente do encontrado: desconhecido (nunca concede grátis por rua homônima)', () => {
-    const results = run({ ...MANUAL, neighborhood: 'Centro' });
-    search().flush(hit(1));
-    expect(results[0].status).toBe('unknown');
-  });
-
-  it('a comparação de bairro ignora acento e maiúsculas', () => {
-    const results = run({ ...MANUAL, neighborhood: 'SAO BRAZ', city: 'curitiba' });
-    search().flush(hit(1));
-    expect(results[0].status).toBe('free');
-  });
-
-  it('resultado só de cidade/bairro (sem chegar à rua) não vale', () => {
-    const results = run();
-    search().flush(hit(1, { place_rank: 16, display_name: 'São Braz, Curitiba, Paraná, Brasil' }));
-    expect(results[0].status).toBe('unknown');
-  });
-
-  it('cidade diferente da digitada não vale', () => {
-    const results = run({ ...MANUAL, city: 'Colombo' });
-    search().flush(hit(1));
-    expect(results[0].status).toBe('unknown');
-  });
-
-  for (const missing of ['street', 'number', 'neighborhood', 'city'] as const) {
-    it(`sem "${missing}" não consulta nada e devolve desconhecido`, () => {
-      const results = run({ ...MANUAL, [missing]: '  ' });
-      http.expectNone(() => true);
-      expect(results[0].status).toBe('unknown');
-    });
-  }
-
-  it('sem resultado, com erro de rede ou coordenada fora do Brasil: desconhecido', () => {
-    let results = run();
-    search().flush([]);
-    expect(results[0].status).toBe('unknown');
-
-    results = run();
-    search().error(new ProgressEvent('error'));
-    expect(results[0].status).toBe('unknown');
-
-    results = run();
-    search().flush(hit(0, { lat: '0', lon: '0' }));
-    expect(results[0].status).toBe('unknown');
-  });
-
-  it('guarda o resultado por endereço (mesmo com acento/caixa diferentes) e não guarda "desconhecido"', () => {
-    run();
-    search().flush(hit(1));
-    const again = run({ ...MANUAL, street: 'RUA LUIZ BRAILLE', neighborhood: 'sao braz' });
-    http.expectNone(() => true);
-    expect(again[0].status).toBe('free');
-
-    run({ ...MANUAL, number: '999' });
-    search().flush([]);
-    run({ ...MANUAL, number: '999' });
-    search().flush(hit(1)); // desconhecido não foi guardado: consultou de novo
-  });
-});
-
-describe('Endereço manual: checkout (facade)', () => {
+describe('Endereço manual: nunca há entrega grátis (só com CEP e dentro das regras)', () => {
   let facade: CheckoutFacadeService;
   let http: HttpTestingController;
   const decode = (url: string) => decodeURIComponent(url.split('?text=')[1]);
+  const viacep = (cep: string) => `https://viacep.com.br/ws/${cep}/json/`;
+  const awesome = (cep: string) => `https://cep.awesomeapi.com.br/json/${cep}`;
+  const nearStore = { lat: String(STORE.lat + 1 / 111.195), lng: String(STORE.lng) };
 
-  function fillManual(): void {
-    facade.update({ name: 'Maria', payment: 'pix', ...MANUAL });
+  function fillOrder(): void {
+    facade.update({ name: 'Maria', payment: 'pix' });
     facade.setPhone('41999998888');
     TestBed.inject(CartService).addPizza({ size: 'media', flavorIds: ['tradicional-calabresa'], crustId: null, notes: '', quantity: 1 });
   }
@@ -257,7 +143,7 @@ describe('Endereço manual: checkout (facade)', () => {
     localStorage.clear();
   });
 
-  it('ligar o modo manual limpa o CEP e zera a zona', () => {
+  it('ligar o modo manual limpa o CEP e zera a zona, sem consultar nada', () => {
     facade.setCep('82015290');
     facade.setManualAddress(true);
     expect(facade.draft.manualAddress).toBeTrue();
@@ -275,89 +161,56 @@ describe('Endereço manual: checkout (facade)', () => {
     expect(facade.validate()['cep']).toBeTruthy();
   });
 
-  it('endereço manual completo na área grátis: cartão liberado e mensagem sem CEP com "Entrega grátis"', () => {
+  it('endereço manual completo, mesmo dentro dos 3 km, NÃO recebe entrega grátis e nada é consultado', () => {
     facade.setManualAddress(true);
-    fillManual();
-    facade.refreshAddressZone();
-    http.expectOne((r) => r.url === NOMINATIM).flush(hit(2));
-    expect(facade.zone.status).toBe('free');
+    facade.update({ ...MANUAL });
+    fillOrder();
+    http.expectNone(() => true);
+    expect(facade.zone.status).toBe('unknown');
 
     const result = facade.submit();
     expect(result.ok).toBeTrue();
     if (!result.ok) return;
     const msg = decode(result.url);
-    expect(msg).toContain('Entrega grátis (até 3 km da loja)');
+    expect(msg).not.toContain('Entrega grátis');
     expect(msg).not.toContain('CEP');
+    expect(msg).toContain('taxa de entrega'); // a loja informa a taxa na confirmação
   });
 
-  it('endereço manual fora da área: mensagem padrão', () => {
-    facade.setManualAddress(true);
-    fillManual();
-    facade.refreshAddressZone();
-    http.expectOne((r) => r.url === NOMINATIM).flush(hit(6));
-    const result = facade.submit();
-    expect(result.ok).toBeTrue();
-    if (!result.ok) return;
-    expect(decode(result.url)).not.toContain('Entrega grátis');
-    expect(decode(result.url)).toContain('taxa de entrega');
-  });
-
-  it('editar qualquer campo do endereço depois de "grátis" zera a zona (não vale para outro endereço)', () => {
-    facade.setManualAddress(true);
-    fillManual();
-    facade.refreshAddressZone();
-    http.expectOne((r) => r.url === NOMINATIM).flush(hit(1));
+  it('ligar o modo manual DEPOIS de a entrega grátis ter sido liberada pelo CEP apaga o benefício na hora', () => {
+    facade.setCep('82015290');
+    facade.lookupCep().subscribe();
+    http.expectOne(viacep('82015290')).flush({ logradouro: 'Rua Luiz Braille', bairro: 'São Braz', localidade: 'Curitiba', uf: 'PR' });
+    http.expectOne(awesome('82015290')).flush(nearStore);
     expect(facade.zone.status).toBe('free');
 
-    facade.update({ street: 'Rua Outra' });
+    facade.setManualAddress(true);
     expect(facade.zone.status).toBe('unknown');
+
+    facade.update({ ...MANUAL });
+    fillOrder();
     const result = facade.submit();
     expect(result.ok).toBeTrue();
     if (result.ok) expect(decode(result.url)).not.toContain('Entrega grátis');
   });
 
-  it('editar o nome ou o complemento não zera a zona', () => {
+  it('desligar o modo manual e informar um CEP dentro das regras libera a entrega grátis de novo', () => {
     facade.setManualAddress(true);
-    fillManual();
-    facade.refreshAddressZone();
-    http.expectOne((r) => r.url === NOMINATIM).flush(hit(1));
-    facade.update({ name: 'Outra Pessoa', complement: 'Casa' });
+    facade.setManualAddress(false);
+    facade.setCep('82015290');
+    facade.lookupCep().subscribe();
+    http.expectOne(viacep('82015290')).flush({ erro: true });
+    http.expectOne(awesome('82015290')).flush(nearStore);
     expect(facade.zone.status).toBe('free');
   });
 
-  it('consulta incompleta (falta bairro) não chama nada', () => {
-    facade.setManualAddress(true);
-    facade.update({ street: 'Rua A', number: '1', city: 'Curitiba' });
-    facade.refreshAddressZone();
-    http.expectNone(() => true);
-    expect(facade.zone.status).toBe('unknown');
-  });
-
-  it('a resposta atrasada de um endereço antigo é descartada quando o endereço muda', () => {
-    facade.setManualAddress(true);
-    fillManual();
-    facade.refreshAddressZone();
-    const pending = http.expectOne((r) => r.url === NOMINATIM);
-    facade.update({ number: '999' });
-    expect(pending.cancelled).toBeTrue();
-    expect(facade.zone.status).toBe('unknown');
-  });
-
-  it('endereço manual completo salvo de uma visita anterior recalcula a zona ao abrir', () => {
-    localStorage.setItem('disk-pizza:v2:checkout', JSON.stringify({ ...EMPTY_CHECKOUT, manualAddress: true, ...MANUAL }));
+  it('CEP salvo em modo manual não dispara consulta ao abrir o checkout', () => {
+    localStorage.setItem('disk-pizza:v2:checkout', JSON.stringify({ ...EMPTY_CHECKOUT, manualAddress: true, cep: '82015-290', ...MANUAL }));
     TestBed.resetTestingModule();
     TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
     http = TestBed.inject(HttpTestingController);
     facade = TestBed.inject(CheckoutFacadeService);
-    http.expectOne((r) => r.url === NOMINATIM).flush(hit(1));
-    expect(facade.zone.status).toBe('free');
-  });
-
-  it('modo com CEP continua igual: CEP completo consulta a AwesomeAPI e não o Nominatim', () => {
-    facade.setCep('82015290');
-    facade.lookupCep().subscribe();
-    http.expectOne('https://viacep.com.br/ws/82015290/json/').flush({ erro: true });
-    http.expectOne('https://cep.awesomeapi.com.br/json/82015290').flush({ lat: String(STORE.lat), lng: String(STORE.lng) });
-    expect(facade.zone.status).toBe('free');
+    http.expectNone(() => true);
+    expect(facade.zone.status).toBe('unknown');
   });
 });

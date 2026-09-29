@@ -1,37 +1,38 @@
 <!-- Hero -->
 <section class="relative overflow-hidden" aria-labelledby="hero-title">
-  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <div class="absolute left-1/2 top-[-10%] h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gold/10 blur-3xl"></div>
-    <div class="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-brand/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute inset-0 hidden sm:block" aria-hidden="true">
+    <div class="absolute left-1/2 top-[-12%] h-[440px] w-[760px] -translate-x-1/2 rounded-full bg-gold/[.06] blur-3xl"></div>
   </div>
-  <div class="container-page relative grid grid-cols-1 items-center gap-10 py-12 sm:py-20 lg:grid-cols-2">
-    <div class="page-enter order-2 text-center lg:order-1 lg:text-left">
+  <div class="container-page relative grid grid-cols-1 items-center gap-8 py-9 sm:gap-10 sm:py-20 lg:grid-cols-2">
+    <div class="enter text-center lg:text-left">
+      <!-- Selo pequeno no celular (o cabeçalho já traz a marca); a logo grande fica para telas maiores. -->
+      <div class="mb-5 flex justify-center sm:hidden"><app-logo [height]="84" [decorative]="true"></app-logo></div>
       <p class="eyebrow">Pizzaria italiana · desde {{ store.since }}</p>
-      <h1 id="hero-title" class="mt-4 text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
+      <h1 id="hero-title" class="title-hero mt-3 sm:mt-4">
         Sabor de família em <em class="text-gold not-italic">cada fatia</em>
       </h1>
-      <p class="lead mx-auto mt-5 max-w-xl lg:mx-0">
+      <p class="lead mx-auto mt-4 max-w-xl sm:mt-5 lg:mx-0">
         Massa marcante, recheio generoso e receitas que atravessam gerações. Monte a sua pizza em poucos passos
         e receba em casa.
       </p>
-      <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
+      <div class="mt-7 flex flex-col items-stretch gap-2 sm:mt-8 sm:flex-row sm:justify-center sm:gap-3 lg:justify-start">
         <a routerLink="/montar-pizza" class="btn-primary px-8 py-4 text-base">
           <lucide-icon name="pizza" [size]="20"></lucide-icon>
           Monte sua pizza
         </a>
-        <a routerLink="/cardapio" class="btn-ghost px-8 py-4 text-base">Ver cardápio</a>
+        <a routerLink="/cardapio" class="btn-quiet px-8 py-4 text-base text-gold hover:text-gold-light sm:border sm:border-gold/50 sm:hover:border-gold sm:hover:bg-gold/10">Ver cardápio</a>
       </div>
-      <ul class="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start" aria-label="Avisos da loja">
-        <li class="badge gap-1.5 py-1.5 text-sm">
-          <lucide-icon name="calendar-x" [size]="16"></lucide-icon>{{ store.closedNotice }}
+      <ul class="mt-6 flex flex-wrap justify-center gap-2 sm:mt-8 lg:justify-start" aria-label="Avisos da loja">
+        <li class="badge gap-1.5">
+          <lucide-icon name="calendar-x" [size]="14"></lucide-icon>{{ store.closedNotice }}
         </li>
-        <li class="badge gap-1.5 py-1.5 text-sm">
-          <lucide-icon name="tag" [size]="16"></lucide-icon>{{ store.promoNotice }}
+        <li class="badge gap-1.5">
+          <lucide-icon name="tag" [size]="14"></lucide-icon>{{ store.promoNotice }}
         </li>
       </ul>
     </div>
-    <div class="page-enter order-1 flex justify-center lg:order-2" style="animation-delay: 0.1s">
-      <div class="rounded-[2rem] border border-gold/30 bg-ink-800/60 p-6 shadow-glow sm:p-10">
+    <div class="enter hidden justify-center sm:flex lg:order-last" style="animation-delay: 0.1s">
+      <div class="rounded-[2rem] border border-gold/25 bg-ink-800/60 p-8 sm:p-10">
         <app-logo [height]="210"></app-logo>
       </div>
     </div>
@@ -41,36 +42,38 @@
 <!-- Sabores em destaque -->
 <section class="section border-t border-ink-500/40" aria-labelledby="destaques-title">
   <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center">
+    <div class="mx-auto max-w-2xl text-center" appReveal>
       <p class="eyebrow">Sabores em destaque</p>
       <h2 id="destaques-title" class="section-title">As favoritas da casa</h2>
-      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+      <div class="rule-gold mx-auto max-w-[10rem]" aria-hidden="true"></div>
     </div>
-    <app-featured-flavors class="mt-10 block"></app-featured-flavors>
+    <app-featured-flavors class="mt-8 block sm:mt-10"></app-featured-flavors>
   </div>
 </section>
 
 <!-- Como pedir -->
 <section id="como-pedir" class="section border-t border-ink-500/40 bg-ink-800/40" aria-labelledby="como-pedir-title">
   <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center">
+    <div class="mx-auto max-w-2xl text-center" appReveal>
       <p class="eyebrow">Simples e rápido</p>
       <h2 id="como-pedir-title" class="section-title">Como pedir</h2>
-      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+      <div class="rule-gold mx-auto max-w-[10rem]" aria-hidden="true"></div>
     </div>
-    <ol class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+    <ol class="mt-8 grid grid-cols-1 gap-3 sm:mt-10 md:grid-cols-3 md:gap-8">
       @for (step of steps; track step.title; let i = $index) {
-        <li class="card relative p-7 pt-10">
+        <li class="card relative flex gap-4 p-5 md:block md:p-7 md:pt-10" [appReveal]="i * 90">
           <span
-            class="absolute -top-5 left-7 flex h-11 w-11 items-center justify-center rounded-full border border-gold bg-ink-900 font-display text-xl font-semibold text-gold"
+            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/70 bg-ink-900 font-display text-lg font-semibold text-gold md:absolute md:-top-5 md:left-7 md:h-11 md:w-11 md:text-xl"
             aria-hidden="true"
           >{{ i + 1 }}</span>
-          <h3 class="text-xl font-semibold"><span class="sr-only">Passo {{ i + 1 }}: </span>{{ step.title }}</h3>
-          <p class="mt-2 text-sm leading-relaxed text-cream-muted">{{ step.text }}</p>
+          <div>
+            <h3 class="text-lg font-semibold leading-snug sm:text-xl"><span class="sr-only">Passo {{ i + 1 }}: </span>{{ step.title }}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-cream-muted">{{ step.text }}</p>
+          </div>
         </li>
       }
     </ol>
-    <p class="mt-10 text-center">
+    <p class="mt-8 text-center sm:mt-10">
       <a routerLink="/montar-pizza" class="btn-gold px-8">
         Começar meu pedido
         <lucide-icon name="arrow-right" [size]="18"></lucide-icon>
@@ -82,10 +85,10 @@
 <!-- História -->
 <section id="historia" class="section border-t border-ink-500/40" aria-labelledby="historia-title">
   <div class="container-page">
-    <div class="mx-auto max-w-3xl text-center">
+    <div class="mx-auto max-w-3xl text-center" appReveal>
       <p class="eyebrow">Nossa história</p>
       <h2 id="historia-title" class="section-title">A história do Disk Pizza</h2>
-      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+      <div class="rule-gold mx-auto max-w-[10rem]" aria-hidden="true"></div>
       <p class="lead">
         Fundada em {{ store.since }} por uma família tradicionalmente gaúcha, a Disk Pizza nasceu com um propósito
         claro: unir sabor, fartura e carinho em cada pedaço. Com receitas únicas, uma massa marcante e recheios

@@ -1,27 +1,29 @@
 @if (visible$ | async) {
   <nav
     aria-label="Ações rápidas"
-    class="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-ink-900/95 pb-[env(safe-area-inset-bottom)] md:hidden"
+    class="mobile-bar fixed inset-x-0 bottom-0 z-40 border-t border-ink-500/80 bg-ink-900/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden"
   >
-    <div class="container-page flex items-center gap-3 py-2.5">
+    <div class="container-page flex items-center gap-3 py-2">
       <a
         routerLink="/carrinho"
-        class="flex min-h-[48px] min-w-0 flex-1 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink-300 px-4 text-sm font-medium text-cream hover:border-gold"
+        class="flex min-h-[44px] min-w-0 flex-1 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink-400 px-4 text-[0.9375rem] font-medium text-cream transition-colors hover:border-gold"
       >
         <span class="relative">
-          <lucide-icon name="shopping-cart" [size]="22"></lucide-icon>
+          <lucide-icon name="shopping-cart" [size]="20"></lucide-icon>
           @if ((itemCount$ | async) ?? 0; as count) {
-            <span
-              class="absolute -right-2 -top-2 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-brand px-1 text-[11px] font-bold text-white"
-              aria-hidden="true"
-            >{{ count }}</span>
+            @for (n of [count]; track n) {
+              <span
+                class="absolute -right-2 -top-2 flex h-5 min-w-[1.25rem] animate-pop items-center justify-center rounded-full bg-brand px-1 text-xs font-bold leading-none text-white"
+                aria-hidden="true"
+              >{{ n }}</span>
+            }
           }
         </span>
         <span>Carrinho<span class="sr-only"> ({{ cartText((itemCount$ | async) ?? 0) }})</span></span>
       </a>
-      <a routerLink="/montar-pizza" class="btn-primary shrink-0 px-5">Monte sua pizza</a>
+      <a routerLink="/montar-pizza" class="btn-primary min-h-[44px] shrink-0 px-5 py-2.5">Monte sua pizza</a>
     </div>
   </nav>
   <!-- Espaço em fluxo no fim da página: a barra fixa não cobre o rodapé. -->
-  <div class="h-[calc(4.75rem+env(safe-area-inset-bottom))] md:hidden" aria-hidden="true"></div>
+  <div class="h-[calc(4.25rem+env(safe-area-inset-bottom))] md:hidden" aria-hidden="true"></div>
 }

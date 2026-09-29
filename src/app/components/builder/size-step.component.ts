@@ -19,12 +19,7 @@ import { PizzaSizeId } from '../../interfaces/pizza-menu.interface';
               [checked]="view.draft.size === size.id"
               (change)="select(size.id)"
             />
-            <span
-              class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-ink-300 transition peer-checked:border-gold peer-checked:bg-gold"
-              aria-hidden="true"
-            >
-              <span class="h-2 w-2 rounded-full bg-ink-900"></span>
-            </span>
+            <span class="choice-radio mt-1" aria-hidden="true"></span>
             <span class="block">
               <span class="block font-display text-xl font-semibold">{{ size.label }}</span>
               <span class="mt-0.5 block text-sm text-cream-muted">

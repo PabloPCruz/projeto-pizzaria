@@ -1,7 +1,7 @@
-<header class="sticky top-0 z-40 border-b border-gold/20 bg-ink-900/95">
-  <div class="container-page flex h-16 items-center justify-between gap-4 sm:h-[72px]">
-    <a routerLink="/" class="flex items-center gap-3 rounded-lg" aria-label="Disk Pizza — página inicial">
-      <app-logo [height]="44" [decorative]="true"></app-logo>
+<header #bar class="site-header sticky top-0 z-40">
+  <div class="container-page relative z-20 flex h-16 items-center justify-between gap-4 sm:h-[72px]">
+    <a routerLink="/" class="flex min-h-[44px] items-center gap-3 rounded-lg" aria-label="Disk Pizza — página inicial">
+      <app-logo [height]="40" [decorative]="true"></app-logo>
       <span class="font-display text-xl font-semibold tracking-wide text-cream sm:text-2xl">Disk Pizza</span>
     </a>
 
@@ -13,7 +13,7 @@
           [routerLinkActive]="link.fragment ? '' : '!text-gold'"
           [routerLinkActiveOptions]="{ exact: link.exact }"
           [ariaCurrentWhenActive]="link.fragment ? undefined : 'page'"
-          class="rounded-full px-4 py-2 text-sm font-medium text-cream-muted transition hover:text-gold"
+          class="nav-link"
         >{{ link.label }}</a>
       }
     </nav>
@@ -26,10 +26,13 @@
       >
         <lucide-icon name="shopping-cart" [size]="20"></lucide-icon>
         @if ((itemCount$ | async) ?? 0; as count) {
-          <span
-            class="absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] animate-pop items-center justify-center rounded-full bg-brand px-1 text-[11px] font-bold text-white"
-            aria-hidden="true"
-          >{{ count }}</span>
+          <!-- @for com chave = recria o selo a cada mudança de quantidade e replica o "pulinho". -->
+          @for (n of [count]; track n) {
+            <span
+              class="absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] animate-pop items-center justify-center rounded-full bg-brand px-1 text-xs font-bold leading-none text-white"
+              aria-hidden="true"
+            >{{ n }}</span>
+          }
         }
       </a>
       <a routerLink="/montar-pizza" class="btn-primary hidden md:inline-flex">Monte sua pizza</a>
@@ -47,24 +50,30 @@
     </div>
   </div>
 
+  <!-- Fundo escurecido atrás do painel (toque fora fecha). Decorativo: o Esc e o botão continuam sendo o caminho por teclado. -->
+  <div class="menu-scrim" [class.is-closing]="closing" [hidden]="!menuOpen && !closing" aria-hidden="true" (click)="closeFromScrim()"></div>
+
   <!-- Sempre no DOM (aria-controls válido); escondido quando fechado. -->
-  <nav id="menu-mobile" aria-label="Principal (celular)" [hidden]="!menuOpen" class="border-t border-gold/20 bg-ink-800 md:hidden">
-      <ul class="container-page flex flex-col py-2">
-        @for (link of links; track link.label) {
-          <li>
-            <a
-              [routerLink]="link.path"
-              [fragment]="link.fragment"
-              [routerLinkActive]="link.fragment ? '' : '!text-gold'"
-              [routerLinkActiveOptions]="{ exact: link.exact }"
-              [ariaCurrentWhenActive]="link.fragment ? undefined : 'page'"
-              class="flex min-h-[48px] items-center border-b border-ink-500/60 text-base font-medium text-cream hover:text-gold"
-            >{{ link.label }}</a>
-          </li>
-        }
-        <li class="py-3">
-          <a routerLink="/montar-pizza" class="btn-primary w-full">Monte sua pizza</a>
+  <nav id="menu-mobile" aria-label="Principal (celular)" [hidden]="!menuOpen && !closing" [class.is-closing]="closing" class="menu-sheet">
+    <ul class="container-page flex flex-col py-2">
+      @for (link of links; track link.label) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            [fragment]="link.fragment"
+            [routerLinkActive]="link.fragment ? '' : '!text-gold'"
+            [routerLinkActiveOptions]="{ exact: link.exact }"
+            [ariaCurrentWhenActive]="link.fragment ? undefined : 'page'"
+            class="flex min-h-[52px] items-center justify-between border-b border-ink-500/60 text-base font-medium text-cream hover:text-gold"
+          >
+            {{ link.label }}
+            <lucide-icon name="chevron-right" [size]="18" class="text-cream-dim"></lucide-icon>
+          </a>
         </li>
-      </ul>
+      }
+      <li class="py-3">
+        <a routerLink="/montar-pizza" class="btn-primary w-full">Monte sua pizza</a>
+      </li>
+    </ul>
   </nav>
 </header>

@@ -8,31 +8,17 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
 };
 
 /**
- * Cartão de sabor: foto quando existe; caso contrário um placeholder elegante (sem imagem quebrada).
- * `compact` é a versão horizontal usada na lista do cardápio.
+ * Cartão de sabor: foto quando existe; caso contrário um placeholder por categoria (sem imagem quebrada).
+ * `compact` é a versão horizontal usada na lista do cardápio. A proporção é fixa (sem salto de layout).
  */
 @Component({
   selector: 'app-flavor-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (compact) {
-      <article class="card flex h-full gap-4 p-3 transition duration-300 hover:border-gold/50">
+      <article class="card card-hover flex h-full gap-4 p-3">
         <div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-ink-700 sm:h-24 sm:w-24">
-          @if (flavor.image) {
-            <img
-              [src]="flavor.image"
-              [alt]="'Pizza de ' + flavor.name"
-              loading="lazy"
-              decoding="async"
-              width="96"
-              height="96"
-              class="h-full w-full object-cover"
-            />
-          } @else {
-            <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink-600 to-ink-800 text-gold/60" aria-hidden="true">
-              <lucide-icon name="pizza" [size]="30" [strokeWidth]="1.25"></lucide-icon>
-            </div>
-          }
+          <app-flavor-image [flavor]="flavor" [width]="96" [height]="96" [iconSize]="26" [small]="true"></app-flavor-image>
         </div>
         <div class="min-w-0 py-1">
           <h3 class="text-lg font-semibold leading-snug">{{ flavor.name }}</h3>
@@ -42,33 +28,27 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
           @if (flavor.optionHint) {
             <p class="mt-1 text-xs font-medium text-gold-light">{{ flavor.optionHint }}</p>
           }
+          @if (flavor.illustrative) {
+            <p class="illustrative-note mt-1 text-xs text-cream-dim">Foto ilustrativa</p>
+          }
         </div>
       </article>
     } @else {
       <article class="group card card-hover flex h-full flex-col overflow-hidden">
-        <div class="relative aspect-[4/3] overflow-hidden bg-ink-700">
-          @if (flavor.image) {
-            <img
-              [src]="flavor.image"
-              [alt]="'Pizza de ' + flavor.name"
-              loading="lazy"
-              decoding="async"
-              width="640"
-              height="480"
-              class="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-            />
-          } @else {
-            <div
-              class="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-ink-600 via-ink-700 to-ink-800 text-gold/70"
-              aria-hidden="true"
-            >
-              <lucide-icon name="pizza" [size]="44" [strokeWidth]="1.25"></lucide-icon>
-              <span class="font-display text-xs italic tracking-widest text-cream-dim">foto em breve</span>
-            </div>
-          }
+        <div class="relative aspect-[16/10] overflow-hidden bg-ink-700 sm:aspect-[4/3]">
+          <app-flavor-image
+            [flavor]="flavor"
+            [iconSize]="40"
+            imgClass="transition-[opacity,transform] duration-[600ms] ease-soft group-hover:scale-[1.04]"
+          ></app-flavor-image>
           <span class="badge absolute left-3 top-3 bg-ink-900/85">{{ categoryLabel }}</span>
+          @if (flavor.illustrative) {
+            <span class="illustrative-note absolute bottom-2 left-2 rounded-full bg-ink-900/85 px-2.5 py-1 text-xs text-cream-muted">
+              Foto ilustrativa
+            </span>
+          }
         </div>
-        <div class="flex flex-1 flex-col gap-2 p-5">
+        <div class="flex flex-1 flex-col gap-1.5 p-4 sm:gap-2 sm:p-5">
           <h3 class="text-xl font-semibold leading-snug">{{ flavor.name }}</h3>
           <p class="text-sm leading-relaxed text-cream-muted">
             {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
