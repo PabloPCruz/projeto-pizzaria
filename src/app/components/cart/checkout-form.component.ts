@@ -85,6 +85,22 @@ export class CheckoutFormComponent implements OnDestroy {
     this.revalidate();
   }
 
+  /** "Não sei meu CEP": alterna entre CEP com busca automática e endereço totalmente manual. */
+  setManualAddress(manual: boolean): void {
+    this.checkout.setManualAddress(manual);
+    this.lastLookedUpCep = '';
+    this.cepState = 'idle';
+    this.lookups.next(false);
+    this.revalidate();
+    // O campo que estava em foco (CEP) some ao ligar o modo manual: leva o foco ao primeiro campo do endereço.
+    setTimeout(() => document.getElementById(manual ? 'field-street' : 'field-cep')?.focus());
+  }
+
+  /** Ao sair de um campo do endereço manual, confere a distância até a loja (entrega grátis). */
+  onAddressBlur(): void {
+    this.checkout.refreshAddressZone();
+  }
+
   setChangeFor(value: string): void {
     this.checkout.setChangeFor(value);
     this.revalidate();

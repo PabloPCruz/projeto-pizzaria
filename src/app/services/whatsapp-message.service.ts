@@ -107,9 +107,10 @@ export class WhatsappMessageService {
       '*Entrega*',
       `${draft.street.trim()}, ${draft.number.trim()}${complement ? ` — ${complement}` : ''}`,
       `${draft.neighborhood.trim()} — ${draft.city.trim()}/${draft.state.trim().toUpperCase()}`,
-      `CEP ${this.format.cep(draft.cep)}`,
-      `Contato: ${this.format.phone(draft.phone)}`,
     ];
+    // Endereço manual (cliente sem CEP): não há linha de CEP.
+    if (this.format.onlyDigits(draft.cep)) lines.push(`CEP ${this.format.cep(draft.cep)}`);
+    lines.push(`Contato: ${this.format.phone(draft.phone)}`);
     if (free) lines.push(`Entrega grátis (até ${STORE_INFO.freeDelivery.radiusKm} km da loja)`);
     return lines;
   }

@@ -39,6 +39,8 @@ export type PaymentMethod = 'pix' | 'cartao' | 'dinheiro';
 export interface CheckoutDraft {
   name: string;
   phone: string;
+  /** `true` = cliente não sabe o CEP: preenche rua, número, bairro, cidade e UF à mão (o CEP não é exigido). */
+  manualAddress: boolean;
   cep: string;
   street: string;
   number: string;

@@ -69,7 +69,7 @@ describe('DeliveryZoneService', () => {
     expect(results[0].status).toBe('free');
     if (results[0].status === 'free') {
       expect(results[0].distanceKm).toBeCloseTo(2.9, 1);
-      expect(results[0].cep).toBe('82015290');
+      expect(results[0].key).toBe('82015290');
     }
   });
 
