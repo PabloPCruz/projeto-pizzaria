@@ -16,7 +16,7 @@ npm ci · npm run start:local · npm run build · npm test
 npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
 ```
 
-Estado verificado: build sem erros (initial ≈ 487 kB; **warn do budget em 500 kB, pouca folga**) e **252 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+Estado verificado: build sem erros (initial ≈ 489 kB; **warn do budget em 500 kB, pouca folga**) e **255 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
 
 ## 3. Decisões de produto (confirmadas com o dono)
 
@@ -70,7 +70,12 @@ O cardápio foi **transcrito por leitura visual** das 7 imagens em `src/assets/s
 1. **Preencher `prices.ts`** (maior pendência de produto).
 2. **Confirmar com a loja:** o horário "Segunda a sábado, 18h–23h" (veio da página antiga) e os 3 itens `CONFERIR` acima. O endereço da loja saiu da tela de Contatos por pedido do dono.
 3. O texto antigo "Entrega grátis em São Brás, Santo Inácio e Santa Felicidade" **não foi migrado** (sugere valor de entrega). Decidir se volta como texto.
-4. **Fotos dos sabores (em aberto, aguardando aprovação do plano):** 64 dos 71 sabores estão sem foto (30 tradicionais, 22 especiais, 12 doces). Problemas nas 7 existentes: `chocolate-com-morango.jpg` tem **marca d'água de banco de imagens** (risco de licença) e deve ser trocada; `calabresa.jpg` é uma pizza de **pepperoni** (serve ao sabor Peperone, não à Calabresa); `4-queijos.jpg` e `siciliana.jpeg` pesam ~1,2 MB cada (comprimir). Para as novas, usar só fontes de licença livre (Unsplash/Pexels) e conferir **foto a foto** os ingredientes visíveis (a legenda do site engana: uma "chicken pizza" era BBQ com abacaxi). Sabores sem foto adequada ficam com o placeholder em vez de uma foto que não corresponde.
+4. **Fotos dos sabores (parcial):** **28 de 71** sabores têm foto (43 usam o placeholder; os 13 doces ficaram todos sem, o Unsplash só tem "pizza doce" de confeitos). Só 7 fotos novas vieram do Unsplash (`Unsplash License`, sem marca d'água; fotógrafo e link em `src/assets/img-flavors/CREDITS.md`). Já feito: a foto com marca d'água (chocolate com morango) foi removida; `calabresa.jpg` (era pepperoni) virou `peperone.jpg` e a Calabresa ganhou foto própria; `4-queijos.jpg` e `siciliana.jpeg` foram de ~1,2 MB para ~120 KB; os destaques da home são uma lista explícita (`FEATURED_FLAVOR_IDS`). Mesclado a pedido do dono, **com estas associações duvidosas** (para trocar/retirar depois; basta apagar o 5º argumento de `flavor(...)` em `menu.data.ts`):
+   - `4-queijos.jpg` (mão segurando a fatia, sem bacon/calabresa/lombo) está nas 4 variações "Quatro Queijos com…" e no Seis Queijos.
+   - `americana.jpg` mostra azeitona e cogumelo que a Americana não leva (e ela está nos destaques da home); `siciliana.jpeg` mostra pimentão (foi reaproveitada na Mexicana).
+   - `margherita.jpg` (com manjericão) serve também a Napolitana e a Mussarela; `frango-com-catupiry.jpg` serve a Fran-Palha e Frango Especial (faltam batata palha/bacon/tomate); `milho.jpg` não mostra bacon.
+   - Fotos originais antigas seguem sem origem/licença documentada.
+   - Regra para novas fotos: só fontes de licença livre e **conferir foto a foto** os ingredientes visíveis (a legenda do site engana: uma "chicken pizza" era BBQ com abacaxi). O melhor caminho são fotos reais da pizzaria.
 5. **Pedido muito grande:** a URL do wa.me chega a ~5,7 mil caracteres com 10 pizzas + 10 bebidas; o limite real do WhatsApp não foi testado. Ideia: agrupar pizzas iguais e oferecer "copiar mensagem".
 6. Depois de um CEP "não encontrado", o endereço do CEP anterior permanece (o cliente pode editar).
 7. Build perto do budget de 500 kB; `lucide-angular` deprecated (migrar para `@lucide/angular` no futuro).
