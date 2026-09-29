@@ -148,7 +148,52 @@ const DOCES: PizzaFlavor[] = [
   flavor('doce', 'Ouro Branco', 'Leite condensado, chocolate ao leite e ouro branco'),
 ];
 
-export const FLAVORS: readonly PizzaFlavor[] = [...TRADICIONAIS, ...ESPECIAIS, ...DOCES];
+/**
+ * Foto ILUSTRATIVA para os sabores que não têm foto própria: a mais parecida que temos (mesmo grupo de
+ * ingredientes principais). A tela mostra "Foto ilustrativa" nesses casos; foto de verdade de cada sabor
+ * é só colocar o arquivo e passar o caminho no 5º argumento de flavor(...), que passa a valer.
+ * Formato: [arquivo em assets/img-flavors, categoria, nomes dos sabores].
+ */
+const ILLUSTRATIVE_PHOTOS: readonly [string, FlavorCategory, readonly string[]][] = [
+  ['frango-bacon-catupiry.jpg', 'tradicional', ['Frango com Calabresa Ralada']],
+  ['frango-com-catupiry.jpg', 'tradicional', ['Fran-Palha', 'Frango com Cheddar', 'Carijó']],
+  ['calabresa.jpg', 'tradicional', [
+    'Americana', 'Baiana', 'Calabresa Catu-Cheddar', 'Calabresa com Champignon', 'Calabresa com Tomate', 'Lombo com Calabresa',
+  ]],
+  ['bolonhesa.jpg', 'tradicional', ['Bolonhesa Catu-Cheddar']],
+  ['quatro-queijos.jpg', 'tradicional', [
+    'Quatro Queijos com Calabresa', 'Quatro Queijos com Lombo', 'Quatro Queijos com Calabresa e Lombo',
+  ]],
+  ['lombo-milho.jpg', 'tradicional', ['Milho com Bacon']],
+  ['margherita.jpg', 'tradicional', ['Paulista']],
+  ['quatro-queijos-bacon.jpg', 'tradicional', ['Crocante', 'Crocante Catu-Cheddar', 'Lombo com Bacon', 'Alho com Bacon']],
+  ['mexicana.jpg', 'tradicional', ['Siciliana']],
+  ['presunto.jpg', 'tradicional', ['Presunto Misto']],
+
+  ['mexicana.jpg', 'especial', ['Alemã']],
+  ['margherita.jpg', 'especial', ['Atum']],
+  ['portuguesa.jpeg', 'especial', ['À Moda da Casa', 'Mista', 'Canadense', 'Portuguesa Especial']],
+  ['mussarela-tomate.jpg', 'especial', ['Tomate Seco Especial', 'Tomate Seco']],
+  ['calabresa.jpg', 'especial', ['Calabresa Especial']],
+  ['frango-bacon-catupiry.jpg', 'especial', ['Pizzaiolo', 'Caipira']],
+  ['lombo-milho.jpg', 'especial', ['Lombo Especial', 'Camponesa']],
+  ['quatro-queijos-bacon.jpg', 'especial', ['Bacon Especial']],
+  ['peperone.jpg', 'especial', ['Poderosa']],
+  ['quatro-queijos.jpg', 'especial', ['Seis Queijos']],
+  ['bolonhesa.jpg', 'especial', ['Strogonoff']],
+
+  ['chocolate-morango.jpg', 'doce', ['Banana', 'Choconana', 'Banana com Nutella']],
+  ['brigadeiro.jpg', 'doce', ['Paçoca', 'Prestígio', 'Chocolate', 'Sonho de Valsa']],
+  ['bem-casado.jpg', 'doce', ['Romeu e Julieta', 'Ouro Branco']],
+];
+
+function withIllustrativePhoto(f: PizzaFlavor): PizzaFlavor {
+  if (f.image) return f;
+  const group = ILLUSTRATIVE_PHOTOS.find(([, category, names]) => category === f.category && names.includes(f.name));
+  return group ? { ...f, image: `assets/img-flavors/${group[0]}`, illustrative: true } : f;
+}
+
+export const FLAVORS: readonly PizzaFlavor[] = [...TRADICIONAIS, ...ESPECIAIS, ...DOCES].map(withIllustrativePhoto);
 
 export const FLAVOR_CATEGORY_LABELS: Record<FlavorCategory, string> = {
   tradicional: 'Tradicionais',

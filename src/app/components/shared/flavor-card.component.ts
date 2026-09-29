@@ -28,6 +28,9 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
           @if (flavor.optionHint) {
             <p class="mt-1 text-xs font-medium text-gold-light">{{ flavor.optionHint }}</p>
           }
+          @if (flavor.illustrative) {
+            <p class="illustrative-note mt-1 text-xs text-cream-dim">Foto ilustrativa</p>
+          }
         </div>
       </article>
     } @else {
@@ -39,6 +42,11 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
             imgClass="transition-[opacity,transform] duration-[600ms] ease-soft group-hover:scale-[1.04]"
           ></app-flavor-image>
           <span class="badge absolute left-3 top-3 bg-ink-900/85">{{ categoryLabel }}</span>
+          @if (flavor.illustrative) {
+            <span class="illustrative-note absolute bottom-2 left-2 rounded-full bg-ink-900/85 px-2.5 py-1 text-xs text-cream-muted">
+              Foto ilustrativa
+            </span>
+          }
         </div>
         <div class="flex flex-1 flex-col gap-1.5 p-4 sm:gap-2 sm:p-5">
           <h3 class="text-xl font-semibold leading-snug">{{ flavor.name }}</h3>

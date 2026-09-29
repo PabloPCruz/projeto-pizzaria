@@ -1,3 +1,6 @@
+import { TestBed } from '@angular/core/testing';
+import { FlavorCardComponent } from '../src/app/components/shared/flavor-card.component';
+import { SharedModule } from '../src/app/components/shared/shared.module';
 import { CRUSTS, DRINKS, FEATURED_FLAVOR_IDS, FLAVORS, PIZZA_SIZES } from '../src/app/data/menu.data';
 
 describe('menu.data', () => {
@@ -56,19 +59,27 @@ describe('menu.data: fotos dos sabores', () => {
     credited.forEach((file) => expect(used).withContext('crédito sem uso: ' + file).toContain(file));
   });
 
-  it('a foto de um sabor só é compartilhada por sabores da mesma família de nome', () => {
-    // Guarda contra reaproveitar uma foto em sabores diferentes por engano: cada foto compartilhada
-    // precisa estar em uma lista explícita e revisada de grupos.
-    const groups = new Map<string, string[]>();
-    withImage.forEach((f) => groups.set(f.image as string, [...(groups.get(f.image as string) ?? []), f.name]));
-    const shared = Array.from(groups.entries()).filter(([, names]) => names.length > 1);
-    const allowed: Record<string, string[]> = {
-      'assets/img-flavors/bolonhesa.jpg': ['Bolonhesa', 'Bolonhesa Especial'],
-      'assets/img-flavors/presunto.jpg': ['Romana', 'Francesa'],
-      'assets/img-flavors/mussarela-tomate.jpg': ['Mussarela', 'Napolitana'],
-    };
-    expect(shared.map(([image]) => image).sort()).toEqual(Object.keys(allowed).sort());
-    shared.forEach(([image, names]) => expect(names.sort()).withContext(image).toEqual(allowed[image].slice().sort()));
+  it('TODOS os 71 sabores têm foto (própria ou ilustrativa)', () => {
+    expect(FLAVORS.length).toBe(71);
+    FLAVORS.forEach((f) => expect(f.image).withContext(f.name).toBeTruthy());
+  });
+
+  it('sabores com foto ilustrativa são marcados; os que têm foto própria não', () => {
+    const illustrative = FLAVORS.filter((f) => f.illustrative);
+    expect(illustrative.length).toBeGreaterThan(0);
+    expect(illustrative.length).toBeLessThan(FLAVORS.length);
+    // Sabores que têm foto própria (com sabor definido no cardápio) nunca são marcados como ilustrativos.
+    ['Calabresa', 'Marguerita', 'Brócolis', 'Brigadeiro', 'Confete', 'Quatro Queijos'].forEach((name) =>
+      expect(FLAVORS.find((f) => f.name === name)?.illustrative).withContext(name).toBeFalsy()
+    );
+    illustrative.forEach((f) => expect(f.image).withContext(f.name).toBeTruthy());
+  });
+
+  it('a foto ilustrativa vem da mesma categoria de ingredientes (nunca um doce para salgado e vice-versa)', () => {
+    const isDessertPhoto = (image: string) => /brigadeiro|bem-casado|confete|chocolate-morango/.test(image);
+    FLAVORS.forEach((f) =>
+      expect(isDessertPhoto(f.image as string)).withContext(f.name).toBe(f.category === 'doce')
+    );
   });
 
   it('destaques da home existem, têm foto e são poucos', () => {
@@ -79,6 +90,30 @@ describe('menu.data: fotos dos sabores', () => {
       const flavor = FLAVORS.find((f) => f.id === id);
       expect(flavor).withContext(id).toBeDefined();
       expect(flavor?.image).withContext(id).toBeTruthy();
+      expect(flavor?.illustrative).withContext('destaque com foto própria: ' + id).toBeFalsy();
     });
   });
+});
+
+describe('FlavorCardComponent: aviso de foto ilustrativa', () => {
+  async function render(name: string, compact: boolean): Promise<HTMLElement> {
+    await TestBed.configureTestingModule({ imports: [SharedModule] }).compileComponents();
+    const fixture = TestBed.createComponent(FlavorCardComponent);
+    fixture.componentInstance.flavor = FLAVORS.find((f) => f.name === name)!;
+    fixture.componentInstance.compact = compact;
+    fixture.detectChanges();
+    return fixture.nativeElement;
+  }
+
+  for (const compact of [false, true]) {
+    it(`mostra "Foto ilustrativa" quando a foto não é do sabor (${compact ? 'lista' : 'cartão'})`, async () => {
+      const el = await render('Atum', compact);
+      expect(el.textContent).toContain('Foto ilustrativa');
+    });
+
+    it(`não mostra o aviso quando a foto é do próprio sabor (${compact ? 'lista' : 'cartão'})`, async () => {
+      const el = await render('Calabresa', compact);
+      expect(el.textContent).not.toContain('Foto ilustrativa');
+    });
+  }
 });

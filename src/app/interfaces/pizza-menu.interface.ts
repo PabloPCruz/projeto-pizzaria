@@ -18,6 +18,8 @@ export interface PizzaFlavor {
   /** Opção citada no cardápio impresso, ex.: "Opção catupiry". O cliente detalha em observações. */
   optionHint?: string;
   image?: string;
+  /** `true` = a foto é a mais parecida disponível, não a do sabor: a tela avisa "Foto ilustrativa". */
+  illustrative?: boolean;
 }
 
 export type CrustId =
