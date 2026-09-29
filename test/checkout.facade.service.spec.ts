@@ -15,6 +15,8 @@ describe('CheckoutFacadeService', () => {
   });
 
   afterEach(() => {
+    // As consultas de zona de entrega (AwesomeAPI/Nominatim) têm spec próprio: checkout-delivery.spec.ts.
+    http.match((r) => r.url.includes('awesomeapi') || r.url.includes('nominatim'));
     http.verify();
     localStorage.clear();
   });

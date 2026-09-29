@@ -37,6 +37,14 @@ export class CartService {
     this.commit({ ...this.snapshot, pizzas: [...this.snapshot.pizzas, line] });
   }
 
+  /** Troca os dados de uma pizza já no carrinho, mantendo o id e a posição. `false` se ela não existe mais. */
+  replacePizza(id: string, pizza: NewPizzaLine): boolean {
+    if (!this.snapshot.pizzas.some((p) => p.id === id)) return false;
+    const line: PizzaLine = { ...pizza, id, quantity: this.clamp(pizza.quantity) };
+    this.commit({ ...this.snapshot, pizzas: this.snapshot.pizzas.map((p) => (p.id === id ? line : p)) });
+    return true;
+  }
+
   /** Repetir a mesma bebida soma a quantidade em vez de criar outra linha. */
   addDrink(drinkId: string, quantity = 1): void {
     const drinks = this.snapshot.drinks;

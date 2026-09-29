@@ -22,6 +22,7 @@ const CART: CartState = {
 const DRAFT: CheckoutDraft = {
   name: 'Maria Silva',
   phone: '(41) 99999-1234',
+  manualAddress: false,
   cep: '80010-000',
   street: 'Rua XV de Novembro',
   number: '100',
@@ -60,6 +61,7 @@ const TYPICAL_CART: CartState = {
 const TYPICAL_DRAFT: CheckoutDraft = {
   name: 'Pablo Pereira',
   phone: '41998853289',
+  manualAddress: false,
   cep: '82015290',
   street: 'Rua Luiz Braille',
   number: '135',

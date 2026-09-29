@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { CartFacadeService, DrinkLineView } from '../../facade/cart.facade.service';
 import { MenuFacadeService } from '../../facade/menu.facade.service';
@@ -15,7 +15,7 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
   template: `
     @if (lines$ | async; as lines) {
       <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        @for (drink of drinks; track drink.id) {
+        @for (drink of visibleDrinks(lines); track drink.id) {
           <li
             [id]="'drink-' + drink.id"
             class="card flex items-center justify-between gap-3 p-3 pl-4 transition"
@@ -50,6 +50,12 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
   `,
 })
 export class DrinkPickerComponent {
+  /**
+   * `true` = lista só as bebidas que ainda NÃO estão no pedido (usado no carrinho, onde as já escolhidas
+   * aparecem em "Seus itens"; assim a mesma bebida nunca fica repetida na tela).
+   */
+  @Input() onlyAvailable = false;
+
   readonly drinks = this.menu.getDrinks();
   readonly lines$ = this.cart.view$.pipe(
     map((view) => new Map<string, DrinkLineView>(view.drinks.map((d) => [d.drinkId, d])))
@@ -58,13 +64,23 @@ export class DrinkPickerComponent {
 
   constructor(
     private menu: MenuFacadeService,
-    private cart: CartFacadeService
+    private cart: CartFacadeService,
+    private host: ElementRef<HTMLElement>
   ) {}
+
+  visibleDrinks(lines: Map<string, DrinkLineView>): readonly Drink[] {
+    return this.onlyAvailable ? this.drinks.filter((d) => !lines.has(d.id)) : this.drinks;
+  }
 
   add(drink: Drink): void {
     this.cart.addDrink(drink.id);
     this.live = `${drink.label} adicionada ao carrinho. Quantidade: 1.`;
-    this.focusAfterRender(drink.id, 'button[aria-label^="Aumentar"]');
+    if (this.onlyAvailable) {
+      // A linha some daqui (passa para "Seus itens"): o foco vai para o próximo "Adicionar" da lista.
+      setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>('button[aria-label^="Adicionar"]')?.focus());
+    } else {
+      this.focusAfterRender(drink.id, 'button[aria-label^="Aumentar"]');
+    }
   }
 
   change(drink: Drink, line: DrinkLineView, quantity: number): void {

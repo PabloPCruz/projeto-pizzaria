@@ -25,7 +25,8 @@ export class CheckoutValidationService {
     const phoneDigits = this.format.onlyDigits(draft.phone);
     if (phoneDigits.length < 10 || phoneDigits.length > 11) errors.phone = 'Informe um telefone com DDD.';
 
-    if (this.format.onlyDigits(draft.cep).length !== 8) errors.cep = 'Informe o CEP com 8 números.';
+    // Sem CEP (endereço manual) o CEP não é exigido, mas todo o resto do endereço é, menos o complemento.
+    if (!draft.manualAddress && this.format.onlyDigits(draft.cep).length !== 8) errors.cep = 'Informe o CEP com 8 números.';
     if (!draft.street.trim()) errors.street = 'Informe a rua.';
     if (!draft.number.trim()) errors.number = 'Informe o número (ou "s/n").';
     if (!draft.neighborhood.trim()) errors.neighborhood = 'Informe o bairro.';

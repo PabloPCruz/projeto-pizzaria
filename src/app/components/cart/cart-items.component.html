@@ -38,10 +38,16 @@
               <button type="button" class="btn-quiet min-h-[44px] px-3 py-2" (click)="cancelRemove()">Cancelar</button>
             </div>
           } @else {
-            <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-danger hover:text-danger" (click)="askRemove('pizza', pizza.id)">
-              <lucide-icon name="trash-2" [size]="18"></lucide-icon>
-              Remover<span class="sr-only"> {{ pizza.title }}</span>
-            </button>
+            <div class="flex items-center gap-1">
+              <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-gold hover:text-gold-light" (click)="editPizza(pizza.id)">
+                <lucide-icon name="pencil" [size]="18"></lucide-icon>
+                Editar<span class="sr-only"> {{ pizza.title }}</span>
+              </button>
+              <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-danger hover:text-danger" (click)="askRemove('pizza', pizza.id)">
+                <lucide-icon name="trash-2" [size]="18"></lucide-icon>
+                Remover<span class="sr-only"> {{ pizza.title }}</span>
+              </button>
+            </div>
           }
         </div>
       </li>

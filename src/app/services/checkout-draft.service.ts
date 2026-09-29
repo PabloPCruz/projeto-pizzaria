@@ -9,6 +9,7 @@ const PAYMENT_METHODS: readonly PaymentMethod[] = ['pix', 'cartao', 'dinheiro'];
 export const EMPTY_CHECKOUT: CheckoutDraft = {
   name: '',
   phone: '',
+  manualAddress: false,
   cep: '',
   street: '',
   number: '',
@@ -40,6 +41,7 @@ export class CheckoutDraftService {
     return {
       name: text('name'),
       phone: text('phone'),
+      manualAddress: data['manualAddress'] === true,
       cep: text('cep'),
       street: text('street'),
       number: text('number'),

@@ -53,7 +53,25 @@
   <!-- Endereço -->
   <fieldset class="mt-8">
     <legend class="mb-4 font-display text-xl font-semibold text-gold">Endereço de entrega</legend>
+
+    <!-- Quem não sabe o CEP preenche o endereço à mão (tudo obrigatório, menos o complemento) -->
+    <label class="mb-4 flex min-h-[44px] cursor-pointer items-center gap-3 text-sm text-cream" for="field-manualAddress">
+      <input
+        id="field-manualAddress"
+        type="checkbox"
+        class="h-5 w-5 shrink-0 cursor-pointer accent-[#d4af37]"
+        aria-describedby="manual-address-hint"
+        [checked]="draft.manualAddress"
+        (change)="setManualAddress($any($event.target).checked)"
+      />
+      <span><strong>Não sei meu CEP.</strong> Quero preencher o endereço manualmente.</span>
+    </label>
+    <p id="manual-address-hint" class="mb-4 text-sm text-cream-muted" [hidden]="!draft.manualAddress">
+      Preencha rua, número, bairro, cidade e UF. Só o complemento é opcional.
+    </p>
+
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-6">
+      @if (!draft.manualAddress) {
       <app-text-field
         class="sm:col-span-2"
         name="cep"
@@ -93,8 +111,9 @@
           }
         </div>
       </app-text-field>
+      }
       <app-text-field
-        class="sm:col-span-4"
+        [ngClass]="draft.manualAddress ? 'sm:col-span-6' : 'sm:col-span-4'"
         name="street"
         label="Rua"
         autocomplete="address-line1"
@@ -102,6 +121,7 @@
         [value]="draft.street"
         [error]="errors['street']"
         (valueChange)="update({ street: $event })"
+        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-2"
@@ -112,6 +132,7 @@
         [value]="draft.number"
         [error]="errors['number']"
         (valueChange)="update({ number: $event })"
+        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-4"
@@ -133,6 +154,7 @@
         [value]="draft.neighborhood"
         [error]="errors['neighborhood']"
         (valueChange)="update({ neighborhood: $event })"
+        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-3"
@@ -143,6 +165,7 @@
         [value]="draft.city"
         [error]="errors['city']"
         (valueChange)="update({ city: $event })"
+        (blurred)="onAddressBlur()"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-1"
@@ -153,8 +176,14 @@
         [value]="draft.state"
         [error]="errors['state']"
         (valueChange)="setState($event)"
+        (blurred)="onAddressBlur()"
       ></app-text-field>
     </div>
+
+    <!-- Endereço dentro do raio de entrega grátis -->
+    @if ((zone$ | async)?.status === 'free') {
+      <app-delivery-free id="delivery-free-inline" class="mt-5" [compact]="true" [radiusKm]="radiusKm"></app-delivery-free>
+    }
   </fieldset>
 
   <!-- Pagamento -->

@@ -28,6 +28,10 @@ export interface PizzaBuilderDraft {
   flavorIds: string[];
   crustId: string | null;
   notes: string;
+  /** Id da pizza do carrinho que está sendo editada; `null` = montando uma pizza nova. */
+  editingId: string | null;
+  /** Quantidade de pizzas iguais (só é diferente de 1 ao editar uma linha do carrinho). */
+  quantity: number;
 }
 
 export type PaymentMethod = 'pix' | 'cartao' | 'dinheiro';
@@ -35,6 +39,8 @@ export type PaymentMethod = 'pix' | 'cartao' | 'dinheiro';
 export interface CheckoutDraft {
   name: string;
   phone: string;
+  /** `true` = cliente não sabe o CEP: preenche rua, número, bairro, cidade e UF à mão (o CEP não é exigido). */
+  manualAddress: boolean;
   cep: string;
   street: string;
   number: string;

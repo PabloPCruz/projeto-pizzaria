@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CartFacadeService } from '../../facade/cart.facade.service';
+import { CartFacadeService, CartView } from '../../facade/cart.facade.service';
+import { MenuFacadeService } from '../../facade/menu.facade.service';
 import { OrderSent } from './checkout-form.component';
 
 @Component({
@@ -11,7 +12,15 @@ export class CartPageComponent {
   /** Preenchido depois que o link do WhatsApp foi gerado. */
   sent: OrderSent | null = null;
 
-  constructor(private cart: CartFacadeService) {}
+  constructor(
+    private cart: CartFacadeService,
+    private menu: MenuFacadeService
+  ) {}
+
+  /** Só oferece "adicionar bebida" enquanto sobrar alguma bebida que ainda não está no pedido. */
+  hasDrinksToAdd(view: CartView): boolean {
+    return view.drinks.length < this.menu.getDrinks().length;
+  }
 
   onSent(sent: OrderSent): void {
     this.sent = sent;

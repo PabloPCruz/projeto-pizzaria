@@ -12,9 +12,11 @@
           <lucide-icon name="check" [size]="28"></lucide-icon>
         </span>
         <h2 #addedHeading id="added-title" tabindex="-1" class="mt-5 text-2xl font-semibold outline-none sm:text-3xl">
-          Pizza adicionada ao carrinho
+          {{ addedWasEdit ? 'Alterações salvas no carrinho' : 'Pizza adicionada ao carrinho' }}
         </h2>
-        <p class="mt-2 text-cream-muted">Quer pedir mais uma ou já finalizar o pedido?</p>
+        <p class="mt-2 text-cream-muted">
+          {{ addedWasEdit ? 'Sua pizza foi atualizada. Pode revisar o pedido e finalizar.' : 'Quer pedir mais uma ou já finalizar o pedido?' }}
+        </p>
         <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button type="button" class="btn-ghost" (click)="addAnother()">
             <lucide-icon name="plus" [size]="18"></lucide-icon>
@@ -28,6 +30,24 @@
       </div>
     </section>
   } @else {
+    <!-- Aviso de edição de uma pizza que já está no carrinho -->
+    @if (view.editing) {
+      <div
+        class="mx-auto mt-8 flex max-w-3xl flex-col gap-3 rounded-2xl border border-gold/60 bg-gold/10 p-4 sm:flex-row sm:items-center sm:justify-between"
+        role="note"
+        id="editing-banner"
+      >
+        <p class="flex items-start gap-3 text-sm text-gold-light">
+          <lucide-icon name="pencil" [size]="20" class="mt-0.5 shrink-0"></lucide-icon>
+          <span><strong>Editando uma pizza do carrinho.</strong> Ao salvar, ela substitui a original.</span>
+        </p>
+        <button type="button" class="btn-quiet min-h-[44px] shrink-0 px-4 py-2" (click)="cancelEdit()">
+          <lucide-icon name="x" [size]="18"></lucide-icon>
+          Cancelar edição
+        </button>
+      </div>
+    }
+
     <!-- Indicador de progresso -->
     <nav aria-label="Etapas da montagem" class="mx-auto mt-8 max-w-3xl">
       <ol class="flex items-center">
@@ -95,7 +115,7 @@
           <app-flavors-step *ngSwitchCase="1"></app-flavors-step>
           <app-crust-step *ngSwitchCase="2"></app-crust-step>
           <app-extras-step *ngSwitchCase="3"></app-extras-step>
-          <app-review-step *ngSwitchCase="4" (added)="onAdded()"></app-review-step>
+          <app-review-step *ngSwitchCase="4" (added)="onAdded($event)"></app-review-step>
         </div>
 
         <!-- Navegação entre passos (fixa no rodapé em telas pequenas) -->

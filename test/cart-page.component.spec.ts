@@ -224,6 +224,11 @@ describe('CartPageComponent / checkout', () => {
       expect(field('city')!.value).toBe('Curitiba');
       expect(field('state')!.value).toBe('PR');
       expect(document.activeElement?.id).toBe('field-number');
+
+      // Depois do ViaCEP, o sistema confere a distância até a loja (Rua José Loureiro fica a ~7 km: fora da área grátis).
+      http.expectOne('https://cep.awesomeapi.com.br/json/80010000').flush({ lat: '-25.4320987', lng: '-49.2683971' });
+      fixture.detectChanges();
+      expect(el.querySelector('#delivery-free-inline')).toBeNull();
       http.verify();
     });
 
