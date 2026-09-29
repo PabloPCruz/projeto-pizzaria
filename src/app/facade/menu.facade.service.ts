@@ -1,83 +1,57 @@
 import { Injectable } from '@angular/core';
-import { ALL_FLAVORS } from 'mocks/mock-flavors/all-flavors.mock';
-import { TRADICIONAIS } from 'mocks/mock-flavors/tradicional-flavors.mock';
-import { DOCES_TRADICIONAIS } from 'mocks/mock-flavors/doces-tradicional.mock';
-import { DOCES_ESPECIAIS } from 'mocks/mock-flavors/doces-especiais.mock';
-import { Flavor } from '../interfaces/flavor.interface';
+import { FEATURED_FLAVOR_IDS, FLAVOR_CATEGORY_LABELS } from '../data/menu.data';
+import {
+  Crust,
+  Drink,
+  FlavorCategory,
+  PizzaFlavor,
+  PizzaSize,
+  PizzaSizeId,
+} from '../interfaces/pizza-menu.interface';
+import { CatalogService } from '../services/catalog.service';
 
-/**
- * Facade para operações relacionadas a sabores e menu
- * Centraliza a lógica de carregamento de sabores de diferentes categorias
- */
-@Injectable({
-  providedIn: 'root'
-})
+/** Cardápio para as telas: tamanhos, sabores por categoria, busca, bordas e bebidas. */
+@Injectable({ providedIn: 'root' })
 export class MenuFacadeService {
+  readonly categories: readonly { id: FlavorCategory; label: string }[] = (
+    Object.keys(FLAVOR_CATEGORY_LABELS) as FlavorCategory[]
+  ).map((id) => ({ id, label: FLAVOR_CATEGORY_LABELS[id] }));
 
-  /**
-   * Obtém todos os sabores disponíveis
-   */
-  getAllFlavors(): Flavor[] {
-    return ALL_FLAVORS;
+  constructor(private catalog: CatalogService) {}
+
+  getSizes(): readonly PizzaSize[] {
+    return this.catalog.getSizes();
   }
 
-  /**
-   * Obtém sabores tradicionais
-   */
-  getTraditionalFlavors(): Flavor[] {
-    return TRADICIONAIS;
+  getFlavors(category?: FlavorCategory): readonly PizzaFlavor[] {
+    return this.catalog.getFlavors(category);
   }
 
-  /**
-   * Obtém sabores especiais (best flavors)
-   */
-  getSpecialFlavors(): Flavor[] {
-    return ALL_FLAVORS; // Usando ALL_FLAVORS como especiais (BEST_FLAVORS)
+  searchFlavors(term: string, category?: FlavorCategory): readonly PizzaFlavor[] {
+    return this.catalog.searchFlavors(term, category);
   }
 
-  /**
-   * Obtém doces tradicionais
-   */
-  getTraditionalSweets(): Flavor[] {
-    return (DOCES_TRADICIONAIS || []) as Flavor[];
+  getFeaturedFlavors(): readonly PizzaFlavor[] {
+    return FEATURED_FLAVOR_IDS.map((id) => this.catalog.getFlavor(id)).filter((f): f is PizzaFlavor => !!f);
   }
 
-  /**
-   * Obtém doces especiais
-   */
-  getSpecialSweets(): Flavor[] {
-    return (DOCES_ESPECIAIS || []) as Flavor[];
+  getFlavor(id: string): PizzaFlavor | undefined {
+    return this.catalog.getFlavor(id);
   }
 
-  /**
-   * Obtém um sabor específico por nome
-   */
-  getFavorByName(nome: string): Flavor | undefined {
-    const allFlavors = this.getAllCombinedFlavors();
-    return allFlavors.find(f => f.sabor === nome);
+  getCrust(id: string): Crust | undefined {
+    return this.catalog.getCrust(id);
   }
 
-  /**
-   * Busca sabores por termo
-   */
-  searchFlavors(termo: string): Flavor[] {
-    const allFlavors = this.getAllCombinedFlavors();
-    const termoLower = termo.toLowerCase();
-    return allFlavors.filter(f =>
-      f.sabor.toLowerCase().includes(termoLower) ||
-      f.ingredientes.toLowerCase().includes(termoLower)
-    );
+  getSize(id: PizzaSizeId): PizzaSize | undefined {
+    return this.catalog.getSize(id);
   }
 
-  /**
-   * Obtém todos os sabores combinados de todas as categorias
-   */
-  private getAllCombinedFlavors(): Flavor[] {
-    return [
-      ...ALL_FLAVORS,
-      ...(TRADICIONAIS || []),
-      ...(DOCES_TRADICIONAIS || []),
-      ...(DOCES_ESPECIAIS || [])
-    ] as Flavor[];
+  getCrusts(): readonly Crust[] {
+    return this.catalog.getCrusts();
+  }
+
+  getDrinks(): readonly Drink[] {
+    return this.catalog.getDrinks();
   }
 }

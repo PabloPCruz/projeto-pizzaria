@@ -1,3 +1,7 @@
-<div class="app-route-shell" [@routeFadeAnimation]="prepareRoute(outlet)">
-	<router-outlet #outlet="outlet"></router-outlet>
-</div>
+<a href="#main-content" class="skip-link" (click)="skipToMain($event)">Pular para o conteúdo</a>
+<app-header></app-header>
+<main id="main-content" tabindex="-1" [@routeFadeAnimation]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+<app-footer></app-footer>
+<app-mobile-bar></app-mobile-bar>

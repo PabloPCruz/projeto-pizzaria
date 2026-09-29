@@ -1,0 +1,67 @@
+<footer class="border-t border-gold/25 bg-ink-950">
+  <div class="container-page grid grid-cols-1 gap-10 py-12 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-3">
+        <app-logo [height]="52" [decorative]="true"></app-logo>
+        <p class="font-display text-2xl font-semibold">{{ store.name }}</p>
+      </div>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-cream-muted">
+        Pizzaria de família, em Curitiba desde {{ store.since }}. Massa marcante, recheio generoso.
+      </p>
+      <p class="mt-4 flex flex-wrap gap-2">
+        <span class="badge gap-1.5"><lucide-icon name="calendar-x" [size]="14"></lucide-icon>{{ store.closedNotice }}</span>
+        <span class="badge gap-1.5"><lucide-icon name="tag" [size]="14"></lucide-icon>{{ store.promoNotice }}</span>
+      </p>
+    </div>
+
+    <nav aria-label="Rodapé">
+      <h2 class="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-gold">Navegação</h2>
+      <ul class="mt-4 space-y-1 text-sm">
+        <li><a routerLink="/" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Início</a></li>
+        <li><a routerLink="/cardapio" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Cardápio</a></li>
+        <li><a routerLink="/montar-pizza" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Monte sua pizza</a></li>
+        <li><a routerLink="/carrinho" class="inline-flex min-h-[44px] min-w-[44px] items-center text-cream-muted hover:text-gold">Carrinho</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-gold">Siga e fale com a gente</h2>
+      <ul class="mt-4 flex gap-3">
+        <li>
+          <a
+            [href]="store.social.instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram da Disk Pizza (abre em nova aba)"
+            class="btn-icon"
+          ><app-brand-icon name="instagram"></app-brand-icon></a>
+        </li>
+        <li>
+          <a
+            [href]="store.social.facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook da Disk Pizza (abre em nova aba)"
+            class="btn-icon"
+          ><app-brand-icon name="facebook"></app-brand-icon></a>
+        </li>
+        <li>
+          <a
+            [href]="whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp da Disk Pizza (abre em nova aba)"
+            class="btn-icon"
+          ><app-brand-icon name="whatsapp"></app-brand-icon></a>
+        </li>
+      </ul>
+      <p class="mt-5 text-sm text-cream-muted">
+        <a [href]="phoneUrl" class="inline-flex min-h-[44px] items-center hover:text-gold">Telefone {{ store.phoneDisplay }}</a><br />
+        <span>WhatsApp {{ store.whatsappDisplay }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="border-t border-ink-500/50 py-5 text-center text-xs text-cream-dim">
+    © {{ year }} {{ store.name }} · Pizzaria italiana · Curitiba/PR
+  </div>
+</footer>

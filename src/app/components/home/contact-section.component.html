@@ -1,0 +1,66 @@
+<section id="contatos" class="section border-t border-ink-500/40 bg-ink-800/40" aria-labelledby="contatos-title">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="eyebrow">Fale com a gente</p>
+      <h2 id="contatos-title" class="section-title">Contatos e horário</h2>
+      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+    </div>
+
+    <dl class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div class="card flex items-start gap-4 p-6">
+        <span class="mt-0.5 text-gold"><lucide-icon name="phone" [size]="24"></lucide-icon></span>
+        <div>
+          <dt class="text-sm font-semibold uppercase tracking-widest text-gold">Telefone</dt>
+          <dd class="mt-1">
+            <a [href]="phoneUrl" class="inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold">{{ store.phoneDisplay }}</a>
+          </dd>
+        </div>
+      </div>
+
+      <div class="card flex items-start gap-4 p-6">
+        <span class="mt-0.5 text-gold"><app-brand-icon name="whatsapp" [size]="24"></app-brand-icon></span>
+        <div>
+          <dt class="text-sm font-semibold uppercase tracking-widest text-gold">WhatsApp</dt>
+          <dd class="mt-1">
+            <a
+              [href]="whatsappUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"
+            >{{ store.whatsappDisplay }}<span class="sr-only"> (abre em nova aba)</span></a>
+          </dd>
+        </div>
+      </div>
+
+      <div class="card flex items-start gap-4 p-6">
+        <span class="mt-0.5 text-gold"><lucide-icon name="map-pin" [size]="24"></lucide-icon></span>
+        <div>
+          <dt class="text-sm font-semibold uppercase tracking-widest text-gold">Endereço</dt>
+          <dd class="mt-1 text-lg text-cream">{{ store.address }}</dd>
+        </div>
+      </div>
+
+      <div class="card flex items-start gap-4 p-6">
+        <span class="mt-0.5 text-gold"><lucide-icon name="clock" [size]="24"></lucide-icon></span>
+        <div>
+          <dt class="text-sm font-semibold uppercase tracking-widest text-gold">Horário</dt>
+          <dd class="mt-1 text-lg text-cream">{{ store.hours }}</dd>
+          <dd class="mt-1 text-sm text-cream-muted">{{ store.closedNotice }} · {{ store.promoNotice }}</dd>
+        </div>
+      </div>
+    </dl>
+
+    <ul class="mt-8 flex flex-wrap justify-center gap-3" aria-label="Redes sociais">
+      <li>
+        <a [href]="store.social.instagram" target="_blank" rel="noopener noreferrer" class="btn-ghost gap-2">
+          <app-brand-icon name="instagram" [size]="20"></app-brand-icon>Instagram<span class="sr-only"> (abre em nova aba)</span>
+        </a>
+      </li>
+      <li>
+        <a [href]="store.social.facebook" target="_blank" rel="noopener noreferrer" class="btn-ghost gap-2">
+          <app-brand-icon name="facebook" [size]="20"></app-brand-icon>Facebook<span class="sr-only"> (abre em nova aba)</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

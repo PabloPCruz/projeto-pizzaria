@@ -1,0 +1,236 @@
+<form id="checkout-form" novalidate (ngSubmit)="submit()" aria-labelledby="checkout-title" *ngIf="draft$ | async as draft">
+  <h2 id="checkout-title" class="text-2xl font-semibold sm:text-3xl">Finalizar pedido</h2>
+  <p class="mt-1 text-sm text-cream-muted">Preencha seus dados. O pedido é enviado pelo WhatsApp para a loja confirmar.</p>
+
+  <!-- Resumo de erros -->
+  <div role="alert" [hidden]="errorList.length === 0">
+    @if (errorList.length > 0) {
+      <div class="mt-6 rounded-2xl border border-danger/60 bg-danger/10 p-5" id="checkout-errors">
+        <p class="flex items-center gap-2 font-semibold text-danger">
+          <lucide-icon name="circle-alert" [size]="20"></lucide-icon>
+          Confira {{ errorList.length === 1 ? 'este ponto' : 'estes pontos' }} antes de enviar
+        </p>
+        <ul class="mt-3 list-inside list-disc space-y-1 text-sm text-cream">
+          @for (item of errorList; track item.field) {
+            <li>
+              <button type="button" class="inline min-h-[44px] underline decoration-danger/70 underline-offset-2 hover:text-gold sm:min-h-0" (click)="focusField(item.field)">{{ item.label }}</button>:
+              {{ item.message }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <!-- Seus dados -->
+  <fieldset class="mt-8">
+    <legend class="mb-4 font-display text-xl font-semibold text-gold">Seus dados</legend>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <app-text-field
+        name="name"
+        label="Nome"
+        autocomplete="name"
+        [maxlength]="60"
+        [value]="draft.name"
+        [error]="errors['name']"
+        (valueChange)="update({ name: $event })"
+      ></app-text-field>
+      <app-text-field
+        name="phone"
+        label="Telefone (com DDD)"
+        type="tel"
+        autocomplete="tel-national"
+        inputmode="tel"
+        placeholder="(41) 99999-9999"
+        [maxlength]="20"
+        [value]="draft.phone"
+        [error]="errors['phone']"
+        (valueChange)="setPhone($event)"
+      ></app-text-field>
+    </div>
+  </fieldset>
+
+  <!-- Endereço -->
+  <fieldset class="mt-8">
+    <legend class="mb-4 font-display text-xl font-semibold text-gold">Endereço de entrega</legend>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-6">
+      <app-text-field
+        class="sm:col-span-2"
+        name="cep"
+        label="CEP"
+        autocomplete="postal-code"
+        inputmode="numeric"
+        placeholder="00000-000"
+        [maxlength]="9"
+        [value]="draft.cep"
+        [error]="errors['cep']"
+        describedByExtra="cep-status"
+        (valueChange)="setCep($event)"
+        (blurred)="onCepBlur()"
+      >
+        <div id="cep-status" role="status" aria-live="polite" class="mt-1.5 text-sm">
+          @switch (cepState) {
+            @case ('loading') {
+              <p class="flex items-center gap-2 text-cream-muted">
+                <lucide-icon name="loader-circle" [size]="16" class="animate-spin"></lucide-icon>Buscando endereço…
+              </p>
+            }
+            @case ('ok') {
+              <p class="flex items-center gap-2 text-ok">
+                <lucide-icon name="check" [size]="16"></lucide-icon>Endereço preenchido. Confira e informe o número.
+              </p>
+            }
+            @case ('not-found') {
+              <p class="flex items-start gap-2 text-gold-light">
+                <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>CEP não encontrado. Preencha o endereço manualmente.
+              </p>
+            }
+            @case ('error') {
+              <p class="flex items-start gap-2 text-gold-light">
+                <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>Não foi possível buscar o CEP agora. Preencha o endereço manualmente.
+              </p>
+            }
+          }
+        </div>
+      </app-text-field>
+      <app-text-field
+        class="sm:col-span-4"
+        name="street"
+        label="Rua"
+        autocomplete="address-line1"
+        [maxlength]="80"
+        [value]="draft.street"
+        [error]="errors['street']"
+        (valueChange)="update({ street: $event })"
+      ></app-text-field>
+      <app-text-field
+        class="sm:col-span-2"
+        name="number"
+        label="Número"
+        autocomplete="off"
+        [maxlength]="10"
+        [value]="draft.number"
+        [error]="errors['number']"
+        (valueChange)="update({ number: $event })"
+      ></app-text-field>
+      <app-text-field
+        class="sm:col-span-4"
+        name="complement"
+        label="Complemento"
+        [optional]="true"
+        autocomplete="address-line2"
+        [maxlength]="60"
+        placeholder="Apto, bloco, referência"
+        [value]="draft.complement"
+        (valueChange)="update({ complement: $event })"
+      ></app-text-field>
+      <app-text-field
+        class="sm:col-span-2"
+        name="neighborhood"
+        label="Bairro"
+        autocomplete="address-level3"
+        [maxlength]="60"
+        [value]="draft.neighborhood"
+        [error]="errors['neighborhood']"
+        (valueChange)="update({ neighborhood: $event })"
+      ></app-text-field>
+      <app-text-field
+        class="sm:col-span-3"
+        name="city"
+        label="Cidade"
+        autocomplete="address-level2"
+        [maxlength]="60"
+        [value]="draft.city"
+        [error]="errors['city']"
+        (valueChange)="update({ city: $event })"
+      ></app-text-field>
+      <app-text-field
+        class="sm:col-span-1"
+        name="state"
+        label="UF"
+        autocomplete="address-level1"
+        [maxlength]="2"
+        [value]="draft.state"
+        [error]="errors['state']"
+        (valueChange)="setState($event)"
+      ></app-text-field>
+    </div>
+  </fieldset>
+
+  <!-- Pagamento -->
+  <fieldset class="mt-8">
+    <legend id="payment-legend" class="mb-4 font-display text-xl font-semibold text-gold">Forma de pagamento</legend>
+    <div
+      role="radiogroup"
+      aria-labelledby="payment-legend"
+      class="grid grid-cols-1 gap-3 sm:grid-cols-3"
+      [attr.aria-invalid]="errors['payment'] ? 'true' : null"
+      [attr.aria-describedby]="errors['payment'] ? 'field-payment-error' : null"
+    >
+      @for (p of payments; track p.id) {
+        <label class="choice" [attr.for]="'field-payment-' + p.id">
+          <input
+            type="radio"
+            name="payment"
+            class="peer"
+            [id]="'field-payment-' + p.id"
+            [value]="p.id"
+            [checked]="draft.payment === p.id"
+            (change)="setPayment(p.id)"
+          />
+          <span
+            class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-ink-300 transition peer-checked:border-gold peer-checked:bg-gold"
+            aria-hidden="true"
+          ><span class="h-2 w-2 rounded-full bg-ink-900"></span></span>
+          <span class="block">
+            <span class="block font-semibold">{{ p.label }}</span>
+            @if (p.hint) {
+              <span class="block text-xs text-cream-muted">{{ p.hint }}</span>
+            }
+          </span>
+        </label>
+      }
+    </div>
+    @if (errors['payment']) {
+      <p class="field-error" id="field-payment-error">
+        <lucide-icon name="circle-alert" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
+        <span>{{ errors['payment'] }}</span>
+      </p>
+    }
+
+    @if (draft.payment === 'dinheiro') {
+      <div class="page-enter mt-4 max-w-sm">
+        <app-text-field
+          name="changeFor"
+          label="Precisa de troco para quanto?"
+          [optional]="true"
+          inputmode="decimal"
+          autocomplete="off"
+          placeholder="R$ 100,00"
+          [maxlength]="12"
+          hint="Digite o valor da nota (ex.: 100). Use vírgula para centavos. Em branco se não precisar de troco."
+          [value]="draft.changeFor"
+          [error]="errors['changeFor']"
+          (valueChange)="setChangeFor($event)"
+          (blurred)="normalizeChangeFor()"
+        ></app-text-field>
+      </div>
+    }
+  </fieldset>
+
+  <!-- Observações gerais -->
+  <div class="mt-8">
+    <label for="field-generalNotes" class="field-label">
+      Observações gerais do pedido <span class="font-normal text-cream-dim">(opcional)</span>
+    </label>
+    <textarea
+      id="field-generalNotes"
+      class="field-input"
+      rows="3"
+      maxlength="400"
+      placeholder="Ex.: portão azul, tocar o interfone, entregar após as 20h"
+      [value]="draft.generalNotes"
+      (input)="update({ generalNotes: $any($event.target).value })"
+    ></textarea>
+  </div>
+</form>

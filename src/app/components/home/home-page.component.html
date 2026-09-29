@@ -1,0 +1,103 @@
+<!-- Hero -->
+<section class="relative overflow-hidden" aria-labelledby="hero-title">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute left-1/2 top-[-10%] h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gold/10 blur-3xl"></div>
+    <div class="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-brand/10 blur-3xl"></div>
+  </div>
+  <div class="container-page relative grid grid-cols-1 items-center gap-10 py-12 sm:py-20 lg:grid-cols-2">
+    <div class="page-enter order-2 text-center lg:order-1 lg:text-left">
+      <p class="eyebrow">Pizzaria italiana · desde {{ store.since }}</p>
+      <h1 id="hero-title" class="mt-4 text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
+        Sabor de família em <em class="text-gold not-italic">cada fatia</em>
+      </h1>
+      <p class="lead mx-auto mt-5 max-w-xl lg:mx-0">
+        Massa marcante, recheio generoso e receitas que atravessam gerações. Monte a sua pizza em poucos passos
+        e receba em casa.
+      </p>
+      <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
+        <a routerLink="/montar-pizza" class="btn-primary px-8 py-4 text-base">
+          <lucide-icon name="pizza" [size]="20"></lucide-icon>
+          Monte sua pizza
+        </a>
+        <a routerLink="/cardapio" class="btn-ghost px-8 py-4 text-base">Ver cardápio</a>
+      </div>
+      <ul class="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start" aria-label="Avisos da loja">
+        <li class="badge gap-1.5 py-1.5 text-sm">
+          <lucide-icon name="calendar-x" [size]="16"></lucide-icon>{{ store.closedNotice }}
+        </li>
+        <li class="badge gap-1.5 py-1.5 text-sm">
+          <lucide-icon name="tag" [size]="16"></lucide-icon>{{ store.promoNotice }}
+        </li>
+      </ul>
+    </div>
+    <div class="page-enter order-1 flex justify-center lg:order-2" style="animation-delay: 0.1s">
+      <div class="rounded-[2rem] border border-gold/30 bg-ink-800/60 p-6 shadow-glow sm:p-10">
+        <app-logo [height]="210"></app-logo>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sabores em destaque -->
+<section class="section border-t border-ink-500/40" aria-labelledby="destaques-title">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="eyebrow">Sabores em destaque</p>
+      <h2 id="destaques-title" class="section-title">As favoritas da casa</h2>
+      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+    </div>
+    <app-featured-flavors class="mt-10 block"></app-featured-flavors>
+  </div>
+</section>
+
+<!-- Como pedir -->
+<section id="como-pedir" class="section border-t border-ink-500/40 bg-ink-800/40" aria-labelledby="como-pedir-title">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="eyebrow">Simples e rápido</p>
+      <h2 id="como-pedir-title" class="section-title">Como pedir</h2>
+      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+    </div>
+    <ol class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+      @for (step of steps; track step.title; let i = $index) {
+        <li class="card relative p-7 pt-10">
+          <span
+            class="absolute -top-5 left-7 flex h-11 w-11 items-center justify-center rounded-full border border-gold bg-ink-900 font-display text-xl font-semibold text-gold"
+            aria-hidden="true"
+          >{{ i + 1 }}</span>
+          <h3 class="text-xl font-semibold"><span class="sr-only">Passo {{ i + 1 }}: </span>{{ step.title }}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-cream-muted">{{ step.text }}</p>
+        </li>
+      }
+    </ol>
+    <p class="mt-10 text-center">
+      <a routerLink="/montar-pizza" class="btn-gold px-8">
+        Começar meu pedido
+        <lucide-icon name="arrow-right" [size]="18"></lucide-icon>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- História -->
+<section id="historia" class="section border-t border-ink-500/40" aria-labelledby="historia-title">
+  <div class="container-page">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow">Nossa história</p>
+      <h2 id="historia-title" class="section-title">A história do Disk Pizza</h2>
+      <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+      <p class="lead">
+        Fundada em {{ store.since }} por uma família tradicionalmente gaúcha, a Disk Pizza nasceu com um propósito
+        claro: unir sabor, fartura e carinho em cada pedaço. Com receitas únicas, uma massa marcante e recheios
+        generosos, a pizzaria rapidamente conquistou espaço entre os apaixonados por boa comida.
+      </p>
+      <p class="lead mt-4">
+        Hoje, seguimos trabalhando em família, contando com colaboradores que abraçam nosso jeito de fazer pizza com
+        dedicação e alegria. Cada fornada é um convite para compartilhar sabores, histórias e tradição.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contatos -->
+<app-contact-section></app-contact-section>

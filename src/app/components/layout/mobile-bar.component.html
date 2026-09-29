@@ -1,0 +1,27 @@
+@if (visible$ | async) {
+  <nav
+    aria-label="Ações rápidas"
+    class="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-ink-900/95 pb-[env(safe-area-inset-bottom)] md:hidden"
+  >
+    <div class="container-page flex items-center gap-3 py-2.5">
+      <a
+        routerLink="/carrinho"
+        class="flex min-h-[48px] min-w-0 flex-1 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink-300 px-4 text-sm font-medium text-cream hover:border-gold"
+      >
+        <span class="relative">
+          <lucide-icon name="shopping-cart" [size]="22"></lucide-icon>
+          @if ((itemCount$ | async) ?? 0; as count) {
+            <span
+              class="absolute -right-2 -top-2 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-brand px-1 text-[11px] font-bold text-white"
+              aria-hidden="true"
+            >{{ count }}</span>
+          }
+        </span>
+        <span>Carrinho<span class="sr-only"> ({{ cartText((itemCount$ | async) ?? 0) }})</span></span>
+      </a>
+      <a routerLink="/montar-pizza" class="btn-primary shrink-0 px-5">Monte sua pizza</a>
+    </div>
+  </nav>
+  <!-- Espaço em fluxo no fim da página: a barra fixa não cobre o rodapé. -->
+  <div class="h-[calc(4.75rem+env(safe-area-inset-bottom))] md:hidden" aria-hidden="true"></div>
+}

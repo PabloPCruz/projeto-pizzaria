@@ -1,144 +1,97 @@
-import { Bebida, opcoesBebida } from '../interfaces/drinks.interface';
-import { Borda } from '../interfaces/border.interface';
-import { OrderData } from '../interfaces/order-data.interface';
 import { Injectable } from '@angular/core';
-import { OrderService } from '../services/order.service';
-import { FormatService } from '../services/format.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { PizzaBuilderDraft } from '../interfaces/cart.interface';
+import { PizzaSizeId } from '../interfaces/pizza-menu.interface';
+import { CartService } from '../services/cart.service';
+import { FlavorValidation, SizeRulesService } from '../services/size-rules.service';
+import { PizzaBuilderService } from '../services/pizza-builder.service';
+import { PersistenceService } from '../services/persistence.service';
+import { PricingService } from '../services/pricing.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+const STEP_KEY = 'builder-step';
+
+export interface BuilderView {
+  draft: PizzaBuilderDraft;
+  maxFlavors: number;
+  remainingFlavors: number;
+  validation: FlavorValidation;
+  /** Preço unitário da pizza montada, ou `null` se algum preço ainda não foi informado. */
+  unitPrice: number | null;
+}
+
+/** Montagem de pizza: tamanho, sabores (respeitando o limite), borda e observações. */
+@Injectable({ providedIn: 'root' })
 export class OrderFacadeService {
-  private orderData!: OrderData;
+  readonly view$: Observable<BuilderView>;
 
   constructor(
-    private orderService: OrderService,
-    private formatService: FormatService
-  ) {}
-
-  // Métodos para atualizar dados específicos do pedido
-  setPedidoData(pedido: OrderData): void {
-    this.orderData.tamanho = pedido.tamanho;
-    this.orderData.sabores = [...pedido.sabores];
-    this.orderData.observacoes = pedido.observacoes;
-  }
-
-  setEnderecoData(endereco: OrderData): void {
-    this.orderData.cep = endereco.cep;
-    this.orderData.rua = endereco.rua;
-    this.orderData.number = endereco.number;
-    this.orderData.complemento = endereco.complemento;
-    this.orderData.bairro = endereco.bairro;
-    this.orderData.cidade = endereco.cidade;
-  }
-
-  setBorda(borda: Borda): void {
-    this.orderData.borda = borda;
-  }
-
-  setBebidas(bebidas: Bebida[]): void {
-    this.orderData.bebida = bebidas;
-  }
-
-  setNome(nome: string): void {
-    this.orderData.nome = nome;
-  }
-
-  /**
-   * Gera mensagem formatada de bebidas usando FormatService
-   */
-  private formatarBebidas(): string {
-    if (!this.orderData.bebida || this.orderData.bebida.length === 0) {
-      return 'Sem bebida';
-    }
-    return this.formatService.formatarBebidas(this.orderData.bebida);
-  }
-
-  /**
-   * Formata borda usando FormatService (sem duplicação)
-   */
-  private formatarBorda(): string {
-    return this.formatService.formatarBorda(this.orderData.borda);
-  }
-
-  /**
-   * Gera mensagem para WhatsApp com dados do pedido
-   */
-  gerarMensagemWhatsapp(): string {
-    const msg = `Boa noite! Segue meu pedido realizado no site, por gentileza confirmar o valor:
-
-${this.orderData.nome ? `Nome: ${this.orderData.nome}` : ''}
-Pedido: ${this.orderData.tamanho}
-Sabores: ${this.orderData.sabores.join(', ')}
-Bebida: ${this.formatarBebidas()}
-Borda: ${this.formatarBorda()}
-Observações: ${this.orderData.observacoes || 'Não possui'}
-Endereço: Rua ${this.orderData.rua}, Número: ${this.orderData.number}, Complemento: ${this.orderData.complemento || 'N/A'}, Bairro: ${this.orderData.bairro}, Cidade: ${this.orderData.cidade}`;
-
-    return encodeURIComponent(msg.trim());
-  }
-
-  /**
-   * Limpa o pedido
-   */
-  clearOrder(): void {
-    this.orderData = {
-      tamanho: '',
-      sabores: [],
-      observacoes: '',
-      borda: undefined,
-      bebida: [],
-      cep: '',
-      rua: '',
-      number: '',
-      complemento: '',
-      bairro: '',
-      cidade: '',
-      nome: '',
-    };
-  }
-
-  /**
-   * Valida se o pedido está completo
-   */
-  isOrderValid(): boolean {
-    return !!(
-      this.orderData.tamanho &&
-      this.orderData.sabores.length > 0 &&
-      this.orderData.rua &&
-      this.orderData.number &&
-      this.orderData.bairro &&
-      this.orderData.cidade
+    private builder: PizzaBuilderService,
+    private sizeRules: SizeRulesService,
+    private pricing: PricingService,
+    private cart: CartService,
+    private persistence: PersistenceService
+  ) {
+    this.view$ = this.builder.draft$.pipe(
+      map((draft) => {
+        const maxFlavors = this.sizeRules.maxFlavors(draft.size);
+        return {
+          draft,
+          maxFlavors,
+          remainingFlavors: Math.max(0, maxFlavors - draft.flavorIds.length),
+          validation: this.sizeRules.validate(draft.size, draft.flavorIds),
+          unitPrice: draft.size ? this.pricing.pizzaUnitPrice(draft.size, draft.flavorIds, draft.crustId) : null,
+        };
+      })
     );
   }
 
-  /**
-   * Getters específicos para facilitar o uso no componente
-   */
-  getPedidoData() {
-    return {
-      tamanho: this.orderData.tamanho,
-      sabores: this.orderData.sabores,
-      observacoes: this.orderData.observacoes,
-    };
+  /** Devolve quantos sabores foram removidos por não caberem no novo tamanho. */
+  selectSize(size: PizzaSizeId): number {
+    return this.builder.setSize(size);
   }
 
-  getEnderecoData() {
-    return {
-      cep: this.orderData.cep,
-      rua: this.orderData.rua,
-      number: this.orderData.number,
-      complemento: this.orderData.complemento,
-      bairro: this.orderData.bairro,
-      cidade: this.orderData.cidade,
-    };
+  /** `false` = não adicionou, o tamanho já atingiu o limite de sabores. */
+  toggleFlavor(flavorId: string): boolean {
+    return this.builder.toggleFlavor(flavorId);
   }
 
-  getBorda(): Borda | undefined {
-    return this.orderData.borda;
+  selectCrust(crustId: string | null): void {
+    this.builder.setCrust(crustId);
   }
 
-  getBebidas(): Bebida[] {
-    return this.orderData.bebida || [];
+  setNotes(notes: string): void {
+    this.builder.setNotes(notes);
+  }
+
+  /** Adiciona a pizza montada ao carrinho e zera a montagem. `false` se a pizza estiver inválida. */
+  addToCart(quantity = 1): boolean {
+    const draft = this.builder.snapshot;
+    if (!draft.size || !this.sizeRules.validate(draft.size, draft.flavorIds).valid) return false;
+    this.cart.addPizza({
+      size: draft.size,
+      flavorIds: draft.flavorIds,
+      crustId: draft.crustId,
+      notes: draft.notes.trim(),
+      quantity,
+    });
+    this.builder.reset();
+    this.setStep(0);
+    return true;
+  }
+
+  reset(): void {
+    this.builder.reset();
+    this.setStep(0);
+  }
+
+  /** Passo atual do assistente (0 = tamanho ... 4 = revisão), salvo para sobreviver a um recarregamento. */
+  getStep(): number {
+    const saved = Number(this.persistence.read<number>(STEP_KEY, 0));
+    return Number.isInteger(saved) && saved >= 0 && saved <= 4 ? saved : 0;
+  }
+
+  setStep(step: number): void {
+    this.persistence.write(STEP_KEY, step);
   }
 }
