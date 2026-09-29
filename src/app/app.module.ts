@@ -1,30 +1,30 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, ExtraOptions } from '@angular/router';
-
-import { App } from './app'; // seu componente raiz
-import { Presentation } from './presentation/presentation';
-import { Contacts } from './components/contacts/contacts';
-import { routes } from './app.routes';
-import { Template } from './template/template';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OrderGeneralModule } from './components/order-general.module';
+import { ExtraOptions, RouterModule } from '@angular/router';
+
+import { App } from './app';
+import { routes } from './app.routes';
+import { LayoutModule } from './components/layout/layout.module';
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
   scrollPositionRestoration: 'enabled',
-  scrollOffset: [0, 110],
+  // Compensa o header fixo ao rolar até uma âncora.
+  scrollOffset: [0, 88],
   onSameUrlNavigation: 'reload',
 };
 
 @NgModule({
-  declarations: [App, Presentation, Contacts, Template],
+  declarations: [App],
   imports: [
     BrowserModule,
-    OrderGeneralModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, routerOptions),
-    BrowserAnimationsModule
+    LayoutModule,
   ],
-  bootstrap: [App]
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}

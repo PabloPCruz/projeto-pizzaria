@@ -1,0 +1,89 @@
+<section aria-labelledby="itens-title">
+  <h2 id="itens-title" tabindex="-1" class="text-2xl font-semibold outline-none sm:text-3xl">Seus itens</h2>
+  <p class="sr-only" role="status" aria-live="polite">{{ live }}</p>
+
+  <ul class="mt-5 space-y-4">
+    @for (pizza of view.pizzas; track pizza.id) {
+      <li class="card p-5" [attr.aria-label]="pizza.title">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+          <div class="min-w-0">
+            <h3 data-line-heading tabindex="-1" class="flex items-center gap-2 text-xl font-semibold outline-none">
+              <lucide-icon name="pizza" [size]="20" class="shrink-0 text-gold"></lucide-icon>
+              {{ pizza.title }}
+            </h3>
+            <ul class="mt-2 list-inside list-disc text-sm text-cream" aria-label="Sabores">
+              @for (flavor of pizza.flavors; track flavor) {
+                <li>{{ flavor }}</li>
+              }
+            </ul>
+            <p class="mt-1 text-sm text-cream-muted">Borda: {{ pizza.crust }}</p>
+            @if (pizza.notes) {
+              <p class="mt-1 break-words text-sm text-cream-muted">Obs.: {{ pizza.notes }}</p>
+            }
+          </div>
+          <div class="shrink-0 sm:text-right"><app-price [value]="pizza.total"></app-price></div>
+        </div>
+
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink-500/60 pt-4">
+          <app-quantity-stepper
+            [value]="pizza.quantity"
+            [label]="pizza.title"
+            (valueChange)="setPizzaQuantity(pizza.id, $event)"
+          ></app-quantity-stepper>
+
+          @if (isConfirming('pizza', pizza.id)) {
+            <div class="flex items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + pizza.title">
+              <span class="text-sm text-cream-muted">Remover esta pizza?</span>
+              <button type="button" [id]="'confirm-pizza-' + pizza.id" class="btn-primary min-h-[44px] px-4 py-2" (click)="confirmRemove('pizza', pizza.id, pizza.title)">Sim, remover</button>
+              <button type="button" class="btn-quiet min-h-[44px] px-3 py-2" (click)="cancelRemove()">Cancelar</button>
+            </div>
+          } @else {
+            <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-danger hover:text-danger" (click)="askRemove('pizza', pizza.id)">
+              <lucide-icon name="trash-2" [size]="18"></lucide-icon>
+              Remover<span class="sr-only"> {{ pizza.title }}</span>
+            </button>
+          }
+        </div>
+      </li>
+    }
+
+    @for (drink of view.drinks; track drink.id) {
+      <li class="card p-5">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+          <h3 data-line-heading tabindex="-1" class="flex items-center gap-2 text-lg font-semibold outline-none">
+            <lucide-icon name="cup-soda" [size]="20" class="shrink-0 text-gold"></lucide-icon>
+            {{ drink.label }}
+          </h3>
+          <div class="shrink-0 sm:text-right"><app-price [value]="drink.total"></app-price></div>
+        </div>
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink-500/60 pt-4">
+          <app-quantity-stepper
+            [value]="drink.quantity"
+            [label]="drink.label"
+            (valueChange)="setDrinkQuantity(drink.id, $event)"
+          ></app-quantity-stepper>
+
+          @if (isConfirming('drink', drink.id)) {
+            <div class="flex items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + drink.label">
+              <span class="text-sm text-cream-muted">Remover esta bebida?</span>
+              <button type="button" [id]="'confirm-drink-' + drink.id" class="btn-primary min-h-[44px] px-4 py-2" (click)="confirmRemove('drink', drink.id, drink.label)">Sim, remover</button>
+              <button type="button" class="btn-quiet min-h-[44px] px-3 py-2" (click)="cancelRemove()">Cancelar</button>
+            </div>
+          } @else {
+            <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-danger hover:text-danger" (click)="askRemove('drink', drink.id)">
+              <lucide-icon name="trash-2" [size]="18"></lucide-icon>
+              Remover<span class="sr-only"> {{ drink.label }}</span>
+            </button>
+          }
+        </div>
+      </li>
+    }
+  </ul>
+
+  <p class="mt-5">
+    <a routerLink="/montar-pizza" class="btn-ghost">
+      <lucide-icon name="plus" [size]="18"></lucide-icon>
+      Adicionar outra pizza
+    </a>
+  </p>
+</section>

@@ -1,0 +1,70 @@
+<header class="sticky top-0 z-40 border-b border-gold/20 bg-ink-900/95">
+  <div class="container-page flex h-16 items-center justify-between gap-4 sm:h-[72px]">
+    <a routerLink="/" class="flex items-center gap-3 rounded-lg" aria-label="Disk Pizza — página inicial">
+      <app-logo [height]="44" [decorative]="true"></app-logo>
+      <span class="font-display text-xl font-semibold tracking-wide text-cream sm:text-2xl">Disk Pizza</span>
+    </a>
+
+    <nav aria-label="Principal" class="hidden items-center gap-1 md:flex">
+      @for (link of links; track link.label) {
+        <a
+          [routerLink]="link.path"
+          [fragment]="link.fragment"
+          [routerLinkActive]="link.fragment ? '' : '!text-gold'"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          [ariaCurrentWhenActive]="link.fragment ? undefined : 'page'"
+          class="rounded-full px-4 py-2 text-sm font-medium text-cream-muted transition hover:text-gold"
+        >{{ link.label }}</a>
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        routerLink="/carrinho"
+        class="btn-icon relative"
+        [attr.aria-label]="cartLabel((itemCount$ | async) ?? 0)"
+      >
+        <lucide-icon name="shopping-cart" [size]="20"></lucide-icon>
+        @if ((itemCount$ | async) ?? 0; as count) {
+          <span
+            class="absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] animate-pop items-center justify-center rounded-full bg-brand px-1 text-[11px] font-bold text-white"
+            aria-hidden="true"
+          >{{ count }}</span>
+        }
+      </a>
+      <a routerLink="/montar-pizza" class="btn-primary hidden md:inline-flex">Monte sua pizza</a>
+      <button
+        #menuButton
+        type="button"
+        class="btn-icon md:hidden"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="menu-mobile"
+        [attr.aria-label]="menuOpen ? 'Fechar menu' : 'Abrir menu'"
+        (click)="toggleMenu()"
+      >
+        <lucide-icon [name]="menuOpen ? 'x' : 'menu'" [size]="22"></lucide-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sempre no DOM (aria-controls válido); escondido quando fechado. -->
+  <nav id="menu-mobile" aria-label="Principal (celular)" [hidden]="!menuOpen" class="border-t border-gold/20 bg-ink-800 md:hidden">
+      <ul class="container-page flex flex-col py-2">
+        @for (link of links; track link.label) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              [fragment]="link.fragment"
+              [routerLinkActive]="link.fragment ? '' : '!text-gold'"
+              [routerLinkActiveOptions]="{ exact: link.exact }"
+              [ariaCurrentWhenActive]="link.fragment ? undefined : 'page'"
+              class="flex min-h-[48px] items-center border-b border-ink-500/60 text-base font-medium text-cream hover:text-gold"
+            >{{ link.label }}</a>
+          </li>
+        }
+        <li class="py-3">
+          <a routerLink="/montar-pizza" class="btn-primary w-full">Monte sua pizza</a>
+        </li>
+      </ul>
+  </nav>
+</header>

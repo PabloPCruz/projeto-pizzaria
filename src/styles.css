@@ -1,39 +1,219 @@
-:root {
-    --header-offset: clamp(96px, 12vw, 136px);
-    --content-max-width: 1200px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #a0522d;
-}
-
-html {
+/* ------------------------------------------------------------------ base */
+@layer base {
+  html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink-900 font-sans text-cream antialiased;
+    background-image: radial-gradient(1100px 480px at 50% -8%, rgba(212, 175, 55, 0.08), transparent 70%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-cream;
+    text-wrap: balance;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Foco visível: anel dourado em tudo que recebe teclado. */
+  :focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+  }
+
+  main:focus {
+    outline: none;
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.35);
+  }
 }
 
-img,
-svg,
-video {
-    max-width: 100%;
-    height: auto;
+/* ------------------------------------------------------------ componentes */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-14 sm:py-20;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold;
+  }
+
+  .section-title {
+    @apply mt-2 text-3xl font-semibold sm:text-4xl;
+  }
+
+  .lead {
+    @apply text-base leading-relaxed text-cream-muted sm:text-lg;
+  }
+
+  /* Divisor fino dourado, com losango central */
+  .rule-gold {
+    @apply relative my-6 h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent;
+  }
+
+  .rule-gold::after {
+    content: '';
+    @apply absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-gold;
+    box-shadow: 0 0 0 4px #0f0f0f;
+  }
+
+  /* Botões */
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200 ease-out;
+    @apply disabled:pointer-events-none disabled:opacity-45;
+  }
+
+  .btn:active:not(:disabled) {
+    transform: translateY(1px) scale(0.99);
+  }
+
+  .btn-primary {
+    @apply btn bg-brand text-white shadow-[0_8px_24px_-10px_rgba(200,16,46,.8)] hover:bg-brand-light;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-ink-900 hover:bg-gold-light;
+  }
+
+  .btn-ghost {
+    @apply btn border border-gold/60 text-gold hover:border-gold hover:bg-gold/10;
+  }
+
+  .btn-quiet {
+    @apply btn text-cream-muted hover:text-cream;
+  }
+
+  .btn-icon {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink-500 text-cream transition hover:border-gold hover:text-gold;
+    @apply disabled:pointer-events-none disabled:opacity-40 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 aria-disabled:hover:border-ink-500 aria-disabled:hover:text-cream;
+  }
+
+  /* Cartões */
+  .card {
+    @apply rounded-2xl border border-ink-500/70 bg-ink-800 shadow-card;
+  }
+
+  .card-hover {
+    @apply transition duration-300 ease-out hover:-translate-y-1 hover:border-gold/50 hover:shadow-glow;
+  }
+
+  /* Campos de formulário */
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-cream;
+  }
+
+  .field-hint {
+    @apply mt-1 block text-xs text-cream-dim;
+  }
+
+  .field-input {
+    @apply block min-h-[48px] w-full rounded-xl border border-ink-300 bg-ink-800 px-4 py-2.5 text-base text-cream placeholder:text-cream-dim;
+    @apply transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/70;
+  }
+
+  .field-input[aria-invalid='true'] {
+    @apply border-danger;
+  }
+
+  /* Área de texto de tamanho fixo (não redimensionável); texto longo rola dentro do campo. */
+  textarea.field-input {
+    @apply h-44 min-h-[11rem] resize-none overflow-y-auto;
+  }
+
+  .field-error {
+    @apply mt-1.5 flex items-start gap-1.5 text-sm text-danger;
+  }
+
+  /* Opções escolhíveis (radiogroup / checkbox como cartão) */
+  .choice {
+    @apply relative flex cursor-pointer items-start gap-3 rounded-xl border border-ink-300 bg-ink-800 p-4 transition duration-200;
+    @apply hover:border-gold/60;
+  }
+
+  .choice:has(input:checked) {
+    @apply border-gold bg-gold/10 shadow-glow;
+  }
+
+  .choice:has(input:focus-visible) {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+  }
+
+  .choice:has(input:disabled) {
+    @apply cursor-not-allowed opacity-45 hover:border-ink-300;
+  }
+
+  .choice input {
+    @apply sr-only;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-xs font-medium text-gold-light;
+  }
+
+  .page-enter {
+    animation: rise 0.45s ease-out both;
+  }
 }
 
-section {
-    padding-top: var(--header-offset);
-    margin-top: calc(var(--header-offset) * -1);
+/* --------------------------------------------------- movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Skip link: visível só ao receber foco por teclado. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  border-radius: 9999px;
+  background: #d4af37;
+  color: #0f0f0f;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  transition: top 0.15s;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }

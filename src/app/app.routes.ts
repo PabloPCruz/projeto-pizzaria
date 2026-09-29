@@ -1,37 +1,42 @@
-import { Routes } from '@angular/router';
+import { inject } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 
-// components
-import { Menu } from './components/menu/menu';
-import { Template } from './template/template';
-import { Contacts } from './components/contacts/contacts';
-import { Presentation } from './presentation/presentation';
-import { ViewCartComponent } from './components/view-cart/view-cart.component';
-
+/** 'contacts' e 'history' viram âncoras da home (mantém links antigos funcionando). */
+const toHomeSection = (fragment: string) => () => inject(Router).createUrlTree(['/'], { fragment });
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: Template, // página única com todas as seções
-        data: { animation: 'home' }
-    },
-    {
-        path: 'menu',
-        component: Menu,
-        data: { animation: 'menu' }
-    },
-    {
-        path: 'contacts',
-        component: Contacts,
-        data: { animation: 'contacts' }
-    },
-    {
-        path: 'history',
-        component: Presentation,
-        data: { animation: 'history' }
-    },
-    {
-        path: "view-cart",
-        component: ViewCartComponent,
-        data: { animation: 'cart' }
-    }
+  {
+    path: '',
+    title: 'Disk Pizza — Pizzaria Italiana',
+    data: { animation: 'home' },
+    loadChildren: () => import('./components/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'cardapio',
+    title: 'Cardápio — Disk Pizza',
+    data: { animation: 'cardapio' },
+    loadChildren: () => import('./components/menu/menu.module').then((m) => m.MenuModule),
+  },
+  {
+    path: 'montar-pizza',
+    title: 'Monte sua pizza — Disk Pizza',
+    data: { animation: 'montar' },
+    loadChildren: () => import('./components/builder/builder.module').then((m) => m.BuilderModule),
+  },
+  {
+    path: 'carrinho',
+    title: 'Carrinho — Disk Pizza',
+    data: { animation: 'carrinho' },
+    loadChildren: () => import('./components/cart/cart.module').then((m) => m.CartModule),
+  },
+  { path: 'menu', redirectTo: 'cardapio', pathMatch: 'full' },
+  { path: 'view-cart', redirectTo: 'carrinho', pathMatch: 'full' },
+  { path: 'contacts', canActivate: [toHomeSection('contatos')], children: [] },
+  { path: 'history', canActivate: [toHomeSection('historia')], children: [] },
+  {
+    path: '**',
+    title: 'Página não encontrada — Disk Pizza',
+    data: { animation: 'nao-encontrada' },
+    loadChildren: () => import('./components/not-found/not-found.module').then((m) => m.NotFoundModule),
+  },
 ];

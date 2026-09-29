@@ -27,7 +27,7 @@ When changing UI behavior, keep business rules in services/facades and keep comp
 
 ## Conventions
 - Prefer facades in components instead of direct service/mocks wiring.
-- Do not duplicate formatting or cart math logic in components; reuse FormatService and CartCalculationService.
+- Do not duplicate formatting or cart math logic in components; reuse FormatService and PricingService (delivery fee is never calculated: the store confirms it on WhatsApp). Current project state: CONTEXTO_PROJETO.md.
 - Keep naming consistent with existing patterns:
   - Facades: *.facade.service.ts
   - Services: *.service.ts

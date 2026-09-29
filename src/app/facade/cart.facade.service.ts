@@ -1,147 +1,106 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CartService, CartItem } from '../services/cart.service';
-import { CartCalculationService } from '../services/cart-calculation.service';
+import { map } from 'rxjs/operators';
+import { CartState } from '../interfaces/cart.interface';
+import { CartService } from '../services/cart.service';
+import { CatalogService } from '../services/catalog.service';
 import { FormatService } from '../services/format.service';
+import { PricingService } from '../services/pricing.service';
 
-/**
- * Facade para operações de carrinho
- * Coordena CartService, CartCalculationService e FormatService
- * Fornece uma interface simplificada para componentes
- */
-@Injectable({
-  providedIn: 'root'
-})
+export interface PizzaLineView {
+  id: string;
+  title: string;
+  flavors: string[];
+  crust: string;
+  notes: string;
+  quantity: number;
+  /** Total da linha (unidade x quantidade) já formatado, ou `null` sem preço cadastrado. */
+  total: string | null;
+}
+
+export interface DrinkLineView {
+  id: string;
+  drinkId: string;
+  label: string;
+  quantity: number;
+  total: string | null;
+}
+
+export interface CartView {
+  pizzas: PizzaLineView[];
+  drinks: DrinkLineView[];
+  itemCount: number;
+  isEmpty: boolean;
+  /** Total dos itens formatado. `null` = há itens sem preço; a loja confirma o valor. Nunca inclui entrega. */
+  total: string | null;
+}
+
+/** Carrinho para as telas: linhas já com rótulos, valores formatados e operações de edição. */
+@Injectable({ providedIn: 'root' })
 export class CartFacadeService {
+  readonly view$: Observable<CartView>;
+  readonly itemCount$: Observable<number>;
 
   constructor(
-    private cartService: CartService,
-    private calculationService: CartCalculationService,
-    private formatService: FormatService
-  ) {}
-
-  /**
-   * Obtém observable dos itens do carrinho
-   */
-  getCartItems$(): Observable<CartItem[]> {
-    return this.cartService.cartItems$;
+    private cart: CartService,
+    private catalog: CatalogService,
+    private pricing: PricingService,
+    private format: FormatService
+  ) {
+    this.itemCount$ = this.cart.itemCount$;
+    this.view$ = this.cart.state$.pipe(map((state) => this.toView(state)));
   }
 
-  /**
-   * Adiciona um item ao carrinho
-   */
-  addToCart(item: CartItem): void {
-    this.cartService.addToCart(item);
+  setPizzaQuantity(id: string, quantity: number): void {
+    this.cart.setPizzaQuantity(id, quantity);
   }
 
-  /**
-   * Remove um item do carrinho
-   */
-  removeFromCart(id: string): void {
-    this.cartService.removeFromCart(id);
+  setDrinkQuantity(id: string, quantity: number): void {
+    this.cart.setDrinkQuantity(id, quantity);
   }
 
-  /**
-   * Atualiza a quantidade de um item
-   */
-  updateQuantity(id: string, quantidade: number): void {
-    if (quantidade > 0) {
-      this.cartService.updateQuantity(id, quantidade);
-    }
+  removePizza(id: string): void {
+    this.cart.removePizza(id);
   }
 
-  /**
-   * Calcula subtotal do carrinho
-   */
-  calcularSubtotal(items: CartItem[]): number {
-    return this.calculationService.calcularSubtotal(items);
+  removeDrink(id: string): void {
+    this.cart.removeDrink(id);
   }
 
-  /**
-   * Calcula total do carrinho
-   */
-  calcularTotal(subtotal: number): number {
-    return this.calculationService.calcularTotal(subtotal);
+  addDrink(drinkId: string): void {
+    this.cart.addDrink(drinkId);
   }
 
-  /**
-   * Obtém taxa de entrega
-   */
-  getTaxaEntrega(): number {
-    return this.calculationService.getTaxaEntrega();
+  clear(): void {
+    this.cart.clear();
   }
 
-  /**
-   * Obtém desconto aplicado
-   */
-  getDesconto(): number {
-    return this.calculationService.getDesconto();
-  }
-
-  /**
-   * Aplica cupom de desconto
-   */
-  aplicarCupom(cupom: string): number {
-    return this.calculationService.aplicarCupom(cupom);
-  }
-
-  /**
-   * Limpa o carrinho
-   */
-  clearCart(): void {
-    this.cartService.clearCart();
-  }
-
-  /**
-   * Finaliza o pedido
-   * TODO: Implementar integração com API
-   */
-  finalizarPedido(): Promise<any> {
-    // Implementação futura
-    const items = this.cartService.getCartItems();
-    const subtotal = this.calculationService.calcularSubtotal(items);
-    const total = this.calculationService.calcularTotal(subtotal);
-    
-    return Promise.resolve({
-      itens: items,
-      subtotal,
-      total,
-      timestamp: new Date()
-    });
-  }
-
-  /**
-   * Obtém total de quantidade de itens
-   */
-  getCartItemsCount(): number {
-    return this.cartService.getCartItemsCount();
-  }
-
-  /**
-   * Formata sabores para exibição
-   */
-  formatarSabores(sabores: string[]): string {
-    return this.formatService.formatarSabores(sabores);
-  }
-
-  /**
-   * Formata borda para exibição
-   */
-  formatarBorda(borda: any): string {
-    return this.formatService.formatarBorda(borda);
-  }
-
-  /**
-   * Formata bebidas para exibição
-   */
-  formatarBebidas(bebidas: any[]): string {
-    return this.formatService.formatarBebidas(bebidas);
-  }
-
-  /**
-   * Formata tamanho da pizza para exibição
-   */
-  formatarTamanho(tamanho: string): string {
-    return this.formatService.formatarTamanho(tamanho);
+  private toView(state: CartState): CartView {
+    const money = (value: number | null) => (value === null ? null : this.format.currency(value));
+    const total = this.pricing.cartTotal(state);
+    return {
+      pizzas: state.pizzas.map((p) => {
+        const size = this.catalog.getSize(p.size);
+        return {
+          id: p.id,
+          title: size ? `Pizza ${size.label} · ${size.slices} fatias` : `Pizza ${p.size}`,
+          flavors: p.flavorIds.map((id) => this.catalog.getFlavor(id)?.name ?? id),
+          crust: p.crustId ? this.catalog.getCrust(p.crustId)?.label ?? p.crustId : 'Sem borda',
+          notes: p.notes,
+          quantity: p.quantity,
+          total: money(this.pricing.pizzaLineTotal(p)),
+        };
+      }),
+      drinks: state.drinks.map((d) => ({
+        id: d.id,
+        drinkId: d.drinkId,
+        label: this.catalog.getDrink(d.drinkId)?.label ?? d.drinkId,
+        quantity: d.quantity,
+        total: money(this.pricing.drinkLineTotal(d)),
+      })),
+      itemCount: state.pizzas.reduce((s, p) => s + p.quantity, 0) + state.drinks.reduce((s, d) => s + d.quantity, 0),
+      isEmpty: state.pizzas.length === 0 && state.drinks.length === 0,
+      total: money(total),
+    };
   }
 }

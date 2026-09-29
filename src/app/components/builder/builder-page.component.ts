@@ -1,0 +1,106 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { take } from 'rxjs/operators';
+import { BuilderView, OrderFacadeService } from '../../facade/order.facade.service';
+
+export interface BuilderStep {
+  label: string;
+  title: string;
+  hint: string;
+}
+
+export const BUILDER_STEPS: readonly BuilderStep[] = [
+  { label: 'Tamanho', title: 'Escolha o tamanho', hint: 'O tamanho define quantos sabores cabem na pizza.' },
+  { label: 'Sabores', title: 'Escolha os sabores', hint: 'Pode misturar salgado e doce, até o limite do tamanho.' },
+  { label: 'Borda', title: 'Escolha a borda', hint: 'Opcional. Se preferir, fique sem borda recheada.' },
+  { label: 'Extras', title: 'Bebidas e observações', hint: 'Tudo opcional. As bebidas vão direto para o carrinho.' },
+  { label: 'Revisão', title: 'Revise sua pizza', hint: 'Confira tudo antes de adicionar ao carrinho.' },
+];
+
+@Component({
+  selector: 'app-builder-page',
+  templateUrl: './builder-page.component.html',
+})
+export class BuilderPageComponent implements OnInit {
+  readonly steps = BUILDER_STEPS;
+  readonly view$ = this.order.view$;
+
+  step = 0;
+  /** Pizza acabou de ir para o carrinho: mostra o painel de próximos passos. */
+  added = false;
+  /** Aviso de sabores removidos ao trocar para um tamanho menor (aria-live). */
+  notice = '';
+  /** Motivo pelo qual não dá para avançar (aria-live). */
+  stepError = '';
+
+  @ViewChild('stepHeading') stepHeading?: ElementRef<HTMLElement>;
+  @ViewChild('addedHeading') addedHeading?: ElementRef<HTMLElement>;
+
+  constructor(private order: OrderFacadeService) {}
+
+  ngOnInit(): void {
+    // Ao recarregar, volta ao passo em que o cliente estava (limitado ao que o rascunho permite).
+    this.view$.pipe(take(1)).subscribe((view) => {
+      this.step = Math.min(this.order.getStep(), this.maxReachable(view));
+    });
+  }
+
+  /** Maior passo alcançável: tamanho e sabores são obrigatórios; borda e extras são opcionais. */
+  maxReachable(view: BuilderView): number {
+    if (!view.draft.size) return 0;
+    return view.validation.valid ? this.steps.length - 1 : 1;
+  }
+
+  /** Mensagem de bloqueio do passo atual, ou string vazia se pode avançar. */
+  blockingError(view: BuilderView, step = this.step): string {
+    if (step === 0 && !view.draft.size) return 'Escolha o tamanho para continuar.';
+    if (step === 1 && !view.validation.valid) return view.validation.error ?? 'Escolha pelo menos 1 sabor.';
+    return '';
+  }
+
+  next(view: BuilderView): void {
+    this.stepError = this.blockingError(view);
+    if (this.stepError) return;
+    this.go(this.step + 1);
+  }
+
+  back(): void {
+    this.go(this.step - 1);
+  }
+
+  goTo(index: number, view: BuilderView): void {
+    if (index <= this.maxReachable(view)) this.go(index);
+  }
+
+  onFlavorsRemoved(event: { removed: number; label: string; max: number }): void {
+    if (event.removed === 0) {
+      this.notice = '';
+      return;
+    }
+    this.notice = `Tamanho ${event.label} aceita no máximo ${event.max} ${event.max === 1 ? 'sabor' : 'sabores'}: ${
+      event.removed
+    } ${event.removed === 1 ? 'sabor foi removido' : 'sabores foram removidos'} da sua pizza.`;
+  }
+
+  onAdded(): void {
+    this.added = true;
+    this.notice = '';
+    this.stepError = '';
+    setTimeout(() => this.addedHeading?.nativeElement.focus());
+  }
+
+  addAnother(): void {
+    this.added = false;
+    this.go(0);
+  }
+
+  private go(index: number): void {
+    this.step = Math.max(0, Math.min(this.steps.length - 1, index));
+    if (this.step >= 2) this.notice = '';
+    this.stepError = '';
+    this.order.setStep(this.step);
+    setTimeout(() => {
+      this.stepHeading?.nativeElement.focus({ preventScroll: true });
+      this.stepHeading?.nativeElement.scrollIntoView({ block: 'start' });
+    });
+  }
+}

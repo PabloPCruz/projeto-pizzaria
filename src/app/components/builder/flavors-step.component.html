@@ -1,0 +1,118 @@
+@if (view$ | async; as view) {
+  <!-- Contador e sabores escolhidos -->
+  <div class="card p-4 sm:p-5">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <p class="font-display text-xl font-semibold" id="flavor-counter">
+        <span class="text-gold">{{ view.draft.flavorIds.length }}/{{ view.maxFlavors }}</span>
+        {{ view.maxFlavors === 1 ? 'sabor' : 'sabores' }}
+      </p>
+      <p class="text-xs text-cream-muted">
+        @if (view.remainingFlavors > 0) {
+          Você ainda pode escolher {{ view.remainingFlavors }}.
+        } @else {
+          Limite atingido.
+        }
+      </p>
+    </div>
+    @if (view.draft.flavorIds.length > 0) {
+      <ul class="mt-3 flex flex-wrap gap-2" aria-label="Sabores escolhidos">
+        @for (id of view.draft.flavorIds; track id) {
+          <li>
+            <button
+              type="button"
+              class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-gold/60 bg-gold/10 pl-4 pr-3 text-sm font-medium text-gold-light transition hover:bg-gold/20"
+              (click)="remove(view, id)"
+              [attr.aria-label]="'Remover ' + flavorName(id)"
+            >
+              {{ flavorName(id) }}
+              <lucide-icon name="x" [size]="16"></lucide-icon>
+            </button>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+
+  <!-- Aviso dinâmico (limite atingido etc.) -->
+  <div role="status" aria-live="polite" class="min-h-[1.5rem]">
+    @if (live) {
+      <p class="mt-3 flex items-start gap-2 text-sm text-gold-light">
+        <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
+        <span>{{ live }}</span>
+      </p>
+    }
+  </div>
+
+  <!-- Filtros -->
+  <div class="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-[1fr_auto] sm:items-end">
+    <div>
+      <label for="busca-sabor-passo" class="field-label">Buscar sabor ou ingrediente</label>
+      <div class="relative">
+        <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-cream-dim"><lucide-icon name="search" [size]="18"></lucide-icon></span>
+        <input
+          id="busca-sabor-passo"
+          type="search"
+          class="field-input pl-11"
+          placeholder="Ex.: frango, bacon, morango"
+          autocomplete="off"
+          [ngModel]="term"
+          (ngModelChange)="setTerm($event)"
+        />
+      </div>
+    </div>
+    <div role="group" aria-label="Filtrar por categoria" class="flex flex-wrap gap-2">
+      @for (f of filters; track f.id) {
+        <button
+          type="button"
+          class="min-h-[44px] rounded-full border px-4 text-sm font-medium transition"
+          [ngClass]="filter === f.id ? 'border-gold bg-gold text-ink-900' : 'border-ink-300 text-cream-muted hover:border-gold hover:text-gold'"
+          [attr.aria-pressed]="filter === f.id"
+          (click)="setFilter(f.id)"
+        >{{ f.label }}</button>
+      }
+    </div>
+  </div>
+
+  <p class="mt-4 text-sm text-cream-muted">
+    {{ list.length }} {{ list.length === 1 ? 'sabor' : 'sabores' }} na lista
+  </p>
+
+  <!-- Lista de sabores -->
+  <ul class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2" aria-label="Sabores disponíveis">
+    @for (flavor of list; track flavor.id) {
+      <li>
+        <label class="choice h-full" [attr.for]="'flavor-' + flavor.id">
+          <input
+            type="checkbox"
+            class="peer"
+            [id]="'flavor-' + flavor.id"
+            [checked]="isSelected(view, flavor)"
+            [disabled]="isBlocked(view, flavor)"
+            (change)="toggle(view, flavor)"
+          />
+          <span
+            class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-ink-300 text-ink-900 transition peer-checked:border-gold peer-checked:bg-gold"
+            aria-hidden="true"
+          >
+            @if (isSelected(view, flavor)) {
+              <lucide-icon name="check" [size]="14" [strokeWidth]="3"></lucide-icon>
+            }
+          </span>
+          <span class="block min-w-0">
+            <span class="block font-semibold leading-snug">{{ flavor.name }}</span>
+            <span class="mt-0.5 block text-sm leading-relaxed text-cream-muted">
+              {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
+            </span>
+            @if (flavor.optionHint) {
+              <span class="mt-1 block text-xs font-medium text-gold-light">
+                {{ flavor.optionHint }} — detalhe nas observações
+              </span>
+            }
+          </span>
+        </label>
+      </li>
+    } @empty {
+      <li class="card p-6 text-center text-cream-muted md:col-span-2">Nenhum sabor encontrado. Tente outro termo.</li>
+    }
+  </ul>
+}

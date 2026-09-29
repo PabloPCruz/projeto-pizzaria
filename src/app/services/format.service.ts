@@ -1,116 +1,81 @@
 import { Injectable } from '@angular/core';
-import { Borda } from '../interfaces/border.interface';
-import { opcoesBebida } from '../interfaces/drinks.interface';
 
-/**
- * Serviço centralizado para formatação de dados
- * Evita duplicação de lógica de formatação em componentes e facades
- */
-@Injectable({
-  providedIn: 'root'
-})
+/** Formatação e máscaras de texto. Componentes e facades devem usar este serviço em vez de repetir a lógica. */
+@Injectable({ providedIn: 'root' })
 export class FormatService {
+  private readonly currencyFormat = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
-  /**
-   * Formata um tipo de bebida em seu nome legível
-   * @param tipo - Tipo da bebida (chave do mapa)
-   * @returns Nome formatado da bebida
-   */
-  formatarBebida(tipo: string): string {
-    const bebidasMap: Record<string, string> = {
-      'coca': 'Coca-Cola',
-      'coca_1l': 'Coca-Cola 1L',
-      'coca_600ml': 'Coca-Cola 600ml',
-      'guarana_antarctica': 'Guaraná Antarctica',
-      'guarana_antarctica_1l': 'Guaraná Antarctica 1L',
-      'guarana_antarctica_1_5l': 'Guaraná Antarctica 1,5L',
-      'fanta': 'Fanta',
-      'fanta_uva': 'Fanta Uva',
-      'fanta_laranja_2l': 'Fanta Laranja 2L',
-      'sprite': 'Sprite',
-      'agua_sem_gas': 'Água sem Gás',
-      'agua_com_gas': 'Água com Gás',
-      'kuat': 'Kuat'
-    };
-    return bebidasMap[tipo] || tipo;
+  currency(value: number): string {
+    return this.currencyFormat.format(value);
+  }
+
+  onlyDigits(text: string): string {
+    return (text ?? '').replace(/\D/g, '');
+  }
+
+  /** 80010000 -> 80010-000 (parcial enquanto o cliente digita). */
+  cep(text: string): string {
+    const digits = this.onlyDigits(text).slice(0, 8);
+    return digits.length > 5 ? `${digits.slice(0, 5)}-${digits.slice(5)}` : digits;
+  }
+
+  /** 41997449380 -> (41) 99744-9380 (parcial enquanto o cliente digita). */
+  phone(text: string): string {
+    let digits = this.onlyDigits(text);
+    // Número colado com o código do país (+55 41 9...): descarta o 55.
+    if (digits.length > 11 && digits.startsWith('55')) digits = digits.slice(2);
+    const d = digits.slice(0, 11);
+    if (d.length <= 2) return d.length ? `(${d}` : '';
+    const area = d.slice(0, 2);
+    const rest = d.slice(2);
+    const split = d.length > 10 ? 5 : 4;
+    return rest.length > split ? `(${area}) ${rest.slice(0, split)}-${rest.slice(split)}` : `(${area}) ${rest}`;
   }
 
   /**
-   * Formata múltiplas bebidas em um texto separado por vírgula
-   * @param bebidas - Array de bebidas com tipo e quantidade opcional
-   * @returns String formatada das bebidas
+   * Máscara de valor em reais enquanto o cliente digita: "R$ 1.000,50".
+   * Só a vírgula é decimal (até 2 casas); pontos são sempre milhar e são refeitos a cada tecla,
+   * então apagar um dígito de "R$ 1.000" dá "R$ 100" e não "1,00". Até 5 dígitos inteiros.
+   * Vazio (sem nenhum dígito) devolve '' para o campo opcional poder ficar em branco.
    */
-  formatarBebidas(bebidas: any[]): string {
-    if (!bebidas || bebidas.length === 0) {
-      return 'Sem bebida';
-    }
+  moneyMask(text: string): string {
+    const raw = (text ?? '').replace(/R\$|\s/gi, '');
+    const comma = raw.indexOf(',');
+    const intDigits = (comma === -1 ? raw : raw.slice(0, comma)).replace(/\D/g, '').replace(/^0+(?=\d)/, '').slice(0, 5);
+    if (!intDigits && comma === -1) return '';
 
-    return bebidas
-      .map((bebida) => {
-        const nomeBebida = this.formatarBebida(bebida.tipo);
-        const quantidade = bebida.quantidade && bebida.quantidade > 1
-          ? ` (${bebida.quantidade}x)`
-          : '';
-        return `${nomeBebida}${quantidade}`;
-      })
-      .join(', ');
+    const grouped = (intDigits || '0').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    if (comma === -1) return `R$ ${grouped}`;
+    return `R$ ${grouped},${raw.slice(comma + 1).replace(/\D/g, '').slice(0, 2)}`;
+  }
+
+  /** Valor completo com centavos, para reescrever o campo ao sair dele: 100 -> "R$ 100,00". */
+  moneyField(value: number): string {
+    const [reais, cents] = value.toFixed(2).split('.');
+    return `R$ ${reais.replace(/\B(?=(\d{3})+(?!\d))/g, '.')},${cents}`;
   }
 
   /**
-   * Formata uma borda em seu nome legível
-   * @param borda - Objeto borda com tipo e subtipo opcional
-   * @returns String formatada da borda
+   * "1.234,50" | "1.000" | "50" | "50,5" | "R$ 100" -> número. `null` se não for um valor válido.
+   * Ponto seguido de exatamente 3 dígitos é separador de milhar (pt-BR): "1.000" = 1000.
    */
-  formatarBorda(borda: Borda | undefined): string {
-    if (!borda) {
-      return 'Sem borda';
-    }
+  parseMoney(text: string): number | null {
+    const raw = (text ?? '').replace(/R\$|\s/gi, '');
+    if (!raw || !/^[\d.,]+$/.test(raw)) return null;
+    if ((raw.match(/,/g) ?? []).length > 1) return null;
 
-    let bordaTexto = '';
-    switch (borda.tipo) {
-      case 'chedar':
-        bordaTexto = 'Cheddar';
-        break;
-      case 'catupiry':
-        bordaTexto = 'Catupiry';
-        break;
-      case 'chocolate':
-        bordaTexto = 'Chocolate';
-        if (borda.subtipo) {
-          bordaTexto += ` ${borda.subtipo === 'ao leite' ? 'ao Leite' : 'Branco'}`;
-        }
-        break;
-      default:
-        bordaTexto = this.capitalizarPrimeira(borda.tipo);
-    }
-    return bordaTexto;
+    let normalized: string;
+    if (raw.includes(',')) normalized = raw.replace(/\./g, '').replace(',', '.');
+    else if (/^\d{1,3}(\.\d{3})+$/.test(raw)) normalized = raw.replace(/\./g, '');
+    else normalized = raw;
+
+    const value = Number(normalized);
+    return Number.isFinite(value) ? value : null;
   }
 
-  /**
-   * Capitaliza a primeira letra de um texto
-   * @param text - Texto a ser capitalizado
-   * @returns Texto com primeira letra maiúscula
-   */
-  capitalizarPrimeira(text: string): string {
-    if (!text) return text;
-    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-  }
-
-  /**
-   * Formata um tamanho de pizza
-   * @param tamanho - Tamanho em minúsculas
-   * @returns Tamanho com primeira letra maiúscula
-   */
-  formatarTamanho(tamanho: string): string {
-    return this.capitalizarPrimeira(tamanho);
-  }
-
-  /**
-   * Formata um array de sabores em texto separado por vírgula
-   * @param sabores - Array de sabores
-   * @returns String formatada dos sabores
-   */
-  formatarSabores(sabores: string[]): string {
-    return sabores.join(', ');
+  /** ['A', 'B', 'C'] -> "A, B e C" */
+  list(items: readonly string[]): string {
+    if (items.length <= 1) return items.join('');
+    return `${items.slice(0, -1).join(', ')} e ${items[items.length - 1]}`;
   }
 }

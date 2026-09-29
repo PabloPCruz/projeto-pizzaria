@@ -3,52 +3,52 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-export interface CEPResponse {
-  cep: string;
-  logradouro: string;
-  complemento: string;
-  bairro: string;
-  localidade: string;
-  uf: string;
-  ibge: string;
-  gia: string;
-  ddd: string;
-  siafi: string;
+export interface CepAddress {
+  street: string;
+  neighborhood: string;
+  city: string;
+  state: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+export type CepLookupResult =
+  | { status: 'ok'; address: CepAddress }
+  | { status: 'invalid' }
+  | { status: 'not-found' }
+  | { status: 'error' };
+
+interface ViaCepResponse {
+  erro?: boolean | string;
+  logradouro?: string;
+  bairro?: string;
+  localidade?: string;
+  uf?: string;
+}
+
+/** Consulta de endereço pela API pública ViaCEP. Nunca lança: o resultado diz o que aconteceu. */
+@Injectable({ providedIn: 'root' })
 export class CepService {
-  private apiUrl = 'https://viacep.com.br/ws';
+  private readonly apiUrl = 'https://viacep.com.br/ws';
 
   constructor(private http: HttpClient) {}
 
-  buscarCep(cep: string): Observable<CEPResponse | null> {
-    // Remove caracteres não numéricos
-    const cepLimpo = cep.replace(/\D/g, '');
+  lookup(cep: string): Observable<CepLookupResult> {
+    const digits = (cep ?? '').replace(/\D/g, '');
+    if (digits.length !== 8) return of<CepLookupResult>({ status: 'invalid' });
 
-    if (cepLimpo.length !== 8) {
-      return of(null);
-    }
-
-    const cepFormatado = cepLimpo.substring(0, 5) + '-' + cepLimpo.substring(5);
-
-    return this.http
-      .get<any>(`${this.apiUrl}/${cepLimpo}/json`)
-      .pipe(
-        catchError(() => {
-          return of(null);
-        }),
-        map((response) => {
-          if (!response || response.erro) {
-            return null;
-          }
-          return { 
-            ...response, 
-            cep: cepFormatado 
-          };
-        })
-      );
+    return this.http.get<ViaCepResponse>(`${this.apiUrl}/${digits}/json/`).pipe(
+      map((res): CepLookupResult => {
+        if (!res || res.erro) return { status: 'not-found' };
+        return {
+          status: 'ok',
+          address: {
+            street: res.logradouro ?? '',
+            neighborhood: res.bairro ?? '',
+            city: res.localidade ?? '',
+            state: res.uf ?? '',
+          },
+        };
+      }),
+      catchError(() => of<CepLookupResult>({ status: 'error' }))
+    );
   }
 }

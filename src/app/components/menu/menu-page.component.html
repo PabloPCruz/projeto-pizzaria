@@ -1,0 +1,101 @@
+<div class="container-page py-10 sm:py-14">
+  <header class="mx-auto max-w-2xl text-center">
+    <p class="eyebrow">Disk Pizza</p>
+    <h1 class="section-title text-4xl sm:text-5xl">Cardápio</h1>
+    <div class="rule-gold mx-auto max-w-xs" aria-hidden="true"></div>
+    <p class="lead">Pode misturar sabores salgados e doces na mesma pizza, respeitando o limite de cada tamanho.</p>
+    <p class="mt-6">
+      <a routerLink="/montar-pizza" class="btn-primary px-8">
+        <lucide-icon name="pizza" [size]="20"></lucide-icon>
+        Montar pizza
+      </a>
+    </p>
+  </header>
+
+  <!-- Sabores -->
+  <section class="mt-14" aria-labelledby="sabores-title">
+    <h2 id="sabores-title" class="text-2xl font-semibold sm:text-3xl">Sabores</h2>
+
+    <div class="mt-5 max-w-md">
+      <label for="busca-sabor" class="field-label">Buscar sabor ou ingrediente</label>
+      <div class="relative">
+        <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-cream-dim"><lucide-icon name="search" [size]="18"></lucide-icon></span>
+        <input
+          id="busca-sabor"
+          type="search"
+          class="field-input pl-11"
+          placeholder="Ex.: calabresa, brócolis, morango"
+          autocomplete="off"
+          [ngModel]="term"
+          (ngModelChange)="setTerm($event)"
+        />
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <div role="tablist" aria-label="Categorias de sabores" class="flex w-full border-b border-ink-500/60 sm:gap-2">
+        @for (cat of categories; track cat.id) {
+          <button
+            type="button"
+            role="tab"
+            [id]="'tab-' + cat.id"
+            [attr.aria-selected]="tab === cat.id"
+            [attr.aria-controls]="'panel-' + cat.id"
+            [attr.tabindex]="tab === cat.id ? 0 : -1"
+            class="relative flex min-h-[48px] min-w-0 flex-1 items-center justify-center px-1 text-[13px] font-semibold transition sm:flex-none sm:px-5 sm:text-sm sm:tracking-wide"
+            [ngClass]="tab === cat.id ? 'text-gold' : 'text-cream-muted hover:text-cream'"
+            (click)="selectTab(cat.id)"
+            (keydown)="onTabKey($event)"
+          >
+            {{ cat.label }}
+            <span class="ml-1 rounded-full bg-ink-600 px-1.5 py-0.5 text-[11px] text-cream-muted sm:ml-1.5 sm:px-2 sm:text-xs">{{ counts[cat.id] }}</span>
+            @if (tab === cat.id) {
+              <span class="absolute inset-x-1 -bottom-px sm:inset-x-3 h-0.5 rounded bg-gold" aria-hidden="true"></span>
+            }
+          </button>
+        }
+      </div>
+    </div>
+
+    <p class="mt-4 text-sm text-cream-muted" role="status" aria-live="polite">
+      {{ visible.length }} {{ visible.length === 1 ? 'sabor encontrado' : 'sabores encontrados' }}
+      @if (term) { para “{{ term }}” }
+    </p>
+
+    @for (cat of categories; track cat.id) {
+      <div
+        role="tabpanel"
+        [id]="'panel-' + cat.id"
+        [attr.aria-labelledby]="'tab-' + cat.id"
+        [hidden]="tab !== cat.id"
+        tabindex="0"
+        class="mt-4 rounded-xl"
+      >
+        @if (tab === cat.id) {
+          @if (visible.length === 0) {
+            <div class="card p-8 text-center text-cream-muted">
+              Nenhum sabor encontrado nesta categoria.
+              @if (term) { Tente outro termo ou veja as outras abas. }
+            </div>
+          } @else {
+            <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              @for (flavor of visible; track flavor.id) {
+                <li><app-flavor-card [flavor]="flavor" [compact]="true"></app-flavor-card></li>
+              }
+            </ul>
+          }
+        }
+      </div>
+    }
+  </section>
+
+  <app-menu-sizes></app-menu-sizes>
+  <app-menu-extras></app-menu-extras>
+
+  <p class="mt-14 text-center">
+    <a routerLink="/montar-pizza" class="btn-primary px-10 py-4 text-base">
+      <lucide-icon name="pizza" [size]="20"></lucide-icon>
+      Montar pizza
+    </a>
+  </p>
+</div>
