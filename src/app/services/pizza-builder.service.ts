@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { PizzaBuilderDraft } from '../interfaces/cart.interface';
+import { PizzaBuilderDraft, PizzaLine } from '../interfaces/cart.interface';
 import { PizzaSizeId } from '../interfaces/pizza-menu.interface';
 import { CatalogService } from './catalog.service';
 import { PersistenceService } from './persistence.service';
@@ -8,7 +8,9 @@ import { SizeRulesService } from './size-rules.service';
 
 const STORAGE_KEY = 'builder';
 
-const EMPTY_DRAFT: PizzaBuilderDraft = { size: null, flavorIds: [], crustId: null, notes: '' };
+const MAX_QUANTITY = 20;
+
+const EMPTY_DRAFT: PizzaBuilderDraft = { size: null, flavorIds: [], crustId: null, notes: '', editingId: null, quantity: 1 };
 
 /** Estado da pizza que o cliente está montando (persistido a cada alteração). */
 @Injectable({ providedIn: 'root' })
@@ -60,8 +62,25 @@ export class PizzaBuilderService {
     this.commit({ ...this.snapshot, notes });
   }
 
+  /** Carrega uma pizza do carrinho para edição (substitui o rascunho atual). */
+  load(line: PizzaLine): void {
+    this.commit({
+      size: line.size,
+      flavorIds: this.sizeRules.trimToSize(line.size, line.flavorIds),
+      crustId: line.crustId,
+      notes: line.notes,
+      editingId: line.id,
+      quantity: this.clampQuantity(line.quantity),
+    });
+  }
+
   reset(): void {
     this.commit(EMPTY_DRAFT);
+  }
+
+  private clampQuantity(value: unknown): number {
+    const n = Math.floor(Number(value));
+    return Number.isFinite(n) ? Math.min(MAX_QUANTITY, Math.max(1, n)) : 1;
   }
 
   private commit(next: PizzaBuilderDraft): void {
@@ -83,6 +102,8 @@ export class PizzaBuilderService {
       flavorIds: this.sizeRules.trimToSize(size, this.catalog.sanitizeFlavorIds(saved['flavorIds'])),
       crustId,
       notes: typeof saved['notes'] === 'string' ? saved['notes'] : '',
+      editingId: typeof saved['editingId'] === 'string' && saved['editingId'] ? saved['editingId'] : null,
+      quantity: this.clampQuantity(saved['quantity']),
     };
   }
 }

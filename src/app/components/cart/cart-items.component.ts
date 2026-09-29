@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartFacadeService, CartView } from '../../facade/cart.facade.service';
+import { OrderFacadeService } from '../../facade/order.facade.service';
 
 type LineKind = 'pizza' | 'drink';
 
@@ -18,8 +20,15 @@ export class CartItemsComponent {
 
   constructor(
     private cart: CartFacadeService,
+    private order: OrderFacadeService,
+    private router: Router,
     private host: ElementRef<HTMLElement>
   ) {}
+
+  /** Abre a pizza no montador (no passo dos sabores) para trocar sabor, borda, tamanho ou observações. */
+  editPizza(id: string): void {
+    if (this.order.startEdit(id)) void this.router.navigate(['/montar-pizza']);
+  }
 
   isConfirming(kind: LineKind, id: string): boolean {
     return this.confirming?.kind === kind && this.confirming.id === id;

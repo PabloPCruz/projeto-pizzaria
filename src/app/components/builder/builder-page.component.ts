@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { BuilderView, OrderFacadeService } from '../../facade/order.facade.service';
 
@@ -27,6 +28,8 @@ export class BuilderPageComponent implements OnInit {
   step = 0;
   /** Pizza acabou de ir para o carrinho: mostra o painel de próximos passos. */
   added = false;
+  /** `true` = o que foi salvo era a edição de uma pizza do carrinho (texto do painel muda). */
+  addedWasEdit = false;
   /** Aviso de sabores removidos ao trocar para um tamanho menor (aria-live). */
   notice = '';
   /** Motivo pelo qual não dá para avançar (aria-live). */
@@ -35,7 +38,10 @@ export class BuilderPageComponent implements OnInit {
   @ViewChild('stepHeading') stepHeading?: ElementRef<HTMLElement>;
   @ViewChild('addedHeading') addedHeading?: ElementRef<HTMLElement>;
 
-  constructor(private order: OrderFacadeService) {}
+  constructor(
+    private order: OrderFacadeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     // Ao recarregar, volta ao passo em que o cliente estava (limitado ao que o rascunho permite).
@@ -81,8 +87,18 @@ export class BuilderPageComponent implements OnInit {
     } ${event.removed === 1 ? 'sabor foi removido' : 'sabores foram removidos'} da sua pizza.`;
   }
 
-  onAdded(): void {
+  /** Desiste da edição: a pizza do carrinho continua exatamente como estava. */
+  cancelEdit(): void {
+    this.order.cancelEdit();
+    this.step = 0;
+    this.notice = '';
+    this.stepError = '';
+    void this.router.navigate(['/carrinho']);
+  }
+
+  onAdded(wasEdit = false): void {
     this.added = true;
+    this.addedWasEdit = wasEdit;
     this.notice = '';
     this.stepError = '';
     setTimeout(() => this.addedHeading?.nativeElement.focus());

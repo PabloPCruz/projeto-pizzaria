@@ -15,7 +15,12 @@ const PAYMENT_LABELS: Record<PaymentMethod, string> = {
 export const DELIVERY_FEE_NOTICE =
   'A taxa de entrega será calculada e informada pela loja na confirmação do pedido pelo WhatsApp.';
 
-/** Monta a mensagem do pedido e o link wa.me. Não calcula nem exibe taxa de entrega. */
+export interface MessageOptions {
+  /** Endereço dentro do raio de entrega grátis (decidido por DeliveryZoneService). */
+  freeDelivery?: boolean;
+}
+
+/** Monta a mensagem do pedido e o link wa.me. Nunca calcula nem exibe valor de taxa de entrega. */
 @Injectable({ providedIn: 'root' })
 export class WhatsappMessageService {
   constructor(
@@ -32,7 +37,8 @@ export class WhatsappMessageService {
    * Mensagem em primeira pessoa, como o cliente pedindo. Só texto e negrito do WhatsApp:
    * emojis (acima de U+FFFF) chegam quebrados via wa.me. Nunca calcula taxa de entrega.
    */
-  buildMessage(cart: CartState, draft: CheckoutDraft): string {
+  buildMessage(cart: CartState, draft: CheckoutDraft, options: MessageOptions = {}): string {
+    const free = !!options.freeDelivery;
     const blocks: string[][] = [];
 
     blocks.push([`Olá, ${STORE_INFO.name}! Sou *${draft.name.trim()}* e gostaria de fazer um pedido:`]);
@@ -42,9 +48,11 @@ export class WhatsappMessageService {
     for (const drink of cart.drinks) blocks.push(this.drinkLines(index++, drink));
 
     const total = this.pricing.cartTotal(cart);
-    if (total !== null) blocks.push([`*Total dos itens:* ${this.money(total)} (entrega não inclusa)`]);
+    if (total !== null) {
+      blocks.push([`*Total dos itens:* ${this.money(total)} (${free ? 'entrega grátis' : 'entrega não inclusa'})`]);
+    }
 
-    blocks.push(this.deliveryLines(draft));
+    blocks.push(this.deliveryLines(draft, free));
 
     const payment = this.paymentLines(draft);
     if (payment.length) blocks.push(payment);
@@ -52,17 +60,13 @@ export class WhatsappMessageService {
     const notes = draft.generalNotes.trim();
     if (notes) blocks.push(['*Observações*', notes]);
 
-    blocks.push([
-      total === null
-        ? 'Aguardo a confirmação do valor total e da taxa de entrega. Obrigado!'
-        : 'Aguardo a confirmação da taxa de entrega e do valor final. Obrigado!',
-    ]);
+    blocks.push([this.closingLine(total !== null, free)]);
 
     return blocks.map((lines) => lines.join('\n')).join('\n\n');
   }
 
-  buildLink(cart: CartState, draft: CheckoutDraft): string {
-    const text = encodeURIComponent(this.buildMessage(cart, draft));
+  buildLink(cart: CartState, draft: CheckoutDraft, options: MessageOptions = {}): string {
+    const text = encodeURIComponent(this.buildMessage(cart, draft, options));
     return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${text}`;
   }
 
@@ -97,15 +101,27 @@ export class WhatsappMessageService {
     return out;
   }
 
-  private deliveryLines(draft: CheckoutDraft): string[] {
+  private deliveryLines(draft: CheckoutDraft, free: boolean): string[] {
     const complement = draft.complement.trim();
-    return [
+    const lines = [
       '*Entrega*',
       `${draft.street.trim()}, ${draft.number.trim()}${complement ? ` — ${complement}` : ''}`,
       `${draft.neighborhood.trim()} — ${draft.city.trim()}/${draft.state.trim().toUpperCase()}`,
       `CEP ${this.format.cep(draft.cep)}`,
       `Contato: ${this.format.phone(draft.phone)}`,
     ];
+    if (free) lines.push(`Entrega grátis (até ${STORE_INFO.freeDelivery.radiusKm} km da loja)`);
+    return lines;
+  }
+
+  /** Fecho em 1ª pessoa. Na área grátis não há taxa a confirmar; fora dela a loja informa a taxa pelo WhatsApp. */
+  private closingLine(totalKnown: boolean, free: boolean): string {
+    if (free) {
+      return totalKnown ? 'Aguardo a confirmação do pedido. Obrigado!' : 'Aguardo a confirmação do valor total. Obrigado!';
+    }
+    return totalKnown
+      ? 'Aguardo a confirmação da taxa de entrega e do valor final. Obrigado!'
+      : 'Aguardo a confirmação do valor total e da taxa de entrega. Obrigado!';
   }
 
   private paymentLines(draft: CheckoutDraft): string[] {

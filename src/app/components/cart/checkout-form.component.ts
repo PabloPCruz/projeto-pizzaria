@@ -46,6 +46,8 @@ const FIELD_LABEL: Partial<Record<CheckoutField, string>> = {
 })
 export class CheckoutFormComponent implements OnDestroy {
   readonly draft$ = this.checkout.draft$;
+  readonly zone$ = this.checkout.zone$;
+  readonly radiusKm = this.checkout.freeDeliveryRadiusKm;
 
   readonly payments: readonly { id: PaymentMethod; label: string; hint: string }[] = [
     { id: 'pix', label: 'Pix', hint: '' },

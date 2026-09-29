@@ -18,6 +18,8 @@ export interface BuilderView {
   validation: FlavorValidation;
   /** Preço unitário da pizza montada, ou `null` se algum preço ainda não foi informado. */
   unitPrice: number | null;
+  /** `true` = está editando uma pizza que já estava no carrinho (ao salvar, ela é substituída). */
+  editing: boolean;
 }
 
 /** Montagem de pizza: tamanho, sabores (respeitando o limite), borda e observações. */
@@ -41,6 +43,7 @@ export class OrderFacadeService {
           remainingFlavors: Math.max(0, maxFlavors - draft.flavorIds.length),
           validation: this.sizeRules.validate(draft.size, draft.flavorIds),
           unitPrice: draft.size ? this.pricing.pizzaUnitPrice(draft.size, draft.flavorIds, draft.crustId) : null,
+          editing: !!draft.editingId,
         };
       })
     );
@@ -64,20 +67,44 @@ export class OrderFacadeService {
     this.builder.setNotes(notes);
   }
 
-  /** Adiciona a pizza montada ao carrinho e zera a montagem. `false` se a pizza estiver inválida. */
+  /**
+   * Adiciona a pizza montada ao carrinho e zera a montagem. Se for a edição de uma pizza do carrinho,
+   * substitui a original (mesmo id e posição). `false` se a pizza estiver inválida.
+   */
   addToCart(quantity = 1): boolean {
     const draft = this.builder.snapshot;
     if (!draft.size || !this.sizeRules.validate(draft.size, draft.flavorIds).valid) return false;
-    this.cart.addPizza({
+    const line = {
       size: draft.size,
       flavorIds: draft.flavorIds,
       crustId: draft.crustId,
       notes: draft.notes.trim(),
       quantity,
-    });
+    };
+    // Se a pizza editada sumiu do carrinho no meio do caminho, o trabalho não se perde: entra como nova.
+    const replaced = !!draft.editingId && this.cart.replacePizza(draft.editingId, line);
+    if (!replaced) this.cart.addPizza(line);
     this.builder.reset();
     this.setStep(0);
     return true;
+  }
+
+  /** Abre uma pizza do carrinho para edição, no passo dos sabores. `false` se ela não existe. */
+  startEdit(lineId: string): boolean {
+    const line = this.cart.snapshot.pizzas.find((p) => p.id === lineId);
+    if (!line) return false;
+    this.builder.load(line);
+    this.setStep(1);
+    return true;
+  }
+
+  isEditing(): boolean {
+    return !!this.builder.snapshot.editingId;
+  }
+
+  /** Descarta a edição: o carrinho fica como estava. */
+  cancelEdit(): void {
+    this.reset();
   }
 
   reset(): void {

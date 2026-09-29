@@ -31,11 +31,17 @@
         <div class="min-w-0 space-y-12">
           <app-cart-items [view]="view"></app-cart-items>
 
-          <section aria-labelledby="bebida-title">
-            <h2 id="bebida-title" class="text-2xl font-semibold sm:text-3xl">Acompanha uma bebida?</h2>
-            <p class="mt-1 text-sm text-cream-muted">Opcional. Toque em adicionar e a bebida entra no pedido.</p>
-            <div class="mt-4"><app-drink-picker></app-drink-picker></div>
-          </section>
+          @if (hasDrinksToAdd(view)) {
+            <section aria-labelledby="bebida-title">
+              <h2 id="bebida-title" class="text-2xl font-semibold sm:text-3xl">
+                {{ view.drinks.length > 0 ? 'Quer adicionar outra bebida?' : 'Acompanha uma bebida?' }}
+              </h2>
+              <p class="mt-1 text-sm text-cream-muted">
+                Opcional. Toque em adicionar e a bebida entra em "Seus itens"; lá você ajusta a quantidade ou retira.
+              </p>
+              <div class="mt-4"><app-drink-picker [onlyAvailable]="true"></app-drink-picker></div>
+            </section>
+          }
 
           <app-checkout-form (sent)="onSent($event)"></app-checkout-form>
         </div>

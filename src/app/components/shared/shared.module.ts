@@ -26,6 +26,8 @@ import {
   Sparkles,
   Tag,
   Trash2,
+  Truck,
+  Pencil,
   Wine,
   X,
   CalendarX,
@@ -39,6 +41,7 @@ import { PriceComponent } from './price.component';
 import { LogoComponent } from './logo.component';
 import { MoneyPipe } from './money.pipe';
 import { QuantityStepperComponent } from './quantity-stepper.component';
+import { DeliveryFreeComponent } from './delivery-free.component';
 import { DrinkPickerComponent } from './drink-picker.component';
 import { TextFieldComponent } from './text-field.component';
 
@@ -67,14 +70,16 @@ const ICONS = LucideAngularModule.pick({
   Send,
   ShoppingCart,
   Sparkles,
+  Pencil,
   Tag,
   Trash2,
+  Truck,
   Utensils,
   Wine,
   X,
 });
 
-const SHARED = [DrinkPickerComponent, TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, PriceComponent, QuantityStepperComponent];
+const SHARED = [DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, PriceComponent, QuantityStepperComponent];
 
 @NgModule({
   declarations: SHARED,

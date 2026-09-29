@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { take } from 'rxjs/operators';
 import { CartFacadeService } from '../../facade/cart.facade.service';
 import { OrderFacadeService } from '../../facade/order.facade.service';
 
@@ -31,8 +32,8 @@ import { OrderFacadeService } from '../../facade/order.facade.service';
         <p role="alert" class="mt-4 text-sm text-danger" [hidden]="!error">{{ error }}</p>
 
         <button type="button" class="btn-primary mt-5 w-full py-4 text-base" (click)="add()">
-          <lucide-icon name="shopping-cart" [size]="20"></lucide-icon>
-          Adicionar ao carrinho
+          <lucide-icon [name]="view.editing ? 'check' : 'shopping-cart'" [size]="20"></lucide-icon>
+          {{ view.editing ? 'Salvar alterações' : 'Adicionar ao carrinho' }}
         </button>
       </div>
     }
@@ -44,17 +45,22 @@ export class ReviewStepComponent {
   quantity = 1;
   error = '';
 
-  @Output() added = new EventEmitter<void>();
+  /** Emite `true` quando a pizza salva substituiu uma que já estava no carrinho (edição). */
+  @Output() added = new EventEmitter<boolean>();
 
   constructor(
     private order: OrderFacadeService,
     private cartFacade: CartFacadeService
-  ) {}
+  ) {
+    // Ao editar, a quantidade começa na que a pizza já tinha no carrinho.
+    this.order.view$.pipe(take(1)).subscribe((view) => (this.quantity = view.draft.quantity));
+  }
 
   add(): void {
+    const editing = this.order.isEditing();
     if (this.order.addToCart(this.quantity)) {
       this.error = '';
-      this.added.emit();
+      this.added.emit(editing);
     } else {
       this.error = 'Escolha o tamanho e pelo menos 1 sabor antes de adicionar ao carrinho.';
     }

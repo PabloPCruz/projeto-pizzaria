@@ -155,6 +155,11 @@
         (valueChange)="setState($event)"
       ></app-text-field>
     </div>
+
+    <!-- Endereço dentro do raio de entrega grátis -->
+    @if ((zone$ | async)?.status === 'free') {
+      <app-delivery-free id="delivery-free-inline" class="mt-5" [compact]="true" [radiusKm]="radiusKm"></app-delivery-free>
+    }
   </fieldset>
 
   <!-- Pagamento -->
