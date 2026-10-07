@@ -139,3 +139,23 @@ describe('Ícones do site', () => {
     for (const icon of manifest.icons) expect((await fetch(`assets/${icon.src}`)).ok).withContext(icon.src).toBeTrue();
   });
 });
+
+describe('Prévia do link e cores de aviso', () => {
+  it('a imagem de prévia (Open Graph) existe e tem 1200×630', async () => {
+    const response = await fetch('assets/img/og-image.png');
+    expect(response.ok).toBeTrue();
+    const bitmap = await createImageBitmap(await response.blob());
+    expect([bitmap.width, bitmap.height]).toEqual([1200, 630]);
+  });
+
+  it('aviso de loja fechada usa a cor de aviso (âmbar), não o dourado da marca', async () => {
+    const { StoreClosedNoticeComponent } = await import('../src/app/components/shared/store-closed-notice.component');
+    await TestBed.configureTestingModule({ imports: [SharedModule] }).compileComponents();
+    const fixture = TestBed.createComponent(StoreClosedNoticeComponent);
+    fixture.componentRef.setInput('message', 'Fechado');
+    fixture.detectChanges();
+    const box: HTMLElement = fixture.nativeElement.querySelector('div');
+    expect(box.className).toContain('border-warn');
+    expect(box.className).not.toContain('border-gold');
+  });
+});

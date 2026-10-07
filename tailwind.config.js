@@ -49,6 +49,8 @@ module.exports = {
           doce: '#3b2029',
         },
         ok: '#7fc98f',
+        // Aviso (loja fechada, CEP não achado, "ainda não enviado"): âmbar, distinto do dourado da marca/seleção. 10,3:1 sobre ink-900.
+        warn: '#f0b86e',
         danger: '#ff8a8a',
       },
       fontFamily: {

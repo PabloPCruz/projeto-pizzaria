@@ -15,13 +15,13 @@ import { OrderSent } from './checkout-form.component';
         <h2 #heading id="sent-title" tabindex="-1" class="title-sub mt-5 outline-none">
           Falta só enviar no WhatsApp
         </h2>
-        <p class="mt-3 font-semibold text-gold-light">Seu pedido ainda não foi enviado para a loja.</p>
+        <p class="mt-3 font-semibold text-warn">Seu pedido ainda não foi enviado para a loja.</p>
         <p class="mt-2 text-cream-muted">
           A mensagem com seu pedido já está preenchida. Toque em enviar no WhatsApp para a loja confirmar o valor e a entrega.
         </p>
 
         @if (sent.blocked) {
-          <p role="alert" class="mt-4 rounded-xl border border-gold/40 bg-gold/[.07] p-3 text-sm text-gold-light">
+          <p role="alert" class="mt-4 rounded-xl border border-warn/40 bg-warn/[.07] p-3 text-sm text-warn">
             {{ sent.inApp ? 'Toque no botão abaixo para abrir o WhatsApp.' : 'O navegador bloqueou a nova aba. Use o botão abaixo para abrir o WhatsApp.' }}
           </p>
         }

@@ -42,7 +42,23 @@ function buildIco(images) {
   return Buffer.concat([header, ...entries, ...images.map((i) => i.data)]);
 }
 
+/** Prévia do link (Open Graph): 1200×630, logo centralizada sobre o carvão, com um fio dourado na base. */
+async function ogImage() {
+  const logo = await sharp(path.join(ROOT, 'src/assets/img/logo-pizzaria.png'))
+    .extract({ left: 160, top: 118, width: 788, height: 660 })
+    .resize({ height: 500 })
+    .png()
+    .toBuffer();
+  const line = Buffer.from('<svg width="1200" height="630"><rect x="0" y="618" width="1200" height="12" fill="#d4af37"/></svg>');
+  await sharp({ create: { width: 1200, height: 630, channels: 4, background: BG } })
+    .composite([{ input: logo, gravity: 'center' }, { input: line, left: 0, top: 0 }])
+    .png({ compressionLevel: 9, palette: true, quality: 92 })
+    .toFile(path.join(ROOT, 'src/assets/img/og-image.png'));
+  console.log('og-image.png', (fs.statSync(path.join(ROOT, 'src/assets/img/og-image.png')).size / 1024).toFixed(1) + ' KB');
+}
+
 (async () => {
+  await ogImage();
   const out = path.join(ROOT, 'src/assets/icons');
   fs.mkdirSync(out, { recursive: true });
   const write = (name, buf) => {

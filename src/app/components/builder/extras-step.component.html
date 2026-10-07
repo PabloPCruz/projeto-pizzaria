@@ -12,7 +12,7 @@
       @if (list.length > 0) {
         <ul class="mt-3 space-y-2" aria-label="Dicas dos sabores escolhidos">
           @for (h of list; track h.name) {
-            <li class="flex animate-fade-in items-start gap-2 rounded-xl border border-gold/40 bg-gold/[.07] p-3 text-sm text-gold-light">
+            <li class="flex animate-fade-in items-start gap-2 rounded-xl border border-gold/60 bg-gold/[.07] p-3 text-sm text-gold-light">
               <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
               <span><strong>{{ h.name }}:</strong> {{ h.hint }}. Escreva sua escolha nas observações.</span>
             </li>

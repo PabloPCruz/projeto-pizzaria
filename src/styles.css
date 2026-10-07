@@ -115,7 +115,7 @@
 
   /* ---- Tipografia: Playfair só em títulos; Inter em texto e interface ---- */
   .eyebrow {
-    @apply text-[0.8125rem] font-semibold uppercase leading-5 tracking-[0.18em] text-gold sm:text-sm sm:tracking-[0.22em];
+    @apply text-[0.8125rem] font-semibold uppercase leading-5 tracking-[0.18em] text-gold-soft sm:text-sm sm:tracking-[0.22em];
   }
 
   /* h1 das páginas internas */
