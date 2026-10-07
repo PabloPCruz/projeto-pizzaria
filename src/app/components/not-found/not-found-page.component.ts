@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-not-found-page',
@@ -21,4 +22,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     </section>
   `,
 })
-export class NotFoundPageComponent {}
+export class NotFoundPageComponent implements OnInit, OnDestroy {
+  constructor(private meta: Meta) {}
+
+  /** Numa SPA a página 404 responde 200: o "noindex" evita que buscadores guardem esse endereço. */
+  ngOnInit(): void {
+    this.meta.addTag({ name: 'robots', content: 'noindex' });
+  }
+
+  ngOnDestroy(): void {
+    this.meta.removeTag('name="robots"');
+  }
+}
