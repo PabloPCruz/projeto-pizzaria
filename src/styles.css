@@ -46,6 +46,12 @@
     flex: 1 0 auto;
   }
 
+  /* O cabeçalho é "sticky": o elemento do componente não pode virar um bloco só dele (o cabeçalho ficaria preso
+     dentro de 65 px e pararia de acompanhar a rolagem). Sem caixa própria, ele fixa em relação ao app inteiro. */
+  app-root > app-header {
+    display: contents;
+  }
+
   /* Números de títulos alinhados à linha de base (a Playfair usa números "antigos" por padrão). */
   .font-display,
   h1,

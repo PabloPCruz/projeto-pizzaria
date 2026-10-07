@@ -212,3 +212,50 @@ describe('Pedido pronto: confirmar antes de apagar', () => {
     localStorage.clear();
   });
 });
+
+describe('Aviso de limite de sabores: dentro do cartão e temporário', () => {
+  const [A, B, C] = ['tradicional-calabresa', 'tradicional-mussarela', 'especial-atum'];
+
+  it('aparece dentro do cartão do contador (não solto sobre a lista) e some sozinho', async () => {
+    jasmine.clock().install();
+    try {
+      localStorage.clear();
+      await TestBed.configureTestingModule({ imports: [BuilderModule, RouterTestingModule] }).compileComponents();
+      const order = TestBed.inject(OrderFacadeService);
+      order.selectSize('media');
+      order.toggleFlavor(A);
+      order.toggleFlavor(B);
+      const fixture = TestBed.createComponent(FlavorsStepComponent);
+      fixture.detectChanges();
+      const el: HTMLElement = fixture.nativeElement;
+
+      el.querySelector<HTMLLabelElement>(`label[for="flavor-${C}"]`)!.click();
+      fixture.detectChanges();
+      const message = el.querySelector('.sticky .card [role=status] p');
+      expect(message?.textContent).toContain('Limite de 2 sabores atingido');
+      expect(el.querySelector('.sticky')?.className).not.toContain('/95');
+
+      jasmine.clock().tick(6001);
+      fixture.detectChanges();
+      expect(el.querySelector('.sticky .card [role=status] p')).toBeNull();
+      el.remove();
+    } finally {
+      jasmine.clock().uninstall();
+      localStorage.clear();
+    }
+  });
+});
+
+describe('Layout do app: cabeçalho fixo', () => {
+  it('o elemento do cabeçalho não vira um bloco próprio (senão o "sticky" para de acompanhar a rolagem)', () => {
+    const root = document.createElement('app-root');
+    root.innerHTML = '<app-header></app-header><main></main>';
+    document.body.appendChild(root);
+    try {
+      expect(getComputedStyle(root).display).toBe('flex');
+      expect(getComputedStyle(root.querySelector('app-header')!).display).toBe('contents');
+    } finally {
+      root.remove();
+    }
+  });
+});
