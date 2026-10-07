@@ -8,7 +8,7 @@
   @if (added) {
     <section class="enter-soft mx-auto mt-8 max-w-xl text-center sm:mt-10" aria-labelledby="added-title">
       <div class="card p-7 sm:p-10">
-        <span class="mx-auto flex h-14 w-14 animate-check-in items-center justify-center rounded-full border border-gold bg-gold/10 text-gold">
+        <span class="mx-auto flex h-14 w-14 animate-check-in items-center justify-center rounded-full border border-ok bg-ok/10 text-ok">
           <lucide-icon name="check" [size]="28"></lucide-icon>
         </span>
         <h2 #addedHeading id="added-title" tabindex="-1" class="title-sub mt-5 outline-none">
@@ -33,7 +33,7 @@
     <!-- Aviso de edição de uma pizza que já está no carrinho -->
     @if (view.editing) {
       <div
-        class="enter mx-auto mt-6 flex max-w-3xl flex-col gap-3 rounded-2xl border border-gold/40 bg-gold/[.07] p-4 sm:mt-8 sm:flex-row sm:items-center sm:justify-between"
+        class="enter mx-auto mt-6 flex max-w-3xl flex-col gap-3 rounded-2xl border border-gold/60 bg-gold/[.07] p-4 sm:mt-8 sm:flex-row sm:items-center sm:justify-between"
         role="note"
         id="editing-banner"
       >
@@ -109,7 +109,7 @@
         <!-- Aviso de sabores removidos -->
         <div aria-live="polite" role="status">
           @if (notice) {
-            <p class="mt-4 flex animate-fade-in items-start gap-2 rounded-xl border border-gold/40 bg-gold/[.07] p-4 text-sm text-gold-light">
+            <p class="mt-4 flex animate-fade-in items-start gap-2 rounded-xl border border-warn/40 bg-warn/[.07] p-4 text-sm text-warn">
               <lucide-icon name="info" [size]="18" class="mt-0.5 shrink-0"></lucide-icon>
               <span>{{ notice }}</span>
             </p>

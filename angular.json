@@ -36,7 +36,7 @@
                 "output": "assets"
               },
               {
-                "glob": "favicon.ico",
+                "glob": "{favicon.ico,robots.txt}",
                 "input": "public",
                 "output": "/"
               }

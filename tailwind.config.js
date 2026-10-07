@@ -20,6 +20,7 @@ module.exports = {
           600: '#242424',
           500: '#33312d',
           400: '#4a4740',
+          250: '#857f70', // texto/ícone desabilitado sem fundo: 4,8:1 sobre ink-900, bem distinto do ativo
           300: '#7a7466', // borda de campo/controle: >= 3,9:1 sobre ink-800
         },
         // Dourado (destaque). DEFAULT sobre ink-900 = ~9:1.
@@ -39,7 +40,7 @@ module.exports = {
         cream: {
           DEFAULT: '#f5efe3',
           muted: '#cbc2b0',
-          dim: '#b0a895',
+          dim: '#bdb5a2', // texto terciário: 8,9:1 sobre ink-800 (APCA ~Lc 62)
         },
         // Tons quentes dos placeholders de sabor (um por categoria).
         warm: {
@@ -48,6 +49,8 @@ module.exports = {
           doce: '#3b2029',
         },
         ok: '#7fc98f',
+        // Aviso (loja fechada, CEP não achado, "ainda não enviado"): âmbar, distinto do dourado da marca/seleção. 10,3:1 sobre ink-900.
+        warn: '#f0b86e',
         danger: '#ff8a8a',
       },
       fontFamily: {

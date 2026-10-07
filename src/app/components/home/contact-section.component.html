@@ -10,9 +10,9 @@
       <div class="card flex items-start gap-4 p-5 sm:p-6">
         <span class="mt-0.5 text-gold"><lucide-icon name="phone" [size]="24"></lucide-icon></span>
         <div>
-          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold">Telefone</dt>
+          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold-soft">Telefone</dt>
           <dd class="mt-1">
-            <a [href]="phoneUrl" class="link-row inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"><span class="link-slide">{{ store.phoneDisplay }}</span></a>
+            <a [href]="phoneUrl" class="link-row inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"><span class="link-slide link-slide--static">{{ store.phoneDisplay }}</span></a>
           </dd>
         </div>
       </div>
@@ -20,14 +20,14 @@
       <div class="card flex items-start gap-4 p-5 sm:p-6">
         <span class="mt-0.5 text-gold"><app-brand-icon name="whatsapp" [size]="24"></app-brand-icon></span>
         <div>
-          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold">WhatsApp</dt>
+          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold-soft">WhatsApp</dt>
           <dd class="mt-1">
             <a
               [href]="whatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
               class="link-row inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"
-            ><span class="link-slide">{{ store.whatsappDisplay }}</span><span class="sr-only"> (abre em nova aba)</span></a>
+            ><span class="link-slide link-slide--static">{{ store.whatsappDisplay }}</span><span class="sr-only"> (abre em nova aba)</span></a>
           </dd>
         </div>
       </div>
@@ -35,7 +35,7 @@
       <div class="card flex items-start gap-4 p-5 sm:col-span-2 sm:p-6">
         <span class="mt-0.5 text-gold"><lucide-icon name="clock" [size]="24"></lucide-icon></span>
         <div>
-          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold">Horário</dt>
+          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold-soft">Horário</dt>
           <dd class="mt-1 text-lg text-cream">{{ hoursText }}</dd>
           <dd class="mt-1 text-sm text-cream-muted">{{ closedDaysText }} · {{ store.promoNotice }}</dd>
         </div>

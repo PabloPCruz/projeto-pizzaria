@@ -9,9 +9,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       [attr.id]="noticeId"
       tabindex="-1"
       [attr.role]="live ? 'status' : 'note'"
-      class="flex items-start gap-3 rounded-xl border border-gold/60 bg-gold/10 p-4 text-sm leading-relaxed text-cream outline-none"
+      class="flex items-start gap-3 rounded-xl border border-warn/50 bg-warn/10 p-4 text-sm leading-relaxed text-cream outline-none"
     >
-      <lucide-icon name="calendar-x" [size]="20" class="mt-0.5 shrink-0 text-gold"></lucide-icon>
+      <lucide-icon name="calendar-x" [size]="20" class="mt-0.5 shrink-0 text-warn"></lucide-icon>
       <p>{{ message }}</p>
     </div>
   `,

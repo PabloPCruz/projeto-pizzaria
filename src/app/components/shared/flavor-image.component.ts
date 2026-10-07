@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IMAGE_FOCUS } from '../../data/menu.data';
 import { PizzaFlavor } from '../../interfaces/pizza-menu.interface';
 
 /**
@@ -21,6 +22,7 @@ import { PizzaFlavor } from '../../interfaces/pizza-menu.interface';
         [attr.width]="width"
         [attr.height]="height"
         class="img-fade h-full w-full object-cover"
+        [style.object-position]="focus"
         [class.is-loaded]="loaded"
         [class]="imgClass"
         (load)="loaded = true"
@@ -51,14 +53,19 @@ export class FlavorImageComponent {
   loaded = false;
   failed = false;
 
-  /** Variantes leves geradas ao lado da foto original (nome-192.webp, nome-640.webp). */
+  /** Variantes leves geradas ao lado da foto original (nome-192/320/640/960.webp; ver tools/gerar-imagens.js). */
   get srcset(): string {
     const base = (this.flavor.image ?? '').replace(/\.jpe?g$/i, '');
-    return `${base}-192.webp 192w, ${base}-640.webp 640w`;
+    return [192, 320, 640, 960].map((w) => `${base}-${w}.webp ${w}w`).join(', ');
+  }
+
+  /** Onde fica a pizza na foto (só para as que não ficam no centro). */
+  get focus(): string | null {
+    return IMAGE_FOCUS[(this.flavor.image ?? '').split('/').pop() ?? ''] ?? null;
   }
 
   /** Miniaturas ocupam o próprio tamanho; cartões grandes, a largura da coluna. */
   get sizes(): string {
-    return this.small ? `${this.width}px` : '(min-width: 768px) 360px, 100vw';
+    return this.small ? `${this.width}px` : '(min-width: 1024px) 347px, (min-width: 640px) 45vw, 78vw';
   }
 }

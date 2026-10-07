@@ -99,7 +99,7 @@ const TRADICIONAIS: PizzaFlavor[] = [
   flavor('tradicional', 'Lombo com Bacon', 'Mussarela, lombo, bacon e ovos'),
   flavor('tradicional', 'Alho com Bacon', 'Mussarela, alho e bacon'),
   flavor('tradicional', 'Siciliana', 'Mussarela, calabresa ralada, cebola, tomate e catupiry'),
-  flavor('tradicional', 'Portuguesa', 'Mussarela, presunto, ovos, ervilha, milho, cebola e azeitona', undefined, 'assets/img-flavors/portuguesa.jpeg'),
+  flavor('tradicional', 'Portuguesa', 'Mussarela, presunto, ovos, ervilha, milho, cebola e azeitona', undefined, 'assets/img-flavors/portuguesa.jpg'),
   flavor('tradicional', 'Francesa', 'Mussarela, presunto, cebola, manjericão e creme de leite', undefined, 'assets/img-flavors/presunto.jpg'),
   // CONFERIR: ingredientes cobertos por tarja branca no cardápio impresso.
   flavor('tradicional', 'Presunto Misto', ''),
@@ -172,7 +172,7 @@ const ILLUSTRATIVE_PHOTOS: readonly [string, FlavorCategory, readonly string[]][
 
   ['mexicana.jpg', 'especial', ['Alemã']],
   ['margherita.jpg', 'especial', ['Atum']],
-  ['portuguesa.jpeg', 'especial', ['À Moda da Casa', 'Mista', 'Canadense', 'Portuguesa Especial']],
+  ['portuguesa.jpg', 'especial', ['À Moda da Casa', 'Mista', 'Canadense', 'Portuguesa Especial']],
   ['mussarela-tomate.jpg', 'especial', ['Tomate Seco Especial', 'Tomate Seco']],
   ['calabresa.jpg', 'especial', ['Calabresa Especial']],
   ['frango-bacon-catupiry.jpg', 'especial', ['Pizzaiolo', 'Caipira']],
@@ -194,6 +194,16 @@ function withIllustrativePhoto(f: PizzaFlavor): PizzaFlavor {
 }
 
 export const FLAVORS: readonly PizzaFlavor[] = [...TRADICIONAIS, ...ESPECIAIS, ...DOCES].map(withIllustrativePhoto);
+
+/**
+ * Ponto de foco (object-position) das fotos em que a pizza não fica no centro: o corte do cartão (4:3, 16:10)
+ * e da miniatura (1:1) preserva a pizza em vez de cortar a metade dela. Chave: nome do arquivo.
+ */
+export const IMAGE_FOCUS: Readonly<Record<string, string>> = {
+  'margherita.jpg': '30% 55%',
+  'brigadeiro.jpg': '50% 70%',
+  'frango-brocolis.jpg': '50% 72%',
+};
 
 export const FLAVOR_CATEGORY_LABELS: Record<FlavorCategory, string> = {
   tradicional: 'Tradicionais',

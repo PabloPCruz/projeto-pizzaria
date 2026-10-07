@@ -29,7 +29,7 @@
 
   <!-- Seus dados -->
   <fieldset class="mt-8">
-    <legend class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Seus dados</legend>
+    <legend class="mb-4 font-display text-lg font-semibold text-gold-soft sm:text-xl">Seus dados</legend>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <app-text-field
         name="name"
@@ -63,7 +63,7 @@
 
   <!-- Endereço -->
   <fieldset class="mt-8">
-    <legend class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Endereço de entrega</legend>
+    <legend class="mb-4 font-display text-lg font-semibold text-gold-soft sm:text-xl">Endereço de entrega</legend>
 
     <!-- Quem não sabe o CEP preenche o endereço à mão (tudo obrigatório, menos o complemento).
          Controle: cartão com interruptor animado; o <input type=checkbox role=switch> real fica dentro do <label>. -->
@@ -118,12 +118,12 @@
               </p>
             }
             @case ('not-found') {
-              <p class="flex items-start gap-2 text-gold-light">
+              <p class="flex items-start gap-2 text-warn">
                 <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>CEP não encontrado. Preencha o endereço manualmente.
               </p>
             }
             @case ('error') {
-              <p class="flex items-start gap-2 text-gold-light">
+              <p class="flex items-start gap-2 text-warn">
                 <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
                 <span>Não foi possível buscar o CEP agora. Tente de novo ou preencha o endereço manualmente.</span>
                 <button type="button" class="min-h-[44px] font-semibold underline underline-offset-2 hover:text-gold sm:min-h-0" (click)="retryCep()">Tentar de novo</button>
@@ -220,7 +220,7 @@
 
   <!-- Pagamento -->
   <fieldset class="mt-8">
-    <legend id="payment-legend" class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Forma de pagamento</legend>
+    <legend id="payment-legend" class="mb-4 font-display text-lg font-semibold text-gold-soft sm:text-xl">Forma de pagamento</legend>
     <div
       role="radiogroup"
       aria-labelledby="payment-legend"
