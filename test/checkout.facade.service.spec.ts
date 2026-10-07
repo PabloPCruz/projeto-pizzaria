@@ -2,6 +2,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service';
 import { CartService } from '../src/app/services/cart.service';
+import { SUNDAY_INSTANT, fakeClock } from './helpers/fake-clock';
 
 describe('CheckoutFacadeService', () => {
   let facade: CheckoutFacadeService;
@@ -125,5 +126,66 @@ describe('CheckoutFacadeService', () => {
     facade.startOver();
     expect(TestBed.inject(CartService).snapshot).toEqual({ pizzas: [], drinks: [] });
     expect(facade.draft.name).toBe('');
+  });
+
+describe('loja fechada', () => {
+    function fillValidOrder(): void {
+      TestBed.inject(CartService).addPizza({
+        size: 'media',
+        flavorIds: ['tradicional-calabresa'],
+        crustId: null,
+        notes: '',
+        quantity: 1,
+      });
+      facade.update({
+        name: 'Maria',
+        cep: '80010-000',
+        street: 'Rua A',
+        number: '10',
+        neighborhood: 'Centro',
+        city: 'Curitiba',
+        state: 'PR',
+        payment: 'pix',
+      });
+      facade.setPhone('41999998888');
+    }
+
+    it('recusa o envio mesmo com tudo preenchido e não gera link', () => {
+      fillValidOrder();
+      fakeClock.set(SUNDAY_INSTANT);
+      const result = facade.submit();
+      expect(result.ok).toBeFalse();
+      if (!result.ok) {
+        expect(result.closed?.open).toBeFalse();
+        expect(result.closed?.reason).toBe('closed-day');
+        expect(result.errors).toEqual({});
+      }
+    });
+
+    it('o horário é reavaliado no clique: aberto às 22h59, fechado às 23h00', () => {
+      fillValidOrder();
+      fakeClock.set('2026-10-05T22:59:59-03:00');
+      expect(facade.submit().ok).toBeTrue();
+      fakeClock.set('2026-10-05T23:00:00-03:00');
+      expect(facade.submit().ok).toBeFalse();
+    });
+
+    it('carrinho e formulário continuam intactos depois da recusa', () => {
+      fillValidOrder();
+      const draftBefore = JSON.stringify(facade.draft);
+      const cart = TestBed.inject(CartService);
+      const cartBefore = JSON.stringify(cart.snapshot);
+      fakeClock.set(SUNDAY_INSTANT);
+      facade.submit();
+      expect(JSON.stringify(facade.draft)).toBe(draftBefore);
+      expect(JSON.stringify(cart.snapshot)).toBe(cartBefore);
+    });
+
+    it('aberto: o link é o de sempre', () => {
+      fillValidOrder();
+      const result = facade.submit();
+      expect(result.ok).toBeTrue();
+      if (result.ok) expect(result.url).toContain('https://wa.me/5541997449380?text=');
+    });
   });
 });

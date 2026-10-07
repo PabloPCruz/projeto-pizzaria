@@ -8,6 +8,7 @@ import { CartPageComponent } from '../src/app/components/cart/cart-page.componen
 import { CartFacadeService } from '../src/app/facade/cart.facade.service';
 import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service';
 import { CartService } from '../src/app/services/cart.service';
+import { SUNDAY_INSTANT, fakeClock } from './helpers/fake-clock';
 
 const flush = () => new Promise<void>((resolve) => setTimeout(resolve));
 
@@ -331,6 +332,19 @@ describe('CartPageComponent / checkout', () => {
       expect(checkout.draft.phone).toBe('(41) 98888-7777');
       expect(phone.value).toBe('(41) 98888-7777');
       expect(JSON.parse(localStorage.getItem('disk-pizza:v2:checkout')!).name).toBe('João');
+    });
+  });
+
+  describe('loja fechada', () => {
+    it('enviar não abre o WhatsApp nem mostra erro de campo', async () => {
+      fakeClock.set(SUNDAY_INSTANT);
+      create(true);
+      fillValidForm();
+      const open = spyOn(window, 'open');
+      component().submit();
+      await flush();
+      expect(open).not.toHaveBeenCalled();
+      expect(component().errorList.length).toBe(0);
     });
   });
 });

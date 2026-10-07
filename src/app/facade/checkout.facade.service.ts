@@ -3,17 +3,20 @@ import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { STORE_INFO } from '../data/store-info';
 import { CheckoutDraft, CheckoutErrors } from '../interfaces/cart.interface';
+import { StoreStatus } from '../interfaces/store-hours.interface';
 import { CartService } from '../services/cart.service';
 import { CepLookupResult, CepService } from '../services/cep.service';
 import { CheckoutDraftService } from '../services/checkout-draft.service';
 import { CheckoutValidationService } from '../services/checkout-validation.service';
 import { DeliveryZone, DeliveryZoneService } from '../services/delivery-zone.service';
 import { FormatService } from '../services/format.service';
+import { StoreHoursService } from '../services/store-hours.service';
 import { DELIVERY_FEE_NOTICE, WhatsappMessageService } from '../services/whatsapp-message.service';
 
 export type CheckoutResult =
   | { ok: true; url: string }
-  | { ok: false; errors: CheckoutErrors };
+  /** `closed` presente = a loja está fechada agora; `errors` vem vazio. */
+  | { ok: false; errors: CheckoutErrors; closed?: StoreStatus };
 
 /** Checkout: formulário persistido, busca de CEP, validação e link do WhatsApp. */
 @Injectable({ providedIn: 'root' })
@@ -37,7 +40,8 @@ export class CheckoutFacadeService {
     private validation: CheckoutValidationService,
     private whatsapp: WhatsappMessageService,
     private format: FormatService,
-    private deliveryZone: DeliveryZoneService
+    private deliveryZone: DeliveryZoneService,
+    private storeHours: StoreHoursService
   ) {
     this.draft$ = this.draftStore.draft$;
     this.zone$ = this.zoneState.asObservable();
@@ -125,8 +129,11 @@ export class CheckoutFacadeService {
     return this.validation.validate(this.cart.snapshot, this.draftStore.snapshot);
   }
 
-  /** Valida e, estando tudo certo, devolve o link wa.me com a mensagem do pedido. */
+  /** Valida e, estando tudo certo, devolve o link wa.me com a mensagem do pedido. Loja fechada: recusa antes de tudo. */
   submit(): CheckoutResult {
+    // Sempre recalculado no clique: cobre a virada de horário/dia com a página aberta.
+    const status = this.storeHours.snapshot();
+    if (!status.open) return { ok: false, errors: {}, closed: status };
     const errors = this.validate();
     if (!this.validation.isValid(errors)) return { ok: false, errors };
     const draft = this.draftStore.snapshot;

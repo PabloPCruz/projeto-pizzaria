@@ -137,6 +137,12 @@ export class CheckoutFormComponent implements OnDestroy {
     this.submitted = true;
     const result = this.checkout.submit();
     if (!result.ok) {
+      if (result.closed) {
+        // Fechou com a página aberta: o aviso (no resumo) já está ou ficará visível; leva o foco até ele.
+        this.errors = {};
+        setTimeout(() => document.getElementById('store-closed-notice')?.focus());
+        return;
+      }
       this.errors = result.errors;
       setTimeout(() => this.focusFirstInvalid());
       return;
