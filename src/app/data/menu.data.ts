@@ -195,6 +195,17 @@ function withIllustrativePhoto(f: PizzaFlavor): PizzaFlavor {
 
 export const FLAVORS: readonly PizzaFlavor[] = [...TRADICIONAIS, ...ESPECIAIS, ...DOCES].map(withIllustrativePhoto);
 
+/**
+ * Ponto de foco (object-position) das fotos em que a pizza não fica no centro: o corte do cartão (4:3, 16:10)
+ * e da miniatura (1:1) preserva a pizza em vez de cortar a metade dela. Chave: nome do arquivo.
+ */
+export const IMAGE_FOCUS: Readonly<Record<string, string>> = {
+  'margherita.jpg': '30% 55%',
+  'brigadeiro.jpg': '50% 70%',
+  'frango-brocolis.jpg': '50% 72%',
+  'peperone.jpg': '35% 50%',
+};
+
 export const FLAVOR_CATEGORY_LABELS: Record<FlavorCategory, string> = {
   tradicional: 'Tradicionais',
   especial: 'Especiais',

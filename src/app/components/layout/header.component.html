@@ -69,7 +69,7 @@
           <a
             [routerLink]="link.path"
             [fragment]="link.fragment"
-            [routerLinkActive]="link.fragment ? '' : '!text-gold'"
+            [routerLinkActive]="link.fragment ? '' : '!text-gold !font-semibold !border-l-2 !border-l-gold !pl-3'"
             [routerLinkActiveOptions]="{ exact: link.exact }"
             [ariaCurrentWhenActive]="link.fragment ? undefined : 'page'"
             class="flex min-h-[52px] items-center justify-between border-b border-ink-500/60 text-base font-medium text-cream hover:text-gold"

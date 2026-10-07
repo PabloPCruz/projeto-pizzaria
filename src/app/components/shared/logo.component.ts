@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-/** Proporção da logo recortada (767×628). */
-const RATIO = 767 / 628;
+/** Proporção da logo recortada (788×660, com 8 px de margem em volta do conteúdo). */
+const RATIO = 788 / 660;
 
 /**
- * Logo já recortada para o conteúdo (proporção ≈ 1,22:1), em WebP de 320 e 640 px com PNG de reserva.
+ * Logo já recortada para o conteúdo (proporção ≈ 1,19:1), em WebP de 160, 320 e 640 px com PNG de reserva.
  * O arquivo original (1080×1080, ~300 KB) tem muito espaço vazio ao redor e não é mais baixado.
  */
 @Component({
@@ -14,14 +14,14 @@ const RATIO = 767 / 628;
     <picture>
       <source
         type="image/webp"
-        srcset="assets/img/logo-crop-320.webp 320w, assets/img/logo-crop-640.webp 640w"
+        srcset="assets/img/logo-crop-160.webp 160w, assets/img/logo-crop-320.webp 320w, assets/img/logo-crop-640.webp 640w"
         [attr.sizes]="width + 'px'"
       />
       <img
         src="assets/img/logo-crop-640.png"
         [alt]="decorative ? '' : 'Disk Pizza — Estd. 2015'"
-        width="767"
-        height="628"
+        width="788"
+        height="660"
         decoding="async"
         [attr.fetchpriority]="priority ? 'high' : null"
         class="block"

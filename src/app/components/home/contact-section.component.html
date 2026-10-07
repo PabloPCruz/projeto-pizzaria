@@ -12,7 +12,7 @@
         <div>
           <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.16em] text-gold">Telefone</dt>
           <dd class="mt-1">
-            <a [href]="phoneUrl" class="link-row inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"><span class="link-slide">{{ store.phoneDisplay }}</span></a>
+            <a [href]="phoneUrl" class="link-row inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"><span class="link-slide link-slide--static">{{ store.phoneDisplay }}</span></a>
           </dd>
         </div>
       </div>
@@ -27,7 +27,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="link-row inline-flex min-h-[44px] items-center text-lg text-cream hover:text-gold"
-            ><span class="link-slide">{{ store.whatsappDisplay }}</span><span class="sr-only"> (abre em nova aba)</span></a>
+            ><span class="link-slide link-slide--static">{{ store.whatsappDisplay }}</span><span class="sr-only"> (abre em nova aba)</span></a>
           </dd>
         </div>
       </div>

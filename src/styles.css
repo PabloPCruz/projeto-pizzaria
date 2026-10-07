@@ -97,8 +97,9 @@
     outline: none;
   }
 
+  /* Seleção de texto: legível para qualquer cor de texto (cream, dim e gold passam de 5:1). */
   ::selection {
-    background: rgba(212, 175, 55, 0.35);
+    background: rgba(212, 175, 55, 0.2);
   }
 }
 
@@ -176,7 +177,7 @@
   }
 
   .btn-ghost {
-    @apply btn border border-gold/50 text-gold hover:border-gold hover:bg-gold/10;
+    @apply btn border border-gold/60 text-gold hover:border-gold hover:bg-gold/10;
   }
 
   .btn-ghost:disabled {
@@ -188,13 +189,18 @@
   }
 
   .btn-quiet:disabled {
-    @apply bg-transparent;
+    @apply bg-transparent text-ink-250;
+  }
+
+  /* Ação destrutiva (remover, apagar tudo): contorno vermelho-claro, para o vermelho cheio da marca significar só "avançar". */
+  .btn-danger {
+    @apply btn border border-danger text-danger hover:bg-danger/10;
   }
 
   .btn-icon {
-    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink-400 text-cream hover:border-gold hover:text-gold;
-    @apply aria-disabled:cursor-not-allowed aria-disabled:text-cream-dim aria-disabled:hover:border-ink-400 aria-disabled:hover:text-cream-dim;
-    @apply disabled:pointer-events-none disabled:text-cream-dim;
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink-300 text-cream hover:border-gold hover:text-gold;
+    @apply aria-disabled:cursor-not-allowed aria-disabled:border-ink-500 aria-disabled:text-ink-250 aria-disabled:hover:border-ink-500 aria-disabled:hover:text-ink-250;
+    @apply disabled:pointer-events-none disabled:border-ink-500 disabled:text-ink-250;
     transition-property: background-color, border-color, color, transform;
   }
 
@@ -246,6 +252,16 @@
     @apply scale-x-100;
   }
 
+  /* Link no meio de texto da mesma cor: sublinhado fixo (não depender só de cor, WCAG 1.4.1). */
+  .link-slide--static::after {
+    @apply scale-x-100 opacity-60;
+  }
+
+  .link-slide--static:hover::after,
+  .link-slide--static:focus-visible::after {
+    @apply opacity-100;
+  }
+
   /* Link do menu principal: o sublinhado fica dentro do padding da pílula. */
   .nav-link {
     @apply relative rounded-full px-4 py-2 text-[0.9375rem] font-medium text-cream-muted hover:text-gold;
@@ -272,7 +288,7 @@
   }
 
   .card-hover:hover {
-    @apply -translate-y-0.5 border-gold/40 shadow-lift;
+    @apply -translate-y-0.5 border-gold/60 shadow-lift;
   }
 
   /* ---- Campos de formulário ---- */
@@ -291,8 +307,8 @@
   }
 
   .field-input {
-    @apply block min-h-[48px] w-full rounded-xl border border-ink-300 bg-ink-800 px-4 py-2.5 text-base text-cream placeholder:text-cream-dim hover:border-cream-dim/60;
-    @apply focus:border-gold focus:bg-ink-700 focus:outline-none focus:ring-[3px] focus:ring-gold/30;
+    @apply block min-h-[48px] w-full rounded-xl border border-ink-300 bg-ink-800 px-4 py-2.5 text-base text-cream placeholder:text-cream-dim hover:border-[#a09a88];
+    @apply focus:border-gold focus:bg-ink-700 focus:outline-none focus:ring-[3px] focus:ring-gold/50;
     transition-property: border-color, background-color, box-shadow;
   }
 
@@ -656,5 +672,47 @@ app-mobile-bar[data-quiet] .mobile-bar {
 @media (hover: hover) {
   .link-row:hover .link-slide::after {
     transform: scaleX(1);
+  }
+}
+
+/* ---------------------------------------------- autofill do navegador no tema escuro */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: theme('colors.cream.DEFAULT');
+  caret-color: theme('colors.cream.DEFAULT');
+  box-shadow: 0 0 0 100px theme('colors.ink.800') inset;
+  transition: background-color 9999s ease-out;
+}
+
+/* ------------------------------------------------ alto contraste do Windows (forced-colors) */
+/* O sistema remove cores de fundo: sem isto o miolo do radio, o interruptor, o passo atual e os botões sumiriam. */
+@media (forced-colors: active) {
+  .btn {
+    border: 1px solid ButtonText;
+  }
+
+  .choice-radio::after {
+    background: Highlight;
+  }
+
+  .choice input:checked ~ .choice-radio,
+  .choice input:checked ~ .choice-check,
+  .switch-card input:checked ~ .switch-track {
+    background: Highlight;
+    border-color: Highlight;
+  }
+
+  .switch-track::after {
+    background: ButtonText;
+    forced-color-adjust: none;
+  }
+
+  [aria-pressed='true'],
+  [aria-selected='true'],
+  [aria-current='step'],
+  [aria-current='page'] {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
   }
 }

@@ -40,7 +40,7 @@ import { OrderSent } from './checkout-form.component';
             <div class="animate-fade-in rounded-xl border border-ink-400 p-4 text-left" role="group" aria-label="Confirmar novo pedido">
               <p class="text-sm text-cream-muted">Apagar o carrinho e os dados preenchidos e começar de novo?</p>
               <div class="mt-3 flex flex-col gap-2 sm:flex-row">
-                <button type="button" id="confirm-new-order" class="btn-primary flex-1" (click)="startOver()">Sim, apagar tudo</button>
+                <button type="button" id="confirm-new-order" class="btn-danger flex-1" (click)="startOver()">Sim, apagar tudo</button>
                 <button type="button" class="btn-ghost flex-1" (click)="confirmingNew = false">Cancelar</button>
               </div>
             </div>
