@@ -9,6 +9,8 @@ import { SizeRulesService } from './size-rules.service';
 
 const STORAGE_KEY = 'cart';
 const MAX_QUANTITY = 20;
+/** Mesmo limite do campo de observações da pizza. */
+const MAX_NOTES = 300;
 
 const EMPTY_CART: CartState = { pizzas: [], drinks: [] };
 
@@ -124,7 +126,7 @@ export class CartService {
         size,
         flavorIds,
         crustId,
-        notes: typeof item['notes'] === 'string' ? item['notes'] : '',
+        notes: typeof item['notes'] === 'string' ? item['notes'].slice(0, MAX_NOTES) : '',
         quantity: this.clamp(Number(item['quantity'])),
       });
     }
@@ -133,11 +135,24 @@ export class CartService {
     for (const item of data.drinks as Record<string, unknown>[]) {
       if (!item || typeof item !== 'object') continue;
       if (typeof item['drinkId'] !== 'string' || !this.catalog.getDrink(item['drinkId'])) continue;
+      // A mesma bebida em duas linhas (dado antigo ou editado à mão) vira uma só, somando a quantidade.
+      const existing = drinks.find((d) => d.drinkId === item['drinkId']);
+      if (existing) {
+        existing.quantity = this.clamp(existing.quantity + this.clamp(Number(item['quantity'])));
+        continue;
+      }
       drinks.push({
         id: typeof item['id'] === 'string' && item['id'] ? item['id'] : this.newId(),
         drinkId: item['drinkId'],
         quantity: this.clamp(Number(item['quantity'])),
       });
+    }
+
+    // Ids repetidos (pizzas e bebidas) quebrariam edição e remoção: a repetição ganha um id novo.
+    const seen = new Set<string>();
+    for (const line of [...pizzas, ...drinks]) {
+      if (seen.has(line.id)) line.id = this.newId();
+      seen.add(line.id);
     }
 
     return { pizzas, drinks };

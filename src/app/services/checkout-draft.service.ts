@@ -6,6 +6,21 @@ import { PersistenceService } from './persistence.service';
 const STORAGE_KEY = 'checkout';
 const PAYMENT_METHODS: readonly PaymentMethod[] = ['pix', 'cartao', 'dinheiro'];
 
+/** Mesmos limites dos campos do formulário (maxlength): dado salvo/adulterado nunca passa deles. */
+const LIMITS: Record<string, number> = {
+  name: 60,
+  phone: 15,
+  cep: 9,
+  street: 80,
+  number: 10,
+  complement: 60,
+  neighborhood: 60,
+  city: 60,
+  state: 2,
+  changeFor: 15,
+  generalNotes: 400,
+};
+
 export const EMPTY_CHECKOUT: CheckoutDraft = {
   name: '',
   phone: '',
@@ -36,7 +51,13 @@ export class CheckoutDraftService {
   private restore(saved: unknown): CheckoutDraft {
     if (!saved || typeof saved !== 'object') return EMPTY_CHECKOUT;
     const data = saved as Record<string, unknown>;
-    const text = (key: keyof CheckoutDraft): string => (typeof data[key] === 'string' ? (data[key] as string) : '');
+    const text = (key: keyof CheckoutDraft): string => {
+      const value = data[key];
+      if (typeof value !== 'string') return '';
+      // Só as observações podem ter várias linhas.
+      const clean = key === 'generalNotes' ? value : value.replace(/[\r\n]+/g, ' ');
+      return clean.slice(0, LIMITS[key] ?? 100);
+    };
     const payment = PAYMENT_METHODS.includes(data['payment'] as PaymentMethod) ? (data['payment'] as PaymentMethod) : null;
     return {
       name: text('name'),
