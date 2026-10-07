@@ -11,7 +11,7 @@ import { CheckoutDraftService } from '../services/checkout-draft.service';
 import { CheckoutValidationService } from '../services/checkout-validation.service';
 import { DeliveryZone, DeliveryZoneService } from '../services/delivery-zone.service';
 import { FormatService } from '../services/format.service';
-import { StoreHoursService } from '../services/store-hours.service';
+import { StoreHoursService, closedNotice } from '../services/store-hours.service';
 import { DELIVERY_FEE_NOTICE, WhatsappMessageService } from '../services/whatsapp-message.service';
 
 export type CheckoutResult =
@@ -162,6 +162,14 @@ export class CheckoutFacadeService {
     return { ok: true, url: this.whatsapp.linkFromMessage(message), message };
   }
 
+  private readonly busy = new BehaviorSubject<boolean>(false);
+  /** `true` enquanto o envio espera a consulta de entrega terminar (os botões mostram "Verificando entrega…"). */
+  readonly busy$: Observable<boolean> = this.busy.asObservable();
+
+  setBusy(value: boolean): void {
+    this.busy.next(value);
+  }
+
   /** Consultas de entrega em andamento. */
   private zoneBusy = 0;
 
@@ -180,6 +188,11 @@ export class CheckoutFacadeService {
       ),
       timer(maxMs).pipe(map(() => undefined))
     ).pipe(take(1));
+  }
+
+  /** Texto mostrado quando o cliente tenta enviar com a loja fechada: deixa claro que NADA foi enviado e quando volta. */
+  blockedMessage(status: StoreStatus): string {
+    return `Seu pedido não foi enviado. ${closedNotice(status)}`;
   }
 
   /** CEPs (só dígitos) cuja consulta trouxe endereço sem rua. */

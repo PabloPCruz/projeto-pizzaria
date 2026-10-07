@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
@@ -7,6 +7,7 @@ import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
 import { App } from './app';
 import { routes } from './app.routes';
 import { LayoutModule } from './components/layout/layout.module';
+import { ClockService } from './services/clock.service';
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
@@ -26,6 +27,10 @@ const routerOptions: ExtraOptions = {
     HttpClientModule,
     RouterModule.forRoot(routes, routerOptions),
     LayoutModule,
+  ],
+  providers: [
+    // Mede a diferença do relógio do aparelho para o do servidor, sem atrasar a abertura do site.
+    { provide: APP_INITIALIZER, multi: true, deps: [ClockService], useFactory: (clock: ClockService) => () => void clock.sync() },
   ],
   bootstrap: [App],
 })

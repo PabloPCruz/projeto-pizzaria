@@ -3,6 +3,11 @@
   <p class="mt-1 text-sm leading-relaxed text-cream-muted">Preencha seus dados. O pedido é enviado pelo WhatsApp para a loja confirmar.</p>
   <p class="mt-1 text-xs leading-relaxed text-cream-dim">Seus dados ficam neste aparelho e só vão para a loja pelo WhatsApp. Para achar o endereço e a entrega, consultamos o CEP em serviços públicos (ViaCEP, AwesomeAPI e OpenStreetMap).</p>
 
+  <!-- Tentou enviar com a loja fechada: nada foi enviado -->
+  @if (blockedMessage) {
+    <app-store-closed-notice class="mt-5" noticeId="send-blocked-alert" [message]="blockedMessage"></app-store-closed-notice>
+  }
+
   <!-- Resumo de erros -->
   <div role="alert" [hidden]="errorList.length === 0">
     @if (errorList.length > 0) {
@@ -24,7 +29,7 @@
   </div>
 
   @if (sendError) {
-    <p role="alert" class="mt-6 rounded-xl border border-danger/60 bg-danger/10 p-4 text-sm text-cream">{{ sendError }}</p>
+    <p role="alert" id="send-error-alert" tabindex="-1" class="mt-6 rounded-xl border border-danger/60 bg-danger/10 p-4 text-sm text-cream outline-none">{{ sendError }}</p>
   }
 
   <!-- Seus dados -->
