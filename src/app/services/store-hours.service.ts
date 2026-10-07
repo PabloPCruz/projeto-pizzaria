@@ -1,4 +1,9 @@
+import { Inject, Injectable, InjectionToken, NgZone, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { distinctUntilChanged, map, shareReplay, startWith } from 'rxjs/operators';
+import { STORE_INFO } from '../data/store-info';
 import { NextOpening, StoreSchedule, StoreStatus } from '../interfaces/store-hours.interface';
+import { ClockService } from './clock.service';
 
 const WEEKDAY_INDEX: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 const WEEKDAY_NAME = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
@@ -132,4 +137,65 @@ export function closedDaysNotice(schedule: StoreSchedule): string {
   const closedDays = [0, 1, 2, 3, 4, 5, 6].filter((d) => !schedule.openDays.includes(d));
   if (closedDays.length === 0) return '';
   return `Fechado ${joinList(closedDays.map((d) => `${WEEKDAY_PREPOSITION[d]} ${WEEKDAY_PLURAL[d]}`))}`;
+}
+
+/** Reavalia o estado da loja a cada 30 s. */
+const REFRESH_MS = 30_000;
+
+/**
+ * Sinal de "reavalie o horário": a cada 30 s e quando a aba volta ao foco. O timer roda fora do NgZone
+ * (um intervalo dentro dele impede a aplicação de ficar "estável"); só a emissão volta para dentro.
+ * Nos testes é substituído por `NEVER` (ver test/_setup.spec.ts).
+ */
+export function createStatusTick(zone: NgZone): Observable<void> {
+  return new Observable<void>((subscriber) => {
+    const emit = () => zone.run(() => subscriber.next());
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') emit();
+    };
+    let timer: ReturnType<typeof setInterval> | undefined;
+    zone.runOutsideAngular(() => {
+      timer = setInterval(emit, REFRESH_MS);
+      document.addEventListener('visibilitychange', onVisibility);
+    });
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+  });
+}
+
+export const STORE_STATUS_TICK = new InjectionToken<Observable<void>>('STORE_STATUS_TICK', {
+  providedIn: 'root',
+  factory: () => createStatusTick(inject(NgZone)),
+});
+
+const sameStatus = (a: StoreStatus, b: StoreStatus) => JSON.stringify(a) === JSON.stringify(b);
+
+/** Horário de funcionamento: `snapshot()` calcula na hora (usar no envio); `status$` acompanha o relógio. */
+@Injectable({ providedIn: 'root' })
+export class StoreHoursService {
+  readonly schedule = STORE_INFO.schedule;
+  /** "Segunda a sábado, das 18h às 23h", gerado da tabela. */
+  readonly hoursText = scheduleSummary(this.schedule);
+  /** "Fechado aos domingos", gerado da tabela. */
+  readonly closedDaysText = closedDaysNotice(this.schedule);
+  readonly status$: Observable<StoreStatus>;
+
+  constructor(
+    private clock: ClockService,
+    @Inject(STORE_STATUS_TICK) tick$: Observable<void>
+  ) {
+    this.status$ = tick$.pipe(
+      startWith(undefined),
+      map(() => this.snapshot()),
+      distinctUntilChanged(sameStatus),
+      shareReplay({ bufferSize: 1, refCount: true })
+    );
+  }
+
+  /** Estado agora, sem cache. */
+  snapshot(): StoreStatus {
+    return getStoreStatus(this.clock.now(), this.schedule);
+  }
 }
