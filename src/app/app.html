@@ -1,5 +1,6 @@
 <a href="#main-content" class="skip-link" (click)="skipToMain($event)">Pular para o conteúdo</a>
 <app-header></app-header>
+<p class="sr-only" role="status" aria-live="polite">{{ announcement }}</p>
 <main id="main-content" tabindex="-1" [@routeFadeAnimation]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </main>

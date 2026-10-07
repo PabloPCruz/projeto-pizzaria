@@ -26,7 +26,7 @@ describe('Fluxo de envio do pedido', () => {
   let http: HttpTestingController;
 
   const submitButton = () =>
-    Array.from(el.querySelectorAll<HTMLButtonElement>('button[type=submit]')).find((b) => b.textContent?.includes('Enviar pedido pelo WhatsApp'))!;
+    Array.from(el.querySelectorAll<HTMLButtonElement>('button[type=submit]')).find((b) => b.textContent?.includes('Finalizar no WhatsApp'))!;
   const form = () => fixture.debugElement.query(By.directive(CheckoutFormComponent)).componentInstance as CheckoutFormComponent;
 
   function fillValidForm(): void {

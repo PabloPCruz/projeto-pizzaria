@@ -1,21 +1,35 @@
 @if (view$ | async; as view) {
-  <!-- Contador e sabores escolhidos -->
-  <div class="card p-4 sm:p-5">
-    <div class="flex flex-wrap items-center justify-between gap-2">
-      <p class="font-display text-xl font-semibold" id="flavor-counter">
-        @for (count of [view.draft.flavorIds.length]; track count) {<span class="inline-block animate-tick text-gold">{{ count }}/{{ view.maxFlavors }}</span>}
-        {{ view.maxFlavors === 1 ? 'sabor' : 'sabores' }}
-      </p>
-      <p class="text-sm text-cream-muted">
-        @if (view.remainingFlavors > 0) {
-          Você ainda pode escolher {{ view.remainingFlavors }}.
-        } @else {
-          Limite atingido.
-        }
-      </p>
+  <!-- Contador (fixo no topo da lista) e aviso dinâmico: a lista tem 71 sabores e o limite precisa ficar à vista. -->
+  <div class="sticky top-16 z-10 -mx-1 bg-ink-900/95 px-1 pb-1 pt-1 backdrop-blur sm:top-[72px]">
+    <div class="card px-4 py-3 sm:px-5">
+      <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-0.5">
+        <p class="font-display text-xl font-semibold" id="flavor-counter">
+          @for (count of [view.draft.flavorIds.length]; track count) {<span class="inline-block animate-tick text-gold">{{ count }}/{{ view.maxFlavors }}</span>}
+          {{ view.maxFlavors === 1 ? 'sabor' : 'sabores' }}
+        </p>
+        <p class="text-sm text-cream-muted">
+          @if (view.remainingFlavors > 0) {
+            Você ainda pode escolher {{ view.remainingFlavors }}.
+          } @else {
+            Limite atingido.
+          }
+        </p>
+      </div>
     </div>
-    @if (view.draft.flavorIds.length > 0) {
-      <ul class="mt-3 flex flex-wrap gap-2" aria-label="Sabores escolhidos">
+    <div role="status" aria-live="polite">
+      @if (live) {
+        <p class="mt-2 flex animate-fade-in items-start gap-2 text-sm text-gold-light">
+          <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
+          <span>{{ live }}</span>
+        </p>
+      }
+    </div>
+  </div>
+
+  <!-- Sabores escolhidos -->
+  @if (view.draft.flavorIds.length > 0) {
+    <div class="card mt-2 p-4">
+      <ul class="flex flex-wrap gap-2" aria-label="Sabores escolhidos">
         @for (id of view.draft.flavorIds; track id) {
           <li class="animate-fade-in">
             <button
@@ -30,18 +44,8 @@
           </li>
         }
       </ul>
-    }
-  </div>
-
-  <!-- Aviso dinâmico (limite atingido etc.) -->
-  <div role="status" aria-live="polite" class="min-h-[1.5rem]">
-    @if (live) {
-      <p class="mt-3 flex animate-fade-in items-start gap-2 text-sm text-gold-light">
-        <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
-        <span>{{ live }}</span>
-      </p>
-    }
-  </div>
+    </div>
+  }
 
   <!-- Filtros -->
   <div class="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-[1fr_auto] sm:items-end">
@@ -81,7 +85,7 @@
   <ul class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2" aria-label="Sabores disponíveis">
     @for (flavor of list; track flavor.id) {
       <li>
-        <label class="choice h-full items-center gap-3 p-3" [attr.for]="'flavor-' + flavor.id">
+        <label class="choice h-full items-center gap-3 p-3" [attr.for]="'flavor-' + flavor.id" (click)="onBlockedTap(view, flavor)">
           <input
             type="checkbox"
             class="peer"

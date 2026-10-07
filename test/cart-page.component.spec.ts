@@ -20,7 +20,7 @@ describe('CartPageComponent / checkout', () => {
   const field = (name: string) => el.querySelector<HTMLInputElement>('#field-' + name);
   const submitButton = () =>
     Array.from(el.querySelectorAll<HTMLButtonElement>('button[type=submit]')).find((b) =>
-      b.textContent?.includes('Enviar pedido pelo WhatsApp')
+      b.textContent?.includes('Finalizar no WhatsApp')
     )!;
 
   function create(withItems: boolean): void {
@@ -170,7 +170,7 @@ describe('CartPageComponent / checkout', () => {
       const [url, target] = open.calls.mostRecent().args;
       expect(String(url)).toContain('https://wa.me/5541997449380?text=');
       expect(target).toBe('_blank');
-      expect(el.textContent).toContain('Pedido pronto — envie a mensagem no WhatsApp para confirmar');
+      expect(el.textContent).toContain('Falta só enviar no WhatsApp');
       expect(el.textContent).toContain('Fazer novo pedido');
       expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(1);
     });
@@ -195,6 +195,12 @@ describe('CartPageComponent / checkout', () => {
 
       Array.from(el.querySelectorAll('button'))
         .find((b) => b.textContent?.includes('Fazer novo pedido'))!
+        .click();
+      fixture.detectChanges();
+      // Ainda não apagou nada: pediu confirmação.
+      expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(1);
+      Array.from(el.querySelectorAll('button'))
+        .find((b) => b.textContent?.includes('Sim, apagar tudo'))!
         .click();
       fixture.detectChanges();
 

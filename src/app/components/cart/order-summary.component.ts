@@ -40,8 +40,9 @@ import { StoreFacadeService } from '../../facade/store.facade.service';
         @if (store.open) {
           <button type="submit" form="checkout-form" class="btn-primary mt-5 w-full py-4 text-base" aria-describedby="delivery-fee-notice">
             <lucide-icon name="send" [size]="20"></lucide-icon>
-            Enviar pedido pelo WhatsApp
+            Finalizar no WhatsApp
           </button>
+          <p class="mt-3 text-center text-xs leading-relaxed text-cream-muted">Você confirma o envio dentro do WhatsApp. Nada é cobrado agora.</p>
         } @else {
           <app-store-closed-notice class="mt-5" [message]="store.notice"></app-store-closed-notice>
           <button type="button" disabled class="btn-primary mt-3 w-full py-4 text-base" aria-describedby="store-closed-notice">

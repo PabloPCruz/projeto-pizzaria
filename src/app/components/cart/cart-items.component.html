@@ -4,7 +4,7 @@
 
   <ul class="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
     @for (pizza of view.pizzas; track pizza.id) {
-      <li class="card animate-fade-in p-4 sm:p-5" [attr.aria-label]="pizza.title">
+      <li class="card animate-fade-in p-4 sm:p-5" [attr.aria-label]="pizza.ariaLabel">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
           <div class="min-w-0">
             <h3 data-line-heading tabindex="-1" class="flex items-center gap-2 text-xl font-semibold outline-none">
@@ -21,31 +21,31 @@
               <p class="mt-1 break-words text-sm text-cream-muted">Obs.: {{ pizza.notes }}</p>
             }
           </div>
-          <div class="shrink-0 sm:text-right"><app-price [value]="pizza.total"></app-price></div>
+          <div class="shrink-0 sm:text-right"><app-price [value]="pizza.total" [quiet]="true"></app-price></div>
         </div>
 
         <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink-500/60 pt-4">
           <app-quantity-stepper
             [value]="pizza.quantity"
-            [label]="pizza.title"
+            [label]="pizza.ariaLabel"
             (valueChange)="setPizzaQuantity(pizza.id, $event)"
           ></app-quantity-stepper>
 
           @if (isConfirming('pizza', pizza.id)) {
-            <div class="flex animate-fade-in flex-wrap items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + pizza.title">
+            <div class="flex animate-fade-in flex-wrap items-center gap-2" role="group" [attr.aria-label]="'Confirmar remoção de ' + pizza.ariaLabel">
               <span class="text-sm text-cream-muted">Remover esta pizza?</span>
-              <button type="button" [id]="'confirm-pizza-' + pizza.id" class="btn-primary min-h-[44px] px-4 py-2" (click)="confirmRemove('pizza', pizza.id, pizza.title)">Sim, remover</button>
+              <button type="button" [id]="'confirm-pizza-' + pizza.id" class="btn-primary min-h-[44px] px-4 py-2" (click)="confirmRemove('pizza', pizza.id, pizza.ariaLabel)">Sim, remover</button>
               <button type="button" class="btn-quiet min-h-[44px] px-3 py-2" (click)="cancelRemove()">Cancelar</button>
             </div>
           } @else {
             <div class="flex items-center gap-1">
               <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-gold hover:text-gold-light" (click)="editPizza(pizza.id)">
                 <lucide-icon name="pencil" [size]="18"></lucide-icon>
-                Editar<span class="sr-only"> {{ pizza.title }}</span>
+                Editar<span class="sr-only"> {{ pizza.ariaLabel }}</span>
               </button>
               <button type="button" class="btn-quiet min-h-[44px] px-3 py-2 text-danger hover:text-danger" (click)="askRemove('pizza', pizza.id)">
                 <lucide-icon name="trash-2" [size]="18"></lucide-icon>
-                Remover<span class="sr-only"> {{ pizza.title }}</span>
+                Remover<span class="sr-only"> {{ pizza.ariaLabel }}</span>
               </button>
             </div>
           }
@@ -60,7 +60,7 @@
             <lucide-icon name="cup-soda" [size]="20" class="shrink-0 text-gold"></lucide-icon>
             {{ drink.label }}
           </h3>
-          <div class="shrink-0 sm:text-right"><app-price [value]="drink.total"></app-price></div>
+          <div class="shrink-0 sm:text-right"><app-price [value]="drink.total" [quiet]="true"></app-price></div>
         </div>
         <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink-500/60 pt-4">
           <app-quantity-stepper

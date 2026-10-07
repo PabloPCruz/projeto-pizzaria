@@ -15,6 +15,9 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Foco e âncoras não ficam escondidos atrás do cabeçalho fixo nem da barra inferior. */
+    scroll-padding-top: 5.5rem;
+    scroll-padding-bottom: 6rem;
     -webkit-text-size-adjust: 100%;
   }
 

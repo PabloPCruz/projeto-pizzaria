@@ -22,7 +22,8 @@
         </a>
         <a routerLink="/cardapio" class="btn-quiet px-8 py-4 text-base text-gold hover:text-gold-light sm:border sm:border-gold/50 sm:hover:border-gold sm:hover:bg-gold/10">Ver cardápio</a>
       </div>
-      <ul class="mt-6 flex flex-wrap justify-center gap-2 sm:mt-8 lg:justify-start" aria-label="Avisos da loja">
+      <p class="mt-4 text-center text-sm text-cream-muted lg:text-left">Sem cadastro. Você confirma o pedido no WhatsApp.</p>
+      <ul class="mt-4 flex flex-wrap justify-center gap-2 sm:mt-5 lg:justify-start" aria-label="Avisos da loja">
         @if (status$ | async; as status) {
           <li class="badge gap-1.5">
             <lucide-icon [name]="status.open ? 'clock' : 'calendar-x'" [size]="14"></lucide-icon>{{ status.label }}
@@ -77,7 +78,7 @@
     </ol>
     <p class="mt-8 text-center sm:mt-10">
       <a routerLink="/montar-pizza" class="btn-gold px-8">
-        Começar meu pedido
+        Monte sua pizza
         <lucide-icon name="arrow-right" [size]="18"></lucide-icon>
       </a>
     </p>

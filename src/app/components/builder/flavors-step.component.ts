@@ -45,6 +45,15 @@ export class FlavorsStepComponent {
     return !this.isSelected(view, flavor) && view.remainingFlavors === 0;
   }
 
+  /** Tocar num sabor bloqueado (limite atingido): o controle está desabilitado, então explica por quê. */
+  onBlockedTap(view: BuilderView, flavor: PizzaFlavor): void {
+    if (this.isBlocked(view, flavor)) this.live = this.limitMessage(view);
+  }
+
+  private limitMessage(view: BuilderView): string {
+    return `Limite de ${view.maxFlavors} ${view.maxFlavors === 1 ? 'sabor' : 'sabores'} atingido. Remova um sabor para escolher outro.`;
+  }
+
   flavorName(id: string): string {
     return this.menu.getFlavor(id)?.name ?? id;
   }
@@ -53,7 +62,7 @@ export class FlavorsStepComponent {
     const wasSelected = this.isSelected(view, flavor);
     const ok = this.order.toggleFlavor(flavor.id);
     if (!ok) {
-      this.live = `Limite de ${view.maxFlavors} ${view.maxFlavors === 1 ? 'sabor' : 'sabores'} atingido. Remova um sabor para escolher outro.`;
+      this.live = this.limitMessage(view);
       return;
     }
     const count = view.draft.flavorIds.length + (wasSelected ? -1 : 1);

@@ -30,6 +30,15 @@ export class CartPageComponent {
     window.scrollTo({ top: 0 });
   }
 
+  /** Rola até o formulário de dados (respeita "reduzir movimento") e leva o foco para lá. */
+  goToCheckout(): void {
+    const heading = document.getElementById('checkout-title');
+    if (!heading) return;
+    const reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    heading.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    heading.focus({ preventScroll: true });
+  }
+
   backToEdit(): void {
     this.sent = null;
   }

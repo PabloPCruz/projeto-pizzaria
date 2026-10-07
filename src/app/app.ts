@@ -44,6 +44,8 @@ export class App {
     typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   private firstNavigation = true;
+  /** Anunciado por leitor de tela ao trocar de página (o título novo). */
+  announcement = '';
 
   constructor(router: Router) {
     // Acessibilidade em SPA: depois de trocar de página, leva o foco ao conteúdo (exceto em âncoras).
@@ -55,6 +57,8 @@ export class App {
       if (!e.urlAfterRedirects.includes('#')) {
         document.getElementById('main-content')?.focus({ preventScroll: true });
       }
+      // O título da rota já foi atualizado; o leitor de tela lê a página nova em vez de só "principal".
+      setTimeout(() => (this.announcement = document.title));
     });
 
     // Pedido de uma página cujo arquivo não existe mais (novo deploy com a aba aberta): recarrega para pegar a versão nova.

@@ -78,6 +78,8 @@ export class CheckoutFormComponent implements OnDestroy {
   private readonly lookups = new Subject<boolean>();
   private readonly destroy$ = new Subject<void>();
   private lastLookedUpCep = '';
+  /** Campos que o cliente já visitou: só eles mostram erro antes do primeiro envio. */
+  private readonly touched = new Set<CheckoutField>();
   private waiting = false;
 
   constructor(readonly checkout: CheckoutFacadeService) {
@@ -140,6 +142,7 @@ export class CheckoutFormComponent implements OnDestroy {
 
   /** Ao sair do campo com 8 dígitos, busca se ainda não buscou esse CEP. */
   onCepBlur(): void {
+    this.onBlur('cep');
     const cep = this.checkout.draft.cep;
     if (cep.replace(/\D/g, '').length === 8 && cep !== this.lastLookedUpCep) this.lookupCep();
   }
@@ -251,7 +254,19 @@ export class CheckoutFormComponent implements OnDestroy {
   }
 
   private revalidate(): void {
-    if (this.submitted) this.errors = this.checkout.validate();
+    const all = this.checkout.validate();
+    if (this.submitted) {
+      this.errors = all;
+      return;
+    }
+    // Antes do primeiro envio, só mostra o erro dos campos que o cliente já visitou.
+    this.errors = Object.fromEntries(Object.entries(all).filter(([field]) => this.touched.has(field as CheckoutField))) as CheckoutErrors;
+  }
+
+  /** Ao sair de um campo, valida só ele (e os que já foram visitados). */
+  onBlur(field: CheckoutField): void {
+    this.touched.add(field);
+    this.revalidate();
   }
 
   private focusFirstInvalid(): void {

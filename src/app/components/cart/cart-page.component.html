@@ -1,4 +1,4 @@
-<div class="container-page py-7 sm:py-12">
+<div class="container-page pb-28 pt-7 sm:pb-28 sm:pt-12 lg:pb-12">
   <header class="enter text-center">
     <p class="eyebrow">Seu pedido</p>
     <h1 class="title-page">Carrinho</h1>
@@ -55,6 +55,14 @@
         <div class="lg:sticky lg:top-24">
           <app-order-summary [view]="view"></app-order-summary>
         </div>
+      </div>
+
+      <!-- Celular/tablet: o resumo fica no fim da página; este botão leva direto aos dados e ao envio. -->
+      <div class="sticky bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-30 mt-6 lg:hidden">
+        <button type="button" class="btn-primary w-full py-4 shadow-lg shadow-black/60" (click)="goToCheckout()">
+          <lucide-icon name="send" [size]="18"></lucide-icon>
+          Preencher dados e finalizar · {{ view.itemCount }} {{ view.itemCount === 1 ? 'item' : 'itens' }}
+        </button>
       </div>
     }
   }

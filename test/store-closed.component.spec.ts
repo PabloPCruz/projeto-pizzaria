@@ -34,7 +34,7 @@ describe('Carrinho com a loja fechada', () => {
   it('aberta: botão de envio ativo e nenhum aviso de loja fechada', async () => {
     await create();
     expect(summaryButton().disabled).toBeFalse();
-    expect(summaryButton().textContent).toContain('Enviar pedido pelo WhatsApp');
+    expect(summaryButton().textContent).toContain('Finalizar no WhatsApp');
     expect(el.querySelector('#store-closed-notice')).toBeNull();
     expect(el.querySelector('#store-closed-top')).toBeNull();
   });
