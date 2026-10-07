@@ -129,16 +129,59 @@ describe('textos do horário', () => {
     expect(statusLabel(at('2026-10-05T10:00:00-03:00'))).toBe('Fechado · abre hoje 18h');
   });
 
-  it('closedNotice (aviso completo)', () => {
-    expect(closedNotice(at('2026-10-11T12:00:00-03:00'))).toBe(
-      'Hoje a loja está fechada. Você pode deixar o pedido pronto e enviá-lo quando abrirmos: amanhã às 18h.'
-    );
-    expect(closedNotice(at('2026-10-10T23:30:00-03:00'))).toBe(
-      'Já encerramos o atendimento de hoje. Você pode deixar o pedido pronto e enviá-lo quando abrirmos: segunda às 18h.'
-    );
-    expect(closedNotice(at('2026-10-05T10:00:00-03:00'))).toBe(
-      'Ainda não abrimos hoje. Você pode deixar o pedido pronto e enviá-lo quando abrirmos: hoje às 18h.'
-    );
+  describe('closedNotice (aviso completo): todos os cenários', () => {
+    const TAIL = 'Pode deixar o pedido pronto: o botão de enviar libera assim que abrirmos.';
+    const withClosed = (closedDates: string[]): StoreSchedule => ({ ...SCHEDULE, closedDates });
+    const notice = (iso: string, schedule: StoreSchedule = SCHEDULE) => closedNotice(getStoreStatus(Date.parse(iso), schedule));
+
+    it('antes de abrir num dia de funcionamento: diz que HOJE abre e a hora (não diz que não abre hoje)', () => {
+      expect(notice('2026-10-05T10:00:00-03:00')).toBe(`A loja ainda não abriu. Abrimos hoje às 18h. ${TAIL}`);
+      expect(notice('2026-10-05T17:59:59-03:00')).toContain('Abrimos hoje às 18h.');
+      expect(notice('2026-10-05T10:00:00-03:00')).not.toContain('não abre');
+    });
+
+    it('depois de fechar de segunda a sexta: volta amanhã, com o dia da semana', () => {
+      expect(notice('2026-10-05T23:30:00-03:00')).toBe(`Já encerramos por hoje. Voltamos amanhã (terça) às 18h. ${TAIL}`);
+      expect(notice('2026-10-05T23:00:00-03:00')).toContain('Voltamos amanhã (terça) às 18h.');
+    });
+
+    it('depois de fechar no sábado: volta na segunda (pula o domingo)', () => {
+      expect(notice('2026-10-10T23:30:00-03:00')).toBe(`Já encerramos por hoje. Voltamos segunda às 18h. ${TAIL}`);
+    });
+
+    it('domingo: diz que hoje (domingo) não abre e que volta amanhã (segunda)', () => {
+      expect(notice('2026-10-11T12:00:00-03:00')).toBe(`Hoje (domingo) a loja não abre. Voltamos amanhã (segunda) às 18h. ${TAIL}`);
+      expect(notice('2026-10-11T00:00:00-03:00')).toContain('Hoje (domingo) a loja não abre.');
+      expect(notice('2026-10-11T23:59:59-03:00')).toContain('Voltamos amanhã (segunda) às 18h.');
+    });
+
+    it('data fechada em dia útil: hoje não abre e volta no próximo dia aberto', () => {
+      expect(notice('2026-10-07T12:00:00-03:00', withClosed(['2026-10-07']))).toBe(
+        `Hoje a loja não abre. Voltamos amanhã (quinta) às 18h. ${TAIL}`
+      );
+      expect(notice('2026-10-07T20:00:00-03:00', withClosed(['2026-10-07']))).toContain('Hoje a loja não abre.');
+    });
+
+    it('datas fechadas seguidas: volta num dia mais adiante, sem "amanhã"', () => {
+      const closed = withClosed(['2026-10-06', '2026-10-07']);
+      expect(notice('2026-10-05T23:30:00-03:00', closed)).toBe(`Já encerramos por hoje. Voltamos quinta às 18h. ${TAIL}`);
+      expect(notice('2026-10-06T12:00:00-03:00', closed)).toBe(`Hoje a loja não abre. Voltamos quinta às 18h. ${TAIL}`);
+    });
+
+    it('domingo que também é data fechada continua dizendo "domingo"', () => {
+      expect(notice('2026-10-04T12:00:00-03:00', withClosed(['2026-10-04']))).toContain('Hoje (domingo) a loja não abre.');
+    });
+
+    it('sem nenhuma abertura prevista: só diz que está fechada, sem prometer volta', () => {
+      expect(notice('2026-10-05T19:00:00-03:00', { ...SCHEDULE, openDays: [] })).toBe('Hoje (segunda) a loja não abre.');
+    });
+
+    it('nunca usa a frase antiga, que sugeria que hoje não abre quando abre às 18h', () => {
+      for (const iso of ['2026-10-05T10:00:00-03:00', '2026-10-05T23:30:00-03:00', '2026-10-11T12:00:00-03:00']) {
+        expect(notice(iso)).not.toContain('Ainda não abrimos hoje');
+        expect(notice(iso)).not.toContain('quando abrirmos:');
+      }
+    });
   });
 });
 
@@ -209,6 +252,6 @@ describe('StoreFacadeService', () => {
     facade.view$.subscribe((v) => (view = v)).unsubscribe();
     expect(view?.open).toBeFalse();
     expect(view?.label).toBe('Fechado · abre amanhã 18h');
-    expect(view?.notice).toContain('Hoje a loja está fechada.');
+    expect(view?.notice).toContain('Hoje (domingo) a loja não abre.');
   });
 });

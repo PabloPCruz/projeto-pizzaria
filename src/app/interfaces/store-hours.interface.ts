@@ -27,4 +27,6 @@ export interface StoreStatus {
   /** 'HH:mm' quando aberto. */
   closesAt: string | null;
   nextOpening: NextOpening | null;
+  /** Dia da semana de HOJE no fuso da loja (0 = domingo). Ausente se o horário não pôde ser calculado. */
+  weekday?: number;
 }

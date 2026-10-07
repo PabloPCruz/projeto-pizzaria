@@ -48,14 +48,14 @@ describe('Carrinho com a loja fechada', () => {
     expect(button.textContent).not.toContain('Enviar pedido');
     expect(button.getAttribute('aria-describedby')).toBe('store-closed-notice');
     const notice = el.querySelector('#store-closed-notice');
-    expect(notice?.textContent).toContain('Hoje a loja está fechada.');
-    expect(notice?.textContent).toContain('amanhã às 18h');
+    expect(notice?.textContent).toContain('Hoje (domingo) a loja não abre.');
+    expect(notice?.textContent).toContain('Voltamos amanhã (segunda) às 18h.');
   });
 
   it('fechada: o aviso também aparece no topo do carrinho (sem repetir o id)', async () => {
     fakeClock.set(SUNDAY_INSTANT);
     await create();
-    expect(el.querySelector('#store-closed-top')?.textContent).toContain('Hoje a loja está fechada.');
+    expect(el.querySelector('#store-closed-top')?.textContent).toContain('Hoje (domingo) a loja não abre.');
     expect(el.querySelectorAll('#store-closed-notice').length).toBe(1);
   });
 });
