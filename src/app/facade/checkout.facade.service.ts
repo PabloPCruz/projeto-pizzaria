@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, combineLatest, of } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject, combineLatest, of, race, timer } from 'rxjs';
+import { finalize, map, skip, switchMap, take, tap } from 'rxjs/operators';
 import { STORE_INFO } from '../data/store-info';
 import { CheckoutDraft, CheckoutErrors } from '../interfaces/cart.interface';
 import { StoreStatus } from '../interfaces/store-hours.interface';
 import { CartService } from '../services/cart.service';
+import { OrderFacadeService } from './order.facade.service';
 import { CepLookupResult, CepService } from '../services/cep.service';
 import { CheckoutDraftService } from '../services/checkout-draft.service';
 import { CheckoutValidationService } from '../services/checkout-validation.service';
@@ -14,7 +15,8 @@ import { StoreHoursService } from '../services/store-hours.service';
 import { DELIVERY_FEE_NOTICE, WhatsappMessageService } from '../services/whatsapp-message.service';
 
 export type CheckoutResult =
-  | { ok: true; url: string }
+  /** `message` é o mesmo texto do link (para o botão de copiar). */
+  | { ok: true; url: string; message: string }
   /** `closed` presente = a loja está fechada agora; `errors` vem vazio. */
   | { ok: false; errors: CheckoutErrors; closed?: StoreStatus };
 
@@ -41,7 +43,8 @@ export class CheckoutFacadeService {
     private whatsapp: WhatsappMessageService,
     private format: FormatService,
     private deliveryZone: DeliveryZoneService,
-    private storeHours: StoreHoursService
+    private storeHours: StoreHoursService,
+    private order: OrderFacadeService
   ) {
     this.draft$ = this.draftStore.draft$;
     // Recalcula também quando o formulário muda: a zona só vale para o endereço para o qual foi calculada.
@@ -56,9 +59,11 @@ export class CheckoutFacadeService {
           // Sem CEP (endereço manual) não há entrega grátis: só o CEP, dentro das regras, dá direito a ela.
           if (d.manualAddress) return of<DeliveryZone>({ status: 'unknown' });
           const addr = this.addressKey(d);
-          return this.deliveryZone
-            .check(d.cep, { street: d.street, number: d.number, city: d.city, state: d.state })
-            .pipe(map((zone): DeliveryZone => (zone.status === 'unknown' ? zone : { ...zone, addr })));
+          this.zoneBusy++;
+          return this.deliveryZone.check(d.cep, { street: d.street, number: d.number, city: d.city, state: d.state }).pipe(
+            map((zone): DeliveryZone => (zone.status === 'unknown' ? zone : { ...zone, addr })),
+            finalize(() => this.zoneBusy--)
+          );
         })
       )
       .subscribe((zone) => this.zoneState.next(zone));
@@ -153,7 +158,28 @@ export class CheckoutFacadeService {
     const draft = this.draftStore.snapshot;
     // "Grátis" só com CEP, e só se a zona foi calculada para o CEP e para o endereço que estão no formulário agora.
     const freeDelivery = this.effectiveZone(this.zoneState.value, draft).status === 'free';
-    return { ok: true, url: this.whatsapp.buildLink(this.cart.snapshot, draft, { freeDelivery }) };
+    const message = this.whatsapp.buildMessage(this.cart.snapshot, draft, { freeDelivery });
+    return { ok: true, url: this.whatsapp.linkFromMessage(message), message };
+  }
+
+  /** Consultas de entrega em andamento. */
+  private zoneBusy = 0;
+
+  /** `true` enquanto a distância do CEP atual ainda está sendo consultada. */
+  get zoneLoading(): boolean {
+    return this.zoneBusy > 0;
+  }
+
+  /** Emite quando a consulta em andamento termina, ou depois de `maxMs` (o que vier primeiro). Já pronta: emite na hora. */
+  zoneSettled(maxMs: number): Observable<void> {
+    if (!this.zoneLoading) return of(undefined);
+    return race(
+      this.zoneState.pipe(
+        skip(1),
+        map(() => undefined)
+      ),
+      timer(maxMs).pipe(map(() => undefined))
+    ).pipe(take(1));
   }
 
   /** CEPs (só dígitos) cuja consulta trouxe endereço sem rua. */
@@ -195,6 +221,10 @@ export class CheckoutFacadeService {
   startOver(): void {
     this.cart.clear();
     this.draftStore.reset();
+    // Uma pizza em edição não pode sobreviver ao pedido que acabou de ser apagado.
+    this.order.reset();
+    this.genericCeps.clear();
+    this.autoFilled = null;
     this.zoneRequests.next(false);
   }
 }

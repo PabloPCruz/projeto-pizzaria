@@ -22,6 +22,10 @@
     }
   </div>
 
+  @if (sendError) {
+    <p role="alert" class="mt-6 rounded-xl border border-danger/60 bg-danger/10 p-4 text-sm text-cream">{{ sendError }}</p>
+  }
+
   <!-- Seus dados -->
   <fieldset class="mt-8">
     <legend class="mb-4 font-display text-lg font-semibold text-gold sm:text-xl">Seus dados</legend>
@@ -111,7 +115,9 @@
             }
             @case ('error') {
               <p class="flex items-start gap-2 text-gold-light">
-                <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>Não foi possível buscar o CEP agora. Preencha o endereço manualmente.
+                <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
+                <span>Não foi possível buscar o CEP agora. Tente de novo ou preencha o endereço manualmente.</span>
+                <button type="button" class="min-h-[44px] font-semibold underline underline-offset-2 hover:text-gold sm:min-h-0" (click)="retryCep()">Tentar de novo</button>
               </p>
             }
           }

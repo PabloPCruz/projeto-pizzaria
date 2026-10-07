@@ -46,6 +46,7 @@ export class BuilderPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.order.reconcileEdit();
     // Ao recarregar, volta ao passo em que o cliente estava (limitado ao que o rascunho permite).
     this.view$.pipe(take(1)).subscribe((view) => {
       this.step = Math.min(this.order.getStep(), this.maxReachable(view));

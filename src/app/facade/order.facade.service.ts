@@ -102,6 +102,12 @@ export class OrderFacadeService {
     return !!this.builder.snapshot.editingId;
   }
 
+  /** Ao abrir o montador: edição de uma pizza que já saiu do carrinho vira pizza nova (a antiga não ressuscita). */
+  reconcileEdit(): void {
+    const id = this.builder.snapshot.editingId;
+    if (id && !this.cart.snapshot.pizzas.some((p) => p.id === id)) this.builder.clearEditing();
+  }
+
   /** Descarta a edição: o carrinho fica como estava. */
   cancelEdit(): void {
     this.reset();

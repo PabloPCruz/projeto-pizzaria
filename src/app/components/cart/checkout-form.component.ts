@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { EMPTY, Subject } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
-import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
+import { CheckoutFacadeService, CheckoutResult } from '../../facade/checkout.facade.service';
 import { CheckoutDraft, CheckoutErrors, CheckoutField, PaymentMethod } from '../../interfaces/cart.interface';
 import { CepLookupResult } from '../../services/cep.service';
 
@@ -11,6 +11,18 @@ export interface OrderSent {
   url: string;
   /** `true` = o navegador bloqueou a nova aba; a tela mostra o link para o cliente clicar. */
   blocked: boolean;
+  /** Texto do pedido, para o botão "Copiar mensagem". */
+  message?: string;
+  /** `true` = navegador embutido (Instagram, Facebook...): o cliente abre o WhatsApp pelo botão. */
+  inApp?: boolean;
+}
+
+/** Quanto esperar a consulta de entrega terminar antes de montar o link do pedido. */
+const ZONE_WAIT_MS = 3000;
+
+/** Navegadores embutidos em apps (Instagram, Facebook, Messenger, WeChat, Line), onde abrir outra aba costuma falhar. */
+export function isInAppBrowser(userAgent: string = navigator.userAgent): boolean {
+  return /FBAN|FBAV|FB_IAB|Instagram|Messenger|MicroMessenger|Line\//i.test(userAgent);
 }
 
 /** Ordem visual dos campos: usada para listar erros e focar o primeiro inválido. */
@@ -58,12 +70,15 @@ export class CheckoutFormComponent implements OnDestroy {
   errors: CheckoutErrors = {};
   submitted = false;
   cepState: CepState = 'idle';
+  /** Falha ao montar o link (não deve acontecer; evita um botão que "não faz nada"). */
+  sendError = '';
 
   @Output() sent = new EventEmitter<OrderSent>();
 
   private readonly lookups = new Subject<boolean>();
   private readonly destroy$ = new Subject<void>();
   private lastLookedUpCep = '';
+  private waiting = false;
 
   constructor(readonly checkout: CheckoutFacadeService) {
     // switchMap: uma busca nova (ou o CEP ser editado) cancela a anterior.
@@ -134,8 +149,29 @@ export class CheckoutFormComponent implements OnDestroy {
   }
 
   submit(): void {
+    if (this.waiting) return;
     this.submitted = true;
-    const result = this.checkout.submit();
+    // Consulta de entrega ainda em andamento: espera um pouco para a mensagem já sair com a informação certa.
+    if (this.checkout.zoneLoading) {
+      this.waiting = true;
+      this.checkout.zoneSettled(ZONE_WAIT_MS).subscribe(() => {
+        this.waiting = false;
+        this.send();
+      });
+      return;
+    }
+    this.send();
+  }
+
+  private send(): void {
+    this.sendError = '';
+    let result: CheckoutResult;
+    try {
+      result = this.checkout.submit();
+    } catch {
+      this.sendError = 'Não foi possível montar a mensagem do pedido. Revise os textos digitados e tente de novo.';
+      return;
+    }
     if (!result.ok) {
       if (result.closed) {
         // Fechou com a página aberta: o aviso (no resumo) já está ou ficará visível; leva o foco até ele.
@@ -148,11 +184,15 @@ export class CheckoutFormComponent implements OnDestroy {
       return;
     }
     this.errors = {};
+    if (isInAppBrowser()) {
+      this.sent.emit({ url: result.url, blocked: true, inApp: true, message: result.message });
+      return;
+    }
     // Abre o WhatsApp em nova aba. Sem "noopener" na lista de features, porque com ele o retorno
     // é sempre null e não daria para saber se o navegador bloqueou; o opener é anulado logo depois.
     const win = window.open(result.url, '_blank');
     if (win) win.opener = null;
-    this.sent.emit({ url: result.url, blocked: !win });
+    this.sent.emit({ url: result.url, blocked: !win, message: result.message });
   }
 
   get errorList(): { field: CheckoutField; label: string; message: string }[] {
@@ -171,6 +211,11 @@ export class CheckoutFormComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  /** Botão "Tentar de novo" depois de uma falha de rede na busca do CEP. */
+  retryCep(): void {
+    if (this.checkout.draft.cep.replace(/\D/g, '').length === 8) this.lookupCep();
   }
 
   private lookupCep(): void {
@@ -197,6 +242,8 @@ export class CheckoutFormComponent implements OnDestroy {
         break;
       case 'error':
         this.cepState = 'error';
+        // Falha de rede não conta como "já consultei": sair do campo de novo tenta outra vez.
+        this.lastLookedUpCep = '';
         break;
       default:
         this.cepState = 'idle';

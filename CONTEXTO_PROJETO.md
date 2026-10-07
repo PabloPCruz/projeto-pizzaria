@@ -16,6 +16,162 @@ npm ci · npm run start:local · npm run build · npm test
 npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
 ```
 
+Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **338 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+
+## 3. Decisões de produto (confirmadas com o dono)
+
+- **Limite de sabores por tamanho:** pequena 1 (4 fatias), média 2 (6), grande 3 (8), big 3 (12), gigante 4 (16). Pode misturar salgado e doce.
+- **Bebidas:** refrigerante 2L (Coca, Coca Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca 600ml, Coca lata, Cerveja Brahma lata. Vinhos ficaram de fora.
+- **Bordas (7):** Catupiry, Catupiry c/ Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco, Chocolate ao Leite c/ Branco.
+- **Pagamento:** Pix, Cartão ou Dinheiro (com "Precisa de troco para quanto?", opcional).
+- **Endereço completo obrigatório**, com preenchimento por CEP (ViaCEP). Quem **não sabe o CEP** marca "Não sei meu CEP" e preenche à mão (`draft.manualAddress`): rua, número, bairro, cidade e UF são obrigatórios; **só o complemento é opcional** e o CEP deixa de ser exigido (some do formulário e da mensagem). Desmarcar volta ao CEP e mantém o que foi digitado.
+- **Taxa de entrega: o site NUNCA calcula nem exibe valor.** Regra única: **endereço a até 3 km da loja, em linha reta (360°), tem entrega grátis** e o checkout mostra o cartão "Taxa de entrega grátis para o seu endereço" (formulário + resumo) e a mensagem do WhatsApp diz "Entrega grátis (até 3 km da loja)". Fora do raio, ou quando o endereço não pôde ser localizado, mantém-se o aviso padrão de que a loja informa a taxa na confirmação pelo WhatsApp (o sistema **nunca afirma "grátis" sem certeza**).
+  - Como decide (`DeliveryZoneService`): localiza o endereço pelo **CEP na AwesomeAPI** (`cep.awesomeapi.com.br`); se não achar, usa o **Nominatim/OpenStreetMap** com rua+cidade; mede a distância (Haversine) até o ponto da loja em `STORE_INFO.freeDelivery` (Rua Luiz Braille, 135, CEP 82015-290; **o endereço não é exibido no site**). Coordenada fora do Brasil é descartada. A consulta roda para todo CEP completo (o ViaCEP às vezes não conhece CEPs que a AwesomeAPI conhece, ex.: 82030-000). Editar o CEP zera a zona na hora e cancela a consulta anterior. "Grátis" só vale se a zona foi calculada para o CEP que está no formulário no envio.
+  - **Endereço manual (sem CEP): NUNCA há entrega grátis.** Com "Não sei meu CEP" ligado nada é consultado e o cartão de grátis some na hora (mesmo que o CEP tenha liberado antes); fica o aviso padrão de que a loja informa a taxa no WhatsApp. A entrega grátis só existe **com CEP, dentro das regras**. (Uma versão anterior tentava localizar o endereço digitado pelo Nominatim; foi removida por decisão do dono.)
+  - Limites conhecidos: a posição vem do CEP (nível de rua), então casos muito perto dos 3 km podem cair para um lado ou outro; a loja confirma o pedido de qualquer forma. A **BrasilAPI foi descartada**: devolve o centro da cidade (~6 km da loja) para o CEP da loja.
+  - Onde ajustar: raio e ponto da loja em `src/app/data/store-info.ts`.
+- **Preços:** `src/app/data/prices.ts` está **vazio de propósito**. Sem preço, a UI e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos (pizza por tamanho × categoria — vale o sabor mais caro —, borda e bebida).
+- **Loja:** WhatsApp (41) 99744-9380 (`5541997449380`), fone (41) 3273-2145, Facebook `facebook.com/diskpizzasandra`, Instagram `diskpizzactba`. **Funcionamento: segunda a sábado, 18h–23h; fechada aos domingos** (regra em `STORE_INFO.schedule`; `closedDates` lista datas fechadas, hoje vazia: 12/10/2026 abre normal). Promoção todos os dias.
+- **Visual e UX:** evolução da marca (carvão + dourado, vermelho da logo só em CTAs), Playfair Display (títulos) + Inter (texto), mobile-first e **calmo no celular** (hero simples, 1 CTA principal, sem brilhos competindo; barra fixa discreta). Sistema de microinterações sutil em tudo (tokens de movimento em `tailwind.config.js`: 150/220/350 ms, easing suave): troca de página, botões, links, cartões, campos e rótulos, abas, passos do montador, contador do carrinho, menu do celular, revelação ao rolar (`appReveal`), foto com fade (`app-flavor-image`). Tudo respeita `prefers-reduced-motion` e usa só transform/opacity (CLS medido = 0). Tipografia/contraste: corpo 16px, `text-xs` = 13px, texto ≥ 4,5:1 (corrido ≥ 7:1), tokens `cream-muted/cream-dim` clareados; botão "Não sei meu CEP" é um cartão com interruptor (`role="switch"`).
+
+## 4. Arquitetura
+
+```
+src/app/
+  data/         menu.data.ts (cardápio transcrito), prices.ts (preços), store-info.ts (loja/redes)
+  interfaces/   pizza-menu.interface.ts, cart.interface.ts
+  services/     catalog · size-rules · pricing · persistence · cart · pizza-builder ·
+                checkout-draft · checkout-validation · cep · format · whatsapp-message
+  facade/       menu · order (montagem) · cart · checkout   ← únicas portas dos componentes
+  components/   layout/ shared/ home/ menu/ builder/ cart/ (+ página 404)
+test/           specs (services, facades, componentes)
+```
+
+- **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
+- **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
+- **Horário de funcionamento (loja fechada = só o envio é bloqueado):** o cliente navega, monta pizza e deixa o carrinho pronto; o carrinho, o rascunho e o formulário continuam salvos. `getStoreStatus(instante, schedule)` (função pura em `services/store-hours.service.ts`) calcula o estado **sempre no fuso America/Sao_Paulo via `Intl`**, nunca no fuso do aparelho (18:00 abre, 23:00 em ponto já fecha; domingo e `closedDates` fecham o dia). `StoreHoursService.snapshot()` não tem cache e é chamado no clique de enviar: `CheckoutFacadeService.submit()` devolve `{ ok:false, errors:{}, closed }` e nada abre o WhatsApp (cobre a virada de horário com a página aberta); `status# Contexto do Projeto — Disk Pizza (pizzaria italiana premium)
+
+> Atualizado em 2026-09-28 após a reformulação completa do front-end e da lógica de pedidos.
+> Regras de trabalho do repositório: [AGENTS.md](AGENTS.md). Este arquivo descreve o **estado atual**; `README.md`, `QUICK_START.md` e `documents/*` ainda descrevem a arquitetura ANTIGA (ver seção 8).
+
+## 1. O que é
+
+Site de pedidos de uma pizzaria de Curitiba (Instagram `@diskpizzactba`). O cliente vê o cardápio, monta a pizza em passos, adiciona ao carrinho, preenche endereço e pagamento e **finaliza abrindo o WhatsApp da loja** com a mensagem do pedido pronta. Não há back-end: tudo roda no navegador.
+
+## 2. Stack e comandos
+
+Angular 17 (NgModule, rotas lazy) · Tailwind CSS 3 · `lucide-angular` (ícones; npm o marca como deprecated em favor de `@lucide/angular`, mas funciona com Angular 17) · `@angular/animations` só na transição de rota · ViaCEP · Karma/Jasmine. **Angular Material e CDK foram removidos.**
+
+```
+npm ci · npm run start:local · npm run build · npm test
+npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
+```
+
+Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **258 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+
+## 3. Decisões de produto (confirmadas com o dono)
+
+- **Limite de sabores por tamanho:** pequena 1 (4 fatias), média 2 (6), grande 3 (8), big 3 (12), gigante 4 (16). Pode misturar salgado e doce.
+- **Bebidas:** refrigerante 2L (Coca, Coca Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca 600ml, Coca lata, Cerveja Brahma lata. Vinhos ficaram de fora.
+- **Bordas (7):** Catupiry, Catupiry c/ Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco, Chocolate ao Leite c/ Branco.
+- **Pagamento:** Pix, Cartão ou Dinheiro (com "Precisa de troco para quanto?", opcional).
+- **Endereço completo obrigatório**, com preenchimento por CEP (ViaCEP). Quem **não sabe o CEP** marca "Não sei meu CEP" e preenche à mão (`draft.manualAddress`): rua, número, bairro, cidade e UF são obrigatórios; **só o complemento é opcional** e o CEP deixa de ser exigido (some do formulário e da mensagem). Desmarcar volta ao CEP e mantém o que foi digitado.
+- **Taxa de entrega: o site NUNCA calcula nem exibe valor.** Regra única: **endereço a até 3 km da loja, em linha reta (360°), tem entrega grátis** e o checkout mostra o cartão "Taxa de entrega grátis para o seu endereço" (formulário + resumo) e a mensagem do WhatsApp diz "Entrega grátis (até 3 km da loja)". Fora do raio, ou quando o endereço não pôde ser localizado, mantém-se o aviso padrão de que a loja informa a taxa na confirmação pelo WhatsApp (o sistema **nunca afirma "grátis" sem certeza**).
+  - Como decide (`DeliveryZoneService`): localiza o endereço pelo **CEP na AwesomeAPI** (`cep.awesomeapi.com.br`); se não achar, usa o **Nominatim/OpenStreetMap** com rua+cidade; mede a distância (Haversine) até o ponto da loja em `STORE_INFO.freeDelivery` (Rua Luiz Braille, 135, CEP 82015-290; **o endereço não é exibido no site**). Coordenada fora do Brasil é descartada. A consulta roda para todo CEP completo (o ViaCEP às vezes não conhece CEPs que a AwesomeAPI conhece, ex.: 82030-000). Editar o CEP zera a zona na hora e cancela a consulta anterior. "Grátis" só vale se a zona foi calculada para o CEP que está no formulário no envio.
+  - **Endereço manual (sem CEP): NUNCA há entrega grátis.** Com "Não sei meu CEP" ligado nada é consultado e o cartão de grátis some na hora (mesmo que o CEP tenha liberado antes); fica o aviso padrão de que a loja informa a taxa no WhatsApp. A entrega grátis só existe **com CEP, dentro das regras**. (Uma versão anterior tentava localizar o endereço digitado pelo Nominatim; foi removida por decisão do dono.)
+  - Limites conhecidos: a posição vem do CEP (nível de rua), então casos muito perto dos 3 km podem cair para um lado ou outro; a loja confirma o pedido de qualquer forma. A **BrasilAPI foi descartada**: devolve o centro da cidade (~6 km da loja) para o CEP da loja.
+  - Onde ajustar: raio e ponto da loja em `src/app/data/store-info.ts`.
+- **Preços:** `src/app/data/prices.ts` está **vazio de propósito**. Sem preço, a UI e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos (pizza por tamanho × categoria — vale o sabor mais caro —, borda e bebida).
+- **Loja:** WhatsApp (41) 99744-9380 (`5541997449380`), fone (41) 3273-2145, Facebook `facebook.com/diskpizzasandra`, Instagram `diskpizzactba`. **Funcionamento: segunda a sábado, 18h–23h; fechada aos domingos** (regra em `STORE_INFO.schedule`; `closedDates` lista datas fechadas, hoje vazia: 12/10/2026 abre normal). Promoção todos os dias.
+- **Visual e UX:** evolução da marca (carvão + dourado, vermelho da logo só em CTAs), Playfair Display (títulos) + Inter (texto), mobile-first e **calmo no celular** (hero simples, 1 CTA principal, sem brilhos competindo; barra fixa discreta). Sistema de microinterações sutil em tudo (tokens de movimento em `tailwind.config.js`: 150/220/350 ms, easing suave): troca de página, botões, links, cartões, campos e rótulos, abas, passos do montador, contador do carrinho, menu do celular, revelação ao rolar (`appReveal`), foto com fade (`app-flavor-image`). Tudo respeita `prefers-reduced-motion` e usa só transform/opacity (CLS medido = 0). Tipografia/contraste: corpo 16px, `text-xs` = 13px, texto ≥ 4,5:1 (corrido ≥ 7:1), tokens `cream-muted/cream-dim` clareados; botão "Não sei meu CEP" é um cartão com interruptor (`role="switch"`).
+
+## 4. Arquitetura
+
+```
+src/app/
+  data/         menu.data.ts (cardápio transcrito), prices.ts (preços), store-info.ts (loja/redes)
+  interfaces/   pizza-menu.interface.ts, cart.interface.ts
+  services/     catalog · size-rules · pricing · persistence · cart · pizza-builder ·
+                checkout-draft · checkout-validation · cep · format · whatsapp-message
+  facade/       menu · order (montagem) · cart · checkout   ← únicas portas dos componentes
+  components/   layout/ shared/ home/ menu/ builder/ cart/ (+ página 404)
+test/           specs (services, facades, componentes)
+```
+
+- **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
+- **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
+ reavalia a cada 30 s e ao voltar ao foco (o timer roda fora do NgZone; token `STORE_STATUS_TICK`). `StoreFacadeService` entrega `view# Contexto do Projeto — Disk Pizza (pizzaria italiana premium)
+
+> Atualizado em 2026-09-28 após a reformulação completa do front-end e da lógica de pedidos.
+> Regras de trabalho do repositório: [AGENTS.md](AGENTS.md). Este arquivo descreve o **estado atual**; `README.md`, `QUICK_START.md` e `documents/*` ainda descrevem a arquitetura ANTIGA (ver seção 8).
+
+## 1. O que é
+
+Site de pedidos de uma pizzaria de Curitiba (Instagram `@diskpizzactba`). O cliente vê o cardápio, monta a pizza em passos, adiciona ao carrinho, preenche endereço e pagamento e **finaliza abrindo o WhatsApp da loja** com a mensagem do pedido pronta. Não há back-end: tudo roda no navegador.
+
+## 2. Stack e comandos
+
+Angular 17 (NgModule, rotas lazy) · Tailwind CSS 3 · `lucide-angular` (ícones; npm o marca como deprecated em favor de `@lucide/angular`, mas funciona com Angular 17) · `@angular/animations` só na transição de rota · ViaCEP · Karma/Jasmine. **Angular Material e CDK foram removidos.**
+
+```
+npm ci · npm run start:local · npm run build · npm test
+npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
+```
+
+Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **258 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+
+## 3. Decisões de produto (confirmadas com o dono)
+
+- **Limite de sabores por tamanho:** pequena 1 (4 fatias), média 2 (6), grande 3 (8), big 3 (12), gigante 4 (16). Pode misturar salgado e doce.
+- **Bebidas:** refrigerante 2L (Coca, Coca Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca 600ml, Coca lata, Cerveja Brahma lata. Vinhos ficaram de fora.
+- **Bordas (7):** Catupiry, Catupiry c/ Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco, Chocolate ao Leite c/ Branco.
+- **Pagamento:** Pix, Cartão ou Dinheiro (com "Precisa de troco para quanto?", opcional).
+- **Endereço completo obrigatório**, com preenchimento por CEP (ViaCEP). Quem **não sabe o CEP** marca "Não sei meu CEP" e preenche à mão (`draft.manualAddress`): rua, número, bairro, cidade e UF são obrigatórios; **só o complemento é opcional** e o CEP deixa de ser exigido (some do formulário e da mensagem). Desmarcar volta ao CEP e mantém o que foi digitado.
+- **Taxa de entrega: o site NUNCA calcula nem exibe valor.** Regra única: **endereço a até 3 km da loja, em linha reta (360°), tem entrega grátis** e o checkout mostra o cartão "Taxa de entrega grátis para o seu endereço" (formulário + resumo) e a mensagem do WhatsApp diz "Entrega grátis (até 3 km da loja)". Fora do raio, ou quando o endereço não pôde ser localizado, mantém-se o aviso padrão de que a loja informa a taxa na confirmação pelo WhatsApp (o sistema **nunca afirma "grátis" sem certeza**).
+  - Como decide (`DeliveryZoneService`): localiza o endereço pelo **CEP na AwesomeAPI** (`cep.awesomeapi.com.br`); se não achar, usa o **Nominatim/OpenStreetMap** com rua+cidade; mede a distância (Haversine) até o ponto da loja em `STORE_INFO.freeDelivery` (Rua Luiz Braille, 135, CEP 82015-290; **o endereço não é exibido no site**). Coordenada fora do Brasil é descartada. A consulta roda para todo CEP completo (o ViaCEP às vezes não conhece CEPs que a AwesomeAPI conhece, ex.: 82030-000). Editar o CEP zera a zona na hora e cancela a consulta anterior. "Grátis" só vale se a zona foi calculada para o CEP que está no formulário no envio.
+  - **Endereço manual (sem CEP): NUNCA há entrega grátis.** Com "Não sei meu CEP" ligado nada é consultado e o cartão de grátis some na hora (mesmo que o CEP tenha liberado antes); fica o aviso padrão de que a loja informa a taxa no WhatsApp. A entrega grátis só existe **com CEP, dentro das regras**. (Uma versão anterior tentava localizar o endereço digitado pelo Nominatim; foi removida por decisão do dono.)
+  - Limites conhecidos: a posição vem do CEP (nível de rua), então casos muito perto dos 3 km podem cair para um lado ou outro; a loja confirma o pedido de qualquer forma. A **BrasilAPI foi descartada**: devolve o centro da cidade (~6 km da loja) para o CEP da loja.
+  - Onde ajustar: raio e ponto da loja em `src/app/data/store-info.ts`.
+- **Preços:** `src/app/data/prices.ts` está **vazio de propósito**. Sem preço, a UI e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos (pizza por tamanho × categoria — vale o sabor mais caro —, borda e bebida).
+- **Loja:** WhatsApp (41) 99744-9380 (`5541997449380`), fone (41) 3273-2145, Facebook `facebook.com/diskpizzasandra`, Instagram `diskpizzactba`. **Funcionamento: segunda a sábado, 18h–23h; fechada aos domingos** (regra em `STORE_INFO.schedule`; `closedDates` lista datas fechadas, hoje vazia: 12/10/2026 abre normal). Promoção todos os dias.
+- **Visual e UX:** evolução da marca (carvão + dourado, vermelho da logo só em CTAs), Playfair Display (títulos) + Inter (texto), mobile-first e **calmo no celular** (hero simples, 1 CTA principal, sem brilhos competindo; barra fixa discreta). Sistema de microinterações sutil em tudo (tokens de movimento em `tailwind.config.js`: 150/220/350 ms, easing suave): troca de página, botões, links, cartões, campos e rótulos, abas, passos do montador, contador do carrinho, menu do celular, revelação ao rolar (`appReveal`), foto com fade (`app-flavor-image`). Tudo respeita `prefers-reduced-motion` e usa só transform/opacity (CLS medido = 0). Tipografia/contraste: corpo 16px, `text-xs` = 13px, texto ≥ 4,5:1 (corrido ≥ 7:1), tokens `cream-muted/cream-dim` clareados; botão "Não sei meu CEP" é um cartão com interruptor (`role="switch"`).
+
+## 4. Arquitetura
+
+```
+src/app/
+  data/         menu.data.ts (cardápio transcrito), prices.ts (preços), store-info.ts (loja/redes)
+  interfaces/   pizza-menu.interface.ts, cart.interface.ts
+  services/     catalog · size-rules · pricing · persistence · cart · pizza-builder ·
+                checkout-draft · checkout-validation · cep · format · whatsapp-message
+  facade/       menu · order (montagem) · cart · checkout   ← únicas portas dos componentes
+  components/   layout/ shared/ home/ menu/ builder/ cart/ (+ página 404)
+test/           specs (services, facades, componentes)
+```
+
+- **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
+- **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
+ (`open`, `label`, `notice`) e os textos "Segunda a sábado, das 18h às 23h" / "Fechado aos domingos", gerados da tabela. Telas: selo `role="status"` no cabeçalho ("Aberto até 23h" / "Fechado · abre amanhã 18h"), status no hero da home, aviso no topo do carrinho e no resumo (`app-store-closed-notice`) com o botão desabilitado ("Loja fechada no momento"). A mensagem do WhatsApp não muda. Limite conhecido: confia no relógio do aparelho (convertido para Brasília); se estiver errado, a loja confirma no WhatsApp. **Testes:** `test/_setup.spec.ts` fixa o relógio em terça 19h (aberto) e desliga o timer; use `fakeClock.set(iso)` de `test/helpers/fake-clock.ts` (`SUNDAY_INSTANT` = domingo 12h).
+- **Robustez (auditoria de 2026-10-07, etapa 2):**
+  - **Texto do cliente na mensagem:** `sanitizeText/inlineText/blockText` (em `whatsapp-message.service.ts`) tiram emoji, substitutos soltos (que faziam `encodeURIComponent` lançar), controles e marcas bidi, e os marcadores `* _ ~` e crase; observações gerais perdem marcador de citação/lista e não forjam blocos ("*Entrega*"). O envio tem `try/catch` e mostra erro em vez de um botão mudo.
+  - **Entrega grátis só para o endereço certo:** a zona carrega `addr` (cidade|UF); `CheckoutFacadeService.effectiveZone` só a aceita com CEP, mesmo CEP, mesma cidade/UF e CEP que trouxe rua (CEP geral de cidade nunca é grátis); `zone# Contexto do Projeto — Disk Pizza (pizzaria italiana premium)
+
+> Atualizado em 2026-09-28 após a reformulação completa do front-end e da lógica de pedidos.
+> Regras de trabalho do repositório: [AGENTS.md](AGENTS.md). Este arquivo descreve o **estado atual**; `README.md`, `QUICK_START.md` e `documents/*` ainda descrevem a arquitetura ANTIGA (ver seção 8).
+
+## 1. O que é
+
+Site de pedidos de uma pizzaria de Curitiba (Instagram `@diskpizzactba`). O cliente vê o cardápio, monta a pizza em passos, adiciona ao carrinho, preenche endereço e pagamento e **finaliza abrindo o WhatsApp da loja** com a mensagem do pedido pronta. Não há back-end: tudo roda no navegador.
+
+## 2. Stack e comandos
+
+Angular 17 (NgModule, rotas lazy) · Tailwind CSS 3 · `lucide-angular` (ícones; npm o marca como deprecated em favor de `@lucide/angular`, mas funciona com Angular 17) · `@angular/animations` só na transição de rota · ViaCEP · Karma/Jasmine. **Angular Material e CDK foram removidos.**
+
+```
+npm ci · npm run start:local · npm run build · npm test
+npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
+```
+
 Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **258 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
 
 ## 3. Decisões de produto (confirmadas com o dono)
@@ -152,6 +308,164 @@ test/           specs (services, facades, componentes)
 - **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
 - **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
  (`open`, `label`, `notice`) e os textos "Segunda a sábado, das 18h às 23h" / "Fechado aos domingos", gerados da tabela. Telas: selo `role="status"` no cabeçalho ("Aberto até 23h" / "Fechado · abre amanhã 18h"), status no hero da home, aviso no topo do carrinho e no resumo (`app-store-closed-notice`) com o botão desabilitado ("Loja fechada no momento"). A mensagem do WhatsApp não muda. Limite conhecido: confia no relógio do aparelho (convertido para Brasília); se estiver errado, a loja confirma no WhatsApp. **Testes:** `test/_setup.spec.ts` fixa o relógio em terça 19h (aberto) e desliga o timer; use `fakeClock.set(iso)` de `test/helpers/fake-clock.ts` (`SUNDAY_INSTANT` = domingo 12h).
+ recalcula quando o formulário muda. Só a posição vinda do CEP entra no cache (o fallback por endereço não). Trocar o CEP limpa o que o CEP anterior preencheu sozinho (e o cliente não editou). Timeout de 6 s em ViaCEP, AwesomeAPI e Nominatim.
+  - **Persistência:** cada gravação guarda `…:savedAt`; carrinho e montador expiram em 3 dias, formulário em 30 (dado sem marca de tempo não expira); carrinho, formulário e montador acompanham outras abas pelo evento `storage` (`PersistenceService.changes# Contexto do Projeto — Disk Pizza (pizzaria italiana premium)
+
+> Atualizado em 2026-09-28 após a reformulação completa do front-end e da lógica de pedidos.
+> Regras de trabalho do repositório: [AGENTS.md](AGENTS.md). Este arquivo descreve o **estado atual**; `README.md`, `QUICK_START.md` e `documents/*` ainda descrevem a arquitetura ANTIGA (ver seção 8).
+
+## 1. O que é
+
+Site de pedidos de uma pizzaria de Curitiba (Instagram `@diskpizzactba`). O cliente vê o cardápio, monta a pizza em passos, adiciona ao carrinho, preenche endereço e pagamento e **finaliza abrindo o WhatsApp da loja** com a mensagem do pedido pronta. Não há back-end: tudo roda no navegador.
+
+## 2. Stack e comandos
+
+Angular 17 (NgModule, rotas lazy) · Tailwind CSS 3 · `lucide-angular` (ícones; npm o marca como deprecated em favor de `@lucide/angular`, mas funciona com Angular 17) · `@angular/animations` só na transição de rota · ViaCEP · Karma/Jasmine. **Angular Material e CDK foram removidos.**
+
+```
+npm ci · npm run start:local · npm run build · npm test
+npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
+```
+
+Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **258 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+
+## 3. Decisões de produto (confirmadas com o dono)
+
+- **Limite de sabores por tamanho:** pequena 1 (4 fatias), média 2 (6), grande 3 (8), big 3 (12), gigante 4 (16). Pode misturar salgado e doce.
+- **Bebidas:** refrigerante 2L (Coca, Coca Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca 600ml, Coca lata, Cerveja Brahma lata. Vinhos ficaram de fora.
+- **Bordas (7):** Catupiry, Catupiry c/ Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco, Chocolate ao Leite c/ Branco.
+- **Pagamento:** Pix, Cartão ou Dinheiro (com "Precisa de troco para quanto?", opcional).
+- **Endereço completo obrigatório**, com preenchimento por CEP (ViaCEP). Quem **não sabe o CEP** marca "Não sei meu CEP" e preenche à mão (`draft.manualAddress`): rua, número, bairro, cidade e UF são obrigatórios; **só o complemento é opcional** e o CEP deixa de ser exigido (some do formulário e da mensagem). Desmarcar volta ao CEP e mantém o que foi digitado.
+- **Taxa de entrega: o site NUNCA calcula nem exibe valor.** Regra única: **endereço a até 3 km da loja, em linha reta (360°), tem entrega grátis** e o checkout mostra o cartão "Taxa de entrega grátis para o seu endereço" (formulário + resumo) e a mensagem do WhatsApp diz "Entrega grátis (até 3 km da loja)". Fora do raio, ou quando o endereço não pôde ser localizado, mantém-se o aviso padrão de que a loja informa a taxa na confirmação pelo WhatsApp (o sistema **nunca afirma "grátis" sem certeza**).
+  - Como decide (`DeliveryZoneService`): localiza o endereço pelo **CEP na AwesomeAPI** (`cep.awesomeapi.com.br`); se não achar, usa o **Nominatim/OpenStreetMap** com rua+cidade; mede a distância (Haversine) até o ponto da loja em `STORE_INFO.freeDelivery` (Rua Luiz Braille, 135, CEP 82015-290; **o endereço não é exibido no site**). Coordenada fora do Brasil é descartada. A consulta roda para todo CEP completo (o ViaCEP às vezes não conhece CEPs que a AwesomeAPI conhece, ex.: 82030-000). Editar o CEP zera a zona na hora e cancela a consulta anterior. "Grátis" só vale se a zona foi calculada para o CEP que está no formulário no envio.
+  - **Endereço manual (sem CEP): NUNCA há entrega grátis.** Com "Não sei meu CEP" ligado nada é consultado e o cartão de grátis some na hora (mesmo que o CEP tenha liberado antes); fica o aviso padrão de que a loja informa a taxa no WhatsApp. A entrega grátis só existe **com CEP, dentro das regras**. (Uma versão anterior tentava localizar o endereço digitado pelo Nominatim; foi removida por decisão do dono.)
+  - Limites conhecidos: a posição vem do CEP (nível de rua), então casos muito perto dos 3 km podem cair para um lado ou outro; a loja confirma o pedido de qualquer forma. A **BrasilAPI foi descartada**: devolve o centro da cidade (~6 km da loja) para o CEP da loja.
+  - Onde ajustar: raio e ponto da loja em `src/app/data/store-info.ts`.
+- **Preços:** `src/app/data/prices.ts` está **vazio de propósito**. Sem preço, a UI e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos (pizza por tamanho × categoria — vale o sabor mais caro —, borda e bebida).
+- **Loja:** WhatsApp (41) 99744-9380 (`5541997449380`), fone (41) 3273-2145, Facebook `facebook.com/diskpizzasandra`, Instagram `diskpizzactba`. **Funcionamento: segunda a sábado, 18h–23h; fechada aos domingos** (regra em `STORE_INFO.schedule`; `closedDates` lista datas fechadas, hoje vazia: 12/10/2026 abre normal). Promoção todos os dias.
+- **Visual e UX:** evolução da marca (carvão + dourado, vermelho da logo só em CTAs), Playfair Display (títulos) + Inter (texto), mobile-first e **calmo no celular** (hero simples, 1 CTA principal, sem brilhos competindo; barra fixa discreta). Sistema de microinterações sutil em tudo (tokens de movimento em `tailwind.config.js`: 150/220/350 ms, easing suave): troca de página, botões, links, cartões, campos e rótulos, abas, passos do montador, contador do carrinho, menu do celular, revelação ao rolar (`appReveal`), foto com fade (`app-flavor-image`). Tudo respeita `prefers-reduced-motion` e usa só transform/opacity (CLS medido = 0). Tipografia/contraste: corpo 16px, `text-xs` = 13px, texto ≥ 4,5:1 (corrido ≥ 7:1), tokens `cream-muted/cream-dim` clareados; botão "Não sei meu CEP" é um cartão com interruptor (`role="switch"`).
+
+## 4. Arquitetura
+
+```
+src/app/
+  data/         menu.data.ts (cardápio transcrito), prices.ts (preços), store-info.ts (loja/redes)
+  interfaces/   pizza-menu.interface.ts, cart.interface.ts
+  services/     catalog · size-rules · pricing · persistence · cart · pizza-builder ·
+                checkout-draft · checkout-validation · cep · format · whatsapp-message
+  facade/       menu · order (montagem) · cart · checkout   ← únicas portas dos componentes
+  components/   layout/ shared/ home/ menu/ builder/ cart/ (+ página 404)
+test/           specs (services, facades, componentes)
+```
+
+- **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
+- **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
+- **Horário de funcionamento (loja fechada = só o envio é bloqueado):** o cliente navega, monta pizza e deixa o carrinho pronto; o carrinho, o rascunho e o formulário continuam salvos. `getStoreStatus(instante, schedule)` (função pura em `services/store-hours.service.ts`) calcula o estado **sempre no fuso America/Sao_Paulo via `Intl`**, nunca no fuso do aparelho (18:00 abre, 23:00 em ponto já fecha; domingo e `closedDates` fecham o dia). `StoreHoursService.snapshot()` não tem cache e é chamado no clique de enviar: `CheckoutFacadeService.submit()` devolve `{ ok:false, errors:{}, closed }` e nada abre o WhatsApp (cobre a virada de horário com a página aberta); `status# Contexto do Projeto — Disk Pizza (pizzaria italiana premium)
+
+> Atualizado em 2026-09-28 após a reformulação completa do front-end e da lógica de pedidos.
+> Regras de trabalho do repositório: [AGENTS.md](AGENTS.md). Este arquivo descreve o **estado atual**; `README.md`, `QUICK_START.md` e `documents/*` ainda descrevem a arquitetura ANTIGA (ver seção 8).
+
+## 1. O que é
+
+Site de pedidos de uma pizzaria de Curitiba (Instagram `@diskpizzactba`). O cliente vê o cardápio, monta a pizza em passos, adiciona ao carrinho, preenche endereço e pagamento e **finaliza abrindo o WhatsApp da loja** com a mensagem do pedido pronta. Não há back-end: tudo roda no navegador.
+
+## 2. Stack e comandos
+
+Angular 17 (NgModule, rotas lazy) · Tailwind CSS 3 · `lucide-angular` (ícones; npm o marca como deprecated em favor de `@lucide/angular`, mas funciona com Angular 17) · `@angular/animations` só na transição de rota · ViaCEP · Karma/Jasmine. **Angular Material e CDK foram removidos.**
+
+```
+npm ci · npm run start:local · npm run build · npm test
+npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
+```
+
+Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **258 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+
+## 3. Decisões de produto (confirmadas com o dono)
+
+- **Limite de sabores por tamanho:** pequena 1 (4 fatias), média 2 (6), grande 3 (8), big 3 (12), gigante 4 (16). Pode misturar salgado e doce.
+- **Bebidas:** refrigerante 2L (Coca, Coca Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca 600ml, Coca lata, Cerveja Brahma lata. Vinhos ficaram de fora.
+- **Bordas (7):** Catupiry, Catupiry c/ Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco, Chocolate ao Leite c/ Branco.
+- **Pagamento:** Pix, Cartão ou Dinheiro (com "Precisa de troco para quanto?", opcional).
+- **Endereço completo obrigatório**, com preenchimento por CEP (ViaCEP). Quem **não sabe o CEP** marca "Não sei meu CEP" e preenche à mão (`draft.manualAddress`): rua, número, bairro, cidade e UF são obrigatórios; **só o complemento é opcional** e o CEP deixa de ser exigido (some do formulário e da mensagem). Desmarcar volta ao CEP e mantém o que foi digitado.
+- **Taxa de entrega: o site NUNCA calcula nem exibe valor.** Regra única: **endereço a até 3 km da loja, em linha reta (360°), tem entrega grátis** e o checkout mostra o cartão "Taxa de entrega grátis para o seu endereço" (formulário + resumo) e a mensagem do WhatsApp diz "Entrega grátis (até 3 km da loja)". Fora do raio, ou quando o endereço não pôde ser localizado, mantém-se o aviso padrão de que a loja informa a taxa na confirmação pelo WhatsApp (o sistema **nunca afirma "grátis" sem certeza**).
+  - Como decide (`DeliveryZoneService`): localiza o endereço pelo **CEP na AwesomeAPI** (`cep.awesomeapi.com.br`); se não achar, usa o **Nominatim/OpenStreetMap** com rua+cidade; mede a distância (Haversine) até o ponto da loja em `STORE_INFO.freeDelivery` (Rua Luiz Braille, 135, CEP 82015-290; **o endereço não é exibido no site**). Coordenada fora do Brasil é descartada. A consulta roda para todo CEP completo (o ViaCEP às vezes não conhece CEPs que a AwesomeAPI conhece, ex.: 82030-000). Editar o CEP zera a zona na hora e cancela a consulta anterior. "Grátis" só vale se a zona foi calculada para o CEP que está no formulário no envio.
+  - **Endereço manual (sem CEP): NUNCA há entrega grátis.** Com "Não sei meu CEP" ligado nada é consultado e o cartão de grátis some na hora (mesmo que o CEP tenha liberado antes); fica o aviso padrão de que a loja informa a taxa no WhatsApp. A entrega grátis só existe **com CEP, dentro das regras**. (Uma versão anterior tentava localizar o endereço digitado pelo Nominatim; foi removida por decisão do dono.)
+  - Limites conhecidos: a posição vem do CEP (nível de rua), então casos muito perto dos 3 km podem cair para um lado ou outro; a loja confirma o pedido de qualquer forma. A **BrasilAPI foi descartada**: devolve o centro da cidade (~6 km da loja) para o CEP da loja.
+  - Onde ajustar: raio e ponto da loja em `src/app/data/store-info.ts`.
+- **Preços:** `src/app/data/prices.ts` está **vazio de propósito**. Sem preço, a UI e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos (pizza por tamanho × categoria — vale o sabor mais caro —, borda e bebida).
+- **Loja:** WhatsApp (41) 99744-9380 (`5541997449380`), fone (41) 3273-2145, Facebook `facebook.com/diskpizzasandra`, Instagram `diskpizzactba`. **Funcionamento: segunda a sábado, 18h–23h; fechada aos domingos** (regra em `STORE_INFO.schedule`; `closedDates` lista datas fechadas, hoje vazia: 12/10/2026 abre normal). Promoção todos os dias.
+- **Visual e UX:** evolução da marca (carvão + dourado, vermelho da logo só em CTAs), Playfair Display (títulos) + Inter (texto), mobile-first e **calmo no celular** (hero simples, 1 CTA principal, sem brilhos competindo; barra fixa discreta). Sistema de microinterações sutil em tudo (tokens de movimento em `tailwind.config.js`: 150/220/350 ms, easing suave): troca de página, botões, links, cartões, campos e rótulos, abas, passos do montador, contador do carrinho, menu do celular, revelação ao rolar (`appReveal`), foto com fade (`app-flavor-image`). Tudo respeita `prefers-reduced-motion` e usa só transform/opacity (CLS medido = 0). Tipografia/contraste: corpo 16px, `text-xs` = 13px, texto ≥ 4,5:1 (corrido ≥ 7:1), tokens `cream-muted/cream-dim` clareados; botão "Não sei meu CEP" é um cartão com interruptor (`role="switch"`).
+
+## 4. Arquitetura
+
+```
+src/app/
+  data/         menu.data.ts (cardápio transcrito), prices.ts (preços), store-info.ts (loja/redes)
+  interfaces/   pizza-menu.interface.ts, cart.interface.ts
+  services/     catalog · size-rules · pricing · persistence · cart · pizza-builder ·
+                checkout-draft · checkout-validation · cep · format · whatsapp-message
+  facade/       menu · order (montagem) · cart · checkout   ← únicas portas dos componentes
+  components/   layout/ shared/ home/ menu/ builder/ cart/ (+ página 404)
+test/           specs (services, facades, componentes)
+```
+
+- **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
+- **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
+ reavalia a cada 30 s e ao voltar ao foco (o timer roda fora do NgZone; token `STORE_STATUS_TICK`). `StoreFacadeService` entrega `view# Contexto do Projeto — Disk Pizza (pizzaria italiana premium)
+
+> Atualizado em 2026-09-28 após a reformulação completa do front-end e da lógica de pedidos.
+> Regras de trabalho do repositório: [AGENTS.md](AGENTS.md). Este arquivo descreve o **estado atual**; `README.md`, `QUICK_START.md` e `documents/*` ainda descrevem a arquitetura ANTIGA (ver seção 8).
+
+## 1. O que é
+
+Site de pedidos de uma pizzaria de Curitiba (Instagram `@diskpizzactba`). O cliente vê o cardápio, monta a pizza em passos, adiciona ao carrinho, preenche endereço e pagamento e **finaliza abrindo o WhatsApp da loja** com a mensagem do pedido pronta. Não há back-end: tudo roda no navegador.
+
+## 2. Stack e comandos
+
+Angular 17 (NgModule, rotas lazy) · Tailwind CSS 3 · `lucide-angular` (ícones; npm o marca como deprecated em favor de `@lucide/angular`, mas funciona com Angular 17) · `@angular/animations` só na transição de rota · ViaCEP · Karma/Jasmine. **Angular Material e CDK foram removidos.**
+
+```
+npm ci · npm run start:local · npm run build · npm test
+npx ng test --watch=false --browsers=ChromeHeadless     (execução única)
+```
+
+Estado verificado: build sem erros (initial ≈ 514 kB; o **warn do budget foi para 560 kB** por causa do CSS dos efeitos, erro em 1 MB) e **258 testes passando**. O `npm test` estava quebrado/vazio antes (assets sem `output` e specs em `test/` fora do glob); foi corrigido em `angular.json` (`include: ../test/**/*.spec.ts`) e `tsconfig.spec.json`.
+
+## 3. Decisões de produto (confirmadas com o dono)
+
+- **Limite de sabores por tamanho:** pequena 1 (4 fatias), média 2 (6), grande 3 (8), big 3 (12), gigante 4 (16). Pode misturar salgado e doce.
+- **Bebidas:** refrigerante 2L (Coca, Coca Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca 600ml, Coca lata, Cerveja Brahma lata. Vinhos ficaram de fora.
+- **Bordas (7):** Catupiry, Catupiry c/ Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco, Chocolate ao Leite c/ Branco.
+- **Pagamento:** Pix, Cartão ou Dinheiro (com "Precisa de troco para quanto?", opcional).
+- **Endereço completo obrigatório**, com preenchimento por CEP (ViaCEP). Quem **não sabe o CEP** marca "Não sei meu CEP" e preenche à mão (`draft.manualAddress`): rua, número, bairro, cidade e UF são obrigatórios; **só o complemento é opcional** e o CEP deixa de ser exigido (some do formulário e da mensagem). Desmarcar volta ao CEP e mantém o que foi digitado.
+- **Taxa de entrega: o site NUNCA calcula nem exibe valor.** Regra única: **endereço a até 3 km da loja, em linha reta (360°), tem entrega grátis** e o checkout mostra o cartão "Taxa de entrega grátis para o seu endereço" (formulário + resumo) e a mensagem do WhatsApp diz "Entrega grátis (até 3 km da loja)". Fora do raio, ou quando o endereço não pôde ser localizado, mantém-se o aviso padrão de que a loja informa a taxa na confirmação pelo WhatsApp (o sistema **nunca afirma "grátis" sem certeza**).
+  - Como decide (`DeliveryZoneService`): localiza o endereço pelo **CEP na AwesomeAPI** (`cep.awesomeapi.com.br`); se não achar, usa o **Nominatim/OpenStreetMap** com rua+cidade; mede a distância (Haversine) até o ponto da loja em `STORE_INFO.freeDelivery` (Rua Luiz Braille, 135, CEP 82015-290; **o endereço não é exibido no site**). Coordenada fora do Brasil é descartada. A consulta roda para todo CEP completo (o ViaCEP às vezes não conhece CEPs que a AwesomeAPI conhece, ex.: 82030-000). Editar o CEP zera a zona na hora e cancela a consulta anterior. "Grátis" só vale se a zona foi calculada para o CEP que está no formulário no envio.
+  - **Endereço manual (sem CEP): NUNCA há entrega grátis.** Com "Não sei meu CEP" ligado nada é consultado e o cartão de grátis some na hora (mesmo que o CEP tenha liberado antes); fica o aviso padrão de que a loja informa a taxa no WhatsApp. A entrega grátis só existe **com CEP, dentro das regras**. (Uma versão anterior tentava localizar o endereço digitado pelo Nominatim; foi removida por decisão do dono.)
+  - Limites conhecidos: a posição vem do CEP (nível de rua), então casos muito perto dos 3 km podem cair para um lado ou outro; a loja confirma o pedido de qualquer forma. A **BrasilAPI foi descartada**: devolve o centro da cidade (~6 km da loja) para o CEP da loja.
+  - Onde ajustar: raio e ponto da loja em `src/app/data/store-info.ts`.
+- **Preços:** `src/app/data/prices.ts` está **vazio de propósito**. Sem preço, a UI e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos (pizza por tamanho × categoria — vale o sabor mais caro —, borda e bebida).
+- **Loja:** WhatsApp (41) 99744-9380 (`5541997449380`), fone (41) 3273-2145, Facebook `facebook.com/diskpizzasandra`, Instagram `diskpizzactba`. **Funcionamento: segunda a sábado, 18h–23h; fechada aos domingos** (regra em `STORE_INFO.schedule`; `closedDates` lista datas fechadas, hoje vazia: 12/10/2026 abre normal). Promoção todos os dias.
+- **Visual e UX:** evolução da marca (carvão + dourado, vermelho da logo só em CTAs), Playfair Display (títulos) + Inter (texto), mobile-first e **calmo no celular** (hero simples, 1 CTA principal, sem brilhos competindo; barra fixa discreta). Sistema de microinterações sutil em tudo (tokens de movimento em `tailwind.config.js`: 150/220/350 ms, easing suave): troca de página, botões, links, cartões, campos e rótulos, abas, passos do montador, contador do carrinho, menu do celular, revelação ao rolar (`appReveal`), foto com fade (`app-flavor-image`). Tudo respeita `prefers-reduced-motion` e usa só transform/opacity (CLS medido = 0). Tipografia/contraste: corpo 16px, `text-xs` = 13px, texto ≥ 4,5:1 (corrido ≥ 7:1), tokens `cream-muted/cream-dim` clareados; botão "Não sei meu CEP" é um cartão com interruptor (`role="switch"`).
+
+## 4. Arquitetura
+
+```
+src/app/
+  data/         menu.data.ts (cardápio transcrito), prices.ts (preços), store-info.ts (loja/redes)
+  interfaces/   pizza-menu.interface.ts, cart.interface.ts
+  services/     catalog · size-rules · pricing · persistence · cart · pizza-builder ·
+                checkout-draft · checkout-validation · cep · format · whatsapp-message
+  facade/       menu · order (montagem) · cart · checkout   ← únicas portas dos componentes
+  components/   layout/ shared/ home/ menu/ builder/ cart/ (+ página 404)
+test/           specs (services, facades, componentes)
+```
+
+- **Componentes finos:** usam facades. Não duplicar formatação/cálculo (`FormatService`, `PricingService`).
+- **Persistência (`localStorage`, chaves `disk-pizza:v2:*`):** carrinho, pizza em montagem, passo do assistente e formulário do checkout são salvos a cada alteração. Ao restaurar, tudo é validado campo a campo (tipos errados, sabores inexistentes, tamanho desconhecido, excesso de sabores são descartados/cortados; nunca quebra a tela).
+ (`open`, `label`, `notice`) e os textos "Segunda a sábado, das 18h às 23h" / "Fechado aos domingos", gerados da tabela. Telas: selo `role="status"` no cabeçalho ("Aberto até 23h" / "Fechado · abre amanhã 18h"), status no hero da home, aviso no topo do carrinho e no resumo (`app-store-closed-notice`) com o botão desabilitado ("Loja fechada no momento"). A mensagem do WhatsApp não muda. Limite conhecido: confia no relógio do aparelho (convertido para Brasília); se estiver errado, a loja confirma no WhatsApp. **Testes:** `test/_setup.spec.ts` fixa o relógio em terça 19h (aberto) e desliga o timer; use `fakeClock.set(iso)` de `test/helpers/fake-clock.ts` (`SUNDAY_INSTANT` = domingo 12h).
+, assinaturas presas ao ciclo de vida do serviço).
+  - **Validação:** DDD real e 9º dígito (celular) / 2–5 (fixo), 27 UFs, nome com letra, número com dígito ou "s/n"; dado restaurado respeita os limites dos campos; carrinho restaurado mescla bebida repetida e refaz ids repetidos.
+  - **Envio:** "Tentar de novo" se o CEP falhar por rede; o envio espera até 3 s a consulta de entrega em andamento (`zoneLoading/zoneSettled`); em navegador embutido (Instagram/Facebook) não usa `window.open` e mostra o botão; "Copiar mensagem do pedido" na tela de pedido pronto; "Fazer novo pedido" encerra a edição em andamento e, ao abrir o montador, edição de pizza que já saiu do carrinho vira pizza nova (`reconcileEdit`); falha de carregar módulo após novo deploy recarrega a página uma vez (`isChunkLoadError`).
 - **Mensagem do WhatsApp:** `WhatsappMessageService.buildMessage/buildLink`. Escrita em **1ª pessoa, como o cliente** ("Olá, Disk Pizza! Sou *Nome* e gostaria de fazer um pedido"), enxuta, com negrito do WhatsApp. **Sem emojis nem qualquer caractere acima de U+FFFF:** eles chegam como "�" no WhatsApp Desktop (há teste que trava isso e um snapshot literal do formato). O fecho pede a confirmação do valor total e da **taxa de entrega**. O total só aparece quando todos os preços existem. O carrinho não é limpo após enviar: só com "Fazer novo pedido".
 - **Máscaras/limites do checkout:** telefone `(41) 99999-9999` (descarta +55 colado), CEP `00000-000`, UF (2 letras maiúsculas), **troco `R$ 1.000,50`** (`FormatService.moneyMask`: ponto é sempre milhar, só a vírgula é decimal, até 5 dígitos inteiros; completa `,00` ao sair do campo). Nome 60, rua 80, número 10, complemento/bairro/cidade 60 caracteres; observações da pizza 300 e do pedido 400 (áreas de texto de altura fixa, sem redimensionar).
 - **Bebidas (`DrinkPickerComponent`):** a quantidade mostrada é a do carrinho (`−`/`+`; `−` na quantidade 1 remove). A revisão do builder lista "Bebidas no pedido". No carrinho o seletor usa `onlyAvailable`: lista só as bebidas que ainda não estão no pedido (as escolhidas aparecem apenas em "Seus itens"), e a seção some quando todas já foram adicionadas.

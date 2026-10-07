@@ -100,8 +100,11 @@ export class WhatsappMessageService {
   }
 
   buildLink(cart: CartState, draft: CheckoutDraft, options: MessageOptions = {}): string {
-    const text = encodeURIComponent(this.buildMessage(cart, draft, options));
-    return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${text}`;
+    return this.linkFromMessage(this.buildMessage(cart, draft, options));
+  }
+
+  linkFromMessage(message: string): string {
+    return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`;
   }
 
   private pizzaLines(index: number, pizza: CartState['pizzas'][number]): string[] {

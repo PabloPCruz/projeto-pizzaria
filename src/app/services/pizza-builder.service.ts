@@ -87,6 +87,11 @@ export class PizzaBuilderService {
     this.commit(EMPTY_DRAFT);
   }
 
+  /** A pizza que estava sendo editada saiu do carrinho: o que está montado vira uma pizza nova. */
+  clearEditing(): void {
+    if (this.snapshot.editingId) this.commit({ ...this.snapshot, editingId: null });
+  }
+
   private clampQuantity(value: unknown): number {
     const n = Math.floor(Number(value));
     return Number.isFinite(n) ? Math.min(MAX_QUANTITY, Math.max(1, n)) : 1;
