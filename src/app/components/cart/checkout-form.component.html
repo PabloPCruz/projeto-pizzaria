@@ -14,7 +14,7 @@
         <ul class="mt-3 list-inside list-disc space-y-1 text-sm text-cream">
           @for (item of errorList; track item.field) {
             <li>
-              <button type="button" class="inline min-h-[44px] underline decoration-danger/70 underline-offset-2 hover:text-gold sm:min-h-0" (click)="focusField(item.field)">{{ item.label }}</button>:
+              <button type="button" class="inline-flex min-h-[44px] items-center underline decoration-danger/70 underline-offset-2 hover:text-gold sm:min-h-0" (click)="focusField(item.field)">{{ item.label }}</button>:
               {{ item.message }}
             </li>
           }
@@ -171,7 +171,7 @@
         (valueChange)="update({ complement: $event })"
       ></app-text-field>
       <app-text-field
-        class="sm:col-span-2"
+        class="sm:col-span-3"
         name="neighborhood"
         label="Bairro"
         autocomplete="address-level3"
@@ -184,7 +184,7 @@
         (blurred)="onBlur('neighborhood')"
       ></app-text-field>
       <app-text-field
-        class="sm:col-span-3"
+        class="sm:col-span-2"
         name="city"
         label="Cidade"
         autocomplete="address-level2"

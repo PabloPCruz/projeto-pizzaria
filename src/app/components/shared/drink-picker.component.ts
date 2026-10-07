@@ -23,7 +23,7 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
           >
             <span class="flex min-w-0 items-center gap-2.5">
               <lucide-icon [name]="drink.group === 'cerveja' ? 'wine' : 'cup-soda'" [size]="18" class="shrink-0 text-gold"></lucide-icon>
-              <span class="truncate">{{ drink.label }}</span>
+              <span class="min-w-0 break-words leading-snug">{{ drink.label }}</span>
             </span>
             @if (lines.get(drink.id); as line) {
               <app-quantity-stepper

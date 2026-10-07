@@ -33,7 +33,7 @@ describe('Carrinho: bebidas sem duplicar', () => {
     Array.from(el.querySelectorAll('app-cart-items [data-line-heading]')).map((h) => h.textContent?.trim());
   /** Nomes das bebidas oferecidas no seletor. */
   const pickerRows = () =>
-    Array.from(el.querySelectorAll('app-drink-picker li')).map((li) => li.querySelector('span.truncate')?.textContent?.trim());
+    Array.from(el.querySelectorAll('app-drink-picker li')).map((li) => li.querySelector('span.break-words')?.textContent?.trim());
   const inItems = (label: string) => itemTitles().filter((t) => t === label).length;
   const inPicker = (label: string) => pickerRows().filter((t) => t === label).length;
 

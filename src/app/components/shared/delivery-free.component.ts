@@ -17,7 +17,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       >
         <lucide-icon name="truck" [size]="compact ? 20 : 24"></lucide-icon>
       </span>
-      <div class="min-w-0">
+      <div class="min-w-0 sm:pr-7">
         <p class="font-display font-semibold leading-snug text-gold-light" [ngClass]="compact ? 'text-base' : 'text-xl'">
           Taxa de entrega grátis para o seu endereço
         </p>
