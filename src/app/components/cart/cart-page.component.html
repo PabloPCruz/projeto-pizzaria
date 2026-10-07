@@ -29,6 +29,12 @@
     } @else {
       <div class="mt-8 grid grid-cols-1 items-start gap-8 sm:mt-10 lg:grid-cols-[1fr_380px]">
         <div class="min-w-0 space-y-10 sm:space-y-12">
+          @if (store$ | async; as store) {
+            @if (!store.open) {
+              <app-store-closed-notice noticeId="store-closed-top" [live]="false" [message]="store.notice"></app-store-closed-notice>
+            }
+          }
+
           <app-cart-items [view]="view"></app-cart-items>
 
           @if (hasDrinksToAdd(view)) {

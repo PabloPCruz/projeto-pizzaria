@@ -48,6 +48,7 @@ import { QuantityStepperComponent } from './quantity-stepper.component';
 import { DeliveryFreeComponent } from './delivery-free.component';
 import { DrinkPickerComponent } from './drink-picker.component';
 import { TextFieldComponent } from './text-field.component';
+import { StoreClosedNoticeComponent } from './store-closed-notice.component';
 
 /** Somente os ícones usados: o resto do lucide fica fora do bundle. */
 const ICONS = LucideAngularModule.pick({
@@ -85,7 +86,7 @@ const ICONS = LucideAngularModule.pick({
   X,
 });
 
-const SHARED = [DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, FlavorImageComponent, RevealDirective, PriceComponent, QuantityStepperComponent];
+const SHARED = [StoreClosedNoticeComponent, DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, FlavorImageComponent, RevealDirective, PriceComponent, QuantityStepperComponent];
 
 @NgModule({
   declarations: SHARED,
