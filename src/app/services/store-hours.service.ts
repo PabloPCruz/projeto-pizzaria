@@ -75,13 +75,14 @@ export function getStoreStatus(instant: number, schedule: StoreSchedule): StoreS
     reason,
     closesAt: null,
     nextOpening: findNextOpening(now, schedule),
+    weekday: now.weekday,
   });
 
   if (!schedule.openDays.includes(now.weekday)) return closed('closed-day');
   if (schedule.closedDates.includes(now.date)) return closed('closed-date');
   if (now.minutes < toMinutes(schedule.opensAt)) return closed('before-open');
   if (now.minutes >= toMinutes(schedule.closesAt)) return closed('after-close');
-  return { open: true, reason: 'open', closesAt: schedule.closesAt, nextOpening: null };
+  return { open: true, reason: 'open', closesAt: schedule.closesAt, nextOpening: null, weekday: now.weekday };
 }
 
 /** '18:00' -> '18h'; '23:30' -> '23h30'. */
@@ -90,27 +91,45 @@ export function formatClock(hhmm: string): string {
   return m === '00' ? `${Number(h)}h` : `${Number(h)}h${m}`;
 }
 
-function describeWhen(next: NextOpening, withPreposition: boolean): string {
+function describeWhen(next: NextOpening): string {
   const day = next.when === 'today' ? 'hoje' : next.when === 'tomorrow' ? 'amanhã' : WEEKDAY_NAME[next.weekday];
-  return `${day}${withPreposition ? ' às' : ''} ${formatClock(next.at)}`;
+  return `${day} ${formatClock(next.at)}`;
 }
 
 /** Texto curto do selo do cabeçalho. */
 export function statusLabel(status: StoreStatus): string {
   if (status.open) return `Aberto até ${formatClock(status.closesAt as string)}`;
-  return status.nextOpening ? `Fechado · abre ${describeWhen(status.nextOpening, false)}` : 'Fechado no momento';
+  return status.nextOpening ? `Fechado · abre ${describeWhen(status.nextOpening)}` : 'Fechado no momento';
 }
 
-/** Aviso completo exibido no carrinho quando a loja está fechada. */
+/** Quando a loja volta, em uma frase: "Abrimos hoje às 18h." / "Voltamos amanhã (segunda) às 18h." / "Voltamos terça às 18h.". */
+function returnSentence(next: NextOpening): string {
+  const at = formatClock(next.at);
+  const day = WEEKDAY_NAME[next.weekday];
+  if (next.when === 'today') return `Abrimos hoje às ${at}.`;
+  if (next.when === 'tomorrow') return `Voltamos amanhã (${day}) às ${at}.`;
+  return `Voltamos ${day} às ${at}.`;
+}
+
+/**
+ * Aviso completo do carrinho quando a loja está fechada: por que está fechada, quando volta e o que o cliente pode fazer.
+ * Cobre todos os casos: antes de abrir (hoje abre), depois de fechar (volta amanhã ou depois do domingo),
+ * domingo, data fechada e horário não calculável.
+ */
 export function closedNotice(status: StoreStatus): string {
+  const today = status.weekday === undefined ? '' : ` (${WEEKDAY_NAME[status.weekday]})`;
   const lead =
     status.reason === 'before-open'
-      ? 'Ainda não abrimos hoje.'
+      ? 'A loja ainda não abriu.'
       : status.reason === 'after-close'
-        ? 'Já encerramos o atendimento de hoje.'
-        : 'Hoje a loja está fechada.';
-  const tail = 'Você pode deixar o pedido pronto e enviá-lo quando abrirmos';
-  return status.nextOpening ? `${lead} ${tail}: ${describeWhen(status.nextOpening, true)}.` : `${lead} ${tail}.`;
+        ? 'Já encerramos por hoje.'
+        : status.reason === 'closed-day'
+          ? `Hoje${today} a loja não abre.`
+          : status.reason === 'closed-date'
+            ? 'Hoje a loja não abre.'
+            : 'A loja está fechada no momento.';
+  if (!status.nextOpening) return lead;
+  return `${lead} ${returnSentence(status.nextOpening)} Pode deixar o pedido pronto: o botão de enviar libera assim que abrirmos.`;
 }
 
 function capitalize(text: string): string {
