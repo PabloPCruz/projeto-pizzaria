@@ -43,8 +43,10 @@ describe('Carrinho com a loja fechada', () => {
     fakeClock.set(SUNDAY_INSTANT);
     await create();
     const button = summaryButton();
-    expect(button.disabled).toBeTrue();
-    expect(button.textContent).toContain('Loja fechada no momento');
+    // Não é "disabled": continua clicável para explicar o motivo (ver "Finalizar com a loja fechada").
+    expect(button.disabled).toBeFalse();
+    expect(button.getAttribute('aria-disabled')).toBe('true');
+    expect(button.textContent).toContain('Loja fechada agora');
     expect(button.textContent).not.toContain('Enviar pedido');
     expect(button.getAttribute('aria-describedby')).toBe('store-closed-notice');
     const notice = el.querySelector('#store-closed-notice');

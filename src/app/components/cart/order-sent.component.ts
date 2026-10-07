@@ -26,6 +26,17 @@ import { OrderSent } from './checkout-form.component';
           </p>
         }
 
+        @if (sent.offline) {
+          <p id="sent-offline" class="mt-4 rounded-xl border border-warn/40 bg-warn/[.07] p-3 text-sm text-warn">
+            Você está sem internet. O WhatsApp só abre com conexão: seu pedido está salvo, toque em "Abrir WhatsApp" quando a internet voltar.
+          </p>
+        }
+        @if (sent.tooLong) {
+          <p id="sent-too-long" class="mt-4 rounded-xl border border-warn/40 bg-warn/[.07] p-3 text-sm text-warn">
+            Seu pedido é grande. Se o WhatsApp abrir sem o texto completo, toque em "Copiar mensagem do pedido" e cole na conversa.
+          </p>
+        }
+
         <div class="mt-7 flex flex-col gap-3">
           <a [href]="sent.url" target="_blank" rel="noopener noreferrer" class="btn-primary py-4 text-base">
             <app-brand-icon name="whatsapp" [size]="20"></app-brand-icon>

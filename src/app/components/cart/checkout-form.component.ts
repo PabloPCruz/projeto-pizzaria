@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { EMPTY, Subject } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
 import { CheckoutFacadeService, CheckoutResult } from '../../facade/checkout.facade.service';
+import { StoreFacadeService } from '../../facade/store.facade.service';
 import { CheckoutDraft, CheckoutErrors, CheckoutField, PaymentMethod } from '../../interfaces/cart.interface';
 import { CepLookupResult } from '../../services/cep.service';
 
@@ -15,7 +16,14 @@ export interface OrderSent {
   message?: string;
   /** `true` = navegador embutido (Instagram, Facebook...): o cliente abre o WhatsApp pelo botão. */
   inApp?: boolean;
+  /** `true` = o aparelho estava sem internet ao enviar: o WhatsApp só abre com conexão. */
+  offline?: boolean;
+  /** `true` = o link é longo: o WhatsApp pode abrir sem o texto todo (usar "Copiar mensagem do pedido"). */
+  tooLong?: boolean;
 }
+
+/** Acima disso o link do wa.me corre o risco de ser cortado (o limite real varia por aparelho). */
+const MAX_LINK_LENGTH = 4000;
 
 /** Quanto esperar a consulta de entrega terminar antes de montar o link do pedido. */
 const ZONE_WAIT_MS = 3000;
@@ -72,6 +80,8 @@ export class CheckoutFormComponent implements OnDestroy {
   cepState: CepState = 'idle';
   /** Falha ao montar o link (não deve acontecer; evita um botão que "não faz nada"). */
   sendError = '';
+  /** Tentou enviar com a loja fechada: "Seu pedido não foi enviado..." (some quando a loja abre ou o envio funciona). */
+  blockedMessage = '';
 
   @Output() sent = new EventEmitter<OrderSent>();
 
@@ -82,7 +92,10 @@ export class CheckoutFormComponent implements OnDestroy {
   private readonly touched = new Set<CheckoutField>();
   private waiting = false;
 
-  constructor(readonly checkout: CheckoutFacadeService) {
+  constructor(
+    readonly checkout: CheckoutFacadeService,
+    private store: StoreFacadeService
+  ) {
     // switchMap: uma busca nova (ou o CEP ser editado) cancela a anterior.
     this.lookups
       .pipe(
@@ -90,6 +103,11 @@ export class CheckoutFormComponent implements OnDestroy {
         takeUntil(this.destroy$)
       )
       .subscribe((result) => this.onLookupResult(result));
+
+    // Se a loja abrir enquanto o aviso está na tela, ele some (o cliente já pode enviar).
+    this.store.view$.pipe(takeUntil(this.destroy$)).subscribe((view) => {
+      if (view.open) this.blockedMessage = '';
+    });
   }
 
   update(patch: Partial<CheckoutDraft>): void {
@@ -157,8 +175,10 @@ export class CheckoutFormComponent implements OnDestroy {
     // Consulta de entrega ainda em andamento: espera um pouco para a mensagem já sair com a informação certa.
     if (this.checkout.zoneLoading) {
       this.waiting = true;
+      this.checkout.setBusy(true);
       this.checkout.zoneSettled(ZONE_WAIT_MS).subscribe(() => {
         this.waiting = false;
+        this.checkout.setBusy(false);
         this.send();
       });
       return;
@@ -173,29 +193,33 @@ export class CheckoutFormComponent implements OnDestroy {
       result = this.checkout.submit();
     } catch {
       this.sendError = 'Não foi possível montar a mensagem do pedido. Revise os textos digitados e tente de novo.';
+      setTimeout(() => this.showAlert('send-error-alert'));
       return;
     }
     if (!result.ok) {
       if (result.closed) {
-        // Fechou com a página aberta: o aviso (no resumo) já está ou ficará visível; leva o foco até ele.
+        // Loja fechada: nada foi enviado. Diz isso na cara do cliente (alerta no topo do formulário) e leva o foco até ele.
         this.errors = {};
-        setTimeout(() => document.getElementById('store-closed-notice')?.focus());
+        this.blockedMessage = this.checkout.blockedMessage(result.closed);
+        setTimeout(() => this.showAlert('send-blocked-alert'));
         return;
       }
+      this.blockedMessage = '';
       this.errors = result.errors;
       setTimeout(() => this.focusFirstInvalid());
       return;
     }
     this.errors = {};
+    this.blockedMessage = '';
     if (isInAppBrowser()) {
-      this.sent.emit({ url: result.url, blocked: true, inApp: true, message: result.message });
+      this.sent.emit({ url: result.url, blocked: true, inApp: true, message: result.message, ...this.linkNotes(result.url) });
       return;
     }
     // Abre o WhatsApp em nova aba. Sem "noopener" na lista de features, porque com ele o retorno
     // é sempre null e não daria para saber se o navegador bloqueou; o opener é anulado logo depois.
     const win = window.open(result.url, '_blank');
     if (win) win.opener = null;
-    this.sent.emit({ url: result.url, blocked: !win, message: result.message });
+    this.sent.emit({ url: result.url, blocked: !win, message: result.message, ...this.linkNotes(result.url) });
   }
 
   get errorList(): { field: CheckoutField; label: string; message: string }[] {
@@ -205,6 +229,15 @@ export class CheckoutFormComponent implements OnDestroy {
       .map((f) => ({ field: f, label: FIELD_LABEL[f] ?? 'Pedido', message: this.errors[f] as string }));
   }
 
+  /** Rola até um alerta do topo do formulário (respeita "reduzir movimento") e leva o foco para ele. */
+  private showAlert(id: string): void {
+    const alert = document.getElementById(id);
+    if (!alert) return;
+    const reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    alert.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    alert.focus({ preventScroll: true });
+  }
+
   focusField(field: CheckoutField): void {
     // 'cart' não é um campo: leva o foco ao bloco de itens.
     const id = field === 'cart' ? 'itens-title' : field === 'payment' ? 'field-payment-pix' : 'field-' + field;
@@ -212,8 +245,13 @@ export class CheckoutFormComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.checkout.setBusy(false);
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  private linkNotes(url: string): Pick<OrderSent, 'offline' | 'tooLong'> {
+    return { offline: typeof navigator !== 'undefined' && navigator.onLine === false, tooLong: url.length > MAX_LINK_LENGTH };
   }
 
   /** Botão "Tentar de novo" depois de uma falha de rede na busca do CEP. */

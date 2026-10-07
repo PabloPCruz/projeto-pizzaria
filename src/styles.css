@@ -164,7 +164,12 @@
     @apply pointer-events-none bg-ink-600 text-cream-dim shadow-none;
   }
 
-  .btn:active:not(:disabled) {
+  /* "Desabilitado" que continua clicável (para explicar o motivo): só a aparência muda. */
+  .btn[aria-disabled='true'] {
+    @apply cursor-not-allowed bg-ink-600 text-cream-dim shadow-none;
+  }
+
+  .btn:active:not(:disabled):not([aria-disabled='true']) {
     transform: translateY(0) scale(0.98);
   }
 

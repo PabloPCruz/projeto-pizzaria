@@ -49,17 +49,19 @@ describe('Carrinho: clareza e acessibilidade', () => {
     expect(el.querySelector('app-cart-items')?.textContent).not.toContain('Valor confirmado');
   });
 
-  it('botão fixo do celular mostra a quantidade e leva ao formulário de dados', async () => {
+  it('botão fixo do celular mostra a quantidade e, com o formulário incompleto, mostra o que falta', async () => {
     const bar = el.querySelector<HTMLButtonElement>('.sticky.lg\\:hidden button')!;
-    expect(bar.textContent).toContain('Preencher dados e finalizar');
+    expect(bar.textContent).toContain('Finalizar pedido');
     expect(bar.textContent).toContain('1 item');
+    expect(bar.getAttribute('aria-label')).toBe('Finalizar o pedido (1 item)');
 
-    const heading = el.querySelector<HTMLElement>('#checkout-title')!;
-    const scroll = spyOn(heading, 'scrollIntoView');
+    const open = spyOn(window, 'open');
     bar.click();
     await flush();
-    expect(scroll).toHaveBeenCalledTimes(1);
-    expect(document.activeElement).toBe(heading);
+    fixture.detectChanges();
+    expect(open).not.toHaveBeenCalled();
+    expect(el.querySelector('#checkout-errors')?.textContent).toContain('Confira estes pontos antes de enviar');
+    expect(document.activeElement?.id).toBe('field-name');
   });
 
   it('aviso de privacidade perto do formulário diz para onde vão os dados', () => {
