@@ -5,10 +5,14 @@ export const STORE_INFO = {
   whatsappNumber: '5541997449380',
   whatsappDisplay: '(41) 99744-9380',
   phoneDisplay: '(41) 3273-2145',
-  /** Horário vindo da página de contatos anterior; conferir com a loja. */
-  hours: 'Segunda a sábado, das 18h às 23h',
-  closedOn: 'domingo',
-  closedNotice: 'Fechado aos domingos',
+  /** Horário de funcionamento (a fonte da regra e dos textos exibidos). Datas fechadas: 'AAAA-MM-DD'. */
+  schedule: {
+    timeZone: 'America/Sao_Paulo',
+    openDays: [1, 2, 3, 4, 5, 6],
+    opensAt: '18:00',
+    closesAt: '23:00',
+    closedDates: [] as string[],
+  },
   promoNotice: 'Promoção todos os dias',
   /**
    * Entrega grátis para endereços a até `radiusKm` da loja, em linha reta (360°).

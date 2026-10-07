@@ -3,6 +3,21 @@ import { CartState, CheckoutDraft, CheckoutErrors } from '../interfaces/cart.int
 import { FormatService } from './format.service';
 import { SizeRulesService } from './size-rules.service';
 
+/** DDDs que existem no Brasil. */
+const VALID_DDD = new Set(
+  [
+    11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 24, 27, 28, 31, 32, 33, 34, 35, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+    51, 53, 54, 55, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 73, 74, 75, 77, 79, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92,
+    93, 94, 95, 96, 97, 98, 99,
+  ].map(String)
+);
+
+/** As 27 unidades da federação. */
+const VALID_UF = new Set([
+  'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS',
+  'RO', 'RR', 'SC', 'SP', 'SE', 'TO',
+]);
+
 /** Valida o pedido completo antes de gerar o link do WhatsApp. Mensagens já prontas para exibir. */
 @Injectable({ providedIn: 'root' })
 export class CheckoutValidationService {
@@ -20,18 +35,19 @@ export class CheckoutValidationService {
       errors.cart = 'Há uma pizza com sabores inválidos para o tamanho. Revise o pedido.';
     }
 
-    if (!draft.name.trim()) errors.name = 'Informe seu nome.';
+    const name = draft.name.trim();
+    if (name.length < 2 || !/\p{L}/u.test(name)) errors.name = 'Informe seu nome.';
 
     const phoneDigits = this.format.onlyDigits(draft.phone);
-    if (phoneDigits.length < 10 || phoneDigits.length > 11) errors.phone = 'Informe um telefone com DDD.';
+    if (!this.isValidPhone(phoneDigits)) errors.phone = 'Informe um telefone válido com DDD.';
 
     // Sem CEP (endereço manual) o CEP não é exigido, mas todo o resto do endereço é, menos o complemento.
     if (!draft.manualAddress && this.format.onlyDigits(draft.cep).length !== 8) errors.cep = 'Informe o CEP com 8 números.';
     if (!draft.street.trim()) errors.street = 'Informe a rua.';
-    if (!draft.number.trim()) errors.number = 'Informe o número (ou "s/n").';
+    if (!/\d/.test(draft.number) && !/^s\/?n$/i.test(draft.number.trim())) errors.number = 'Informe o número (ou "s/n").';
     if (!draft.neighborhood.trim()) errors.neighborhood = 'Informe o bairro.';
     if (!draft.city.trim()) errors.city = 'Informe a cidade.';
-    if (!/^[A-Za-z]{2}$/.test(draft.state.trim())) errors.state = 'Informe o estado (UF).';
+    if (!VALID_UF.has(draft.state.trim().toUpperCase())) errors.state = 'Informe o estado (UF).';
 
     if (!draft.payment) {
       errors.payment = 'Escolha a forma de pagamento.';
@@ -41,6 +57,13 @@ export class CheckoutValidationService {
     }
 
     return errors;
+  }
+
+  /** Celular (11 dígitos) começa com 9 depois do DDD; fixo (10) começa com 2 a 5. */
+  private isValidPhone(digits: string): boolean {
+    if (digits.length !== 10 && digits.length !== 11) return false;
+    if (!VALID_DDD.has(digits.slice(0, 2))) return false;
+    return digits.length === 11 ? digits[2] === '9' : /[2-5]/.test(digits[2]);
   }
 
   isValid(errors: CheckoutErrors): boolean {

@@ -1,0 +1,26 @@
+name: CI
+
+# Antes de cada deploy: compila e roda os testes. O deploy em si é feito pela Vercel (ver vercel.json).
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build de produção
+        run: npm run build
+
+      - name: Testes (Chrome sem interface)
+        run: npm run test:ci

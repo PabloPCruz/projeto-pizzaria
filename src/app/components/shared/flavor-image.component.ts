@@ -11,6 +11,8 @@ import { PizzaFlavor } from '../../interfaces/pizza-menu.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (flavor.image && !failed) {
+      <picture>
+        <source type="image/webp" [attr.srcset]="srcset" [attr.sizes]="sizes" />
       <img
         [src]="flavor.image"
         [attr.alt]="decorative ? '' : 'Pizza de ' + flavor.name"
@@ -24,6 +26,7 @@ import { PizzaFlavor } from '../../interfaces/pizza-menu.interface';
         (load)="loaded = true"
         (error)="failed = true"
       />
+      </picture>
     } @else {
       <div class="flavor-ph" [class.flavor-ph--sm]="small" [attr.data-cat]="flavor.category" aria-hidden="true">
         <span class="flavor-ph__icon">
@@ -32,7 +35,7 @@ import { PizzaFlavor } from '../../interfaces/pizza-menu.interface';
       </div>
     }
   `,
-  styles: [':host{display:block;height:100%;width:100%}'],
+  styles: [':host{display:block;height:100%;width:100%} picture{display:contents}'],
 })
 export class FlavorImageComponent {
   @Input({ required: true }) flavor!: PizzaFlavor;
@@ -47,4 +50,15 @@ export class FlavorImageComponent {
 
   loaded = false;
   failed = false;
+
+  /** Variantes leves geradas ao lado da foto original (nome-192.webp, nome-640.webp). */
+  get srcset(): string {
+    const base = (this.flavor.image ?? '').replace(/\.jpe?g$/i, '');
+    return `${base}-192.webp 192w, ${base}-640.webp 640w`;
+  }
+
+  /** Miniaturas ocupam o próprio tamanho; cartões grandes, a largura da coluna. */
+  get sizes(): string {
+    return this.small ? `${this.width}px` : '(min-width: 768px) 360px, 100vw';
+  }
 }

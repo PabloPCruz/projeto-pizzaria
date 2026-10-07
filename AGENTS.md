@@ -46,7 +46,5 @@ When reporting a failure, include the first real error line and the stack/contex
 
 ## Project Docs (Link, Do Not Duplicate)
 - README: README.md
-- Quick start: QUICK_START.md
-- Docs index: documents/INDICE_DOCUMENTACAO.md
-- Facade usage guide: documents/GUIA_USO_FACADES.md
-- Refactor summary: documents/README_REFATORACAO.md
+- Estado atual, decisões de produto e pendências: CONTEXTO_PROJETO.md
+- Especificações e planos de cada melhoria: docs/superpowers/

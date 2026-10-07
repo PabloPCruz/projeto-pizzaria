@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CartView } from '../../facade/cart.facade.service';
 import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
+import { StoreFacadeService } from '../../facade/store.facade.service';
 
 /** Resumo do pedido: total dos itens (só se houver preço), aviso da taxa de entrega e botão de envio. */
 @Component({
@@ -35,10 +36,21 @@ import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
         </div>
       }
 
-      <button type="submit" form="checkout-form" class="btn-primary mt-5 w-full py-4 text-base" aria-describedby="delivery-fee-notice">
-        <lucide-icon name="send" [size]="20"></lucide-icon>
-        Enviar pedido pelo WhatsApp
-      </button>
+      @if (store$ | async; as store) {
+        @if (store.open) {
+          <button type="submit" form="checkout-form" class="btn-primary mt-5 w-full py-4 text-base" aria-describedby="delivery-fee-notice">
+            <lucide-icon name="send" [size]="20"></lucide-icon>
+            Finalizar no WhatsApp
+          </button>
+          <p class="mt-3 text-center text-xs leading-relaxed text-cream-muted">Você confirma o envio dentro do WhatsApp. Nada é cobrado agora.</p>
+        } @else {
+          <app-store-closed-notice class="mt-5" [message]="store.notice"></app-store-closed-notice>
+          <button type="button" disabled class="btn-primary mt-3 w-full py-4 text-base" aria-describedby="store-closed-notice">
+            <lucide-icon name="calendar-x" [size]="20"></lucide-icon>
+            Loja fechada no momento
+          </button>
+        }
+      }
     </div>
   `,
 })
@@ -47,6 +59,10 @@ export class OrderSummaryComponent {
   readonly notice = this.checkout.deliveryFeeNotice;
   readonly radiusKm = this.checkout.freeDeliveryRadiusKm;
   readonly zone$ = this.checkout.zone$;
+  readonly store$ = this.storeFacade.view$;
 
-  constructor(private checkout: CheckoutFacadeService) {}
+  constructor(
+    private checkout: CheckoutFacadeService,
+    private storeFacade: StoreFacadeService
+  ) {}
 }

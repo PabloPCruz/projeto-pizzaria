@@ -6,7 +6,7 @@
   <div class="container-page relative grid grid-cols-1 items-center gap-8 py-9 sm:gap-10 sm:py-20 lg:grid-cols-2">
     <div class="enter text-center lg:text-left">
       <!-- Selo pequeno no celular (o cabeçalho já traz a marca); a logo grande fica para telas maiores. -->
-      <div class="mb-5 flex justify-center sm:hidden"><app-logo [height]="84" [decorative]="true"></app-logo></div>
+      <div class="mb-5 flex justify-center sm:hidden"><app-logo [height]="84" [decorative]="true" [priority]="true"></app-logo></div>
       <p class="eyebrow">Pizzaria italiana · desde {{ store.since }}</p>
       <h1 id="hero-title" class="title-hero mt-3 sm:mt-4">
         Sabor de família em <em class="text-gold not-italic">cada fatia</em>
@@ -22,10 +22,13 @@
         </a>
         <a routerLink="/cardapio" class="btn-quiet px-8 py-4 text-base text-gold hover:text-gold-light sm:border sm:border-gold/50 sm:hover:border-gold sm:hover:bg-gold/10">Ver cardápio</a>
       </div>
-      <ul class="mt-6 flex flex-wrap justify-center gap-2 sm:mt-8 lg:justify-start" aria-label="Avisos da loja">
-        <li class="badge gap-1.5">
-          <lucide-icon name="calendar-x" [size]="14"></lucide-icon>{{ store.closedNotice }}
-        </li>
+      <p class="mt-4 text-center text-sm text-cream-muted lg:text-left">Sem cadastro. Você confirma o pedido no WhatsApp.</p>
+      <ul class="mt-4 flex flex-wrap justify-center gap-2 sm:mt-5 lg:justify-start" aria-label="Avisos da loja">
+        @if (status$ | async; as status) {
+          <li class="badge gap-1.5">
+            <lucide-icon [name]="status.open ? 'clock' : 'calendar-x'" [size]="14"></lucide-icon>{{ status.label }}
+          </li>
+        }
         <li class="badge gap-1.5">
           <lucide-icon name="tag" [size]="14"></lucide-icon>{{ store.promoNotice }}
         </li>
@@ -75,7 +78,7 @@
     </ol>
     <p class="mt-8 text-center sm:mt-10">
       <a routerLink="/montar-pizza" class="btn-gold px-8">
-        Começar meu pedido
+        Monte sua pizza
         <lucide-icon name="arrow-right" [size]="18"></lucide-icon>
       </a>
     </p>

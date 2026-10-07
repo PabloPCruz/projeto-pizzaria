@@ -1,11 +1,19 @@
-<header #bar class="site-header sticky top-0 z-40">
-  <div class="container-page relative z-20 flex h-16 items-center justify-between gap-4 sm:h-[72px]">
-    <a routerLink="/" class="flex min-h-[44px] items-center gap-3 rounded-lg" aria-label="Disk Pizza — página inicial">
-      <app-logo [height]="40" [decorative]="true"></app-logo>
-      <span class="font-display text-xl font-semibold tracking-wide text-cream sm:text-2xl">Disk Pizza</span>
-    </a>
+<header #bar class="site-header sticky top-0 z-40 [@media(max-height:480px)]:static">
+  <div class="container-page relative z-20 flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
+    <div class="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3">
+      <a routerLink="/" class="row-span-2 flex min-h-[44px] items-center rounded-lg" aria-label="Disk Pizza — página inicial">
+        <app-logo [height]="40" [decorative]="true" [priority]="true"></app-logo>
+      </a>
+      <a routerLink="/" tabindex="-1" aria-hidden="true" class="self-end font-display text-xl font-semibold leading-tight tracking-wide text-cream sm:text-2xl">Disk Pizza</a>
+      @if (store$ | async; as store) {
+        <p role="status" class="flex min-w-0 items-center gap-1.5 self-start text-xs leading-tight text-cream-muted">
+          <span class="h-1.5 w-1.5 shrink-0 rounded-full" [ngClass]="store.open ? 'bg-ok' : 'bg-gold'" aria-hidden="true"></span>
+          <span class="truncate">{{ store.label }}</span>
+        </p>
+      }
+    </div>
 
-    <nav aria-label="Principal" class="hidden items-center gap-1 md:flex">
+    <nav aria-label="Principal" class="hidden items-center gap-1 lg:flex">
       @for (link of links; track link.label) {
         <a
           [routerLink]="link.path"
@@ -35,11 +43,11 @@
           }
         }
       </a>
-      <a routerLink="/montar-pizza" class="btn-primary hidden md:inline-flex">Monte sua pizza</a>
+      <a routerLink="/montar-pizza" class="btn-primary hidden lg:inline-flex">Monte sua pizza</a>
       <button
         #menuButton
         type="button"
-        class="btn-icon md:hidden"
+        class="btn-icon lg:hidden"
         [attr.aria-expanded]="menuOpen"
         aria-controls="menu-mobile"
         [attr.aria-label]="menuOpen ? 'Fechar menu' : 'Abrir menu'"

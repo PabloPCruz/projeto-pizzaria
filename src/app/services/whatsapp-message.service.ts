@@ -15,6 +15,40 @@ const PAYMENT_LABELS: Record<PaymentMethod, string> = {
 export const DELIVERY_FEE_NOTICE =
   'A taxa de entrega será calculada e informada pela loja na confirmação do pedido pelo WhatsApp.';
 
+/**
+ * Texto digitado pelo cliente, seguro para a mensagem: sem emoji (acima de U+FFFF chega como "�"),
+ * sem substitutos soltos (fariam `encodeURIComponent` lançar), sem caracteres de controle nem marcas bidi.
+ * Preserva \n (as observações gerais podem ter várias linhas).
+ */
+export function sanitizeText(text: string): string {
+  return (text ?? '')
+    .replace(/\r\n?/g, '\n')
+    .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '')
+    .replace(/[\uD800-\uDFFF]/g, '')
+    .replace(/[\u0000-\u0009\u000B-\u001F\u007F\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, '');
+}
+
+/** Os marcadores de formatação do WhatsApp (negrito, itálico, tachado, código) não podem vir do cliente. */
+const FORMAT_MARKS = /[*_~`]/g;
+
+/** Texto de uma linha só: sem quebras e sem marcadores de formatação. */
+export function inlineText(text: string): string {
+  return sanitizeText(text).replace(FORMAT_MARKS, '').replace(/\s*\n+\s*/g, ' ').replace(/ {2,}/g, ' ').trim();
+}
+
+/**
+ * Texto de várias linhas (observações gerais): remove os marcadores de formatação e o início de linha que o
+ * WhatsApp transformaria em citação ou lista, e limita as linhas em branco seguidas.
+ */
+export function blockText(text: string): string {
+  return sanitizeText(text)
+    .split('\n')
+    .map((line) => line.replace(FORMAT_MARKS, '').replace(/^\s*(?:[>•-]|\d+[.)])\s+/, '').replace(/^\s*[>•-]+\s*/, '').trimEnd())
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 export interface MessageOptions {
   /** Endereço dentro do raio de entrega grátis (decidido por DeliveryZoneService). */
   freeDelivery?: boolean;
@@ -41,7 +75,7 @@ export class WhatsappMessageService {
     const free = !!options.freeDelivery;
     const blocks: string[][] = [];
 
-    blocks.push([`Olá, ${STORE_INFO.name}! Sou *${draft.name.trim()}* e gostaria de fazer um pedido:`]);
+    blocks.push([`Olá, ${STORE_INFO.name}! Sou *${inlineText(draft.name)}* e gostaria de fazer um pedido:`]);
 
     let index = 1;
     for (const pizza of cart.pizzas) blocks.push(this.pizzaLines(index++, pizza));
@@ -57,7 +91,7 @@ export class WhatsappMessageService {
     const payment = this.paymentLines(draft);
     if (payment.length) blocks.push(payment);
 
-    const notes = draft.generalNotes.trim();
+    const notes = blockText(draft.generalNotes);
     if (notes) blocks.push(['*Observações*', notes]);
 
     blocks.push([this.closingLine(total !== null, free)]);
@@ -66,8 +100,11 @@ export class WhatsappMessageService {
   }
 
   buildLink(cart: CartState, draft: CheckoutDraft, options: MessageOptions = {}): string {
-    const text = encodeURIComponent(this.buildMessage(cart, draft, options));
-    return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${text}`;
+    return this.linkFromMessage(this.buildMessage(cart, draft, options));
+  }
+
+  linkFromMessage(message: string): string {
+    return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`;
   }
 
   private pizzaLines(index: number, pizza: CartState['pizzas'][number]): string[] {
@@ -83,7 +120,7 @@ export class WhatsappMessageService {
     // Sem borda não vira linha: menos ruído.
     if (pizza.crustId) out.push(`Borda: ${this.catalog.getCrust(pizza.crustId)?.label ?? pizza.crustId}`);
     // Uma linha só: quebras de linha nas observações desalinhariam a mensagem.
-    const notes = pizza.notes.replace(/\s*\n+\s*/g, ' / ').trim();
+    const notes = inlineText(pizza.notes.replace(/\s*\n+\s*/g, ' / '));
     if (notes) out.push(`Obs.: ${notes}`);
     if (total !== null) out.push(`Valor: ${this.money(total)}`);
     return out;
@@ -102,11 +139,11 @@ export class WhatsappMessageService {
   }
 
   private deliveryLines(draft: CheckoutDraft, free: boolean): string[] {
-    const complement = draft.complement.trim();
+    const complement = inlineText(draft.complement);
     const lines = [
       '*Entrega*',
-      `${draft.street.trim()}, ${draft.number.trim()}${complement ? ` — ${complement}` : ''}`,
-      `${draft.neighborhood.trim()} — ${draft.city.trim()}/${draft.state.trim().toUpperCase()}`,
+      `${inlineText(draft.street)}, ${inlineText(draft.number)}${complement ? ` — ${complement}` : ''}`,
+      `${inlineText(draft.neighborhood)} — ${inlineText(draft.city)}/${inlineText(draft.state).toUpperCase()}`,
     ];
     // Endereço manual (cliente sem CEP): não há linha de CEP.
     if (this.format.onlyDigits(draft.cep)) lines.push(`CEP ${this.format.cep(draft.cep)}`);

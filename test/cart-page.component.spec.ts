@@ -8,6 +8,7 @@ import { CartPageComponent } from '../src/app/components/cart/cart-page.componen
 import { CartFacadeService } from '../src/app/facade/cart.facade.service';
 import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service';
 import { CartService } from '../src/app/services/cart.service';
+import { SUNDAY_INSTANT, fakeClock } from './helpers/fake-clock';
 
 const flush = () => new Promise<void>((resolve) => setTimeout(resolve));
 
@@ -19,7 +20,7 @@ describe('CartPageComponent / checkout', () => {
   const field = (name: string) => el.querySelector<HTMLInputElement>('#field-' + name);
   const submitButton = () =>
     Array.from(el.querySelectorAll<HTMLButtonElement>('button[type=submit]')).find((b) =>
-      b.textContent?.includes('Enviar pedido pelo WhatsApp')
+      b.textContent?.includes('Finalizar no WhatsApp')
     )!;
 
   function create(withItems: boolean): void {
@@ -169,7 +170,7 @@ describe('CartPageComponent / checkout', () => {
       const [url, target] = open.calls.mostRecent().args;
       expect(String(url)).toContain('https://wa.me/5541997449380?text=');
       expect(target).toBe('_blank');
-      expect(el.textContent).toContain('Pedido pronto — envie a mensagem no WhatsApp para confirmar');
+      expect(el.textContent).toContain('Falta só enviar no WhatsApp');
       expect(el.textContent).toContain('Fazer novo pedido');
       expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(1);
     });
@@ -194,6 +195,12 @@ describe('CartPageComponent / checkout', () => {
 
       Array.from(el.querySelectorAll('button'))
         .find((b) => b.textContent?.includes('Fazer novo pedido'))!
+        .click();
+      fixture.detectChanges();
+      // Ainda não apagou nada: pediu confirmação.
+      expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(1);
+      Array.from(el.querySelectorAll('button'))
+        .find((b) => b.textContent?.includes('Sim, apagar tudo'))!
         .click();
       fixture.detectChanges();
 
@@ -331,6 +338,19 @@ describe('CartPageComponent / checkout', () => {
       expect(checkout.draft.phone).toBe('(41) 98888-7777');
       expect(phone.value).toBe('(41) 98888-7777');
       expect(JSON.parse(localStorage.getItem('disk-pizza:v2:checkout')!).name).toBe('João');
+    });
+  });
+
+  describe('loja fechada', () => {
+    it('enviar não abre o WhatsApp nem mostra erro de campo', async () => {
+      fakeClock.set(SUNDAY_INSTANT);
+      create(true);
+      fillValidForm();
+      const open = spyOn(window, 'open');
+      component().submit();
+      await flush();
+      expect(open).not.toHaveBeenCalled();
+      expect(component().errorList.length).toBe(0);
     });
   });
 });

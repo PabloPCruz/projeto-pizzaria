@@ -36,6 +36,9 @@ import {
       [attr.inputmode]="inputmode"
       [attr.maxlength]="maxlength"
       [attr.placeholder]="placeholder"
+      [attr.autocapitalize]="autocapitalize"
+      [attr.enterkeyhint]="enterkeyhint"
+      [attr.spellcheck]="spellcheck"
       [attr.aria-required]="optional ? null : 'true'"
       [attr.aria-invalid]="error ? 'true' : null"
       [attr.aria-describedby]="describedBy"
@@ -67,6 +70,10 @@ export class TextFieldComponent implements AfterViewChecked {
   @Input() inputmode: string | null = null;
   @Input() maxlength: number | null = null;
   @Input() placeholder: string | null = null;
+  /** Dicas de teclado do celular: 'words' (nomes), 'characters' (UF), 'next'/'done' na tecla de ação, spellcheck 'false'. */
+  @Input() autocapitalize: string | null = null;
+  @Input() enterkeyhint: string | null = null;
+  @Input() spellcheck: string | null = null;
   @Input() optional = false;
   /** ids extras (ex.: região de status do CEP) somados ao aria-describedby. */
   @Input() describedByExtra = '';

@@ -10,6 +10,8 @@ import { PricingService } from '../services/pricing.service';
 export interface PizzaLineView {
   id: string;
   title: string;
+  /** Título + sabores: distingue pizzas iguais no tamanho para quem usa leitor de tela. */
+  ariaLabel: string;
   flavors: string[];
   crust: string;
   notes: string;
@@ -81,10 +83,13 @@ export class CartFacadeService {
     return {
       pizzas: state.pizzas.map((p) => {
         const size = this.catalog.getSize(p.size);
+        const title = size ? `Pizza ${size.label} · ${size.slices} fatias` : `Pizza ${p.size}`;
+        const flavors = p.flavorIds.map((id) => this.catalog.getFlavor(id)?.name ?? id);
         return {
           id: p.id,
-          title: size ? `Pizza ${size.label} · ${size.slices} fatias` : `Pizza ${p.size}`,
-          flavors: p.flavorIds.map((id) => this.catalog.getFlavor(id)?.name ?? id),
+          title,
+          ariaLabel: `${title}: ${flavors.join(', ')}`,
+          flavors,
           crust: p.crustId ? this.catalog.getCrust(p.crustId)?.label ?? p.crustId : 'Sem borda',
           notes: p.notes,
           quantity: p.quantity,

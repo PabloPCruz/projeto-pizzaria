@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap, timeout } from 'rxjs/operators';
 import { STORE_INFO } from '../data/store-info';
 
 export interface GeoPoint {
@@ -19,12 +19,17 @@ export interface DeliveryAddress {
 /**
  * `free`: dentro do raio de entrega grátis. `outside`: fora. `unknown`: não deu para localizar o endereço.
  * `key` é o CEP (só dígitos) para o qual a zona foi calculada: a zona de um CEP nunca vale para outro.
+ * `addr` (cidade|UF no momento da consulta, preenchido pelo checkout) impede que a zona de um endereço valha
+ * depois que cidade ou estado foram trocados.
  * A entrega grátis só existe com CEP; quem preenche o endereço à mão fica sempre em `unknown`.
  */
 export type DeliveryZone =
-  | { status: 'free'; distanceKm: number; key: string }
-  | { status: 'outside'; distanceKm: number; key: string }
+  | { status: 'free'; distanceKm: number; key: string; addr?: string }
+  | { status: 'outside'; distanceKm: number; key: string; addr?: string }
   | { status: 'unknown' };
+
+/** Tempo máximo de cada consulta externa; passou disso, o endereço fica "não localizado". */
+const REQUEST_TIMEOUT_MS = 6000;
 
 const EARTH_RADIUS_KM = 6371.0088;
 
@@ -69,11 +74,16 @@ export class DeliveryZoneService {
     if (cached) return of(cached);
 
     return this.locateByCep(digits).pipe(
-      switchMap((point) => (point ? of(point) : this.locateByAddress(address))),
-      map((point) => this.classify(point, digits)),
-      tap((zone) => {
-        if (zone.status !== 'unknown') this.cache.set(digits, zone);
-      })
+      switchMap((point) =>
+        point
+          ? // Só a posição vinda do CEP é guardada: a localização por endereço depende do que foi digitado.
+            of(this.classify(point, digits)).pipe(
+              tap((zone) => {
+                if (zone.status !== 'unknown') this.cache.set(digits, zone);
+              })
+            )
+          : this.locateByAddress(address).pipe(map((byAddress) => this.classify(byAddress, digits)))
+      )
     );
   }
 
@@ -86,6 +96,7 @@ export class DeliveryZoneService {
 
   private locateByCep(digits: string): Observable<GeoPoint | null> {
     return this.http.get<{ lat?: unknown; lng?: unknown }>(`https://cep.awesomeapi.com.br/json/${digits}`).pipe(
+      timeout(REQUEST_TIMEOUT_MS),
       map((res) => toPoint(res?.lat, res?.lng)),
       catchError(() => of(null))
     );
@@ -104,6 +115,7 @@ export class DeliveryZoneService {
       .set('limit', '1');
 
     return this.http.get<{ lat?: unknown; lon?: unknown }[]>('https://nominatim.openstreetmap.org/search', { params }).pipe(
+      timeout(REQUEST_TIMEOUT_MS),
       map((list) => toPoint(list?.[0]?.lat, list?.[0]?.lon)),
       catchError(() => of(null))
     );

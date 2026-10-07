@@ -27,5 +27,5 @@ Change policy:
 
 Reference docs:
 - README.md
-- QUICK_START.md
-- documents/INDICE_DOCUMENTACAO.md
+- CONTEXTO_PROJETO.md
+- vercel.json (build, pasta de saída e rewrite de SPA já configurados)

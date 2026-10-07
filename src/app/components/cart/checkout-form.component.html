@@ -1,6 +1,7 @@
 <form id="checkout-form" novalidate (ngSubmit)="submit()" aria-labelledby="checkout-title" *ngIf="draft$ | async as draft">
-  <h2 id="checkout-title" class="title-sub">Finalizar pedido</h2>
+  <h2 id="checkout-title" tabindex="-1" class="title-sub outline-none">Finalizar pedido</h2>
   <p class="mt-1 text-sm leading-relaxed text-cream-muted">Preencha seus dados. O pedido é enviado pelo WhatsApp para a loja confirmar.</p>
+  <p class="mt-1 text-xs leading-relaxed text-cream-dim">Seus dados ficam neste aparelho e só vão para a loja pelo WhatsApp. Para achar o endereço e a entrega, consultamos o CEP em serviços públicos (ViaCEP, AwesomeAPI e OpenStreetMap).</p>
 
   <!-- Resumo de erros -->
   <div role="alert" [hidden]="errorList.length === 0">
@@ -13,7 +14,7 @@
         <ul class="mt-3 list-inside list-disc space-y-1 text-sm text-cream">
           @for (item of errorList; track item.field) {
             <li>
-              <button type="button" class="inline min-h-[44px] underline decoration-danger/70 underline-offset-2 hover:text-gold sm:min-h-0" (click)="focusField(item.field)">{{ item.label }}</button>:
+              <button type="button" class="inline-flex min-h-[44px] items-center underline decoration-danger/70 underline-offset-2 hover:text-gold sm:min-h-0" (click)="focusField(item.field)">{{ item.label }}</button>:
               {{ item.message }}
             </li>
           }
@@ -21,6 +22,10 @@
       </div>
     }
   </div>
+
+  @if (sendError) {
+    <p role="alert" class="mt-6 rounded-xl border border-danger/60 bg-danger/10 p-4 text-sm text-cream">{{ sendError }}</p>
+  }
 
   <!-- Seus dados -->
   <fieldset class="mt-8">
@@ -30,10 +35,13 @@
         name="name"
         label="Nome"
         autocomplete="name"
+        autocapitalize="words"
+        enterkeyhint="next"
         [maxlength]="60"
         [value]="draft.name"
         [error]="errors['name']"
         (valueChange)="update({ name: $event })"
+        (blurred)="onBlur('name')"
       ></app-text-field>
       <app-text-field
         name="phone"
@@ -41,11 +49,14 @@
         type="tel"
         autocomplete="tel-national"
         inputmode="tel"
+        spellcheck="false"
+        enterkeyhint="next"
         placeholder="(41) 99999-9999"
         [maxlength]="20"
         [value]="draft.phone"
         [error]="errors['phone']"
         (valueChange)="setPhone($event)"
+        (blurred)="onBlur('phone')"
       ></app-text-field>
     </div>
   </fieldset>
@@ -84,6 +95,8 @@
         label="CEP"
         autocomplete="postal-code"
         inputmode="numeric"
+        spellcheck="false"
+        enterkeyhint="next"
         placeholder="00000-000"
         [maxlength]="9"
         [value]="draft.cep"
@@ -111,7 +124,9 @@
             }
             @case ('error') {
               <p class="flex items-start gap-2 text-gold-light">
-                <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>Não foi possível buscar o CEP agora. Preencha o endereço manualmente.
+                <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
+                <span>Não foi possível buscar o CEP agora. Tente de novo ou preencha o endereço manualmente.</span>
+                <button type="button" class="min-h-[44px] font-semibold underline underline-offset-2 hover:text-gold sm:min-h-0" (click)="retryCep()">Tentar de novo</button>
               </p>
             }
           }
@@ -123,20 +138,26 @@
         name="street"
         label="Rua"
         autocomplete="address-line1"
+        autocapitalize="words"
+        enterkeyhint="next"
         [maxlength]="80"
         [value]="draft.street"
         [error]="errors['street']"
         (valueChange)="update({ street: $event })"
+        (blurred)="onBlur('street')"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-2"
         name="number"
         label="Número"
         autocomplete="off"
+        spellcheck="false"
+        enterkeyhint="next"
         [maxlength]="10"
         [value]="draft.number"
         [error]="errors['number']"
         (valueChange)="update({ number: $event })"
+        (blurred)="onBlur('number')"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-4"
@@ -150,34 +171,44 @@
         (valueChange)="update({ complement: $event })"
       ></app-text-field>
       <app-text-field
-        class="sm:col-span-2"
+        class="sm:col-span-3"
         name="neighborhood"
         label="Bairro"
         autocomplete="address-level3"
+        autocapitalize="words"
+        enterkeyhint="next"
         [maxlength]="60"
         [value]="draft.neighborhood"
         [error]="errors['neighborhood']"
         (valueChange)="update({ neighborhood: $event })"
+        (blurred)="onBlur('neighborhood')"
       ></app-text-field>
       <app-text-field
-        class="sm:col-span-3"
+        class="sm:col-span-2"
         name="city"
         label="Cidade"
         autocomplete="address-level2"
+        autocapitalize="words"
+        enterkeyhint="next"
         [maxlength]="60"
         [value]="draft.city"
         [error]="errors['city']"
         (valueChange)="update({ city: $event })"
+        (blurred)="onBlur('city')"
       ></app-text-field>
       <app-text-field
         class="sm:col-span-1"
         name="state"
         label="UF"
         autocomplete="address-level1"
+        autocapitalize="characters"
+        spellcheck="false"
+        enterkeyhint="done"
         [maxlength]="2"
         [value]="draft.state"
         [error]="errors['state']"
         (valueChange)="setState($event)"
+        (blurred)="onBlur('state')"
       ></app-text-field>
     </div>
 

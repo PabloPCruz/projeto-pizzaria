@@ -7,7 +7,7 @@
     <p class="mt-6 hidden md:block">
       <a routerLink="/montar-pizza" class="btn-primary px-8">
         <lucide-icon name="pizza" [size]="20"></lucide-icon>
-        Montar pizza
+        Monte sua pizza
       </a>
     </p>
   </header>
@@ -42,13 +42,13 @@
             [attr.aria-selected]="tab === cat.id"
             [attr.aria-controls]="'panel-' + cat.id"
             [attr.tabindex]="tab === cat.id ? 0 : -1"
-            class="flex min-h-[48px] min-w-0 items-center justify-center px-1 text-sm font-semibold transition-colors sm:tracking-wide"
+            class="flex min-h-[48px] min-w-0 items-center justify-center px-1 text-[0.8125rem] font-semibold transition-colors sm:text-sm sm:tracking-wide"
             [ngClass]="tab === cat.id ? 'text-gold' : 'text-cream-muted hover:text-cream'"
             (click)="selectTab(cat.id)"
             (keydown)="onTabKey($event)"
           >
             {{ cat.label }}
-            <span class="ml-1 text-xs leading-4 text-cream-dim sm:ml-1.5 sm:rounded-full sm:bg-ink-600 sm:px-2 sm:py-0.5 sm:text-cream-muted">{{ counts[cat.id] }}</span>
+            <span class="ml-1 text-xs leading-4 text-cream-dim max-[359px]:hidden sm:ml-1.5 sm:rounded-full sm:bg-ink-600 sm:px-2 sm:py-0.5 sm:text-cream-muted">{{ counts[cat.id] }}</span>
           </button>
         }
         <!-- Indicador único que desliza entre as abas (transform). Decorativo. -->
@@ -98,7 +98,7 @@
   <p class="mt-12 hidden text-center md:block">
     <a routerLink="/montar-pizza" class="btn-primary px-10 py-4 text-base">
       <lucide-icon name="pizza" [size]="20"></lucide-icon>
-      Montar pizza
+      Monte sua pizza
     </a>
   </p>
 </div>

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { DestroyRef, Injectable, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CartState, DrinkLine, NewPizzaLine, PizzaLine } from '../interfaces/cart.interface';
@@ -9,6 +10,10 @@ import { SizeRulesService } from './size-rules.service';
 
 const STORAGE_KEY = 'cart';
 const MAX_QUANTITY = 20;
+/** Carrinho esquecido por mais de 3 dias não volta de surpresa. */
+const CART_TTL_MS = 3 * 24 * 60 * 60 * 1000;
+/** Mesmo limite do campo de observações da pizza. */
+const MAX_NOTES = 300;
 
 const EMPTY_CART: CartState = { pizzas: [], drinks: [] };
 
@@ -20,12 +25,16 @@ export class CartService {
   readonly state$: Observable<CartState> = this.state.asObservable();
   readonly itemCount$: Observable<number> = this.state$.pipe(map((s) => this.countItems(s)));
 
+  private readonly destroyRef = inject(DestroyRef);
+
   constructor(
     private persistence: PersistenceService,
     private catalog: CatalogService,
     private sizeRules: SizeRulesService
   ) {
-    this.state.next(this.sanitize(this.persistence.read<unknown>(STORAGE_KEY, null)));
+    this.hydrate();
+    // Outra aba mexeu no carrinho: esta passa a mostrar o mesmo (a última gravação vale, sem sobrescrever às cegas).
+    this.persistence.changes$(STORAGE_KEY).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => this.hydrate());
   }
 
   get snapshot(): CartState {
@@ -83,6 +92,10 @@ export class CartService {
     this.commit(EMPTY_CART);
   }
 
+  private hydrate(): void {
+    this.state.next(this.sanitize(this.persistence.read<unknown>(STORAGE_KEY, null, CART_TTL_MS)));
+  }
+
   private commit(next: CartState): void {
     this.state.next(next);
     this.persistence.write(STORAGE_KEY, next);
@@ -124,7 +137,7 @@ export class CartService {
         size,
         flavorIds,
         crustId,
-        notes: typeof item['notes'] === 'string' ? item['notes'] : '',
+        notes: typeof item['notes'] === 'string' ? item['notes'].slice(0, MAX_NOTES) : '',
         quantity: this.clamp(Number(item['quantity'])),
       });
     }
@@ -133,11 +146,24 @@ export class CartService {
     for (const item of data.drinks as Record<string, unknown>[]) {
       if (!item || typeof item !== 'object') continue;
       if (typeof item['drinkId'] !== 'string' || !this.catalog.getDrink(item['drinkId'])) continue;
+      // A mesma bebida em duas linhas (dado antigo ou editado à mão) vira uma só, somando a quantidade.
+      const existing = drinks.find((d) => d.drinkId === item['drinkId']);
+      if (existing) {
+        existing.quantity = this.clamp(existing.quantity + this.clamp(Number(item['quantity'])));
+        continue;
+      }
       drinks.push({
         id: typeof item['id'] === 'string' && item['id'] ? item['id'] : this.newId(),
         drinkId: item['drinkId'],
         quantity: this.clamp(Number(item['quantity'])),
       });
+    }
+
+    // Ids repetidos (pizzas e bebidas) quebrariam edição e remoção: a repetição ganha um id novo.
+    const seen = new Set<string>();
+    for (const line of [...pizzas, ...drinks]) {
+      if (seen.has(line.id)) line.id = this.newId();
+      seen.add(line.id);
     }
 
     return { pizzas, drinks };

@@ -26,7 +26,8 @@
                 "input": "src/assets",
                 "output": "assets",
                 "ignore": [
-                  "sabores-whats/**"
+                  "sabores-whats/**",
+                  "img/logo-pizzaria.png"
                 ]
               },
               {
@@ -41,6 +42,7 @@
               }
             ],
             "styles": [
+              "src/fonts.css",
               "src/styles.css"
             ]
           },
@@ -50,7 +52,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "560kB",
-                  "maximumError": "1MB"
+                  "maximumError": "700kB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -100,7 +102,8 @@
                 "input": "src/assets",
                 "output": "assets",
                 "ignore": [
-                  "sabores-whats/**"
+                  "sabores-whats/**",
+                  "img/logo-pizzaria.png"
                 ]
               },
               {
@@ -111,7 +114,8 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }

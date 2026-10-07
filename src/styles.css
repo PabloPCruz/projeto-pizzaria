@@ -13,8 +13,16 @@
 
 /* ------------------------------------------------------------------ base */
 @layer base {
+  :root {
+    /* Controles nativos (barra de rolagem, "x" da busca, autopreenchimento) no tema escuro. */
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
+    /* Foco e âncoras não ficam escondidos atrás do cabeçalho fixo nem da barra inferior. */
+    scroll-padding-top: 5.5rem;
+    scroll-padding-bottom: 6rem;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -23,6 +31,28 @@
     background-image: radial-gradient(900px 360px at 50% -6%, rgba(212, 175, 55, 0.05), transparent 70%);
     background-repeat: no-repeat;
     min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Página curta (carrinho vazio, 404): o rodapé fica no fim da tela, sem faixa vazia embaixo. */
+  app-root {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100dvh;
+    flex-direction: column;
+  }
+
+  app-root > main {
+    flex: 1 0 auto;
+  }
+
+  /* Números de títulos alinhados à linha de base (a Playfair usa números "antigos" por padrão). */
+  .font-display,
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-variant-numeric: lining-nums;
   }
 
   h1,
@@ -267,7 +297,7 @@
 
   /* Área de texto de tamanho fixo (não redimensionável); texto longo rola dentro do campo. */
   textarea.field-input {
-    @apply h-44 min-h-[11rem] resize-none overflow-y-auto;
+    @apply h-28 min-h-[7rem] resize-none overflow-y-auto sm:h-44 sm:min-h-[11rem];
   }
 
   .field-error {
@@ -517,12 +547,15 @@
   }
 
   .menu-scrim {
-    @apply fixed inset-x-0 bottom-0 top-16 z-0 bg-black/60 md:hidden;
+    @apply fixed inset-x-0 bottom-0 top-16 z-0 bg-black/60 sm:top-[4.5rem] lg:hidden;
     animation: fade-in 220ms var(--ease-soft) backwards;
   }
 
   .menu-sheet {
-    @apply absolute inset-x-0 top-full z-10 border-b border-gold/20 bg-ink-800 md:hidden;
+    @apply absolute inset-x-0 top-full z-10 overflow-y-auto overscroll-contain border-b border-gold/20 bg-ink-800 lg:hidden;
+    /* Em celular deitado o menu rola dentro dele em vez de passar da tela. */
+    max-height: calc(100vh - 4rem);
+    max-height: calc(100dvh - 4rem);
     animation: sheet-in 240ms var(--ease-soft) backwards;
   }
 

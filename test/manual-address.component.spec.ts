@@ -27,7 +27,7 @@ describe('Checkout: endereço manual ("Não sei meu CEP")', () => {
   const field = (name: string) => el.querySelector<HTMLInputElement>('#field-' + name);
   const toggle = () => el.querySelector<HTMLInputElement>('#field-manualAddress')!;
   const submitButton = () =>
-    Array.from(el.querySelectorAll<HTMLButtonElement>('button[type=submit]')).find((b) => b.textContent?.includes('Enviar pedido'))!;
+    Array.from(el.querySelectorAll<HTMLButtonElement>('button[type=submit]')).find((b) => b.textContent?.includes('Finalizar no WhatsApp'))!;
 
   function type(name: string, value: string): void {
     const input = field(name)!;

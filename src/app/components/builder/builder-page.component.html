@@ -49,7 +49,7 @@
     }
 
     <!-- Indicador de progresso -->
-    <nav aria-label="Etapas da montagem" class="mx-auto mt-6 max-w-3xl sm:mt-8">
+    <nav aria-label="Passos da montagem" class="mx-auto mt-6 max-w-3xl sm:mt-8">
       <ol class="flex items-center">
         @for (s of steps; track s.label; let i = $index; let last = $last) {
           <li class="flex items-center" [class.flex-1]="!last">
@@ -76,13 +76,13 @@
                   {{ i + 1 }}
                 }
               </span>
-              <span class="text-sm font-medium" [ngClass]="i === step ? 'text-cream' : 'hidden text-cream-muted lg:inline'">
-                <span class="sr-only">Etapa {{ i + 1 }}: </span>{{ s.label }}
-              </span>
+              <!-- Nome acessível sempre presente; o rótulo visual do passo atual só aparece a partir de 640 px (no celular o "Passo x de y" abaixo cumpre esse papel). -->
+              <span class="sr-only">Passo {{ i + 1 }}: {{ s.label }}</span>
+              <span class="text-sm font-medium" aria-hidden="true" [ngClass]="i === step ? 'hidden text-cream sm:inline' : 'hidden text-cream-muted lg:inline'">{{ s.label }}</span>
             </button>
             @if (!last) {
               <!-- Trilho que enche (scaleX) conforme o passo avança. -->
-              <span class="relative mx-1 h-0.5 flex-1 overflow-hidden rounded-full bg-ink-500" aria-hidden="true">
+              <span class="relative mx-0.5 h-0.5 min-w-[6px] flex-1 overflow-hidden rounded-full bg-ink-500 sm:mx-1" aria-hidden="true">
                 <span
                   class="absolute inset-0 origin-left bg-gold transition-transform duration-slow ease-soft"
                   [ngClass]="i < step ? 'scale-x-100' : 'scale-x-0'"
@@ -93,7 +93,7 @@
         }
       </ol>
       <p class="mt-2 text-center text-[0.8125rem] font-medium uppercase tracking-[0.16em] text-cream-dim lg:hidden" aria-hidden="true">
-        Etapa {{ step + 1 }} de {{ steps.length }}
+        Passo {{ step + 1 }} de {{ steps.length }}
       </p>
     </nav>
 

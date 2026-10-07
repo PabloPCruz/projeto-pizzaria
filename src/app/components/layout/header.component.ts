@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, HostListener, NgZone, O
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { CartFacadeService } from '../../facade/cart.facade.service';
+import { StoreFacadeService } from '../../facade/store.facade.service';
 
 /** Duração da animação de fechar o painel do celular (igual ao keyframe sheet-out). */
 const CLOSE_MS = 180;
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   /** Fechando: o painel continua no DOM só até a animação de saída terminar. */
   closing = false;
   readonly itemCount$ = this.cart.itemCount$;
+  readonly store$ = this.storeFacade.view$;
 
   readonly links: { label: string; path: string; fragment?: string; exact: boolean }[] = [
     { label: 'Início', path: '/', exact: true },
@@ -35,6 +37,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private cart: CartFacadeService,
+    private storeFacade: StoreFacadeService,
     router: Router,
     private zone: NgZone
   ) {

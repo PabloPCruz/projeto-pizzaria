@@ -7,6 +7,7 @@ const toHomeSection = (fragment: string) => () => inject(Router).createUrlTree([
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     title: 'Disk Pizza — Pizzaria Italiana',
     data: { animation: 'home' },
     loadChildren: () => import('./components/home/home.module').then((m) => m.HomeModule),
