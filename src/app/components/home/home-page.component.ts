@@ -2,6 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { STORE_INFO } from '../../data/store-info';
+import { StoreFacadeService } from '../../facade/store.facade.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,10 +11,12 @@ import { STORE_INFO } from '../../data/store-info';
 })
 export class HomePageComponent implements AfterViewInit {
   readonly store = STORE_INFO;
+  readonly status$ = this.storeFacade.view$;
 
   constructor(
     private route: ActivatedRoute,
-    private scroller: ViewportScroller
+    private scroller: ViewportScroller,
+    private storeFacade: StoreFacadeService
   ) {}
 
   /**

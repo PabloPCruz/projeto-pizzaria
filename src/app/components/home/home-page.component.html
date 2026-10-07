@@ -23,9 +23,11 @@
         <a routerLink="/cardapio" class="btn-quiet px-8 py-4 text-base text-gold hover:text-gold-light sm:border sm:border-gold/50 sm:hover:border-gold sm:hover:bg-gold/10">Ver cardápio</a>
       </div>
       <ul class="mt-6 flex flex-wrap justify-center gap-2 sm:mt-8 lg:justify-start" aria-label="Avisos da loja">
-        <li class="badge gap-1.5">
-          <lucide-icon name="calendar-x" [size]="14"></lucide-icon>{{ store.closedNotice }}
-        </li>
+        @if (status$ | async; as status) {
+          <li class="badge gap-1.5">
+            <lucide-icon [name]="status.open ? 'clock' : 'calendar-x'" [size]="14"></lucide-icon>{{ status.label }}
+          </li>
+        }
         <li class="badge gap-1.5">
           <lucide-icon name="tag" [size]="14"></lucide-icon>{{ store.promoNotice }}
         </li>
