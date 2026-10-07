@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { DestroyRef, Injectable, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CartState, DrinkLine, NewPizzaLine, PizzaLine } from '../interfaces/cart.interface';
@@ -9,6 +10,8 @@ import { SizeRulesService } from './size-rules.service';
 
 const STORAGE_KEY = 'cart';
 const MAX_QUANTITY = 20;
+/** Carrinho esquecido por mais de 3 dias não volta de surpresa. */
+const CART_TTL_MS = 3 * 24 * 60 * 60 * 1000;
 /** Mesmo limite do campo de observações da pizza. */
 const MAX_NOTES = 300;
 
@@ -22,12 +25,16 @@ export class CartService {
   readonly state$: Observable<CartState> = this.state.asObservable();
   readonly itemCount$: Observable<number> = this.state$.pipe(map((s) => this.countItems(s)));
 
+  private readonly destroyRef = inject(DestroyRef);
+
   constructor(
     private persistence: PersistenceService,
     private catalog: CatalogService,
     private sizeRules: SizeRulesService
   ) {
-    this.state.next(this.sanitize(this.persistence.read<unknown>(STORAGE_KEY, null)));
+    this.hydrate();
+    // Outra aba mexeu no carrinho: esta passa a mostrar o mesmo (a última gravação vale, sem sobrescrever às cegas).
+    this.persistence.changes$(STORAGE_KEY).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => this.hydrate());
   }
 
   get snapshot(): CartState {
@@ -83,6 +90,10 @@ export class CartService {
 
   clear(): void {
     this.commit(EMPTY_CART);
+  }
+
+  private hydrate(): void {
+    this.state.next(this.sanitize(this.persistence.read<unknown>(STORAGE_KEY, null, CART_TTL_MS)));
   }
 
   private commit(next: CartState): void {
