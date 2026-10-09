@@ -44,6 +44,20 @@ export interface Drink {
   group: DrinkGroup;
 }
 
+/** Faixa de preço da pizza: o doce segue a dos tradicionais, o especial tem a sua. */
+export type PriceTier = 'tradicional' | 'especial';
+
+/**
+ * Preços INFORMATIVOS do cardápio (só exibição). Não entram em totais, carrinho nem na mensagem do WhatsApp.
+ * Um valor ausente significa "a loja ainda não informou": a tela não mostra nada para o item.
+ */
+export interface MenuPriceTable {
+  pizza: Record<PizzaSizeId, Record<PriceTier, number>>;
+  /** A borda custa diferente conforme o tamanho da pizza. */
+  crust: Partial<Record<CrustId, Record<PizzaSizeId, number>>>;
+  drink: Partial<Record<string, number>>;
+}
+
 /**
  * Tabela de preços editável. Um valor ausente significa "preço ainda não informado":
  * a interface não exibe valores, a mensagem do WhatsApp omite o total e o cliente pede a confirmação da loja.

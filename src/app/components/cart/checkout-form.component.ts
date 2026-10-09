@@ -176,11 +176,15 @@ export class CheckoutFormComponent implements OnDestroy {
     if (this.checkout.zoneLoading) {
       this.waiting = true;
       this.checkout.setBusy(true);
-      this.checkout.zoneSettled(ZONE_WAIT_MS).subscribe(() => {
-        this.waiting = false;
-        this.checkout.setBusy(false);
-        this.send();
-      });
+      // Sair da página cancela a espera: o WhatsApp não pode abrir sozinho depois.
+      this.checkout
+        .zoneSettled(ZONE_WAIT_MS)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => {
+          this.waiting = false;
+          this.checkout.setBusy(false);
+          this.send();
+        });
       return;
     }
     this.send();

@@ -78,8 +78,10 @@ describe('CartPageComponent / checkout', () => {
       const notice = el.querySelector('#delivery-fee-notice');
       expect(notice).toBeTruthy();
       expect(notice!.textContent).toContain(checkout.deliveryFeeNotice);
-      // Sem preços cadastrados: nunca aparece "R$" em lugar nenhum da tela.
-      expect(el.textContent).not.toContain('R$');
+      // Os valores do cardápio são só informativos (seletor de bebidas); fora dele nunca aparece "R$" na tela.
+      const withoutDrinkPrices = el.cloneNode(true) as HTMLElement;
+      withoutDrinkPrices.querySelectorAll('app-drink-picker').forEach((n) => n.remove());
+      expect(withoutDrinkPrices.textContent).not.toContain('R$');
       expect(el.textContent).toContain('Valor confirmado pelo WhatsApp');
     });
 

@@ -11,6 +11,7 @@ import { CheckoutDraftService } from '../services/checkout-draft.service';
 import { CheckoutValidationService } from '../services/checkout-validation.service';
 import { DeliveryZone, DeliveryZoneService } from '../services/delivery-zone.service';
 import { FormatService } from '../services/format.service';
+import { LastOrderService } from '../services/last-order.service';
 import { StoreHoursService, closedNotice } from '../services/store-hours.service';
 import { DELIVERY_FEE_NOTICE, WhatsappMessageService } from '../services/whatsapp-message.service';
 
@@ -44,7 +45,8 @@ export class CheckoutFacadeService {
     private format: FormatService,
     private deliveryZone: DeliveryZoneService,
     private storeHours: StoreHoursService,
-    private order: OrderFacadeService
+    private order: OrderFacadeService,
+    private lastOrder: LastOrderService
   ) {
     this.draft$ = this.draftStore.draft$;
     // Recalcula também quando o formulário muda: a zona só vale para o endereço para o qual foi calculada.
@@ -159,6 +161,8 @@ export class CheckoutFacadeService {
     // "Grátis" só com CEP, e só se a zona foi calculada para o CEP e para o endereço que estão no formulário agora.
     const freeDelivery = this.effectiveZone(this.zoneState.value, draft).status === 'free';
     const message = this.whatsapp.buildMessage(this.cart.snapshot, draft, { freeDelivery });
+    // Os itens do pedido que está saindo ficam guardados para "Repetir o último pedido" (sem dados pessoais).
+    this.lastOrder.save(this.cart.snapshot);
     return { ok: true, url: this.whatsapp.linkFromMessage(message), message };
   }
 

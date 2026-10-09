@@ -1,4 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { NEVER } from 'rxjs';
+import { ClockService } from '../src/app/services/clock.service';
+import { STORE_STATUS_TICK } from '../src/app/services/store-hours.service';
 import { CartService } from '../src/app/services/cart.service';
 import { CheckoutDraftService } from '../src/app/services/checkout-draft.service';
 import { PersistenceService } from '../src/app/services/persistence.service';
@@ -59,7 +62,14 @@ describe('Dados esquecidos expiram ao abrir o site', () => {
   it('carrinho com mais de 3 dias volta vazio; com 2 dias continua', () => {
     seed('cart', { pizzas: [], drinks: [{ id: 'b', drinkId: 'coca-2l', quantity: 1 }] }, 73);
     expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(0);
+    // O reset descarta os provedores de _setup.spec.ts: sem refazê-los o relógio volta a ser o real e o teste vira bomba-relógio.
     TestBed.resetTestingModule();
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: ClockService, useValue: fakeClock },
+        { provide: STORE_STATUS_TICK, useValue: NEVER },
+      ],
+    });
     seed('cart', { pizzas: [], drinks: [{ id: 'b', drinkId: 'coca-2l', quantity: 1 }] }, 48);
     expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(1);
   });

@@ -33,6 +33,20 @@ describe('CheckoutValidationService', () => {
     expect(service.isValid(service.validate(CART, VALID))).toBeTrue();
   });
 
+  it('rua, bairro e cidade só com emoji ou marcadores do WhatsApp contam como vazios (a mensagem os apagaria)', () => {
+    for (const junk of ['😀', '***', '_~`', ' * ']) {
+      const errors = service.validate(CART, { ...VALID, street: junk, neighborhood: junk, city: junk });
+      expect(errors.street).withContext(junk).toBeTruthy();
+      expect(errors.neighborhood).withContext(junk).toBeTruthy();
+      expect(errors.city).withContext(junk).toBeTruthy();
+    }
+  });
+
+  it('endereço com acento e letras normais continua válido', () => {
+    const errors = service.validate(CART, { ...VALID, street: 'Rua São José dos Pinhais', neighborhood: 'São Braz', city: 'Curitiba' });
+    expect(service.isValid(errors)).toBeTrue();
+  });
+
   it('exige o endereço completo e os dados do cliente', () => {
     const errors = service.validate(CART, EMPTY_CHECKOUT);
     ['name', 'phone', 'cep', 'street', 'number', 'neighborhood', 'city', 'state', 'payment'].forEach((field) =>

@@ -26,6 +26,25 @@ describe('ClockService: relógio do aparelho errado', () => {
     expect(Math.abs(clock.now() - (Date.now() - 3 * HOUR))).toBeLessThan(2500);
   });
 
+  it('resposta vinda de cache (cabeçalho Age): a hora do servidor é Date + Age, não só Date', async () => {
+    // Date carimbado há 3 h, mas a resposta ficou 3 h no cache: a hora real do servidor é a de agora.
+    spyOn(window, 'fetch').and.callFake(
+      async () => new Response(null, { headers: { date: new Date(Date.now() - 3 * HOUR).toUTCString(), age: String(3 * 3600) } })
+    );
+    const clock = new ClockService();
+    await clock.sync();
+    expect(clock.skew).toBe(0);
+  });
+
+  it('cabeçalho Age inválido é ignorado', async () => {
+    spyOn(window, 'fetch').and.callFake(
+      async () => new Response(null, { headers: { date: new Date(Date.now() + 2 * HOUR).toUTCString(), age: 'abc' } })
+    );
+    const clock = new ClockService();
+    await clock.sync();
+    expect(Math.abs(clock.now() - (Date.now() + 2 * HOUR))).toBeLessThan(2500);
+  });
+
   it('diferença pequena (rede, arredondamento do cabeçalho) é ignorada', async () => {
     spyOn(window, 'fetch').and.callFake(async () => responseWithDate(Date.now() + 5_000));
     const clock = new ClockService();

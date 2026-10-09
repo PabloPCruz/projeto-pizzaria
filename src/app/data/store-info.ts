@@ -14,6 +14,8 @@ export const STORE_INFO = {
     closedDates: [] as string[],
   },
   promoNotice: 'Promoção todos os dias',
+  /** Mensagem pronta do botão "Gostaria de receber nossas promoções?" (abre uma conversa com a loja; a loja inclui o cliente na lista). */
+  promoSignupMessage: 'Olá! Gostaria de entrar na lista de transmissão para receber as promoções da pizzaria.',
   /**
    * Entrega grátis para endereços a até `radiusKm` da loja, em linha reta (360°).
    * `origin` é o ponto da loja (Rua Luiz Braille, 135 — CEP 82015-290, Curitiba/PR),

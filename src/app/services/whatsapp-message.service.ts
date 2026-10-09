@@ -103,8 +103,13 @@ export class WhatsappMessageService {
     return this.linkFromMessage(this.buildMessage(cart, draft, options));
   }
 
+  /** Conversa com o WhatsApp oficial da loja, sem mensagem pronta. */
+  get chatUrl(): string {
+    return `https://wa.me/${STORE_INFO.whatsappNumber}`;
+  }
+
   linkFromMessage(message: string): string {
-    return `https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`;
+    return `${this.chatUrl}?text=${encodeURIComponent(message)}`;
   }
 
   private pizzaLines(index: number, pizza: CartState['pizzas'][number]): string[] {

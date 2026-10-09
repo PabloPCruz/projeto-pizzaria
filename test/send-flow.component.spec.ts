@@ -127,6 +127,22 @@ describe('Fluxo de envio do pedido', () => {
     expect(open).toHaveBeenCalledTimes(1);
   });
 
+  it('se o cliente sai da página enquanto espera a consulta de entrega, o WhatsApp não abre sozinho depois', async () => {
+    fillValidForm();
+    checkout.setCep('82015-290');
+    checkout.lookupCep().subscribe();
+    http.expectOne(viacep('82015290')).flush(VIACEP_OK);
+    const pending = http.expectOne(awesome('82015290'));
+
+    const open = spyOn(window, 'open').and.returnValue({} as Window);
+    form().submit();
+    fixture.destroy();
+
+    pending.flush(north(1));
+    await flush();
+    expect(open).not.toHaveBeenCalled();
+  });
+
   it('falha ao montar a mensagem mostra erro em vez de um botão que não faz nada', () => {
     fillValidForm();
     spyOn(checkout, 'submit').and.throwError('boom');

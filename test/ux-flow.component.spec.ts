@@ -53,7 +53,8 @@ describe('Carrinho: clareza e acessibilidade', () => {
     const bar = el.querySelector<HTMLButtonElement>('.sticky.lg\\:hidden button')!;
     expect(bar.textContent).toContain('Finalizar pedido');
     expect(bar.textContent).toContain('1 item');
-    expect(bar.getAttribute('aria-label')).toBe('Finalizar o pedido (1 item)');
+    // Sem aria-label próprio: o nome acessível é o texto visível (WCAG 2.5.3, comando de voz).
+    expect(bar.hasAttribute('aria-label')).toBeFalse();
 
     const open = spyOn(window, 'open');
     bar.click();

@@ -56,6 +56,14 @@ describe('Finalizar com a loja fechada: nunca fica mudo', () => {
     localStorage.clear();
   });
 
+  it('botão fixo do celular: o nome acessível começa pelo texto visível (comando de voz) e inclui a quantidade', async () => {
+    await create(OPEN_INSTANT);
+    const button = stickyButton();
+    expect(button.hasAttribute('aria-label')).toBeFalse();
+    const name = (button.textContent ?? '').replace(/\s+/g, ' ').trim();
+    expect(name).toBe('Finalizar pedido 2 itens');
+  });
+
   it('domingo, dados completos, botão fixo: mostra "Seu pedido não foi enviado" com o motivo e a volta', async () => {
     await create(SUNDAY_INSTANT);
     fillValidForm();
@@ -234,6 +242,7 @@ describe('Finalizar: outros cenários que podem dar errado', () => {
     expect(stickyButton().textContent).toContain('Verificando entrega…');
     expect(summaryButton().textContent).toContain('Verificando entrega…');
     expect(summaryButton().getAttribute('aria-busy')).toBe('true');
+    expect(stickyButton().getAttribute('aria-busy')).toBe('true');
     expect(open).not.toHaveBeenCalled();
 
     pending.flush({ lat: '-25.4112', lng: '-49.3374' });

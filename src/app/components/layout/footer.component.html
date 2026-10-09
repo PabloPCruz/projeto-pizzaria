@@ -61,6 +61,29 @@
     </div>
   </div>
   <div class="border-t border-ink-500/50 py-5 text-center text-xs text-cream-dim">
-    © {{ year }} {{ store.name }} · Pizzaria italiana · Curitiba/PR
+    <p>© {{ year }} {{ store.name }} · Pizzaria italiana · Curitiba/PR</p>
+
+    <!-- Privacidade: carrinho, formulário e último pedido ficam só neste aparelho; o cliente pode apagar. -->
+    <div class="container-page mt-1 flex flex-col items-center">
+      @if (!confirmingErase) {
+        <button
+          id="erase-trigger"
+          type="button"
+          class="inline-flex min-h-[44px] items-center px-2 text-cream-muted underline underline-offset-2 hover:text-gold"
+          (click)="askErase()"
+        >Apagar meus dados deste aparelho</button>
+      } @else {
+        <div role="group" aria-labelledby="erase-title" class="mt-2 max-w-md rounded-xl border border-ink-400 bg-ink-800 p-4 text-cream-muted">
+          <p id="erase-title" class="text-sm leading-relaxed">
+            Isso apaga o carrinho, os dados do formulário e o último pedido guardados neste aparelho. A loja não recebe nada.
+          </p>
+          <div class="mt-3 flex justify-center gap-3">
+            <button id="erase-cancel" type="button" class="btn-ghost min-h-[44px] px-5 py-2" (click)="cancelErase()">Cancelar</button>
+            <button type="button" class="btn-danger min-h-[44px] px-5 py-2" (click)="erase()">Sim, apagar</button>
+          </div>
+        </div>
+      }
+      <p class="mt-1 text-sm text-ok" role="status" aria-live="polite">{{ erased ? 'Seus dados foram apagados deste aparelho.' : '' }}</p>
+    </div>
   </div>
 </footer>

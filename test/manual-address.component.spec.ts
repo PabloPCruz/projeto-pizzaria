@@ -94,7 +94,7 @@ describe('Checkout: endereço manual ("Não sei meu CEP")', () => {
 
   it('no modo manual a Rua ocupa a linha inteira', () => {
     turnOnManual();
-    expect(field('street')!.closest('app-text-field')!.classList).toContain('sm:col-span-6');
+    expect(field('street')!.closest('app-text-field')!.classList).toContain('col-span-6');
   });
 
   it('enviar vazio no modo manual pede rua, número, bairro, cidade e UF, mas não CEP nem complemento', async () => {

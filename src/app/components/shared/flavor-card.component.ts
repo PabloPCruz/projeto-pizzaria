@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MenuFacadeService } from '../../facade/menu.facade.service';
 import { PizzaFlavor } from '../../interfaces/pizza-menu.interface';
 
 const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
@@ -22,6 +23,9 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
         </div>
         <div class="min-w-0 py-1">
           <h3 class="text-lg font-semibold leading-snug">{{ flavor.name }}</h3>
+          @if (unavailable) {
+            <p class="mt-1 inline-block rounded-full border border-warn/50 bg-warn/10 px-2.5 py-0.5 text-xs font-medium text-warn">Indisponível hoje</p>
+          }
           <p class="mt-1 text-sm leading-relaxed text-cream-muted">
             {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
           </p>
@@ -50,6 +54,9 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
         </div>
         <div class="flex flex-1 flex-col gap-1.5 p-4 sm:gap-2 sm:p-5">
           <h3 class="text-xl font-semibold leading-snug">{{ flavor.name }}</h3>
+          @if (unavailable) {
+            <p class="inline-block self-start rounded-full border border-warn/50 bg-warn/10 px-2.5 py-0.5 text-xs font-medium text-warn">Indisponível hoje</p>
+          }
           <p class="text-sm leading-relaxed text-cream-muted">
             {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
           </p>
@@ -64,6 +71,13 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
 export class FlavorCardComponent {
   @Input({ required: true }) flavor!: PizzaFlavor;
   @Input() compact = false;
+
+  constructor(private menu: MenuFacadeService) {}
+
+  /** Esgotado hoje (data/availability.ts). */
+  get unavailable(): boolean {
+    return !this.menu.isAvailable(this.flavor.id);
+  }
 
   get categoryLabel(): string {
     return CATEGORY_LABEL[this.flavor.category];

@@ -305,7 +305,10 @@ describe('Cartão "taxa de entrega grátis"', () => {
 
   it('nunca aparece valor de entrega (só o texto "grátis" ou o aviso)', () => {
     informCep('82015-290', 1);
-    expect(el.textContent).not.toMatch(/R\$\s*\d/);
+    // Os valores do cardápio são só informativos (seletor de bebidas); fora dele nunca aparece valor em reais.
+    const withoutDrinkPrices = el.cloneNode(true) as HTMLElement;
+    withoutDrinkPrices.querySelectorAll('app-drink-picker').forEach((n) => n.remove());
+    expect(withoutDrinkPrices.textContent).not.toMatch(/R\$\s*\d/);
   });
 });
 
