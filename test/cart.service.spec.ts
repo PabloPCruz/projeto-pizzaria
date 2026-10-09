@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { TestBed } from '@angular/core/testing';
 import { CartService } from '../src/app/services/cart.service';
 
@@ -49,7 +50,7 @@ describe('CartService', () => {
     first.addPizza(PIZZA);
     first.addDrink('kuat-2l', 2);
 
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({});
     const reloaded = TestBed.inject(CartService);
 

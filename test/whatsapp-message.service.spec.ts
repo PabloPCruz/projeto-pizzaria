@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { TestBed } from '@angular/core/testing';
 import { PRICE_TABLE } from '../src/app/data/prices';
 import { STORE_INFO } from '../src/app/data/store-info';
@@ -123,7 +124,7 @@ describe('WhatsappMessageService', () => {
       for (const [cart, draft] of cenarios) {
         expect(hasAstralChars(service.buildMessage(cart, draft))).toBeFalse();
       }
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       TestBed.configureTestingModule({ providers: [{ provide: PRICE_TABLE, useValue: PRICES }] });
       const priced = TestBed.inject(WhatsappMessageService);
       expect(hasAstralChars(priced.buildMessage(TYPICAL_CART, TYPICAL_DRAFT))).toBeFalse();

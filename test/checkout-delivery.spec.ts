@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service';
@@ -178,7 +179,7 @@ describe('Entrega grátis (checkout)', () => {
 
   it('CEP completo salvo de uma visita anterior recalcula a zona ao abrir o checkout', () => {
     localStorage.setItem('disk-pizza:v2:checkout', JSON.stringify({ ...EMPTY_CHECKOUT, cep: '82015-290', city: 'Curitiba', street: 'Rua Luiz Braille' }));
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
     http = TestBed.inject(HttpTestingController);
     facade = TestBed.inject(CheckoutFacadeService);

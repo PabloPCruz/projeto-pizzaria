@@ -28,11 +28,8 @@ export class ClockService {
       const response = await fetch('/', { method: 'HEAD', cache: 'no-store' });
       const after = Date.now();
       const header = response.headers.get('date');
-      const stamped = header ? Date.parse(header) : NaN;
-      if (!Number.isFinite(stamped)) return;
-      // Resposta servida de cache: o Date é de quando ela foi gerada e o Age diz há quantos segundos ela espera.
-      const age = Number(response.headers.get('age'));
-      const server = stamped + (Number.isFinite(age) && age > 0 ? age * 1000 : 0);
+      const server = header ? Date.parse(header) : NaN;
+      if (!Number.isFinite(server)) return;
       // O servidor carimbou no meio do caminho: compara com o ponto médio da requisição.
       const skew = server - (before + after) / 2;
       this.skewMs = Math.abs(skew) >= MIN_SKEW_MS ? Math.round(skew) : 0;

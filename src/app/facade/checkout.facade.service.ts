@@ -3,7 +3,6 @@ import { BehaviorSubject, Observable, Subject, combineLatest, of, race, timer } 
 import { finalize, map, skip, switchMap, take, tap } from 'rxjs/operators';
 import { STORE_INFO } from '../data/store-info';
 import { CheckoutDraft, CheckoutErrors } from '../interfaces/cart.interface';
-import { StoreStatus } from '../interfaces/store-hours.interface';
 import { CartService } from '../services/cart.service';
 import { OrderFacadeService } from './order.facade.service';
 import { CepLookupResult, CepService } from '../services/cep.service';
@@ -12,14 +11,12 @@ import { CheckoutValidationService } from '../services/checkout-validation.servi
 import { DeliveryZone, DeliveryZoneService } from '../services/delivery-zone.service';
 import { FormatService } from '../services/format.service';
 import { LastOrderService } from '../services/last-order.service';
-import { StoreHoursService, closedNotice } from '../services/store-hours.service';
 import { DELIVERY_FEE_NOTICE, WhatsappMessageService } from '../services/whatsapp-message.service';
 
 export type CheckoutResult =
   /** `message` é o mesmo texto do link (para o botão de copiar). */
   | { ok: true; url: string; message: string }
-  /** `closed` presente = a loja está fechada agora; `errors` vem vazio. */
-  | { ok: false; errors: CheckoutErrors; closed?: StoreStatus };
+  | { ok: false; errors: CheckoutErrors };
 
 /** Checkout: formulário persistido, busca de CEP, validação e link do WhatsApp. */
 @Injectable({ providedIn: 'root' })
@@ -44,7 +41,6 @@ export class CheckoutFacadeService {
     private whatsapp: WhatsappMessageService,
     private format: FormatService,
     private deliveryZone: DeliveryZoneService,
-    private storeHours: StoreHoursService,
     private order: OrderFacadeService,
     private lastOrder: LastOrderService
   ) {
@@ -150,11 +146,11 @@ export class CheckoutFacadeService {
     return this.validation.validate(this.cart.snapshot, this.draftStore.snapshot);
   }
 
-  /** Valida e, estando tudo certo, devolve o link wa.me com a mensagem do pedido. Loja fechada: recusa antes de tudo. */
+  /**
+   * Valida e, estando tudo certo, devolve o link wa.me com a mensagem do pedido.
+   * O horário de funcionamento NÃO bloqueia o envio (decisão do dono: relógio errado não pode barrar pedido).
+   */
   submit(): CheckoutResult {
-    // Sempre recalculado no clique: cobre a virada de horário/dia com a página aberta.
-    const status = this.storeHours.snapshot();
-    if (!status.open) return { ok: false, errors: {}, closed: status };
     const errors = this.validate();
     if (!this.validation.isValid(errors)) return { ok: false, errors };
     const draft = this.draftStore.snapshot;
@@ -192,11 +188,6 @@ export class CheckoutFacadeService {
       ),
       timer(maxMs).pipe(map(() => undefined))
     ).pipe(take(1));
-  }
-
-  /** Texto mostrado quando o cliente tenta enviar com a loja fechada: deixa claro que NADA foi enviado e quando volta. */
-  blockedMessage(status: StoreStatus): string {
-    return `Seu pedido não foi enviado. ${closedNotice(status)}`;
   }
 
   /** CEPs (só dígitos) cuja consulta trouxe endereço sem rua. */

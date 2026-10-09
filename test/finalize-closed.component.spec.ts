@@ -13,7 +13,7 @@ const flush = () => new Promise<void>((resolve) => setTimeout(resolve));
 const MONDAY_MORNING = '2026-10-05T10:00:00-03:00';
 const TUESDAY_AFTER_CLOSE = '2026-10-06T23:30:00-03:00';
 
-describe('Finalizar com a loja fechada: nunca fica mudo', () => {
+describe('Finalizar fora do horário: o pedido nunca é barrado', () => {
   let fixture: ComponentFixture<CartPageComponent>;
   let el: HTMLElement;
   let checkout: CheckoutFacadeService;
@@ -22,6 +22,7 @@ describe('Finalizar com a loja fechada: nunca fica mudo', () => {
   const stickyButton = () => el.querySelector<HTMLButtonElement>('.sticky.lg\\:hidden button')!;
   const summaryButton = () => el.querySelector<HTMLButtonElement>('app-order-summary button')!;
   const alertBox = () => el.querySelector<HTMLElement>('#send-blocked-alert');
+  const stores = () => el.querySelectorAll('#store-closed-notice, #store-closed-top, #send-blocked-alert');
 
   function fillValidForm(): void {
     checkout.update({
@@ -64,128 +65,69 @@ describe('Finalizar com a loja fechada: nunca fica mudo', () => {
     expect(name).toBe('Finalizar pedido 2 itens');
   });
 
-  it('domingo, dados completos, botão fixo: mostra "Seu pedido não foi enviado" com o motivo e a volta', async () => {
+  const ANYTIME: [string, string][] = [
+    ['domingo (fechada pelo horário)', SUNDAY_INSTANT],
+    ['antes de abrir (segunda 10h)', MONDAY_MORNING],
+    ['depois de fechar (terça 23h30)', TUESDAY_AFTER_CLOSE],
+    ['madrugada de uma sexta (relógio do aparelho adiantado meses)', '2026-12-25T03:00:00-03:00'],
+  ];
+
+  for (const [label, instant] of ANYTIME) {
+    it(`${label}: o botão fixo envia o pedido de verdade`, async () => {
+      await create(instant);
+      fillValidForm();
+      const open = spyOn(window, 'open').and.returnValue({} as Window);
+      stickyButton().click();
+      await flush();
+      fixture.detectChanges();
+      expect(open).toHaveBeenCalledTimes(1);
+      expect(String(open.calls.mostRecent().args[0])).toContain('https://wa.me/5541997449380?text=');
+      expect(el.textContent).toContain('Falta só enviar no WhatsApp');
+      expect(alertBox()).toBeNull();
+    });
+  }
+
+  it('fora do horário o botão do resumo é o de sempre ("Finalizar no WhatsApp"), sem aviso de loja fechada', async () => {
     await create(SUNDAY_INSTANT);
-    fillValidForm();
-    const open = spyOn(window, 'open');
-
-    stickyButton().click();
-    fixture.detectChanges(); // renderiza o alerta antes do foco (no app real a detecção roda sozinha)
-    await flush();
-
-    expect(open).not.toHaveBeenCalled();
-    const box = alertBox()!;
-    expect(box).toBeTruthy();
-    expect(box.textContent).toContain('Seu pedido não foi enviado.');
-    expect(box.textContent).toContain('Hoje (domingo) a loja não abre.');
-    expect(box.textContent).toContain('Voltamos amanhã (segunda) às 18h.');
-    expect(document.activeElement).toBe(box);
-    expect(el.textContent).not.toContain('Falta só enviar no WhatsApp');
+    expect(summaryButton().textContent).toContain('Finalizar no WhatsApp');
+    expect(summaryButton().textContent).not.toContain('Loja fechada');
+    expect(summaryButton().getAttribute('aria-disabled')).toBeNull();
+    expect(summaryButton().disabled).toBeFalse();
+    expect(stores().length).toBe(0);
+    expect(el.textContent).not.toContain('Seu pedido não foi enviado');
   });
 
-  it('o pedido e os dados continuam intactos depois da tentativa barrada', async () => {
+  it('fora do horário o botão do resumo também envia', async () => {
     await create(SUNDAY_INSTANT);
     fillValidForm();
-    const cartBefore = JSON.stringify(TestBed.inject(CartService).snapshot);
-    const draftBefore = JSON.stringify(checkout.draft);
-    spyOn(window, 'open');
-    stickyButton().click();
-    await flush();
-    expect(JSON.stringify(TestBed.inject(CartService).snapshot)).toBe(cartBefore);
-    expect(JSON.stringify(checkout.draft)).toBe(draftBefore);
-  });
-
-  it('o botão do resumo (com cara de desabilitado) também explica em vez de não fazer nada', async () => {
-    await create(SUNDAY_INSTANT);
-    fillValidForm();
-    spyOn(window, 'open');
-    expect(summaryButton().getAttribute('aria-disabled')).toBe('true');
-
+    const open = spyOn(window, 'open').and.returnValue({} as Window);
     summaryButton().click();
     await flush();
     fixture.detectChanges();
-
-    expect(alertBox()?.textContent).toContain('Seu pedido não foi enviado.');
+    expect(open).toHaveBeenCalledTimes(1);
   });
 
-  it('loja fechada e formulário incompleto: o aviso de fechada vem primeiro (não adianta listar campos)', async () => {
+  it('formulário incompleto continua mostrando o que falta (e nada de "loja fechada")', async () => {
     await create(SUNDAY_INSTANT);
-    spyOn(window, 'open');
+    const open = spyOn(window, 'open');
     stickyButton().click();
     await flush();
     fixture.detectChanges();
-    expect(alertBox()?.textContent).toContain('Seu pedido não foi enviado.');
-    expect(el.querySelector('#checkout-errors')).toBeNull();
-  });
-
-  it('antes de abrir (hoje abre às 18h): a mensagem diz que abre hoje', async () => {
-    await create(MONDAY_MORNING);
-    fillValidForm();
-    spyOn(window, 'open');
-    stickyButton().click();
-    await flush();
-    fixture.detectChanges();
-    const text = alertBox()?.textContent ?? '';
-    expect(text).toContain('Seu pedido não foi enviado. A loja ainda não abriu. Abrimos hoje às 18h.');
-    expect(text).not.toContain('não abre');
-  });
-
-  it('depois de fechar (terça 23h30): diz que voltamos amanhã', async () => {
-    await create(TUESDAY_AFTER_CLOSE);
-    fillValidForm();
-    spyOn(window, 'open');
-    stickyButton().click();
-    await flush();
-    fixture.detectChanges();
-    expect(alertBox()?.textContent).toContain('Já encerramos por hoje. Voltamos amanhã (quarta) às 18h.');
-  });
-
-  it('quando a loja abre, o alerta some, o botão volta a enviar e o mesmo toque abre o WhatsApp', async () => {
-    await create(MONDAY_MORNING);
-    fillValidForm();
-    const open = spyOn(window, 'open').and.returnValue({} as Window);
-    stickyButton().click();
-    await flush();
-    fixture.detectChanges();
-    expect(alertBox()).toBeTruthy();
     expect(open).not.toHaveBeenCalled();
-
-    fakeClock.set('2026-10-05T18:00:00-03:00');
-    tick$.next();
-    fixture.detectChanges();
-    expect(alertBox()).toBeNull();
-    expect(summaryButton().textContent).toContain('Finalizar no WhatsApp');
-
-    stickyButton().click();
-    await flush();
-    fixture.detectChanges();
-    expect(open).toHaveBeenCalledTimes(1);
-    expect(el.textContent).toContain('Falta só enviar no WhatsApp');
+    expect(el.querySelector('#checkout-errors')?.textContent).toContain('Confira estes pontos antes de enviar');
+    expect(stores().length).toBe(0);
   });
 
-  it('loja aberta e dados completos: o botão fixo envia de verdade, sem alerta', async () => {
-    await create(OPEN_INSTANT);
-    fillValidForm();
-    const open = spyOn(window, 'open').and.returnValue({} as Window);
-    stickyButton().click();
-    await flush();
-    fixture.detectChanges();
-    expect(open).toHaveBeenCalledTimes(1);
-    expect(String(open.calls.mostRecent().args[0])).toContain('https://wa.me/5541997449380?text=');
-    expect(alertBox()).toBeNull();
-  });
-
-  it('a loja fecha com a página aberta (abriu às 22h50, fechou às 23h): o clique seguinte é barrado com aviso', async () => {
+  it('a loja fecha com a página aberta (abriu às 22h50, fechou às 23h): o pedido ainda sai', async () => {
     await create('2026-10-06T22:50:00-03:00');
     fillValidForm();
-    const open = spyOn(window, 'open');
-    expect(stickyButton()).toBeTruthy();
-    fakeClock.set('2026-10-06T23:00:00-03:00'); // a tela ainda não reavaliou (sem tick), mas o envio recalcula
+    const open = spyOn(window, 'open').and.returnValue({} as Window);
+    fakeClock.set('2026-10-06T23:00:00-03:00');
     stickyButton().click();
     await flush();
     fixture.detectChanges();
-    expect(open).not.toHaveBeenCalled();
-    expect(alertBox()?.textContent).toContain('Seu pedido não foi enviado.');
+    expect(open).toHaveBeenCalledTimes(1);
+    expect(alertBox()).toBeNull();
   });
 });
 

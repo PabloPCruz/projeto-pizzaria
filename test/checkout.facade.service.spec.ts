@@ -150,35 +150,36 @@ describe('loja fechada', () => {
       facade.setPhone('41999998888');
     }
 
-    it('recusa o envio mesmo com tudo preenchido e não gera link', () => {
+    it('domingo (fechada pelo horário): o envio NÃO é recusado e gera o link', () => {
       fillValidOrder();
+      fakeClock.set(SUNDAY_INSTANT);
+      const result = facade.submit();
+      expect(result.ok).toBeTrue();
+      if (result.ok) expect(result.url).toContain('https://wa.me/5541997449380?text=');
+    });
+
+    it('em qualquer hora o envio vai: 22h59, 23h00, madrugada e relógio muito errado', () => {
+      fillValidOrder();
+      for (const instant of [
+        '2026-10-05T22:59:59-03:00',
+        '2026-10-05T23:00:00-03:00',
+        '2026-10-06T03:00:00-03:00',
+        '2027-03-14T12:00:00-03:00',
+        '2020-01-01T00:00:00-03:00',
+      ]) {
+        fakeClock.set(instant);
+        expect(facade.submit().ok).withContext(instant).toBeTrue();
+      }
+    });
+
+    it('formulário incompleto continua sendo recusado, mas só pelos campos (sem motivo de horário)', () => {
       fakeClock.set(SUNDAY_INSTANT);
       const result = facade.submit();
       expect(result.ok).toBeFalse();
       if (!result.ok) {
-        expect(result.closed?.open).toBeFalse();
-        expect(result.closed?.reason).toBe('closed-day');
-        expect(result.errors).toEqual({});
+        expect(Object.keys(result.errors).length).toBeGreaterThan(0);
+        expect('closed' in result).toBeFalse();
       }
-    });
-
-    it('o horário é reavaliado no clique: aberto às 22h59, fechado às 23h00', () => {
-      fillValidOrder();
-      fakeClock.set('2026-10-05T22:59:59-03:00');
-      expect(facade.submit().ok).toBeTrue();
-      fakeClock.set('2026-10-05T23:00:00-03:00');
-      expect(facade.submit().ok).toBeFalse();
-    });
-
-    it('carrinho e formulário continuam intactos depois da recusa', () => {
-      fillValidOrder();
-      const draftBefore = JSON.stringify(facade.draft);
-      const cart = TestBed.inject(CartService);
-      const cartBefore = JSON.stringify(cart.snapshot);
-      fakeClock.set(SUNDAY_INSTANT);
-      facade.submit();
-      expect(JSON.stringify(facade.draft)).toBe(draftBefore);
-      expect(JSON.stringify(cart.snapshot)).toBe(cartBefore);
     });
 
     it('aberto: o link é o de sempre', () => {

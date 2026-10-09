@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { TestBed } from '@angular/core/testing';
 import { PizzaBuilderService } from '../src/app/services/pizza-builder.service';
 
@@ -58,7 +59,7 @@ describe('PizzaBuilderService', () => {
     first.setCrust('catupiry');
     first.setNotes('bem passada');
 
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({});
     const reloaded = TestBed.inject(PizzaBuilderService);
 
