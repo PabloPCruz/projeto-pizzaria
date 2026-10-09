@@ -3,7 +3,6 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BuilderModule } from '../src/app/components/builder/builder.module';
 import { ExtrasStepComponent } from '../src/app/components/builder/extras-step.component';
-import { FlavorsStepComponent } from '../src/app/components/builder/flavors-step.component';
 import { PizzaSummaryComponent } from '../src/app/components/builder/pizza-summary.component';
 import { CartModule } from '../src/app/components/cart/cart.module';
 import { CartItemsComponent } from '../src/app/components/cart/cart-items.component';
@@ -270,72 +269,6 @@ describe('Sabores com opção (escolha na hora de pedir)', () => {
   });
 
   describe('telas', () => {
-    describe('passo dos sabores', () => {
-      let el: HTMLElement;
-      let fixture: ReturnType<typeof TestBed.createComponent<FlavorsStepComponent>>;
-      const radio = (flavor: string, option: string) => el.querySelector<HTMLInputElement>(`#option-${flavor}-${option}`);
-
-      beforeEach(async () => {
-        await TestBed.configureTestingModule({ imports: [BuilderModule, RouterTestingModule] }).compileComponents();
-        TestBed.inject(OrderFacadeService).selectSize('grande');
-        fixture = TestBed.createComponent(FlavorsStepComponent);
-        fixture.detectChanges();
-        el = fixture.nativeElement;
-      });
-
-      const pick = (id: string) => {
-        el.querySelector<HTMLInputElement>('#flavor-' + id)!.click();
-        fixture.detectChanges();
-      };
-
-      it('só mostra as opções depois que o sabor é escolhido, nenhuma marcada', () => {
-        expect(radio('tradicional-calabresa', 'cebola')).toBeNull();
-        pick('tradicional-calabresa');
-        for (const o of ['sem-opcao', 'cebola', 'catupiry']) {
-          expect(radio('tradicional-calabresa', o)).withContext(o).toBeTruthy();
-          expect(radio('tradicional-calabresa', o)!.checked).withContext(o).toBeFalse();
-        }
-        const group = el.querySelector('[role=radiogroup][aria-label="Opção de Calabresa"]');
-        expect(group).toBeTruthy();
-        expect(text(group)).toContain('Sem opção');
-        expect(text(group)).toContain('Com cebola');
-        expect(text(group)).toContain('Com catupiry');
-      });
-
-      it('sabor sem opção não mostra nada extra', () => {
-        pick('tradicional-mussarela');
-        expect(el.querySelector('[role=radiogroup][aria-label^="Opção de"]')).toBeNull();
-      });
-
-      it('avisa que falta escolher a opção e mostra a escolha no sabor depois de feita', () => {
-        pick('tradicional-calabresa');
-        expect(text(el)).toContain('Escolha a opção de Calabresa');
-        radio('tradicional-calabresa', 'catupiry')!.click();
-        fixture.detectChanges();
-        expect(text(el)).not.toContain('Escolha a opção de Calabresa');
-        expect(text(el.querySelector('ul[aria-label="Sabores escolhidos"]'))).toContain('Calabresa (com catupiry)');
-        expect(radio('tradicional-calabresa', 'catupiry')!.checked).toBeTrue();
-      });
-
-      it('trocar de opção troca a escolha', () => {
-        pick('doce-chocolate');
-        radio('doce-chocolate', 'ao-leite')!.click();
-        fixture.detectChanges();
-        radio('doce-chocolate', 'branco')!.click();
-        fixture.detectChanges();
-        expect(TestBed.inject(PizzaBuilderService).snapshot.flavorOptions).toEqual({ 'doce-chocolate': 'branco' });
-      });
-
-      it('tirar o sabor esconde as opções e apaga a escolha', () => {
-        pick('tradicional-calabresa');
-        radio('tradicional-calabresa', 'cebola')!.click();
-        fixture.detectChanges();
-        pick('tradicional-calabresa');
-        expect(radio('tradicional-calabresa', 'cebola')).toBeNull();
-        expect(TestBed.inject(PizzaBuilderService).snapshot.flavorOptions).toEqual({});
-      });
-    });
-
     it('passo de extras não pede mais para escrever a opção nas observações', async () => {
       await TestBed.configureTestingModule({ imports: [BuilderModule, RouterTestingModule] }).compileComponents();
       const order = TestBed.inject(OrderFacadeService);

@@ -1,7 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { take } from 'rxjs/operators';
 import { MenuFacadeService } from '../../facade/menu.facade.service';
 import { BuilderView, OrderFacadeService } from '../../facade/order.facade.service';
 import { FlavorCategory, PizzaFlavor } from '../../interfaces/pizza-menu.interface';
+import { FlavorOptionDialogComponent } from './flavor-option-dialog.component';
 
 type CategoryFilter = FlavorCategory | 'todos';
 
@@ -24,6 +26,9 @@ export class FlavorsStepComponent implements OnDestroy {
   /** Aviso dinâmico lido por leitores de tela (limite atingido, sabor adicionado/removido). Some sozinho. */
   live = '';
   private liveTimer?: ReturnType<typeof setTimeout>;
+
+  /** Pop-up para escolher a opção dos sabores que têm (calabresa com cebola ou catupiry, chocolate ao leite ou branco...). */
+  @ViewChild(FlavorOptionDialogComponent) optionDialog?: FlavorOptionDialogComponent;
 
   constructor(
     private menu: MenuFacadeService,
@@ -88,12 +93,19 @@ export class FlavorsStepComponent implements OnDestroy {
     return this.menu.optionsText(flavor);
   }
 
-  chosenOption(view: BuilderView, flavor: PizzaFlavor): string | undefined {
-    return view.draft.flavorOptions[flavor.id];
+  /** A opção escolhida em minúsculas ("com cebola"), ou vazio se ainda não escolheu. */
+  chosenText(view: BuilderView, flavor: PizzaFlavor): string {
+    const id = view.draft.flavorOptions[flavor.id];
+    return flavor.options?.find((o) => o.id === id)?.label.toLowerCase() ?? '';
   }
 
-  chooseOption(flavor: PizzaFlavor, optionId: string): void {
-    this.order.selectFlavorOption(flavor.id, optionId);
+  /** O sabor tem opção para escolher. */
+  hasOptions(flavor: PizzaFlavor | undefined): boolean {
+    return !!flavor?.options?.length;
+  }
+
+  idHasOptions(id: string): boolean {
+    return this.hasOptions(this.menu.getFlavor(id));
   }
 
   /** Enquanto algum sabor escolhido ainda não teve a opção definida, diz qual (é o mesmo motivo que bloqueia o "Avançar"). */
@@ -114,21 +126,41 @@ export class FlavorsStepComponent implements OnDestroy {
       wasSelected
       ? `${flavor.name} removido. ${count} de ${view.maxFlavors} sabores.`
       : count >= view.maxFlavors
-        ? `${flavor.name} adicionado.${this.optionReminder(flavor)} Limite de ${view.maxFlavors} ${view.maxFlavors === 1 ? 'sabor' : 'sabores'} atingido: os demais sabores foram desabilitados.`
-        : `${flavor.name} adicionado.${this.optionReminder(flavor)} ${count} de ${view.maxFlavors} sabores.`
+        ? `${flavor.name} adicionado. Limite de ${view.maxFlavors} ${view.maxFlavors === 1 ? 'sabor' : 'sabores'} atingido: os demais sabores foram desabilitados.`
+        : `${flavor.name} adicionado. ${count} de ${view.maxFlavors} sabores.`
     );
-  }
-
-  /** Sabor com opção: lembra de escolher (a escolha aparece logo abaixo do sabor) e leva o foco para ela. */
-  private optionReminder(flavor: PizzaFlavor): string {
-    if (!flavor.options?.length) return '';
-    setTimeout(() => document.getElementById(`option-${flavor.id}-${flavor.options![0].id}`)?.focus());
-    return ' Escolha a opção logo abaixo.';
+    // Sabor com opção: abre o pop-up para escolher já (a opção é obrigatória).
+    if (!wasSelected && this.hasOptions(flavor)) this.optionDialog?.open(flavor);
   }
 
   remove(view: BuilderView, id: string): void {
     const flavor = this.menu.getFlavor(id);
     if (flavor) this.toggle(view, flavor);
+  }
+
+  /** Lápis ao lado do sabor: reabre o pop-up com a opção atual marcada. */
+  editOption(view: BuilderView, id: string): void {
+    const flavor = this.menu.getFlavor(id);
+    if (flavor && this.hasOptions(flavor)) this.optionDialog?.open(flavor, view.draft.flavorOptions[id]);
+  }
+
+  /** Botão "Escolher" do aviso: abre o pop-up do primeiro sabor que ainda está sem opção. */
+  choosePending(view: BuilderView): void {
+    const id = view.draft.flavorIds.find((fid) => this.hasOptions(this.menu.getFlavor(fid)) && !view.draft.flavorOptions[fid]);
+    if (id) this.editOption(view, id);
+  }
+
+  onOptionChosen(event: { flavorId: string; optionId: string }): void {
+    this.order.selectFlavorOption(event.flavorId, event.optionId);
+  }
+
+  /** Fechou o pop-up sem escolher: sabor que ainda não tem opção sai da pizza (a opção é obrigatória). */
+  onOptionDismissed(flavorId: string): void {
+    this.view$.pipe(take(1)).subscribe((view) => {
+      if (!view.draft.flavorIds.includes(flavorId) || view.draft.flavorOptions[flavorId]) return;
+      this.order.toggleFlavor(flavorId);
+      this.say(`${this.flavorName(flavorId)} não foi adicionado: escolha uma opção para incluir o sabor.`);
+    });
   }
 
   private compute(): readonly PizzaFlavor[] {
