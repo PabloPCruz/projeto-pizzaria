@@ -2,7 +2,6 @@ import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { EMPTY, Subject } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
 import { CheckoutFacadeService, CheckoutResult } from '../../facade/checkout.facade.service';
-import { StoreFacadeService } from '../../facade/store.facade.service';
 import { CheckoutDraft, CheckoutErrors, CheckoutField, PaymentMethod } from '../../interfaces/cart.interface';
 import { CepLookupResult } from '../../services/cep.service';
 
@@ -80,8 +79,6 @@ export class CheckoutFormComponent implements OnDestroy {
   cepState: CepState = 'idle';
   /** Falha ao montar o link (não deve acontecer; evita um botão que "não faz nada"). */
   sendError = '';
-  /** Tentou enviar com a loja fechada: "Seu pedido não foi enviado..." (some quando a loja abre ou o envio funciona). */
-  blockedMessage = '';
 
   @Output() sent = new EventEmitter<OrderSent>();
 
@@ -92,10 +89,7 @@ export class CheckoutFormComponent implements OnDestroy {
   private readonly touched = new Set<CheckoutField>();
   private waiting = false;
 
-  constructor(
-    readonly checkout: CheckoutFacadeService,
-    private store: StoreFacadeService
-  ) {
+  constructor(readonly checkout: CheckoutFacadeService) {
     // switchMap: uma busca nova (ou o CEP ser editado) cancela a anterior.
     this.lookups
       .pipe(
@@ -103,11 +97,6 @@ export class CheckoutFormComponent implements OnDestroy {
         takeUntil(this.destroy$)
       )
       .subscribe((result) => this.onLookupResult(result));
-
-    // Se a loja abrir enquanto o aviso está na tela, ele some (o cliente já pode enviar).
-    this.store.view$.pipe(takeUntil(this.destroy$)).subscribe((view) => {
-      if (view.open) this.blockedMessage = '';
-    });
   }
 
   update(patch: Partial<CheckoutDraft>): void {
@@ -201,20 +190,11 @@ export class CheckoutFormComponent implements OnDestroy {
       return;
     }
     if (!result.ok) {
-      if (result.closed) {
-        // Loja fechada: nada foi enviado. Diz isso na cara do cliente (alerta no topo do formulário) e leva o foco até ele.
-        this.errors = {};
-        this.blockedMessage = this.checkout.blockedMessage(result.closed);
-        setTimeout(() => this.showAlert('send-blocked-alert'));
-        return;
-      }
-      this.blockedMessage = '';
       this.errors = result.errors;
       setTimeout(() => this.focusFirstInvalid());
       return;
     }
     this.errors = {};
-    this.blockedMessage = '';
     if (isInAppBrowser()) {
       this.sent.emit({ url: result.url, blocked: true, inApp: true, message: result.message, ...this.linkNotes(result.url) });
       return;

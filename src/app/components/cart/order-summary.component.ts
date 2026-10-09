@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CartView } from '../../facade/cart.facade.service';
 import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
-import { StoreFacadeService } from '../../facade/store.facade.service';
 
 /** Resumo do pedido: total dos itens (só se houver preço), aviso da taxa de entrega e botão de envio. */
 @Component({
@@ -36,33 +35,22 @@ import { StoreFacadeService } from '../../facade/store.facade.service';
         </div>
       }
 
-      @if (store$ | async; as store) {
-        @if (store.open) {
-          <button
-            type="submit"
-            form="checkout-form"
-            class="btn-primary mt-5 w-full whitespace-nowrap px-4 py-4 text-base"
-            aria-describedby="delivery-fee-notice"
-            [attr.aria-busy]="(busy$ | async) ? 'true' : null"
-          >
-            @if (busy$ | async) {
-              <lucide-icon name="loader-circle" [size]="20" class="animate-spin"></lucide-icon>
-              Verificando entrega…
-            } @else {
-              <lucide-icon name="send" [size]="20"></lucide-icon>
-              Finalizar no WhatsApp
-            }
-          </button>
-          <p class="mt-3 text-center text-xs leading-relaxed text-cream-muted">Você confirma o envio dentro do WhatsApp. Nada é cobrado agora.</p>
+      <button
+        type="submit"
+        form="checkout-form"
+        class="btn-primary mt-5 w-full whitespace-nowrap px-4 py-4 text-base"
+        aria-describedby="delivery-fee-notice"
+        [attr.aria-busy]="(busy$ | async) ? 'true' : null"
+      >
+        @if (busy$ | async) {
+          <lucide-icon name="loader-circle" [size]="20" class="animate-spin"></lucide-icon>
+          Verificando entrega…
         } @else {
-          <app-store-closed-notice class="mt-5" [message]="store.notice"></app-store-closed-notice>
-          <!-- Não é "disabled": tocar nele explica por que o pedido não foi enviado (alerta no formulário). -->
-          <button type="submit" form="checkout-form" aria-disabled="true" class="btn mt-3 w-full whitespace-nowrap px-4 py-4 text-base" aria-describedby="store-closed-notice">
-            <lucide-icon name="calendar-x" [size]="20"></lucide-icon>
-            Loja fechada agora
-          </button>
+          <lucide-icon name="send" [size]="20"></lucide-icon>
+          Finalizar no WhatsApp
         }
-      }
+      </button>
+      <p class="mt-3 text-center text-xs leading-relaxed text-cream-muted">Você confirma o envio dentro do WhatsApp. Nada é cobrado agora.</p>
     </div>
   `,
 })
@@ -71,11 +59,7 @@ export class OrderSummaryComponent {
   readonly notice = this.checkout.deliveryFeeNotice;
   readonly radiusKm = this.checkout.freeDeliveryRadiusKm;
   readonly zone$ = this.checkout.zone$;
-  readonly store$ = this.storeFacade.view$;
   readonly busy$ = this.checkout.busy$;
 
-  constructor(
-    private checkout: CheckoutFacadeService,
-    private storeFacade: StoreFacadeService
-  ) {}
+  constructor(private checkout: CheckoutFacadeService) {}
 }

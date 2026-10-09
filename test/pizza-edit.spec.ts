@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { TestBed } from '@angular/core/testing';
 import { OrderFacadeService } from '../src/app/facade/order.facade.service';
 import { CartService } from '../src/app/services/cart.service';
@@ -48,7 +49,7 @@ describe('Editar pizza do carrinho', () => {
       const cart = TestBed.inject(CartService);
       cart.addPizza({ size: 'grande', flavorIds: [A], crustId: null, notes: '', quantity: 1 });
       cart.replacePizza(cart.snapshot.pizzas[0].id, { size: 'grande', flavorIds: [B], crustId: null, notes: '', quantity: 999 });
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       TestBed.configureTestingModule({});
       const reloaded = TestBed.inject(CartService).snapshot.pizzas[0];
       expect(reloaded.flavorIds).toEqual([B]);
@@ -86,7 +87,7 @@ describe('Editar pizza do carrinho', () => {
     it('a edição sobrevive a recarregar a página', () => {
       const builder = TestBed.inject(PizzaBuilderService);
       builder.load({ id: 'x1', size: 'media', flavorIds: [A], crustId: null, notes: '', quantity: 4 });
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       TestBed.configureTestingModule({});
       const draft = TestBed.inject(PizzaBuilderService).snapshot;
       expect(draft.editingId).toBe('x1');
@@ -99,7 +100,7 @@ describe('Editar pizza do carrinho', () => {
       expect(draft.editingId).toBeNull();
       expect(draft.quantity).toBe(1);
       localStorage.setItem(BUILDER_KEY, JSON.stringify({ size: 'grande', flavorIds: [A], crustId: null, notes: '', editingId: 'x', quantity: -7 }));
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       TestBed.configureTestingModule({});
       expect(TestBed.inject(PizzaBuilderService).snapshot.quantity).toBe(1);
     });

@@ -343,15 +343,15 @@ describe('CartPageComponent / checkout', () => {
     });
   });
 
-  describe('loja fechada', () => {
-    it('enviar não abre o WhatsApp nem mostra erro de campo', async () => {
+  describe('fora do horário de funcionamento', () => {
+    it('enviar abre o WhatsApp normalmente (o horário não barra o pedido)', async () => {
       fakeClock.set(SUNDAY_INSTANT);
       create(true);
       fillValidForm();
-      const open = spyOn(window, 'open');
+      const open = spyOn(window, 'open').and.returnValue({} as Window);
       component().submit();
       await flush();
-      expect(open).not.toHaveBeenCalled();
+      expect(open).toHaveBeenCalledTimes(1);
       expect(component().errorList.length).toBe(0);
     });
   });

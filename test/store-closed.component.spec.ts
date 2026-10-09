@@ -11,7 +11,7 @@ import { CartPageComponent } from '../src/app/components/cart/cart-page.componen
 import { CartFacadeService } from '../src/app/facade/cart.facade.service';
 import { SUNDAY_INSTANT, fakeClock } from './helpers/fake-clock';
 
-describe('Carrinho com a loja fechada', () => {
+describe('Carrinho fora do horário: nunca barra o pedido', () => {
   let fixture: ComponentFixture<CartPageComponent>;
   let el: HTMLElement;
 
@@ -39,26 +39,18 @@ describe('Carrinho com a loja fechada', () => {
     expect(el.querySelector('#store-closed-top')).toBeNull();
   });
 
-  it('fechada: botão desabilitado, sem prometer envio, e aviso com a próxima abertura', async () => {
+  it('fechada (domingo): o botão continua ativo, sem "Loja fechada" e sem aviso de que o pedido não será enviado', async () => {
     fakeClock.set(SUNDAY_INSTANT);
     await create();
     const button = summaryButton();
-    // Não é "disabled": continua clicável para explicar o motivo (ver "Finalizar com a loja fechada").
     expect(button.disabled).toBeFalse();
-    expect(button.getAttribute('aria-disabled')).toBe('true');
-    expect(button.textContent).toContain('Loja fechada agora');
-    expect(button.textContent).not.toContain('Enviar pedido');
-    expect(button.getAttribute('aria-describedby')).toBe('store-closed-notice');
-    const notice = el.querySelector('#store-closed-notice');
-    expect(notice?.textContent).toContain('Hoje (domingo) a loja não abre.');
-    expect(notice?.textContent).toContain('Voltamos amanhã (segunda) às 18h.');
-  });
-
-  it('fechada: o aviso também aparece no topo do carrinho (sem repetir o id)', async () => {
-    fakeClock.set(SUNDAY_INSTANT);
-    await create();
-    expect(el.querySelector('#store-closed-top')?.textContent).toContain('Hoje (domingo) a loja não abre.');
-    expect(el.querySelectorAll('#store-closed-notice').length).toBe(1);
+    expect(button.getAttribute('aria-disabled')).toBeNull();
+    expect(button.textContent).toContain('Finalizar no WhatsApp');
+    expect(button.textContent).not.toContain('Loja fechada');
+    expect(el.querySelector('#store-closed-notice')).toBeNull();
+    expect(el.querySelector('#store-closed-top')).toBeNull();
+    expect(el.textContent).not.toContain('não abre');
+    expect(el.textContent).not.toContain('libera assim que abrirmos');
   });
 });
 

@@ -26,19 +26,9 @@ describe('ClockService: relógio do aparelho errado', () => {
     expect(Math.abs(clock.now() - (Date.now() - 3 * HOUR))).toBeLessThan(2500);
   });
 
-  it('resposta vinda de cache (cabeçalho Age): a hora do servidor é Date + Age, não só Date', async () => {
-    // Date carimbado há 3 h, mas a resposta ficou 3 h no cache: a hora real do servidor é a de agora.
+  it('o cabeçalho Age (resposta de cache) é ignorado: a Vercel já manda o Date com a hora atual', async () => {
     spyOn(window, 'fetch').and.callFake(
-      async () => new Response(null, { headers: { date: new Date(Date.now() - 3 * HOUR).toUTCString(), age: String(3 * 3600) } })
-    );
-    const clock = new ClockService();
-    await clock.sync();
-    expect(clock.skew).toBe(0);
-  });
-
-  it('cabeçalho Age inválido é ignorado', async () => {
-    spyOn(window, 'fetch').and.callFake(
-      async () => new Response(null, { headers: { date: new Date(Date.now() + 2 * HOUR).toUTCString(), age: 'abc' } })
+      async () => new Response(null, { headers: { date: new Date(Date.now() + 2 * HOUR).toUTCString(), age: String(5 * 3600) } })
     );
     const clock = new ClockService();
     await clock.sync();

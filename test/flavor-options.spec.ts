@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -147,7 +148,7 @@ describe('Sabores com opção (escolha na hora de pedir)', () => {
     it('sobrevive a recarregar a página', () => {
       builder.toggleFlavor('doce-chocolate');
       builder.setFlavorOption('doce-chocolate', 'branco');
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       expect(TestBed.inject(PizzaBuilderService).snapshot.flavorOptions).toEqual({ 'doce-chocolate': 'branco' });
     });
 

@@ -7,7 +7,7 @@ import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service
 import { CartState } from '../src/app/interfaces/cart.interface';
 import { CartService } from '../src/app/services/cart.service';
 import { LastOrderService } from '../src/app/services/last-order.service';
-import { SUNDAY_INSTANT, fakeClock } from './helpers/fake-clock';
+import { SUNDAY_INSTANT, fakeClock, resetKeepingClock } from './helpers/fake-clock';
 
 const flush = () => new Promise<void>((resolve) => setTimeout(resolve));
 
@@ -73,12 +73,12 @@ describe('Repetir o último pedido', () => {
       expect(TestBed.inject(LastOrderService).snapshot).toBeNull();
     });
 
-    it('loja fechada não guarda nada (o pedido não saiu)', () => {
+    it('fora do horário o pedido sai e também fica guardado', () => {
       fakeClock.set(SUNDAY_INSTANT);
       fillValidForm();
       const result = checkout.submit();
-      expect(result.ok).toBeFalse();
-      expect(TestBed.inject(LastOrderService).snapshot).toBeNull();
+      expect(result.ok).toBeTrue();
+      expect(TestBed.inject(LastOrderService).snapshot).not.toBeNull();
     });
   });
 
@@ -135,7 +135,7 @@ describe('Repetir o último pedido', () => {
           drinks: [],
         })
       );
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       return TestBed.configureTestingModule({ imports: [CartModule, RouterTestingModule, HttpClientTestingModule] })
         .compileComponents()
         .then(() => {

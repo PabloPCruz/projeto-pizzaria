@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { TestBed } from '@angular/core/testing';
 import { CheckoutDraftService, EMPTY_CHECKOUT } from '../src/app/services/checkout-draft.service';
 
@@ -15,7 +16,7 @@ describe('CheckoutDraftService', () => {
     const first = TestBed.inject(CheckoutDraftService);
     first.update({ name: 'Maria', cep: '80010-000', payment: 'dinheiro', changeFor: '100' });
 
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({});
     const draft = TestBed.inject(CheckoutDraftService).snapshot;
 

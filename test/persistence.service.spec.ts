@@ -6,7 +6,7 @@ import { CartService } from '../src/app/services/cart.service';
 import { CheckoutDraftService } from '../src/app/services/checkout-draft.service';
 import { PersistenceService } from '../src/app/services/persistence.service';
 import { PizzaBuilderService } from '../src/app/services/pizza-builder.service';
-import { OPEN_INSTANT, fakeClock } from './helpers/fake-clock';
+import { OPEN_INSTANT, fakeClock, resetKeepingClock } from './helpers/fake-clock';
 
 const HOUR = 60 * 60 * 1000;
 const storageEvent = (key: string | null) => window.dispatchEvent(new StorageEvent('storage', { key }));
@@ -63,7 +63,7 @@ describe('Dados esquecidos expiram ao abrir o site', () => {
     seed('cart', { pizzas: [], drinks: [{ id: 'b', drinkId: 'coca-2l', quantity: 1 }] }, 73);
     expect(TestBed.inject(CartService).snapshot.drinks.length).toBe(0);
     // O reset descarta os provedores de _setup.spec.ts: sem refazê-los o relógio volta a ser o real e o teste vira bomba-relógio.
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({
       providers: [
         { provide: ClockService, useValue: fakeClock },

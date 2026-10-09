@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CheckoutFacadeService } from '../src/app/facade/checkout.facade.service';
@@ -92,7 +93,7 @@ describe('Endereço manual: rascunho e mensagem', () => {
 
   it('o modo manual é gravado e restaurado ao recarregar', () => {
     TestBed.inject(CheckoutDraftService).update({ manualAddress: true, street: 'Rua A' });
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({});
     const draft = TestBed.inject(CheckoutDraftService).snapshot;
     expect(draft.manualAddress).toBeTrue();
@@ -206,7 +207,7 @@ describe('Endereço manual: nunca há entrega grátis (só com CEP e dentro das 
 
   it('CEP salvo em modo manual não dispara consulta ao abrir o checkout', () => {
     localStorage.setItem('disk-pizza:v2:checkout', JSON.stringify({ ...EMPTY_CHECKOUT, manualAddress: true, cep: '82015-290', ...MANUAL }));
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
     http = TestBed.inject(HttpTestingController);
     facade = TestBed.inject(CheckoutFacadeService);

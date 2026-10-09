@@ -1,11 +1,6 @@
 <form id="checkout-form" novalidate (ngSubmit)="submit()" aria-labelledby="checkout-title" *ngIf="draft$ | async as draft">
   <h2 id="checkout-title" tabindex="-1" class="title-sub outline-none">Finalizar pedido</h2>
 
-  <!-- Tentou enviar com a loja fechada: nada foi enviado -->
-  @if (blockedMessage) {
-    <app-store-closed-notice class="mt-5" noticeId="send-blocked-alert" [message]="blockedMessage"></app-store-closed-notice>
-  }
-
   <!-- Resumo de erros -->
   <div role="alert" [hidden]="errorList.length === 0">
     @if (errorList.length > 0) {

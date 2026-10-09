@@ -1,3 +1,4 @@
+import { resetKeepingClock } from './helpers/fake-clock';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BuilderModule } from '../src/app/components/builder/builder.module';
@@ -110,7 +111,7 @@ describe('BuilderPageComponent (montar pizza)', () => {
     fixture.detectChanges();
     fixture.destroy();
 
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({ imports: [BuilderModule, RouterTestingModule] });
     create();
 

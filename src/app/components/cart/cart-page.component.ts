@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { CartFacadeService } from '../../facade/cart.facade.service';
 import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
-import { StoreFacadeService } from '../../facade/store.facade.service';
 import { CheckoutFormComponent, OrderSent } from './checkout-form.component';
 
 @Component({
@@ -10,7 +9,6 @@ import { CheckoutFormComponent, OrderSent } from './checkout-form.component';
 })
 export class CartPageComponent {
   readonly view$ = this.cart.view$;
-  readonly store$ = this.storeFacade.view$;
   readonly busy$ = this.checkout.busy$;
   readonly lastOrder$ = this.cart.lastOrder$;
   @ViewChild(CheckoutFormComponent) checkoutForm?: CheckoutFormComponent;
@@ -19,7 +17,6 @@ export class CartPageComponent {
 
   constructor(
     private cart: CartFacadeService,
-    private storeFacade: StoreFacadeService,
     private checkout: CheckoutFacadeService
   ) {}
 

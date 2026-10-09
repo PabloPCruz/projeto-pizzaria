@@ -3,7 +3,7 @@ import { CartState } from '../src/app/interfaces/cart.interface';
 import { CartService } from '../src/app/services/cart.service';
 import { LastOrderService } from '../src/app/services/last-order.service';
 import { PersistenceService } from '../src/app/services/persistence.service';
-import { OPEN_INSTANT, fakeClock } from './helpers/fake-clock';
+import { OPEN_INSTANT, fakeClock, resetKeepingClock } from './helpers/fake-clock';
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -35,7 +35,7 @@ describe('LastOrderService (repetir o último pedido)', () => {
 
   it('o pedido sobrevive a recarregar a página', () => {
     last.save(CART);
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({ providers: [{ provide: PersistenceService, useValue: new PersistenceService(fakeClock) }] });
     expect(TestBed.inject(LastOrderService).snapshot?.cart).toEqual(CART);
   });
@@ -58,7 +58,7 @@ describe('LastOrderService (repetir o último pedido)', () => {
     fakeClock.set(new Date(Date.parse(OPEN_INSTANT) + 29 * DAY).toISOString());
     expect(TestBed.inject(PersistenceService).read<unknown>('last-order', null, 30 * DAY)).not.toBeNull();
     fakeClock.set(new Date(Date.parse(OPEN_INSTANT) + 31 * DAY).toISOString());
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({ providers: [{ provide: PersistenceService, useValue: new PersistenceService(fakeClock) }] });
     expect(TestBed.inject(LastOrderService).snapshot).toBeNull();
   });
@@ -74,7 +74,7 @@ describe('LastOrderService (repetir o último pedido)', () => {
         drinks: [{ id: 'c', drinkId: 'bebida-que-nao-existe', quantity: 1 }],
       })
     );
-    TestBed.resetTestingModule();
+    resetKeepingClock();
     TestBed.configureTestingModule({ providers: [{ provide: PersistenceService, useValue: new PersistenceService(fakeClock) }] });
     const restored = TestBed.inject(LastOrderService).snapshot!;
     expect(restored.cart.pizzas.map((p) => p.id)).toEqual(['a']);
@@ -85,7 +85,7 @@ describe('LastOrderService (repetir o último pedido)', () => {
   it('dado corrompido não quebra: simplesmente não há pedido para repetir', () => {
     for (const bad of ['{', '"texto"', '[]', '{"pizzas":1,"drinks":2}', 'null']) {
       localStorage.setItem('disk-pizza:v2:last-order', bad);
-      TestBed.resetTestingModule();
+      resetKeepingClock();
       TestBed.configureTestingModule({ providers: [{ provide: PersistenceService, useValue: new PersistenceService(fakeClock) }] });
       expect(TestBed.inject(LastOrderService).snapshot).withContext(bad).toBeNull();
     }
