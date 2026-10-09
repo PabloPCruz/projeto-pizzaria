@@ -59,6 +59,17 @@ export class MenuFacadeService {
     return this.catalog.getDrinks();
   }
 
+  /** Nome do sabor com a opção escolhida ("Calabresa (com catupiry)"). */
+  flavorLabel(flavorId: string, optionId?: string): string {
+    return this.catalog.flavorLabel(flavorId, optionId);
+  }
+
+  /** "Opção: com cebola ou com catupiry" para o sabor que tem opção; vazio nos demais. */
+  optionsText(flavor: PizzaFlavor): string {
+    const labels = (flavor.options ?? []).filter((o) => !o.plain).map((o) => o.label.toLowerCase());
+    return labels.length > 0 ? `Opção: ${labels.join(' ou ')}` : '';
+  }
+
   /** `false` = item esgotado hoje (lista em data/availability.ts). */
   isAvailable(id: string): boolean {
     return this.catalog.isAvailable(id);

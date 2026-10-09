@@ -4,6 +4,8 @@ export interface PizzaLine {
   id: string;
   size: PizzaSizeId;
   flavorIds: string[];
+  /** Opção escolhida por sabor (id do sabor -> id da opção). Ausente em pedido salvo antes de existir a escolha. */
+  flavorOptions?: Record<string, string>;
   crustId: string | null;
   notes: string;
   quantity: number;
@@ -26,6 +28,8 @@ export type NewPizzaLine = Omit<PizzaLine, 'id'>;
 export interface PizzaBuilderDraft {
   size: PizzaSizeId | null;
   flavorIds: string[];
+  /** Opção escolhida por sabor (id do sabor -> id da opção). */
+  flavorOptions: Record<string, string>;
   crustId: string | null;
   notes: string;
   /** Id da pizza do carrinho que está sendo editada; `null` = montando uma pizza nova. */

@@ -67,7 +67,7 @@ export class PizzaSummaryComponent {
   }
 
   get flavorNames(): string[] {
-    return this.view.draft.flavorIds.map((id) => this.menu.getFlavor(id)?.name ?? id);
+    return this.view.draft.flavorIds.map((id) => this.menu.flavorLabel(id, this.view.draft.flavorOptions[id]));
   }
 
   get crustLabel(): string {

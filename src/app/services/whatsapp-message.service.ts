@@ -114,7 +114,7 @@ export class WhatsappMessageService {
 
   private pizzaLines(index: number, pizza: CartState['pizzas'][number]): string[] {
     const size = this.catalog.getSize(pizza.size);
-    const flavors = pizza.flavorIds.map((id) => this.catalog.getFlavor(id)?.name ?? id);
+    const flavors = pizza.flavorIds.map((id) => this.catalog.flavorLabel(id, pizza.flavorOptions?.[id]));
     const total = this.pricing.pizzaLineTotal(pizza);
 
     const head = [`*${index}. Pizza ${size?.label ?? pizza.size}*`];

@@ -29,8 +29,8 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
           <p class="mt-1 text-sm leading-relaxed text-cream-muted">
             {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
           </p>
-          @if (flavor.optionHint) {
-            <p class="mt-1 text-xs font-medium text-gold-light">{{ flavor.optionHint }}</p>
+          @if (optionsText) {
+            <p class="mt-1 text-xs font-medium text-gold-light">{{ optionsText }}</p>
           }
           @if (flavor.illustrative) {
             <p class="illustrative-note mt-1 text-xs text-cream-dim">Foto ilustrativa</p>
@@ -60,8 +60,8 @@ const CATEGORY_LABEL: Record<PizzaFlavor['category'], string> = {
           <p class="text-sm leading-relaxed text-cream-muted">
             {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
           </p>
-          @if (flavor.optionHint) {
-            <p class="mt-auto pt-1 text-xs font-medium text-gold-light">{{ flavor.optionHint }}</p>
+          @if (optionsText) {
+            <p class="mt-auto pt-1 text-xs font-medium text-gold-light">{{ optionsText }}</p>
           }
         </div>
       </article>
@@ -77,6 +77,10 @@ export class FlavorCardComponent {
   /** Esgotado hoje (data/availability.ts). */
   get unavailable(): boolean {
     return !this.menu.isAvailable(this.flavor.id);
+  }
+
+  get optionsText(): string {
+    return this.menu.optionsText(this.flavor);
   }
 
   get categoryLabel(): string {

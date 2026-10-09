@@ -16,7 +16,7 @@ import { PizzaBuilderService } from '../src/app/services/pizza-builder.service';
 import { DELIVERY_FEE_NOTICE } from '../src/app/services/whatsapp-message.service';
 
 const flush = () => new Promise<void>((resolve) => setTimeout(resolve));
-const [A, B, C] = ['tradicional-calabresa', 'tradicional-mussarela', 'especial-atum'];
+const [A, B, C] = ['tradicional-frango-catupiry', 'tradicional-mussarela', 'especial-atum'];
 
 function firstButton(el: HTMLElement, text: string, scope = 'button'): HTMLButtonElement | undefined {
   return Array.from(el.querySelectorAll<HTMLButtonElement>(scope)).find((b) => b.textContent?.trim().startsWith(text));
@@ -192,9 +192,9 @@ describe('Montar pizza em modo edição', () => {
     const original = cart.snapshot.pizzas[0];
     // desmarca a mussarela e marca o atum (mesmo limite de 2 sabores da média)
     const boxes = () => Array.from(el.querySelectorAll<HTMLInputElement>('input[type=checkbox]'));
-    boxes().find((b) => b.checked && b.closest('label')?.textContent?.includes('Mussarela'))!.click();
+    boxes().find((b) => b.checked && b.id === 'flavor-' + B)!.click();
     fixture.detectChanges();
-    boxes().find((b) => !b.checked && b.closest('label')?.textContent?.includes('Atum'))!.click();
+    boxes().find((b) => !b.checked && b.id === 'flavor-' + C)!.click();
     fixture.detectChanges();
     next();
     next();

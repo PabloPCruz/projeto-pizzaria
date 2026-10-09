@@ -78,6 +78,30 @@ export class FlavorsStepComponent implements OnDestroy {
     return this.menu.getFlavor(id)?.name ?? id;
   }
 
+  /** Nome do sabor com a opção escolhida ("Calabresa (com catupiry)"). */
+  flavorLabel(view: BuilderView, id: string): string {
+    return this.menu.flavorLabel(id, view.draft.flavorOptions[id]);
+  }
+
+  /** "Opção: com cebola ou com catupiry" (vazio nos sabores sem opção). */
+  optionsText(flavor: PizzaFlavor): string {
+    return this.menu.optionsText(flavor);
+  }
+
+  chosenOption(view: BuilderView, flavor: PizzaFlavor): string | undefined {
+    return view.draft.flavorOptions[flavor.id];
+  }
+
+  chooseOption(flavor: PizzaFlavor, optionId: string): void {
+    this.order.selectFlavorOption(flavor.id, optionId);
+  }
+
+  /** Enquanto algum sabor escolhido ainda não teve a opção definida, diz qual (é o mesmo motivo que bloqueia o "Avançar"). */
+  pendingOptionError(view: BuilderView): string {
+    const error = view.validation.error ?? '';
+    return error.startsWith('Escolha a opção') ? error : '';
+  }
+
   toggle(view: BuilderView, flavor: PizzaFlavor): void {
     const wasSelected = this.isSelected(view, flavor);
     const ok = this.order.toggleFlavor(flavor.id);
@@ -90,9 +114,16 @@ export class FlavorsStepComponent implements OnDestroy {
       wasSelected
       ? `${flavor.name} removido. ${count} de ${view.maxFlavors} sabores.`
       : count >= view.maxFlavors
-        ? `${flavor.name} adicionado. Limite de ${view.maxFlavors} ${view.maxFlavors === 1 ? 'sabor' : 'sabores'} atingido: os demais sabores foram desabilitados.`
-        : `${flavor.name} adicionado. ${count} de ${view.maxFlavors} sabores.`
+        ? `${flavor.name} adicionado.${this.optionReminder(flavor)} Limite de ${view.maxFlavors} ${view.maxFlavors === 1 ? 'sabor' : 'sabores'} atingido: os demais sabores foram desabilitados.`
+        : `${flavor.name} adicionado.${this.optionReminder(flavor)} ${count} de ${view.maxFlavors} sabores.`
     );
+  }
+
+  /** Sabor com opção: lembra de escolher (a escolha aparece logo abaixo do sabor) e leva o foco para ela. */
+  private optionReminder(flavor: PizzaFlavor): string {
+    if (!flavor.options?.length) return '';
+    setTimeout(() => document.getElementById(`option-${flavor.id}-${flavor.options![0].id}`)?.focus());
+    return ' Escolha a opção logo abaixo.';
   }
 
   remove(view: BuilderView, id: string): void {

@@ -140,6 +140,33 @@ describe('Ícones do site', () => {
   });
 });
 
+describe('Favicon sem fundo', () => {
+  /** Alfa (0 a 255) do pixel (x, y) da imagem. */
+  async function alphaAt(file: string, points: [number, number][]): Promise<number[]> {
+    const bitmap = await createImageBitmap(await (await fetch(file)).blob());
+    const canvas = document.createElement('canvas');
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    const ctx = canvas.getContext('2d')!;
+    ctx.drawImage(bitmap, 0, 0);
+    return points.map(([x, y]) => ctx.getImageData(x, y, 1, 1).data[3]);
+  }
+
+  it('o ícone da aba do navegador (32 px) é só a logo: os 4 cantos são transparentes e o centro tem desenho', async () => {
+    const corners = await alphaAt('assets/icons/favicon-32.png', [[0, 0], [31, 0], [0, 31], [31, 31]]);
+    expect(corners).toEqual([0, 0, 0, 0]);
+    const [center] = await alphaAt('assets/icons/favicon-32.png', [[16, 16]]);
+    expect(center).toBeGreaterThan(0);
+  });
+
+  it('os ícones do iPhone e do Android continuam opacos (esses sistemas pintam a transparência de preto/branco)', async () => {
+    for (const file of ['apple-touch-icon.png', 'icon-192.png', 'icon-512.png']) {
+      const [corner] = await alphaAt(`assets/icons/${file}`, [[0, 0]]);
+      expect(corner).withContext(file).toBe(255);
+    }
+  });
+});
+
 describe('Prévia do link e cores de aviso', () => {
   it('a imagem de prévia (Open Graph) existe e tem 1200×630', async () => {
     const response = await fetch('assets/img/og-image.png');

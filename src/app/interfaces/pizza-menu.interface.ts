@@ -9,14 +9,22 @@ export interface PizzaSize {
 
 export type FlavorCategory = 'tradicional' | 'especial' | 'doce';
 
+/** Uma das escolhas de um sabor que tem "opção" no cardápio (ex.: calabresa com cebola ou com catupiry). */
+export interface FlavorOption {
+  id: string;
+  label: string;
+  /** `true` = a receita do cardápio, sem a opção: a escolha é registrada, mas não aparece na mensagem. */
+  plain?: boolean;
+}
+
 export interface PizzaFlavor {
   id: string;
   name: string;
   category: FlavorCategory;
   /** Ingredientes em texto corrido. Vazio = a loja ainda não informou. */
   ingredients: string;
-  /** Opção citada no cardápio impresso, ex.: "Opção catupiry". O cliente detalha em observações. */
-  optionHint?: string;
+  /** Opções do cardápio impresso (texto vermelho). Quem escolhe o sabor tem que escolher uma delas. */
+  options?: readonly FlavorOption[];
   image?: string;
   /** `true` = a foto é a mais parecida disponível, não a do sabor: a tela avisa "Foto ilustrativa". */
   illustrative?: boolean;

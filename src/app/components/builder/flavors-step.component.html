@@ -24,6 +24,12 @@
           </p>
         }
       </div>
+      @if (pendingOptionError(view); as pending) {
+        <p class="mt-2.5 flex items-start gap-2 rounded-lg border border-warn/40 bg-warn/10 px-3 py-2 text-sm leading-snug text-warn">
+          <lucide-icon name="info" [size]="16" class="mt-0.5 shrink-0"></lucide-icon>
+          <span>{{ pending }}</span>
+        </p>
+      }
     </div>
   </div>
 
@@ -37,9 +43,9 @@
               type="button"
               class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-gold/60 bg-gold/10 pl-4 pr-3 text-sm font-medium text-gold-light transition hover:bg-gold/20 active:scale-[.97]"
               (click)="remove(view, id)"
-              [attr.aria-label]="'Remover ' + flavorName(id)"
+              [attr.aria-label]="'Remover ' + flavorLabel(view, id)"
             >
-              {{ flavorName(id) }}
+              {{ flavorLabel(view, id) }}
               <lucide-icon name="x" [size]="16"></lucide-icon>
             </button>
           </li>
@@ -107,16 +113,42 @@
             <span class="choice-desc mt-0.5 line-clamp-2 block text-sm leading-relaxed text-cream-muted sm:line-clamp-3">
               {{ flavor.ingredients || 'Ingredientes a confirmar com a loja.' }}
             </span>
-            @if (flavor.optionHint) {
-              <span class="choice-desc mt-1 block text-xs font-medium text-gold-light">
-                {{ flavor.optionHint }} — detalhe nas observações
-              </span>
+            @if (optionsText(flavor); as hint) {
+              <span class="choice-desc mt-1 block text-xs font-medium text-gold-light">{{ hint }}</span>
             }
           </span>
           <span class="choice-check" aria-hidden="true">
             <lucide-icon name="check" [size]="14" [strokeWidth]="3"></lucide-icon>
           </span>
         </label>
+
+        @if (isSelected(view, flavor) && flavor.options; as options) {
+          <div
+            role="radiogroup"
+            [attr.aria-label]="'Opção de ' + flavor.name"
+            class="mt-2 animate-fade-in rounded-xl border border-gold/50 bg-gold/[.06] p-3"
+          >
+            <p class="text-sm font-medium" [ngClass]="chosenOption(view, flavor) ? 'text-gold-light' : 'text-warn'">
+              @if (chosenOption(view, flavor)) { Opção de {{ flavor.name }}: } @else { Escolha a opção de {{ flavor.name }}: }
+            </p>
+            <div class="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+              @for (option of options; track option.id) {
+                <label class="choice !items-center !gap-2 !p-3" [attr.for]="'option-' + flavor.id + '-' + option.id">
+                  <input
+                    type="radio"
+                    class="peer"
+                    [name]="'option-' + flavor.id"
+                    [id]="'option-' + flavor.id + '-' + option.id"
+                    [checked]="chosenOption(view, flavor) === option.id"
+                    (change)="chooseOption(flavor, option.id)"
+                  />
+                  <span class="choice-radio" aria-hidden="true"></span>
+                  <span class="block text-sm font-semibold">{{ option.label }}</span>
+                </label>
+              }
+            </div>
+          </div>
+        }
       </li>
     } @empty {
       <li class="card p-6 text-center text-cream-muted md:col-span-2">Nenhum sabor encontrado. Tente outro termo.</li>

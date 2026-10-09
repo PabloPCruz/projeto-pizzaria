@@ -3,7 +3,7 @@ import { OrderFacadeService } from '../src/app/facade/order.facade.service';
 import { CartService } from '../src/app/services/cart.service';
 import { PizzaBuilderService } from '../src/app/services/pizza-builder.service';
 
-const [A, B, C] = ['tradicional-calabresa', 'tradicional-mussarela', 'especial-atum'];
+const [A, B, C] = ['tradicional-frango-catupiry', 'tradicional-mussarela', 'especial-atum'];
 const BUILDER_KEY = 'disk-pizza:v2:builder';
 
 describe('Editar pizza do carrinho', () => {
@@ -68,6 +68,7 @@ describe('Editar pizza do carrinho', () => {
       expect(builder.snapshot).toEqual({
         size: 'grande',
         flavorIds: [A, B],
+        flavorOptions: {},
         crustId: 'cheddar',
         notes: 'sem cebola',
         editingId: line.id,
@@ -79,7 +80,7 @@ describe('Editar pizza do carrinho', () => {
       const builder = TestBed.inject(PizzaBuilderService);
       builder.load({ id: 'x1', size: 'media', flavorIds: [A], crustId: null, notes: '', quantity: 4 });
       builder.reset();
-      expect(builder.snapshot).toEqual({ size: null, flavorIds: [], crustId: null, notes: '', editingId: null, quantity: 1 });
+      expect(builder.snapshot).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, notes: '', editingId: null, quantity: 1 });
     });
 
     it('a edição sobrevive a recarregar a página', () => {

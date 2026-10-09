@@ -78,7 +78,7 @@ export class CartFacadeService {
     const times = (quantity: number) => (quantity > 1 ? `${quantity}× ` : '');
     const pizzas = cart.pizzas.map((p) => {
       const size = this.catalog.getSize(p.size)?.label ?? p.size;
-      const flavors = this.format.list(p.flavorIds.map((id) => this.catalog.getFlavor(id)?.name ?? id));
+      const flavors = this.format.list(p.flavorIds.map((id) => this.catalog.flavorLabel(id, p.flavorOptions?.[id])));
       const crust = p.crustId ? ` · borda ${this.catalog.getCrust(p.crustId)?.label ?? p.crustId}` : '';
       return `${times(p.quantity)}Pizza ${size}: ${flavors}${crust}`;
     });
@@ -117,7 +117,7 @@ export class CartFacadeService {
       pizzas: state.pizzas.map((p) => {
         const size = this.catalog.getSize(p.size);
         const title = size ? `Pizza ${size.label} · ${size.slices} fatias` : `Pizza ${p.size}`;
-        const flavors = p.flavorIds.map((id) => this.catalog.getFlavor(id)?.name ?? id);
+        const flavors = p.flavorIds.map((id) => this.catalog.flavorLabel(id, p.flavorOptions?.[id]));
         return {
           id: p.id,
           title,

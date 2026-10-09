@@ -45,6 +45,36 @@ export class CatalogService {
     );
   }
 
+  /** Nome do sabor com a opção escolhida: "Calabresa (com catupiry)". "Sem opção" e sabor sem opção ficam só com o nome. */
+  flavorLabel(flavorId: string, optionId?: string): string {
+    const flavor = this.getFlavor(flavorId);
+    const option = optionId ? flavor?.options?.find((o) => o.id === optionId) : undefined;
+    const name = flavor?.name ?? flavorId;
+    return option && !option.plain ? `${name} (${option.label.toLowerCase()})` : name;
+  }
+
+  /** Só guarda opção que existe, de sabor que está na pizza. Qualquer valor estranho (localStorage) vira `{}`. */
+  sanitizeFlavorOptions(raw: unknown, flavorIds: readonly string[]): Record<string, string> {
+    const result: Record<string, string> = {};
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return result;
+    const data = raw as Record<string, unknown>;
+    for (const id of flavorIds) {
+      const chosen = data[id];
+      if (typeof chosen === 'string' && this.getFlavor(id)?.options?.some((o) => o.id === chosen)) result[id] = chosen;
+    }
+    return result;
+  }
+
+  /** Nomes dos sabores que têm opção e ainda não tiveram uma escolhida. */
+  missingOptions(flavorIds: readonly string[], options: Readonly<Record<string, string>>): string[] {
+    return flavorIds
+      .filter((id) => {
+        const flavor = this.getFlavor(id);
+        return !!flavor?.options?.length && !flavor.options.some((o) => o.id === options[id]);
+      })
+      .map((id) => this.getFlavor(id)?.name ?? id);
+  }
+
   /** Aceita qualquer valor vindo de fora (localStorage) e devolve só ids de sabores que existem, sem repetição. */
   sanitizeFlavorIds(ids: unknown): string[] {
     if (!Array.isArray(ids)) return [];

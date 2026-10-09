@@ -217,7 +217,7 @@ describe('Pedido pronto: confirmar antes de apagar', () => {
 });
 
 describe('Aviso de limite de sabores: dentro do cartão e temporário', () => {
-  const [A, B, C] = ['tradicional-calabresa', 'tradicional-mussarela', 'especial-atum'];
+  const [A, B, C] = ['tradicional-frango-catupiry', 'tradicional-mussarela', 'especial-atum'];
 
   it('aparece dentro do cartão do contador (não solto sobre a lista) e some sozinho', async () => {
     jasmine.clock().install();

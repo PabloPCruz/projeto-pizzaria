@@ -51,8 +51,8 @@ export class CheckoutValidationService {
       errors.cart = 'Adicione pelo menos um item ao pedido.';
     } else if (unavailable.length > 0) {
       errors.cart = `Hoje não temos: ${this.format.list(unavailable)}. Remova do pedido (ou edite a pizza) para continuar.`;
-    } else if (cart.pizzas.some((p) => !this.sizeRules.validate(p.size, p.flavorIds).valid)) {
-      errors.cart = 'Há uma pizza com sabores inválidos para o tamanho. Revise o pedido.';
+    } else if (cart.pizzas.some((p) => !this.sizeRules.validate(p.size, p.flavorIds, p.flavorOptions).valid)) {
+      errors.cart = this.invalidPizzaMessage(cart);
     }
 
     const name = draft.name.trim();
@@ -78,6 +78,16 @@ export class CheckoutValidationService {
     }
 
     return errors;
+  }
+
+  /** Qual é o problema da pizza: opção por escolher (diz qual sabor) ou sabores que não cabem no tamanho. */
+  private invalidPizzaMessage(cart: CartState): string {
+    const pending = cart.pizzas
+      .map((p) => this.sizeRules.validate(p.size, p.flavorIds, p.flavorOptions))
+      .find((r) => !r.valid && r.error?.startsWith('Escolha a opção'));
+    return pending?.error
+      ? `${pending.error} Edite a pizza no carrinho.`
+      : 'Há uma pizza com sabores inválidos para o tamanho. Revise o pedido.';
   }
 
   /** Celular (11 dígitos) começa com 9 depois do DDD; fixo (10) começa com 2 a 5. */

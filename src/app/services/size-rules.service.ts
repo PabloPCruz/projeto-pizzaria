@@ -25,7 +25,11 @@ export class SizeRulesService {
     return selectedIds.slice(0, this.maxFlavors(size));
   }
 
-  validate(size: PizzaSizeId | null, selectedIds: readonly string[]): FlavorValidation {
+  /**
+   * `options` = escolhas feitas por sabor. Quando informado, todo sabor que tem opção precisa ter uma escolhida.
+   * Sem ele (pedido salvo antes de existir a escolha) essa conferência não é feita.
+   */
+  validate(size: PizzaSizeId | null, selectedIds: readonly string[], options?: Readonly<Record<string, string>>): FlavorValidation {
     if (!size) return { valid: false, error: 'Escolha o tamanho da pizza.' };
     if (selectedIds.length === 0) return { valid: false, error: 'Escolha pelo menos 1 sabor.' };
     if (selectedIds.some((id) => !this.catalog.getFlavor(id))) {
@@ -39,6 +43,13 @@ export class SizeRulesService {
     const max = this.maxFlavors(size);
     if (selectedIds.length > max) {
       return { valid: false, error: `Este tamanho aceita no máximo ${max} ${max === 1 ? 'sabor' : 'sabores'}.` };
+    }
+    if (options) {
+      const missing = this.catalog.missingOptions(selectedIds, options);
+      if (missing.length > 0) {
+        const names = missing.length === 1 ? missing[0] : `${missing.slice(0, -1).join(', ')} e ${missing[missing.length - 1]}`;
+        return { valid: false, error: `Escolha a opção de ${names}.` };
+      }
     }
     return { valid: true };
   }
