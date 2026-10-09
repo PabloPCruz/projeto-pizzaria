@@ -31,6 +31,11 @@ export class SizeRulesService {
     if (selectedIds.some((id) => !this.catalog.getFlavor(id))) {
       return { valid: false, error: 'Há um sabor que não está mais no cardápio. Escolha novamente.' };
     }
+    const out = selectedIds.filter((id) => !this.catalog.isAvailable(id)).map((id) => this.catalog.getFlavor(id)?.name ?? id);
+    if (out.length > 0) {
+      const one = out.length === 1;
+      return { valid: false, error: `${one ? 'O sabor' : 'Os sabores'} ${out.join(', ')} ${one ? 'não está disponível' : 'não estão disponíveis'} hoje. Escolha outro.` };
+    }
     const max = this.maxFlavors(size);
     if (selectedIds.length > max) {
       return { valid: false, error: `Este tamanho aceita no máximo ${max} ${max === 1 ? 'sabor' : 'sabores'}.` };

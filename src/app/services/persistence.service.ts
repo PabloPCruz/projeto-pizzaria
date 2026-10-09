@@ -3,6 +3,9 @@ import { Observable, fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { ClockService } from './clock.service';
 
+/** Toda chave do site começa assim (qualquer versão do formato). */
+const SITE_PREFIX = 'disk-pizza:';
+
 /**
  * Acesso seguro ao localStorage: nunca lança (modo privado, cota cheia, SSR)
  * e usa chaves versionadas para descartar dados de formatos antigos.
@@ -10,7 +13,7 @@ import { ClockService } from './clock.service';
  */
 @Injectable({ providedIn: 'root' })
 export class PersistenceService {
-  private readonly prefix = 'disk-pizza:v2:';
+  private readonly prefix = `${SITE_PREFIX}v2:`;
 
   constructor(private clock: ClockService) {}
 
@@ -44,6 +47,20 @@ export class PersistenceService {
     try {
       localStorage.removeItem(this.prefix + key);
       localStorage.removeItem(this.savedAtKey(key));
+    } catch {
+      // ver write()
+    }
+  }
+
+  /** Apaga tudo o que o site guardou neste aparelho (qualquer versão do formato), sem tocar em dados de outros sites. */
+  clearAll(): void {
+    try {
+      const keys: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key !== null && key.startsWith(SITE_PREFIX)) keys.push(key);
+      }
+      keys.forEach((key) => localStorage.removeItem(key));
     } catch {
       // ver write()
     }

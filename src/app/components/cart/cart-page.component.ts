@@ -13,6 +13,7 @@ export class CartPageComponent {
   readonly view$ = this.cart.view$;
   readonly store$ = this.storeFacade.view$;
   readonly busy$ = this.checkout.busy$;
+  readonly lastOrder$ = this.cart.lastOrder$;
   @ViewChild(CheckoutFormComponent) checkoutForm?: CheckoutFormComponent;
   /** Preenchido depois que o link do WhatsApp foi gerado. */
   sent: OrderSent | null = null;
@@ -27,6 +28,12 @@ export class CartPageComponent {
   /** Só oferece "adicionar bebida" enquanto sobrar alguma bebida que ainda não está no pedido. */
   hasDrinksToAdd(view: CartView): boolean {
     return view.drinks.length < this.menu.getDrinks().length;
+  }
+
+  /** Devolve os itens do último pedido ao carrinho e leva o foco para a lista, onde eles apareceram. */
+  repeatLastOrder(): void {
+    this.cart.repeatLastOrder();
+    setTimeout(() => document.getElementById('itens-title')?.focus());
   }
 
   onSent(sent: OrderSent): void {

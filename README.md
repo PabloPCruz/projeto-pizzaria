@@ -39,9 +39,16 @@ Regra de ouro: componentes finos. Formatação e conta ficam em `FormatService` 
 
 A loja atende de segunda a sábado, das 18h às 23h (horário de Brasília). Fora disso, e nas datas listadas em `STORE_INFO.schedule.closedDates` (`src/app/data/store-info.ts`), o cliente pode montar o pedido, mas o envio pelo WhatsApp fica bloqueado. Para fechar num feriado, acrescente a data (`'AAAA-MM-DD'`) a essa lista.
 
+## Esgotado hoje
+
+Para marcar sabor, borda ou bebida como esgotado, coloque o id em `src/app/data/availability.ts` (`UNAVAILABLE_ITEM_IDS`) e publique; para liberar, tire o id e publique. O item aparece como "Indisponível hoje" e o pedido que o contenha não é enviado.
+
 ## Preços
 
-`src/app/data/prices.ts` está vazio de propósito: sem preço, a tela e a mensagem dizem "valor confirmado pelo WhatsApp". Ao preencher, os totais aparecem sozinhos.
+Há duas tabelas em `src/app/data/prices.ts`:
+
+- **`MENU_PRICES` (informativa, preenchida):** os valores do cardápio (pizza por tamanho e faixa, borda por tamanho, bebidas). Só aparecem na tela (cardápio, tamanho, borda e bebidas); **não entram em total, carrinho nem na mensagem do WhatsApp**. Para mudar um preço, edite só esta tabela. Item ausente = a loja ainda não informou, e a tela não mostra valor.
+- **`PRICES` (cobrança, vazia de propósito):** se for preenchida, o carrinho passa a mostrar totais e a mensagem ganha "Valor:" e "Total dos itens". Hoje o dono quer só informar os valores.
 
 ## Fotos dos sabores
 

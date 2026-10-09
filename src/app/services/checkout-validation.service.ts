@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CartState, CheckoutDraft, CheckoutErrors } from '../interfaces/cart.interface';
+import { CatalogService } from './catalog.service';
 import { FormatService } from './format.service';
 import { SizeRulesService } from './size-rules.service';
+import { inlineText } from './whatsapp-message.service';
 
 /** DDDs que existem no Brasil. */
 const VALID_DDD = new Set(
@@ -23,14 +25,32 @@ const VALID_UF = new Set([
 export class CheckoutValidationService {
   constructor(
     private format: FormatService,
-    private sizeRules: SizeRulesService
+    private sizeRules: SizeRulesService,
+    private catalog: CatalogService
   ) {}
+
+  /** Nomes (sem repetir) dos itens do pedido que estão esgotados hoje: sabores, bordas e bebidas. */
+  private unavailableItems(cart: CartState): string[] {
+    const names: string[] = [];
+    const add = (id: string | null, label: string | undefined) => {
+      if (id && !this.catalog.isAvailable(id) && !names.includes(label ?? id)) names.push(label ?? id);
+    };
+    for (const pizza of cart.pizzas) {
+      pizza.flavorIds.forEach((id) => add(id, this.catalog.getFlavor(id)?.name));
+      add(pizza.crustId, pizza.crustId ? this.catalog.getCrust(pizza.crustId)?.label : undefined);
+    }
+    cart.drinks.forEach((d) => add(d.drinkId, this.catalog.getDrink(d.drinkId)?.label));
+    return names;
+  }
 
   validate(cart: CartState, draft: CheckoutDraft): CheckoutErrors {
     const errors: CheckoutErrors = {};
 
+    const unavailable = this.unavailableItems(cart);
     if (cart.pizzas.length === 0 && cart.drinks.length === 0) {
       errors.cart = 'Adicione pelo menos um item ao pedido.';
+    } else if (unavailable.length > 0) {
+      errors.cart = `Hoje não temos: ${this.format.list(unavailable)}. Remova do pedido (ou edite a pizza) para continuar.`;
     } else if (cart.pizzas.some((p) => !this.sizeRules.validate(p.size, p.flavorIds).valid)) {
       errors.cart = 'Há uma pizza com sabores inválidos para o tamanho. Revise o pedido.';
     }
@@ -43,10 +63,11 @@ export class CheckoutValidationService {
 
     // Sem CEP (endereço manual) o CEP não é exigido, mas todo o resto do endereço é, menos o complemento.
     if (!draft.manualAddress && this.format.onlyDigits(draft.cep).length !== 8) errors.cep = 'Informe o CEP com 8 números.';
-    if (!draft.street.trim()) errors.street = 'Informe a rua.';
+    // Vale o texto que vai para a mensagem: emoji e marcadores do WhatsApp são apagados lá, então não contam aqui.
+    if (!inlineText(draft.street)) errors.street = 'Informe a rua.';
     if (!/\d/.test(draft.number) && !/^s\/?n$/i.test(draft.number.trim())) errors.number = 'Informe o número (ou "s/n").';
-    if (!draft.neighborhood.trim()) errors.neighborhood = 'Informe o bairro.';
-    if (!draft.city.trim()) errors.city = 'Informe a cidade.';
+    if (!inlineText(draft.neighborhood)) errors.neighborhood = 'Informe o bairro.';
+    if (!inlineText(draft.city)) errors.city = 'Informe a cidade.';
     if (!VALID_UF.has(draft.state.trim().toUpperCase())) errors.state = 'Informe o estado (UF).';
 
     if (!draft.payment) {

@@ -11,8 +11,8 @@ export class ContactSectionComponent {
   readonly store = STORE_INFO;
   readonly hoursText = this.storeFacade.hoursText;
   readonly closedDaysText = this.storeFacade.closedDaysText;
-  readonly phoneUrl = `tel:+55${STORE_INFO.phoneDisplay.replace(/\D/g, '')}`;
-  readonly whatsappUrl = `https://wa.me/${STORE_INFO.whatsappNumber}`;
+  readonly phoneUrl = this.storeFacade.phoneUrl;
+  readonly whatsappUrl = this.storeFacade.whatsappUrl;
 
   constructor(private storeFacade: StoreFacadeService) {}
 }

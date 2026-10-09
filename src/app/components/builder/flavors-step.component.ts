@@ -44,13 +44,19 @@ export class FlavorsStepComponent implements OnDestroy {
     return view.draft.flavorIds.includes(flavor.id);
   }
 
+  /** Esgotado hoje (data/availability.ts). Um sabor esgotado já escolhido continua clicável, para poder ser retirado. */
+  isUnavailable(flavor: PizzaFlavor): boolean {
+    return !this.menu.isAvailable(flavor.id);
+  }
+
   isBlocked(view: BuilderView, flavor: PizzaFlavor): boolean {
-    return !this.isSelected(view, flavor) && view.remainingFlavors === 0;
+    return !this.isSelected(view, flavor) && (view.remainingFlavors === 0 || this.isUnavailable(flavor));
   }
 
   /** Tocar num sabor bloqueado (limite atingido): o controle está desabilitado, então explica por quê. */
   onBlockedTap(view: BuilderView, flavor: PizzaFlavor): void {
-    if (this.isBlocked(view, flavor)) this.say(this.limitMessage(view));
+    if (!this.isBlocked(view, flavor)) return;
+    this.say(this.isUnavailable(flavor) ? `${flavor.name} não está disponível hoje.` : this.limitMessage(view));
   }
 
   /** Mostra o aviso e o apaga depois de 6 s (já foi anunciado; não fica parado sobre a lista). */

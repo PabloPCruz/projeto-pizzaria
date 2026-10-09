@@ -92,6 +92,11 @@ export class CartService {
     this.commit(EMPTY_CART);
   }
 
+  /** Troca o carrinho inteiro por um pedido anterior (validado contra o cardápio de hoje). */
+  restore(raw: unknown): void {
+    this.commit(this.sanitize(raw));
+  }
+
   private hydrate(): void {
     this.state.next(this.sanitize(this.persistence.read<unknown>(STORAGE_KEY, null, CART_TTL_MS)));
   }
@@ -118,7 +123,7 @@ export class CartService {
    * Linhas inválidas (tamanho/bebida desconhecidos, sem nenhum sabor válido) são descartadas;
    * sabores excedentes ao limite do tamanho são cortados.
    */
-  private sanitize(raw: unknown): CartState {
+  sanitize(raw: unknown): CartState {
     const data = raw as { pizzas?: unknown; drinks?: unknown } | null;
     if (!data || typeof data !== 'object' || !Array.isArray(data.pizzas) || !Array.isArray(data.drinks)) {
       return EMPTY_CART;

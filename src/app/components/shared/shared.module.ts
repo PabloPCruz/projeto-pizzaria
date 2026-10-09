@@ -19,6 +19,7 @@ import {
   Phone,
   Pizza,
   Plus,
+  RotateCcw,
   Search,
   Send,
   ShoppingCart,
@@ -37,6 +38,7 @@ import { FlavorCardComponent } from './flavor-card.component';
 import { FlavorImageComponent } from './flavor-image.component';
 import { RevealDirective } from './reveal.directive';
 import { PriceComponent } from './price.component';
+import { PriceRuleNoticeComponent } from './price-rule-notice.component';
 import { LogoComponent } from './logo.component';
 import { MoneyPipe } from './money.pipe';
 import { QuantityStepperComponent } from './quantity-stepper.component';
@@ -64,6 +66,7 @@ const ICONS = LucideAngularModule.pick({
   Phone,
   Pizza,
   Plus,
+  RotateCcw,
   Search,
   Send,
   ShoppingCart,
@@ -76,7 +79,7 @@ const ICONS = LucideAngularModule.pick({
   X,
 });
 
-const SHARED = [StoreClosedNoticeComponent, DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, FlavorImageComponent, RevealDirective, PriceComponent, QuantityStepperComponent];
+const SHARED = [StoreClosedNoticeComponent, DeliveryFreeComponent, DrinkPickerComponent,TextFieldComponent, LogoComponent, MoneyPipe, BrandIconComponent, FlavorCardComponent, FlavorImageComponent, RevealDirective, PriceComponent, PriceRuleNoticeComponent, QuantityStepperComponent];
 
 @NgModule({
   declarations: SHARED,

@@ -23,7 +23,10 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
           >
             <span class="flex min-w-0 items-center gap-2.5">
               <lucide-icon [name]="drink.group === 'cerveja' ? 'wine' : 'cup-soda'" [size]="18" class="shrink-0 text-gold"></lucide-icon>
-              <span class="min-w-0 break-words leading-snug">{{ drink.label }}</span>
+              <span class="min-w-0 leading-snug">
+                <span class="block break-words">{{ drink.label }}</span>
+                <span class="block text-sm"><app-price [value]="priceOf(drink)" [quiet]="true"></app-price></span>
+              </span>
             </span>
             @if (lines.get(drink.id); as line) {
               <app-quantity-stepper
@@ -33,6 +36,8 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
                 [label]="drink.label"
                 (valueChange)="change(drink, line, $event)"
               ></app-quantity-stepper>
+            } @else if (isUnavailable(drink)) {
+              <span class="shrink-0 rounded-full border border-warn/50 bg-warn/10 px-2.5 py-0.5 text-xs font-medium text-warn">Indisponível hoje</span>
             } @else {
               <button
                 type="button"
@@ -69,6 +74,16 @@ export class DrinkPickerComponent {
     private host: ElementRef<HTMLElement>
   ) {}
 
+  /** Esgotada hoje (data/availability.ts): sem "Adicionar". Se já está no pedido, continua com o − para poder retirar. */
+  isUnavailable(drink: Drink): boolean {
+    return !this.menu.isAvailable(drink.id);
+  }
+
+  /** Valor só informativo (a bebida entra no pedido sem valor; a loja confirma o total). */
+  priceOf(drink: Drink): string | null {
+    return this.menu.getDrinkPrice(drink.id);
+  }
+
   visibleDrinks(lines: Map<string, DrinkLineView>): readonly Drink[] {
     return this.onlyAvailable ? this.drinks.filter((d) => !lines.has(d.id)) : this.drinks;
   }
@@ -78,7 +93,12 @@ export class DrinkPickerComponent {
     this.live = `${drink.label} adicionada ao carrinho. Quantidade: 1.`;
     if (this.onlyAvailable) {
       // A linha some daqui (passa para "Seus itens"): o foco vai para o próximo "Adicionar" da lista.
-      setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>('button[aria-label^="Adicionar"]')?.focus());
+      // Era a última? A seção inteira some e o foco vai para "Seus itens", onde a bebida acabou de entrar.
+      setTimeout(() => {
+        const next = this.host.nativeElement.querySelector<HTMLElement>('button[aria-label^="Adicionar"]');
+        // A seção removida deixa o botão antigo solto no DOM: só vale o que ainda está na página.
+        (next?.isConnected ? next : document.getElementById('itens-title'))?.focus();
+      });
     } else {
       this.focusAfterRender(drink.id, 'button[aria-label^="Aumentar"]');
     }

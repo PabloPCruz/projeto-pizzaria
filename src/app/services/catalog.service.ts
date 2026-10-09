@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { UNAVAILABLE_ITEMS } from '../data/availability';
 import { CRUSTS, DRINKS, FLAVORS, PIZZA_SIZES } from '../data/menu.data';
 import {
   Crust,
@@ -12,6 +13,13 @@ import {
 /** Acesso somente leitura ao cardápio (tamanhos, sabores, bordas e bebidas). */
 @Injectable({ providedIn: 'root' })
 export class CatalogService {
+  constructor(@Inject(UNAVAILABLE_ITEMS) private unavailable: readonly string[]) {}
+
+  /** `false` = item esgotado hoje (lista em data/availability.ts). Itens fora do cardápio contam como disponíveis aqui. */
+  isAvailable(id: string): boolean {
+    return !this.unavailable.includes(id);
+  }
+
   getSizes(): readonly PizzaSize[] {
     return PIZZA_SIZES;
   }

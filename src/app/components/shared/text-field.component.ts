@@ -96,6 +96,29 @@ export class TextFieldComponent implements AfterViewChecked {
 
   ngAfterViewChecked(): void {
     const el = this.input.nativeElement;
-    if (el.value !== this.value) el.value = this.value;
+    if (el.value === this.value) return;
+    // Reescrever o texto (máscara) manda o cursor para o fim: edição no meio do campo guarda a posição.
+    const caret = document.activeElement === el ? el.selectionStart : null;
+    const keep = caret !== null && caret < el.value.length ? this.significantBefore(el.value, caret) : null;
+    el.value = this.value;
+    if (keep !== null) {
+      const position = this.positionAfter(this.value, keep);
+      el.setSelectionRange(position, position);
+    }
+  }
+
+  /** Quantas letras e números existem antes da posição (a máscara só mexe em símbolos e espaços). */
+  private significantBefore(text: string, position: number): number {
+    return (text.slice(0, position).match(/[\p{L}\p{N}]/gu) ?? []).length;
+  }
+
+  /** Posição logo depois da letra ou número de ordem `count` do texto já com máscara. */
+  private positionAfter(text: string, count: number): number {
+    if (count === 0) return 0;
+    let seen = 0;
+    for (let i = 0; i < text.length; i++) {
+      if (/[\p{L}\p{N}]/u.test(text[i]) && ++seen === count) return i + 1;
+    }
+    return text.length;
   }
 }

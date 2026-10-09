@@ -222,3 +222,6 @@ export const FEATURED_FLAVOR_IDS: readonly string[] = [
   'doce-brigadeiro',
   'doce-chocolate-com-morango',
 ];
+
+/** Aviso de preço exibido junto dos valores de pizza (cardápio e montador). */
+export const SPECIAL_PRICE_NOTICE = 'Pizza com sabor especial: vale o valor dos especiais para a pizza inteira.';
