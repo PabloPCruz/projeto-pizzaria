@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuFacadeService } from '../../facade/menu.facade.service';
 import { BuilderView } from '../../facade/order.facade.service';
 
@@ -12,7 +12,12 @@ import { BuilderView } from '../../facade/order.facade.service';
       <div class="rule-gold !my-4" aria-hidden="true"></div>
       <dl class="space-y-4 text-sm">
         <div>
-          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">Tamanho</dt>
+          <div class="flex items-center justify-between gap-2">
+            <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">Tamanho</dt>
+            @if (editable) {
+              <button type="button" class="-my-3 inline-flex min-h-[44px] items-center px-2 text-sm font-medium text-gold underline underline-offset-2 hover:text-gold-light" aria-label="Editar tamanho" (click)="edit.emit(0)">Editar</button>
+            }
+          </div>
           <dd class="mt-1">
             @if (size; as s) {
               {{ s.label }} · {{ s.slices }} fatias
@@ -22,9 +27,14 @@ import { BuilderView } from '../../facade/order.facade.service';
           </dd>
         </div>
         <div>
-          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">
-            Sabores ({{ view.draft.flavorIds.length }}/{{ view.maxFlavors }})
-          </dt>
+          <div class="flex items-center justify-between gap-2">
+            <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">
+              Sabores ({{ view.draft.flavorIds.length }}/{{ view.maxFlavors }})
+            </dt>
+            @if (editable) {
+              <button type="button" class="-my-3 inline-flex min-h-[44px] items-center px-2 text-sm font-medium text-gold underline underline-offset-2 hover:text-gold-light" aria-label="Editar sabores" (click)="edit.emit(1)">Editar</button>
+            }
+          </div>
           <dd class="mt-1">
             @if (flavorNames.length > 0) {
               <ul class="space-y-0.5">
@@ -38,13 +48,27 @@ import { BuilderView } from '../../facade/order.facade.service';
           </dd>
         </div>
         <div>
-          <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">Borda</dt>
+          <div class="flex items-center justify-between gap-2">
+            <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">Borda</dt>
+            @if (editable) {
+              <button type="button" class="-my-3 inline-flex min-h-[44px] items-center px-2 text-sm font-medium text-gold underline underline-offset-2 hover:text-gold-light" aria-label="Editar borda" (click)="edit.emit(2)">Editar</button>
+            }
+          </div>
           <dd class="mt-1">{{ crustLabel }}</dd>
         </div>
-        @if (view.draft.notes.trim()) {
+        @if (view.draft.notes.trim() || editable) {
           <div>
-            <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">Observações</dt>
-            <dd class="mt-1 whitespace-pre-line break-words text-cream-muted">{{ view.draft.notes }}</dd>
+            <div class="flex items-center justify-between gap-2">
+              <dt class="text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-gold-soft">Observações</dt>
+              @if (editable) {
+                <button type="button" class="-my-3 inline-flex min-h-[44px] items-center px-2 text-sm font-medium text-gold underline underline-offset-2 hover:text-gold-light" aria-label="Editar observações" (click)="edit.emit(3)">Editar</button>
+              }
+            </div>
+            @if (view.draft.notes.trim()) {
+              <dd class="mt-1 whitespace-pre-line break-words text-cream-muted">{{ view.draft.notes }}</dd>
+            } @else {
+              <dd class="mt-1 text-cream-dim">Sem observações</dd>
+            }
           </div>
         }
       </dl>
@@ -59,6 +83,9 @@ import { BuilderView } from '../../facade/order.facade.service';
 })
 export class PizzaSummaryComponent {
   @Input({ required: true }) view!: BuilderView;
+  /** Na revisão: mostra um botão "Editar" em cada parte. Emite o índice do passo (0 tamanho, 1 sabores, 2 borda, 3 observações). */
+  @Input() editable = false;
+  @Output() edit = new EventEmitter<number>();
 
   constructor(private menu: MenuFacadeService) {}
 

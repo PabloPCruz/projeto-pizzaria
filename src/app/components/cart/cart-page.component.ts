@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { CartFacadeService, CartView } from '../../facade/cart.facade.service';
-import { MenuFacadeService } from '../../facade/menu.facade.service';
+import { CartFacadeService } from '../../facade/cart.facade.service';
 import { CheckoutFacadeService } from '../../facade/checkout.facade.service';
 import { StoreFacadeService } from '../../facade/store.facade.service';
 import { CheckoutFormComponent, OrderSent } from './checkout-form.component';
@@ -20,15 +19,9 @@ export class CartPageComponent {
 
   constructor(
     private cart: CartFacadeService,
-    private menu: MenuFacadeService,
     private storeFacade: StoreFacadeService,
     private checkout: CheckoutFacadeService
   ) {}
-
-  /** Só oferece "adicionar bebida" enquanto sobrar alguma bebida que ainda não está no pedido. */
-  hasDrinksToAdd(view: CartView): boolean {
-    return view.drinks.length < this.menu.getDrinks().length;
-  }
 
   /** Devolve os itens do último pedido ao carrinho e leva o foco para a lista, onde eles apareceram. */
   repeatLastOrder(): void {

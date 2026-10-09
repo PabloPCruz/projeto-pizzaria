@@ -59,19 +59,27 @@
 
           <app-cart-items [view]="view"></app-cart-items>
 
-          @if (hasDrinksToAdd(view)) {
-            <section aria-labelledby="bebida-title">
-              <h2 id="bebida-title" class="title-sub">
-                {{ view.drinks.length > 0 ? 'Quer adicionar outra bebida?' : 'Acompanha uma bebida?' }}
-              </h2>
-              <p class="mt-1 text-sm leading-relaxed text-cream-muted">
-                Opcional. Toque em adicionar e a bebida entra em "Seus itens"; lá você ajusta a quantidade ou retira.
-              </p>
-              <div class="mt-4"><app-drink-picker [onlyAvailable]="true"></app-drink-picker></div>
-            </section>
-          }
+          <!-- Bebidas: só um cartão com o botão; a lista com os valores abre em pop-up. -->
+          <section aria-labelledby="bebida-title">
+            <div class="card flex flex-wrap items-center justify-between gap-x-4 gap-y-3 p-4 sm:p-5">
+              <div class="flex items-center gap-3">
+                <span class="text-gold"><lucide-icon name="cup-soda" [size]="24"></lucide-icon></span>
+                <div>
+                  <h2 id="bebida-title" class="text-lg font-semibold leading-snug">
+                    {{ view.drinks.length > 0 ? 'Quer adicionar outra bebida?' : 'Acompanha uma bebida?' }}
+                  </h2>
+                  <p class="text-sm text-cream-muted">Opcional.</p>
+                </div>
+              </div>
+              <button type="button" class="btn-ghost min-h-[44px] max-sm:w-full" aria-haspopup="dialog" (click)="drinksDialog.open()">
+                <lucide-icon name="plus" [size]="18"></lucide-icon>
+                Adicionar bebida
+              </button>
+            </div>
+            <app-drinks-dialog #drinksDialog></app-drinks-dialog>
+          </section>
 
-          <app-checkout-form (sent)="onSent($event)"></app-checkout-form>
+          <app-checkout-form class="block" (sent)="onSent($event)"></app-checkout-form>
         </div>
 
         <div class="lg:sticky lg:top-24">

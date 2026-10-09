@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { CartFacadeService, DrinkLineView } from '../../facade/cart.facade.service';
 import { MenuFacadeService } from '../../facade/menu.facade.service';
@@ -14,8 +14,8 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (lines$ | async; as lines) {
-      <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        @for (drink of visibleDrinks(lines); track drink.id) {
+      <ul class="grid gap-3" [ngClass]="compact ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'">
+        @for (drink of drinks; track drink.id) {
           <li
             [id]="'drink-' + drink.id"
             class="card flex items-center justify-between gap-3 p-3 pl-4 transition-colors duration-base"
@@ -56,11 +56,8 @@ import { Drink } from '../../interfaces/pizza-menu.interface';
   `,
 })
 export class DrinkPickerComponent {
-  /**
-   * `true` = lista só as bebidas que ainda NÃO estão no pedido (usado no carrinho, onde as já escolhidas
-   * aparecem em "Seus itens"; assim a mesma bebida nunca fica repetida na tela).
-   */
-  @Input() onlyAvailable = false;
+  /** `true` = uma coluna só (usado no pop-up de bebidas do carrinho). */
+  @Input() compact = false;
 
   readonly drinks = this.menu.getDrinks();
   readonly lines$ = this.cart.view$.pipe(
@@ -70,8 +67,7 @@ export class DrinkPickerComponent {
 
   constructor(
     private menu: MenuFacadeService,
-    private cart: CartFacadeService,
-    private host: ElementRef<HTMLElement>
+    private cart: CartFacadeService
   ) {}
 
   /** Esgotada hoje (data/availability.ts): sem "Adicionar". Se já está no pedido, continua com o − para poder retirar. */
@@ -84,24 +80,10 @@ export class DrinkPickerComponent {
     return this.menu.getDrinkPrice(drink.id);
   }
 
-  visibleDrinks(lines: Map<string, DrinkLineView>): readonly Drink[] {
-    return this.onlyAvailable ? this.drinks.filter((d) => !lines.has(d.id)) : this.drinks;
-  }
-
   add(drink: Drink): void {
     this.cart.addDrink(drink.id);
     this.live = `${drink.label} adicionada ao carrinho. Quantidade: 1.`;
-    if (this.onlyAvailable) {
-      // A linha some daqui (passa para "Seus itens"): o foco vai para o próximo "Adicionar" da lista.
-      // Era a última? A seção inteira some e o foco vai para "Seus itens", onde a bebida acabou de entrar.
-      setTimeout(() => {
-        const next = this.host.nativeElement.querySelector<HTMLElement>('button[aria-label^="Adicionar"]');
-        // A seção removida deixa o botão antigo solto no DOM: só vale o que ainda está na página.
-        (next?.isConnected ? next : document.getElementById('itens-title'))?.focus();
-      });
-    } else {
-      this.focusAfterRender(drink.id, 'button[aria-label^="Aumentar"]');
-    }
+    this.focusAfterRender(drink.id, 'button[aria-label^="Aumentar"]');
   }
 
   change(drink: Drink, line: DrinkLineView, quantity: number): void {

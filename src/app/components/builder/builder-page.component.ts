@@ -36,6 +36,8 @@ export class BuilderPageComponent implements OnInit {
   notice = '';
   /** Motivo pelo qual não dá para avançar (aria-live). */
   stepError = '';
+  /** O cliente veio da revisão para corrigir algo: o botão de avançar volta direto para a revisão. */
+  returnToReview = false;
 
   @ViewChild('stepHeading') stepHeading?: ElementRef<HTMLElement>;
   @ViewChild('addedHeading') addedHeading?: ElementRef<HTMLElement>;
@@ -69,7 +71,18 @@ export class BuilderPageComponent implements OnInit {
   next(view: BuilderView): void {
     this.stepError = this.blockingError(view);
     if (this.stepError) return;
+    if (this.returnToReview) {
+      // Pizza ainda válida: volta à revisão; senão, os sabores precisam de atenção primeiro.
+      this.go(view.validation.valid ? this.steps.length - 1 : 1);
+      return;
+    }
     this.go(this.step + 1);
+  }
+
+  /** Botão "Editar" da revisão: vai ao passo e, ao terminar, "Voltar à revisão" leva direto de volta. */
+  editFromReview(index: number): void {
+    this.go(index);
+    this.returnToReview = true;
   }
 
   back(): void {
@@ -93,6 +106,7 @@ export class BuilderPageComponent implements OnInit {
   /** Desiste da edição: a pizza do carrinho continua exatamente como estava. */
   cancelEdit(): void {
     this.order.cancelEdit();
+    this.returnToReview = false;
     this.step = 0;
     this.notice = '';
     this.stepError = '';
@@ -109,12 +123,15 @@ export class BuilderPageComponent implements OnInit {
 
   addAnother(): void {
     this.added = false;
+    this.returnToReview = false;
     this.go(0);
   }
 
   private go(index: number): void {
     this.dir = index < this.step ? 'back' : 'fwd';
     this.step = Math.max(0, Math.min(this.steps.length - 1, index));
+    // Chegou à revisão (ou saiu da edição): o atalho de volta já cumpriu o papel.
+    if (this.step === this.steps.length - 1) this.returnToReview = false;
     if (this.step >= 2) this.notice = '';
     this.stepError = '';
     this.order.setStep(this.step);
