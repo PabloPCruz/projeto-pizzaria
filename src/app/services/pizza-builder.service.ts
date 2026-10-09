@@ -13,7 +13,7 @@ const MAX_QUANTITY = 20;
 /** Pizza (ou edição) abandonada há mais de 3 dias é descartada. */
 const BUILDER_TTL_MS = 3 * 24 * 60 * 60 * 1000;
 
-const EMPTY_DRAFT: PizzaBuilderDraft = { size: null, flavorIds: [], crustId: null, notes: '', editingId: null, quantity: 1 };
+const EMPTY_DRAFT: PizzaBuilderDraft = { size: null, flavorIds: [], flavorOptions: {}, crustId: null, notes: '', editingId: null, quantity: 1 };
 
 /** Estado da pizza que o cliente está montando (persistido a cada alteração). */
 @Injectable({ providedIn: 'root' })
@@ -43,7 +43,7 @@ export class PizzaBuilderService {
   setSize(size: PizzaSizeId): number {
     const current = this.snapshot;
     const flavorIds = this.sizeRules.trimToSize(size, current.flavorIds);
-    this.commit({ ...current, size, flavorIds });
+    this.commit({ ...current, size, flavorIds, flavorOptions: this.catalog.sanitizeFlavorOptions(current.flavorOptions, flavorIds) });
     return current.flavorIds.length - flavorIds.length;
   }
 
@@ -54,13 +54,22 @@ export class PizzaBuilderService {
   toggleFlavor(flavorId: string): boolean {
     const current = this.snapshot;
     if (current.flavorIds.includes(flavorId)) {
-      this.commit({ ...current, flavorIds: current.flavorIds.filter((id) => id !== flavorId) });
+      const { [flavorId]: _removed, ...flavorOptions } = current.flavorOptions;
+      this.commit({ ...current, flavorIds: current.flavorIds.filter((id) => id !== flavorId), flavorOptions });
       return true;
     }
     if (!this.catalog.getFlavor(flavorId)) return false;
     if (!this.sizeRules.canAddFlavor(current.size, current.flavorIds)) return false;
     this.commit({ ...current, flavorIds: [...current.flavorIds, flavorId] });
     return true;
+  }
+
+  /** Escolhe a opção de um sabor que está na pizza. Opção que não existe é ignorada. */
+  setFlavorOption(flavorId: string, optionId: string): void {
+    const current = this.snapshot;
+    if (!current.flavorIds.includes(flavorId)) return;
+    const flavorOptions = this.catalog.sanitizeFlavorOptions({ ...current.flavorOptions, [flavorId]: optionId }, current.flavorIds);
+    this.commit({ ...current, flavorOptions });
   }
 
   setCrust(crustId: string | null): void {
@@ -73,9 +82,11 @@ export class PizzaBuilderService {
 
   /** Carrega uma pizza do carrinho para edição (substitui o rascunho atual). */
   load(line: PizzaLine): void {
+    const flavorIds = this.sizeRules.trimToSize(line.size, line.flavorIds);
     this.commit({
       size: line.size,
-      flavorIds: this.sizeRules.trimToSize(line.size, line.flavorIds),
+      flavorIds,
+      flavorOptions: this.catalog.sanitizeFlavorOptions(line.flavorOptions, flavorIds),
       crustId: line.crustId,
       notes: line.notes,
       editingId: line.id,
@@ -111,9 +122,11 @@ export class PizzaBuilderService {
         : null;
     const crustId =
       typeof saved['crustId'] === 'string' && this.catalog.getCrust(saved['crustId']) ? saved['crustId'] : null;
+    const flavorIds = this.sizeRules.trimToSize(size, this.catalog.sanitizeFlavorIds(saved['flavorIds']));
     return {
       size,
-      flavorIds: this.sizeRules.trimToSize(size, this.catalog.sanitizeFlavorIds(saved['flavorIds'])),
+      flavorIds,
+      flavorOptions: this.catalog.sanitizeFlavorOptions(saved['flavorOptions'], flavorIds),
       crustId,
       notes: typeof saved['notes'] === 'string' ? saved['notes'] : '',
       editingId: typeof saved['editingId'] === 'string' && saved['editingId'] ? saved['editingId'] : null,

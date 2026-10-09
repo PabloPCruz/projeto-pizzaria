@@ -1,7 +1,5 @@
 <form id="checkout-form" novalidate (ngSubmit)="submit()" aria-labelledby="checkout-title" *ngIf="draft$ | async as draft">
   <h2 id="checkout-title" tabindex="-1" class="title-sub outline-none">Finalizar pedido</h2>
-  <p class="mt-1 text-sm leading-relaxed text-cream-muted">Preencha seus dados. O pedido é enviado pelo WhatsApp para a loja confirmar.</p>
-  <p class="mt-1 text-xs leading-relaxed text-cream-dim">Seus dados ficam neste aparelho e só vão para a loja pelo WhatsApp. Para achar o endereço e a entrega, consultamos o CEP em serviços públicos (ViaCEP, AwesomeAPI e OpenStreetMap). Para apagar tudo deste aparelho, use "Apagar meus dados" no rodapé.</p>
 
   <!-- Tentou enviar com a loja fechada: nada foi enviado -->
   @if (blockedMessage) {

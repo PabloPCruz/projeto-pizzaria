@@ -8,7 +8,7 @@ import { OrderFacadeService } from '../../facade/order.facade.service';
   template: `
     @if (view$ | async; as view) {
       <div class="mx-auto max-w-xl">
-        <app-pizza-summary [view]="view"></app-pizza-summary>
+        <app-pizza-summary [view]="view" [editable]="true" (edit)="editStep.emit($event)"></app-pizza-summary>
 
         @if (cart$ | async; as cart) {
           @if (cart.drinks.length > 0) {
@@ -47,6 +47,8 @@ export class ReviewStepComponent {
 
   /** Emite `true` quando a pizza salva substituiu uma que já estava no carrinho (edição). */
   @Output() added = new EventEmitter<boolean>();
+  /** O cliente quer corrigir uma parte da pizza: emite o índice do passo (0 tamanho, 1 sabores, 2 borda, 3 extras). */
+  @Output() editStep = new EventEmitter<number>();
 
   constructor(
     private order: OrderFacadeService,

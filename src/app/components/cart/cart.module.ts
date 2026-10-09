@@ -4,11 +4,12 @@ import { SharedModule } from '../shared/shared.module';
 import { CartItemsComponent } from './cart-items.component';
 import { CartPageComponent } from './cart-page.component';
 import { CheckoutFormComponent } from './checkout-form.component';
+import { DrinksDialogComponent } from './drinks-dialog.component';
 import { OrderSentComponent } from './order-sent.component';
 import { OrderSummaryComponent } from './order-summary.component';
 
 @NgModule({
-  declarations: [CartPageComponent, CartItemsComponent, CheckoutFormComponent, OrderSummaryComponent, OrderSentComponent],
+  declarations: [CartPageComponent, CartItemsComponent, CheckoutFormComponent, OrderSummaryComponent, OrderSentComponent, DrinksDialogComponent],
   imports: [SharedModule, RouterModule.forChild([{ path: '', component: CartPageComponent }])],
 })
 export class CartModule {}

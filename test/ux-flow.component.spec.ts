@@ -65,10 +65,14 @@ describe('Carrinho: clareza e acessibilidade', () => {
     expect(document.activeElement?.id).toBe('field-name');
   });
 
-  it('aviso de privacidade perto do formulário diz para onde vão os dados', () => {
+  it('o formulário vai direto aos campos: sem parágrafos de explicação sobre dados e CEP', () => {
     const form = el.querySelector('#checkout-form')!;
-    expect(form.textContent).toContain('ficam neste aparelho e só vão para a loja pelo WhatsApp');
-    expect(form.textContent).toContain('ViaCEP');
+    expect(form.querySelector('#checkout-title')?.textContent?.trim()).toBe('Finalizar pedido');
+    expect(form.textContent).not.toContain('Preencha seus dados');
+    expect(form.textContent).not.toContain('ficam neste aparelho');
+    expect(form.textContent).not.toContain('ViaCEP');
+    // O título é seguido direto pelo primeiro bloco de campos.
+    expect(form.querySelector('h2')?.nextElementSibling?.tagName).not.toBe('P');
   });
 
   describe('erros no campo ao sair dele', () => {
@@ -217,7 +221,7 @@ describe('Pedido pronto: confirmar antes de apagar', () => {
 });
 
 describe('Aviso de limite de sabores: dentro do cartão e temporário', () => {
-  const [A, B, C] = ['tradicional-calabresa', 'tradicional-mussarela', 'especial-atum'];
+  const [A, B, C] = ['tradicional-frango-catupiry', 'tradicional-mussarela', 'especial-atum'];
 
   it('aparece dentro do cartão do contador (não solto sobre a lista) e some sozinho', async () => {
     jasmine.clock().install();

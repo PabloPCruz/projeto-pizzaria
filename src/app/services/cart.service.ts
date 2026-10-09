@@ -141,6 +141,8 @@ export class CartService {
         id: typeof item['id'] === 'string' && item['id'] ? item['id'] : this.newId(),
         size,
         flavorIds,
+        // Linha salva antes de existir a escolha de opção fica sem o campo (não é cobrada a escolha).
+        ...(item['flavorOptions'] !== undefined ? { flavorOptions: this.catalog.sanitizeFlavorOptions(item['flavorOptions'], flavorIds) } : {}),
         crustId,
         notes: typeof item['notes'] === 'string' ? item['notes'].slice(0, MAX_NOTES) : '',
         quantity: this.clamp(Number(item['quantity'])),

@@ -2,6 +2,7 @@ import {
   Crust,
   Drink,
   FlavorCategory,
+  FlavorOption,
   PizzaFlavor,
   PizzaSize,
 } from '../interfaces/pizza-menu.interface';
@@ -52,15 +53,22 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
+/** Opções que aparecem em texto vermelho no cardápio impresso. Para incluir outra, acrescente aqui e no sabor. */
+const SEM_OPCAO: FlavorOption = { id: 'sem-opcao', label: 'Sem opção', plain: true };
+const COM_CATUPIRY: FlavorOption = { id: 'catupiry', label: 'Com catupiry' };
+const COM_CEBOLA: FlavorOption = { id: 'cebola', label: 'Com cebola' };
+const AO_LEITE: FlavorOption = { id: 'ao-leite', label: 'Ao leite' };
+const BRANCO: FlavorOption = { id: 'branco', label: 'Branco' };
+
 function flavor(
   category: FlavorCategory,
   name: string,
   ingredients: string,
-  optionHint?: string,
+  options?: readonly FlavorOption[],
   image?: string
 ): PizzaFlavor {
   const result: PizzaFlavor = { id: slugify(`${category}-${name}`), name, category, ingredients };
-  if (optionHint) result.optionHint = optionHint;
+  if (options) result.options = options;
   if (image) result.image = image;
   return result;
 }
@@ -76,14 +84,14 @@ const TRADICIONAIS: PizzaFlavor[] = [
   flavor('tradicional', 'Carijó', 'Mussarela, frango, milho e ovos'),
   flavor('tradicional', 'Americana', 'Mussarela, calabresa, bacon, ovos e cebola'),
   flavor('tradicional', 'Mussarela', 'Mussarela e tomate', undefined, 'assets/img-flavors/mussarela-tomate.jpg'),
-  flavor('tradicional', 'Brócolis', 'Mussarela, brócolis e bacon', 'Opção catupiry', 'assets/img-flavors/brocolis.jpg'),
+  flavor('tradicional', 'Brócolis', 'Mussarela, brócolis e bacon', [SEM_OPCAO, COM_CATUPIRY], 'assets/img-flavors/brocolis.jpg'),
   flavor('tradicional', 'Baiana', 'Mussarela, calabresa ralada, molho de pimenta, ovos e cebola'),
   flavor('tradicional', 'Bolonhesa', 'Mussarela e molho bolonhesa', undefined, 'assets/img-flavors/bolonhesa.jpg'),
   flavor('tradicional', 'Bolonhesa Catu-Cheddar', 'Mussarela, carne moída, catupiry e cheddar'),
   flavor('tradicional', 'Quatro Queijos com Calabresa', 'Mussarela, gorgonzola, provolone, catupiry e calabresa'),
   flavor('tradicional', 'Quatro Queijos com Lombo', 'Mussarela, gorgonzola, provolone, catupiry e lombo'),
   flavor('tradicional', 'Quatro Queijos com Calabresa e Lombo', 'Mussarela, catupiry, provolone, gorgonzola, calabresa e lombo'),
-  flavor('tradicional', 'Calabresa', 'Mussarela e calabresa', 'Opção cebola ou catupiry', 'assets/img-flavors/calabresa.jpg'),
+  flavor('tradicional', 'Calabresa', 'Mussarela e calabresa', [SEM_OPCAO, COM_CEBOLA, COM_CATUPIRY], 'assets/img-flavors/calabresa.jpg'),
   flavor('tradicional', 'Calabresa Catu-Cheddar', 'Mussarela, calabresa, catupiry e cheddar'),
   flavor('tradicional', 'Marguerita', 'Mussarela, tomate, parmesão e manjericão', undefined, 'assets/img-flavors/margherita.jpg'),
   flavor('tradicional', 'Milho com Bacon', 'Mussarela, milho e bacon'),
@@ -103,7 +111,7 @@ const TRADICIONAIS: PizzaFlavor[] = [
   flavor('tradicional', 'Francesa', 'Mussarela, presunto, cebola, manjericão e creme de leite', undefined, 'assets/img-flavors/presunto.jpg'),
   // CONFERIR: ingredientes cobertos por tarja branca no cardápio impresso.
   flavor('tradicional', 'Presunto Misto', ''),
-  flavor('tradicional', 'Lombo com Milho', 'Mussarela, lombo defumado e milho', 'Opção catupiry', 'assets/img-flavors/lombo-milho.jpg'),
+  flavor('tradicional', 'Lombo com Milho', 'Mussarela, lombo defumado e milho', [SEM_OPCAO, COM_CATUPIRY], 'assets/img-flavors/lombo-milho.jpg'),
 ];
 
 const ESPECIAIS: PizzaFlavor[] = [
@@ -141,7 +149,7 @@ const DOCES: PizzaFlavor[] = [
   flavor('doce', 'Paçoca', 'Leite condensado, chocolate ao leite e paçoca'),
   flavor('doce', 'Prestígio', 'Chocolate ao leite, coco ralado e leite condensado'),
   flavor('doce', 'Romeu e Julieta', 'Mussarela, creme de leite, goiaba e leite condensado'),
-  flavor('doce', 'Chocolate', 'Leite condensado e chocolate ao leite', 'Opção chocolate branco'),
+  flavor('doce', 'Chocolate', 'Leite condensado e chocolate ao leite', [AO_LEITE, BRANCO]),
   flavor('doce', 'Sonho de Valsa', 'Leite condensado, chocolate ao leite e sonho de valsa'),
   flavor('doce', 'Chocolate com Morango', 'Leite condensado, chocolate ao leite, morango e suspiro', undefined, 'assets/img-flavors/chocolate-morango.jpg'),
   flavor('doce', 'Banana com Nutella', 'Mussarela, leite condensado, banana e tiras de nutella'),

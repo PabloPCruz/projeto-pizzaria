@@ -41,7 +41,7 @@ export class OrderFacadeService {
           draft,
           maxFlavors,
           remainingFlavors: Math.max(0, maxFlavors - draft.flavorIds.length),
-          validation: this.sizeRules.validate(draft.size, draft.flavorIds),
+          validation: this.sizeRules.validate(draft.size, draft.flavorIds, draft.flavorOptions),
           unitPrice: draft.size ? this.pricing.pizzaUnitPrice(draft.size, draft.flavorIds, draft.crustId) : null,
           editing: !!draft.editingId,
         };
@@ -59,6 +59,11 @@ export class OrderFacadeService {
     return this.builder.toggleFlavor(flavorId);
   }
 
+  /** Escolhe a opção de um sabor da pizza (ex.: calabresa com cebola ou com catupiry). */
+  selectFlavorOption(flavorId: string, optionId: string): void {
+    this.builder.setFlavorOption(flavorId, optionId);
+  }
+
   selectCrust(crustId: string | null): void {
     this.builder.setCrust(crustId);
   }
@@ -73,10 +78,11 @@ export class OrderFacadeService {
    */
   addToCart(quantity = 1): boolean {
     const draft = this.builder.snapshot;
-    if (!draft.size || !this.sizeRules.validate(draft.size, draft.flavorIds).valid) return false;
+    if (!draft.size || !this.sizeRules.validate(draft.size, draft.flavorIds, draft.flavorOptions).valid) return false;
     const line = {
       size: draft.size,
       flavorIds: draft.flavorIds,
+      flavorOptions: draft.flavorOptions,
       crustId: draft.crustId,
       notes: draft.notes.trim(),
       quantity,

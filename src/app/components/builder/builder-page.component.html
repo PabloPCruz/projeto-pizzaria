@@ -121,7 +121,7 @@
           <app-flavors-step *ngSwitchCase="1"></app-flavors-step>
           <app-crust-step *ngSwitchCase="2"></app-crust-step>
           <app-extras-step *ngSwitchCase="3"></app-extras-step>
-          <app-review-step *ngSwitchCase="4" (added)="onAdded($event)"></app-review-step>
+          <app-review-step *ngSwitchCase="4" (added)="onAdded($event)" (editStep)="editFromReview($event)"></app-review-step>
         </div>
 
         <!-- Navegação entre passos (fixa no rodapé em telas pequenas) -->
@@ -140,7 +140,7 @@
             </button>
             @if (step < steps.length - 1) {
               <button type="button" class="btn-gold min-w-[9rem]" (click)="next(view)">
-                Avançar
+                {{ returnToReview ? 'Voltar à revisão' : 'Avançar' }}
                 <lucide-icon name="arrow-right" [size]="18"></lucide-icon>
               </button>
             }
