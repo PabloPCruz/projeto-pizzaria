@@ -1,9 +1,9 @@
 {
   "meta": {
-    "gerado_em": "2026-10-22T19:07:16.075Z",
+    "gerado_em": "2026-10-22T19:12:05.241Z",
     "posts": 55,
     "chamadas": 110,
-    "blogId": null,
+    "blogId": "7592008",
     "mediaBaseUrl": "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada",
     "aviso": "Rascunho. Nada agendado. Cada item vira uma chamada createScheduledPost (info deve ser enviado como string JSON)."
   },
@@ -12,10 +12,10 @@
       "id": "X01",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
+        "data no passado"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-22T16:10:00-03:00",
         "info": {
           "autoPublish": true,
@@ -56,10 +56,10 @@
       "id": "X01",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
+        "data no passado"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-22T16:10:00-03:00",
         "info": {
           "autoPublish": true,
@@ -96,11 +96,9 @@
     {
       "id": "X02",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-22T16:15:00-03:00",
         "info": {
           "autoPublish": true,
@@ -138,11 +136,9 @@
     {
       "id": "X02",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-22T16:15:00-03:00",
         "info": {
           "autoPublish": true,
@@ -177,11 +173,9 @@
     {
       "id": "P01",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-23T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -221,11 +215,9 @@
     {
       "id": "P01",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-23T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -262,11 +254,9 @@
     {
       "id": "P02",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-24T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -304,11 +294,9 @@
     {
       "id": "P02",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-24T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -344,11 +332,10 @@
       "id": "P03",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-28T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -395,11 +382,10 @@
       "id": "P03",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-28T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -442,11 +428,9 @@
     {
       "id": "P04",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-29T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -496,11 +480,9 @@
     {
       "id": "P04",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-29T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -547,11 +529,9 @@
     {
       "id": "P05",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-30T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -591,11 +571,9 @@
     {
       "id": "P05",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-30T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -632,11 +610,9 @@
     {
       "id": "P06",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-31T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -676,11 +652,9 @@
     {
       "id": "P06",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-10-31T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -717,11 +691,9 @@
     {
       "id": "P07",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-02T11:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -761,11 +733,9 @@
     {
       "id": "P07",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-02T11:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -802,11 +772,9 @@
     {
       "id": "P08",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-04T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -852,11 +820,9 @@
     {
       "id": "P08",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-04T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -899,11 +865,9 @@
     {
       "id": "P09",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-05T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -951,11 +915,9 @@
     {
       "id": "P09",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-05T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1000,11 +962,9 @@
     {
       "id": "P10",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-06T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1044,11 +1004,9 @@
     {
       "id": "P10",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-06T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1085,11 +1043,9 @@
     {
       "id": "P11",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-07T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1127,11 +1083,9 @@
     {
       "id": "P11",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-07T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1166,11 +1120,9 @@
     {
       "id": "P13",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-12T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1216,11 +1168,9 @@
     {
       "id": "P13",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-12T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1263,11 +1213,9 @@
     {
       "id": "P14",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-13T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1307,11 +1255,9 @@
     {
       "id": "P14",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-13T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1348,11 +1294,9 @@
     {
       "id": "P15",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-14T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1392,11 +1336,9 @@
     {
       "id": "P15",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-14T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1433,11 +1375,9 @@
     {
       "id": "P16",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-18T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1477,11 +1417,9 @@
     {
       "id": "P16",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-18T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1518,11 +1456,9 @@
     {
       "id": "P17",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-19T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1568,11 +1504,9 @@
     {
       "id": "P17",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-19T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1615,11 +1549,9 @@
     {
       "id": "P18",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-20T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1659,11 +1591,9 @@
     {
       "id": "P18",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-20T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1700,11 +1630,9 @@
     {
       "id": "P19",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-21T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1744,11 +1672,9 @@
     {
       "id": "P19",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-21T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1785,11 +1711,9 @@
     {
       "id": "P20",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-25T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1829,11 +1753,9 @@
     {
       "id": "P20",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-25T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1870,11 +1792,9 @@
     {
       "id": "P21",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-26T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1914,11 +1834,9 @@
     {
       "id": "P21",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-26T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1955,11 +1873,9 @@
     {
       "id": "P22",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-27T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -1999,11 +1915,9 @@
     {
       "id": "P22",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-27T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2040,11 +1954,9 @@
     {
       "id": "P23",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-28T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2082,11 +1994,9 @@
     {
       "id": "P23",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-11-28T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2121,11 +2031,9 @@
     {
       "id": "P24",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-02T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2165,11 +2073,9 @@
     {
       "id": "P24",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-02T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2207,11 +2113,10 @@
       "id": "P25",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-03T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2264,11 +2169,10 @@
       "id": "P25",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-03T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2317,11 +2221,9 @@
     {
       "id": "P26",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-04T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2361,11 +2263,9 @@
     {
       "id": "P26",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-04T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2402,11 +2302,9 @@
     {
       "id": "P27",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-05T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2444,11 +2342,9 @@
     {
       "id": "P27",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-05T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2483,11 +2379,9 @@
     {
       "id": "P28",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-09T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2527,11 +2421,9 @@
     {
       "id": "P28",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-09T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2568,11 +2460,9 @@
     {
       "id": "P29",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-10T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2612,11 +2502,9 @@
     {
       "id": "P29",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-10T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2653,11 +2541,9 @@
     {
       "id": "P30",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-11T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2697,11 +2583,9 @@
     {
       "id": "P30",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-11T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2738,11 +2622,9 @@
     {
       "id": "P31",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-12T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2782,11 +2664,9 @@
     {
       "id": "P31",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-12T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2823,11 +2703,9 @@
     {
       "id": "P32",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-16T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2873,11 +2751,9 @@
     {
       "id": "P32",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-16T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2920,11 +2796,9 @@
     {
       "id": "P33",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-17T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -2970,11 +2844,9 @@
     {
       "id": "P33",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-17T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3017,11 +2889,9 @@
     {
       "id": "P34",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-18T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3061,11 +2931,9 @@
     {
       "id": "P34",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-18T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3102,11 +2970,9 @@
     {
       "id": "P35",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-19T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3144,11 +3010,9 @@
     {
       "id": "P35",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-19T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3183,11 +3047,9 @@
     {
       "id": "P36",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-23T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3227,11 +3089,9 @@
     {
       "id": "P36",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-23T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3268,11 +3128,9 @@
     {
       "id": "P37",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-24T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3312,11 +3170,9 @@
     {
       "id": "P37",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-24T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3353,11 +3209,9 @@
     {
       "id": "P38",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-25T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3397,11 +3251,9 @@
     {
       "id": "P38",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-25T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3438,11 +3290,9 @@
     {
       "id": "P39",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-26T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3482,11 +3332,9 @@
     {
       "id": "P39",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-26T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3523,11 +3371,9 @@
     {
       "id": "P40",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-30T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3567,11 +3413,9 @@
     {
       "id": "P40",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-30T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3608,11 +3452,9 @@
     {
       "id": "P41",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-31T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3652,11 +3494,9 @@
     {
       "id": "P41",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2026-12-31T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3693,11 +3533,9 @@
     {
       "id": "P42",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-01T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3737,11 +3575,9 @@
     {
       "id": "P42",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-01T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3778,11 +3614,9 @@
     {
       "id": "P43",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-02T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3820,11 +3654,9 @@
     {
       "id": "P43",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-02T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3859,11 +3691,9 @@
     {
       "id": "P44",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-06T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3909,11 +3739,9 @@
     {
       "id": "P44",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-06T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -3956,11 +3784,9 @@
     {
       "id": "P45",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-07T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4000,11 +3826,9 @@
     {
       "id": "P45",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-07T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4041,11 +3865,9 @@
     {
       "id": "P46",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-08T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4085,11 +3907,9 @@
     {
       "id": "P46",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-08T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4126,11 +3946,9 @@
     {
       "id": "P47",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-09T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4168,11 +3986,9 @@
     {
       "id": "P47",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-09T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4208,11 +4024,10 @@
       "id": "P48",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-13T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4253,11 +4068,10 @@
       "id": "P48",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-13T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4294,11 +4108,9 @@
     {
       "id": "P49",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-14T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4338,11 +4150,9 @@
     {
       "id": "P49",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-14T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4379,11 +4189,9 @@
     {
       "id": "P50",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-15T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4423,11 +4231,9 @@
     {
       "id": "P50",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-15T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4465,11 +4271,10 @@
       "id": "P51",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-16T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4508,11 +4313,10 @@
       "id": "P51",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
         "aguarda deploy_massa"
       ],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-16T16:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4547,11 +4351,9 @@
     {
       "id": "P52",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-20T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4591,11 +4393,9 @@
     {
       "id": "P52",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-20T18:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4632,11 +4432,9 @@
     {
       "id": "P53",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-21T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4676,11 +4474,9 @@
     {
       "id": "P53",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-21T17:30:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4717,11 +4513,9 @@
     {
       "id": "P54",
       "network": "instagram",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-22T17:00:00-03:00",
         "info": {
           "autoPublish": true,
@@ -4761,11 +4555,9 @@
     {
       "id": "P54",
       "network": "facebook",
-      "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool"
-      ],
+      "bloqueios": [],
       "call": {
-        "blogId": "{blogId}",
+        "blogId": "7592008",
         "date": "2027-01-22T17:00:00-03:00",
         "info": {
           "autoPublish": true,

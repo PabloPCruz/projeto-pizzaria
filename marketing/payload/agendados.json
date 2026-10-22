@@ -1,0 +1,6 @@
+[
+  { "post": "X01", "rede": "instagram", "tipo": "POST", "quando": "2026-10-22T16:20 (America/Sao_Paulo)", "metricoolId": 403485319 },
+  { "post": "X01", "rede": "facebook", "tipo": "POST", "quando": "2026-10-22T16:20 (America/Sao_Paulo)", "metricoolId": 403485341 },
+  { "post": "X02", "rede": "instagram", "tipo": "REEL", "quando": "2026-10-22T16:25 (America/Sao_Paulo)", "metricoolId": 403485357 },
+  { "post": "X02", "rede": "facebook", "tipo": "REEL", "quando": "2026-10-22T16:25 (America/Sao_Paulo)", "metricoolId": 403485418 }
+]

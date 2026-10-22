@@ -1,6 +1,6 @@
 {
   "_ajuda": "blogId = id da marca Disk Pizza no Metricool (Instagram @diskpizzactba + Facebook). mediaBaseUrl = URL pública que serve processada/Pxx/... sem barra no fim. Enquanto null, nada é agendável.",
-  "blogId": null,
+  "blogId": "7592008",
   "timezone": "America/Sao_Paulo",
   "mediaBaseUrl": "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada",
   "liberados": {
