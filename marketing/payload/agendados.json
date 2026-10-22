@@ -1,6 +1,702 @@
 [
-  { "post": "X01", "rede": "instagram", "tipo": "POST", "quando": "2026-10-22T16:20 (America/Sao_Paulo)", "metricoolId": 403485319 },
-  { "post": "X01", "rede": "facebook", "tipo": "POST", "quando": "2026-10-22T16:20 (America/Sao_Paulo)", "metricoolId": 403485341 },
-  { "post": "X02", "rede": "instagram", "tipo": "REEL", "quando": "2026-10-22T16:25 (America/Sao_Paulo)", "metricoolId": 403485357 },
-  { "post": "X02", "rede": "facebook", "tipo": "REEL", "quando": "2026-10-22T16:25 (America/Sao_Paulo)", "metricoolId": 403485418 }
+  {
+    "post": "X01",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-10-22T16:20 (America/Sao_Paulo)",
+    "metricoolId": 403485319
+  },
+  {
+    "post": "X01",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-10-22T16:20 (America/Sao_Paulo)",
+    "metricoolId": 403485341
+  },
+  {
+    "post": "X02",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2026-10-22T16:25 (America/Sao_Paulo)",
+    "metricoolId": 403485357
+  },
+  {
+    "post": "X02",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2026-10-22T16:25 (America/Sao_Paulo)",
+    "metricoolId": 403485418
+  },
+  {
+    "post": "P01",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-10-23T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403488660
+  },
+  {
+    "post": "P01",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-10-23T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403488679
+  },
+  {
+    "post": "P02",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2026-10-24T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403488758
+  },
+  {
+    "post": "P02",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2026-10-24T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403488785
+  },
+  {
+    "post": "P04",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-10-29T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403488842
+  },
+  {
+    "post": "P04",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-10-29T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403488887
+  },
+  {
+    "post": "P05",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-10-30T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403488936
+  },
+  {
+    "post": "P05",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-10-30T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403488975
+  },
+  {
+    "post": "P06",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-10-31T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403489005
+  },
+  {
+    "post": "P06",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-10-31T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403489036
+  },
+  {
+    "post": "P07",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-02T11:30 (America/Sao_Paulo)",
+    "metricoolId": 403489678
+  },
+  {
+    "post": "P07",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-02T11:30 (America/Sao_Paulo)",
+    "metricoolId": 403489716
+  },
+  {
+    "post": "P08",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-04T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403489768
+  },
+  {
+    "post": "P08",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-04T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403489787
+  },
+  {
+    "post": "P09",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-05T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403489836
+  },
+  {
+    "post": "P09",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-05T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403489868
+  },
+  {
+    "post": "P11",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2026-11-07T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403490404
+  },
+  {
+    "post": "P11",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2026-11-07T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403490429
+  },
+  {
+    "post": "P10",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-06T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403505628
+  },
+  {
+    "post": "P10",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-06T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403505643
+  },
+  {
+    "post": "P13",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-12T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403505660
+  },
+  {
+    "post": "P13",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-12T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403505687
+  },
+  {
+    "post": "P14",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-13T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403505710
+  },
+  {
+    "post": "P14",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-13T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403505732
+  },
+  {
+    "post": "P15",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-14T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403505767
+  },
+  {
+    "post": "P15",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-14T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403505794
+  },
+  {
+    "post": "P16",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-18T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403505822
+  },
+  {
+    "post": "P16",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-18T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403505848
+  },
+  {
+    "post": "P17",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-19T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403506360
+  },
+  {
+    "post": "P17",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-19T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403506408
+  },
+  {
+    "post": "P18",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-20T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403506449
+  },
+  {
+    "post": "P18",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-20T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403506462
+  },
+  {
+    "post": "P19",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-21T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403506495
+  },
+  {
+    "post": "P19",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-21T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403506522
+  },
+  {
+    "post": "P20",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-25T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403506545
+  },
+  {
+    "post": "P20",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-25T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403506570
+  },
+  {
+    "post": "P21",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-26T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403506608
+  },
+  {
+    "post": "P21",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-26T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403506629
+  },
+  {
+    "post": "P22",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-11-27T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403507096
+  },
+  {
+    "post": "P22",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-11-27T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403507112
+  },
+  {
+    "post": "P23",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2026-11-28T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403507171
+  },
+  {
+    "post": "P23",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2026-11-28T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403507193
+  },
+  {
+    "post": "P24",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-02T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403507303
+  },
+  {
+    "post": "P24",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-02T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403507322
+  },
+  {
+    "post": "P26",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-04T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403507357
+  },
+  {
+    "post": "P26",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-04T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403507393
+  },
+  {
+    "post": "P27",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2026-12-05T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403507424
+  },
+  {
+    "post": "P27",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2026-12-05T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403507493
+  },
+  {
+    "post": "P28",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-09T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403508038
+  },
+  {
+    "post": "P28",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-09T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403508058
+  },
+  {
+    "post": "P29",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-10T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403508083
+  },
+  {
+    "post": "P29",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-10T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403508140
+  },
+  {
+    "post": "P30",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-11T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403508179
+  },
+  {
+    "post": "P30",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-11T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403508199
+  },
+  {
+    "post": "P31",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-12T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403509040
+  },
+  {
+    "post": "P31",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-12T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403509058
+  },
+  {
+    "post": "P32",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-16T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403509090
+  },
+  {
+    "post": "P32",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-16T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403509113
+  },
+  {
+    "post": "P33",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-17T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403509140
+  },
+  {
+    "post": "P33",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-17T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403509167
+  },
+  {
+    "post": "P34",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-18T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403509199
+  },
+  {
+    "post": "P34",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-18T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403509219
+  },
+  {
+    "post": "P35",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2026-12-19T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403509249
+  },
+  {
+    "post": "P35",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2026-12-19T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403509270
+  },
+  {
+    "post": "P36",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-23T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403509777
+  },
+  {
+    "post": "P36",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-23T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403509800
+  },
+  {
+    "post": "P37",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-24T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403509857
+  },
+  {
+    "post": "P37",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-24T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403509894
+  },
+  {
+    "post": "P38",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-25T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403509928
+  },
+  {
+    "post": "P38",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-25T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403509955
+  },
+  {
+    "post": "P39",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-26T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403509997
+  },
+  {
+    "post": "P39",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-26T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403510061
+  },
+  {
+    "post": "P40",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-30T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403510112
+  },
+  {
+    "post": "P40",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-30T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403510137
+  },
+  {
+    "post": "P41",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2026-12-31T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403510965
+  },
+  {
+    "post": "P41",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2026-12-31T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403510989
+  },
+  {
+    "post": "P42",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-01T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403511014
+  },
+  {
+    "post": "P42",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-01T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403511052
+  },
+  {
+    "post": "P43",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2027-01-02T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403511220
+  },
+  {
+    "post": "P43",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2027-01-02T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403511246
+  },
+  {
+    "post": "P44",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-06T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403511292
+  },
+  {
+    "post": "P45",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-07T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403511318
+  },
+  {
+    "post": "P45",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-07T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403511345
+  },
+  {
+    "post": "P46",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-08T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403512145
+  },
+  {
+    "post": "P47",
+    "rede": "instagram",
+    "tipo": "REEL",
+    "quando": "2027-01-09T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403512168
+  },
+  {
+    "post": "P47",
+    "rede": "facebook",
+    "tipo": "REEL",
+    "quando": "2027-01-09T16:30 (America/Sao_Paulo)",
+    "metricoolId": 403512198
+  },
+  {
+    "post": "P49",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-14T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403512225
+  },
+  {
+    "post": "P49",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-14T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403512254
+  },
+  {
+    "post": "P50",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-15T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403512280
+  },
+  {
+    "post": "P50",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-15T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403512313
+  },
+  {
+    "post": "P52",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-20T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403512376
+  },
+  {
+    "post": "P52",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-20T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403512402
+  },
+  {
+    "post": "P53",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-21T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403512434
+  },
+  {
+    "post": "P53",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-21T17:30 (America/Sao_Paulo)",
+    "metricoolId": 403512465
+  },
+  {
+    "post": "P54",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-22T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403512501
+  },
+  {
+    "post": "P54",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-22T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403512536
+  }
 ]

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "gerado_em": "2026-10-22T19:12:05.241Z",
+    "gerado_em": "2026-10-22T19:43:11.277Z",
     "posts": 55,
     "chamadas": 110,
     "blogId": "7592008",
@@ -12,6 +12,7 @@
       "id": "X01",
       "network": "instagram",
       "bloqueios": [
+        "já agendado no Metricool",
         "data no passado"
       ],
       "call": {
@@ -56,6 +57,7 @@
       "id": "X01",
       "network": "facebook",
       "bloqueios": [
+        "já agendado no Metricool",
         "data no passado"
       ],
       "call": {
@@ -96,7 +98,10 @@
     {
       "id": "X02",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool",
+        "data no passado"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-22T16:15:00-03:00",
@@ -136,7 +141,10 @@
     {
       "id": "X02",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool",
+        "data no passado"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-22T16:15:00-03:00",
@@ -173,7 +181,9 @@
     {
       "id": "P01",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-23T17:00:00-03:00",
@@ -215,7 +225,9 @@
     {
       "id": "P01",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-23T17:00:00-03:00",
@@ -254,7 +266,9 @@
     {
       "id": "P02",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-24T16:30:00-03:00",
@@ -294,7 +308,9 @@
     {
       "id": "P02",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-24T16:30:00-03:00",
@@ -428,7 +444,9 @@
     {
       "id": "P04",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-29T17:30:00-03:00",
@@ -480,7 +498,9 @@
     {
       "id": "P04",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-29T17:30:00-03:00",
@@ -529,7 +549,9 @@
     {
       "id": "P05",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-30T17:00:00-03:00",
@@ -571,7 +593,9 @@
     {
       "id": "P05",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-30T17:00:00-03:00",
@@ -610,7 +634,9 @@
     {
       "id": "P06",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-31T16:30:00-03:00",
@@ -652,7 +678,9 @@
     {
       "id": "P06",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-31T16:30:00-03:00",
@@ -691,7 +719,9 @@
     {
       "id": "P07",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-02T11:30:00-03:00",
@@ -733,7 +763,9 @@
     {
       "id": "P07",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-02T11:30:00-03:00",
@@ -772,7 +804,9 @@
     {
       "id": "P08",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-04T18:30:00-03:00",
@@ -820,7 +854,9 @@
     {
       "id": "P08",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-04T18:30:00-03:00",
@@ -865,7 +901,9 @@
     {
       "id": "P09",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-05T17:30:00-03:00",
@@ -915,7 +953,9 @@
     {
       "id": "P09",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-05T17:30:00-03:00",
@@ -962,7 +1002,9 @@
     {
       "id": "P10",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-06T17:00:00-03:00",
@@ -1004,7 +1046,9 @@
     {
       "id": "P10",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-06T17:00:00-03:00",
@@ -1043,7 +1087,9 @@
     {
       "id": "P11",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-07T16:30:00-03:00",
@@ -1083,7 +1129,9 @@
     {
       "id": "P11",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-07T16:30:00-03:00",
@@ -1120,7 +1168,9 @@
     {
       "id": "P13",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-12T17:30:00-03:00",
@@ -1168,7 +1218,9 @@
     {
       "id": "P13",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-12T17:30:00-03:00",
@@ -1213,7 +1265,9 @@
     {
       "id": "P14",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-13T17:00:00-03:00",
@@ -1255,7 +1309,9 @@
     {
       "id": "P14",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-13T17:00:00-03:00",
@@ -1294,7 +1350,9 @@
     {
       "id": "P15",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-14T16:30:00-03:00",
@@ -1336,7 +1394,9 @@
     {
       "id": "P15",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-14T16:30:00-03:00",
@@ -1375,7 +1435,9 @@
     {
       "id": "P16",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-18T18:30:00-03:00",
@@ -1417,7 +1479,9 @@
     {
       "id": "P16",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-18T18:30:00-03:00",
@@ -1456,7 +1520,9 @@
     {
       "id": "P17",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-19T17:30:00-03:00",
@@ -1504,7 +1570,9 @@
     {
       "id": "P17",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-19T17:30:00-03:00",
@@ -1549,7 +1617,9 @@
     {
       "id": "P18",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-20T17:00:00-03:00",
@@ -1591,7 +1661,9 @@
     {
       "id": "P18",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-20T17:00:00-03:00",
@@ -1630,7 +1702,9 @@
     {
       "id": "P19",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-21T16:30:00-03:00",
@@ -1672,7 +1746,9 @@
     {
       "id": "P19",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-21T16:30:00-03:00",
@@ -1711,7 +1787,9 @@
     {
       "id": "P20",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-25T18:30:00-03:00",
@@ -1753,7 +1831,9 @@
     {
       "id": "P20",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-25T18:30:00-03:00",
@@ -1792,7 +1872,9 @@
     {
       "id": "P21",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-26T17:30:00-03:00",
@@ -1834,7 +1916,9 @@
     {
       "id": "P21",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-26T17:30:00-03:00",
@@ -1873,7 +1957,9 @@
     {
       "id": "P22",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-27T17:00:00-03:00",
@@ -1915,7 +2001,9 @@
     {
       "id": "P22",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-27T17:00:00-03:00",
@@ -1954,7 +2042,9 @@
     {
       "id": "P23",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-28T16:30:00-03:00",
@@ -1994,7 +2084,9 @@
     {
       "id": "P23",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-28T16:30:00-03:00",
@@ -2031,7 +2123,9 @@
     {
       "id": "P24",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-02T18:30:00-03:00",
@@ -2073,7 +2167,9 @@
     {
       "id": "P24",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-02T18:30:00-03:00",
@@ -2221,7 +2317,9 @@
     {
       "id": "P26",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-04T17:00:00-03:00",
@@ -2263,7 +2361,9 @@
     {
       "id": "P26",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-04T17:00:00-03:00",
@@ -2302,7 +2402,9 @@
     {
       "id": "P27",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-05T16:30:00-03:00",
@@ -2342,7 +2444,9 @@
     {
       "id": "P27",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-05T16:30:00-03:00",
@@ -2379,7 +2483,9 @@
     {
       "id": "P28",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-09T18:30:00-03:00",
@@ -2421,7 +2527,9 @@
     {
       "id": "P28",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-09T18:30:00-03:00",
@@ -2460,7 +2568,9 @@
     {
       "id": "P29",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-10T17:30:00-03:00",
@@ -2502,7 +2612,9 @@
     {
       "id": "P29",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-10T17:30:00-03:00",
@@ -2541,7 +2653,9 @@
     {
       "id": "P30",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-11T17:00:00-03:00",
@@ -2583,7 +2697,9 @@
     {
       "id": "P30",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-11T17:00:00-03:00",
@@ -2622,7 +2738,9 @@
     {
       "id": "P31",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-12T16:30:00-03:00",
@@ -2664,7 +2782,9 @@
     {
       "id": "P31",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-12T16:30:00-03:00",
@@ -2703,7 +2823,9 @@
     {
       "id": "P32",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-16T18:30:00-03:00",
@@ -2751,7 +2873,9 @@
     {
       "id": "P32",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-16T18:30:00-03:00",
@@ -2796,7 +2920,9 @@
     {
       "id": "P33",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-17T17:30:00-03:00",
@@ -2844,7 +2970,9 @@
     {
       "id": "P33",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-17T17:30:00-03:00",
@@ -2889,7 +3017,9 @@
     {
       "id": "P34",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-18T17:00:00-03:00",
@@ -2931,7 +3061,9 @@
     {
       "id": "P34",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-18T17:00:00-03:00",
@@ -2970,7 +3102,9 @@
     {
       "id": "P35",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-19T16:30:00-03:00",
@@ -3010,7 +3144,9 @@
     {
       "id": "P35",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-19T16:30:00-03:00",
@@ -3047,7 +3183,9 @@
     {
       "id": "P36",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-23T18:30:00-03:00",
@@ -3089,7 +3227,9 @@
     {
       "id": "P36",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-23T18:30:00-03:00",
@@ -3128,7 +3268,9 @@
     {
       "id": "P37",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-24T17:30:00-03:00",
@@ -3170,7 +3312,9 @@
     {
       "id": "P37",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-24T17:30:00-03:00",
@@ -3209,7 +3353,9 @@
     {
       "id": "P38",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-25T17:00:00-03:00",
@@ -3251,7 +3397,9 @@
     {
       "id": "P38",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-25T17:00:00-03:00",
@@ -3290,7 +3438,9 @@
     {
       "id": "P39",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-26T16:30:00-03:00",
@@ -3332,7 +3482,9 @@
     {
       "id": "P39",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-26T16:30:00-03:00",
@@ -3371,7 +3523,9 @@
     {
       "id": "P40",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-30T18:30:00-03:00",
@@ -3413,7 +3567,9 @@
     {
       "id": "P40",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-30T18:30:00-03:00",
@@ -3452,7 +3608,9 @@
     {
       "id": "P41",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-31T17:30:00-03:00",
@@ -3494,7 +3652,9 @@
     {
       "id": "P41",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-31T17:30:00-03:00",
@@ -3533,7 +3693,9 @@
     {
       "id": "P42",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-01T17:00:00-03:00",
@@ -3575,7 +3737,9 @@
     {
       "id": "P42",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-01T17:00:00-03:00",
@@ -3614,7 +3778,9 @@
     {
       "id": "P43",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-02T16:30:00-03:00",
@@ -3654,7 +3820,9 @@
     {
       "id": "P43",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-02T16:30:00-03:00",
@@ -3784,7 +3952,9 @@
     {
       "id": "P45",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-07T17:30:00-03:00",
@@ -3826,7 +3996,9 @@
     {
       "id": "P45",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-07T17:30:00-03:00",
@@ -3946,7 +4118,9 @@
     {
       "id": "P47",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-09T16:30:00-03:00",
@@ -3986,7 +4160,9 @@
     {
       "id": "P47",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-09T16:30:00-03:00",
@@ -4108,7 +4284,9 @@
     {
       "id": "P49",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-14T17:30:00-03:00",
@@ -4150,7 +4328,9 @@
     {
       "id": "P49",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-14T17:30:00-03:00",
@@ -4189,7 +4369,9 @@
     {
       "id": "P50",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-15T17:00:00-03:00",
@@ -4231,7 +4413,9 @@
     {
       "id": "P50",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-15T17:00:00-03:00",
@@ -4351,7 +4535,9 @@
     {
       "id": "P52",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-20T18:30:00-03:00",
@@ -4393,7 +4579,9 @@
     {
       "id": "P52",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-20T18:30:00-03:00",
@@ -4432,7 +4620,9 @@
     {
       "id": "P53",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-21T17:30:00-03:00",
@@ -4474,7 +4664,9 @@
     {
       "id": "P53",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-21T17:30:00-03:00",
@@ -4513,7 +4705,9 @@
     {
       "id": "P54",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-22T17:00:00-03:00",
@@ -4555,7 +4749,9 @@
     {
       "id": "P54",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-22T17:00:00-03:00",

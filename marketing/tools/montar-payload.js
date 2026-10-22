@@ -24,6 +24,10 @@ const ver = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, 'marke
 
 const OFFSET = '-03:00'; // America/Sao_Paulo não tem horário de verão desde 2019
 const now = Date.now();
+const agPath = path.join(DIR, 'agendados.json');
+const agendados = fs.existsSync(agPath) ? JSON.parse(fs.readFileSync(agPath, 'utf8')) : [];
+const redesAgendadas = (id) => new Set(agendados.filter((a) => a.post === id).map((a) => a.rede));
+const jaAgendados = { has: (id) => redesAgendadas(id).size === 2 };
 const items = [];
 const rows = [];
 
@@ -38,6 +42,7 @@ for (const p of posts) {
   const future = new Date(`${when}${OFFSET}`).getTime() > now;
 
   const blocks = [];
+  if (jaAgendados.has(p.id)) blocks.push('já agendado no Metricool');
   if (!cfg.blogId) blocks.push('marca do Disk Pizza ausente no Metricool');
   if (!cfg.mediaBaseUrl) blocks.push('mídia sem URL pública');
   if (p.depends_on && !cfg.liberados[p.depends_on]) blocks.push(`aguarda ${p.depends_on}`);
@@ -66,7 +71,7 @@ for (const p of posts) {
   rows.push({
     id: p.id, date: p.date, weekday: p.weekday, time: p.time, format: p.format + (p.slides ? ` (${p.slides})` : ''),
     crop: v ? v.status + (v.video && !String(v.video).startsWith('ok') ? ` · ${v.video}` : v && v.video ? ` · ${v.video}` : '') : 'SEM VERIFICAÇÃO',
-    copy: ig.split('\n')[0].slice(0, 70), copyOk, checks: checks.join(', '), blocks,
+    copy: Array.from(ig.split('\n')[0]).slice(0, 70).join(''), copyOk, checks: checks.join(', '), blocks,
   });
 }
 
