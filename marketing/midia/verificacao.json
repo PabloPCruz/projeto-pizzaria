@@ -1,0 +1,552 @@
+[
+  {
+    "id": "X01",
+    "date": "2026-10-22",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "X02",
+    "date": "2026-10-22",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 13.4s",
+    "files": 5,
+    "problems": []
+  },
+  {
+    "id": "P01",
+    "date": "2026-10-23",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P02",
+    "date": "2026-10-24",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 17.9s",
+    "files": 6,
+    "problems": []
+  },
+  {
+    "id": "P03",
+    "date": "2026-10-28",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P04",
+    "date": "2026-10-29",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 6,
+    "problems": []
+  },
+  {
+    "id": "P05",
+    "date": "2026-10-30",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P06",
+    "date": "2026-10-31",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P07",
+    "date": "2026-11-02",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P08",
+    "date": "2026-11-04",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P09",
+    "date": "2026-11-05",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 5,
+    "problems": []
+  },
+  {
+    "id": "P10",
+    "date": "2026-11-06",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P11",
+    "date": "2026-11-07",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 10.4s",
+    "files": 3,
+    "problems": []
+  },
+  {
+    "id": "P13",
+    "date": "2026-11-12",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P14",
+    "date": "2026-11-13",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P15",
+    "date": "2026-11-14",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P16",
+    "date": "2026-11-18",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P17",
+    "date": "2026-11-19",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P18",
+    "date": "2026-11-20",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P19",
+    "date": "2026-11-21",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P20",
+    "date": "2026-11-25",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P21",
+    "date": "2026-11-26",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P22",
+    "date": "2026-11-27",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P23",
+    "date": "2026-11-28",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 15.6s",
+    "files": 7,
+    "problems": []
+  },
+  {
+    "id": "P24",
+    "date": "2026-12-02",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P25",
+    "date": "2026-12-03",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 7,
+    "problems": []
+  },
+  {
+    "id": "P26",
+    "date": "2026-12-04",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P27",
+    "date": "2026-12-05",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 15.9s",
+    "files": 6,
+    "problems": []
+  },
+  {
+    "id": "P28",
+    "date": "2026-12-09",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P29",
+    "date": "2026-12-10",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P30",
+    "date": "2026-12-11",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P31",
+    "date": "2026-12-12",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P32",
+    "date": "2026-12-16",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P33",
+    "date": "2026-12-17",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P34",
+    "date": "2026-12-18",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P35",
+    "date": "2026-12-19",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 15.9s",
+    "files": 6,
+    "problems": []
+  },
+  {
+    "id": "P36",
+    "date": "2026-12-23",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P37",
+    "date": "2026-12-24",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P38",
+    "date": "2026-12-25",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P39",
+    "date": "2026-12-26",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P40",
+    "date": "2026-12-30",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P41",
+    "date": "2026-12-31",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P42",
+    "date": "2027-01-01",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P43",
+    "date": "2027-01-02",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 15.9s",
+    "files": 6,
+    "problems": []
+  },
+  {
+    "id": "P44",
+    "date": "2027-01-06",
+    "format": "carrossel",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 4,
+    "problems": []
+  },
+  {
+    "id": "P45",
+    "date": "2027-01-07",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P46",
+    "date": "2027-01-08",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P47",
+    "date": "2027-01-09",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 13.7s",
+    "files": 5,
+    "problems": []
+  },
+  {
+    "id": "P48",
+    "date": "2027-01-13",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P49",
+    "date": "2027-01-14",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P50",
+    "date": "2027-01-15",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P51",
+    "date": "2027-01-16",
+    "format": "reel",
+    "spec": "1080x1920",
+    "status": "OK 1080x1920 (vídeo)",
+    "video": "ok 1080x1920 13.4s",
+    "files": 5,
+    "problems": []
+  },
+  {
+    "id": "P52",
+    "date": "2027-01-20",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P53",
+    "date": "2027-01-21",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  },
+  {
+    "id": "P54",
+    "date": "2027-01-22",
+    "format": "feed",
+    "spec": "1080x1080",
+    "status": "OK 1080x1080",
+    "video": null,
+    "files": 1,
+    "problems": []
+  }
+]
