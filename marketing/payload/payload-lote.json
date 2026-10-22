@@ -1,0 +1,4913 @@
+{
+  "meta": {
+    "gerado_em": "2026-10-22T19:05:58.066Z",
+    "posts": 55,
+    "chamadas": 110,
+    "blogId": null,
+    "mediaBaseUrl": null,
+    "aviso": "Rascunho. Nada agendado. Cada item vira uma chamada createScheduledPost (info deve ser enviado como string JSON)."
+  },
+  "items": [
+    {
+      "id": "X01",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-22T16:10:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/X01/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Quinta tem pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-22T16:10:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Quinta-feira também é dia de pizza. 🍕\n\nHoje a gente abre às 18h e vai até as 23h. Monte a sua do seu jeito, com os sabores que quiser (dá para misturar salgado e doce), e envie o pedido pelo WhatsApp.\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QuintaDePizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "X01",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-22T16:10:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/X01/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Quinta tem pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-22T16:10:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Quinta-feira também é dia de pizza. 🍕\n\nHoje a gente abre às 18h e vai até as 23h. Monte a sua do seu jeito, com os sabores que quiser (dá para misturar salgado e doce), e envie o pedido pelo WhatsApp.\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "X02",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-22T16:15:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/X02/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-10-22T16:15:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Quinta-feira também é dia de pizza! 🍕\n\nHoje a gente abre às 18h. Escolha o tamanho, os sabores e a borda e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QuintaDePizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "X02",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-22T16:15:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/X02/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-10-22T16:15:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Quinta-feira também é dia de pizza! 🍕\n\nHoje a gente abre às 18h. Escolha o tamanho, os sabores e a borda e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P01",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-23T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P01/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sexta é dia de pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-23T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sexta-feira pede pizza e mesa cheia. 🍕\n\nA gente abre às 18h e vai até as 23h. Escolha o tamanho, monte os sabores do seu jeito (dá para misturar salgado e doce) e o pedido segue pronto para o nosso WhatsApp.\n\nSem cadastro, sem complicação.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #SextaDePizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P01",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-23T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P01/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sexta é dia de pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-23T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sexta-feira pede pizza e mesa cheia. 🍕\n\nA gente abre às 18h e vai até as 23h. Escolha o tamanho, monte os sabores do seu jeito (dá para misturar salgado e doce) e o pedido segue pronto para o nosso WhatsApp.\n\nSem cadastro, sem complicação.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P02",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-24T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P02/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-10-24T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Prazer, somos a Disk Pizza! 🍕\n\nPizzaria de família em Curitiba desde 2015, com sabores tradicionais, especiais e doces e tamanhos para toda fome.\n\nAbrimos de segunda a sábado, das 18h às 23h. No domingo a gente descansa.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzariaDeFamilia",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P02",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-24T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P02/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-10-24T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Prazer, somos a Disk Pizza! 🍕\n\nPizzaria de família em Curitiba desde 2015, com sabores tradicionais, especiais e doces e tamanhos para toda fome.\n\nAbrimos de segunda a sábado, das 18h às 23h. No domingo a gente descansa.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P03",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-28T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P03/slide-01.jpg",
+            "{mediaBaseUrl}/P03/slide-02.jpg",
+            "{mediaBaseUrl}/P03/slide-03.jpg",
+            "{mediaBaseUrl}/P03/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Fina, média ou grossa: você escolhe.",
+            "Fina, média ou grossa: você escolhe.",
+            "Fina, média ou grossa: você escolhe.",
+            "Fina, média ou grossa: você escolhe."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-28T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕\n\nFina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.\n\nE você, é time massa fina, média ou grossa? Conta nos comentários.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P03",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-28T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P03/slide-01.jpg",
+            "{mediaBaseUrl}/P03/slide-02.jpg",
+            "{mediaBaseUrl}/P03/slide-03.jpg",
+            "{mediaBaseUrl}/P03/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Fina, média ou grossa: você escolhe.",
+            "Fina, média ou grossa: você escolhe.",
+            "Fina, média ou grossa: você escolhe.",
+            "Fina, média ou grossa: você escolhe."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-28T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕\n\nFina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.\n\nE você, é time massa fina, média ou grossa? Conta nos comentários.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P04",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-29T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P04/slide-01.jpg",
+            "{mediaBaseUrl}/P04/slide-02.jpg",
+            "{mediaBaseUrl}/P04/slide-03.jpg",
+            "{mediaBaseUrl}/P04/slide-04.jpg",
+            "{mediaBaseUrl}/P04/slide-05.jpg",
+            "{mediaBaseUrl}/P04/slide-06.jpg"
+          ],
+          "mediaAltText": [
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-29T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Do pequeno ao gigante, tem tamanho para cada fome:\n\nPequena: 1 sabor, 4 fatias\n\nMédia: 2 sabores, 6 fatias\n\nGrande: 3 sabores, 8 fatias\n\nBig: 3 sabores, 12 fatias\n\nGigante: 4 sabores, 16 fatias\n\nQual é o seu?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P04",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-29T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P04/slide-01.jpg",
+            "{mediaBaseUrl}/P04/slide-02.jpg",
+            "{mediaBaseUrl}/P04/slide-03.jpg",
+            "{mediaBaseUrl}/P04/slide-04.jpg",
+            "{mediaBaseUrl}/P04/slide-05.jpg",
+            "{mediaBaseUrl}/P04/slide-06.jpg"
+          ],
+          "mediaAltText": [
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante.",
+            "Do pequeno ao gigante."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-29T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Do pequeno ao gigante, tem tamanho para cada fome:\n\nPequena: 1 sabor, 4 fatias\n\nMédia: 2 sabores, 6 fatias\n\nGrande: 3 sabores, 8 fatias\n\nBig: 3 sabores, 12 fatias\n\nGigante: 4 sabores, 16 fatias\n\nQual é o seu?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P05",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-30T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P05/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Marguerita. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-30T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅\n\nE dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Marguerita",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P05",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-30T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P05/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Marguerita. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-30T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅\n\nE dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P06",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-31T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P06/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Doçura ou travessura?. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-31T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Doçura ou travessura? 🎃 Aqui você fica com as duas.\n\nHoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.\n\nMisturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Halloween",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P06",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-10-31T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P06/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Doçura ou travessura?. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-10-31T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Doçura ou travessura? 🎃 Aqui você fica com as duas.\n\nHoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.\n\nMisturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P07",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-02T11:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P07/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Hoje a gente abre: 18h às 23h."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-02T11:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Feriado hoje? A gente abre normalmente, das 18h às 23h. 🍕\n\nÉ só montar a sua pizza pelo site e enviar o pedido pelo WhatsApp.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Feriado",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P07",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-02T11:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P07/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Hoje a gente abre: 18h às 23h."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-02T11:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Feriado hoje? A gente abre normalmente, das 18h às 23h. 🍕\n\nÉ só montar a sua pizza pelo site e enviar o pedido pelo WhatsApp.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P08",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-04T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P08/slide-01.jpg",
+            "{mediaBaseUrl}/P08/slide-02.jpg",
+            "{mediaBaseUrl}/P08/slide-03.jpg",
+            "{mediaBaseUrl}/P08/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
+            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
+            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
+            "Qual tem a sua cara?. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-04T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Qual pizza tem a sua cara? 🍕\n\nTradicional, especial ou doce: são 71 sabores no cardápio.\n\nDeslize e conta nos comentários qual você escolheria hoje.\n\nMonte a sua pelo link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QualEscolher",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P08",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-04T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P08/slide-01.jpg",
+            "{mediaBaseUrl}/P08/slide-02.jpg",
+            "{mediaBaseUrl}/P08/slide-03.jpg",
+            "{mediaBaseUrl}/P08/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
+            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
+            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
+            "Qual tem a sua cara?. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-04T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Qual pizza tem a sua cara? 🍕\n\nTradicional, especial ou doce: são 71 sabores no cardápio.\n\nDeslize e conta nos comentários qual você escolheria hoje.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P09",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-05T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P09/slide-01.jpg",
+            "{mediaBaseUrl}/P09/slide-02.jpg",
+            "{mediaBaseUrl}/P09/slide-03.jpg",
+            "{mediaBaseUrl}/P09/slide-04.jpg",
+            "{mediaBaseUrl}/P09/slide-05.jpg"
+          ],
+          "mediaAltText": [
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-05T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Borda recheada é quase uma segunda pizza. 😋\n\nSão 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).\n\nQual você escolhe?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BordaRecheada",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P09",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-05T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P09/slide-01.jpg",
+            "{mediaBaseUrl}/P09/slide-02.jpg",
+            "{mediaBaseUrl}/P09/slide-03.jpg",
+            "{mediaBaseUrl}/P09/slide-04.jpg",
+            "{mediaBaseUrl}/P09/slide-05.jpg"
+          ],
+          "mediaAltText": [
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher.",
+            "7 bordas para você escolher."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-05T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Borda recheada é quase uma segunda pizza. 😋\n\nSão 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).\n\nQual você escolhe?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P10",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-06T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P10/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Brócolis com bacon. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-06T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦\n\nSexta-feira é dia de se dar esse capricho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeBrocolis",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P10",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-06T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P10/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Brócolis com bacon. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-06T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦\n\nSexta-feira é dia de se dar esse capricho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P11",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-07T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P11/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-11-07T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Já provou pizza de Nachos? 🧀\n\nMussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeNachos",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P11",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-07T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P11/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-11-07T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Já provou pizza de Nachos? 🧀\n\nMussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P13",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-12T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P13/slide-01.jpg",
+            "{mediaBaseUrl}/P13/slide-02.jpg",
+            "{mediaBaseUrl}/P13/slide-03.jpg",
+            "{mediaBaseUrl}/P13/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Pedir é simples.",
+            "Pedir é simples.",
+            "Pedir é simples.",
+            "Pedir é simples."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-12T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Pedir a sua pizza é simples:\n\n1. Monte: tamanho, sabores, borda e, se quiser, bebida\n\n2. Confira o carrinho e informe o seu CEP\n\n3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PeçaPeloSite",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P13",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-12T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P13/slide-01.jpg",
+            "{mediaBaseUrl}/P13/slide-02.jpg",
+            "{mediaBaseUrl}/P13/slide-03.jpg",
+            "{mediaBaseUrl}/P13/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Pedir é simples.",
+            "Pedir é simples.",
+            "Pedir é simples.",
+            "Pedir é simples."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-12T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Pedir a sua pizza é simples:\n\n1. Monte: tamanho, sabores, borda e, se quiser, bebida\n\n2. Confira o carrinho e informe o seu CEP\n\n3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P14",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-13T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P14/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sexta 13? Azar é ficar sem pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-13T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nMussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Sexta13",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P14",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-13T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P14/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sexta 13? Azar é ficar sem pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-13T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nMussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P15",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-14T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P15/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Domingo fechamos. Hoje abrimos 18h–23h. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-14T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amanhã é feriado, mas domingo a gente fecha. 😉\n\nEntão hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.\n\nLombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FimDeSemana",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P15",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-14T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P15/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Domingo fechamos. Hoje abrimos 18h–23h. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-14T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amanhã é feriado, mas domingo a gente fecha. 😉\n\nEntão hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.\n\nLombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P16",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-18T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P16/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Entrega grátis até 3 km da loja. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-18T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nDigite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #EntregaCuritiba",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P16",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-18T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P16/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Entrega grátis até 3 km da loja. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-18T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nDigite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P17",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-19T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P17/slide-01.jpg",
+            "{mediaBaseUrl}/P17/slide-02.jpg",
+            "{mediaBaseUrl}/P17/slide-03.jpg",
+            "{mediaBaseUrl}/P17/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Fechar a noite com doce. Foto ilustrativa de pizza.",
+            "Fechar a noite com doce. Foto ilustrativa de pizza.",
+            "Fechar a noite com doce. Foto ilustrativa de pizza.",
+            "Fechar a noite com doce. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-19T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Fechar a noite com doce é sempre uma boa ideia. 🍫\n\nBrigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.\n\nQuer misturar com uma salgada? Pode.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P17",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-19T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P17/slide-01.jpg",
+            "{mediaBaseUrl}/P17/slide-02.jpg",
+            "{mediaBaseUrl}/P17/slide-03.jpg",
+            "{mediaBaseUrl}/P17/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Fechar a noite com doce. Foto ilustrativa de pizza.",
+            "Fechar a noite com doce. Foto ilustrativa de pizza.",
+            "Fechar a noite com doce. Foto ilustrativa de pizza.",
+            "Fechar a noite com doce. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-19T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Fechar a noite com doce é sempre uma boa ideia. 🍫\n\nBrigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.\n\nQuer misturar com uma salgada? Pode.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P18",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-20T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P18/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Dia da Consciência Negra."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-20T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Hoje é o Dia da Consciência Negra, data para refletir sobre a história, a luta e a contribuição do povo negro para o Brasil.\n\nA Disk Pizza abre hoje das 18h às 23h.\n\n#DiskPizza #PizzaCuritiba #Curitiba",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P18",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-20T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P18/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Dia da Consciência Negra."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-20T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Hoje é o Dia da Consciência Negra, data para refletir sobre a história, a luta e a contribuição do povo negro para o Brasil.\n\nA Disk Pizza abre hoje das 18h às 23h.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P19",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-21T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P19/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sábado de peperone. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-21T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sábado combina com pizza de peperone. 🍕\n\nMussarela, peperone e azeitona, para quem gosta de sabor marcante.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Peperone",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P19",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-21T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P19/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sábado de peperone. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-21T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sábado combina com pizza de peperone. 🍕\n\nMussarela, peperone e azeitona, para quem gosta de sabor marcante.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P20",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-25T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P20/feed.jpg"
+          ],
+          "mediaAltText": [
+            "A nossa promoção é todos os dias."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-25T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉\n\nAqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P20",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-25T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P20/feed.jpg"
+          ],
+          "mediaAltText": [
+            "A nossa promoção é todos os dias."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-25T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉\n\nAqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P21",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-26T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P21/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Hoje já é dia de pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-26T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amanhã é Black Friday e hoje já é dia de pizza! 🍕\n\nCalabresa com mussarela: escolha sem opção, com cebola ou com catupiry.\n\nAbrimos às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P21",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-26T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P21/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Hoje já é dia de pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-26T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amanhã é Black Friday e hoje já é dia de pizza! 🍕\n\nCalabresa com mussarela: escolha sem opção, com cebola ou com catupiry.\n\nAbrimos às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P22",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-27T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P22/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Black Friday sem pegadinha. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-27T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤\n\nA nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.\n\nMussarela e molho bolonhesa: simples e muito bom.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P22",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-27T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P22/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Black Friday sem pegadinha. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-27T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤\n\nA nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.\n\nMussarela e molho bolonhesa: simples e muito bom.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P23",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-28T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P23/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-11-28T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕\n\nTradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #71Sabores",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P23",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-11-28T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P23/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-11-28T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕\n\nTradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P24",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-02T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P24/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Gigante: 16 fatias, até 4 sabores. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-02T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Dezembro chegou e com ele as confraternizações. 🎄\n\nReunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Confraternizacao",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P24",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-02T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P24/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Gigante: 16 fatias, até 4 sabores. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-02T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Dezembro chegou e com ele as confraternizações. 🎄\n\nReunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P25",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-03T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P25/slide-01.jpg",
+            "{mediaBaseUrl}/P25/slide-02.jpg",
+            "{mediaBaseUrl}/P25/slide-03.jpg",
+            "{mediaBaseUrl}/P25/slide-04.jpg",
+            "{mediaBaseUrl}/P25/slide-05.jpg",
+            "{mediaBaseUrl}/P25/slide-06.jpg",
+            "{mediaBaseUrl}/P25/slide-07.jpg"
+          ],
+          "mediaAltText": [
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-03T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:\n\nTamanho, sabores, massa, borda, extras e revisão.\n\nMonte com calma, revise tudo e envie pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P25",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-03T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P25/slide-01.jpg",
+            "{mediaBaseUrl}/P25/slide-02.jpg",
+            "{mediaBaseUrl}/P25/slide-03.jpg",
+            "{mediaBaseUrl}/P25/slide-04.jpg",
+            "{mediaBaseUrl}/P25/slide-05.jpg",
+            "{mediaBaseUrl}/P25/slide-06.jpg",
+            "{mediaBaseUrl}/P25/slide-07.jpg"
+          ],
+          "mediaAltText": [
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito.",
+            "6 passos, do seu jeito."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-03T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:\n\nTamanho, sabores, massa, borda, extras e revisão.\n\nMonte com calma, revise tudo e envie pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P26",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-04T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P26/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Frango Especial. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-04T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Frango, bacon, tomate e catupiry sobre mussarela: a Frango Especial é um abraço em forma de pizza. 🤗\n\nSexta pede conforto.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeFrango",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P26",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-04T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P26/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Frango Especial. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-04T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Frango, bacon, tomate e catupiry sobre mussarela: a Frango Especial é um abraço em forma de pizza. 🤗\n\nSexta pede conforto.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P27",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-05T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P27/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-12-05T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sobremesa em formato de pizza? 🍫\n\nBrigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P27",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-05T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P27/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-12-05T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sobremesa em formato de pizza? 🍫\n\nBrigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P28",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-09T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P28/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Monte a sua Gigante com 4 sabores."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-09T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕\n\nEscolha 4 e conte nos comentários. Vale tradicional, especial ou doce.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desafio",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P28",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-09T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P28/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Monte a sua Gigante com 4 sabores."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-09T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕\n\nEscolha 4 e conte nos comentários. Vale tradicional, especial ou doce.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P29",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-10T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P29/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Mexicana. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-10T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Pizza Mexicana: mussarela, calabresa, pimentão, ovos, bacon e pimenta calabresa. 🌶️\n\nPara quem gosta de sabor com personalidade.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaMexicana",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P29",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-10T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P29/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Mexicana. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-10T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Pizza Mexicana: mussarela, calabresa, pimentão, ovos, bacon e pimenta calabresa. 🌶️\n\nPara quem gosta de sabor com personalidade.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P30",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-11T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P30/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Calor de verão pede pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-11T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️\n\nTem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P30",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-11T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P30/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Calor de verão pede pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-11T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️\n\nTem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P31",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-12T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P31/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Fran-Brócolis. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-12T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Frango, brócolis e mussarela. Sábado merece. 🥦🍗\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FranBrocolis",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P31",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-12T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P31/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Fran-Brócolis. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-12T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Frango, brócolis e mussarela. Sábado merece. 🥦🍗\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P32",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-16T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P32/slide-01.jpg",
+            "{mediaBaseUrl}/P32/slide-02.jpg",
+            "{mediaBaseUrl}/P32/slide-03.jpg",
+            "{mediaBaseUrl}/P32/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Ninguém quer cozinhar.",
+            "Ninguém quer cozinhar.",
+            "Ninguém quer cozinhar.",
+            "Ninguém quer cozinhar."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-16T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nMonte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #AmigoSecreto",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P32",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-16T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P32/slide-01.jpg",
+            "{mediaBaseUrl}/P32/slide-02.jpg",
+            "{mediaBaseUrl}/P32/slide-03.jpg",
+            "{mediaBaseUrl}/P32/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Ninguém quer cozinhar.",
+            "Ninguém quer cozinhar.",
+            "Ninguém quer cozinhar.",
+            "Ninguém quer cozinhar."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-16T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nMonte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P33",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-17T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P33/slide-01.jpg",
+            "{mediaBaseUrl}/P33/slide-02.jpg",
+            "{mediaBaseUrl}/P33/slide-03.jpg",
+            "{mediaBaseUrl}/P33/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-17T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Clássicos que nunca saem de moda:\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Classicos",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P33",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-17T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P33/slide-01.jpg",
+            "{mediaBaseUrl}/P33/slide-02.jpg",
+            "{mediaBaseUrl}/P33/slide-03.jpg",
+            "{mediaBaseUrl}/P33/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
+            "Clássicos que nunca saem de moda. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-17T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Clássicos que nunca saem de moda:\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P34",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-18T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P34/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Bolonhesa Especial. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-18T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bolonhesa",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P34",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-18T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P34/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Bolonhesa Especial. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-18T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P35",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-19T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P35/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-12-19T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Semana de Natal chegando e a família toda reunida. 🎄\n\nPizza também é jeito de comemorar junto: escolha os sabores de cada um.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P35",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-19T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P35/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2026-12-19T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Semana de Natal chegando e a família toda reunida. 🎄\n\nPizza também é jeito de comemorar junto: escolha os sabores de cada um.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P36",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-23T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P36/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Amanhã, véspera de Natal: 18h às 23h."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-23T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄\n\nGaranta o seu pedido e deixe a noite mais tranquila.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P36",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-23T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P36/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Amanhã, véspera de Natal: 18h às 23h."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-23T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄\n\nGaranta o seu pedido e deixe a noite mais tranquila.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P37",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-24T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P37/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Véspera de Natal: abrimos 18h–23h. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-24T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Véspera de Natal e a mesa cheia de gente querida. 🎄\n\nQuem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.\n\nMarguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P37",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-24T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P37/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Véspera de Natal: abrimos 18h–23h. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-24T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Véspera de Natal e a mesa cheia de gente querida. 🎄\n\nQuem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.\n\nMarguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P38",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-25T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P38/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Feliz Natal."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-25T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Feliz Natal! 🎄 Que a mesa tenha fartura e o coração, carinho.\n\nSomos uma família que trabalha em família, e agradecemos por você fazer parte da nossa história.\n\nHoje a Disk Pizza abre das 18h às 23h.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FelizNatal",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P38",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-25T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P38/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Feliz Natal."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-25T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Feliz Natal! 🎄 Que a mesa tenha fartura e o coração, carinho.\n\nSomos uma família que trabalha em família, e agradecemos por você fazer parte da nossa história.\n\nHoje a Disk Pizza abre das 18h às 23h.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P39",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-26T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P39/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sobrou ceia? Sábado de pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-26T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕\n\nQuatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PosNatal",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P39",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-26T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P39/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Sobrou ceia? Sábado de pizza. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-26T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕\n\nQuatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P40",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-30T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P40/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Qual foi o sabor do seu 2026?."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-30T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Qual foi o sabor do seu 2026? 🍕\n\nConta aqui nos comentários: vamos começar 2027 com a pizza certa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #2026",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P40",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-30T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P40/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Qual foi o sabor do seu 2026?."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-30T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Qual foi o sabor do seu 2026? 🍕\n\nConta aqui nos comentários: vamos começar 2027 com a pizza certa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P41",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-31T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P41/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Último pedido de 2026. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-31T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.\n\nUma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Reveillon",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P41",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2026-12-31T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P41/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Último pedido de 2026. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-31T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.\n\nUma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P42",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-01T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P42/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Feliz 2027."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-01T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Feliz 2027! 🎆 Que o ano comece com a mesa cheia e muita gente querida por perto.\n\nHoje a Disk Pizza abre das 18h às 23h.\n\n#DiskPizza #PizzaCuritiba #Curitiba #AnoNovo",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P42",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-01T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P42/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Feliz 2027."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-01T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Feliz 2027! 🎆 Que o ano comece com a mesa cheia e muita gente querida por perto.\n\nHoje a Disk Pizza abre das 18h às 23h.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P43",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-02T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P43/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2027-01-02T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sábado de verão pede pizza. ☀️\n\nEscolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P43",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-02T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P43/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2027-01-02T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Sábado de verão pede pizza. ☀️\n\nEscolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P44",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-06T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P44/slide-01.jpg",
+            "{mediaBaseUrl}/P44/slide-02.jpg",
+            "{mediaBaseUrl}/P44/slide-03.jpg",
+            "{mediaBaseUrl}/P44/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Cada um no seu sabor.",
+            "Cada um no seu sabor.",
+            "Cada um no seu sabor.",
+            "Cada um no seu sabor."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-06T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Férias de janeiro: cada um quer um sabor diferente. 😄\n\nNa pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P44",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-06T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P44/slide-01.jpg",
+            "{mediaBaseUrl}/P44/slide-02.jpg",
+            "{mediaBaseUrl}/P44/slide-03.jpg",
+            "{mediaBaseUrl}/P44/slide-04.jpg"
+          ],
+          "mediaAltText": [
+            "Cada um no seu sabor.",
+            "Cada um no seu sabor.",
+            "Cada um no seu sabor.",
+            "Cada um no seu sabor."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-06T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Férias de janeiro: cada um quer um sabor diferente. 😄\n\nNa pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P45",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-07T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P45/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Borda de Nutella."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-07T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Borda de Nutella: o final perfeito de uma fatia. 🍫\n\nEscolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Nutella",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P45",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-07T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P45/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Borda de Nutella."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-07T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Borda de Nutella: o final perfeito de uma fatia. 🍫\n\nEscolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P46",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-08T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P46/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Bem Casado. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-08T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BemCasado",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P46",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-08T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P46/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Bem Casado. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-08T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P47",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-09T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P47/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2027-01-09T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Salgada de um lado, doce do outro. 🍕🍫\n\nEscolha um sabor salgado e um doce na mesma pizza (a partir da média).\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P47",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-09T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P47/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2027-01-09T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Salgada de um lado, doce do outro. 🍕🍫\n\nEscolha um sabor salgado e um doce na mesma pizza (a partir da média).\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P48",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-13T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P48/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Time massa fina ou massa grossa?."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-13T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Time massa fina ou time massa grossa? 🍕\n\nAgora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P48",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-13T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P48/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Time massa fina ou massa grossa?."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-13T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Time massa fina ou time massa grossa? 🍕\n\nAgora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P49",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-14T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P49/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Desde 2015 em Curitiba. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-14T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Desde 2015 fazendo pizza em Curitiba, em família. 🍕\n\nCada fornada é um convite para compartilhar sabores, histórias e tradição.\n\nMonte a sua pelo link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desde2015",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P49",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-14T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P49/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Desde 2015 em Curitiba. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-14T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Desde 2015 fazendo pizza em Curitiba, em família. 🍕\n\nCada fornada é um convite para compartilhar sabores, histórias e tradição.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P50",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-15T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P50/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Brigadeiro. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-15T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Chocolate ao leite, doce de leite e chocolate granulado: a pizza de Brigadeiro. 🍫\n\nSexta merece.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeBrigadeiro",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P50",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-15T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P50/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Brigadeiro. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-15T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Chocolate ao leite, doce de leite e chocolate granulado: a pizza de Brigadeiro. 🍫\n\nSexta merece.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P51",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-16T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P51/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2027-01-16T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕\n\nSem cadastro, e o pedido segue pronto para o nosso WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "REEL",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P51",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública",
+        "aguarda deploy_massa"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-16T16:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P51/reel.mp4"
+          ],
+          "mediaAltText": [],
+          "publicationDate": {
+            "dateTime": "2027-01-16T16:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕\n\nSem cadastro, e o pedido segue pronto para o nosso WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "REEL"
+          }
+        }
+      }
+    },
+    {
+      "id": "P52",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-20T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P52/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Qual sabor merece destaque?."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-20T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Qual sabor merece mais destaque aqui no perfil? ⭐\n\nComente o seu favorito: a gente conta com vocês para escolher os próximos posts.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #SaborFavorito",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P52",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-20T18:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P52/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Qual sabor merece destaque?."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-20T18:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Qual sabor merece mais destaque aqui no perfil? ⭐\n\nComente o seu favorito: a gente conta com vocês para escolher os próximos posts.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P53",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-21T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P53/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Pizza pede uma bebida."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-21T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Pizza pede uma bebida para acompanhar. 🥤\n\nRefrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bebidas",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P53",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-21T17:30:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P53/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Pizza pede uma bebida."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-21T17:30:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Pizza pede uma bebida para acompanhar. 🥤\n\nRefrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    },
+    {
+      "id": "P54",
+      "network": "instagram",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-22T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P54/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Lombo com Milho. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-22T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Lombo defumado, milho e mussarela, com opção de catupiry. 🌽\n\nSexta combina.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #LomboComMilho",
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "instagramData": {
+            "type": "POST",
+            "collaborators": [],
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
+      "id": "P54",
+      "network": "facebook",
+      "bloqueios": [
+        "marca do Disk Pizza ausente no Metricool",
+        "mídia sem URL pública"
+      ],
+      "call": {
+        "blogId": "{blogId}",
+        "date": "2027-01-22T17:00:00-03:00",
+        "info": {
+          "autoPublish": true,
+          "descendants": [],
+          "draft": false,
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "media": [
+            "{mediaBaseUrl}/P54/feed.jpg"
+          ],
+          "mediaAltText": [
+            "Lombo com Milho. Foto ilustrativa de pizza."
+          ],
+          "publicationDate": {
+            "dateTime": "2027-01-22T17:00:00",
+            "timezone": "America/Sao_Paulo"
+          },
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "text": "Lombo defumado, milho e mussarela, com opção de catupiry. 🌽\n\nSexta combina.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "providers": [
+            {
+              "network": "facebook"
+            }
+          ],
+          "facebookData": {
+            "type": "POST"
+          }
+        }
+      }
+    }
+  ]
+}

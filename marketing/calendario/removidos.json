@@ -1,0 +1,24 @@
+[
+  {
+    "id": "P12",
+    "date": "2026-11-11",
+    "time": "18:30",
+    "format": "feed",
+    "pillar": "engajamento",
+    "theme": "Salgada e doce juntas",
+    "trigger": "curiosidade + participação",
+    "cta": "suave",
+    "photos": [
+      "bem-casado"
+    ],
+    "on_art": "Meia salgada, meia doce?",
+    "body": [
+      "Meia salgada, meia doce? Pode! 🍕🍫",
+      "Na Disk Pizza você mistura sabores salgados e doces na mesma pizza (a média leva 2 sabores, a grande 3).",
+      "E aí, qual combinação você faria?"
+    ],
+    "tags": [
+      "#PizzaDoce"
+    ]
+  }
+]
