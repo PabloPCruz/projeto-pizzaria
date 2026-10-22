@@ -1,10 +1,10 @@
 {
   "meta": {
-    "gerado_em": "2026-10-22T19:05:58.066Z",
+    "gerado_em": "2026-10-22T19:07:16.075Z",
     "posts": 55,
     "chamadas": 110,
     "blogId": null,
-    "mediaBaseUrl": null,
+    "mediaBaseUrl": "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada",
     "aviso": "Rascunho. Nada agendado. Cada item vira uma chamada createScheduledPost (info deve ser enviado como string JSON)."
   },
   "items": [
@@ -12,8 +12,7 @@
       "id": "X01",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -25,7 +24,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/X01/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X01/feed.jpg"
           ],
           "mediaAltText": [
             "Quinta tem pizza. Foto ilustrativa de pizza."
@@ -57,8 +56,7 @@
       "id": "X01",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -70,7 +68,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/X01/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X01/feed.jpg"
           ],
           "mediaAltText": [
             "Quinta tem pizza. Foto ilustrativa de pizza."
@@ -99,8 +97,7 @@
       "id": "X02",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -112,7 +109,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/X02/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X02/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -142,8 +139,7 @@
       "id": "X02",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -155,7 +151,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/X02/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X02/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -182,8 +178,7 @@
       "id": "P01",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -195,7 +190,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P01/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P01/feed.jpg"
           ],
           "mediaAltText": [
             "Sexta é dia de pizza. Foto ilustrativa de pizza."
@@ -227,8 +222,7 @@
       "id": "P01",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -240,7 +234,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P01/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P01/feed.jpg"
           ],
           "mediaAltText": [
             "Sexta é dia de pizza. Foto ilustrativa de pizza."
@@ -269,8 +263,7 @@
       "id": "P02",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -282,7 +275,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P02/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P02/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -312,8 +305,7 @@
       "id": "P02",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -325,7 +317,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P02/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P02/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -353,7 +345,6 @@
       "network": "instagram",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -366,10 +357,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P03/slide-01.jpg",
-            "{mediaBaseUrl}/P03/slide-02.jpg",
-            "{mediaBaseUrl}/P03/slide-03.jpg",
-            "{mediaBaseUrl}/P03/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-04.jpg"
           ],
           "mediaAltText": [
             "Fina, média ou grossa: você escolhe.",
@@ -405,7 +396,6 @@
       "network": "facebook",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -418,10 +408,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P03/slide-01.jpg",
-            "{mediaBaseUrl}/P03/slide-02.jpg",
-            "{mediaBaseUrl}/P03/slide-03.jpg",
-            "{mediaBaseUrl}/P03/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-04.jpg"
           ],
           "mediaAltText": [
             "Fina, média ou grossa: você escolhe.",
@@ -453,8 +443,7 @@
       "id": "P04",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -466,12 +455,12 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P04/slide-01.jpg",
-            "{mediaBaseUrl}/P04/slide-02.jpg",
-            "{mediaBaseUrl}/P04/slide-03.jpg",
-            "{mediaBaseUrl}/P04/slide-04.jpg",
-            "{mediaBaseUrl}/P04/slide-05.jpg",
-            "{mediaBaseUrl}/P04/slide-06.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-04.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-05.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-06.jpg"
           ],
           "mediaAltText": [
             "Do pequeno ao gigante.",
@@ -508,8 +497,7 @@
       "id": "P04",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -521,12 +509,12 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P04/slide-01.jpg",
-            "{mediaBaseUrl}/P04/slide-02.jpg",
-            "{mediaBaseUrl}/P04/slide-03.jpg",
-            "{mediaBaseUrl}/P04/slide-04.jpg",
-            "{mediaBaseUrl}/P04/slide-05.jpg",
-            "{mediaBaseUrl}/P04/slide-06.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-04.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-05.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-06.jpg"
           ],
           "mediaAltText": [
             "Do pequeno ao gigante.",
@@ -560,8 +548,7 @@
       "id": "P05",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -573,7 +560,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P05/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P05/feed.jpg"
           ],
           "mediaAltText": [
             "Marguerita. Foto ilustrativa de pizza."
@@ -605,8 +592,7 @@
       "id": "P05",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -618,7 +604,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P05/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P05/feed.jpg"
           ],
           "mediaAltText": [
             "Marguerita. Foto ilustrativa de pizza."
@@ -647,8 +633,7 @@
       "id": "P06",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -660,7 +645,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P06/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P06/feed.jpg"
           ],
           "mediaAltText": [
             "Doçura ou travessura?. Foto ilustrativa de pizza."
@@ -692,8 +677,7 @@
       "id": "P06",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -705,7 +689,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P06/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P06/feed.jpg"
           ],
           "mediaAltText": [
             "Doçura ou travessura?. Foto ilustrativa de pizza."
@@ -734,8 +718,7 @@
       "id": "P07",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -747,7 +730,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P07/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P07/feed.jpg"
           ],
           "mediaAltText": [
             "Hoje a gente abre: 18h às 23h."
@@ -779,8 +762,7 @@
       "id": "P07",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -792,7 +774,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P07/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P07/feed.jpg"
           ],
           "mediaAltText": [
             "Hoje a gente abre: 18h às 23h."
@@ -821,8 +803,7 @@
       "id": "P08",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -834,10 +815,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P08/slide-01.jpg",
-            "{mediaBaseUrl}/P08/slide-02.jpg",
-            "{mediaBaseUrl}/P08/slide-03.jpg",
-            "{mediaBaseUrl}/P08/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-04.jpg"
           ],
           "mediaAltText": [
             "Qual tem a sua cara?. Foto ilustrativa de pizza.",
@@ -872,8 +853,7 @@
       "id": "P08",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -885,10 +865,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P08/slide-01.jpg",
-            "{mediaBaseUrl}/P08/slide-02.jpg",
-            "{mediaBaseUrl}/P08/slide-03.jpg",
-            "{mediaBaseUrl}/P08/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-04.jpg"
           ],
           "mediaAltText": [
             "Qual tem a sua cara?. Foto ilustrativa de pizza.",
@@ -920,8 +900,7 @@
       "id": "P09",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -933,11 +912,11 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P09/slide-01.jpg",
-            "{mediaBaseUrl}/P09/slide-02.jpg",
-            "{mediaBaseUrl}/P09/slide-03.jpg",
-            "{mediaBaseUrl}/P09/slide-04.jpg",
-            "{mediaBaseUrl}/P09/slide-05.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-04.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-05.jpg"
           ],
           "mediaAltText": [
             "7 bordas para você escolher.",
@@ -973,8 +952,7 @@
       "id": "P09",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -986,11 +964,11 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P09/slide-01.jpg",
-            "{mediaBaseUrl}/P09/slide-02.jpg",
-            "{mediaBaseUrl}/P09/slide-03.jpg",
-            "{mediaBaseUrl}/P09/slide-04.jpg",
-            "{mediaBaseUrl}/P09/slide-05.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-04.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-05.jpg"
           ],
           "mediaAltText": [
             "7 bordas para você escolher.",
@@ -1023,8 +1001,7 @@
       "id": "P10",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1036,7 +1013,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P10/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P10/feed.jpg"
           ],
           "mediaAltText": [
             "Brócolis com bacon. Foto ilustrativa de pizza."
@@ -1068,8 +1045,7 @@
       "id": "P10",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1081,7 +1057,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P10/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P10/feed.jpg"
           ],
           "mediaAltText": [
             "Brócolis com bacon. Foto ilustrativa de pizza."
@@ -1110,8 +1086,7 @@
       "id": "P11",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1123,7 +1098,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P11/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P11/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -1153,8 +1128,7 @@
       "id": "P11",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1166,7 +1140,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P11/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P11/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -1193,8 +1167,7 @@
       "id": "P13",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1206,10 +1179,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P13/slide-01.jpg",
-            "{mediaBaseUrl}/P13/slide-02.jpg",
-            "{mediaBaseUrl}/P13/slide-03.jpg",
-            "{mediaBaseUrl}/P13/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-04.jpg"
           ],
           "mediaAltText": [
             "Pedir é simples.",
@@ -1244,8 +1217,7 @@
       "id": "P13",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1257,10 +1229,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P13/slide-01.jpg",
-            "{mediaBaseUrl}/P13/slide-02.jpg",
-            "{mediaBaseUrl}/P13/slide-03.jpg",
-            "{mediaBaseUrl}/P13/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-04.jpg"
           ],
           "mediaAltText": [
             "Pedir é simples.",
@@ -1292,8 +1264,7 @@
       "id": "P14",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1305,7 +1276,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P14/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P14/feed.jpg"
           ],
           "mediaAltText": [
             "Sexta 13? Azar é ficar sem pizza. Foto ilustrativa de pizza."
@@ -1337,8 +1308,7 @@
       "id": "P14",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1350,7 +1320,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P14/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P14/feed.jpg"
           ],
           "mediaAltText": [
             "Sexta 13? Azar é ficar sem pizza. Foto ilustrativa de pizza."
@@ -1379,8 +1349,7 @@
       "id": "P15",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1392,7 +1361,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P15/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P15/feed.jpg"
           ],
           "mediaAltText": [
             "Domingo fechamos. Hoje abrimos 18h–23h. Foto ilustrativa de pizza."
@@ -1424,8 +1393,7 @@
       "id": "P15",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1437,7 +1405,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P15/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P15/feed.jpg"
           ],
           "mediaAltText": [
             "Domingo fechamos. Hoje abrimos 18h–23h. Foto ilustrativa de pizza."
@@ -1466,8 +1434,7 @@
       "id": "P16",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1479,7 +1446,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P16/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P16/feed.jpg"
           ],
           "mediaAltText": [
             "Entrega grátis até 3 km da loja. Foto ilustrativa de pizza."
@@ -1511,8 +1478,7 @@
       "id": "P16",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1524,7 +1490,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P16/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P16/feed.jpg"
           ],
           "mediaAltText": [
             "Entrega grátis até 3 km da loja. Foto ilustrativa de pizza."
@@ -1553,8 +1519,7 @@
       "id": "P17",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1566,10 +1531,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P17/slide-01.jpg",
-            "{mediaBaseUrl}/P17/slide-02.jpg",
-            "{mediaBaseUrl}/P17/slide-03.jpg",
-            "{mediaBaseUrl}/P17/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-04.jpg"
           ],
           "mediaAltText": [
             "Fechar a noite com doce. Foto ilustrativa de pizza.",
@@ -1604,8 +1569,7 @@
       "id": "P17",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1617,10 +1581,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P17/slide-01.jpg",
-            "{mediaBaseUrl}/P17/slide-02.jpg",
-            "{mediaBaseUrl}/P17/slide-03.jpg",
-            "{mediaBaseUrl}/P17/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-04.jpg"
           ],
           "mediaAltText": [
             "Fechar a noite com doce. Foto ilustrativa de pizza.",
@@ -1652,8 +1616,7 @@
       "id": "P18",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1665,7 +1628,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P18/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P18/feed.jpg"
           ],
           "mediaAltText": [
             "Dia da Consciência Negra."
@@ -1697,8 +1660,7 @@
       "id": "P18",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1710,7 +1672,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P18/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P18/feed.jpg"
           ],
           "mediaAltText": [
             "Dia da Consciência Negra."
@@ -1739,8 +1701,7 @@
       "id": "P19",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1752,7 +1713,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P19/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P19/feed.jpg"
           ],
           "mediaAltText": [
             "Sábado de peperone. Foto ilustrativa de pizza."
@@ -1784,8 +1745,7 @@
       "id": "P19",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1797,7 +1757,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P19/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P19/feed.jpg"
           ],
           "mediaAltText": [
             "Sábado de peperone. Foto ilustrativa de pizza."
@@ -1826,8 +1786,7 @@
       "id": "P20",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1839,7 +1798,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P20/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P20/feed.jpg"
           ],
           "mediaAltText": [
             "A nossa promoção é todos os dias."
@@ -1871,8 +1830,7 @@
       "id": "P20",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1884,7 +1842,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P20/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P20/feed.jpg"
           ],
           "mediaAltText": [
             "A nossa promoção é todos os dias."
@@ -1913,8 +1871,7 @@
       "id": "P21",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1926,7 +1883,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P21/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P21/feed.jpg"
           ],
           "mediaAltText": [
             "Hoje já é dia de pizza. Foto ilustrativa de pizza."
@@ -1958,8 +1915,7 @@
       "id": "P21",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -1971,7 +1927,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P21/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P21/feed.jpg"
           ],
           "mediaAltText": [
             "Hoje já é dia de pizza. Foto ilustrativa de pizza."
@@ -2000,8 +1956,7 @@
       "id": "P22",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2013,7 +1968,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P22/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P22/feed.jpg"
           ],
           "mediaAltText": [
             "Black Friday sem pegadinha. Foto ilustrativa de pizza."
@@ -2045,8 +2000,7 @@
       "id": "P22",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2058,7 +2012,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P22/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P22/feed.jpg"
           ],
           "mediaAltText": [
             "Black Friday sem pegadinha. Foto ilustrativa de pizza."
@@ -2087,8 +2041,7 @@
       "id": "P23",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2100,7 +2053,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P23/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P23/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2130,8 +2083,7 @@
       "id": "P23",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2143,7 +2095,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P23/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P23/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2170,8 +2122,7 @@
       "id": "P24",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2183,7 +2134,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P24/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P24/feed.jpg"
           ],
           "mediaAltText": [
             "Gigante: 16 fatias, até 4 sabores. Foto ilustrativa de pizza."
@@ -2215,8 +2166,7 @@
       "id": "P24",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2228,7 +2178,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P24/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P24/feed.jpg"
           ],
           "mediaAltText": [
             "Gigante: 16 fatias, até 4 sabores. Foto ilustrativa de pizza."
@@ -2258,7 +2208,6 @@
       "network": "instagram",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -2271,13 +2220,13 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P25/slide-01.jpg",
-            "{mediaBaseUrl}/P25/slide-02.jpg",
-            "{mediaBaseUrl}/P25/slide-03.jpg",
-            "{mediaBaseUrl}/P25/slide-04.jpg",
-            "{mediaBaseUrl}/P25/slide-05.jpg",
-            "{mediaBaseUrl}/P25/slide-06.jpg",
-            "{mediaBaseUrl}/P25/slide-07.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-04.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-05.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-06.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-07.jpg"
           ],
           "mediaAltText": [
             "6 passos, do seu jeito.",
@@ -2316,7 +2265,6 @@
       "network": "facebook",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -2329,13 +2277,13 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P25/slide-01.jpg",
-            "{mediaBaseUrl}/P25/slide-02.jpg",
-            "{mediaBaseUrl}/P25/slide-03.jpg",
-            "{mediaBaseUrl}/P25/slide-04.jpg",
-            "{mediaBaseUrl}/P25/slide-05.jpg",
-            "{mediaBaseUrl}/P25/slide-06.jpg",
-            "{mediaBaseUrl}/P25/slide-07.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-04.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-05.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-06.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-07.jpg"
           ],
           "mediaAltText": [
             "6 passos, do seu jeito.",
@@ -2370,8 +2318,7 @@
       "id": "P26",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2383,7 +2330,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P26/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P26/feed.jpg"
           ],
           "mediaAltText": [
             "Frango Especial. Foto ilustrativa de pizza."
@@ -2415,8 +2362,7 @@
       "id": "P26",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2428,7 +2374,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P26/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P26/feed.jpg"
           ],
           "mediaAltText": [
             "Frango Especial. Foto ilustrativa de pizza."
@@ -2457,8 +2403,7 @@
       "id": "P27",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2470,7 +2415,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P27/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P27/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2500,8 +2445,7 @@
       "id": "P27",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2513,7 +2457,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P27/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P27/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2540,8 +2484,7 @@
       "id": "P28",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2553,7 +2496,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P28/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P28/feed.jpg"
           ],
           "mediaAltText": [
             "Monte a sua Gigante com 4 sabores."
@@ -2585,8 +2528,7 @@
       "id": "P28",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2598,7 +2540,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P28/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P28/feed.jpg"
           ],
           "mediaAltText": [
             "Monte a sua Gigante com 4 sabores."
@@ -2627,8 +2569,7 @@
       "id": "P29",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2640,7 +2581,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P29/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P29/feed.jpg"
           ],
           "mediaAltText": [
             "Mexicana. Foto ilustrativa de pizza."
@@ -2672,8 +2613,7 @@
       "id": "P29",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2685,7 +2625,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P29/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P29/feed.jpg"
           ],
           "mediaAltText": [
             "Mexicana. Foto ilustrativa de pizza."
@@ -2714,8 +2654,7 @@
       "id": "P30",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2727,7 +2666,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P30/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P30/feed.jpg"
           ],
           "mediaAltText": [
             "Calor de verão pede pizza. Foto ilustrativa de pizza."
@@ -2759,8 +2698,7 @@
       "id": "P30",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2772,7 +2710,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P30/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P30/feed.jpg"
           ],
           "mediaAltText": [
             "Calor de verão pede pizza. Foto ilustrativa de pizza."
@@ -2801,8 +2739,7 @@
       "id": "P31",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2814,7 +2751,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P31/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P31/feed.jpg"
           ],
           "mediaAltText": [
             "Fran-Brócolis. Foto ilustrativa de pizza."
@@ -2846,8 +2783,7 @@
       "id": "P31",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2859,7 +2795,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P31/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P31/feed.jpg"
           ],
           "mediaAltText": [
             "Fran-Brócolis. Foto ilustrativa de pizza."
@@ -2888,8 +2824,7 @@
       "id": "P32",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2901,10 +2836,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P32/slide-01.jpg",
-            "{mediaBaseUrl}/P32/slide-02.jpg",
-            "{mediaBaseUrl}/P32/slide-03.jpg",
-            "{mediaBaseUrl}/P32/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-04.jpg"
           ],
           "mediaAltText": [
             "Ninguém quer cozinhar.",
@@ -2939,8 +2874,7 @@
       "id": "P32",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -2952,10 +2886,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P32/slide-01.jpg",
-            "{mediaBaseUrl}/P32/slide-02.jpg",
-            "{mediaBaseUrl}/P32/slide-03.jpg",
-            "{mediaBaseUrl}/P32/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-04.jpg"
           ],
           "mediaAltText": [
             "Ninguém quer cozinhar.",
@@ -2987,8 +2921,7 @@
       "id": "P33",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3000,10 +2933,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P33/slide-01.jpg",
-            "{mediaBaseUrl}/P33/slide-02.jpg",
-            "{mediaBaseUrl}/P33/slide-03.jpg",
-            "{mediaBaseUrl}/P33/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-04.jpg"
           ],
           "mediaAltText": [
             "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
@@ -3038,8 +2971,7 @@
       "id": "P33",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3051,10 +2983,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P33/slide-01.jpg",
-            "{mediaBaseUrl}/P33/slide-02.jpg",
-            "{mediaBaseUrl}/P33/slide-03.jpg",
-            "{mediaBaseUrl}/P33/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-04.jpg"
           ],
           "mediaAltText": [
             "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
@@ -3086,8 +3018,7 @@
       "id": "P34",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3099,7 +3030,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P34/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P34/feed.jpg"
           ],
           "mediaAltText": [
             "Bolonhesa Especial. Foto ilustrativa de pizza."
@@ -3131,8 +3062,7 @@
       "id": "P34",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3144,7 +3074,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P34/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P34/feed.jpg"
           ],
           "mediaAltText": [
             "Bolonhesa Especial. Foto ilustrativa de pizza."
@@ -3173,8 +3103,7 @@
       "id": "P35",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3186,7 +3115,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P35/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P35/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3216,8 +3145,7 @@
       "id": "P35",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3229,7 +3157,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P35/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P35/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3256,8 +3184,7 @@
       "id": "P36",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3269,7 +3196,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P36/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P36/feed.jpg"
           ],
           "mediaAltText": [
             "Amanhã, véspera de Natal: 18h às 23h."
@@ -3301,8 +3228,7 @@
       "id": "P36",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3314,7 +3240,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P36/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P36/feed.jpg"
           ],
           "mediaAltText": [
             "Amanhã, véspera de Natal: 18h às 23h."
@@ -3343,8 +3269,7 @@
       "id": "P37",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3356,7 +3281,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P37/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P37/feed.jpg"
           ],
           "mediaAltText": [
             "Véspera de Natal: abrimos 18h–23h. Foto ilustrativa de pizza."
@@ -3388,8 +3313,7 @@
       "id": "P37",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3401,7 +3325,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P37/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P37/feed.jpg"
           ],
           "mediaAltText": [
             "Véspera de Natal: abrimos 18h–23h. Foto ilustrativa de pizza."
@@ -3430,8 +3354,7 @@
       "id": "P38",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3443,7 +3366,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P38/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P38/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz Natal."
@@ -3475,8 +3398,7 @@
       "id": "P38",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3488,7 +3410,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P38/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P38/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz Natal."
@@ -3517,8 +3439,7 @@
       "id": "P39",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3530,7 +3451,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P39/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P39/feed.jpg"
           ],
           "mediaAltText": [
             "Sobrou ceia? Sábado de pizza. Foto ilustrativa de pizza."
@@ -3562,8 +3483,7 @@
       "id": "P39",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3575,7 +3495,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P39/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P39/feed.jpg"
           ],
           "mediaAltText": [
             "Sobrou ceia? Sábado de pizza. Foto ilustrativa de pizza."
@@ -3604,8 +3524,7 @@
       "id": "P40",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3617,7 +3536,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P40/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P40/feed.jpg"
           ],
           "mediaAltText": [
             "Qual foi o sabor do seu 2026?."
@@ -3649,8 +3568,7 @@
       "id": "P40",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3662,7 +3580,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P40/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P40/feed.jpg"
           ],
           "mediaAltText": [
             "Qual foi o sabor do seu 2026?."
@@ -3691,8 +3609,7 @@
       "id": "P41",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3704,7 +3621,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P41/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P41/feed.jpg"
           ],
           "mediaAltText": [
             "Último pedido de 2026. Foto ilustrativa de pizza."
@@ -3736,8 +3653,7 @@
       "id": "P41",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3749,7 +3665,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P41/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P41/feed.jpg"
           ],
           "mediaAltText": [
             "Último pedido de 2026. Foto ilustrativa de pizza."
@@ -3778,8 +3694,7 @@
       "id": "P42",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3791,7 +3706,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P42/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P42/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz 2027."
@@ -3823,8 +3738,7 @@
       "id": "P42",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3836,7 +3750,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P42/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P42/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz 2027."
@@ -3865,8 +3779,7 @@
       "id": "P43",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3878,7 +3791,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P43/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P43/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3908,8 +3821,7 @@
       "id": "P43",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3921,7 +3833,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P43/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P43/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3948,8 +3860,7 @@
       "id": "P44",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -3961,10 +3872,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P44/slide-01.jpg",
-            "{mediaBaseUrl}/P44/slide-02.jpg",
-            "{mediaBaseUrl}/P44/slide-03.jpg",
-            "{mediaBaseUrl}/P44/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-04.jpg"
           ],
           "mediaAltText": [
             "Cada um no seu sabor.",
@@ -3999,8 +3910,7 @@
       "id": "P44",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4012,10 +3922,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P44/slide-01.jpg",
-            "{mediaBaseUrl}/P44/slide-02.jpg",
-            "{mediaBaseUrl}/P44/slide-03.jpg",
-            "{mediaBaseUrl}/P44/slide-04.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-01.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-02.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-03.jpg",
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-04.jpg"
           ],
           "mediaAltText": [
             "Cada um no seu sabor.",
@@ -4047,8 +3957,7 @@
       "id": "P45",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4060,7 +3969,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P45/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P45/feed.jpg"
           ],
           "mediaAltText": [
             "Borda de Nutella."
@@ -4092,8 +4001,7 @@
       "id": "P45",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4105,7 +4013,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P45/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P45/feed.jpg"
           ],
           "mediaAltText": [
             "Borda de Nutella."
@@ -4134,8 +4042,7 @@
       "id": "P46",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4147,7 +4054,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P46/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P46/feed.jpg"
           ],
           "mediaAltText": [
             "Bem Casado. Foto ilustrativa de pizza."
@@ -4179,8 +4086,7 @@
       "id": "P46",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4192,7 +4098,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P46/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P46/feed.jpg"
           ],
           "mediaAltText": [
             "Bem Casado. Foto ilustrativa de pizza."
@@ -4221,8 +4127,7 @@
       "id": "P47",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4234,7 +4139,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P47/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P47/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4264,8 +4169,7 @@
       "id": "P47",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4277,7 +4181,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P47/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P47/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4305,7 +4209,6 @@
       "network": "instagram",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -4318,7 +4221,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P48/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P48/feed.jpg"
           ],
           "mediaAltText": [
             "Time massa fina ou massa grossa?."
@@ -4351,7 +4254,6 @@
       "network": "facebook",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -4364,7 +4266,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P48/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P48/feed.jpg"
           ],
           "mediaAltText": [
             "Time massa fina ou massa grossa?."
@@ -4393,8 +4295,7 @@
       "id": "P49",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4406,7 +4307,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P49/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P49/feed.jpg"
           ],
           "mediaAltText": [
             "Desde 2015 em Curitiba. Foto ilustrativa de pizza."
@@ -4438,8 +4339,7 @@
       "id": "P49",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4451,7 +4351,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P49/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P49/feed.jpg"
           ],
           "mediaAltText": [
             "Desde 2015 em Curitiba. Foto ilustrativa de pizza."
@@ -4480,8 +4380,7 @@
       "id": "P50",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4493,7 +4392,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P50/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P50/feed.jpg"
           ],
           "mediaAltText": [
             "Brigadeiro. Foto ilustrativa de pizza."
@@ -4525,8 +4424,7 @@
       "id": "P50",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4538,7 +4436,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P50/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P50/feed.jpg"
           ],
           "mediaAltText": [
             "Brigadeiro. Foto ilustrativa de pizza."
@@ -4568,7 +4466,6 @@
       "network": "instagram",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -4581,7 +4478,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P51/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P51/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4612,7 +4509,6 @@
       "network": "facebook",
       "bloqueios": [
         "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública",
         "aguarda deploy_massa"
       ],
       "call": {
@@ -4625,7 +4521,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P51/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P51/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4652,8 +4548,7 @@
       "id": "P52",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4665,7 +4560,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P52/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P52/feed.jpg"
           ],
           "mediaAltText": [
             "Qual sabor merece destaque?."
@@ -4697,8 +4592,7 @@
       "id": "P52",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4710,7 +4604,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P52/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P52/feed.jpg"
           ],
           "mediaAltText": [
             "Qual sabor merece destaque?."
@@ -4739,8 +4633,7 @@
       "id": "P53",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4752,7 +4645,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P53/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P53/feed.jpg"
           ],
           "mediaAltText": [
             "Pizza pede uma bebida."
@@ -4784,8 +4677,7 @@
       "id": "P53",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4797,7 +4689,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P53/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P53/feed.jpg"
           ],
           "mediaAltText": [
             "Pizza pede uma bebida."
@@ -4826,8 +4718,7 @@
       "id": "P54",
       "network": "instagram",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4839,7 +4730,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P54/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P54/feed.jpg"
           ],
           "mediaAltText": [
             "Lombo com Milho. Foto ilustrativa de pizza."
@@ -4871,8 +4762,7 @@
       "id": "P54",
       "network": "facebook",
       "bloqueios": [
-        "marca do Disk Pizza ausente no Metricool",
-        "mídia sem URL pública"
+        "marca do Disk Pizza ausente no Metricool"
       ],
       "call": {
         "blogId": "{blogId}",
@@ -4884,7 +4774,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "{mediaBaseUrl}/P54/feed.jpg"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P54/feed.jpg"
           ],
           "mediaAltText": [
             "Lombo com Milho. Foto ilustrativa de pizza."
