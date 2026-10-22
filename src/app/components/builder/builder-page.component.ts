@@ -12,6 +12,7 @@ export interface BuilderStep {
 export const BUILDER_STEPS: readonly BuilderStep[] = [
   { label: 'Tamanho', title: 'Escolha o tamanho', hint: 'O tamanho define quantos sabores cabem na pizza.' },
   { label: 'Sabores', title: 'Escolha os sabores', hint: 'Pode misturar salgado e doce, até o limite do tamanho.' },
+  { label: 'Massa', title: 'Escolha a massa', hint: 'Opcional. Fina, média ou grossa: se não tiver preferência, deixe como está.' },
   { label: 'Borda', title: 'Escolha a borda', hint: 'Opcional. Se preferir, fique sem borda recheada.' },
   { label: 'Extras', title: 'Bebidas e observações', hint: 'Tudo opcional. As bebidas vão direto para o carrinho.' },
   { label: 'Revisão', title: 'Revise sua pizza', hint: 'Confira tudo antes de adicionar ao carrinho.' },

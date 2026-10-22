@@ -44,7 +44,15 @@ export interface Crust {
   label: string;
 }
 
-export type DrinkGroup = 'refrigerante' | 'cerveja';
+export type DoughId = 'fina' | 'media' | 'grossa';
+
+/** Massa da pizza (espessura). Uma por pizza; não muda o valor. */
+export interface Dough {
+  id: DoughId;
+  label: string;
+}
+
+export type DrinkGroup ='refrigerante' | 'cerveja';
 
 export interface Drink {
   id: string;

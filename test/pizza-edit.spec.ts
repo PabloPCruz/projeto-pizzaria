@@ -60,7 +60,7 @@ describe('Editar pizza do carrinho', () => {
   describe('PizzaBuilderService.load', () => {
     it('carrega a pizza do carrinho no montador e marca qual está sendo editada', () => {
       const cart = TestBed.inject(CartService);
-      cart.addPizza({ size: 'grande', flavorIds: [A, B], crustId: 'cheddar', notes: 'sem cebola', quantity: 2 });
+      cart.addPizza({ size: 'grande', flavorIds: [A, B], crustId: 'cheddar', doughId: 'fina', notes: 'sem cebola', quantity: 2 });
       const line = cart.snapshot.pizzas[0];
 
       const builder = TestBed.inject(PizzaBuilderService);
@@ -71,6 +71,7 @@ describe('Editar pizza do carrinho', () => {
         flavorIds: [A, B],
         flavorOptions: {},
         crustId: 'cheddar',
+        doughId: 'fina',
         notes: 'sem cebola',
         editingId: line.id,
         quantity: 2,
@@ -81,7 +82,7 @@ describe('Editar pizza do carrinho', () => {
       const builder = TestBed.inject(PizzaBuilderService);
       builder.load({ id: 'x1', size: 'media', flavorIds: [A], crustId: null, notes: '', quantity: 4 });
       builder.reset();
-      expect(builder.snapshot).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, notes: '', editingId: null, quantity: 1 });
+      expect(builder.snapshot).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, doughId: null, notes: '', editingId: null, quantity: 1 });
     });
 
     it('a edição sobrevive a recarregar a página', () => {

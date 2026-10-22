@@ -14,6 +14,8 @@ export interface PizzaLineView {
   /** Título + sabores: distingue pizzas iguais no tamanho para quem usa leitor de tela. */
   ariaLabel: string;
   flavors: string[];
+  /** Massa escolhida ("Massa fina"...), ou `null` quando o cliente não escolheu. */
+  dough: string | null;
   crust: string;
   notes: string;
   quantity: number;
@@ -79,8 +81,9 @@ export class CartFacadeService {
     const pizzas = cart.pizzas.map((p) => {
       const size = this.catalog.getSize(p.size)?.label ?? p.size;
       const flavors = this.format.list(p.flavorIds.map((id) => this.catalog.flavorLabel(id, p.flavorOptions?.[id])));
+      const dough = p.doughId ? ` · ${(this.catalog.getDough(p.doughId)?.label ?? p.doughId).toLowerCase()}` : '';
       const crust = p.crustId ? ` · borda ${this.catalog.getCrust(p.crustId)?.label ?? p.crustId}` : '';
-      return `${times(p.quantity)}Pizza ${size}: ${flavors}${crust}`;
+      return `${times(p.quantity)}Pizza ${size}: ${flavors}${dough}${crust}`;
     });
     const drinks = cart.drinks.map((d) => `${times(d.quantity)}${this.catalog.getDrink(d.drinkId)?.label ?? d.drinkId}`);
     return [...pizzas, ...drinks];
@@ -123,6 +126,7 @@ export class CartFacadeService {
           title,
           ariaLabel: `${title}: ${flavors.join(', ')}`,
           flavors,
+          dough: p.doughId ? this.catalog.getDough(p.doughId)?.label ?? p.doughId : null,
           crust: p.crustId ? this.catalog.getCrust(p.crustId)?.label ?? p.crustId : 'Sem borda',
           notes: p.notes,
           quantity: p.quantity,

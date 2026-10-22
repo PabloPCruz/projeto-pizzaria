@@ -1,5 +1,6 @@
 import {
   Crust,
+  Dough,
   Drink,
   FlavorCategory,
   FlavorOption,
@@ -29,6 +30,12 @@ export const CRUSTS: readonly Crust[] = [
   { id: 'chocolate-ao-leite', label: 'Chocolate ao Leite' },
   { id: 'chocolate-branco', label: 'Chocolate Branco' },
   { id: 'chocolate-ao-leite-branco', label: 'Chocolate ao Leite com Chocolate Branco' },
+];
+
+export const DOUGHS: readonly Dough[] = [
+  { id: 'fina', label: 'Massa fina' },
+  { id: 'media', label: 'Massa média' },
+  { id: 'grossa', label: 'Massa grossa' },
 ];
 
 export const DRINKS: readonly Drink[] = [

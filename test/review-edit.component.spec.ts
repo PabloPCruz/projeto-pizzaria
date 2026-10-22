@@ -26,7 +26,7 @@ describe('Revisão da pizza: botões "Editar"', () => {
   /** Abre o montador direto na revisão de uma pizza média com Mussarela e Frango Catupiry. */
   function openReview(): void {
     fixture?.destroy();
-    order.setStep(4);
+    order.setStep(5);
     fixture = TestBed.createComponent(BuilderPageComponent);
     el = fixture.nativeElement;
     fixture.detectChanges();
@@ -44,9 +44,9 @@ describe('Revisão da pizza: botões "Editar"', () => {
 
   afterEach(() => localStorage.clear());
 
-  it('na revisão cada parte (tamanho, sabores, borda e observações) tem o seu botão Editar', () => {
+  it('na revisão cada parte (tamanho, sabores, massa, borda e observações) tem o seu botão Editar', () => {
     expect(title()).toContain('revise');
-    for (const section of ['tamanho', 'sabores', 'borda', 'observações']) {
+    for (const section of ['tamanho', 'sabores', 'massa', 'borda', 'observações']) {
       expect(editButton(section)).withContext(section).toBeTruthy();
       expect(text(editButton(section))).withContext(section).toBe('Editar');
     }
@@ -56,7 +56,7 @@ describe('Revisão da pizza: botões "Editar"', () => {
     expect(el.querySelectorAll('aside button[aria-label^="Editar"]').length).toBe(0);
   });
 
-  for (const section of ['tamanho', 'sabores', 'borda', 'observações']) {
+  for (const section of ['tamanho', 'sabores', 'massa', 'borda', 'observações']) {
     it(`Editar ${section} leva direto ao passo certo`, () => {
       editButton(section)!.click();
       fixture.detectChanges();

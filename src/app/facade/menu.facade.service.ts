@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FEATURED_FLAVOR_IDS, FLAVOR_CATEGORY_LABELS } from '../data/menu.data';
 import {
   Crust,
+  Dough,
   Drink,
   FlavorCategory,
   PizzaFlavor,
@@ -53,6 +54,14 @@ export class MenuFacadeService {
 
   getCrusts(): readonly Crust[] {
     return this.catalog.getCrusts();
+  }
+
+  getDoughs(): readonly Dough[] {
+    return this.catalog.getDoughs();
+  }
+
+  getDough(id: string): Dough | undefined {
+    return this.catalog.getDough(id);
   }
 
   getDrinks(): readonly Drink[] {

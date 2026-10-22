@@ -122,6 +122,8 @@ export class WhatsappMessageService {
     if (pizza.quantity > 1) head.push(`${pizza.quantity}x`);
 
     const out = [head.join(' · '), `Sabores: ${this.format.list(flavors)}`];
+    // Sem massa escolhida também não vira linha.
+    if (pizza.doughId) out.push(`Massa: ${(this.catalog.getDough(pizza.doughId)?.label ?? pizza.doughId).replace(/^Massa /, '')}`);
     // Sem borda não vira linha: menos ruído.
     if (pizza.crustId) out.push(`Borda: ${this.catalog.getCrust(pizza.crustId)?.label ?? pizza.crustId}`);
     // Uma linha só: quebras de linha nas observações desalinhariam a mensagem.

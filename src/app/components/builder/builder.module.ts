@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { BuilderPageComponent } from './builder-page.component';
 import { CrustStepComponent } from './crust-step.component';
+import { DoughStepComponent } from './dough-step.component';
 import { ExtrasStepComponent } from './extras-step.component';
 import { FlavorOptionDialogComponent } from './flavor-option-dialog.component';
 import { FlavorsStepComponent } from './flavors-step.component';
@@ -16,6 +17,7 @@ import { SizeStepComponent } from './size-step.component';
     SizeStepComponent,
     FlavorsStepComponent,
     FlavorOptionDialogComponent,
+    DoughStepComponent,
     CrustStepComponent,
     ExtrasStepComponent,
     ReviewStepComponent,

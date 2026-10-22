@@ -144,6 +144,8 @@ export class CartService {
         // Linha salva antes de existir a escolha de opção fica sem o campo (não é cobrada a escolha).
         ...(item['flavorOptions'] !== undefined ? { flavorOptions: this.catalog.sanitizeFlavorOptions(item['flavorOptions'], flavorIds) } : {}),
         crustId,
+        // Linha salva antes de existir a escolha da massa fica sem o campo.
+        ...(item['doughId'] !== undefined ? { doughId: this.catalog.sanitizeDoughId(item['doughId']) } : {}),
         notes: typeof item['notes'] === 'string' ? item['notes'].slice(0, MAX_NOTES) : '',
         quantity: this.clamp(Number(item['quantity'])),
       });

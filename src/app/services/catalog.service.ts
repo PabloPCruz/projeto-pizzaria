@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
 import { UNAVAILABLE_ITEMS } from '../data/availability';
-import { CRUSTS, DRINKS, FLAVORS, PIZZA_SIZES } from '../data/menu.data';
+import { CRUSTS, DOUGHS, DRINKS, FLAVORS, PIZZA_SIZES } from '../data/menu.data';
 import {
   Crust,
+  Dough,
   Drink,
   FlavorCategory,
   PizzaFlavor,
@@ -88,6 +89,19 @@ export class CatalogService {
 
   getCrust(id: string): Crust | undefined {
     return CRUSTS.find((c) => c.id === id);
+  }
+
+  getDoughs(): readonly Dough[] {
+    return DOUGHS;
+  }
+
+  getDough(id: string): Dough | undefined {
+    return DOUGHS.find((d) => d.id === id);
+  }
+
+  /** Id de massa vindo de fora (localStorage): só vale se existir no cardápio; senão, sem preferência. */
+  sanitizeDoughId(raw: unknown): string | null {
+    return typeof raw === 'string' && this.getDough(raw) ? raw : null;
   }
 
   getDrinks(): readonly Drink[] {

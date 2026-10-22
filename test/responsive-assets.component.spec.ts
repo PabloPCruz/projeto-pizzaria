@@ -98,8 +98,8 @@ describe('Passos do montador (leitor de tela)', () => {
     const fixture = TestBed.createComponent(BuilderPageComponent);
     fixture.detectChanges();
     const buttons = Array.from((fixture.nativeElement as HTMLElement).querySelectorAll('nav[aria-label="Passos da montagem"] button'));
-    expect(buttons.length).toBe(5);
-    ['Passo 1: Tamanho', 'Passo 2: Sabores', 'Passo 3: Borda', 'Passo 4: Extras', 'Passo 5: Revisão'].forEach((name, i) =>
+    expect(buttons.length).toBe(6);
+    ['Passo 1: Tamanho', 'Passo 2: Sabores', 'Passo 3: Massa', 'Passo 4: Borda', 'Passo 5: Extras', 'Passo 6: Revisão'].forEach((name, i) =>
       expect(buttons[i].textContent).toContain(name)
     );
     // O rótulo visual (que muda com a largura) fica fora da árvore de acessibilidade, para não ser lido duas vezes.

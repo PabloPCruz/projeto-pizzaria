@@ -119,9 +119,10 @@
         <div class="step-panel mt-5 sm:mt-6" [attr.data-dir]="dir" [ngSwitch]="step">
           <app-size-step *ngSwitchCase="0" (flavorsRemoved)="onFlavorsRemoved($event)"></app-size-step>
           <app-flavors-step *ngSwitchCase="1"></app-flavors-step>
-          <app-crust-step *ngSwitchCase="2"></app-crust-step>
-          <app-extras-step *ngSwitchCase="3"></app-extras-step>
-          <app-review-step *ngSwitchCase="4" (added)="onAdded($event)" (editStep)="editFromReview($event)"></app-review-step>
+          <app-dough-step *ngSwitchCase="2"></app-dough-step>
+          <app-crust-step *ngSwitchCase="3"></app-crust-step>
+          <app-extras-step *ngSwitchCase="4"></app-extras-step>
+          <app-review-step *ngSwitchCase="5" (added)="onAdded($event)" (editStep)="editFromReview($event)"></app-review-step>
         </div>
 
         <!-- Navegação entre passos (fixa no rodapé em telas pequenas) -->

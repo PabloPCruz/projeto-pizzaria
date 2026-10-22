@@ -57,6 +57,7 @@ describe('PizzaBuilderService', () => {
     first.setSize('grande');
     first.toggleFlavor(A);
     first.setCrust('catupiry');
+    first.setDough('grossa');
     first.setNotes('bem passada');
 
     resetKeepingClock();
@@ -68,6 +69,7 @@ describe('PizzaBuilderService', () => {
       flavorIds: [A],
       flavorOptions: {},
       crustId: 'catupiry',
+      doughId: 'grossa',
       notes: 'bem passada',
       editingId: null,
       quantity: 1,
@@ -78,7 +80,7 @@ describe('PizzaBuilderService', () => {
     const builder = TestBed.inject(PizzaBuilderService);
     builder.setSize('grande');
     builder.reset();
-    expect(builder.snapshot).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, notes: '', editingId: null, quantity: 1 });
+    expect(builder.snapshot).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, doughId: null, notes: '', editingId: null, quantity: 1 });
   });
 
   describe('restauração de dados salvos malformados', () => {
@@ -89,7 +91,7 @@ describe('PizzaBuilderService', () => {
 
     it('campos com tipo errado voltam ao vazio, sem quebrar', () => {
       const draft = restoreFrom({ size: 5, flavorIds: [A], crustId: { x: 1 }, notes: 5 });
-      expect(draft).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, notes: '', editingId: null, quantity: 1 });
+      expect(draft).toEqual({ size: null, flavorIds: [], flavorOptions: {}, crustId: null, doughId: null, notes: '', editingId: null, quantity: 1 });
     });
 
     it('descarta sabores inexistentes, não-string e repetidos', () => {

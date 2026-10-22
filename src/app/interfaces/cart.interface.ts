@@ -7,6 +7,8 @@ export interface PizzaLine {
   /** Opção escolhida por sabor (id do sabor -> id da opção). Ausente em pedido salvo antes de existir a escolha. */
   flavorOptions?: Record<string, string>;
   crustId: string | null;
+  /** Massa escolhida (fina, média ou grossa). `null`/ausente = sem preferência; a mensagem não menciona massa. */
+  doughId?: string | null;
   notes: string;
   quantity: number;
 }
@@ -31,6 +33,8 @@ export interface PizzaBuilderDraft {
   /** Opção escolhida por sabor (id do sabor -> id da opção). */
   flavorOptions: Record<string, string>;
   crustId: string | null;
+  /** Massa escolhida; `null` = sem preferência. */
+  doughId: string | null;
   notes: string;
   /** Id da pizza do carrinho que está sendo editada; `null` = montando uma pizza nova. */
   editingId: string | null;

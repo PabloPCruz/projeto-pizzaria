@@ -107,6 +107,7 @@ describe('Montar pizza em modo edição', () => {
   });
 
   it('na revisão o botão é "Salvar alterações" e a quantidade original é mantida', () => {
+    next(); // massa
     next(); // borda
     next(); // extras
     next(); // revisão
@@ -123,6 +124,7 @@ describe('Montar pizza em modo edição', () => {
     fixture.detectChanges();
     boxes().find((b) => !b.checked && b.id === 'flavor-' + C)!.click();
     fixture.detectChanges();
+    next();
     next();
     next();
     next();

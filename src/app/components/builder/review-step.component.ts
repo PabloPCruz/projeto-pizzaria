@@ -47,7 +47,7 @@ export class ReviewStepComponent {
 
   /** Emite `true` quando a pizza salva substituiu uma que já estava no carrinho (edição). */
   @Output() added = new EventEmitter<boolean>();
-  /** O cliente quer corrigir uma parte da pizza: emite o índice do passo (0 tamanho, 1 sabores, 2 borda, 3 extras). */
+  /** O cliente quer corrigir uma parte da pizza: emite o índice do passo (0 tamanho, 1 sabores, 2 massa, 3 borda, 4 extras). */
   @Output() editStep = new EventEmitter<number>();
 
   constructor(

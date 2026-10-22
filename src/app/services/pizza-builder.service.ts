@@ -13,7 +13,7 @@ const MAX_QUANTITY = 20;
 /** Pizza (ou edição) abandonada há mais de 3 dias é descartada. */
 const BUILDER_TTL_MS = 3 * 24 * 60 * 60 * 1000;
 
-const EMPTY_DRAFT: PizzaBuilderDraft = { size: null, flavorIds: [], flavorOptions: {}, crustId: null, notes: '', editingId: null, quantity: 1 };
+const EMPTY_DRAFT: PizzaBuilderDraft = { size: null, flavorIds: [], flavorOptions: {}, crustId: null, doughId: null, notes: '', editingId: null, quantity: 1 };
 
 /** Estado da pizza que o cliente está montando (persistido a cada alteração). */
 @Injectable({ providedIn: 'root' })
@@ -76,6 +76,10 @@ export class PizzaBuilderService {
     this.commit({ ...this.snapshot, crustId });
   }
 
+  setDough(doughId: string | null): void {
+    this.commit({ ...this.snapshot, doughId: this.catalog.sanitizeDoughId(doughId) });
+  }
+
   setNotes(notes: string): void {
     this.commit({ ...this.snapshot, notes });
   }
@@ -88,6 +92,7 @@ export class PizzaBuilderService {
       flavorIds,
       flavorOptions: this.catalog.sanitizeFlavorOptions(line.flavorOptions, flavorIds),
       crustId: line.crustId,
+      doughId: this.catalog.sanitizeDoughId(line.doughId),
       notes: line.notes,
       editingId: line.id,
       quantity: this.clampQuantity(line.quantity),
@@ -128,6 +133,7 @@ export class PizzaBuilderService {
       flavorIds,
       flavorOptions: this.catalog.sanitizeFlavorOptions(saved['flavorOptions'], flavorIds),
       crustId,
+      doughId: this.catalog.sanitizeDoughId(saved['doughId']),
       notes: typeof saved['notes'] === 'string' ? saved['notes'] : '',
       editingId: typeof saved['editingId'] === 'string' && saved['editingId'] ? saved['editingId'] : null,
       quantity: this.clampQuantity(saved['quantity']),

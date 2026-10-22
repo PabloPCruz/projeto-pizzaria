@@ -68,6 +68,10 @@ export class OrderFacadeService {
     this.builder.setCrust(crustId);
   }
 
+  selectDough(doughId: string | null): void {
+    this.builder.setDough(doughId);
+  }
+
   setNotes(notes: string): void {
     this.builder.setNotes(notes);
   }
@@ -84,6 +88,7 @@ export class OrderFacadeService {
       flavorIds: draft.flavorIds,
       flavorOptions: draft.flavorOptions,
       crustId: draft.crustId,
+      doughId: draft.doughId,
       notes: draft.notes.trim(),
       quantity,
     };
@@ -124,10 +129,10 @@ export class OrderFacadeService {
     this.setStep(0);
   }
 
-  /** Passo atual do assistente (0 = tamanho ... 4 = revisão), salvo para sobreviver a um recarregamento. */
+  /** Passo atual do assistente (0 = tamanho ... 5 = revisão), salvo para sobreviver a um recarregamento. */
   getStep(): number {
     const saved = Number(this.persistence.read<number>(STEP_KEY, 0));
-    return Number.isInteger(saved) && saved >= 0 && saved <= 4 ? saved : 0;
+    return Number.isInteger(saved) && saved >= 0 && saved <= 5 ? saved : 0;
   }
 
   setStep(step: number): void {
