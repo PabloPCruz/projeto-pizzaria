@@ -698,5 +698,19 @@
     "tipo": "POST",
     "quando": "2027-01-22T17:00 (America/Sao_Paulo)",
     "metricoolId": 403512536
+  },
+  {
+    "post": "P44",
+    "rede": "facebook",
+    "tipo": "POST",
+    "quando": "2027-01-06T18:30 (America/Sao_Paulo)",
+    "metricoolId": 403692567
+  },
+  {
+    "post": "P46",
+    "rede": "instagram",
+    "tipo": "POST",
+    "quando": "2027-01-08T17:00 (America/Sao_Paulo)",
+    "metricoolId": 403692583
   }
 ]

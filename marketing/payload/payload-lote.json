@@ -1,6 +1,6 @@
 {
   "meta": {
-    "gerado_em": "2026-10-22T19:43:11.277Z",
+    "gerado_em": "2026-10-23T00:20:00.589Z",
     "posts": 55,
     "chamadas": 110,
     "blogId": "7592008",
@@ -3859,7 +3859,9 @@
     {
       "id": "P44",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-06T18:30:00-03:00",
@@ -3907,7 +3909,9 @@
     {
       "id": "P44",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-06T18:30:00-03:00",
@@ -4037,7 +4041,9 @@
     {
       "id": "P46",
       "network": "instagram",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-08T17:00:00-03:00",
@@ -4079,7 +4085,9 @@
     {
       "id": "P46",
       "network": "facebook",
-      "bloqueios": [],
+      "bloqueios": [
+        "já agendado no Metricool"
+      ],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-08T17:00:00-03:00",

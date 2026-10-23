@@ -1,8 +1,8 @@
 # Tabela de validação — antes de agendar no Metricool
 
-Gerada em 22/10/2026, 16:43:11 (Brasília). **Nada foi agendado.** 55 posts, 110 chamadas (uma por rede: Instagram e Facebook).
+Gerada em 22/10/2026, 21:20:00 (Brasília). **Nada foi agendado.** 55 posts, 110 chamadas (uma por rede: Instagram e Facebook).
 
-**Prontos para agendar agora: 2 de 55.** Bloqueios: já agendado no Metricool (49) · data no passado (2) · aguarda deploy_massa (4).
+**Prontos para agendar agora: 0 de 55.** Bloqueios: já agendado no Metricool (51) · data no passado (2) · aguarda deploy_massa (4).
 
 | ID | Data | Dia | Hora | Formato | Crop / mídia | Copy (início) | Checagens de texto | Bloqueio |
 |---|---|---|---|---|---|---|---|---|
@@ -50,9 +50,9 @@ Gerada em 22/10/2026, 16:43:11 (Brasília). **Nada foi agendado.** 55 posts, 110
 | P41 | 2026-12-31 | qui | 17:30 | feed | OK 1080x1080 | Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h. | texto ≤2200, hashtags ok, rótulo foto ilustrativa, CTA forte | já agendado no Metricool |
 | P42 | 2027-01-01 | sex | 17:00 | feed | OK 1080x1080 | Feliz 2027! 🎆 Que o ano comece com a mesa cheia e muita gente querida  | texto ≤2200, hashtags ok | já agendado no Metricool |
 | P43 | 2027-01-02 | sáb | 16:30 | reel | OK 1080x1920 (vídeo) · ok 1080x1920 15.9s | Sábado de verão pede pizza. ☀️ | texto ≤2200, hashtags ok, rótulo foto ilustrativa, CTA forte | já agendado no Metricool |
-| P44 | 2027-01-06 | qua | 18:30 | carrossel (4) | OK 1080x1080 | Férias de janeiro: cada um quer um sabor diferente. 😄 | texto ≤2200, hashtags ok | — |
+| P44 | 2027-01-06 | qua | 18:30 | carrossel (4) | OK 1080x1080 | Férias de janeiro: cada um quer um sabor diferente. 😄 | texto ≤2200, hashtags ok | já agendado no Metricool |
 | P45 | 2027-01-07 | qui | 17:30 | feed | OK 1080x1080 | Borda de Nutella: o final perfeito de uma fatia. 🍫 | texto ≤2200, hashtags ok, CTA forte | já agendado no Metricool |
-| P46 | 2027-01-08 | sex | 17:00 | feed | OK 1080x1080 | Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫 | texto ≤2200, hashtags ok, rótulo foto ilustrativa, CTA forte | — |
+| P46 | 2027-01-08 | sex | 17:00 | feed | OK 1080x1080 | Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫 | texto ≤2200, hashtags ok, rótulo foto ilustrativa, CTA forte | já agendado no Metricool |
 | P47 | 2027-01-09 | sáb | 16:30 | reel | OK 1080x1920 (vídeo) · ok 1080x1920 13.7s | Salgada de um lado, doce do outro. 🍕🍫 | texto ≤2200, hashtags ok, rótulo foto ilustrativa, CTA forte | já agendado no Metricool |
 | P48 | 2027-01-13 | qua | 18:30 | feed | OK 1080x1080 | Time massa fina ou time massa grossa? 🍕 | texto ≤2200, hashtags ok | aguarda deploy_massa |
 | P49 | 2027-01-14 | qui | 17:30 | feed | OK 1080x1080 | Desde 2015 fazendo pizza em Curitiba, em família. 🍕 | texto ≤2200, hashtags ok, rótulo foto ilustrativa | já agendado no Metricool |
