@@ -140,32 +140,33 @@
     "date": "2026-10-28",
     "time": "18:30",
     "format": "carrossel",
-    "slides": 4,
-    "pillar": "diferencial",
-    "theme": "Novidade: escolha da massa",
-    "trigger": "novidade + curiosidade + identidade",
+    "slides": 3,
+    "pillar": "engajamento",
+    "tipo": "quiz",
+    "theme": "Quiz: qual massa tem a sua cara?",
+    "trigger": "identidade + participação + novidade",
     "cta": "suave",
     "photos": [],
-    "on_art": "Fina, média ou grossa: você escolhe",
+    "on_art": "Qual massa tem a sua cara?",
     "body": [
-      "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕",
-      "Fina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.",
-      "E você, é time massa fina, média ou grossa? Conta nos comentários."
+      "Qual massa tem a sua cara? 🍕",
+      "Agora você escolhe a massa da sua pizza no site: fina, média ou grossa. É o passo “Massa”, entre Sabores e Borda.",
+      "Responda nos comentários: A, B ou C. Sem preferência? Tudo bem: a pizza sai com a massa padrão da casa."
     ],
     "tags": [
-      "#MassaDePizza"
+      "#MassaDePizza",
+      "#QuizDePizza"
     ],
-    "depends_on": "deploy_massa",
-    "notes": "SÓ publicar depois que o site publicado tiver o passo Massa (em 22/10 o diskpizzacwb.com.br ainda não tem).",
+    "notes": "A massa já está no site publicado.",
     "weekday": "qua",
     "networks": [
       "instagram",
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P03/slide-01..04.jpg",
-    "caption_instagram": "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕\n\nFina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.\n\nE você, é time massa fina, média ou grossa? Conta nos comentários.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza",
-    "caption_facebook": "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕\n\nFina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.\n\nE você, é time massa fina, média ou grossa? Conta nos comentários.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P03/slide-01..03.jpg",
+    "caption_instagram": "Qual massa tem a sua cara? 🍕\n\nAgora você escolhe a massa da sua pizza no site: fina, média ou grossa. É o passo “Massa”, entre Sabores e Borda.\n\nResponda nos comentários: A, B ou C. Sem preferência? Tudo bem: a pizza sai com a massa padrão da casa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza #QuizDePizza",
+    "caption_facebook": "Qual massa tem a sua cara? 🍕\n\nAgora você escolhe a massa da sua pizza no site: fina, média ou grossa. É o passo “Massa”, entre Sabores e Borda.\n\nResponda nos comentários: A, B ou C. Sem preferência? Tudo bem: a pizza sai com a massa padrão da casa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -175,23 +176,26 @@
     "format": "carrossel",
     "slides": 6,
     "pillar": "diferencial",
-    "theme": "Do pequeno ao gigante",
-    "trigger": "clareza + escolha",
+    "tipo": "guia",
+    "theme": "Guia: quantas fatias e quantos sabores",
+    "trigger": "clareza + escolha + salvar",
     "cta": "forte",
     "photos": [],
-    "on_art": "Do pequeno ao gigante",
+    "on_art": "Quantas fatias cabem na sua noite?",
     "body": [
-      "Do pequeno ao gigante, tem tamanho para cada fome:",
-      "Pequena: 1 sabor, 4 fatias",
-      "Média: 2 sabores, 6 fatias",
-      "Grande: 3 sabores, 8 fatias",
-      "Big: 3 sabores, 12 fatias",
-      "Gigante: 4 sabores, 16 fatias",
-      "Qual é o seu?"
+      "Guia rápido para escolher o tamanho: conte as fatias e os sabores. 🍕",
+      "Pequena: 4 fatias, 1 sabor",
+      "Média: 6 fatias, 2 sabores",
+      "Grande: 8 fatias, 3 sabores",
+      "Big: 12 fatias, 3 sabores",
+      "Gigante: 16 fatias, 4 sabores",
+      "Salve este post para a próxima noite de pizza."
     ],
     "tags": [
-      "#PizzaGigante"
+      "#PizzaGigante",
+      "#GuiaDePizza"
     ],
+    "notes": "Guia só com fatias e sabores (fatos do site); nada de porção por pessoa.",
     "weekday": "qui",
     "networks": [
       "instagram",
@@ -199,8 +203,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P04/slide-01..06.jpg",
-    "caption_instagram": "Do pequeno ao gigante, tem tamanho para cada fome:\n\nPequena: 1 sabor, 4 fatias\n\nMédia: 2 sabores, 6 fatias\n\nGrande: 3 sabores, 8 fatias\n\nBig: 3 sabores, 12 fatias\n\nGigante: 4 sabores, 16 fatias\n\nQual é o seu?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante",
-    "caption_facebook": "Do pequeno ao gigante, tem tamanho para cada fome:\n\nPequena: 1 sabor, 4 fatias\n\nMédia: 2 sabores, 6 fatias\n\nGrande: 3 sabores, 8 fatias\n\nBig: 3 sabores, 12 fatias\n\nGigante: 4 sabores, 16 fatias\n\nQual é o seu?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Guia rápido para escolher o tamanho: conte as fatias e os sabores. 🍕\n\nPequena: 4 fatias, 1 sabor\n\nMédia: 6 fatias, 2 sabores\n\nGrande: 8 fatias, 3 sabores\n\nBig: 12 fatias, 3 sabores\n\nGigante: 16 fatias, 4 sabores\n\nSalve este post para a próxima noite de pizza.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante #GuiaDePizza",
+    "caption_facebook": "Guia rápido para escolher o tamanho: conte as fatias e os sabores. 🍕\n\nPequena: 4 fatias, 1 sabor\n\nMédia: 6 fatias, 2 sabores\n\nGrande: 8 fatias, 3 sabores\n\nBig: 12 fatias, 3 sabores\n\nGigante: 16 fatias, 4 sabores\n\nSalve este post para a próxima noite de pizza.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -209,16 +213,18 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
-    "theme": "Marguerita",
+    "tipo": "vitrine",
+    "theme": "Marguerita: simples assim",
     "trigger": "simplicidade + desejo",
     "cta": "forte",
     "photos": [
       "margherita"
     ],
-    "on_art": "Marguerita",
+    "on_art": "Simples assim: Marguerita",
     "body": [
-      "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅",
-      "E dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3."
+      "Tem dia que pede simplicidade: tomate, mussarela, parmesão e manjericão. 🍅",
+      "Essa é a Marguerita. Na média ela divide a pizza com mais um sabor; na grande, com mais dois.",
+      "Sexta-feira, a gente abre às 18h."
     ],
     "tags": [
       "#Marguerita"
@@ -230,8 +236,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P05/feed.jpg",
-    "caption_instagram": "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅\n\nE dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Marguerita",
-    "caption_facebook": "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅\n\nE dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Tem dia que pede simplicidade: tomate, mussarela, parmesão e manjericão. 🍅\n\nEssa é a Marguerita. Na média ela divide a pizza com mais um sabor; na grande, com mais dois.\n\nSexta-feira, a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Marguerita",
+    "caption_facebook": "Tem dia que pede simplicidade: tomate, mussarela, parmesão e manjericão. 🍅\n\nEssa é a Marguerita. Na média ela divide a pizza com mais um sabor; na grande, com mais dois.\n\nSexta-feira, a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -240,22 +246,27 @@
     "time": "16:30",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Halloween",
+    "tipo": "este-ou-aquele",
+    "theme": "Halloween: doçura ou travessura?",
     "date_theme": "Halloween (sáb 31/10)",
-    "trigger": "diversão + contraste",
+    "trigger": "diversão + participação",
     "cta": "forte",
     "photos": [
-      "confete"
+      "confete",
+      "mexicana"
     ],
     "on_art": "Doçura ou travessura?",
     "body": [
-      "Doçura ou travessura? 🎃 Aqui você fica com as duas.",
-      "Hoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.",
-      "Misturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h."
+      "Doçura ou travessura? 🎃",
+      "Doçura: Confete, com chocolate ao leite, confete e leite condensado.",
+      "Travessura: Mexicana, com calabresa, pimentão, ovos, bacon e pimenta calabresa.",
+      "Vote nos comentários. E se não quiser escolher, a média leva os dois sabores na mesma pizza."
     ],
     "tags": [
-      "#Halloween"
+      "#Halloween",
+      "#EsteOuAquele"
     ],
+    "notes": "Este-ou-aquele com as duas fotos (layout versus com fotos: selo de foto ilustrativa).",
     "weekday": "sáb",
     "networks": [
       "instagram",
@@ -263,8 +274,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P06/feed.jpg",
-    "caption_instagram": "Doçura ou travessura? 🎃 Aqui você fica com as duas.\n\nHoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.\n\nMisturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Halloween",
-    "caption_facebook": "Doçura ou travessura? 🎃 Aqui você fica com as duas.\n\nHoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.\n\nMisturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Doçura ou travessura? 🎃\n\nDoçura: Confete, com chocolate ao leite, confete e leite condensado.\n\nTravessura: Mexicana, com calabresa, pimentão, ovos, bacon e pimenta calabresa.\n\nVote nos comentários. E se não quiser escolher, a média leva os dois sabores na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Halloween #EsteOuAquele",
+    "caption_facebook": "Doçura ou travessura? 🎃\n\nDoçura: Confete, com chocolate ao leite, confete e leite condensado.\n\nTravessura: Mexicana, com calabresa, pimentão, ovos, bacon e pimenta calabresa.\n\nVote nos comentários. E se não quiser escolher, a média leva os dois sabores na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -273,6 +284,7 @@
     "time": "11:30",
     "format": "feed",
     "pillar": "utilidade",
+    "tipo": "aviso",
     "theme": "Feriado: a loja abre",
     "date_theme": "Feriado de segunda (02/11)",
     "trigger": "redução de dúvida",
@@ -302,35 +314,33 @@
     "id": "P08",
     "date": "2026-11-04",
     "time": "18:30",
-    "format": "carrossel",
-    "slides": 4,
+    "format": "feed",
     "pillar": "engajamento",
-    "theme": "Qual pizza tem a sua cara?",
-    "trigger": "identificação + participação",
+    "tipo": "caça-palavras",
+    "theme": "Caça-palavras de sabores",
+    "trigger": "jogo + participação + salvar",
     "cta": "suave",
-    "photos": [
-      "nachos",
-      "presunto"
-    ],
-    "on_art": "Qual tem a sua cara?",
+    "photos": [],
+    "on_art": "Caça-palavras: ache os 6 sabores",
     "body": [
-      "Qual pizza tem a sua cara? 🍕",
-      "Tradicional, especial ou doce: são 71 sabores no cardápio.",
-      "Deslize e conta nos comentários qual você escolheria hoje."
+      "Caça-palavras da Disk Pizza! 🔎",
+      "Tem 6 sabores do nosso cardápio escondidos aqui, na horizontal e na vertical. Quantos você achou?",
+      "Comente o primeiro que encontrou e marque alguém para tentar também."
     ],
     "tags": [
-      "#QualEscolher"
+      "#CacaPalavras",
+      "#Desafio"
     ],
-    "notes": "Último slide é arte gráfica (doces), sem foto.",
+    "notes": "Palavras: CALABRESA, NACHOS, CONFETE, BOLONHESA, PEPERONE, ATUM (todas do cardápio).",
     "weekday": "qua",
     "networks": [
       "instagram",
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P08/slide-01..04.jpg",
-    "caption_instagram": "Qual pizza tem a sua cara? 🍕\n\nTradicional, especial ou doce: são 71 sabores no cardápio.\n\nDeslize e conta nos comentários qual você escolheria hoje.\n\nMonte a sua pelo link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QualEscolher",
-    "caption_facebook": "Qual pizza tem a sua cara? 🍕\n\nTradicional, especial ou doce: são 71 sabores no cardápio.\n\nDeslize e conta nos comentários qual você escolheria hoje.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "media_target": "marketing/midia/processada/P08/feed.jpg",
+    "caption_instagram": "Caça-palavras da Disk Pizza! 🔎\n\nTem 6 sabores do nosso cardápio escondidos aqui, na horizontal e na vertical. Quantos você achou?\n\nComente o primeiro que encontrou e marque alguém para tentar também.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #CacaPalavras #Desafio",
+    "caption_facebook": "Caça-palavras da Disk Pizza! 🔎\n\nTem 6 sabores do nosso cardápio escondidos aqui, na horizontal e na vertical. Quantos você achou?\n\nComente o primeiro que encontrou e marque alguém para tentar também.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -338,20 +348,23 @@
     "date": "2026-11-05",
     "time": "17:30",
     "format": "carrossel",
-    "slides": 5,
+    "slides": 3,
     "pillar": "produto",
-    "theme": "As 7 bordas",
-    "trigger": "variedade + desejo",
+    "tipo": "você sabia",
+    "theme": "Você sabia? 4 das 7 bordas são doces",
+    "trigger": "curiosidade + variedade",
     "cta": "forte",
     "photos": [],
-    "on_art": "7 bordas para você escolher",
+    "on_art": "Você sabia? 4 das 7 bordas são doces",
     "body": [
-      "Borda recheada é quase uma segunda pizza. 😋",
-      "São 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).",
-      "Qual você escolhe?"
+      "Você sabia? Das 7 bordas da Disk Pizza, 4 são doces. 🍫",
+      "Salgadas: Catupiry, Catupiry com Cheddar e Cheddar.",
+      "Doces: Nutella, Chocolate ao Leite, Chocolate Branco e Chocolate ao Leite com Chocolate Branco.",
+      "Borda doce em pizza salgada? Pode. Qual seria a sua?"
     ],
     "tags": [
-      "#BordaRecheada"
+      "#BordaRecheada",
+      "#VoceSabia"
     ],
     "weekday": "qui",
     "networks": [
@@ -359,9 +372,9 @@
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P09/slide-01..05.jpg",
-    "caption_instagram": "Borda recheada é quase uma segunda pizza. 😋\n\nSão 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).\n\nQual você escolhe?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BordaRecheada",
-    "caption_facebook": "Borda recheada é quase uma segunda pizza. 😋\n\nSão 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).\n\nQual você escolhe?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P09/slide-01..03.jpg",
+    "caption_instagram": "Você sabia? Das 7 bordas da Disk Pizza, 4 são doces. 🍫\n\nSalgadas: Catupiry, Catupiry com Cheddar e Cheddar.\n\nDoces: Nutella, Chocolate ao Leite, Chocolate Branco e Chocolate ao Leite com Chocolate Branco.\n\nBorda doce em pizza salgada? Pode. Qual seria a sua?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BordaRecheada #VoceSabia",
+    "caption_facebook": "Você sabia? Das 7 bordas da Disk Pizza, 4 são doces. 🍫\n\nSalgadas: Catupiry, Catupiry com Cheddar e Cheddar.\n\nDoces: Nutella, Chocolate ao Leite, Chocolate Branco e Chocolate ao Leite com Chocolate Branco.\n\nBorda doce em pizza salgada? Pode. Qual seria a sua?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -370,16 +383,17 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
-    "theme": "Brócolis",
-    "trigger": "personalização",
+    "tipo": "vitrine",
+    "theme": "Brócolis com bacon",
+    "trigger": "personalização + desejo",
     "cta": "forte",
     "photos": [
       "brocolis"
     ],
     "on_art": "Brócolis com bacon",
     "body": [
-      "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦",
-      "Sexta-feira é dia de se dar esse capricho."
+      "Quem disse que brócolis não combina com sexta? 🥦",
+      "Mussarela, brócolis e bacon. Quer um toque a mais? Na hora de escolher, marque a opção com catupiry."
     ],
     "tags": [
       "#PizzaDeBrocolis"
@@ -391,8 +405,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P10/feed.jpg",
-    "caption_instagram": "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦\n\nSexta-feira é dia de se dar esse capricho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeBrocolis",
-    "caption_facebook": "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦\n\nSexta-feira é dia de se dar esse capricho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Quem disse que brócolis não combina com sexta? 🥦\n\nMussarela, brócolis e bacon. Quer um toque a mais? Na hora de escolher, marque a opção com catupiry.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeBrocolis",
+    "caption_facebook": "Quem disse que brócolis não combina com sexta? 🥦\n\nMussarela, brócolis e bacon. Quer um toque a mais? Na hora de escolher, marque a opção com catupiry.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -400,22 +414,30 @@
     "date": "2026-11-07",
     "time": "16:30",
     "format": "reel",
-    "pillar": "produto",
-    "theme": "Pizza de Nachos",
-    "trigger": "curiosidade",
+    "pillar": "como-pedir",
+    "tipo": "fluxo",
+    "theme": "Do clique à sua porta",
+    "trigger": "facilidade + clareza",
     "cta": "forte",
     "photos": [
-      "nachos"
+      "nachos",
+      "quatro-queijos-bacon",
+      "presunto"
     ],
-    "on_art": "Já provou pizza de Nachos?",
+    "on_art": "Do clique à sua porta",
     "body": [
-      "Já provou pizza de Nachos? 🧀",
-      "Mussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.",
-      "Hoje a gente abre às 18h."
+      "Do clique à sua porta, em 4 passos. 🛵",
+      "1. Monte a pizza no site: tamanho, sabores, massa e borda.",
+      "2. Confira o carrinho e informe o CEP.",
+      "3. Envie o pedido pelo WhatsApp: a loja confirma com você.",
+      "4. Agora é só esperar a pizza chegar.",
+      "Sem cadastro. Hoje a gente abre às 18h."
     ],
     "tags": [
-      "#PizzaDeNachos"
+      "#PeçaPeloSite",
+      "#ComoPedir"
     ],
+    "notes": "Reel de fluxo (fotos ilustrativas nas cenas 2, 3 e 5). Sem prazo de entrega.",
     "weekday": "sáb",
     "networks": [
       "instagram",
@@ -423,31 +445,34 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P11/reel.mp4",
-    "caption_instagram": "Já provou pizza de Nachos? 🧀\n\nMussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeNachos",
-    "caption_facebook": "Já provou pizza de Nachos? 🧀\n\nMussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Do clique à sua porta, em 4 passos. 🛵\n\n1. Monte a pizza no site: tamanho, sabores, massa e borda.\n\n2. Confira o carrinho e informe o CEP.\n\n3. Envie o pedido pelo WhatsApp: a loja confirma com você.\n\n4. Agora é só esperar a pizza chegar.\n\nSem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PeçaPeloSite #ComoPedir",
+    "caption_facebook": "Do clique à sua porta, em 4 passos. 🛵\n\n1. Monte a pizza no site: tamanho, sabores, massa e borda.\n\n2. Confira o carrinho e informe o CEP.\n\n3. Envie o pedido pelo WhatsApp: a loja confirma com você.\n\n4. Agora é só esperar a pizza chegar.\n\nSem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
     "id": "P13",
     "date": "2026-11-12",
     "time": "17:30",
-    "format": "carrossel",
-    "slides": 4,
-    "pillar": "como-pedir",
-    "theme": "Como pedir em 3 passos",
-    "trigger": "facilidade",
-    "cta": "forte",
+    "format": "feed",
+    "pillar": "engajamento",
+    "tipo": "checklist",
+    "theme": "Checklist: noite de pizza perfeita",
+    "trigger": "identificação + salvar",
+    "cta": "suave",
     "photos": [],
-    "on_art": "Pedir é simples",
+    "on_art": "Checklist: noite de pizza perfeita",
     "body": [
-      "Pedir a sua pizza é simples:",
-      "1. Monte: tamanho, sabores, borda e, se quiser, bebida",
-      "2. Confira o carrinho e informe o seu CEP",
-      "3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você",
-      "Sem cadastro."
+      "Checklist da noite de pizza perfeita: ✅",
+      "□ Sofá reservado",
+      "□ Filme ou jogo escolhido",
+      "□ Turma avisada",
+      "□ Sabores decididos (sem briga)",
+      "□ Pedido enviado pelo WhatsApp",
+      "Quantos você já marcou hoje? Salve para a próxima."
     ],
     "tags": [
-      "#PeçaPeloSite"
+      "#NoiteDePizza",
+      "#Checklist"
     ],
     "weekday": "qui",
     "networks": [
@@ -455,9 +480,9 @@
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P13/slide-01..04.jpg",
-    "caption_instagram": "Pedir a sua pizza é simples:\n\n1. Monte: tamanho, sabores, borda e, se quiser, bebida\n\n2. Confira o carrinho e informe o seu CEP\n\n3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PeçaPeloSite",
-    "caption_facebook": "Pedir a sua pizza é simples:\n\n1. Monte: tamanho, sabores, borda e, se quiser, bebida\n\n2. Confira o carrinho e informe o seu CEP\n\n3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P13/feed.jpg",
+    "caption_instagram": "Checklist da noite de pizza perfeita: ✅\n\n□ Sofá reservado\n\n□ Filme ou jogo escolhido\n\n□ Turma avisada\n\n□ Sabores decididos (sem briga)\n\n□ Pedido enviado pelo WhatsApp\n\nQuantos você já marcou hoje? Salve para a próxima.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #NoiteDePizza #Checklist",
+    "caption_facebook": "Checklist da noite de pizza perfeita: ✅\n\n□ Sofá reservado\n\n□ Filme ou jogo escolhido\n\n□ Turma avisada\n\n□ Sabores decididos (sem briga)\n\n□ Pedido enviado pelo WhatsApp\n\nQuantos você já marcou hoje? Salve para a próxima.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -465,18 +490,18 @@
     "date": "2026-11-13",
     "time": "17:00",
     "format": "feed",
-    "pillar": "produto",
-    "theme": "Quatro Queijos com Bacon",
+    "pillar": "engajamento",
+    "tipo": "frase",
+    "theme": "Sexta 13: azar é ficar sem pizza",
     "date_theme": "Sexta 13",
-    "trigger": "humor + desejo",
+    "trigger": "humor + identificação",
     "cta": "forte",
-    "photos": [
-      "quatro-queijos-bacon"
-    ],
-    "on_art": "Sexta 13? Azar é ficar sem pizza",
+    "photos": [],
+    "on_art": "Sexta 13? Azar mesmo é ficar sem pizza",
     "body": [
       "Sexta 13? O único azar é ficar sem pizza. 😄",
-      "Mussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite."
+      "Gato preto, escada, espelho quebrado... a gente não se preocupa com nada disso. Só com a pizza que você montou.",
+      "Hoje a gente abre às 18h."
     ],
     "tags": [
       "#Sexta13"
@@ -488,8 +513,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P14/feed.jpg",
-    "caption_instagram": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nMussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Sexta13",
-    "caption_facebook": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nMussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nGato preto, escada, espelho quebrado... a gente não se preocupa com nada disso. Só com a pizza que você montou.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Sexta13",
+    "caption_facebook": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nGato preto, escada, espelho quebrado... a gente não se preocupa com nada disso. Só com a pizza que você montou.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -498,21 +523,21 @@
     "time": "16:30",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Feriado de domingo: garanta hoje",
+    "tipo": "aviso",
+    "theme": "Feriado de domingo: hoje a gente abre",
     "date_theme": "Proclamação da República (dom 15/11)",
     "trigger": "escassez real (domingo fechado)",
     "cta": "forte",
-    "photos": [
-      "lombo-milho"
-    ],
-    "on_art": "Domingo fechamos. Hoje abrimos 18h–23h",
+    "photos": [],
+    "on_art": "Domingo a gente descansa. Hoje abrimos 18h–23h",
     "body": [
-      "Amanhã é feriado, mas domingo a gente fecha. 😉",
-      "Então hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.",
-      "Lombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana."
+      "Amanhã é feriado e cai no domingo, dia em que a gente fecha. 😉",
+      "Então a pizza do fim de semana é hoje: abrimos das 18h às 23h.",
+      "Monte a sua com calma e envie o pedido pelo WhatsApp."
     ],
     "tags": [
-      "#FimDeSemana"
+      "#FimDeSemana",
+      "#Feriado"
     ],
     "weekday": "sáb",
     "networks": [
@@ -521,8 +546,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P15/feed.jpg",
-    "caption_instagram": "Amanhã é feriado, mas domingo a gente fecha. 😉\n\nEntão hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.\n\nLombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FimDeSemana",
-    "caption_facebook": "Amanhã é feriado, mas domingo a gente fecha. 😉\n\nEntão hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.\n\nLombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Amanhã é feriado e cai no domingo, dia em que a gente fecha. 😉\n\nEntão a pizza do fim de semana é hoje: abrimos das 18h às 23h.\n\nMonte a sua com calma e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FimDeSemana #Feriado",
+    "caption_facebook": "Amanhã é feriado e cai no domingo, dia em que a gente fecha. 😉\n\nEntão a pizza do fim de semana é hoje: abrimos das 18h às 23h.\n\nMonte a sua com calma e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -531,16 +556,16 @@
     "time": "18:30",
     "format": "feed",
     "pillar": "diferencial",
-    "theme": "Entrega grátis até 3 km",
-    "trigger": "benefício claro",
+    "tipo": "fluxo",
+    "theme": "Entrega grátis até 3 km: como conferir",
+    "trigger": "benefício claro + facilidade",
     "cta": "forte",
-    "photos": [
-      "mussarela-tomate"
-    ],
-    "on_art": "Entrega grátis até 3 km da loja",
+    "photos": [],
+    "on_art": "Entrega grátis até 3 km: confira pelo CEP",
     "body": [
       "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵",
-      "Digite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp."
+      "Funciona assim: você monta o pedido, digita o CEP ao finalizar e o site mostra se o seu endereço está no raio.",
+      "Fora do raio, a loja informa a taxa pelo WhatsApp quando confirmar o pedido."
     ],
     "tags": [
       "#EntregaCuritiba"
@@ -552,8 +577,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P16/feed.jpg",
-    "caption_instagram": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nDigite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #EntregaCuritiba",
-    "caption_facebook": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nDigite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nFunciona assim: você monta o pedido, digita o CEP ao finalizar e o site mostra se o seu endereço está no raio.\n\nFora do raio, a loja informa a taxa pelo WhatsApp quando confirmar o pedido.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #EntregaCuritiba",
+    "caption_facebook": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nFunciona assim: você monta o pedido, digita o CEP ao finalizar e o site mostra se o seu endereço está no raio.\n\nFora do raio, a loja informa a taxa pelo WhatsApp quando confirmar o pedido.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -563,19 +588,22 @@
     "format": "carrossel",
     "slides": 4,
     "pillar": "produto",
-    "theme": "Pizzas doces",
-    "trigger": "desejo + fechar a noite",
+    "tipo": "vitrine",
+    "theme": "Pizzas doces: qual fecha a sua noite?",
+    "trigger": "desejo + participação",
     "cta": "forte",
     "photos": [
       "brigadeiro",
       "confete",
       "bem-casado"
     ],
-    "on_art": "Fechar a noite com doce",
+    "on_art": "Qual doce fecha a sua noite?",
     "body": [
-      "Fechar a noite com doce é sempre uma boa ideia. 🍫",
-      "Brigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.",
-      "Quer misturar com uma salgada? Pode."
+      "Qual doce fecha a sua noite: 1, 2 ou 3? 🍫",
+      "1. Brigadeiro: chocolate ao leite, doce de leite e granulado",
+      "2. Confete: chocolate ao leite, confete e leite condensado",
+      "3. Bem Casado: leite condensado, chocolate ao leite e chocolate branco",
+      "São 13 sabores doces no cardápio, e dá para misturar com salgado na mesma pizza."
     ],
     "tags": [
       "#PizzaDoce"
@@ -587,8 +615,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P17/slide-01..04.jpg",
-    "caption_instagram": "Fechar a noite com doce é sempre uma boa ideia. 🍫\n\nBrigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.\n\nQuer misturar com uma salgada? Pode.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
-    "caption_facebook": "Fechar a noite com doce é sempre uma boa ideia. 🍫\n\nBrigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.\n\nQuer misturar com uma salgada? Pode.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Qual doce fecha a sua noite: 1, 2 ou 3? 🍫\n\n1. Brigadeiro: chocolate ao leite, doce de leite e granulado\n\n2. Confete: chocolate ao leite, confete e leite condensado\n\n3. Bem Casado: leite condensado, chocolate ao leite e chocolate branco\n\nSão 13 sabores doces no cardápio, e dá para misturar com salgado na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+    "caption_facebook": "Qual doce fecha a sua noite: 1, 2 ou 3? 🍫\n\n1. Brigadeiro: chocolate ao leite, doce de leite e granulado\n\n2. Confete: chocolate ao leite, confete e leite condensado\n\n3. Bem Casado: leite condensado, chocolate ao leite e chocolate branco\n\nSão 13 sabores doces no cardápio, e dá para misturar com salgado na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -597,6 +625,7 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "sazonal",
+    "tipo": "data comemorativa",
     "theme": "Dia da Consciência Negra",
     "date_theme": "Consciência Negra (sex 20/11, feriado nacional)",
     "trigger": "respeito + utilidade",
@@ -626,16 +655,17 @@
     "time": "16:30",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Peperone",
     "trigger": "desejo",
     "cta": "forte",
     "photos": [
       "peperone"
     ],
-    "on_art": "Sábado de peperone",
+    "on_art": "Sábado de Peperone",
     "body": [
-      "Sábado combina com pizza de peperone. 🍕",
-      "Mussarela, peperone e azeitona, para quem gosta de sabor marcante.",
+      "Sábado pede sabor marcante: Peperone. 🍕",
+      "Mussarela, peperone e azeitona. Um dos nossos sabores especiais.",
       "Hoje a gente abre às 18h."
     ],
     "tags": [
@@ -648,8 +678,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P19/feed.jpg",
-    "caption_instagram": "Sábado combina com pizza de peperone. 🍕\n\nMussarela, peperone e azeitona, para quem gosta de sabor marcante.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Peperone",
-    "caption_facebook": "Sábado combina com pizza de peperone. 🍕\n\nMussarela, peperone e azeitona, para quem gosta de sabor marcante.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Sábado pede sabor marcante: Peperone. 🍕\n\nMussarela, peperone e azeitona. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Peperone",
+    "caption_facebook": "Sábado pede sabor marcante: Peperone. 🍕\n\nMussarela, peperone e azeitona. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -658,20 +688,25 @@
     "time": "18:30",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Black Friday: aquecimento",
+    "tipo": "quiz",
+    "theme": "Black Friday: qual é o seu perfil?",
     "date_theme": "Black Friday (sex 27/11)",
-    "trigger": "contraste + confiança",
+    "trigger": "humor + identificação + participação",
     "cta": "suave",
     "photos": [],
-    "on_art": "A nossa promoção é todos os dias",
+    "on_art": "Qual é o seu perfil na Black Friday?",
     "body": [
-      "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉",
-      "Aqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta."
+      "Black Friday chegando. Qual é o seu perfil? 🛒",
+      "A) Carrinho cheio desde segunda",
+      "B) Só olho e não compro nada",
+      "C) Fujo das filas e fico em casa",
+      "D) Só monto carrinho de pizza",
+      "Responda nos comentários com a letra. A gente é time D, claro."
     ],
     "tags": [
       "#BlackFriday"
     ],
-    "notes": "Sem oferta, desconto ou preço: só a frase “promoção todos os dias”, que vem do cardápio da loja. Confirme que pode usar.",
+    "notes": "Black Friday sem oferta, desconto ou preço: só humor e participação.",
     "weekday": "qua",
     "networks": [
       "instagram",
@@ -679,8 +714,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P20/feed.jpg",
-    "caption_instagram": "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉\n\nAqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
-    "caption_facebook": "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉\n\nAqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Black Friday chegando. Qual é o seu perfil? 🛒\n\nA) Carrinho cheio desde segunda\n\nB) Só olho e não compro nada\n\nC) Fujo das filas e fico em casa\n\nD) Só monto carrinho de pizza\n\nResponda nos comentários com a letra. A gente é time D, claro.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+    "caption_facebook": "Black Friday chegando. Qual é o seu perfil? 🛒\n\nA) Carrinho cheio desde segunda\n\nB) Só olho e não compro nada\n\nC) Fujo das filas e fico em casa\n\nD) Só monto carrinho de pizza\n\nResponda nos comentários com a letra. A gente é time D, claro.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -689,23 +724,26 @@
     "time": "17:30",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Véspera da Black Friday",
+    "tipo": "checklist",
+    "theme": "Black Friday: o carrinho que vale a pena",
     "date_theme": "Black Friday (sex 27/11)",
-    "trigger": "antecipação",
+    "trigger": "humor + facilidade",
     "cta": "forte",
-    "photos": [
-      "calabresa"
-    ],
-    "on_art": "Hoje já é dia de pizza",
+    "photos": [],
+    "on_art": "O carrinho que vale a pena",
     "body": [
-      "Amanhã é Black Friday e hoje já é dia de pizza! 🍕",
-      "Calabresa com mussarela: escolha sem opção, com cebola ou com catupiry.",
-      "Abrimos às 18h."
+      "Amanhã é Black Friday, e o único carrinho que a gente quer ver cheio é o de pizza. 😄",
+      "□ Tamanho escolhido",
+      "□ Sabores decididos (até 4 na Gigante)",
+      "□ Massa do seu jeito",
+      "□ Borda recheada",
+      "□ Bebida para acompanhar",
+      "Sem fila e sem cadastro. Hoje a gente abre às 18h."
     ],
     "tags": [
-      "#BlackFriday"
+      "#BlackFriday",
+      "#Checklist"
     ],
-    "notes": "A foto parece de peperone/salame com tomate, não de calabresa. Rótulo de foto ilustrativa obrigatório.",
     "weekday": "qui",
     "networks": [
       "instagram",
@@ -713,8 +751,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P21/feed.jpg",
-    "caption_instagram": "Amanhã é Black Friday e hoje já é dia de pizza! 🍕\n\nCalabresa com mussarela: escolha sem opção, com cebola ou com catupiry.\n\nAbrimos às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
-    "caption_facebook": "Amanhã é Black Friday e hoje já é dia de pizza! 🍕\n\nCalabresa com mussarela: escolha sem opção, com cebola ou com catupiry.\n\nAbrimos às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Amanhã é Black Friday, e o único carrinho que a gente quer ver cheio é o de pizza. 😄\n\n□ Tamanho escolhido\n\n□ Sabores decididos (até 4 na Gigante)\n\n□ Massa do seu jeito\n\n□ Borda recheada\n\n□ Bebida para acompanhar\n\nSem fila e sem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday #Checklist",
+    "caption_facebook": "Amanhã é Black Friday, e o único carrinho que a gente quer ver cheio é o de pizza. 😄\n\n□ Tamanho escolhido\n\n□ Sabores decididos (até 4 na Gigante)\n\n□ Massa do seu jeito\n\n□ Borda recheada\n\n□ Bebida para acompanhar\n\nSem fila e sem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -723,22 +761,22 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Black Friday",
+    "tipo": "frase",
+    "theme": "Black Friday sem pegadinha",
     "date_theme": "Black Friday (sex 27/11)",
     "trigger": "contraste + confiança",
     "cta": "forte",
-    "photos": [
-      "bolonhesa"
-    ],
-    "on_art": "Black Friday sem pegadinha",
+    "photos": [],
+    "on_art": "Sem contagem regressiva. Sem letra miúda. Só pizza.",
     "body": [
-      "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤",
-      "A nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.",
-      "Mussarela e molho bolonhesa: simples e muito bom."
+      "Black Friday na Disk Pizza: sem contagem regressiva, sem letra miúda e sem pegadinha. 🖤",
+      "Só pizza do jeito que você gosta, hoje e em qualquer outra sexta.",
+      "A gente abre às 18h."
     ],
     "tags": [
       "#BlackFriday"
     ],
+    "notes": "Sem oferta, desconto ou preço.",
     "weekday": "sex",
     "networks": [
       "instagram",
@@ -746,8 +784,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P22/feed.jpg",
-    "caption_instagram": "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤\n\nA nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.\n\nMussarela e molho bolonhesa: simples e muito bom.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
-    "caption_facebook": "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤\n\nA nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.\n\nMussarela e molho bolonhesa: simples e muito bom.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Black Friday na Disk Pizza: sem contagem regressiva, sem letra miúda e sem pegadinha. 🖤\n\nSó pizza do jeito que você gosta, hoje e em qualquer outra sexta.\n\nA gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+    "caption_facebook": "Black Friday na Disk Pizza: sem contagem regressiva, sem letra miúda e sem pegadinha. 🖤\n\nSó pizza do jeito que você gosta, hoje e em qualquer outra sexta.\n\nA gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -755,25 +793,29 @@
     "date": "2026-11-28",
     "time": "16:30",
     "format": "reel",
-    "pillar": "produto",
-    "theme": "71 sabores",
-    "trigger": "variedade + curiosidade",
+    "pillar": "engajamento",
+    "tipo": "jogo (pare o vídeo)",
+    "theme": "Jogo: pare o vídeo e descubra o seu sabor",
+    "trigger": "jogo + participação",
     "cta": "forte",
     "photos": [
-      "peperone",
-      "brocolis",
-      "nachos",
+      "calabresa",
       "bolonhesa",
-      "mexicana"
+      "mussarela-tomate",
+      "frango-brocolis",
+      "nachos"
     ],
-    "on_art": "71 sabores. Qual é o seu?",
+    "on_art": "Pare o vídeo: esse é o seu sabor",
     "body": [
-      "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕",
-      "Tradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?"
+      "Pare o vídeo! O sabor que aparecer é o seu pedido de hoje. 🍕",
+      "Calabresa, Bolonhesa, Mussarela, Fran-Brócolis ou Nachos: qual saiu para você? Conta nos comentários.",
+      "Não gostou do resultado? Tem outros 66 sabores no cardápio."
     ],
     "tags": [
+      "#PareOVideo",
       "#71Sabores"
     ],
+    "notes": "Cenas de foto rápidas (1,5 s) para o jogo funcionar.",
     "weekday": "sáb",
     "networks": [
       "instagram",
@@ -781,8 +823,8 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P23/reel.mp4",
-    "caption_instagram": "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕\n\nTradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #71Sabores",
-    "caption_facebook": "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕\n\nTradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Pare o vídeo! O sabor que aparecer é o seu pedido de hoje. 🍕\n\nCalabresa, Bolonhesa, Mussarela, Fran-Brócolis ou Nachos: qual saiu para você? Conta nos comentários.\n\nNão gostou do resultado? Tem outros 66 sabores no cardápio.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PareOVideo #71Sabores",
+    "caption_facebook": "Pare o vídeo! O sabor que aparecer é o seu pedido de hoje. 🍕\n\nCalabresa, Bolonhesa, Mussarela, Fran-Brócolis ou Nachos: qual saiu para você? Conta nos comentários.\n\nNão gostou do resultado? Tem outros 66 sabores no cardápio.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -790,17 +832,17 @@
     "date": "2026-12-02",
     "time": "18:30",
     "format": "feed",
-    "pillar": "produto",
-    "theme": "Confraternização: Gigante",
-    "trigger": "prova social do grupo + solução",
-    "cta": "forte",
-    "photos": [
-      "portuguesa"
-    ],
-    "on_art": "Gigante: 16 fatias, até 4 sabores",
+    "pillar": "engajamento",
+    "tipo": "marque alguém",
+    "theme": "Confraternização: marque quem organiza",
+    "trigger": "identificação + marcação",
+    "cta": "suave",
+    "photos": [],
+    "on_art": "Todo grupo tem aquele que organiza tudo",
     "body": [
-      "Dezembro chegou e com ele as confraternizações. 🎄",
-      "Reunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu."
+      "Todo grupo tem aquela pessoa que organiza a confraternização, cobra a lista e ainda escolhe a pizza. 🎄",
+      "Marque aqui quem é essa pessoa no seu grupo.",
+      "Dica para ela: a Gigante tem 16 fatias e até 4 sabores."
     ],
     "tags": [
       "#Confraternizacao"
@@ -812,8 +854,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P24/feed.jpg",
-    "caption_instagram": "Dezembro chegou e com ele as confraternizações. 🎄\n\nReunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Confraternizacao",
-    "caption_facebook": "Dezembro chegou e com ele as confraternizações. 🎄\n\nReunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Todo grupo tem aquela pessoa que organiza a confraternização, cobra a lista e ainda escolhe a pizza. 🎄\n\nMarque aqui quem é essa pessoa no seu grupo.\n\nDica para ela: a Gigante tem 16 fatias e até 4 sabores.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Confraternizacao",
+    "caption_facebook": "Todo grupo tem aquela pessoa que organiza a confraternização, cobra a lista e ainda escolhe a pizza. 🎄\n\nMarque aqui quem é essa pessoa no seu grupo.\n\nDica para ela: a Gigante tem 16 fatias e até 4 sabores.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -821,31 +863,32 @@
     "date": "2026-12-03",
     "time": "17:30",
     "format": "carrossel",
-    "slides": 7,
-    "pillar": "como-pedir",
-    "theme": "Os 6 passos do montador",
-    "trigger": "controle + facilidade",
+    "slides": 3,
+    "pillar": "diferencial",
+    "tipo": "você sabia",
+    "theme": "Você sabia? Cada pizza do pedido pode ter a sua massa",
+    "trigger": "curiosidade + controle",
     "cta": "forte",
     "photos": [],
-    "on_art": "6 passos, do seu jeito",
+    "on_art": "Cada pizza com a sua massa",
     "body": [
-      "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:",
-      "Tamanho, sabores, massa, borda, extras e revisão.",
-      "Monte com calma, revise tudo e envie pelo WhatsApp."
+      "Você sabia? No mesmo pedido, cada pizza pode ter uma massa diferente. 🍕",
+      "Uma fina para quem gosta de fina, uma grossa para quem prefere grossa: a massa é escolhida pizza por pizza, no passo “Massa” do montador.",
+      "Monte a primeira, adicione ao carrinho e monte a próxima do jeito de cada um."
     ],
     "tags": [
-      "#MonteSuaPizza"
+      "#MassaDePizza",
+      "#VoceSabia"
     ],
-    "depends_on": "deploy_massa",
     "weekday": "qui",
     "networks": [
       "instagram",
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P25/slide-01..07.jpg",
-    "caption_instagram": "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:\n\nTamanho, sabores, massa, borda, extras e revisão.\n\nMonte com calma, revise tudo e envie pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
-    "caption_facebook": "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:\n\nTamanho, sabores, massa, borda, extras e revisão.\n\nMonte com calma, revise tudo e envie pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P25/slide-01..03.jpg",
+    "caption_instagram": "Você sabia? No mesmo pedido, cada pizza pode ter uma massa diferente. 🍕\n\nUma fina para quem gosta de fina, uma grossa para quem prefere grossa: a massa é escolhida pizza por pizza, no passo “Massa” do montador.\n\nMonte a primeira, adicione ao carrinho e monte a próxima do jeito de cada um.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza #VoceSabia",
+    "caption_facebook": "Você sabia? No mesmo pedido, cada pizza pode ter uma massa diferente. 🍕\n\nUma fina para quem gosta de fina, uma grossa para quem prefere grossa: a massa é escolhida pizza por pizza, no passo “Massa” do montador.\n\nMonte a primeira, adicione ao carrinho e monte a próxima do jeito de cada um.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -854,6 +897,7 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Frango Especial",
     "trigger": "conforto + desejo",
     "cta": "forte",
@@ -884,22 +928,26 @@
     "date": "2026-12-05",
     "time": "16:30",
     "format": "reel",
-    "pillar": "produto",
-    "theme": "Sobremesa em fatias",
-    "trigger": "desejo + variedade",
+    "pillar": "diferencial",
+    "tipo": "guia",
+    "theme": "Confraternização: uma Gigante, 4 sabores",
+    "trigger": "solução para o grupo + variedade",
     "cta": "forte",
     "photos": [
-      "brigadeiro",
-      "confete",
-      "bem-casado"
+      "portuguesa",
+      "quatro-queijos-bacon",
+      "lombo-milho",
+      "confete"
     ],
-    "on_art": "Sobremesa em formato de pizza",
+    "on_art": "Uma Gigante, 4 sabores",
     "body": [
-      "Sobremesa em formato de pizza? 🍫",
-      "Brigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate."
+      "Confraternização chegando e cada um quer um sabor? 🎄",
+      "A Gigante tem 16 fatias e até 4 sabores. Exemplo: Portuguesa, Quatro Queijos com Bacon, Lombo com Milho e, para fechar, Confete.",
+      "Conta aqui qual seria a sua combinação."
     ],
     "tags": [
-      "#PizzaDoce"
+      "#PizzaGigante",
+      "#Confraternizacao"
     ],
     "weekday": "sáb",
     "networks": [
@@ -908,37 +956,41 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P27/reel.mp4",
-    "caption_instagram": "Sobremesa em formato de pizza? 🍫\n\nBrigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
-    "caption_facebook": "Sobremesa em formato de pizza? 🍫\n\nBrigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Confraternização chegando e cada um quer um sabor? 🎄\n\nA Gigante tem 16 fatias e até 4 sabores. Exemplo: Portuguesa, Quatro Queijos com Bacon, Lombo com Milho e, para fechar, Confete.\n\nConta aqui qual seria a sua combinação.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante #Confraternizacao",
+    "caption_facebook": "Confraternização chegando e cada um quer um sabor? 🎄\n\nA Gigante tem 16 fatias e até 4 sabores. Exemplo: Portuguesa, Quatro Queijos com Bacon, Lombo com Milho e, para fechar, Confete.\n\nConta aqui qual seria a sua combinação.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
     "id": "P28",
     "date": "2026-12-09",
     "time": "18:30",
-    "format": "feed",
+    "format": "carrossel",
+    "slides": 4,
     "pillar": "engajamento",
-    "theme": "Desafio: Gigante com 4 sabores",
-    "trigger": "participação + jogo",
+    "tipo": "quiz",
+    "theme": "Quiz: adivinhe o sabor pelos ingredientes",
+    "trigger": "jogo + curiosidade",
     "cta": "suave",
     "photos": [],
-    "on_art": "Monte a sua Gigante com 4 sabores",
+    "on_art": "Adivinhe o sabor",
     "body": [
-      "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕",
-      "Escolha 4 e conte nos comentários. Vale tradicional, especial ou doce."
+      "Quiz: adivinhe o sabor pelos ingredientes! 🤔",
+      "São 3 perguntas. Responda nos comentários antes de ver as respostas no último slide.",
+      "Depois conta quantas você acertou."
     ],
     "tags": [
-      "#Desafio"
+      "#QuizDePizza"
     ],
+    "notes": "Respostas: 1A Nachos, 2B Paulista, 3A Prestígio (ingredientes conforme o cardápio).",
     "weekday": "qua",
     "networks": [
       "instagram",
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P28/feed.jpg",
-    "caption_instagram": "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕\n\nEscolha 4 e conte nos comentários. Vale tradicional, especial ou doce.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desafio",
-    "caption_facebook": "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕\n\nEscolha 4 e conte nos comentários. Vale tradicional, especial ou doce.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P28/slide-01..04.jpg",
+    "caption_instagram": "Quiz: adivinhe o sabor pelos ingredientes! 🤔\n\nSão 3 perguntas. Responda nos comentários antes de ver as respostas no último slide.\n\nDepois conta quantas você acertou.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QuizDePizza",
+    "caption_facebook": "Quiz: adivinhe o sabor pelos ingredientes! 🤔\n\nSão 3 perguntas. Responda nos comentários antes de ver as respostas no último slide.\n\nDepois conta quantas você acertou.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -947,6 +999,7 @@
     "time": "17:30",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Mexicana",
     "trigger": "ousadia",
     "cta": "forte",
@@ -979,22 +1032,22 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Verão: pizza e bebida",
+    "tipo": "este-ou-aquele",
+    "theme": "Verão: refri de 2L ou latinha?",
     "date_theme": "Verão",
-    "trigger": "momento + complemento",
+    "trigger": "identificação + participação + complemento",
     "cta": "forte",
-    "photos": [
-      "presunto"
-    ],
-    "on_art": "Calor de verão pede pizza",
+    "photos": [],
+    "on_art": "Refri de 2L ou latinha?",
     "body": [
-      "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️",
-      "Tem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho."
+      "Calor de verão e pizza na mesa. A pergunta é: refri de 2L para dividir ou latinha para cada um? ☀️",
+      "No carrinho tem refrigerante 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite e Kuat), Kuat 1,5L, Coca-Cola 600ml, Coca-Cola lata e cerveja Brahma lata.",
+      "Vote nos comentários: 2L ou lata?"
     ],
     "tags": [
-      "#Verao"
+      "#Verao",
+      "#EsteOuAquele"
     ],
-    "notes": "A foto é de uma pizza com presunto, tomate, manjericão e mussarela (parecida com a Romana). Rótulo de foto ilustrativa obrigatório.",
     "weekday": "sex",
     "networks": [
       "instagram",
@@ -1002,8 +1055,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P30/feed.jpg",
-    "caption_instagram": "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️\n\nTem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao",
-    "caption_facebook": "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️\n\nTem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Calor de verão e pizza na mesa. A pergunta é: refri de 2L para dividir ou latinha para cada um? ☀️\n\nNo carrinho tem refrigerante 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite e Kuat), Kuat 1,5L, Coca-Cola 600ml, Coca-Cola lata e cerveja Brahma lata.\n\nVote nos comentários: 2L ou lata?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao #EsteOuAquele",
+    "caption_facebook": "Calor de verão e pizza na mesa. A pergunta é: refri de 2L para dividir ou latinha para cada um? ☀️\n\nNo carrinho tem refrigerante 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite e Kuat), Kuat 1,5L, Coca-Cola 600ml, Coca-Cola lata e cerveja Brahma lata.\n\nVote nos comentários: 2L ou lata?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1012,6 +1065,7 @@
     "time": "16:30",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Fran-Brócolis",
     "trigger": "desejo",
     "cta": "forte",
@@ -1020,7 +1074,8 @@
     ],
     "on_art": "Fran-Brócolis",
     "body": [
-      "Frango, brócolis e mussarela. Sábado merece. 🥦🍗"
+      "Frango, brócolis e mussarela: a Fran-Brócolis é presença certa em sábado de pizza. 🥦",
+      "Hoje a gente abre às 18h."
     ],
     "tags": [
       "#FranBrocolis"
@@ -1032,28 +1087,34 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P31/feed.jpg",
-    "caption_instagram": "Frango, brócolis e mussarela. Sábado merece. 🥦🍗\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FranBrocolis",
-    "caption_facebook": "Frango, brócolis e mussarela. Sábado merece. 🥦🍗\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Frango, brócolis e mussarela: a Fran-Brócolis é presença certa em sábado de pizza. 🥦\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FranBrocolis",
+    "caption_facebook": "Frango, brócolis e mussarela: a Fran-Brócolis é presença certa em sábado de pizza. 🥦\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
     "id": "P32",
     "date": "2026-12-16",
     "time": "18:30",
-    "format": "carrossel",
-    "slides": 4,
+    "format": "feed",
     "pillar": "como-pedir",
-    "theme": "Confraternização sem cozinha",
+    "tipo": "checklist",
+    "theme": "Checklist: confraternização sem cozinha",
     "trigger": "alívio + praticidade",
     "cta": "suave",
     "photos": [],
-    "on_art": "Ninguém quer cozinhar",
+    "on_art": "Confraternização sem cozinha",
     "body": [
       "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅",
-      "Monte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho."
+      "Checklist para a sua:",
+      "□ Lista de quem vai",
+      "□ Um sabor para cada um (a Gigante leva até 4)",
+      "□ Várias pizzas no mesmo carrinho",
+      "□ Bebidas no pedido",
+      "□ Pedido enviado pelo WhatsApp, sem cadastro"
     ],
     "tags": [
-      "#AmigoSecreto"
+      "#AmigoSecreto",
+      "#Confraternizacao"
     ],
     "weekday": "qua",
     "networks": [
@@ -1061,9 +1122,9 @@
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P32/slide-01..04.jpg",
-    "caption_instagram": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nMonte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #AmigoSecreto",
-    "caption_facebook": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nMonte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P32/feed.jpg",
+    "caption_instagram": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nChecklist para a sua:\n\n□ Lista de quem vai\n\n□ Um sabor para cada um (a Gigante leva até 4)\n\n□ Várias pizzas no mesmo carrinho\n\n□ Bebidas no pedido\n\n□ Pedido enviado pelo WhatsApp, sem cadastro\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #AmigoSecreto #Confraternizacao",
+    "caption_facebook": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nChecklist para a sua:\n\n□ Lista de quem vai\n\n□ Um sabor para cada um (a Gigante leva até 4)\n\n□ Várias pizzas no mesmo carrinho\n\n□ Bebidas no pedido\n\n□ Pedido enviado pelo WhatsApp, sem cadastro\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1073,8 +1134,9 @@
     "format": "carrossel",
     "slides": 4,
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Clássicos com tomate",
-    "trigger": "segurança da escolha",
+    "trigger": "segurança da escolha + participação",
     "cta": "forte",
     "photos": [
       "mussarela-tomate",
@@ -1083,10 +1145,11 @@
     ],
     "on_art": "Clássicos que nunca saem de moda",
     "body": [
-      "Clássicos que nunca saem de moda:",
-      "Marguerita: mussarela, tomate, parmesão e manjericão",
+      "Clássicos que nunca saem de moda: 🍅",
       "Mussarela: mussarela e tomate",
-      "Romana: mussarela, presunto, tomate e parmesão"
+      "Romana: mussarela, presunto, tomate e parmesão",
+      "Marguerita: mussarela, tomate, parmesão e manjericão",
+      "Qual é o seu clássico?"
     ],
     "tags": [
       "#Classicos"
@@ -1098,8 +1161,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P33/slide-01..04.jpg",
-    "caption_instagram": "Clássicos que nunca saem de moda:\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Classicos",
-    "caption_facebook": "Clássicos que nunca saem de moda:\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Clássicos que nunca saem de moda: 🍅\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nQual é o seu clássico?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Classicos",
+    "caption_facebook": "Clássicos que nunca saem de moda: 🍅\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nQual é o seu clássico?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -1108,18 +1171,22 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
-    "theme": "Bolonhesa Especial",
-    "trigger": "desejo",
+    "tipo": "você sabia",
+    "theme": "Você sabia? A Bolonhesa tem 3 versões",
+    "trigger": "curiosidade + escolha",
     "cta": "forte",
-    "photos": [
-      "bolonhesa"
-    ],
-    "on_art": "Bolonhesa Especial",
+    "photos": [],
+    "on_art": "Você sabia? A Bolonhesa tem 3 versões",
     "body": [
-      "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕"
+      "Você sabia? No nosso cardápio, a Bolonhesa aparece em 3 versões. 🍕",
+      "Bolonhesa: mussarela e molho bolonhesa.",
+      "Bolonhesa Especial: mussarela, molho bolonhesa, pimentão, ovos e catupiry.",
+      "Bolonhesa Catu-Cheddar: mussarela, carne moída, catupiry e cheddar.",
+      "Qual delas vai para a sua sexta?"
     ],
     "tags": [
-      "#Bolonhesa"
+      "#Bolonhesa",
+      "#VoceSabia"
     ],
     "weekday": "sex",
     "networks": [
@@ -1128,8 +1195,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P34/feed.jpg",
-    "caption_instagram": "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bolonhesa",
-    "caption_facebook": "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Você sabia? No nosso cardápio, a Bolonhesa aparece em 3 versões. 🍕\n\nBolonhesa: mussarela e molho bolonhesa.\n\nBolonhesa Especial: mussarela, molho bolonhesa, pimentão, ovos e catupiry.\n\nBolonhesa Catu-Cheddar: mussarela, carne moída, catupiry e cheddar.\n\nQual delas vai para a sua sexta?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bolonhesa #VoceSabia",
+    "caption_facebook": "Você sabia? No nosso cardápio, a Bolonhesa aparece em 3 versões. 🍕\n\nBolonhesa: mussarela e molho bolonhesa.\n\nBolonhesa Especial: mussarela, molho bolonhesa, pimentão, ovos e catupiry.\n\nBolonhesa Catu-Cheddar: mussarela, carne moída, catupiry e cheddar.\n\nQual delas vai para a sua sexta?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1138,19 +1205,21 @@
     "time": "16:30",
     "format": "reel",
     "pillar": "sazonal",
-    "theme": "Semana do Natal",
+    "tipo": "frase",
+    "theme": "Natal: quem é quem na mesa",
     "date_theme": "Natal",
-    "trigger": "pertencimento + família",
+    "trigger": "humor + família + identificação",
     "cta": "forte",
     "photos": [
-      "portuguesa",
-      "quatro-queijos-bacon",
-      "frango-bacon-catupiry"
+      "calabresa",
+      "margherita",
+      "bem-casado"
     ],
-    "on_art": "Natal em família",
+    "on_art": "Quem é quem na mesa de Natal",
     "body": [
-      "Semana de Natal chegando e a família toda reunida. 🎄",
-      "Pizza também é jeito de comemorar junto: escolha os sabores de cada um."
+      "Quem é quem na mesa de Natal? 🎄",
+      "Tem o tio que só pede Calabresa, a tia que não abre mão da Marguerita e quem já vai direto no doce.",
+      "Na Gigante cabem até 4 sabores: dá para ter todo mundo representado. Marque a sua família aqui."
     ],
     "tags": [
       "#Natal"
@@ -1162,8 +1231,8 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P35/reel.mp4",
-    "caption_instagram": "Semana de Natal chegando e a família toda reunida. 🎄\n\nPizza também é jeito de comemorar junto: escolha os sabores de cada um.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
-    "caption_facebook": "Semana de Natal chegando e a família toda reunida. 🎄\n\nPizza também é jeito de comemorar junto: escolha os sabores de cada um.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Quem é quem na mesa de Natal? 🎄\n\nTem o tio que só pede Calabresa, a tia que não abre mão da Marguerita e quem já vai direto no doce.\n\nNa Gigante cabem até 4 sabores: dá para ter todo mundo representado. Marque a sua família aqui.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+    "caption_facebook": "Quem é quem na mesa de Natal? 🎄\n\nTem o tio que só pede Calabresa, a tia que não abre mão da Marguerita e quem já vai direto no doce.\n\nNa Gigante cabem até 4 sabores: dá para ter todo mundo representado. Marque a sua família aqui.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -1172,19 +1241,26 @@
     "time": "18:30",
     "format": "feed",
     "pillar": "utilidade",
-    "theme": "Véspera da véspera de Natal",
+    "tipo": "aviso",
+    "theme": "Natal e Ano Novo: nossos horários",
     "date_theme": "Natal",
-    "trigger": "antecipação + utilidade",
+    "trigger": "redução de dúvida + antecipação",
     "cta": "suave",
     "photos": [],
-    "on_art": "Amanhã, véspera de Natal: 18h às 23h",
+    "on_art": "Natal e Ano Novo: a gente abre",
     "body": [
-      "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄",
-      "Garanta o seu pedido e deixe a noite mais tranquila."
+      "Salve este post: nossos horários de fim de ano. 🎄",
+      "24/12 (quinta): 18h às 23h",
+      "25/12 (sexta): 18h às 23h",
+      "31/12 (quinta): 18h às 23h",
+      "01/01 (sexta): 18h às 23h",
+      "Domingo, como sempre, a gente descansa."
     ],
     "tags": [
-      "#Natal"
+      "#Natal",
+      "#AnoNovo"
     ],
+    "notes": "Confirme com o dono que a loja abre nos 4 dias (a regra é: aberta nos feriados; os posts de 24, 25, 31/12 e 01/01 já diziam 18h às 23h).",
     "weekday": "qua",
     "networks": [
       "instagram",
@@ -1192,8 +1268,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P36/feed.jpg",
-    "caption_instagram": "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄\n\nGaranta o seu pedido e deixe a noite mais tranquila.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
-    "caption_facebook": "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄\n\nGaranta o seu pedido e deixe a noite mais tranquila.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Salve este post: nossos horários de fim de ano. 🎄\n\n24/12 (quinta): 18h às 23h\n\n25/12 (sexta): 18h às 23h\n\n31/12 (quinta): 18h às 23h\n\n01/01 (sexta): 18h às 23h\n\nDomingo, como sempre, a gente descansa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal #AnoNovo",
+    "caption_facebook": "Salve este post: nossos horários de fim de ano. 🎄\n\n24/12 (quinta): 18h às 23h\n\n25/12 (sexta): 18h às 23h\n\n31/12 (quinta): 18h às 23h\n\n01/01 (sexta): 18h às 23h\n\nDomingo, como sempre, a gente descansa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1202,18 +1278,19 @@
     "time": "17:30",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Véspera de Natal",
+    "tipo": "vitrine",
+    "theme": "Véspera de Natal: pizza na ceia",
     "date_theme": "Natal (véspera)",
     "trigger": "pertencimento + solução",
     "cta": "forte",
     "photos": [
-      "margherita"
+      "bolonhesa"
     ],
     "on_art": "Véspera de Natal: abrimos 18h–23h",
     "body": [
-      "Véspera de Natal e a mesa cheia de gente querida. 🎄",
-      "Quem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.",
-      "Marguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa."
+      "Véspera de Natal e a casa cheia de gente querida. 🎄",
+      "Se a ideia é deixar a cozinha de lado, conte com a gente: abrimos hoje das 18h às 23h.",
+      "Bolonhesa para um, Marguerita para outro, um doce para fechar: cada um com a sua, no mesmo pedido."
     ],
     "tags": [
       "#Natal"
@@ -1225,8 +1302,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P37/feed.jpg",
-    "caption_instagram": "Véspera de Natal e a mesa cheia de gente querida. 🎄\n\nQuem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.\n\nMarguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
-    "caption_facebook": "Véspera de Natal e a mesa cheia de gente querida. 🎄\n\nQuem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.\n\nMarguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Véspera de Natal e a casa cheia de gente querida. 🎄\n\nSe a ideia é deixar a cozinha de lado, conte com a gente: abrimos hoje das 18h às 23h.\n\nBolonhesa para um, Marguerita para outro, um doce para fechar: cada um com a sua, no mesmo pedido.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+    "caption_facebook": "Véspera de Natal e a casa cheia de gente querida. 🎄\n\nSe a ideia é deixar a cozinha de lado, conte com a gente: abrimos hoje das 18h às 23h.\n\nBolonhesa para um, Marguerita para outro, um doce para fechar: cada um com a sua, no mesmo pedido.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -1235,6 +1312,7 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "sazonal",
+    "tipo": "data comemorativa",
     "theme": "Feliz Natal",
     "date_theme": "Natal (sex 25/12)",
     "trigger": "gratidão + pertencimento",
@@ -1265,17 +1343,17 @@
     "date": "2026-12-26",
     "time": "16:30",
     "format": "feed",
-    "pillar": "produto",
-    "theme": "Pós-Natal",
-    "trigger": "alívio + desejo",
+    "pillar": "engajamento",
+    "tipo": "frase",
+    "theme": "Pós-Natal: a cozinha pediu folga",
+    "trigger": "humor + alívio",
     "cta": "forte",
-    "photos": [
-      "quatro-queijos-bacon"
-    ],
-    "on_art": "Sobrou ceia? Sábado de pizza",
+    "photos": [],
+    "on_art": "A cozinha pediu folga. A gente cobre.",
     "body": [
-      "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕",
-      "Quatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon."
+      "A ceia acabou, as sobras também (ou quase). 😅",
+      "Hoje a cozinha está de folga e a pizza fica com a gente: abrimos das 18h às 23h.",
+      "Quem aí ainda tem rabanada na geladeira?"
     ],
     "tags": [
       "#PosNatal"
@@ -1287,8 +1365,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P39/feed.jpg",
-    "caption_instagram": "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕\n\nQuatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PosNatal",
-    "caption_facebook": "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕\n\nQuatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "A ceia acabou, as sobras também (ou quase). 😅\n\nHoje a cozinha está de folga e a pizza fica com a gente: abrimos das 18h às 23h.\n\nQuem aí ainda tem rabanada na geladeira?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PosNatal",
+    "caption_facebook": "A ceia acabou, as sobras também (ou quase). 😅\n\nHoje a cozinha está de folga e a pizza fica com a gente: abrimos das 18h às 23h.\n\nQuem aí ainda tem rabanada na geladeira?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1297,17 +1375,19 @@
     "time": "18:30",
     "format": "feed",
     "pillar": "engajamento",
-    "theme": "O sabor do seu 2026",
-    "trigger": "nostalgia + participação",
+    "tipo": "complete a frase",
+    "theme": "Complete: em 2027 eu quero mais pizza de...",
+    "date_theme": "Ano Novo",
+    "trigger": "participação + nostalgia",
     "cta": "suave",
     "photos": [],
-    "on_art": "Qual foi o sabor do seu 2026?",
+    "on_art": "Em 2027, eu quero mais pizza de ____",
     "body": [
-      "Qual foi o sabor do seu 2026? 🍕",
-      "Conta aqui nos comentários: vamos começar 2027 com a pizza certa."
+      "Complete a frase: em 2027, eu quero mais pizza de ________. 🍕",
+      "Vale sabor, vale borda, vale companhia. Os comentários são seus."
     ],
     "tags": [
-      "#2026"
+      "#2027"
     ],
     "weekday": "qua",
     "networks": [
@@ -1316,8 +1396,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P40/feed.jpg",
-    "caption_instagram": "Qual foi o sabor do seu 2026? 🍕\n\nConta aqui nos comentários: vamos começar 2027 com a pizza certa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #2026",
-    "caption_facebook": "Qual foi o sabor do seu 2026? 🍕\n\nConta aqui nos comentários: vamos começar 2027 com a pizza certa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Complete a frase: em 2027, eu quero mais pizza de ________. 🍕\n\nVale sabor, vale borda, vale companhia. Os comentários são seus.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #2027",
+    "caption_facebook": "Complete a frase: em 2027, eu quero mais pizza de ________. 🍕\n\nVale sabor, vale borda, vale companhia. Os comentários são seus.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1326,20 +1406,25 @@
     "time": "17:30",
     "format": "feed",
     "pillar": "sazonal",
-    "theme": "Réveillon",
+    "tipo": "checklist",
+    "theme": "Réveillon: checklist da virada",
     "date_theme": "Ano Novo (réveillon)",
-    "trigger": "ocasião única + antecipação",
+    "trigger": "ocasião única + humor",
     "cta": "forte",
-    "photos": [
-      "confete"
-    ],
-    "on_art": "Último pedido de 2026",
+    "photos": [],
+    "on_art": "Checklist da virada",
     "body": [
-      "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.",
-      "Uma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente."
+      "Checklist da virada: 🎆",
+      "□ Roupa escolhida",
+      "□ Lista de metas para 2027",
+      "□ Pizza salgada para a noite",
+      "□ Pizza doce para brindar",
+      "□ Pedido feito antes das 23h, quando a gente fecha",
+      "Hoje a gente abre das 18h às 23h."
     ],
     "tags": [
-      "#Reveillon"
+      "#Reveillon",
+      "#Checklist"
     ],
     "weekday": "qui",
     "networks": [
@@ -1348,8 +1433,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P41/feed.jpg",
-    "caption_instagram": "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.\n\nUma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Reveillon",
-    "caption_facebook": "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.\n\nUma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Checklist da virada: 🎆\n\n□ Roupa escolhida\n\n□ Lista de metas para 2027\n\n□ Pizza salgada para a noite\n\n□ Pizza doce para brindar\n\n□ Pedido feito antes das 23h, quando a gente fecha\n\nHoje a gente abre das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Reveillon #Checklist",
+    "caption_facebook": "Checklist da virada: 🎆\n\n□ Roupa escolhida\n\n□ Lista de metas para 2027\n\n□ Pizza salgada para a noite\n\n□ Pizza doce para brindar\n\n□ Pedido feito antes das 23h, quando a gente fecha\n\nHoje a gente abre das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1358,6 +1443,7 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "sazonal",
+    "tipo": "data comemorativa",
     "theme": "Feliz 2027",
     "date_theme": "Ano Novo (sex 01/01)",
     "trigger": "gratidão + novo começo",
@@ -1387,23 +1473,27 @@
     "date": "2027-01-02",
     "time": "16:30",
     "format": "reel",
-    "pillar": "sazonal",
-    "theme": "Sábado de verão",
+    "pillar": "engajamento",
+    "tipo": "este-ou-aquele",
+    "theme": "Verão: este ou aquele",
     "date_theme": "Verão",
-    "trigger": "momento + desejo",
+    "trigger": "participação + momento",
     "cta": "forte",
     "photos": [
-      "mussarela-tomate",
       "peperone",
-      "brocolis"
+      "mussarela-tomate"
     ],
-    "on_art": "Sábado de verão pede pizza",
+    "on_art": "Este ou aquele: edição verão",
     "body": [
-      "Sábado de verão pede pizza. ☀️",
-      "Escolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp."
+      "Este ou aquele, edição verão: ☀️",
+      "Praia ou piscina?",
+      "Refri de 2L ou latinha?",
+      "Peperone ou Mussarela?",
+      "Responda tudo nos comentários. E hoje é sábado: a gente abre às 18h."
     ],
     "tags": [
-      "#Verao"
+      "#Verao",
+      "#EsteOuAquele"
     ],
     "weekday": "sáb",
     "networks": [
@@ -1412,29 +1502,34 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P43/reel.mp4",
-    "caption_instagram": "Sábado de verão pede pizza. ☀️\n\nEscolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao",
-    "caption_facebook": "Sábado de verão pede pizza. ☀️\n\nEscolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Este ou aquele, edição verão: ☀️\n\nPraia ou piscina?\n\nRefri de 2L ou latinha?\n\nPeperone ou Mussarela?\n\nResponda tudo nos comentários. E hoje é sábado: a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao #EsteOuAquele",
+    "caption_facebook": "Este ou aquele, edição verão: ☀️\n\nPraia ou piscina?\n\nRefri de 2L ou latinha?\n\nPeperone ou Mussarela?\n\nResponda tudo nos comentários. E hoje é sábado: a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
     "id": "P44",
     "date": "2027-01-06",
     "time": "18:30",
-    "format": "carrossel",
-    "slides": 4,
-    "pillar": "diferencial",
-    "theme": "Férias: cada um no seu sabor",
+    "format": "feed",
+    "pillar": "engajamento",
+    "tipo": "quiz",
+    "theme": "Férias: quem escolhe o sabor na sua casa?",
     "date_theme": "Verão / férias",
-    "trigger": "identificação familiar",
+    "trigger": "identificação familiar + participação",
     "cta": "suave",
     "photos": [],
-    "on_art": "Cada um no seu sabor",
+    "on_art": "Nas férias, quem escolhe o sabor?",
     "body": [
-      "Férias de janeiro: cada um quer um sabor diferente. 😄",
-      "Na pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz."
+      "Férias de janeiro, todo mundo em casa e a pergunta de sempre: quem escolhe o sabor? 😄",
+      "A) Eu, claro",
+      "B) Quem pega o celular primeiro",
+      "C) As crianças",
+      "D) Ninguém se decide",
+      "Dica para quem marcou D: na Grande e na Big cabem 3 sabores; na Gigante, 4."
     ],
     "tags": [
-      "#Ferias"
+      "#Ferias",
+      "#QuizDePizza"
     ],
     "weekday": "qua",
     "networks": [
@@ -1442,9 +1537,9 @@
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P44/slide-01..04.jpg",
-    "caption_instagram": "Férias de janeiro: cada um quer um sabor diferente. 😄\n\nNa pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias",
-    "caption_facebook": "Férias de janeiro: cada um quer um sabor diferente. 😄\n\nNa pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "media_target": "marketing/midia/processada/P44/feed.jpg",
+    "caption_instagram": "Férias de janeiro, todo mundo em casa e a pergunta de sempre: quem escolhe o sabor? 😄\n\nA) Eu, claro\n\nB) Quem pega o celular primeiro\n\nC) As crianças\n\nD) Ninguém se decide\n\nDica para quem marcou D: na Grande e na Big cabem 3 sabores; na Gigante, 4.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias #QuizDePizza",
+    "caption_facebook": "Férias de janeiro, todo mundo em casa e a pergunta de sempre: quem escolhe o sabor? 😄\n\nA) Eu, claro\n\nB) Quem pega o celular primeiro\n\nC) As crianças\n\nD) Ninguém se decide\n\nDica para quem marcou D: na Grande e na Big cabem 3 sabores; na Gigante, 4.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1453,17 +1548,19 @@
     "time": "17:30",
     "format": "feed",
     "pillar": "produto",
-    "theme": "Borda de Nutella",
-    "trigger": "desejo",
+    "tipo": "frase",
+    "theme": "Borda de Nutella: o final feliz da fatia",
+    "trigger": "desejo + humor",
     "cta": "forte",
     "photos": [],
-    "on_art": "Borda de Nutella",
+    "on_art": "Toda fatia merece um final feliz",
     "body": [
-      "Borda de Nutella: o final perfeito de uma fatia. 🍫",
-      "Escolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas."
+      "Toda fatia merece um final feliz. 🍫",
+      "Borda de Nutella: escolha com pizza salgada ou doce, no passo “Borda” do montador. E se o seu final feliz for outro, tem mais 6 bordas."
     ],
     "tags": [
-      "#Nutella"
+      "#Nutella",
+      "#BordaRecheada"
     ],
     "weekday": "qui",
     "networks": [
@@ -1472,8 +1569,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P45/feed.jpg",
-    "caption_instagram": "Borda de Nutella: o final perfeito de uma fatia. 🍫\n\nEscolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Nutella",
-    "caption_facebook": "Borda de Nutella: o final perfeito de uma fatia. 🍫\n\nEscolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Toda fatia merece um final feliz. 🍫\n\nBorda de Nutella: escolha com pizza salgada ou doce, no passo “Borda” do montador. E se o seu final feliz for outro, tem mais 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Nutella #BordaRecheada",
+    "caption_facebook": "Toda fatia merece um final feliz. 🍫\n\nBorda de Nutella: escolha com pizza salgada ou doce, no passo “Borda” do montador. E se o seu final feliz for outro, tem mais 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1482,8 +1579,9 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Bem Casado",
-    "trigger": "desejo",
+    "trigger": "desejo + curiosidade",
     "cta": "forte",
     "photos": [
       "bem-casado"
@@ -1491,6 +1589,7 @@
     "on_art": "Bem Casado",
     "body": [
       "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫",
+      "Curiosidade da casa: o Bem Casado também é borda, a de Chocolate ao Leite com Chocolate Branco.",
       "Sexta pede um doce."
     ],
     "tags": [
@@ -1503,8 +1602,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P46/feed.jpg",
-    "caption_instagram": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BemCasado",
-    "caption_facebook": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nCuriosidade da casa: o Bem Casado também é borda, a de Chocolate ao Leite com Chocolate Branco.\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BemCasado",
+    "caption_facebook": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nCuriosidade da casa: o Bem Casado também é borda, a de Chocolate ao Leite com Chocolate Branco.\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -1512,21 +1611,24 @@
     "date": "2027-01-09",
     "time": "16:30",
     "format": "reel",
-    "pillar": "produto",
-    "theme": "Salgada e doce na mesma pizza",
+    "pillar": "diferencial",
+    "tipo": "você sabia",
+    "theme": "Você sabia? Salgada e doce na mesma pizza",
     "trigger": "curiosidade + variedade",
     "cta": "forte",
     "photos": [
       "peperone",
       "brigadeiro"
     ],
-    "on_art": "Salgada de um lado, doce do outro",
+    "on_art": "Você sabia? Salgada e doce na mesma pizza",
     "body": [
-      "Salgada de um lado, doce do outro. 🍕🍫",
-      "Escolha um sabor salgado e um doce na mesma pizza (a partir da média)."
+      "Você sabia? Dá para pedir salgada de um lado e doce do outro, na mesma pizza. 🍕",
+      "É a partir da média, que leva 2 sabores. Na Grande e na Big são 3; na Gigante, 4.",
+      "Qual dupla você montaria?"
     ],
     "tags": [
-      "#PizzaDoce"
+      "#PizzaDoce",
+      "#VoceSabia"
     ],
     "weekday": "sáb",
     "networks": [
@@ -1535,8 +1637,8 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P47/reel.mp4",
-    "caption_instagram": "Salgada de um lado, doce do outro. 🍕🍫\n\nEscolha um sabor salgado e um doce na mesma pizza (a partir da média).\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
-    "caption_facebook": "Salgada de um lado, doce do outro. 🍕🍫\n\nEscolha um sabor salgado e um doce na mesma pizza (a partir da média).\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Você sabia? Dá para pedir salgada de um lado e doce do outro, na mesma pizza. 🍕\n\nÉ a partir da média, que leva 2 sabores. Na Grande e na Big são 3; na Gigante, 4.\n\nQual dupla você montaria?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce #VoceSabia",
+    "caption_facebook": "Você sabia? Dá para pedir salgada de um lado e doce do outro, na mesma pizza. 🍕\n\nÉ a partir da média, que leva 2 sabores. Na Grande e na Big são 3; na Gigante, 4.\n\nQual dupla você montaria?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -1545,19 +1647,21 @@
     "time": "18:30",
     "format": "feed",
     "pillar": "engajamento",
-    "theme": "Time massa fina ou grossa?",
+    "tipo": "este-ou-aquele",
+    "theme": "Time massa fina ou massa grossa?",
     "trigger": "identidade + participação",
     "cta": "suave",
     "photos": [],
     "on_art": "Time massa fina ou massa grossa?",
     "body": [
       "Time massa fina ou time massa grossa? 🍕",
-      "Agora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?"
+      "Vote nos comentários. E quem fica no meio do caminho tem a média.",
+      "A massa você escolhe no pedido, pizza por pizza."
     ],
     "tags": [
-      "#MassaDePizza"
+      "#MassaDePizza",
+      "#EsteOuAquele"
     ],
-    "depends_on": "deploy_massa",
     "weekday": "qua",
     "networks": [
       "instagram",
@@ -1565,29 +1669,36 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P48/feed.jpg",
-    "caption_instagram": "Time massa fina ou time massa grossa? 🍕\n\nAgora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza",
-    "caption_facebook": "Time massa fina ou time massa grossa? 🍕\n\nAgora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Time massa fina ou time massa grossa? 🍕\n\nVote nos comentários. E quem fica no meio do caminho tem a média.\n\nA massa você escolhe no pedido, pizza por pizza.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza #EsteOuAquele",
+    "caption_facebook": "Time massa fina ou time massa grossa? 🍕\n\nVote nos comentários. E quem fica no meio do caminho tem a média.\n\nA massa você escolhe no pedido, pizza por pizza.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
     "id": "P49",
     "date": "2027-01-14",
     "time": "17:30",
-    "format": "feed",
+    "format": "carrossel",
+    "slides": 3,
     "pillar": "marca",
-    "theme": "Desde 2015",
-    "trigger": "autoridade + pertencimento",
+    "tipo": "bastidores / família",
+    "theme": "Disk Pizza em números",
+    "trigger": "pertencimento + autoridade (desde 2015)",
     "cta": "suave",
-    "photos": [
-      "mussarela-tomate"
-    ],
-    "on_art": "Desde 2015 em Curitiba",
+    "photos": [],
+    "on_art": "Disk Pizza em números",
     "body": [
-      "Desde 2015 fazendo pizza em Curitiba, em família. 🍕",
-      "Cada fornada é um convite para compartilhar sabores, histórias e tradição."
+      "A Disk Pizza em números: 🍕",
+      "2015: o ano em que a gente começou, em família, aqui em Curitiba",
+      "71 sabores no cardápio",
+      "7 bordas",
+      "16 fatias na Gigante",
+      "Até 4 sabores na mesma pizza",
+      "3 massas para escolher",
+      "Qual desses números tem a sua cara?"
     ],
     "tags": [
-      "#Desde2015"
+      "#Desde2015",
+      "#PizzariaDeFamilia"
     ],
     "weekday": "qui",
     "networks": [
@@ -1595,9 +1706,9 @@
       "facebook"
     ],
     "media_spec": "1080x1080",
-    "media_target": "marketing/midia/processada/P49/feed.jpg",
-    "caption_instagram": "Desde 2015 fazendo pizza em Curitiba, em família. 🍕\n\nCada fornada é um convite para compartilhar sabores, histórias e tradição.\n\nMonte a sua pelo link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desde2015",
-    "caption_facebook": "Desde 2015 fazendo pizza em Curitiba, em família. 🍕\n\nCada fornada é um convite para compartilhar sabores, histórias e tradição.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "media_target": "marketing/midia/processada/P49/slide-01..03.jpg",
+    "caption_instagram": "A Disk Pizza em números: 🍕\n\n2015: o ano em que a gente começou, em família, aqui em Curitiba\n\n71 sabores no cardápio\n\n7 bordas\n\n16 fatias na Gigante\n\nAté 4 sabores na mesma pizza\n\n3 massas para escolher\n\nQual desses números tem a sua cara?\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desde2015 #PizzariaDeFamilia",
+    "caption_facebook": "A Disk Pizza em números: 🍕\n\n2015: o ano em que a gente começou, em família, aqui em Curitiba\n\n71 sabores no cardápio\n\n7 bordas\n\n16 fatias na Gigante\n\nAté 4 sabores na mesma pizza\n\n3 massas para escolher\n\nQual desses números tem a sua cara?\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1606,6 +1717,7 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Brigadeiro",
     "trigger": "desejo",
     "cta": "forte",
@@ -1637,22 +1749,23 @@
     "time": "16:30",
     "format": "reel",
     "pillar": "como-pedir",
-    "theme": "Monte sua pizza em 6 passos",
+    "tipo": "fluxo",
+    "theme": "Monte a sua em 6 passos",
     "trigger": "controle + facilidade",
     "cta": "forte",
     "photos": [
-      "margherita",
-      "frango-brocolis"
+      "presunto",
+      "lombo-milho"
     ],
     "on_art": "Monte a sua em 6 passos",
     "body": [
-      "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕",
-      "Sem cadastro, e o pedido segue pronto para o nosso WhatsApp."
+      "Seis passos e a pizza fica do seu jeito: 🍕",
+      "1. Tamanho · 2. Sabores · 3. Massa · 4. Borda · 5. Extras · 6. Revisão",
+      "Depois é só enviar pelo WhatsApp. Sem cadastro."
     ],
     "tags": [
       "#MonteSuaPizza"
     ],
-    "depends_on": "deploy_massa",
     "weekday": "sáb",
     "networks": [
       "instagram",
@@ -1660,8 +1773,8 @@
     ],
     "media_spec": "1080x1920",
     "media_target": "marketing/midia/processada/P51/reel.mp4",
-    "caption_instagram": "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕\n\nSem cadastro, e o pedido segue pronto para o nosso WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
-    "caption_facebook": "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕\n\nSem cadastro, e o pedido segue pronto para o nosso WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+    "caption_instagram": "Seis passos e a pizza fica do seu jeito: 🍕\n\n1. Tamanho · 2. Sabores · 3. Massa · 4. Borda · 5. Extras · 6. Revisão\n\nDepois é só enviar pelo WhatsApp. Sem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
+    "caption_facebook": "Seis passos e a pizza fica do seu jeito: 🍕\n\n1. Tamanho · 2. Sabores · 3. Massa · 4. Borda · 5. Extras · 6. Revisão\n\nDepois é só enviar pelo WhatsApp. Sem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
     "status": "rascunho"
   },
   {
@@ -1670,18 +1783,22 @@
     "time": "18:30",
     "format": "feed",
     "pillar": "engajamento",
-    "theme": "Escolha o próximo sabor em destaque",
-    "trigger": "participação",
+    "tipo": "caça-palavras",
+    "theme": "Caça-palavras: ingredientes e bordas",
+    "trigger": "jogo + participação",
     "cta": "suave",
     "photos": [],
-    "on_art": "Qual sabor merece destaque?",
+    "on_art": "Caça-palavras: ache os 7",
     "body": [
-      "Qual sabor merece mais destaque aqui no perfil? ⭐",
-      "Comente o seu favorito: a gente conta com vocês para escolher os próximos posts."
+      "Caça-palavras, parte 2! 🔎",
+      "Desta vez são 7 ingredientes e recheios de borda do nosso cardápio, na horizontal e na vertical.",
+      "Comente quantos você achou e marque alguém para tentar também."
     ],
     "tags": [
-      "#SaborFavorito"
+      "#CacaPalavras",
+      "#Desafio"
     ],
+    "notes": "Palavras: CATUPIRY, CHEDDAR, NUTELLA, BACON, MILHO, PALMITO, LOMBO.",
     "weekday": "qua",
     "networks": [
       "instagram",
@@ -1689,8 +1806,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P52/feed.jpg",
-    "caption_instagram": "Qual sabor merece mais destaque aqui no perfil? ⭐\n\nComente o seu favorito: a gente conta com vocês para escolher os próximos posts.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #SaborFavorito",
-    "caption_facebook": "Qual sabor merece mais destaque aqui no perfil? ⭐\n\nComente o seu favorito: a gente conta com vocês para escolher os próximos posts.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Caça-palavras, parte 2! 🔎\n\nDesta vez são 7 ingredientes e recheios de borda do nosso cardápio, na horizontal e na vertical.\n\nComente quantos você achou e marque alguém para tentar também.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #CacaPalavras #Desafio",
+    "caption_facebook": "Caça-palavras, parte 2! 🔎\n\nDesta vez são 7 ingredientes e recheios de borda do nosso cardápio, na horizontal e na vertical.\n\nComente quantos você achou e marque alguém para tentar também.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1698,18 +1815,26 @@
     "date": "2027-01-21",
     "time": "17:30",
     "format": "feed",
-    "pillar": "produto",
-    "theme": "Bebidas",
-    "trigger": "complemento",
+    "pillar": "engajamento",
+    "tipo": "checklist",
+    "theme": "Kit maratona de série",
+    "date_theme": "Verão / férias",
+    "trigger": "identificação + complemento",
     "cta": "forte",
     "photos": [],
-    "on_art": "Pizza pede uma bebida",
+    "on_art": "Kit maratona de série",
     "body": [
-      "Pizza pede uma bebida para acompanhar. 🥤",
-      "Refrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho."
+      "Kit maratona de série, versão férias: 📺",
+      "□ Série escolhida (sem spoiler)",
+      "□ Pizza Big: 12 fatias e 3 sabores",
+      "□ Borda recheada",
+      "□ Refri de 2L no carrinho",
+      "□ Celular no silencioso (depois de enviar o pedido)",
+      "Qual série está na sua lista? Conta aqui."
     ],
     "tags": [
-      "#Bebidas"
+      "#Ferias",
+      "#Checklist"
     ],
     "weekday": "qui",
     "networks": [
@@ -1718,8 +1843,8 @@
     ],
     "media_spec": "1080x1080",
     "media_target": "marketing/midia/processada/P53/feed.jpg",
-    "caption_instagram": "Pizza pede uma bebida para acompanhar. 🥤\n\nRefrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bebidas",
-    "caption_facebook": "Pizza pede uma bebida para acompanhar. 🥤\n\nRefrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+    "caption_instagram": "Kit maratona de série, versão férias: 📺\n\n□ Série escolhida (sem spoiler)\n\n□ Pizza Big: 12 fatias e 3 sabores\n\n□ Borda recheada\n\n□ Refri de 2L no carrinho\n\n□ Celular no silencioso (depois de enviar o pedido)\n\nQual série está na sua lista? Conta aqui.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias #Checklist",
+    "caption_facebook": "Kit maratona de série, versão férias: 📺\n\n□ Série escolhida (sem spoiler)\n\n□ Pizza Big: 12 fatias e 3 sabores\n\n□ Borda recheada\n\n□ Refri de 2L no carrinho\n\n□ Celular no silencioso (depois de enviar o pedido)\n\nQual série está na sua lista? Conta aqui.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
     "status": "rascunho"
   },
   {
@@ -1728,6 +1853,7 @@
     "time": "17:00",
     "format": "feed",
     "pillar": "produto",
+    "tipo": "vitrine",
     "theme": "Lombo com Milho",
     "trigger": "desejo",
     "cta": "forte",

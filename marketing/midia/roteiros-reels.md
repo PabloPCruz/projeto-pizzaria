@@ -75,106 +75,123 @@ Abrimos de segunda a sábado, das 18h às 23h. No domingo a gente descansa.
 #DiskPizza #PizzaCuritiba #Curitiba #PizzariaDeFamilia
 ```
 
-### P11 — 2026-11-07 (sáb) 16:30 — Pizza de Nachos
+### P11 — 2026-11-07 (sáb) 16:30 — Do clique à sua porta
 
-Duração ≈ 10.4 s · 1080×1920 · sem narração · clima da trilha: divertido e curioso, andamento médio
+Duração ≈ 15.9 s · 1080×1920 · sem narração · clima da trilha: divertido e curioso, andamento médio
 
 | Cena | Duração | Imagem | Texto na tela |
 |---|---|---|---|
-| 1 | 3.5 s | foto `nachos.jpg` (foto ilustrativa) | Já provou pizza de Nachos? |
-| 2 | 3.5 s | foto `nachos.jpg` (foto ilustrativa) | Mussarela, carne moída, cheddar e doritos |
-| 3 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
+| 1 | 2.5 s | tela de texto | Como pedir · Do clique à sua porta · Em 4 passos |
+| 2 | 2.5 s | foto `nachos.jpg` (foto ilustrativa) | 1. Monte do seu jeito |
+| 3 | 2.5 s | foto `quatro-queijos-bacon.jpg` (foto ilustrativa) | 2. Confira o carrinho e o CEP |
+| 4 | 2.5 s | tela de texto | Passo 3 · Envie pelo WhatsApp · A loja confirma com você · Sem cadastro |
+| 5 | 2.5 s | foto `presunto.jpg` (foto ilustrativa) | 4. Pizza na sua porta |
+| 6 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
 
 Legenda (Instagram):
 
 ```
-Já provou pizza de Nachos? 🧀
+Do clique à sua porta, em 4 passos. 🛵
 
-Mussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.
+1. Monte a pizza no site: tamanho, sabores, massa e borda.
 
-Hoje a gente abre às 18h.
+2. Confira o carrinho e informe o CEP.
+
+3. Envie o pedido pelo WhatsApp: a loja confirma com você.
+
+4. Agora é só esperar a pizza chegar.
+
+Sem cadastro. Hoje a gente abre às 18h.
 
 👉 Peça agora pelo Disk Pizza: link na bio.
 
 📷 Foto ilustrativa.
 
-#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeNachos
+#DiskPizza #PizzaCuritiba #Curitiba #PeçaPeloSite #ComoPedir
 ```
 
-### P23 — 2026-11-28 (sáb) 16:30 — 71 sabores
+### P23 — 2026-11-28 (sáb) 16:30 — Jogo: pare o vídeo e descubra o seu sabor
 
-Duração ≈ 15.6 s · 1080×1920 · sem narração · clima da trilha: animado, ritmo marcado (cenas rápidas de 2 s)
+Duração ≈ 15.9 s · 1080×1920 · sem narração · clima da trilha: animado, ritmo marcado (cenas rápidas de 2 s)
 
 | Cena | Duração | Imagem | Texto na tela |
 |---|---|---|---|
-| 1 | 2.2 s | tela de texto | Sábado · 71 sabores · Qual é o seu? |
-| 2 | 2 s | foto `peperone.jpg` (foto ilustrativa) | Peperone |
-| 3 | 2 s | foto `brocolis.jpg` (foto ilustrativa) | Brócolis |
-| 4 | 2 s | foto `nachos.jpg` (foto ilustrativa) | Nachos |
-| 5 | 2 s | foto `bolonhesa.jpg` (foto ilustrativa) | Bolonhesa |
-| 6 | 2 s | foto `mexicana.jpg` (foto ilustrativa) | Mexicana |
+| 1 | 3 s | tela de texto | Jogo de sábado · Pare o vídeo! · O sabor que aparecer é o seu pedido de hoje |
+| 2 | 1.5 s | foto `calabresa.jpg` (foto ilustrativa) | Calabresa |
+| 3 | 1.5 s | foto `bolonhesa.jpg` (foto ilustrativa) | Bolonhesa |
+| 4 | 1.5 s | foto `mussarela-tomate.jpg` (foto ilustrativa) | Mussarela |
+| 5 | 1.5 s | foto `frango-brocolis.jpg` (foto ilustrativa) | Fran-Brócolis |
+| 6 | 1.5 s | foto `nachos.jpg` (foto ilustrativa) | Nachos |
+| 7 | 2 s | tela de texto | E aí? · Qual saiu para você? · Conta nos comentários |
+| 8 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
+
+Legenda (Instagram):
+
+```
+Pare o vídeo! O sabor que aparecer é o seu pedido de hoje. 🍕
+
+Calabresa, Bolonhesa, Mussarela, Fran-Brócolis ou Nachos: qual saiu para você? Conta nos comentários.
+
+Não gostou do resultado? Tem outros 66 sabores no cardápio.
+
+👉 Peça agora pelo Disk Pizza: link na bio.
+
+📷 Foto ilustrativa.
+
+#DiskPizza #PizzaCuritiba #Curitiba #PareOVideo #71Sabores
+```
+
+### P27 — 2026-12-05 (sáb) 16:30 — Confraternização: uma Gigante, 4 sabores
+
+Duração ≈ 17.2 s · 1080×1920 · sem narração · clima da trilha: doce e suave, mais lento
+
+| Cena | Duração | Imagem | Texto na tela |
+|---|---|---|---|
+| 1 | 2.5 s | tela de texto | Confraternização · Cada um quer um sabor? · A Gigante resolve |
+| 2 | 2.2 s | foto `portuguesa.jpg` (foto ilustrativa) | Sabor 1: Portuguesa |
+| 3 | 2.2 s | foto `quatro-queijos-bacon.jpg` (foto ilustrativa) | Sabor 2: Quatro Queijos com Bacon |
+| 4 | 2.2 s | foto `lombo-milho.jpg` (foto ilustrativa) | Sabor 3: Lombo com Milho |
+| 5 | 2.2 s | foto `confete.jpg` (foto ilustrativa) | Sabor 4: Confete |
+| 6 | 2.5 s | tela de texto | Gigante · 16 fatias, até 4 sabores · Qual seria a sua combinação? |
 | 7 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
 
 Legenda (Instagram):
 
 ```
-Sábado chegou e a gente tem 71 sabores esperando por você. 🍕
+Confraternização chegando e cada um quer um sabor? 🎄
 
-Tradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?
+A Gigante tem 16 fatias e até 4 sabores. Exemplo: Portuguesa, Quatro Queijos com Bacon, Lombo com Milho e, para fechar, Confete.
 
-👉 Peça agora pelo Disk Pizza: link na bio.
-
-📷 Foto ilustrativa.
-
-#DiskPizza #PizzaCuritiba #Curitiba #71Sabores
-```
-
-### P27 — 2026-12-05 (sáb) 16:30 — Sobremesa em fatias
-
-Duração ≈ 15.9 s · 1080×1920 · sem narração · clima da trilha: doce e suave, mais lento
-
-| Cena | Duração | Imagem | Texto na tela |
-|---|---|---|---|
-| 1 | 2.5 s | tela de texto | Doces · Sobremesa em formato de pizza |
-| 2 | 2.5 s | foto `brigadeiro.jpg` (foto ilustrativa) | Brigadeiro |
-| 3 | 2.5 s | foto `confete.jpg` (foto ilustrativa) | Confete |
-| 4 | 2.5 s | foto `bem-casado.jpg` (foto ilustrativa) | Bem Casado |
-| 5 | 2.5 s | tela de texto | Borda · Nutella ou chocolate · Para terminar a fatia |
-| 6 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
-
-Legenda (Instagram):
-
-```
-Sobremesa em formato de pizza? 🍫
-
-Brigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.
+Conta aqui qual seria a sua combinação.
 
 👉 Peça agora pelo Disk Pizza: link na bio.
 
 📷 Foto ilustrativa.
 
-#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce
+#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante #Confraternizacao
 ```
 
-### P35 — 2026-12-19 (sáb) 16:30 — Semana do Natal
+### P35 — 2026-12-19 (sáb) 16:30 — Natal: quem é quem na mesa
 
-Duração ≈ 15.9 s · 1080×1920 · sem narração · clima da trilha: natalino instrumental, calmo e acolhedor
+Duração ≈ 16.2 s · 1080×1920 · sem narração · clima da trilha: natalino instrumental, calmo e acolhedor
 
 | Cena | Duração | Imagem | Texto na tela |
 |---|---|---|---|
-| 1 | 2.5 s | tela de texto | Natal · Natal em família · A família toda reunida |
-| 2 | 2.5 s | foto `portuguesa.jpg` (foto ilustrativa) | Portuguesa |
-| 3 | 2.5 s | foto `quatro-queijos-bacon.jpg` (foto ilustrativa) | Quatro Queijos com Bacon |
-| 4 | 2.5 s | foto `frango-bacon-catupiry.jpg` (foto ilustrativa) | Frango Especial |
-| 5 | 2.5 s | tela de texto | Sua mesa · Escolha os sabores de cada um |
+| 1 | 2.5 s | tela de texto | Natal · Quem é quem na mesa de Natal? |
+| 2 | 2.5 s | foto `calabresa.jpg` (foto ilustrativa) | O tio que só pede Calabresa |
+| 3 | 2.5 s | foto `margherita.jpg` (foto ilustrativa) | A tia que não abre mão da Marguerita |
+| 4 | 2.5 s | foto `bem-casado.jpg` (foto ilustrativa) | Quem já vai direto no doce |
+| 5 | 2.8 s | tela de texto | Na Gigante · Até 4 sabores · Todo mundo representado · Marque a sua família |
 | 6 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
 
 Legenda (Instagram):
 
 ```
-Semana de Natal chegando e a família toda reunida. 🎄
+Quem é quem na mesa de Natal? 🎄
 
-Pizza também é jeito de comemorar junto: escolha os sabores de cada um.
+Tem o tio que só pede Calabresa, a tia que não abre mão da Marguerita e quem já vai direto no doce.
+
+Na Gigante cabem até 4 sabores: dá para ter todo mundo representado. Marque a sua família aqui.
 
 👉 Peça agora pelo Disk Pizza: link na bio.
 
@@ -183,79 +200,91 @@ Pizza também é jeito de comemorar junto: escolha os sabores de cada um.
 #DiskPizza #PizzaCuritiba #Curitiba #Natal
 ```
 
-### P43 — 2027-01-02 (sáb) 16:30 — Sábado de verão
+### P43 — 2027-01-02 (sáb) 16:30 — Verão: este ou aquele
 
-Duração ≈ 15.9 s · 1080×1920 · sem narração · clima da trilha: leve e ensolarado, verão
+Duração ≈ 15.6 s · 1080×1920 · sem narração · clima da trilha: leve e ensolarado, verão
 
 | Cena | Duração | Imagem | Texto na tela |
 |---|---|---|---|
-| 1 | 2.5 s | tela de texto | Verão · Sábado de verão pede pizza |
-| 2 | 2.5 s | foto `mussarela-tomate.jpg` (foto ilustrativa) | Mussarela |
-| 3 | 2.5 s | foto `peperone.jpg` (foto ilustrativa) | Peperone |
-| 4 | 2.5 s | foto `brocolis.jpg` (foto ilustrativa) | Brócolis |
-| 5 | 2.5 s | tela de texto | Simples · Monte, confira e envie · Pelo WhatsApp, sem cadastro |
-| 6 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
+| 1 | 2.2 s | tela de texto | Verão · Este ou aquele? · Edição sábado de sol |
+| 2 | 2 s | tela de texto | Este ou aquele · Praia ou piscina? |
+| 3 | 2 s | tela de texto | Este ou aquele · Refri de 2L ou latinha? |
+| 4 | 2 s | foto `peperone.jpg` (foto ilustrativa) | Peperone... |
+| 5 | 2 s | foto `mussarela-tomate.jpg` (foto ilustrativa) | ...ou Mussarela? |
+| 6 | 2 s | tela de texto | Sua vez · Responda nos comentários · Hoje abrimos às 18h |
+| 7 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
 
 Legenda (Instagram):
 
 ```
-Sábado de verão pede pizza. ☀️
+Este ou aquele, edição verão: ☀️
 
-Escolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.
+Praia ou piscina?
+
+Refri de 2L ou latinha?
+
+Peperone ou Mussarela?
+
+Responda tudo nos comentários. E hoje é sábado: a gente abre às 18h.
 
 👉 Peça agora pelo Disk Pizza: link na bio.
 
 📷 Foto ilustrativa.
 
-#DiskPizza #PizzaCuritiba #Curitiba #Verao
+#DiskPizza #PizzaCuritiba #Curitiba #Verao #EsteOuAquele
 ```
 
-### P47 — 2027-01-09 (sáb) 16:30 — Salgada e doce na mesma pizza
+### P47 — 2027-01-09 (sáb) 16:30 — Você sabia? Salgada e doce na mesma pizza
 
-Duração ≈ 13.7 s · 1080×1920 · sem narração · clima da trilha: animado e bem-humorado
+Duração ≈ 14.4 s · 1080×1920 · sem narração · clima da trilha: animado e bem-humorado
 
 | Cena | Duração | Imagem | Texto na tela |
 |---|---|---|---|
-| 1 | 2.8 s | tela de texto | Sábado · Salgada de um lado, doce do outro |
-| 2 | 2.5 s | foto `peperone.jpg` (foto ilustrativa) | Salgada |
-| 3 | 2.5 s | foto `brigadeiro.jpg` (foto ilustrativa) | Doce |
-| 4 | 2.5 s | tela de texto | Na mesma pizza · A partir da média · 2 sabores ou mais |
+| 1 | 3 s | tela de texto | Você sabia? · Salgada e doce na mesma pizza · Pode! |
+| 2 | 2.5 s | foto `peperone.jpg` (foto ilustrativa) | De um lado, Peperone |
+| 3 | 2.5 s | foto `brigadeiro.jpg` (foto ilustrativa) | Do outro, Brigadeiro |
+| 4 | 3 s | tela de texto | A partir da média · 2, 3 ou 4 sabores · Média: 2 · Grande e Big: 3 · Gigante: 4 |
 | 5 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
 
 Legenda (Instagram):
 
 ```
-Salgada de um lado, doce do outro. 🍕🍫
+Você sabia? Dá para pedir salgada de um lado e doce do outro, na mesma pizza. 🍕
 
-Escolha um sabor salgado e um doce na mesma pizza (a partir da média).
+É a partir da média, que leva 2 sabores. Na Grande e na Big são 3; na Gigante, 4.
+
+Qual dupla você montaria?
 
 👉 Peça agora pelo Disk Pizza: link na bio.
 
 📷 Foto ilustrativa.
 
-#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce
+#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce #VoceSabia
 ```
 
-### P51 — 2027-01-16 (sáb) 16:30 — Monte sua pizza em 6 passos
+### P51 — 2027-01-16 (sáb) 16:30 — Monte a sua em 6 passos
 
-Duração ≈ 13.4 s · 1080×1920 · sem narração · clima da trilha: prático, ritmo de tutorial
+Duração ≈ 15.0 s · 1080×1920 · sem narração · clima da trilha: prático, ritmo de tutorial
 
 > Depende do deploy da escolha de massa no site (o Reel cita o passo "Massa").
 
 | Cena | Duração | Imagem | Texto na tela |
 |---|---|---|---|
-| 1 | 2.5 s | tela de texto | Montador · Monte a sua em 6 passos |
-| 2 | 2.5 s | foto `margherita.jpg` (foto ilustrativa) | Tamanho e sabores |
-| 3 | 2.5 s | tela de texto | Passos 3 a 5 · Massa, borda e extras · Tudo do seu jeito |
-| 4 | 2.5 s | foto `frango-brocolis.jpg` (foto ilustrativa) | Revise e envie pelo WhatsApp |
-| 5 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
+| 1 | 2.2 s | tela de texto | Montador · Monte a sua em 6 passos |
+| 2 | 2.5 s | foto `presunto.jpg` (foto ilustrativa) | 1. Tamanho · 2. Sabores |
+| 3 | 2.2 s | tela de texto | Passo 3 · Massa · Fina, média ou grossa |
+| 4 | 2.2 s | tela de texto | Passos 4 e 5 · Borda e extras · 7 bordas · observações |
+| 5 | 2.5 s | foto `lombo-milho.jpg` (foto ilustrativa) | 6. Revise e envie pelo WhatsApp |
+| 6 | 3 s | tela da marca | Peça agora pelo Disk Pizza · link na bio · Segunda a sábado, 18h às 23h |
 
 Legenda (Instagram):
 
 ```
-Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕
+Seis passos e a pizza fica do seu jeito: 🍕
 
-Sem cadastro, e o pedido segue pronto para o nosso WhatsApp.
+1. Tamanho · 2. Sabores · 3. Massa · 4. Borda · 5. Extras · 6. Revisão
+
+Depois é só enviar pelo WhatsApp. Sem cadastro.
 
 👉 Peça agora pelo Disk Pizza: link na bio.
 

@@ -1,0 +1,143 @@
+{
+  "P03": { "paleta": "creme", "slides": [
+    { "layout": "quiz-opcoes" },
+    { "layout": "voce-sabia" },
+    { "layout": "poster-tipografico" }
+  ] },
+  "P04": { "paleta": "ouro", "slides": [
+    { "layout": "quadro-cardapio" },
+    { "layout": "numero-gigante" },
+    { "layout": "numero-gigante" },
+    { "layout": "numero-gigante" },
+    { "layout": "numero-gigante" },
+    { "layout": "numero-gigante", "paleta": "tomate" }
+  ] },
+  "P05": { "layout": "foto-moldura", "paleta": "manjericao" },
+  "P06": { "paleta": "noite", "slides": [ { "layout": "este-ou-aquele" } ] },
+  "P07": { "paleta": "tomate", "slides": [ { "layout": "selo-carimbo" } ] },
+  "P08": { "paleta": "creme", "slides": [ { "layout": "caca-palavras" } ] },
+  "P09": { "paleta": "chocolate", "slides": [
+    { "layout": "voce-sabia" },
+    { "layout": "quadro-cardapio" },
+    { "layout": "quadro-cardapio" }
+  ] },
+  "P10": { "layout": "foto-dividida", "paleta": "manjericao", "variante": "esquerda" },
+  "P11": { "paleta": "tomate", "cenas": [
+    { "layout": "story-tipografico", "movimento": "parado" },
+    { "layout": "story-dividido", "movimento": "zoom-in" },
+    { "layout": "story-dividido", "movimento": "pan-direita" },
+    { "layout": "story-tipografico", "paleta": "creme", "movimento": "zoom-in" },
+    { "layout": "story-foto-cheia", "movimento": "zoom-out" },
+    { "layout": "story-cta-ticket", "movimento": "parado" }
+  ], "transicoes": ["slideleft", "slideleft", "slideup", "slideleft", "circleopen"] },
+  "P13": { "paleta": "manjericao", "slides": [ { "layout": "checklist" } ] },
+  "P14": { "paleta": "noite", "slides": [ { "layout": "frase-de-efeito" } ] },
+  "P15": { "paleta": "tomate", "slides": [ { "layout": "faixa-diagonal" } ] },
+  "P16": { "paleta": "creme", "slides": [ { "layout": "fluxo-pedido" } ] },
+  "P17": { "paleta": "chocolate", "slides": [
+    { "layout": "conversa-whatsapp" },
+    { "layout": "foto-polaroid" },
+    { "layout": "foto-polaroid" },
+    { "layout": "foto-polaroid" }
+  ] },
+  "P18": { "paleta": "carvao", "slides": [ { "layout": "celebracao", "variante": "sobrio" } ] },
+  "P19": { "layout": "foto-cheia", "paleta": "tomate", "variante": "baixo" },
+  "P20": { "paleta": "carvao", "slides": [ { "layout": "quiz-opcoes" } ] },
+  "P21": { "paleta": "ouro", "slides": [ { "layout": "checklist" } ] },
+  "P22": { "paleta": "carvao", "slides": [ { "layout": "frase-de-efeito" } ] },
+  "P23": { "paleta": "ouro", "cenas": [
+    { "layout": "story-tipografico", "movimento": "zoom-in" },
+    { "layout": "story-foto-cheia", "movimento": "zoom-in" },
+    { "layout": "story-foto-cheia", "movimento": "zoom-out" },
+    { "layout": "story-foto-cheia", "movimento": "pan-esquerda" },
+    { "layout": "story-foto-cheia", "movimento": "pan-direita" },
+    { "layout": "story-foto-cheia", "movimento": "zoom-in" },
+    { "layout": "story-tipografico", "paleta": "tomate", "movimento": "parado" },
+    { "layout": "story-cta-selo", "movimento": "parado" }
+  ], "transicoes": ["smoothup", "wipeleft", "wiperight", "wipeleft", "wiperight", "fadeblack", "circleclose"] },
+  "P24": { "paleta": "tomate", "slides": [ { "layout": "frase-de-efeito" } ] },
+  "P25": { "paleta": "manjericao", "slides": [
+    { "layout": "voce-sabia" },
+    { "layout": "bilhete-pedido" },
+    { "layout": "numero-gigante" }
+  ] },
+  "P26": { "layout": "foto-cartao", "paleta": "creme" },
+  "P27": { "paleta": "chocolate", "cenas": [
+    { "layout": "story-tipografico", "movimento": "zoom-out" },
+    { "layout": "story-polaroid", "movimento": "pan-esquerda" },
+    { "layout": "story-polaroid", "movimento": "pan-direita" },
+    { "layout": "story-polaroid", "movimento": "zoom-in" },
+    { "layout": "story-polaroid", "movimento": "zoom-out" },
+    { "layout": "story-tipografico", "paleta": "ouro", "movimento": "parado" },
+    { "layout": "story-cta-selo", "movimento": "parado" }
+  ], "transicoes": ["dissolve", "hblur", "hblur", "hblur", "fade", "circleopen"] },
+  "P28": { "paleta": "noite", "slides": [
+    { "layout": "quiz-opcoes" },
+    { "layout": "quiz-opcoes" },
+    { "layout": "quiz-opcoes" },
+    { "layout": "voce-sabia", "paleta": "ouro" }
+  ] },
+  "P29": { "layout": "foto-dividida", "paleta": "tomate", "variante": "direita" },
+  "P30": { "paleta": "ouro", "slides": [ { "layout": "este-ou-aquele" } ] },
+  "P31": { "layout": "foto-circulo", "paleta": "manjericao" },
+  "P32": { "paleta": "tomate", "slides": [ { "layout": "checklist" } ] },
+  "P33": { "paleta": "creme", "slides": [
+    { "layout": "selo-carimbo" },
+    { "layout": "foto-moldura" },
+    { "layout": "foto-moldura" },
+    { "layout": "foto-moldura" }
+  ] },
+  "P34": { "paleta": "carvao", "slides": [ { "layout": "voce-sabia" } ] },
+  "P35": { "paleta": "manjericao", "cenas": [
+    { "layout": "story-tipografico", "movimento": "parado" },
+    { "layout": "story-dividido", "movimento": "zoom-in" },
+    { "layout": "story-dividido", "movimento": "pan-esquerda" },
+    { "layout": "story-dividido", "movimento": "pan-direita" },
+    { "layout": "story-tipografico", "paleta": "tomate", "movimento": "zoom-in" },
+    { "layout": "story-cta-ticket", "movimento": "parado" }
+  ], "transicoes": ["fadeblack", "radial", "radial", "dissolve", "fade"] },
+  "P36": { "paleta": "tomate", "slides": [ { "layout": "quadro-cardapio" } ] },
+  "P37": { "layout": "foto-revista", "paleta": "ouro" },
+  "P38": { "paleta": "manjericao", "slides": [ { "layout": "celebracao", "variante": "natal" } ] },
+  "P39": { "paleta": "ouro", "slides": [ { "layout": "frase-de-efeito" } ] },
+  "P40": { "paleta": "creme", "slides": [ { "layout": "frase-de-efeito" } ] },
+  "P41": { "paleta": "noite", "slides": [ { "layout": "checklist" } ] },
+  "P42": { "paleta": "ouro", "slides": [ { "layout": "celebracao", "variante": "anonovo" } ] },
+  "P43": { "paleta": "creme", "cenas": [
+    { "layout": "story-tipografico", "movimento": "zoom-out" },
+    { "layout": "story-tipografico", "paleta": "ouro", "movimento": "parado" },
+    { "layout": "story-tipografico", "paleta": "tomate", "movimento": "parado" },
+    { "layout": "story-foto-cheia", "movimento": "pan-esquerda" },
+    { "layout": "story-foto-cheia", "movimento": "pan-direita" },
+    { "layout": "story-tipografico", "movimento": "zoom-in" },
+    { "layout": "story-cta-selo", "movimento": "parado" }
+  ], "transicoes": ["slideup", "slideright", "smoothup", "slideleft", "smoothup", "wiperight"] },
+  "P44": { "paleta": "tomate", "slides": [ { "layout": "quiz-opcoes" } ] },
+  "P45": { "paleta": "chocolate", "slides": [ { "layout": "frase-de-efeito" } ] },
+  "P46": { "layout": "foto-polaroid", "paleta": "creme" },
+  "P47": { "paleta": "carvao", "cenas": [
+    { "layout": "story-texto", "movimento": "zoom-in" },
+    { "layout": "story-dividido", "paleta": "tomate", "movimento": "pan-esquerda" },
+    { "layout": "story-dividido", "paleta": "chocolate", "movimento": "pan-direita" },
+    { "layout": "story-tipografico", "movimento": "parado" },
+    { "layout": "story-cta-ticket", "movimento": "parado" }
+  ], "transicoes": ["wipeleft", "slideleft", "wiperight", "circleopen"] },
+  "P48": { "paleta": "manjericao", "slides": [ { "layout": "este-ou-aquele" } ] },
+  "P49": { "paleta": "ouro", "slides": [
+    { "layout": "voce-sabia" },
+    { "layout": "numero-gigante" },
+    { "layout": "numero-gigante" }
+  ] },
+  "P50": { "layout": "foto-cartao", "paleta": "chocolate" },
+  "P51": { "paleta": "noite", "cenas": [
+    { "layout": "story-tipografico", "movimento": "parado" },
+    { "layout": "story-polaroid", "movimento": "zoom-in" },
+    { "layout": "story-tipografico", "movimento": "zoom-out" },
+    { "layout": "story-tipografico", "paleta": "creme", "movimento": "parado" },
+    { "layout": "story-foto-cheia", "movimento": "pan-esquerda" },
+    { "layout": "story-cta-selo", "movimento": "parado" }
+  ], "transicoes": ["slideright", "smoothleft", "slideright", "dissolve", "circleclose"] },
+  "P52": { "paleta": "tomate", "slides": [ { "layout": "caca-palavras" } ] },
+  "P53": { "paleta": "carvao", "slides": [ { "layout": "checklist" } ] },
+  "P54": { "layout": "foto-cheia", "paleta": "noite", "variante": "esquerda" }
+}
