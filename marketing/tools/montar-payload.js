@@ -27,22 +27,28 @@ const now = Date.now();
 const agPath = path.join(DIR, 'agendados.json');
 const agendados = fs.existsSync(agPath) ? JSON.parse(fs.readFileSync(agPath, 'utf8')) : [];
 const redesAgendadas = (id) => new Set(agendados.filter((a) => a.post === id).map((a) => a.rede));
-const jaAgendados = { has: (id) => redesAgendadas(id).size === 2 };
+const PUBLICADOS = new Set(cfg.publicados || []);
+const idAgendado = (id, rede) => (agendados.find((a) => a.post === id && a.rede === rede) || {}).metricoolId || null;
 const items = [];
 const rows = [];
 
 for (const p of posts) {
+  if (PUBLICADOS.has(p.id)) continue; // já foi ao ar: não entra na tabela
   const v = ver[p.id];
   const dir = `marketing/midia/processada/${p.id}`;
   const files = p.format === 'reel' ? ['reel.mp4'] : p.format === 'carrossel' ? Array.from({ length: p.slides }, (_, i) => `slide-${String(i + 1).padStart(2, '0')}.jpg`) : ['feed.jpg'];
   const local = files.map((f) => path.join(ROOT, dir, f));
   const missingLocal = local.filter((f) => !fs.existsSync(f));
-  const media = cfg.mediaBaseUrl ? files.map((f) => `${cfg.mediaBaseUrl}/${p.id}/${f}`) : files.map((f) => `{mediaBaseUrl}/${p.id}/${f}`);
+  // Imagens e vídeos podem vir de bases diferentes (o GitHub serve .mp4 como arquivo genérico; o jsDelivr serve video/mp4).
+  const baseDe = (f) => (f.endsWith('.mp4') ? cfg.mediaBaseUrlVideo || cfg.mediaBaseUrl : cfg.mediaBaseUrl);
+  // mediaOverrides: URL específica para um arquivo (ex.: vídeo que o jsDelivr recusa).
+  const media = files.map((f) => (cfg.mediaOverrides || {})[`${p.id}/${f}`] || `${baseDe(f) || '{mediaBaseUrl}'}/${p.id}/${f}`);
   const when = `${p.date}T${p.time}:00`;
   const future = new Date(`${when}${OFFSET}`).getTime() > now;
 
   const blocks = [];
-  if (jaAgendados.has(p.id)) blocks.push('já agendado no Metricool');
+  const redes = redesAgendadas(p.id);
+  const acao = redes.size === 2 ? 'atualizar' : redes.size === 0 ? 'criar' : 'atualizar+criar';
   if (!cfg.blogId) blocks.push('marca do Disk Pizza ausente no Metricool');
   if (!cfg.mediaBaseUrl) blocks.push('mídia sem URL pública');
   if (p.depends_on && !cfg.liberados[p.depends_on]) blocks.push(`aguarda ${p.depends_on}`);
@@ -65,11 +71,12 @@ for (const p of posts) {
     const info = { ...base, text: net === 'instagram' ? ig : fb, providers: [{ network: net }] };
     if (net === 'instagram') info.instagramData = { type: reel ? 'REEL' : 'POST', collaborators: [], showReelOnFeed: true, isAiGenerated: false };
     else info.facebookData = { type: reel ? 'REEL' : 'POST' };
-    items.push({ id: p.id, network: net, bloqueios: blocks, call: { blogId: cfg.blogId || '{blogId}', date: `${when}${OFFSET}`, info } });
+    const mid = idAgendado(p.id, net);
+    items.push({ id: p.id, network: net, acao: mid ? 'atualizar' : 'criar', metricoolId: mid, bloqueios: blocks, call: { blogId: cfg.blogId || '{blogId}', date: `${when}${OFFSET}`, info } });
   }
 
   rows.push({
-    id: p.id, date: p.date, weekday: p.weekday, time: p.time, format: p.format + (p.slides ? ` (${p.slides})` : ''),
+    id: p.id, acao, date: p.date, weekday: p.weekday, time: p.time, format: p.format + (p.slides ? ` (${p.slides})` : ''),
     crop: v ? v.status + (v.video && !String(v.video).startsWith('ok') ? ` · ${v.video}` : v && v.video ? ` · ${v.video}` : '') : 'SEM VERIFICAÇÃO',
     copy: Array.from(ig.split('\n')[0]).slice(0, 70).join(''), copyOk, checks: checks.join(', '), blocks,
   });
@@ -91,9 +98,9 @@ const md = [
   '',
   `**Prontos para agendar agora: ${ready} de ${posts.length}.** Bloqueios: ${Object.entries(byBlock).map(([k, n]) => `${k} (${n})`).join(' · ') || 'nenhum'}.`,
   '',
-  '| ID | Data | Dia | Hora | Formato | Crop / mídia | Copy (início) | Checagens de texto | Bloqueio |',
-  '|---|---|---|---|---|---|---|---|---|',
-  ...rows.map((r) => `| ${r.id} | ${r.date} | ${r.weekday} | ${r.time} | ${r.format} | ${r.crop} | ${r.copy.replace(/\|/g, '/')} | ${r.checks} | ${r.blocks.join('; ') || '—'} |`),
+  '| ID | Ação | Data | Dia | Hora | Formato | Crop / mídia | Copy (início) | Checagens de texto | Bloqueio |',
+  '|---|---|---|---|---|---|---|---|---|---|',
+  ...rows.map((r) => `| ${r.id} | ${r.acao} | ${r.date} | ${r.weekday} | ${r.time} | ${r.format} | ${r.crop} | ${r.copy.replace(/\|/g, '/')} | ${r.checks} | ${r.blocks.join('; ') || '—'} |`),
   '',
   '## Regra de confirmação',
   '',

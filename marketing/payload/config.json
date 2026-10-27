@@ -1,9 +1,19 @@
 {
-  "_ajuda": "blogId = id da marca Disk Pizza no Metricool (Instagram @diskpizzactba + Facebook). mediaBaseUrl = URL pública que serve processada/Pxx/... sem barra no fim. Enquanto null, nada é agendável.",
+  "_ajuda": "blogId = id da marca Disk Pizza no Metricool (Instagram @diskpizzactba + Facebook). mediaBaseUrl = URL pública que serve processada/Pxx/... sem barra no fim. Enquanto null, nada é agendável. mediaBaseUrlVideo = base para .mp4 (opcional). publicados = posts que já foram ao ar.",
   "blogId": "7592008",
   "timezone": "America/Sao_Paulo",
-  "mediaBaseUrl": "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada",
+  "mediaBaseUrl": "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada",
   "liberados": {
-    "deploy_massa": false
+    "deploy_massa": true
+  },
+  "mediaBaseUrlVideo": "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada",
+  "publicados": [
+    "X01",
+    "X02",
+    "P01",
+    "P02"
+  ],
+  "mediaOverrides": {
+    "P35/reel.mp4": "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P35/reel.mp4"
   }
 }

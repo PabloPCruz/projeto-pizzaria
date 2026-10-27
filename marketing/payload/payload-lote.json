@@ -1,355 +1,19 @@
 {
   "meta": {
-    "gerado_em": "2026-10-23T00:20:00.589Z",
+    "gerado_em": "2026-10-27T13:06:58.661Z",
     "posts": 55,
-    "chamadas": 110,
+    "chamadas": 102,
     "blogId": "7592008",
-    "mediaBaseUrl": "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada",
+    "mediaBaseUrl": "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada",
     "aviso": "Rascunho. Nada agendado. Cada item vira uma chamada createScheduledPost (info deve ser enviado como string JSON)."
   },
   "items": [
     {
-      "id": "X01",
-      "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool",
-        "data no passado"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-22T16:10:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X01/feed.jpg"
-          ],
-          "mediaAltText": [
-            "Quinta tem pizza. Foto ilustrativa de pizza."
-          ],
-          "publicationDate": {
-            "dateTime": "2026-10-22T16:10:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Quinta-feira também é dia de pizza. 🍕\n\nHoje a gente abre às 18h e vai até as 23h. Monte a sua do seu jeito, com os sabores que quiser (dá para misturar salgado e doce), e envie o pedido pelo WhatsApp.\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QuintaDePizza",
-          "providers": [
-            {
-              "network": "instagram"
-            }
-          ],
-          "instagramData": {
-            "type": "POST",
-            "collaborators": [],
-            "showReelOnFeed": true,
-            "isAiGenerated": false
-          }
-        }
-      }
-    },
-    {
-      "id": "X01",
-      "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool",
-        "data no passado"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-22T16:10:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X01/feed.jpg"
-          ],
-          "mediaAltText": [
-            "Quinta tem pizza. Foto ilustrativa de pizza."
-          ],
-          "publicationDate": {
-            "dateTime": "2026-10-22T16:10:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Quinta-feira também é dia de pizza. 🍕\n\nHoje a gente abre às 18h e vai até as 23h. Monte a sua do seu jeito, com os sabores que quiser (dá para misturar salgado e doce), e envie o pedido pelo WhatsApp.\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
-          "providers": [
-            {
-              "network": "facebook"
-            }
-          ],
-          "facebookData": {
-            "type": "POST"
-          }
-        }
-      }
-    },
-    {
-      "id": "X02",
-      "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool",
-        "data no passado"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-22T16:15:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X02/reel.mp4"
-          ],
-          "mediaAltText": [],
-          "publicationDate": {
-            "dateTime": "2026-10-22T16:15:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Quinta-feira também é dia de pizza! 🍕\n\nHoje a gente abre às 18h. Escolha o tamanho, os sabores e a borda e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QuintaDePizza",
-          "providers": [
-            {
-              "network": "instagram"
-            }
-          ],
-          "instagramData": {
-            "type": "REEL",
-            "collaborators": [],
-            "showReelOnFeed": true,
-            "isAiGenerated": false
-          }
-        }
-      }
-    },
-    {
-      "id": "X02",
-      "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool",
-        "data no passado"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-22T16:15:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/X02/reel.mp4"
-          ],
-          "mediaAltText": [],
-          "publicationDate": {
-            "dateTime": "2026-10-22T16:15:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Quinta-feira também é dia de pizza! 🍕\n\nHoje a gente abre às 18h. Escolha o tamanho, os sabores e a borda e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
-          "providers": [
-            {
-              "network": "facebook"
-            }
-          ],
-          "facebookData": {
-            "type": "REEL"
-          }
-        }
-      }
-    },
-    {
-      "id": "P01",
-      "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-23T17:00:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P01/feed.jpg"
-          ],
-          "mediaAltText": [
-            "Sexta é dia de pizza. Foto ilustrativa de pizza."
-          ],
-          "publicationDate": {
-            "dateTime": "2026-10-23T17:00:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Sexta-feira pede pizza e mesa cheia. 🍕\n\nA gente abre às 18h e vai até as 23h. Escolha o tamanho, monte os sabores do seu jeito (dá para misturar salgado e doce) e o pedido segue pronto para o nosso WhatsApp.\n\nSem cadastro, sem complicação.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #SextaDePizza",
-          "providers": [
-            {
-              "network": "instagram"
-            }
-          ],
-          "instagramData": {
-            "type": "POST",
-            "collaborators": [],
-            "showReelOnFeed": true,
-            "isAiGenerated": false
-          }
-        }
-      }
-    },
-    {
-      "id": "P01",
-      "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-23T17:00:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P01/feed.jpg"
-          ],
-          "mediaAltText": [
-            "Sexta é dia de pizza. Foto ilustrativa de pizza."
-          ],
-          "publicationDate": {
-            "dateTime": "2026-10-23T17:00:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Sexta-feira pede pizza e mesa cheia. 🍕\n\nA gente abre às 18h e vai até as 23h. Escolha o tamanho, monte os sabores do seu jeito (dá para misturar salgado e doce) e o pedido segue pronto para o nosso WhatsApp.\n\nSem cadastro, sem complicação.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
-          "providers": [
-            {
-              "network": "facebook"
-            }
-          ],
-          "facebookData": {
-            "type": "POST"
-          }
-        }
-      }
-    },
-    {
-      "id": "P02",
-      "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-24T16:30:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P02/reel.mp4"
-          ],
-          "mediaAltText": [],
-          "publicationDate": {
-            "dateTime": "2026-10-24T16:30:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Prazer, somos a Disk Pizza! 🍕\n\nPizzaria de família em Curitiba desde 2015, com sabores tradicionais, especiais e doces e tamanhos para toda fome.\n\nAbrimos de segunda a sábado, das 18h às 23h. No domingo a gente descansa.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzariaDeFamilia",
-          "providers": [
-            {
-              "network": "instagram"
-            }
-          ],
-          "instagramData": {
-            "type": "REEL",
-            "collaborators": [],
-            "showReelOnFeed": true,
-            "isAiGenerated": false
-          }
-        }
-      }
-    },
-    {
-      "id": "P02",
-      "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
-      "call": {
-        "blogId": "7592008",
-        "date": "2026-10-24T16:30:00-03:00",
-        "info": {
-          "autoPublish": true,
-          "descendants": [],
-          "draft": false,
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P02/reel.mp4"
-          ],
-          "mediaAltText": [],
-          "publicationDate": {
-            "dateTime": "2026-10-24T16:30:00",
-            "timezone": "America/Sao_Paulo"
-          },
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "text": "Prazer, somos a Disk Pizza! 🍕\n\nPizzaria de família em Curitiba desde 2015, com sabores tradicionais, especiais e doces e tamanhos para toda fome.\n\nAbrimos de segunda a sábado, das 18h às 23h. No domingo a gente descansa.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
-          "providers": [
-            {
-              "network": "facebook"
-            }
-          ],
-          "facebookData": {
-            "type": "REEL"
-          }
-        }
-      }
-    },
-    {
       "id": "P03",
       "network": "instagram",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-28T18:30:00-03:00",
@@ -360,16 +24,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P03/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P03/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P03/slide-03.jpg"
           ],
           "mediaAltText": [
-            "Fina, média ou grossa: você escolhe.",
-            "Fina, média ou grossa: você escolhe.",
-            "Fina, média ou grossa: você escolhe.",
-            "Fina, média ou grossa: você escolhe."
+            "Qual massa tem a sua cara?.",
+            "Qual massa tem a sua cara?.",
+            "Qual massa tem a sua cara?."
           ],
           "publicationDate": {
             "dateTime": "2026-10-28T18:30:00",
@@ -379,7 +41,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕\n\nFina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.\n\nE você, é time massa fina, média ou grossa? Conta nos comentários.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza",
+          "text": "Qual massa tem a sua cara? 🍕\n\nAgora você escolhe a massa da sua pizza no site: fina, média ou grossa. É o passo “Massa”, entre Sabores e Borda.\n\nResponda nos comentários: A, B ou C. Sem preferência? Tudo bem: a pizza sai com a massa padrão da casa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza #QuizDePizza",
           "providers": [
             {
               "network": "instagram"
@@ -397,9 +59,9 @@
     {
       "id": "P03",
       "network": "facebook",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-28T18:30:00-03:00",
@@ -410,16 +72,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P03/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P03/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P03/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P03/slide-03.jpg"
           ],
           "mediaAltText": [
-            "Fina, média ou grossa: você escolhe.",
-            "Fina, média ou grossa: você escolhe.",
-            "Fina, média ou grossa: você escolhe.",
-            "Fina, média ou grossa: você escolhe."
+            "Qual massa tem a sua cara?.",
+            "Qual massa tem a sua cara?.",
+            "Qual massa tem a sua cara?."
           ],
           "publicationDate": {
             "dateTime": "2026-10-28T18:30:00",
@@ -429,7 +89,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Novidade na Disk Pizza: agora você escolhe a massa da sua pizza! 🍕\n\nFina, média ou grossa: uma massa por pizza, sem custo extra. É só escolher no passo “Massa” do montador. Se não tiver preferência, a pizza sai com a massa padrão da casa.\n\nE você, é time massa fina, média ou grossa? Conta nos comentários.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Qual massa tem a sua cara? 🍕\n\nAgora você escolhe a massa da sua pizza no site: fina, média ou grossa. É o passo “Massa”, entre Sabores e Borda.\n\nResponda nos comentários: A, B ou C. Sem preferência? Tudo bem: a pizza sai com a massa padrão da casa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -444,9 +104,9 @@
     {
       "id": "P04",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403488842,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-29T17:30:00-03:00",
@@ -457,20 +117,20 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-04.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-05.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-06.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-04.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-05.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-06.jpg"
           ],
           "mediaAltText": [
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante."
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?."
           ],
           "publicationDate": {
             "dateTime": "2026-10-29T17:30:00",
@@ -480,7 +140,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Do pequeno ao gigante, tem tamanho para cada fome:\n\nPequena: 1 sabor, 4 fatias\n\nMédia: 2 sabores, 6 fatias\n\nGrande: 3 sabores, 8 fatias\n\nBig: 3 sabores, 12 fatias\n\nGigante: 4 sabores, 16 fatias\n\nQual é o seu?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante",
+          "text": "Guia rápido para escolher o tamanho: conte as fatias e os sabores. 🍕\n\nPequena: 4 fatias, 1 sabor\n\nMédia: 6 fatias, 2 sabores\n\nGrande: 8 fatias, 3 sabores\n\nBig: 12 fatias, 3 sabores\n\nGigante: 16 fatias, 4 sabores\n\nSalve este post para a próxima noite de pizza.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante #GuiaDePizza",
           "providers": [
             {
               "network": "instagram"
@@ -498,9 +158,9 @@
     {
       "id": "P04",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403488887,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-29T17:30:00-03:00",
@@ -511,20 +171,20 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-04.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-05.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P04/slide-06.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-04.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-05.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P04/slide-06.jpg"
           ],
           "mediaAltText": [
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante.",
-            "Do pequeno ao gigante."
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?.",
+            "Quantas fatias cabem na sua noite?."
           ],
           "publicationDate": {
             "dateTime": "2026-10-29T17:30:00",
@@ -534,7 +194,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Do pequeno ao gigante, tem tamanho para cada fome:\n\nPequena: 1 sabor, 4 fatias\n\nMédia: 2 sabores, 6 fatias\n\nGrande: 3 sabores, 8 fatias\n\nBig: 3 sabores, 12 fatias\n\nGigante: 4 sabores, 16 fatias\n\nQual é o seu?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "text": "Guia rápido para escolher o tamanho: conte as fatias e os sabores. 🍕\n\nPequena: 4 fatias, 1 sabor\n\nMédia: 6 fatias, 2 sabores\n\nGrande: 8 fatias, 3 sabores\n\nBig: 12 fatias, 3 sabores\n\nGigante: 16 fatias, 4 sabores\n\nSalve este post para a próxima noite de pizza.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -549,9 +209,9 @@
     {
       "id": "P05",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403488936,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-30T17:00:00-03:00",
@@ -562,10 +222,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P05/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P05/feed.jpg"
           ],
           "mediaAltText": [
-            "Marguerita. Foto ilustrativa de pizza."
+            "Simples assim: Marguerita. Foto ilustrativa de pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-10-30T17:00:00",
@@ -575,7 +235,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅\n\nE dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Marguerita",
+          "text": "Tem dia que pede simplicidade: tomate, mussarela, parmesão e manjericão. 🍅\n\nEssa é a Marguerita. Na média ela divide a pizza com mais um sabor; na grande, com mais dois.\n\nSexta-feira, a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Marguerita",
           "providers": [
             {
               "network": "instagram"
@@ -593,9 +253,9 @@
     {
       "id": "P05",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403488975,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-30T17:00:00-03:00",
@@ -606,10 +266,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P05/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P05/feed.jpg"
           ],
           "mediaAltText": [
-            "Marguerita. Foto ilustrativa de pizza."
+            "Simples assim: Marguerita. Foto ilustrativa de pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-10-30T17:00:00",
@@ -619,7 +279,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Tomate, mussarela, parmesão e manjericão. A Marguerita é simples e deixa a sexta mais gostosa. 🍅\n\nE dá para dividir a pizza com outros sabores: a média leva 2 e a grande leva 3.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Tem dia que pede simplicidade: tomate, mussarela, parmesão e manjericão. 🍅\n\nEssa é a Marguerita. Na média ela divide a pizza com mais um sabor; na grande, com mais dois.\n\nSexta-feira, a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -634,9 +294,9 @@
     {
       "id": "P06",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489005,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-31T16:30:00-03:00",
@@ -647,7 +307,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P06/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P06/feed.jpg"
           ],
           "mediaAltText": [
             "Doçura ou travessura?. Foto ilustrativa de pizza."
@@ -660,7 +320,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Doçura ou travessura? 🎃 Aqui você fica com as duas.\n\nHoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.\n\nMisturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Halloween",
+          "text": "Doçura ou travessura? 🎃\n\nDoçura: Confete, com chocolate ao leite, confete e leite condensado.\n\nTravessura: Mexicana, com calabresa, pimentão, ovos, bacon e pimenta calabresa.\n\nVote nos comentários. E se não quiser escolher, a média leva os dois sabores na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Halloween #EsteOuAquele",
           "providers": [
             {
               "network": "instagram"
@@ -678,9 +338,9 @@
     {
       "id": "P06",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489036,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-10-31T16:30:00-03:00",
@@ -691,7 +351,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P06/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P06/feed.jpg"
           ],
           "mediaAltText": [
             "Doçura ou travessura?. Foto ilustrativa de pizza."
@@ -704,7 +364,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Doçura ou travessura? 🎃 Aqui você fica com as duas.\n\nHoje é sábado e a noite pede pizza: de um lado o salgado que você ama, do outro a pizza doce de Confete, com chocolate ao leite e leite condensado.\n\nMisturar salgado e doce na mesma pizza é com a gente mesmo. Abrimos das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Doçura ou travessura? 🎃\n\nDoçura: Confete, com chocolate ao leite, confete e leite condensado.\n\nTravessura: Mexicana, com calabresa, pimentão, ovos, bacon e pimenta calabresa.\n\nVote nos comentários. E se não quiser escolher, a média leva os dois sabores na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -719,9 +379,9 @@
     {
       "id": "P07",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489678,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-02T11:30:00-03:00",
@@ -732,7 +392,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P07/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P07/feed.jpg"
           ],
           "mediaAltText": [
             "Hoje a gente abre: 18h às 23h."
@@ -763,9 +423,9 @@
     {
       "id": "P07",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489716,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-02T11:30:00-03:00",
@@ -776,7 +436,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P07/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P07/feed.jpg"
           ],
           "mediaAltText": [
             "Hoje a gente abre: 18h às 23h."
@@ -804,9 +464,9 @@
     {
       "id": "P08",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489768,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-04T18:30:00-03:00",
@@ -817,16 +477,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P08/feed.jpg"
           ],
           "mediaAltText": [
-            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
-            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
-            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
-            "Qual tem a sua cara?. Foto ilustrativa de pizza."
+            "Caça-palavras: ache os 6 sabores."
           ],
           "publicationDate": {
             "dateTime": "2026-11-04T18:30:00",
@@ -836,7 +490,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Qual pizza tem a sua cara? 🍕\n\nTradicional, especial ou doce: são 71 sabores no cardápio.\n\nDeslize e conta nos comentários qual você escolheria hoje.\n\nMonte a sua pelo link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QualEscolher",
+          "text": "Caça-palavras da Disk Pizza! 🔎\n\nTem 6 sabores do nosso cardápio escondidos aqui, na horizontal e na vertical. Quantos você achou?\n\nComente o primeiro que encontrou e marque alguém para tentar também.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #CacaPalavras #Desafio",
           "providers": [
             {
               "network": "instagram"
@@ -854,9 +508,9 @@
     {
       "id": "P08",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489787,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-04T18:30:00-03:00",
@@ -867,16 +521,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P08/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P08/feed.jpg"
           ],
           "mediaAltText": [
-            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
-            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
-            "Qual tem a sua cara?. Foto ilustrativa de pizza.",
-            "Qual tem a sua cara?. Foto ilustrativa de pizza."
+            "Caça-palavras: ache os 6 sabores."
           ],
           "publicationDate": {
             "dateTime": "2026-11-04T18:30:00",
@@ -886,7 +534,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Qual pizza tem a sua cara? 🍕\n\nTradicional, especial ou doce: são 71 sabores no cardápio.\n\nDeslize e conta nos comentários qual você escolheria hoje.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Caça-palavras da Disk Pizza! 🔎\n\nTem 6 sabores do nosso cardápio escondidos aqui, na horizontal e na vertical. Quantos você achou?\n\nComente o primeiro que encontrou e marque alguém para tentar também.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -901,9 +549,9 @@
     {
       "id": "P09",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489836,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-05T17:30:00-03:00",
@@ -914,18 +562,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-04.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-05.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P09/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P09/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P09/slide-03.jpg"
           ],
           "mediaAltText": [
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher."
+            "Você sabia? 4 das 7 bordas são doces.",
+            "Você sabia? 4 das 7 bordas são doces.",
+            "Você sabia? 4 das 7 bordas são doces."
           ],
           "publicationDate": {
             "dateTime": "2026-11-05T17:30:00",
@@ -935,7 +579,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Borda recheada é quase uma segunda pizza. 😋\n\nSão 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).\n\nQual você escolhe?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BordaRecheada",
+          "text": "Você sabia? Das 7 bordas da Disk Pizza, 4 são doces. 🍫\n\nSalgadas: Catupiry, Catupiry com Cheddar e Cheddar.\n\nDoces: Nutella, Chocolate ao Leite, Chocolate Branco e Chocolate ao Leite com Chocolate Branco.\n\nBorda doce em pizza salgada? Pode. Qual seria a sua?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BordaRecheada #VoceSabia",
           "providers": [
             {
               "network": "instagram"
@@ -953,9 +597,9 @@
     {
       "id": "P09",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403489868,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-05T17:30:00-03:00",
@@ -966,18 +610,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-04.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P09/slide-05.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P09/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P09/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P09/slide-03.jpg"
           ],
           "mediaAltText": [
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher.",
-            "7 bordas para você escolher."
+            "Você sabia? 4 das 7 bordas são doces.",
+            "Você sabia? 4 das 7 bordas são doces.",
+            "Você sabia? 4 das 7 bordas são doces."
           ],
           "publicationDate": {
             "dateTime": "2026-11-05T17:30:00",
@@ -987,7 +627,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Borda recheada é quase uma segunda pizza. 😋\n\nSão 7 opções: Catupiry, Catupiry com Cheddar, Cheddar, Nutella, Chocolate ao Leite, Chocolate Branco e a Chocolate ao Leite com Chocolate Branco (o nosso Bem Casado).\n\nQual você escolhe?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "text": "Você sabia? Das 7 bordas da Disk Pizza, 4 são doces. 🍫\n\nSalgadas: Catupiry, Catupiry com Cheddar e Cheddar.\n\nDoces: Nutella, Chocolate ao Leite, Chocolate Branco e Chocolate ao Leite com Chocolate Branco.\n\nBorda doce em pizza salgada? Pode. Qual seria a sua?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1002,9 +642,9 @@
     {
       "id": "P10",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505628,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-06T17:00:00-03:00",
@@ -1015,7 +655,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P10/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P10/feed.jpg"
           ],
           "mediaAltText": [
             "Brócolis com bacon. Foto ilustrativa de pizza."
@@ -1028,7 +668,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦\n\nSexta-feira é dia de se dar esse capricho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeBrocolis",
+          "text": "Quem disse que brócolis não combina com sexta? 🥦\n\nMussarela, brócolis e bacon. Quer um toque a mais? Na hora de escolher, marque a opção com catupiry.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeBrocolis",
           "providers": [
             {
               "network": "instagram"
@@ -1046,9 +686,9 @@
     {
       "id": "P10",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505643,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-06T17:00:00-03:00",
@@ -1059,7 +699,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P10/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P10/feed.jpg"
           ],
           "mediaAltText": [
             "Brócolis com bacon. Foto ilustrativa de pizza."
@@ -1072,7 +712,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Mussarela, brócolis e bacon. Quer um toque a mais? Escolha a opção com catupiry. 🥦\n\nSexta-feira é dia de se dar esse capricho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Quem disse que brócolis não combina com sexta? 🥦\n\nMussarela, brócolis e bacon. Quer um toque a mais? Na hora de escolher, marque a opção com catupiry.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -1087,9 +727,9 @@
     {
       "id": "P11",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403490404,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-07T16:30:00-03:00",
@@ -1100,7 +740,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P11/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P11/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -1111,7 +751,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Já provou pizza de Nachos? 🧀\n\nMussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDeNachos",
+          "text": "Do clique à sua porta, em 4 passos. 🛵\n\n1. Monte a pizza no site: tamanho, sabores, massa e borda.\n\n2. Confira o carrinho e informe o CEP.\n\n3. Envie o pedido pelo WhatsApp: a loja confirma com você.\n\n4. Agora é só esperar a pizza chegar.\n\nSem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PeçaPeloSite #ComoPedir",
           "providers": [
             {
               "network": "instagram"
@@ -1129,9 +769,9 @@
     {
       "id": "P11",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403490429,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-07T16:30:00-03:00",
@@ -1142,7 +782,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P11/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P11/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -1153,7 +793,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Já provou pizza de Nachos? 🧀\n\nMussarela, carne moída, cheddar e doritos. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Do clique à sua porta, em 4 passos. 🛵\n\n1. Monte a pizza no site: tamanho, sabores, massa e borda.\n\n2. Confira o carrinho e informe o CEP.\n\n3. Envie o pedido pelo WhatsApp: a loja confirma com você.\n\n4. Agora é só esperar a pizza chegar.\n\nSem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -1168,9 +808,9 @@
     {
       "id": "P13",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505660,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-12T17:30:00-03:00",
@@ -1181,16 +821,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P13/feed.jpg"
           ],
           "mediaAltText": [
-            "Pedir é simples.",
-            "Pedir é simples.",
-            "Pedir é simples.",
-            "Pedir é simples."
+            "Checklist: noite de pizza perfeita."
           ],
           "publicationDate": {
             "dateTime": "2026-11-12T17:30:00",
@@ -1200,7 +834,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Pedir a sua pizza é simples:\n\n1. Monte: tamanho, sabores, borda e, se quiser, bebida\n\n2. Confira o carrinho e informe o seu CEP\n\n3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PeçaPeloSite",
+          "text": "Checklist da noite de pizza perfeita: ✅\n\n□ Sofá reservado\n\n□ Filme ou jogo escolhido\n\n□ Turma avisada\n\n□ Sabores decididos (sem briga)\n\n□ Pedido enviado pelo WhatsApp\n\nQuantos você já marcou hoje? Salve para a próxima.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #NoiteDePizza #Checklist",
           "providers": [
             {
               "network": "instagram"
@@ -1218,9 +852,9 @@
     {
       "id": "P13",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505687,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-12T17:30:00-03:00",
@@ -1231,16 +865,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P13/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P13/feed.jpg"
           ],
           "mediaAltText": [
-            "Pedir é simples.",
-            "Pedir é simples.",
-            "Pedir é simples.",
-            "Pedir é simples."
+            "Checklist: noite de pizza perfeita."
           ],
           "publicationDate": {
             "dateTime": "2026-11-12T17:30:00",
@@ -1250,7 +878,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Pedir a sua pizza é simples:\n\n1. Monte: tamanho, sabores, borda e, se quiser, bebida\n\n2. Confira o carrinho e informe o seu CEP\n\n3. Envie pelo WhatsApp: o pedido vai pronto e a gente confirma com você\n\nSem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "text": "Checklist da noite de pizza perfeita: ✅\n\n□ Sofá reservado\n\n□ Filme ou jogo escolhido\n\n□ Turma avisada\n\n□ Sabores decididos (sem briga)\n\n□ Pedido enviado pelo WhatsApp\n\nQuantos você já marcou hoje? Salve para a próxima.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1265,9 +893,9 @@
     {
       "id": "P14",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505710,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-13T17:00:00-03:00",
@@ -1278,10 +906,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P14/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P14/feed.jpg"
           ],
           "mediaAltText": [
-            "Sexta 13? Azar é ficar sem pizza. Foto ilustrativa de pizza."
+            "Sexta 13? Azar mesmo é ficar sem pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-11-13T17:00:00",
@@ -1291,7 +919,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nMussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Sexta13",
+          "text": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nGato preto, escada, espelho quebrado... a gente não se preocupa com nada disso. Só com a pizza que você montou.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Sexta13",
           "providers": [
             {
               "network": "instagram"
@@ -1309,9 +937,9 @@
     {
       "id": "P14",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505732,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-13T17:00:00-03:00",
@@ -1322,10 +950,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P14/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P14/feed.jpg"
           ],
           "mediaAltText": [
-            "Sexta 13? Azar é ficar sem pizza. Foto ilustrativa de pizza."
+            "Sexta 13? Azar mesmo é ficar sem pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-11-13T17:00:00",
@@ -1335,7 +963,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nMussarela, catupiry, gorgonzola, provolone e bacon: a Quatro Queijos com Bacon resolve a noite.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Sexta 13? O único azar é ficar sem pizza. 😄\n\nGato preto, escada, espelho quebrado... a gente não se preocupa com nada disso. Só com a pizza que você montou.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1350,9 +978,9 @@
     {
       "id": "P15",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505767,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-14T16:30:00-03:00",
@@ -1363,10 +991,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P15/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P15/feed.jpg"
           ],
           "mediaAltText": [
-            "Domingo fechamos. Hoje abrimos 18h–23h. Foto ilustrativa de pizza."
+            "Domingo a gente descansa. Hoje abrimos 18h–23h."
           ],
           "publicationDate": {
             "dateTime": "2026-11-14T16:30:00",
@@ -1376,7 +1004,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amanhã é feriado, mas domingo a gente fecha. 😉\n\nEntão hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.\n\nLombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FimDeSemana",
+          "text": "Amanhã é feriado e cai no domingo, dia em que a gente fecha. 😉\n\nEntão a pizza do fim de semana é hoje: abrimos das 18h às 23h.\n\nMonte a sua com calma e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FimDeSemana #Feriado",
           "providers": [
             {
               "network": "instagram"
@@ -1394,9 +1022,9 @@
     {
       "id": "P15",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505794,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-14T16:30:00-03:00",
@@ -1407,10 +1035,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P15/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P15/feed.jpg"
           ],
           "mediaAltText": [
-            "Domingo fechamos. Hoje abrimos 18h–23h. Foto ilustrativa de pizza."
+            "Domingo a gente descansa. Hoje abrimos 18h–23h."
           ],
           "publicationDate": {
             "dateTime": "2026-11-14T16:30:00",
@@ -1420,7 +1048,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amanhã é feriado, mas domingo a gente fecha. 😉\n\nEntão hoje é a noite certa para garantir a sua pizza: abrimos das 18h às 23h.\n\nLombo defumado, milho e mussarela, com opção de catupiry. Boa pedida para o fim de semana.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Amanhã é feriado e cai no domingo, dia em que a gente fecha. 😉\n\nEntão a pizza do fim de semana é hoje: abrimos das 18h às 23h.\n\nMonte a sua com calma e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1435,9 +1063,9 @@
     {
       "id": "P16",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505822,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-18T18:30:00-03:00",
@@ -1448,10 +1076,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P16/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P16/feed.jpg"
           ],
           "mediaAltText": [
-            "Entrega grátis até 3 km da loja. Foto ilustrativa de pizza."
+            "Entrega grátis até 3 km: confira pelo CEP."
           ],
           "publicationDate": {
             "dateTime": "2026-11-18T18:30:00",
@@ -1461,7 +1089,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nDigite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #EntregaCuritiba",
+          "text": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nFunciona assim: você monta o pedido, digita o CEP ao finalizar e o site mostra se o seu endereço está no raio.\n\nFora do raio, a loja informa a taxa pelo WhatsApp quando confirmar o pedido.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #EntregaCuritiba",
           "providers": [
             {
               "network": "instagram"
@@ -1479,9 +1107,9 @@
     {
       "id": "P16",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403505848,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-18T18:30:00-03:00",
@@ -1492,10 +1120,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P16/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P16/feed.jpg"
           ],
           "mediaAltText": [
-            "Entrega grátis até 3 km da loja. Foto ilustrativa de pizza."
+            "Entrega grátis até 3 km: confira pelo CEP."
           ],
           "publicationDate": {
             "dateTime": "2026-11-18T18:30:00",
@@ -1505,7 +1133,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nDigite o seu CEP ao finalizar o pedido e o site mostra se o seu endereço está na área. Fora do raio, a loja informa a taxa pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Entrega grátis até 3 km da loja, confira pelo CEP. 🛵\n\nFunciona assim: você monta o pedido, digita o CEP ao finalizar e o site mostra se o seu endereço está no raio.\n\nFora do raio, a loja informa a taxa pelo WhatsApp quando confirmar o pedido.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1520,9 +1148,9 @@
     {
       "id": "P17",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506360,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-19T17:30:00-03:00",
@@ -1533,16 +1161,16 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-04.jpg"
           ],
           "mediaAltText": [
-            "Fechar a noite com doce. Foto ilustrativa de pizza.",
-            "Fechar a noite com doce. Foto ilustrativa de pizza.",
-            "Fechar a noite com doce. Foto ilustrativa de pizza.",
-            "Fechar a noite com doce. Foto ilustrativa de pizza."
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza.",
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza.",
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza.",
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-11-19T17:30:00",
@@ -1552,7 +1180,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Fechar a noite com doce é sempre uma boa ideia. 🍫\n\nBrigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.\n\nQuer misturar com uma salgada? Pode.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+          "text": "Qual doce fecha a sua noite: 1, 2 ou 3? 🍫\n\n1. Brigadeiro: chocolate ao leite, doce de leite e granulado\n\n2. Confete: chocolate ao leite, confete e leite condensado\n\n3. Bem Casado: leite condensado, chocolate ao leite e chocolate branco\n\nSão 13 sabores doces no cardápio, e dá para misturar com salgado na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
           "providers": [
             {
               "network": "instagram"
@@ -1570,9 +1198,9 @@
     {
       "id": "P17",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506408,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-19T17:30:00-03:00",
@@ -1583,16 +1211,16 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P17/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P17/slide-04.jpg"
           ],
           "mediaAltText": [
-            "Fechar a noite com doce. Foto ilustrativa de pizza.",
-            "Fechar a noite com doce. Foto ilustrativa de pizza.",
-            "Fechar a noite com doce. Foto ilustrativa de pizza.",
-            "Fechar a noite com doce. Foto ilustrativa de pizza."
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza.",
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza.",
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza.",
+            "Qual doce fecha a sua noite?. Foto ilustrativa de pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-11-19T17:30:00",
@@ -1602,7 +1230,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Fechar a noite com doce é sempre uma boa ideia. 🍫\n\nBrigadeiro, Confete, Bem Casado, Chocolate com Morango e mais: são 13 sabores doces no cardápio.\n\nQuer misturar com uma salgada? Pode.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Qual doce fecha a sua noite: 1, 2 ou 3? 🍫\n\n1. Brigadeiro: chocolate ao leite, doce de leite e granulado\n\n2. Confete: chocolate ao leite, confete e leite condensado\n\n3. Bem Casado: leite condensado, chocolate ao leite e chocolate branco\n\nSão 13 sabores doces no cardápio, e dá para misturar com salgado na mesma pizza.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -1617,9 +1245,9 @@
     {
       "id": "P18",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506449,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-20T17:00:00-03:00",
@@ -1630,7 +1258,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P18/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P18/feed.jpg"
           ],
           "mediaAltText": [
             "Dia da Consciência Negra."
@@ -1661,9 +1289,9 @@
     {
       "id": "P18",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506462,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-20T17:00:00-03:00",
@@ -1674,7 +1302,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P18/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P18/feed.jpg"
           ],
           "mediaAltText": [
             "Dia da Consciência Negra."
@@ -1702,9 +1330,9 @@
     {
       "id": "P19",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506495,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-21T16:30:00-03:00",
@@ -1715,10 +1343,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P19/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P19/feed.jpg"
           ],
           "mediaAltText": [
-            "Sábado de peperone. Foto ilustrativa de pizza."
+            "Sábado de Peperone. Foto ilustrativa de pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-11-21T16:30:00",
@@ -1728,7 +1356,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sábado combina com pizza de peperone. 🍕\n\nMussarela, peperone e azeitona, para quem gosta de sabor marcante.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Peperone",
+          "text": "Sábado pede sabor marcante: Peperone. 🍕\n\nMussarela, peperone e azeitona. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Peperone",
           "providers": [
             {
               "network": "instagram"
@@ -1746,9 +1374,9 @@
     {
       "id": "P19",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506522,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-21T16:30:00-03:00",
@@ -1759,10 +1387,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P19/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P19/feed.jpg"
           ],
           "mediaAltText": [
-            "Sábado de peperone. Foto ilustrativa de pizza."
+            "Sábado de Peperone. Foto ilustrativa de pizza."
           ],
           "publicationDate": {
             "dateTime": "2026-11-21T16:30:00",
@@ -1772,7 +1400,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sábado combina com pizza de peperone. 🍕\n\nMussarela, peperone e azeitona, para quem gosta de sabor marcante.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Sábado pede sabor marcante: Peperone. 🍕\n\nMussarela, peperone e azeitona. Um dos nossos sabores especiais.\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -1787,9 +1415,9 @@
     {
       "id": "P20",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506545,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-25T18:30:00-03:00",
@@ -1800,10 +1428,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P20/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P20/feed.jpg"
           ],
           "mediaAltText": [
-            "A nossa promoção é todos os dias."
+            "Qual é o seu perfil na Black Friday?."
           ],
           "publicationDate": {
             "dateTime": "2026-11-25T18:30:00",
@@ -1813,7 +1441,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉\n\nAqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+          "text": "Black Friday chegando. Qual é o seu perfil? 🛒\n\nA) Carrinho cheio desde segunda\n\nB) Só olho e não compro nada\n\nC) Fujo das filas e fico em casa\n\nD) Só monto carrinho de pizza\n\nResponda nos comentários com a letra. A gente é time D, claro.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
           "providers": [
             {
               "network": "instagram"
@@ -1831,9 +1459,9 @@
     {
       "id": "P20",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506570,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-25T18:30:00-03:00",
@@ -1844,10 +1472,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P20/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P20/feed.jpg"
           ],
           "mediaAltText": [
-            "A nossa promoção é todos os dias."
+            "Qual é o seu perfil na Black Friday?."
           ],
           "publicationDate": {
             "dateTime": "2026-11-25T18:30:00",
@@ -1857,7 +1485,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "A Black Friday é nesta sexta, mas a nossa promoção é todos os dias. 😉\n\nAqui você não precisa esperar uma data para pedir a sua pizza do jeito que gosta.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Black Friday chegando. Qual é o seu perfil? 🛒\n\nA) Carrinho cheio desde segunda\n\nB) Só olho e não compro nada\n\nC) Fujo das filas e fico em casa\n\nD) Só monto carrinho de pizza\n\nResponda nos comentários com a letra. A gente é time D, claro.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1872,9 +1500,9 @@
     {
       "id": "P21",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506608,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-26T17:30:00-03:00",
@@ -1885,10 +1513,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P21/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P21/feed.jpg"
           ],
           "mediaAltText": [
-            "Hoje já é dia de pizza. Foto ilustrativa de pizza."
+            "O carrinho que vale a pena."
           ],
           "publicationDate": {
             "dateTime": "2026-11-26T17:30:00",
@@ -1898,7 +1526,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amanhã é Black Friday e hoje já é dia de pizza! 🍕\n\nCalabresa com mussarela: escolha sem opção, com cebola ou com catupiry.\n\nAbrimos às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+          "text": "Amanhã é Black Friday, e o único carrinho que a gente quer ver cheio é o de pizza. 😄\n\n□ Tamanho escolhido\n\n□ Sabores decididos (até 4 na Gigante)\n\n□ Massa do seu jeito\n\n□ Borda recheada\n\n□ Bebida para acompanhar\n\nSem fila e sem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday #Checklist",
           "providers": [
             {
               "network": "instagram"
@@ -1916,9 +1544,9 @@
     {
       "id": "P21",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403506629,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-26T17:30:00-03:00",
@@ -1929,10 +1557,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P21/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P21/feed.jpg"
           ],
           "mediaAltText": [
-            "Hoje já é dia de pizza. Foto ilustrativa de pizza."
+            "O carrinho que vale a pena."
           ],
           "publicationDate": {
             "dateTime": "2026-11-26T17:30:00",
@@ -1942,7 +1570,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amanhã é Black Friday e hoje já é dia de pizza! 🍕\n\nCalabresa com mussarela: escolha sem opção, com cebola ou com catupiry.\n\nAbrimos às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Amanhã é Black Friday, e o único carrinho que a gente quer ver cheio é o de pizza. 😄\n\n□ Tamanho escolhido\n\n□ Sabores decididos (até 4 na Gigante)\n\n□ Massa do seu jeito\n\n□ Borda recheada\n\n□ Bebida para acompanhar\n\nSem fila e sem cadastro. Hoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -1957,9 +1585,9 @@
     {
       "id": "P22",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507096,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-27T17:00:00-03:00",
@@ -1970,10 +1598,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P22/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P22/feed.jpg"
           ],
           "mediaAltText": [
-            "Black Friday sem pegadinha. Foto ilustrativa de pizza."
+            "Sem contagem regressiva. Sem letra miúda. Só pizza.."
           ],
           "publicationDate": {
             "dateTime": "2026-11-27T17:00:00",
@@ -1983,7 +1611,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤\n\nA nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.\n\nMussarela e molho bolonhesa: simples e muito bom.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
+          "text": "Black Friday na Disk Pizza: sem contagem regressiva, sem letra miúda e sem pegadinha. 🖤\n\nSó pizza do jeito que você gosta, hoje e em qualquer outra sexta.\n\nA gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BlackFriday",
           "providers": [
             {
               "network": "instagram"
@@ -2001,9 +1629,9 @@
     {
       "id": "P22",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507112,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-27T17:00:00-03:00",
@@ -2014,10 +1642,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P22/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P22/feed.jpg"
           ],
           "mediaAltText": [
-            "Black Friday sem pegadinha. Foto ilustrativa de pizza."
+            "Sem contagem regressiva. Sem letra miúda. Só pizza.."
           ],
           "publicationDate": {
             "dateTime": "2026-11-27T17:00:00",
@@ -2027,7 +1655,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Black Friday na Disk Pizza: sem pegadinha e sem esperar data. 🖤\n\nA nossa promoção é todos os dias. Hoje é sexta, a pizza está pronta para ser montada do seu jeito e a gente abre às 18h.\n\nMussarela e molho bolonhesa: simples e muito bom.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Black Friday na Disk Pizza: sem contagem regressiva, sem letra miúda e sem pegadinha. 🖤\n\nSó pizza do jeito que você gosta, hoje e em qualquer outra sexta.\n\nA gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -2042,9 +1670,9 @@
     {
       "id": "P23",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507171,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-28T16:30:00-03:00",
@@ -2055,7 +1683,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P23/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P23/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2066,7 +1694,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕\n\nTradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #71Sabores",
+          "text": "Pare o vídeo! O sabor que aparecer é o seu pedido de hoje. 🍕\n\nCalabresa, Bolonhesa, Mussarela, Fran-Brócolis ou Nachos: qual saiu para você? Conta nos comentários.\n\nNão gostou do resultado? Tem outros 66 sabores no cardápio.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PareOVideo #71Sabores",
           "providers": [
             {
               "network": "instagram"
@@ -2084,9 +1712,9 @@
     {
       "id": "P23",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507193,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-11-28T16:30:00-03:00",
@@ -2097,7 +1725,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P23/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P23/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2108,7 +1736,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sábado chegou e a gente tem 71 sabores esperando por você. 🍕\n\nTradicionais, especiais e doces. Qual é o seu primeiro pedido da noite?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Pare o vídeo! O sabor que aparecer é o seu pedido de hoje. 🍕\n\nCalabresa, Bolonhesa, Mussarela, Fran-Brócolis ou Nachos: qual saiu para você? Conta nos comentários.\n\nNão gostou do resultado? Tem outros 66 sabores no cardápio.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -2123,9 +1751,9 @@
     {
       "id": "P24",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507303,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-02T18:30:00-03:00",
@@ -2136,10 +1764,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P24/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P24/feed.jpg"
           ],
           "mediaAltText": [
-            "Gigante: 16 fatias, até 4 sabores. Foto ilustrativa de pizza."
+            "Todo grupo tem aquele que organiza tudo."
           ],
           "publicationDate": {
             "dateTime": "2026-12-02T18:30:00",
@@ -2149,7 +1777,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Dezembro chegou e com ele as confraternizações. 🎄\n\nReunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Confraternizacao",
+          "text": "Todo grupo tem aquela pessoa que organiza a confraternização, cobra a lista e ainda escolhe a pizza. 🎄\n\nMarque aqui quem é essa pessoa no seu grupo.\n\nDica para ela: a Gigante tem 16 fatias e até 4 sabores.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Confraternizacao",
           "providers": [
             {
               "network": "instagram"
@@ -2167,9 +1795,9 @@
     {
       "id": "P24",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507322,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-02T18:30:00-03:00",
@@ -2180,10 +1808,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P24/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P24/feed.jpg"
           ],
           "mediaAltText": [
-            "Gigante: 16 fatias, até 4 sabores. Foto ilustrativa de pizza."
+            "Todo grupo tem aquele que organiza tudo."
           ],
           "publicationDate": {
             "dateTime": "2026-12-02T18:30:00",
@@ -2193,7 +1821,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Dezembro chegou e com ele as confraternizações. 🎄\n\nReunião da firma, da turma ou da família? A pizza Gigante tem 16 fatias e até 4 sabores, para ninguém ficar sem o seu.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Todo grupo tem aquela pessoa que organiza a confraternização, cobra a lista e ainda escolhe a pizza. 🎄\n\nMarque aqui quem é essa pessoa no seu grupo.\n\nDica para ela: a Gigante tem 16 fatias e até 4 sabores.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -2208,9 +1836,9 @@
     {
       "id": "P25",
       "network": "instagram",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-03T17:30:00-03:00",
@@ -2221,22 +1849,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-04.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-05.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-06.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-07.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P25/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P25/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P25/slide-03.jpg"
           ],
           "mediaAltText": [
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito."
+            "Cada pizza com a sua massa.",
+            "Cada pizza com a sua massa.",
+            "Cada pizza com a sua massa."
           ],
           "publicationDate": {
             "dateTime": "2026-12-03T17:30:00",
@@ -2246,7 +1866,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:\n\nTamanho, sabores, massa, borda, extras e revisão.\n\nMonte com calma, revise tudo e envie pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
+          "text": "Você sabia? No mesmo pedido, cada pizza pode ter uma massa diferente. 🍕\n\nUma fina para quem gosta de fina, uma grossa para quem prefere grossa: a massa é escolhida pizza por pizza, no passo “Massa” do montador.\n\nMonte a primeira, adicione ao carrinho e monte a próxima do jeito de cada um.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza #VoceSabia",
           "providers": [
             {
               "network": "instagram"
@@ -2264,9 +1884,9 @@
     {
       "id": "P25",
       "network": "facebook",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-03T17:30:00-03:00",
@@ -2277,22 +1897,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-04.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-05.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-06.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P25/slide-07.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P25/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P25/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P25/slide-03.jpg"
           ],
           "mediaAltText": [
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito.",
-            "6 passos, do seu jeito."
+            "Cada pizza com a sua massa.",
+            "Cada pizza com a sua massa.",
+            "Cada pizza com a sua massa."
           ],
           "publicationDate": {
             "dateTime": "2026-12-03T17:30:00",
@@ -2302,7 +1914,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "O montador da Disk Pizza tem 6 passos e você controla cada detalhe:\n\nTamanho, sabores, massa, borda, extras e revisão.\n\nMonte com calma, revise tudo e envie pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "text": "Você sabia? No mesmo pedido, cada pizza pode ter uma massa diferente. 🍕\n\nUma fina para quem gosta de fina, uma grossa para quem prefere grossa: a massa é escolhida pizza por pizza, no passo “Massa” do montador.\n\nMonte a primeira, adicione ao carrinho e monte a próxima do jeito de cada um.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -2317,9 +1929,9 @@
     {
       "id": "P26",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507357,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-04T17:00:00-03:00",
@@ -2330,7 +1942,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P26/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P26/feed.jpg"
           ],
           "mediaAltText": [
             "Frango Especial. Foto ilustrativa de pizza."
@@ -2361,9 +1973,9 @@
     {
       "id": "P26",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507393,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-04T17:00:00-03:00",
@@ -2374,7 +1986,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P26/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P26/feed.jpg"
           ],
           "mediaAltText": [
             "Frango Especial. Foto ilustrativa de pizza."
@@ -2402,9 +2014,9 @@
     {
       "id": "P27",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507424,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-05T16:30:00-03:00",
@@ -2415,7 +2027,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P27/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P27/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2426,7 +2038,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sobremesa em formato de pizza? 🍫\n\nBrigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+          "text": "Confraternização chegando e cada um quer um sabor? 🎄\n\nA Gigante tem 16 fatias e até 4 sabores. Exemplo: Portuguesa, Quatro Queijos com Bacon, Lombo com Milho e, para fechar, Confete.\n\nConta aqui qual seria a sua combinação.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaGigante #Confraternizacao",
           "providers": [
             {
               "network": "instagram"
@@ -2444,9 +2056,9 @@
     {
       "id": "P27",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403507493,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-05T16:30:00-03:00",
@@ -2457,7 +2069,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P27/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P27/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -2468,7 +2080,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sobremesa em formato de pizza? 🍫\n\nBrigadeiro, Confete, Bem Casado... e, se quiser, borda de Nutella ou de chocolate.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Confraternização chegando e cada um quer um sabor? 🎄\n\nA Gigante tem 16 fatias e até 4 sabores. Exemplo: Portuguesa, Quatro Queijos com Bacon, Lombo com Milho e, para fechar, Confete.\n\nConta aqui qual seria a sua combinação.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -2483,9 +2095,9 @@
     {
       "id": "P28",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403508038,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-09T18:30:00-03:00",
@@ -2496,10 +2108,16 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P28/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-04.jpg"
           ],
           "mediaAltText": [
-            "Monte a sua Gigante com 4 sabores."
+            "Adivinhe o sabor.",
+            "Adivinhe o sabor.",
+            "Adivinhe o sabor.",
+            "Adivinhe o sabor."
           ],
           "publicationDate": {
             "dateTime": "2026-12-09T18:30:00",
@@ -2509,7 +2127,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕\n\nEscolha 4 e conte nos comentários. Vale tradicional, especial ou doce.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desafio",
+          "text": "Quiz: adivinhe o sabor pelos ingredientes! 🤔\n\nSão 3 perguntas. Responda nos comentários antes de ver as respostas no último slide.\n\nDepois conta quantas você acertou.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #QuizDePizza",
           "providers": [
             {
               "network": "instagram"
@@ -2527,9 +2145,9 @@
     {
       "id": "P28",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403508058,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-09T18:30:00-03:00",
@@ -2540,10 +2158,16 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P28/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P28/slide-04.jpg"
           ],
           "mediaAltText": [
-            "Monte a sua Gigante com 4 sabores."
+            "Adivinhe o sabor.",
+            "Adivinhe o sabor.",
+            "Adivinhe o sabor.",
+            "Adivinhe o sabor."
           ],
           "publicationDate": {
             "dateTime": "2026-12-09T18:30:00",
@@ -2553,7 +2177,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Desafio de quarta: monte a sua Gigante com 4 sabores. 🍕\n\nEscolha 4 e conte nos comentários. Vale tradicional, especial ou doce.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Quiz: adivinhe o sabor pelos ingredientes! 🤔\n\nSão 3 perguntas. Responda nos comentários antes de ver as respostas no último slide.\n\nDepois conta quantas você acertou.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -2568,9 +2192,9 @@
     {
       "id": "P29",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403508083,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-10T17:30:00-03:00",
@@ -2581,7 +2205,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P29/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P29/feed.jpg"
           ],
           "mediaAltText": [
             "Mexicana. Foto ilustrativa de pizza."
@@ -2612,9 +2236,9 @@
     {
       "id": "P29",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403508140,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-10T17:30:00-03:00",
@@ -2625,7 +2249,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P29/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P29/feed.jpg"
           ],
           "mediaAltText": [
             "Mexicana. Foto ilustrativa de pizza."
@@ -2653,9 +2277,9 @@
     {
       "id": "P30",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403508179,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-11T17:00:00-03:00",
@@ -2666,10 +2290,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P30/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P30/feed.jpg"
           ],
           "mediaAltText": [
-            "Calor de verão pede pizza. Foto ilustrativa de pizza."
+            "Refri de 2L ou latinha?."
           ],
           "publicationDate": {
             "dateTime": "2026-12-11T17:00:00",
@@ -2679,7 +2303,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️\n\nTem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao",
+          "text": "Calor de verão e pizza na mesa. A pergunta é: refri de 2L para dividir ou latinha para cada um? ☀️\n\nNo carrinho tem refrigerante 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite e Kuat), Kuat 1,5L, Coca-Cola 600ml, Coca-Cola lata e cerveja Brahma lata.\n\nVote nos comentários: 2L ou lata?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao #EsteOuAquele",
           "providers": [
             {
               "network": "instagram"
@@ -2697,9 +2321,9 @@
     {
       "id": "P30",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403508199,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-11T17:00:00-03:00",
@@ -2710,10 +2334,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P30/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P30/feed.jpg"
           ],
           "mediaAltText": [
-            "Calor de verão pede pizza. Foto ilustrativa de pizza."
+            "Refri de 2L ou latinha?."
           ],
           "publicationDate": {
             "dateTime": "2026-12-11T17:00:00",
@@ -2723,7 +2347,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "O calor chegou, e a noite pede pizza e uma bebida para acompanhar. ☀️\n\nTem refrigerante 2L, Kuat 1,5L, Coca-Cola 600ml, lata e cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Calor de verão e pizza na mesa. A pergunta é: refri de 2L para dividir ou latinha para cada um? ☀️\n\nNo carrinho tem refrigerante 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite e Kuat), Kuat 1,5L, Coca-Cola 600ml, Coca-Cola lata e cerveja Brahma lata.\n\nVote nos comentários: 2L ou lata?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -2738,9 +2362,9 @@
     {
       "id": "P31",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509040,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-12T16:30:00-03:00",
@@ -2751,7 +2375,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P31/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P31/feed.jpg"
           ],
           "mediaAltText": [
             "Fran-Brócolis. Foto ilustrativa de pizza."
@@ -2764,7 +2388,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Frango, brócolis e mussarela. Sábado merece. 🥦🍗\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FranBrocolis",
+          "text": "Frango, brócolis e mussarela: a Fran-Brócolis é presença certa em sábado de pizza. 🥦\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #FranBrocolis",
           "providers": [
             {
               "network": "instagram"
@@ -2782,9 +2406,9 @@
     {
       "id": "P31",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509058,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-12T16:30:00-03:00",
@@ -2795,7 +2419,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P31/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P31/feed.jpg"
           ],
           "mediaAltText": [
             "Fran-Brócolis. Foto ilustrativa de pizza."
@@ -2808,7 +2432,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Frango, brócolis e mussarela. Sábado merece. 🥦🍗\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Frango, brócolis e mussarela: a Fran-Brócolis é presença certa em sábado de pizza. 🥦\n\nHoje a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -2823,9 +2447,9 @@
     {
       "id": "P32",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509090,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-16T18:30:00-03:00",
@@ -2836,16 +2460,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P32/feed.jpg"
           ],
           "mediaAltText": [
-            "Ninguém quer cozinhar.",
-            "Ninguém quer cozinhar.",
-            "Ninguém quer cozinhar.",
-            "Ninguém quer cozinhar."
+            "Confraternização sem cozinha."
           ],
           "publicationDate": {
             "dateTime": "2026-12-16T18:30:00",
@@ -2855,7 +2473,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nMonte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #AmigoSecreto",
+          "text": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nChecklist para a sua:\n\n□ Lista de quem vai\n\n□ Um sabor para cada um (a Gigante leva até 4)\n\n□ Várias pizzas no mesmo carrinho\n\n□ Bebidas no pedido\n\n□ Pedido enviado pelo WhatsApp, sem cadastro\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #AmigoSecreto #Confraternizacao",
           "providers": [
             {
               "network": "instagram"
@@ -2873,9 +2491,9 @@
     {
       "id": "P32",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509113,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-16T18:30:00-03:00",
@@ -2886,16 +2504,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P32/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P32/feed.jpg"
           ],
           "mediaAltText": [
-            "Ninguém quer cozinhar.",
-            "Ninguém quer cozinhar.",
-            "Ninguém quer cozinhar.",
-            "Ninguém quer cozinhar."
+            "Confraternização sem cozinha."
           ],
           "publicationDate": {
             "dateTime": "2026-12-16T18:30:00",
@@ -2905,7 +2517,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nMonte pizzas diferentes para a turma toda e envie o pedido pelo WhatsApp. O site deixa você colocar quantas pizzas quiser no carrinho.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Amigo secreto, confraternização, reunião de fim de ano... e ninguém quer cozinhar. 😅\n\nChecklist para a sua:\n\n□ Lista de quem vai\n\n□ Um sabor para cada um (a Gigante leva até 4)\n\n□ Várias pizzas no mesmo carrinho\n\n□ Bebidas no pedido\n\n□ Pedido enviado pelo WhatsApp, sem cadastro\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -2920,9 +2532,9 @@
     {
       "id": "P33",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509140,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-17T17:30:00-03:00",
@@ -2933,10 +2545,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-04.jpg"
           ],
           "mediaAltText": [
             "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
@@ -2952,7 +2564,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Clássicos que nunca saem de moda:\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Classicos",
+          "text": "Clássicos que nunca saem de moda: 🍅\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nQual é o seu clássico?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Classicos",
           "providers": [
             {
               "network": "instagram"
@@ -2970,9 +2582,9 @@
     {
       "id": "P33",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509167,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-17T17:30:00-03:00",
@@ -2983,10 +2595,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P33/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-03.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P33/slide-04.jpg"
           ],
           "mediaAltText": [
             "Clássicos que nunca saem de moda. Foto ilustrativa de pizza.",
@@ -3002,7 +2614,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Clássicos que nunca saem de moda:\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Clássicos que nunca saem de moda: 🍅\n\nMussarela: mussarela e tomate\n\nRomana: mussarela, presunto, tomate e parmesão\n\nMarguerita: mussarela, tomate, parmesão e manjericão\n\nQual é o seu clássico?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -3017,9 +2629,9 @@
     {
       "id": "P34",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509199,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-18T17:00:00-03:00",
@@ -3030,10 +2642,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P34/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P34/feed.jpg"
           ],
           "mediaAltText": [
-            "Bolonhesa Especial. Foto ilustrativa de pizza."
+            "Você sabia? A Bolonhesa tem 3 versões."
           ],
           "publicationDate": {
             "dateTime": "2026-12-18T17:00:00",
@@ -3043,7 +2655,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bolonhesa",
+          "text": "Você sabia? No nosso cardápio, a Bolonhesa aparece em 3 versões. 🍕\n\nBolonhesa: mussarela e molho bolonhesa.\n\nBolonhesa Especial: mussarela, molho bolonhesa, pimentão, ovos e catupiry.\n\nBolonhesa Catu-Cheddar: mussarela, carne moída, catupiry e cheddar.\n\nQual delas vai para a sua sexta?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bolonhesa #VoceSabia",
           "providers": [
             {
               "network": "instagram"
@@ -3061,9 +2673,9 @@
     {
       "id": "P34",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509219,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-18T17:00:00-03:00",
@@ -3074,10 +2686,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P34/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P34/feed.jpg"
           ],
           "mediaAltText": [
-            "Bolonhesa Especial. Foto ilustrativa de pizza."
+            "Você sabia? A Bolonhesa tem 3 versões."
           ],
           "publicationDate": {
             "dateTime": "2026-12-18T17:00:00",
@@ -3087,7 +2699,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Mussarela, molho bolonhesa, pimentão, ovos e catupiry: a Bolonhesa Especial é pedida certa da sexta. 🍕\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Você sabia? No nosso cardápio, a Bolonhesa aparece em 3 versões. 🍕\n\nBolonhesa: mussarela e molho bolonhesa.\n\nBolonhesa Especial: mussarela, molho bolonhesa, pimentão, ovos e catupiry.\n\nBolonhesa Catu-Cheddar: mussarela, carne moída, catupiry e cheddar.\n\nQual delas vai para a sua sexta?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -3102,9 +2714,9 @@
     {
       "id": "P35",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509249,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-19T16:30:00-03:00",
@@ -3115,7 +2727,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P35/reel.mp4"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P35/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3126,7 +2738,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Semana de Natal chegando e a família toda reunida. 🎄\n\nPizza também é jeito de comemorar junto: escolha os sabores de cada um.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+          "text": "Quem é quem na mesa de Natal? 🎄\n\nTem o tio que só pede Calabresa, a tia que não abre mão da Marguerita e quem já vai direto no doce.\n\nNa Gigante cabem até 4 sabores: dá para ter todo mundo representado. Marque a sua família aqui.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
           "providers": [
             {
               "network": "instagram"
@@ -3144,9 +2756,9 @@
     {
       "id": "P35",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509270,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-19T16:30:00-03:00",
@@ -3157,7 +2769,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P35/reel.mp4"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P35/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3168,7 +2780,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Semana de Natal chegando e a família toda reunida. 🎄\n\nPizza também é jeito de comemorar junto: escolha os sabores de cada um.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Quem é quem na mesa de Natal? 🎄\n\nTem o tio que só pede Calabresa, a tia que não abre mão da Marguerita e quem já vai direto no doce.\n\nNa Gigante cabem até 4 sabores: dá para ter todo mundo representado. Marque a sua família aqui.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -3183,9 +2795,9 @@
     {
       "id": "P36",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509777,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-23T18:30:00-03:00",
@@ -3196,10 +2808,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P36/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P36/feed.jpg"
           ],
           "mediaAltText": [
-            "Amanhã, véspera de Natal: 18h às 23h."
+            "Natal e Ano Novo: a gente abre."
           ],
           "publicationDate": {
             "dateTime": "2026-12-23T18:30:00",
@@ -3209,7 +2821,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄\n\nGaranta o seu pedido e deixe a noite mais tranquila.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+          "text": "Salve este post: nossos horários de fim de ano. 🎄\n\n24/12 (quinta): 18h às 23h\n\n25/12 (sexta): 18h às 23h\n\n31/12 (quinta): 18h às 23h\n\n01/01 (sexta): 18h às 23h\n\nDomingo, como sempre, a gente descansa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal #AnoNovo",
           "providers": [
             {
               "network": "instagram"
@@ -3227,9 +2839,9 @@
     {
       "id": "P36",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509800,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-23T18:30:00-03:00",
@@ -3240,10 +2852,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P36/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P36/feed.jpg"
           ],
           "mediaAltText": [
-            "Amanhã, véspera de Natal: 18h às 23h."
+            "Natal e Ano Novo: a gente abre."
           ],
           "publicationDate": {
             "dateTime": "2026-12-23T18:30:00",
@@ -3253,7 +2865,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Amanhã é véspera de Natal e a gente abre das 18h às 23h. 🎄\n\nGaranta o seu pedido e deixe a noite mais tranquila.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Salve este post: nossos horários de fim de ano. 🎄\n\n24/12 (quinta): 18h às 23h\n\n25/12 (sexta): 18h às 23h\n\n31/12 (quinta): 18h às 23h\n\n01/01 (sexta): 18h às 23h\n\nDomingo, como sempre, a gente descansa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -3268,9 +2880,9 @@
     {
       "id": "P37",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509857,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-24T17:30:00-03:00",
@@ -3281,7 +2893,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P37/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P37/feed.jpg"
           ],
           "mediaAltText": [
             "Véspera de Natal: abrimos 18h–23h. Foto ilustrativa de pizza."
@@ -3294,7 +2906,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Véspera de Natal e a mesa cheia de gente querida. 🎄\n\nQuem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.\n\nMarguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
+          "text": "Véspera de Natal e a casa cheia de gente querida. 🎄\n\nSe a ideia é deixar a cozinha de lado, conte com a gente: abrimos hoje das 18h às 23h.\n\nBolonhesa para um, Marguerita para outro, um doce para fechar: cada um com a sua, no mesmo pedido.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Natal",
           "providers": [
             {
               "network": "instagram"
@@ -3312,9 +2924,9 @@
     {
       "id": "P37",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509894,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-24T17:30:00-03:00",
@@ -3325,7 +2937,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P37/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P37/feed.jpg"
           ],
           "mediaAltText": [
             "Véspera de Natal: abrimos 18h–23h. Foto ilustrativa de pizza."
@@ -3338,7 +2950,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Véspera de Natal e a mesa cheia de gente querida. 🎄\n\nQuem quer deixar a cozinha de lado pode contar com a gente: abrimos hoje das 18h às 23h.\n\nMarguerita, Portuguesa, Quatro Queijos... a pizza que cada um gosta, na mesma mesa.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Véspera de Natal e a casa cheia de gente querida. 🎄\n\nSe a ideia é deixar a cozinha de lado, conte com a gente: abrimos hoje das 18h às 23h.\n\nBolonhesa para um, Marguerita para outro, um doce para fechar: cada um com a sua, no mesmo pedido.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -3353,9 +2965,9 @@
     {
       "id": "P38",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509928,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-25T17:00:00-03:00",
@@ -3366,7 +2978,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P38/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P38/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz Natal."
@@ -3397,9 +3009,9 @@
     {
       "id": "P38",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509955,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-25T17:00:00-03:00",
@@ -3410,7 +3022,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P38/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P38/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz Natal."
@@ -3438,9 +3050,9 @@
     {
       "id": "P39",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403509997,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-26T16:30:00-03:00",
@@ -3451,10 +3063,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P39/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P39/feed.jpg"
           ],
           "mediaAltText": [
-            "Sobrou ceia? Sábado de pizza. Foto ilustrativa de pizza."
+            "A cozinha pediu folga. A gente cobre.."
           ],
           "publicationDate": {
             "dateTime": "2026-12-26T16:30:00",
@@ -3464,7 +3076,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕\n\nQuatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PosNatal",
+          "text": "A ceia acabou, as sobras também (ou quase). 😅\n\nHoje a cozinha está de folga e a pizza fica com a gente: abrimos das 18h às 23h.\n\nQuem aí ainda tem rabanada na geladeira?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PosNatal",
           "providers": [
             {
               "network": "instagram"
@@ -3482,9 +3094,9 @@
     {
       "id": "P39",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403510061,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-26T16:30:00-03:00",
@@ -3495,10 +3107,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P39/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P39/feed.jpg"
           ],
           "mediaAltText": [
-            "Sobrou ceia? Sábado de pizza. Foto ilustrativa de pizza."
+            "A cozinha pediu folga. A gente cobre.."
           ],
           "publicationDate": {
             "dateTime": "2026-12-26T16:30:00",
@@ -3508,7 +3120,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sobrou ceia? Sábado merece um respiro da cozinha. 🍕\n\nQuatro Queijos com Bacon: mussarela, catupiry, gorgonzola, provolone e bacon.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "A ceia acabou, as sobras também (ou quase). 😅\n\nHoje a cozinha está de folga e a pizza fica com a gente: abrimos das 18h às 23h.\n\nQuem aí ainda tem rabanada na geladeira?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -3523,9 +3135,9 @@
     {
       "id": "P40",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403510112,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-30T18:30:00-03:00",
@@ -3536,10 +3148,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P40/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P40/feed.jpg"
           ],
           "mediaAltText": [
-            "Qual foi o sabor do seu 2026?."
+            "Em 2027, eu quero mais pizza de ____."
           ],
           "publicationDate": {
             "dateTime": "2026-12-30T18:30:00",
@@ -3549,7 +3161,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Qual foi o sabor do seu 2026? 🍕\n\nConta aqui nos comentários: vamos começar 2027 com a pizza certa.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #2026",
+          "text": "Complete a frase: em 2027, eu quero mais pizza de ________. 🍕\n\nVale sabor, vale borda, vale companhia. Os comentários são seus.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #2027",
           "providers": [
             {
               "network": "instagram"
@@ -3567,9 +3179,9 @@
     {
       "id": "P40",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403510137,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-30T18:30:00-03:00",
@@ -3580,10 +3192,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P40/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P40/feed.jpg"
           ],
           "mediaAltText": [
-            "Qual foi o sabor do seu 2026?."
+            "Em 2027, eu quero mais pizza de ____."
           ],
           "publicationDate": {
             "dateTime": "2026-12-30T18:30:00",
@@ -3593,7 +3205,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Qual foi o sabor do seu 2026? 🍕\n\nConta aqui nos comentários: vamos começar 2027 com a pizza certa.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Complete a frase: em 2027, eu quero mais pizza de ________. 🍕\n\nVale sabor, vale borda, vale companhia. Os comentários são seus.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -3608,9 +3220,9 @@
     {
       "id": "P41",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403510965,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-31T17:30:00-03:00",
@@ -3621,10 +3233,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P41/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P41/feed.jpg"
           ],
           "mediaAltText": [
-            "Último pedido de 2026. Foto ilustrativa de pizza."
+            "Checklist da virada."
           ],
           "publicationDate": {
             "dateTime": "2026-12-31T17:30:00",
@@ -3634,7 +3246,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.\n\nUma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Reveillon",
+          "text": "Checklist da virada: 🎆\n\n□ Roupa escolhida\n\n□ Lista de metas para 2027\n\n□ Pizza salgada para a noite\n\n□ Pizza doce para brindar\n\n□ Pedido feito antes das 23h, quando a gente fecha\n\nHoje a gente abre das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Reveillon #Checklist",
           "providers": [
             {
               "network": "instagram"
@@ -3652,9 +3264,9 @@
     {
       "id": "P41",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403510989,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2026-12-31T17:30:00-03:00",
@@ -3665,10 +3277,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P41/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P41/feed.jpg"
           ],
           "mediaAltText": [
-            "Último pedido de 2026. Foto ilustrativa de pizza."
+            "Checklist da virada."
           ],
           "publicationDate": {
             "dateTime": "2026-12-31T17:30:00",
@@ -3678,7 +3290,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Último pedido de 2026! 🎆 Hoje a gente abre das 18h às 23h.\n\nUma pizza salgada para a ceia e uma doce para brindar: Confete, Brigadeiro, Bem Casado... mistura é com a gente.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Checklist da virada: 🎆\n\n□ Roupa escolhida\n\n□ Lista de metas para 2027\n\n□ Pizza salgada para a noite\n\n□ Pizza doce para brindar\n\n□ Pedido feito antes das 23h, quando a gente fecha\n\nHoje a gente abre das 18h às 23h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -3693,9 +3305,9 @@
     {
       "id": "P42",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511014,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-01T17:00:00-03:00",
@@ -3706,7 +3318,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P42/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P42/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz 2027."
@@ -3737,9 +3349,9 @@
     {
       "id": "P42",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511052,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-01T17:00:00-03:00",
@@ -3750,7 +3362,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P42/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P42/feed.jpg"
           ],
           "mediaAltText": [
             "Feliz 2027."
@@ -3778,9 +3390,9 @@
     {
       "id": "P43",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511220,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-02T16:30:00-03:00",
@@ -3791,7 +3403,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P43/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P43/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3802,7 +3414,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sábado de verão pede pizza. ☀️\n\nEscolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao",
+          "text": "Este ou aquele, edição verão: ☀️\n\nPraia ou piscina?\n\nRefri de 2L ou latinha?\n\nPeperone ou Mussarela?\n\nResponda tudo nos comentários. E hoje é sábado: a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Verao #EsteOuAquele",
           "providers": [
             {
               "network": "instagram"
@@ -3820,9 +3432,9 @@
     {
       "id": "P43",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511246,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-02T16:30:00-03:00",
@@ -3833,7 +3445,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P43/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P43/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -3844,7 +3456,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Sábado de verão pede pizza. ☀️\n\nEscolha os sabores, confira o carrinho e envie o pedido pelo WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Este ou aquele, edição verão: ☀️\n\nPraia ou piscina?\n\nRefri de 2L ou latinha?\n\nPeperone ou Mussarela?\n\nResponda tudo nos comentários. E hoje é sábado: a gente abre às 18h.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -3859,9 +3471,9 @@
     {
       "id": "P44",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511292,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-06T18:30:00-03:00",
@@ -3872,16 +3484,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P44/feed.jpg"
           ],
           "mediaAltText": [
-            "Cada um no seu sabor.",
-            "Cada um no seu sabor.",
-            "Cada um no seu sabor.",
-            "Cada um no seu sabor."
+            "Nas férias, quem escolhe o sabor?."
           ],
           "publicationDate": {
             "dateTime": "2027-01-06T18:30:00",
@@ -3891,7 +3497,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Férias de janeiro: cada um quer um sabor diferente. 😄\n\nNa pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias",
+          "text": "Férias de janeiro, todo mundo em casa e a pergunta de sempre: quem escolhe o sabor? 😄\n\nA) Eu, claro\n\nB) Quem pega o celular primeiro\n\nC) As crianças\n\nD) Ninguém se decide\n\nDica para quem marcou D: na Grande e na Big cabem 3 sabores; na Gigante, 4.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias #QuizDePizza",
           "providers": [
             {
               "network": "instagram"
@@ -3909,9 +3515,9 @@
     {
       "id": "P44",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403692567,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-06T18:30:00-03:00",
@@ -3922,16 +3528,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-01.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-02.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-03.jpg",
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P44/slide-04.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P44/feed.jpg"
           ],
           "mediaAltText": [
-            "Cada um no seu sabor.",
-            "Cada um no seu sabor.",
-            "Cada um no seu sabor.",
-            "Cada um no seu sabor."
+            "Nas férias, quem escolhe o sabor?."
           ],
           "publicationDate": {
             "dateTime": "2027-01-06T18:30:00",
@@ -3941,7 +3541,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Férias de janeiro: cada um quer um sabor diferente. 😄\n\nNa pizza Grande (8 fatias) ou na Big (12) cabem 3 sabores. Todo mundo feliz.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Férias de janeiro, todo mundo em casa e a pergunta de sempre: quem escolhe o sabor? 😄\n\nA) Eu, claro\n\nB) Quem pega o celular primeiro\n\nC) As crianças\n\nD) Ninguém se decide\n\nDica para quem marcou D: na Grande e na Big cabem 3 sabores; na Gigante, 4.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -3956,9 +3556,9 @@
     {
       "id": "P45",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511318,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-07T17:30:00-03:00",
@@ -3969,10 +3569,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P45/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P45/feed.jpg"
           ],
           "mediaAltText": [
-            "Borda de Nutella."
+            "Toda fatia merece um final feliz."
           ],
           "publicationDate": {
             "dateTime": "2027-01-07T17:30:00",
@@ -3982,7 +3582,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Borda de Nutella: o final perfeito de uma fatia. 🍫\n\nEscolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Nutella",
+          "text": "Toda fatia merece um final feliz. 🍫\n\nBorda de Nutella: escolha com pizza salgada ou doce, no passo “Borda” do montador. E se o seu final feliz for outro, tem mais 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Nutella #BordaRecheada",
           "providers": [
             {
               "network": "instagram"
@@ -4000,9 +3600,9 @@
     {
       "id": "P45",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403511345,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-07T17:30:00-03:00",
@@ -4013,10 +3613,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P45/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P45/feed.jpg"
           ],
           "mediaAltText": [
-            "Borda de Nutella."
+            "Toda fatia merece um final feliz."
           ],
           "publicationDate": {
             "dateTime": "2027-01-07T17:30:00",
@@ -4026,7 +3626,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Borda de Nutella: o final perfeito de uma fatia. 🍫\n\nEscolha com pizza salgada ou doce, ou prefira uma das outras 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "text": "Toda fatia merece um final feliz. 🍫\n\nBorda de Nutella: escolha com pizza salgada ou doce, no passo “Borda” do montador. E se o seu final feliz for outro, tem mais 6 bordas.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -4041,9 +3641,9 @@
     {
       "id": "P46",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403692583,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-08T17:00:00-03:00",
@@ -4054,7 +3654,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P46/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P46/feed.jpg"
           ],
           "mediaAltText": [
             "Bem Casado. Foto ilustrativa de pizza."
@@ -4067,7 +3667,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BemCasado",
+          "text": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nCuriosidade da casa: o Bem Casado também é borda, a de Chocolate ao Leite com Chocolate Branco.\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #BemCasado",
           "providers": [
             {
               "network": "instagram"
@@ -4085,9 +3685,9 @@
     {
       "id": "P46",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512145,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-08T17:00:00-03:00",
@@ -4098,7 +3698,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P46/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P46/feed.jpg"
           ],
           "mediaAltText": [
             "Bem Casado. Foto ilustrativa de pizza."
@@ -4111,7 +3711,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Bem Casado: leite condensado, chocolate ao leite e chocolate branco. 🍫\n\nCuriosidade da casa: o Bem Casado também é borda, a de Chocolate ao Leite com Chocolate Branco.\n\nSexta pede um doce.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -4126,9 +3726,9 @@
     {
       "id": "P47",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512168,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-09T16:30:00-03:00",
@@ -4139,7 +3739,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P47/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P47/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4150,7 +3750,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Salgada de um lado, doce do outro. 🍕🍫\n\nEscolha um sabor salgado e um doce na mesma pizza (a partir da média).\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce",
+          "text": "Você sabia? Dá para pedir salgada de um lado e doce do outro, na mesma pizza. 🍕\n\nÉ a partir da média, que leva 2 sabores. Na Grande e na Big são 3; na Gigante, 4.\n\nQual dupla você montaria?\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #PizzaDoce #VoceSabia",
           "providers": [
             {
               "network": "instagram"
@@ -4168,9 +3768,9 @@
     {
       "id": "P47",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512198,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-09T16:30:00-03:00",
@@ -4181,7 +3781,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P47/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P47/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4192,7 +3792,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Salgada de um lado, doce do outro. 🍕🍫\n\nEscolha um sabor salgado e um doce na mesma pizza (a partir da média).\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Você sabia? Dá para pedir salgada de um lado e doce do outro, na mesma pizza. 🍕\n\nÉ a partir da média, que leva 2 sabores. Na Grande e na Big são 3; na Gigante, 4.\n\nQual dupla você montaria?\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -4207,9 +3807,9 @@
     {
       "id": "P48",
       "network": "instagram",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-13T18:30:00-03:00",
@@ -4220,7 +3820,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P48/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P48/feed.jpg"
           ],
           "mediaAltText": [
             "Time massa fina ou massa grossa?."
@@ -4233,7 +3833,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Time massa fina ou time massa grossa? 🍕\n\nAgora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza",
+          "text": "Time massa fina ou time massa grossa? 🍕\n\nVote nos comentários. E quem fica no meio do caminho tem a média.\n\nA massa você escolhe no pedido, pizza por pizza.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MassaDePizza #EsteOuAquele",
           "providers": [
             {
               "network": "instagram"
@@ -4251,9 +3851,9 @@
     {
       "id": "P48",
       "network": "facebook",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-13T18:30:00-03:00",
@@ -4264,7 +3864,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P48/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P48/feed.jpg"
           ],
           "mediaAltText": [
             "Time massa fina ou massa grossa?."
@@ -4277,7 +3877,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Time massa fina ou time massa grossa? 🍕\n\nAgora você escolhe a massa direto no pedido. Vote nos comentários: fina, média ou grossa?\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Time massa fina ou time massa grossa? 🍕\n\nVote nos comentários. E quem fica no meio do caminho tem a média.\n\nA massa você escolhe no pedido, pizza por pizza.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -4292,9 +3892,9 @@
     {
       "id": "P49",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512225,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-14T17:30:00-03:00",
@@ -4305,10 +3905,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P49/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P49/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P49/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P49/slide-03.jpg"
           ],
           "mediaAltText": [
-            "Desde 2015 em Curitiba. Foto ilustrativa de pizza."
+            "Disk Pizza em números.",
+            "Disk Pizza em números.",
+            "Disk Pizza em números."
           ],
           "publicationDate": {
             "dateTime": "2027-01-14T17:30:00",
@@ -4318,7 +3922,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Desde 2015 fazendo pizza em Curitiba, em família. 🍕\n\nCada fornada é um convite para compartilhar sabores, histórias e tradição.\n\nMonte a sua pelo link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desde2015",
+          "text": "A Disk Pizza em números: 🍕\n\n2015: o ano em que a gente começou, em família, aqui em Curitiba\n\n71 sabores no cardápio\n\n7 bordas\n\n16 fatias na Gigante\n\nAté 4 sabores na mesma pizza\n\n3 massas para escolher\n\nQual desses números tem a sua cara?\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Desde2015 #PizzariaDeFamilia",
           "providers": [
             {
               "network": "instagram"
@@ -4336,9 +3940,9 @@
     {
       "id": "P49",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512254,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-14T17:30:00-03:00",
@@ -4349,10 +3953,14 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P49/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P49/slide-01.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P49/slide-02.jpg",
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P49/slide-03.jpg"
           ],
           "mediaAltText": [
-            "Desde 2015 em Curitiba. Foto ilustrativa de pizza."
+            "Disk Pizza em números.",
+            "Disk Pizza em números.",
+            "Disk Pizza em números."
           ],
           "publicationDate": {
             "dateTime": "2027-01-14T17:30:00",
@@ -4362,7 +3970,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Desde 2015 fazendo pizza em Curitiba, em família. 🍕\n\nCada fornada é um convite para compartilhar sabores, histórias e tradição.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "A Disk Pizza em números: 🍕\n\n2015: o ano em que a gente começou, em família, aqui em Curitiba\n\n71 sabores no cardápio\n\n7 bordas\n\n16 fatias na Gigante\n\nAté 4 sabores na mesma pizza\n\n3 massas para escolher\n\nQual desses números tem a sua cara?\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -4377,9 +3985,9 @@
     {
       "id": "P50",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512280,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-15T17:00:00-03:00",
@@ -4390,7 +3998,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P50/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P50/feed.jpg"
           ],
           "mediaAltText": [
             "Brigadeiro. Foto ilustrativa de pizza."
@@ -4421,9 +4029,9 @@
     {
       "id": "P50",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512313,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-15T17:00:00-03:00",
@@ -4434,7 +4042,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P50/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P50/feed.jpg"
           ],
           "mediaAltText": [
             "Brigadeiro. Foto ilustrativa de pizza."
@@ -4462,9 +4070,9 @@
     {
       "id": "P51",
       "network": "instagram",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-16T16:30:00-03:00",
@@ -4475,7 +4083,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P51/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P51/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4486,7 +4094,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕\n\nSem cadastro, e o pedido segue pronto para o nosso WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
+          "text": "Seis passos e a pizza fica do seu jeito: 🍕\n\n1. Tamanho · 2. Sabores · 3. Massa · 4. Borda · 5. Extras · 6. Revisão\n\nDepois é só enviar pelo WhatsApp. Sem cadastro.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n📷 Foto ilustrativa.\n\n#DiskPizza #PizzaCuritiba #Curitiba #MonteSuaPizza",
           "providers": [
             {
               "network": "instagram"
@@ -4504,9 +4112,9 @@
     {
       "id": "P51",
       "network": "facebook",
-      "bloqueios": [
-        "aguarda deploy_massa"
-      ],
+      "acao": "criar",
+      "metricoolId": null,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-16T16:30:00-03:00",
@@ -4517,7 +4125,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P51/reel.mp4"
+            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P51/reel.mp4"
           ],
           "mediaAltText": [],
           "publicationDate": {
@@ -4528,7 +4136,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Monte a sua pizza em 6 passos: tamanho, sabores, massa, borda, extras e revisão. 🍕\n\nSem cadastro, e o pedido segue pronto para o nosso WhatsApp.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
+          "text": "Seis passos e a pizza fica do seu jeito: 🍕\n\n1. Tamanho · 2. Sabores · 3. Massa · 4. Borda · 5. Extras · 6. Revisão\n\nDepois é só enviar pelo WhatsApp. Sem cadastro.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.\n\n📷 Foto ilustrativa.",
           "providers": [
             {
               "network": "facebook"
@@ -4543,9 +4151,9 @@
     {
       "id": "P52",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512376,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-20T18:30:00-03:00",
@@ -4556,10 +4164,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P52/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P52/feed.jpg"
           ],
           "mediaAltText": [
-            "Qual sabor merece destaque?."
+            "Caça-palavras: ache os 7."
           ],
           "publicationDate": {
             "dateTime": "2027-01-20T18:30:00",
@@ -4569,7 +4177,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Qual sabor merece mais destaque aqui no perfil? ⭐\n\nComente o seu favorito: a gente conta com vocês para escolher os próximos posts.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #SaborFavorito",
+          "text": "Caça-palavras, parte 2! 🔎\n\nDesta vez são 7 ingredientes e recheios de borda do nosso cardápio, na horizontal e na vertical.\n\nComente quantos você achou e marque alguém para tentar também.\n\nMonte a sua pelo link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #CacaPalavras #Desafio",
           "providers": [
             {
               "network": "instagram"
@@ -4587,9 +4195,9 @@
     {
       "id": "P52",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512402,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-20T18:30:00-03:00",
@@ -4600,10 +4208,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P52/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P52/feed.jpg"
           ],
           "mediaAltText": [
-            "Qual sabor merece destaque?."
+            "Caça-palavras: ache os 7."
           ],
           "publicationDate": {
             "dateTime": "2027-01-20T18:30:00",
@@ -4613,7 +4221,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Qual sabor merece mais destaque aqui no perfil? ⭐\n\nComente o seu favorito: a gente conta com vocês para escolher os próximos posts.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
+          "text": "Caça-palavras, parte 2! 🔎\n\nDesta vez são 7 ingredientes e recheios de borda do nosso cardápio, na horizontal e na vertical.\n\nComente quantos você achou e marque alguém para tentar também.\n\nMonte a sua pelo site: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -4628,9 +4236,9 @@
     {
       "id": "P53",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512434,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-21T17:30:00-03:00",
@@ -4641,10 +4249,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P53/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P53/feed.jpg"
           ],
           "mediaAltText": [
-            "Pizza pede uma bebida."
+            "Kit maratona de série."
           ],
           "publicationDate": {
             "dateTime": "2027-01-21T17:30:00",
@@ -4654,7 +4262,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Pizza pede uma bebida para acompanhar. 🥤\n\nRefrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Bebidas",
+          "text": "Kit maratona de série, versão férias: 📺\n\n□ Série escolhida (sem spoiler)\n\n□ Pizza Big: 12 fatias e 3 sabores\n\n□ Borda recheada\n\n□ Refri de 2L no carrinho\n\n□ Celular no silencioso (depois de enviar o pedido)\n\nQual série está na sua lista? Conta aqui.\n\n👉 Peça agora pelo Disk Pizza: link na bio.\n\n#DiskPizza #PizzaCuritiba #Curitiba #Ferias #Checklist",
           "providers": [
             {
               "network": "instagram"
@@ -4672,9 +4280,9 @@
     {
       "id": "P53",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512465,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-21T17:30:00-03:00",
@@ -4685,10 +4293,10 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P53/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P53/feed.jpg"
           ],
           "mediaAltText": [
-            "Pizza pede uma bebida."
+            "Kit maratona de série."
           ],
           "publicationDate": {
             "dateTime": "2027-01-21T17:30:00",
@@ -4698,7 +4306,7 @@
           "smartLinkData": {
             "ids": []
           },
-          "text": "Pizza pede uma bebida para acompanhar. 🥤\n\nRefrigerantes de 2L (Coca-Cola, Coca-Cola Zero, Fanta, Guaraná, Sprite, Kuat), Kuat 1,5L, Coca-Cola 600ml, lata ou uma cerveja Brahma. É só adicionar ao carrinho.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
+          "text": "Kit maratona de série, versão férias: 📺\n\n□ Série escolhida (sem spoiler)\n\n□ Pizza Big: 12 fatias e 3 sabores\n\n□ Borda recheada\n\n□ Refri de 2L no carrinho\n\n□ Celular no silencioso (depois de enviar o pedido)\n\nQual série está na sua lista? Conta aqui.\n\n👉 Peça agora pelo Disk Pizza: https://www.diskpizzacwb.com.br/.",
           "providers": [
             {
               "network": "facebook"
@@ -4713,9 +4321,9 @@
     {
       "id": "P54",
       "network": "instagram",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512501,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-22T17:00:00-03:00",
@@ -4726,7 +4334,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P54/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P54/feed.jpg"
           ],
           "mediaAltText": [
             "Lombo com Milho. Foto ilustrativa de pizza."
@@ -4757,9 +4365,9 @@
     {
       "id": "P54",
       "network": "facebook",
-      "bloqueios": [
-        "já agendado no Metricool"
-      ],
+      "acao": "atualizar",
+      "metricoolId": 403512536,
+      "bloqueios": [],
       "call": {
         "blogId": "7592008",
         "date": "2027-01-22T17:00:00-03:00",
@@ -4770,7 +4378,7 @@
           "firstCommentText": "",
           "hasNotReadNotes": false,
           "media": [
-            "https://cdn.jsdelivr.net/gh/PabloPCruz/projeto-pizzaria@marketing-midia/marketing/midia/processada/P54/feed.jpg"
+            "https://raw.githubusercontent.com/PabloPCruz/projeto-pizzaria/441b235273e55ece4ce50e1eb8551a8007cc7a46/marketing/midia/processada/P54/feed.jpg"
           ],
           "mediaAltText": [
             "Lombo com Milho. Foto ilustrativa de pizza."
