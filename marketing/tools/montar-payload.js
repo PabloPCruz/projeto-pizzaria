@@ -64,7 +64,8 @@ for (const p of posts) {
   if (p.cta === 'forte') checks.push(ig.includes('Peça agora pelo Disk Pizza') ? 'CTA forte' : '⚠ FALTA CTA');
   const copyOk = !checks.some((c) => c.startsWith('⚠'));
 
-  const alt = (p.format === 'carrossel' ? files : [files[0]]).map(() => `${p.on_art}${p.photos.length ? '. Foto ilustrativa de pizza.' : '.'}`);
+  const fimArte = /[.!?…]$/.test(p.on_art) ? '' : '.'; // não duplica a pontuação final ("sabor?." / "cobre..")
+  const alt = (p.format === 'carrossel' ? files : [files[0]]).map(() => `${p.on_art}${fimArte}${p.photos.length ? ' Foto ilustrativa de pizza.' : ''}`);
   const base = { autoPublish: true, descendants: [], draft: false, firstCommentText: '', hasNotReadNotes: false, media, mediaAltText: p.format === 'reel' ? [] : alt, publicationDate: { dateTime: when, timezone: cfg.timezone }, shortener: false, smartLinkData: { ids: [] } };
   const reel = p.format === 'reel';
   for (const net of ['instagram', 'facebook']) {

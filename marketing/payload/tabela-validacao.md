@@ -1,6 +1,6 @@
 # Tabela de validação — antes de agendar no Metricool
 
-Gerada em 27/10/2026, 10:06:58 (Brasília). **Nada foi agendado.** 55 posts, 102 chamadas (uma por rede: Instagram e Facebook).
+Gerada em 27/10/2026, 19:20:32 (Brasília). **Nada foi agendado.** 55 posts, 102 chamadas (uma por rede: Instagram e Facebook).
 
 **Prontos para agendar agora: 51 de 55.** Bloqueios: nenhum.
 

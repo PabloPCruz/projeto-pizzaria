@@ -1,0 +1,709 @@
+[
+ {
+  "post": "P03",
+  "rede": "instagram",
+  "acao": "criar",
+  "metricoolId": 408343506,
+  "uuid": "1789678193426186653"
+ },
+ {
+  "post": "P03",
+  "rede": "facebook",
+  "acao": "criar",
+  "metricoolId": 408343537,
+  "uuid": "-8922170624264089992"
+ },
+ {
+  "post": "P04",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408343567,
+  "uuid": "-3250496524025248549"
+ },
+ {
+  "post": "P04",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408343588,
+  "uuid": "2266193554098110769"
+ },
+ {
+  "post": "P05",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408343623,
+  "uuid": "-3397047378376964074"
+ },
+ {
+  "post": "P05",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408343651,
+  "uuid": "4145762539342283491"
+ },
+ {
+  "post": "P06",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408343686,
+  "uuid": "7077823224216109392"
+ },
+ {
+  "post": "P06",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408343703,
+  "uuid": "1677223538143939571"
+ },
+ {
+  "post": "P07",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408344401,
+  "uuid": "-8745968900201886996"
+ },
+ {
+  "post": "P07",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408344422,
+  "uuid": "-3326606248690037012"
+ },
+ {
+  "post": "P08",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408344451,
+  "uuid": "839999811425291636"
+ },
+ {
+  "post": "P08",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408344492,
+  "uuid": "-8807412965245499375"
+ },
+ {
+  "post": "P09",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408344532,
+  "uuid": "2884302969657903891"
+ },
+ {
+  "post": "P09",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408344554,
+  "uuid": "6939360847738521524"
+ },
+ {
+  "post": "P10",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408344585,
+  "uuid": "6424279060595755074"
+ },
+ {
+  "post": "P10",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408344608,
+  "uuid": "-4668179028401893970"
+ },
+ {
+  "post": "P11",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408344927,
+  "uuid": "6121290809090326683"
+ },
+ {
+  "post": "P11",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408344955,
+  "uuid": "-8989676849889981459"
+ },
+ {
+  "post": "P13",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408345673,
+  "uuid": "-2370806327761287906"
+ },
+ {
+  "post": "P13",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408345698,
+  "uuid": "1281994769349034468"
+ },
+ {
+  "post": "P14",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408345719,
+  "uuid": "2486051397387109277"
+ },
+ {
+  "post": "P14",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408345753,
+  "uuid": "-7045450524456236661"
+ },
+ {
+  "post": "P15",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408345782,
+  "uuid": "3555611884680397508"
+ },
+ {
+  "post": "P15",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408345799,
+  "uuid": "-1903070615353537028"
+ },
+ {
+  "post": "P16",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408345826,
+  "uuid": "-2469333710464007972"
+ },
+ {
+  "post": "P16",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408345849,
+  "uuid": "-1345233644071400250"
+ },
+ {
+  "post": "P17",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408345873,
+  "uuid": "657756419866905852"
+ },
+ {
+  "post": "P17",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408345900,
+  "uuid": "7993667189443087591"
+ },
+ {
+  "post": "P18",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408346830,
+  "uuid": "2226395976050754282"
+ },
+ {
+  "post": "P18",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408346845,
+  "uuid": "-4806739029072854340"
+ },
+ {
+  "post": "P19",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408346869,
+  "uuid": "-8566163333076661740"
+ },
+ {
+  "post": "P19",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408346892,
+  "uuid": "3038067924657980959"
+ },
+ {
+  "post": "P20",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408346918,
+  "uuid": "6004100807877938796"
+ },
+ {
+  "post": "P20",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408346943,
+  "uuid": "1940171156838303896"
+ },
+ {
+  "post": "P21",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408346962,
+  "uuid": "1935773094737495336"
+ },
+ {
+  "post": "P21",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408346989,
+  "uuid": "8004799732624149623"
+ },
+ {
+  "post": "P22",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408347020,
+  "uuid": "-65383430033879752"
+ },
+ {
+  "post": "P22",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408347057,
+  "uuid": "8298619833641616169"
+ },
+ {
+  "post": "P23",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408347102,
+  "uuid": "-8052064285559666862"
+ },
+ {
+  "post": "P23",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408347118,
+  "uuid": "-8581816360118893984"
+ },
+ {
+  "post": "P24",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408347916,
+  "uuid": "-1956465638231816102"
+ },
+ {
+  "post": "P24",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408347938,
+  "uuid": "7009780898630026205"
+ },
+ {
+  "post": "P25",
+  "rede": "instagram",
+  "acao": "criar",
+  "metricoolId": 408347965,
+  "uuid": "3757867524335616838"
+ },
+ {
+  "post": "P25",
+  "rede": "facebook",
+  "acao": "criar",
+  "metricoolId": 408347987,
+  "uuid": "5266846954230992549"
+ },
+ {
+  "post": "P26",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408348016,
+  "uuid": "-4500752190760794841"
+ },
+ {
+  "post": "P26",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408348039,
+  "uuid": "-4863260920620560818"
+ },
+ {
+  "post": "P27",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408348080,
+  "uuid": "6387971977216803120"
+ },
+ {
+  "post": "P27",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408348103,
+  "uuid": "-4433085046131176817"
+ },
+ {
+  "post": "P28",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408348576,
+  "uuid": "8365048674267778806"
+ },
+ {
+  "post": "P28",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408348595,
+  "uuid": "-8058996196108514041"
+ },
+ {
+  "post": "P29",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408348614,
+  "uuid": "-3785346024996910798"
+ },
+ {
+  "post": "P29",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408348633,
+  "uuid": "-5295644659854654978"
+ },
+ {
+  "post": "P30",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408348653,
+  "uuid": "7013174319285358537"
+ },
+ {
+  "post": "P30",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408348673,
+  "uuid": "-6773791506181701260"
+ },
+ {
+  "post": "P31",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408349608,
+  "uuid": "-6125941162717657598"
+ },
+ {
+  "post": "P31",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408349623,
+  "uuid": "-4160030924948946275"
+ },
+ {
+  "post": "P32",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408349637,
+  "uuid": "-3291795843986863967"
+ },
+ {
+  "post": "P32",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408349655,
+  "uuid": "2723372872674788980"
+ },
+ {
+  "post": "P33",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408349683,
+  "uuid": "642434382625195476"
+ },
+ {
+  "post": "P33",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408349695,
+  "uuid": "-6538149469526277683"
+ },
+ {
+  "post": "P34",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408349779,
+  "uuid": "-1156878257928126190"
+ },
+ {
+  "post": "P34",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408349795,
+  "uuid": "94039591439975126"
+ },
+ {
+  "post": "P35",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408349822,
+  "uuid": "-8470608359014578191"
+ },
+ {
+  "post": "P35",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408349841,
+  "uuid": "-2757413879292608421"
+ },
+ {
+  "post": "P36",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408349865,
+  "uuid": "7124907025261610165"
+ },
+ {
+  "post": "P36",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408349878,
+  "uuid": "-8409515279230154277"
+ },
+ {
+  "post": "P37",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351601,
+  "uuid": "-2935683122605044308"
+ },
+ {
+  "post": "P37",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351624,
+  "uuid": "2114754449333961510"
+ },
+ {
+  "post": "P38",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351648,
+  "uuid": "-346854707221870674"
+ },
+ {
+  "post": "P38",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351665,
+  "uuid": "-567498047593429539"
+ },
+ {
+  "post": "P39",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351687,
+  "uuid": "5682259828635354126"
+ },
+ {
+  "post": "P39",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351703,
+  "uuid": "-2421890097706021039"
+ },
+ {
+  "post": "P40",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351724,
+  "uuid": "-5359781253576045214"
+ },
+ {
+  "post": "P40",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351738,
+  "uuid": "-305473793812905634"
+ },
+ {
+  "post": "P41",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351758,
+  "uuid": "8681533396005044456"
+ },
+ {
+  "post": "P41",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351772,
+  "uuid": "694415124207389142"
+ },
+ {
+  "post": "P42",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351792,
+  "uuid": "-2876173952083407749"
+ },
+ {
+  "post": "P42",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351818,
+  "uuid": "5555038985780347332"
+ },
+ {
+  "post": "P43",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408351859,
+  "uuid": "314477955854124823"
+ },
+ {
+  "post": "P43",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408351896,
+  "uuid": "1118614944345638642"
+ },
+ {
+  "post": "P44",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408352589,
+  "uuid": "-2607109464086198010"
+ },
+ {
+  "post": "P45",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408352624,
+  "uuid": "-2182892517079757761"
+ },
+ {
+  "post": "P45",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408352654,
+  "uuid": "-7456657781198730437"
+ },
+ {
+  "post": "P46",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408352676,
+  "uuid": "3870388151813295133"
+ },
+ {
+  "post": "P46",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408352695,
+  "uuid": "3904854148062726858"
+ },
+ {
+  "post": "P47",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408352720,
+  "uuid": "33746971682229935"
+ },
+ {
+  "post": "P47",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408352748,
+  "uuid": "5366819578563871727"
+ },
+ {
+  "post": "P48",
+  "rede": "instagram",
+  "acao": "criar",
+  "metricoolId": 408353750,
+  "uuid": "8199520678527713569"
+ },
+ {
+  "post": "P48",
+  "rede": "facebook",
+  "acao": "criar",
+  "metricoolId": 408353766,
+  "uuid": "-4788729190564607465"
+ },
+ {
+  "post": "P49",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408353785,
+  "uuid": "-410745372927114221"
+ },
+ {
+  "post": "P49",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408353804,
+  "uuid": "-4376656364444299624"
+ },
+ {
+  "post": "P50",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408353827,
+  "uuid": "-4694287945928720243"
+ },
+ {
+  "post": "P50",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408353851,
+  "uuid": "-3592382690557016835"
+ },
+ {
+  "post": "P51",
+  "rede": "instagram",
+  "acao": "criar",
+  "metricoolId": 408353873,
+  "uuid": "-4750631477601742981"
+ },
+ {
+  "post": "P51",
+  "rede": "facebook",
+  "acao": "criar",
+  "metricoolId": 408353938,
+  "uuid": "-2296377050778548536"
+ },
+ {
+  "post": "P52",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408353956,
+  "uuid": "237528991093968226"
+ },
+ {
+  "post": "P52",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408353972,
+  "uuid": "3610904998758860692"
+ },
+ {
+  "post": "P53",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408353991,
+  "uuid": "8801138615540991044"
+ },
+ {
+  "post": "P53",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408354012,
+  "uuid": "7662096877764626642"
+ },
+ {
+  "post": "P54",
+  "rede": "instagram",
+  "acao": "atualizar",
+  "metricoolId": 408354037,
+  "uuid": "6299710761534768002"
+ },
+ {
+  "post": "P54",
+  "rede": "facebook",
+  "acao": "atualizar",
+  "metricoolId": 408354066,
+  "uuid": "3067911898499206297"
+ }
+]
